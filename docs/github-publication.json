@@ -1,5 +1,5 @@
 {
-  "status": "prepared-awaiting-git-authentication",
+  "status": "ready-to-push",
   "repository": "https://github.com/cabal312512/OmniCivitas",
   "releaseTag": "v0.1.0",
   "releaseMechanism": "GitHub Actions: .github/workflows/release.yml",
@@ -11,7 +11,7 @@
   "researchExperimentsRerun": false,
   "newPdfGenerated": false,
   "sourceAudit": {
-    "files": 2142,
+    "files": 2143,
     "secrets": 0,
     "forbiddenRuntimeFiles": 0,
     "over100MiB": 0,
@@ -22,7 +22,15 @@
     "originalSeals": 5,
     "downloads": 4
   },
-  "freshPublicCloneBuild": "pending",
+  "freshPublicCloneBuild": {
+    "status": "passed",
+    "installation": "offline frozen-lockfile; packages reused from approved dependency store",
+    "targets": 5,
+    "nxCache": "skipped",
+    "paperPdfPresent": false
+  },
   "uploaded": false,
-  "releasePublished": false
+  "releasePublished": false,
+  "preparedAt": "2026-10-04T16:11:14.056Z",
+  "publicArchiveActualMembers": 1270
 }
