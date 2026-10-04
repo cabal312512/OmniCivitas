@@ -1,5 +1,5 @@
 {
-  "status": "uploaded-awaiting-actions-release",
+  "status": "published-ci-order-fix-in-progress",
   "repository": "https://github.com/cabal312512/OmniCivitas",
   "releaseTag": "v0.1.0",
   "releaseMechanism": "GitHub Actions: .github/workflows/release.yml",
@@ -30,10 +30,31 @@
     "paperPdfPresent": false
   },
   "uploaded": true,
-  "releasePublished": false,
+  "releasePublished": true,
   "preparedAt": "2026-10-04T16:11:14.056Z",
   "publicArchiveActualMembers": 1270,
   "uploadedAt": "2026-10-04T16:13:37.283Z",
   "initialUploadCommit": "02de45a27feac9f917fae6662498482d7942a920",
-  "releaseUrl": "https://github.com/cabal312512/OmniCivitas/releases/tag/v0.1.0"
+  "releaseUrl": "https://github.com/cabal312512/OmniCivitas/releases/tag/v0.1.0",
+  "releasePublishedAt": "2026-10-04T16:14:29Z",
+  "releaseActions": {
+    "run": 37215986520,
+    "status": "success",
+    "url": "https://github.com/cabal312512/OmniCivitas/actions/runs/37215986520"
+  },
+  "remoteSource": {
+    "files": 2143,
+    "gitBlobHashesMatched": true,
+    "compiledPaperPdfs": 0
+  },
+  "sourceZip": {
+    "bytes": 256488072,
+    "sha256": "c262047c0d20fe0e6e2fe2d27f1b71d0d95f5788fdbdf4638955e3d1a749ca14"
+  },
+  "initialCI": {
+    "run": 37215908451,
+    "browser": "success",
+    "workspace": "failure: tests imported gateway/dist before its build"
+  },
+  "ciFix": "Build all five targets before running tests that exercise compiled gateway code; no application or scientific behavior changed."
 }

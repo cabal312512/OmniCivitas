@@ -32,9 +32,9 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm ledger:check
+      - run: pnpm build
       - run: pnpm test
       - run: pnpm test:jest
-      - run: pnpm build
   browser:
     runs-on: ubuntu-latest
     timeout-minutes: 25
