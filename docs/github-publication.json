@@ -1,7 +1,7 @@
 {
-  "status": "patch-release-requested",
+  "status": "final-subset-ready",
   "repository": "https://github.com/cabal312512/OmniCivitas",
-  "releaseTag": "v0.1.1",
+  "releaseTag": "v0.1.2",
   "releaseMechanism": "GitHub Actions: .github/workflows/release.yml",
   "license": "MIT",
   "copyright": "2026 cabal312512",
@@ -11,16 +11,17 @@
   "researchExperimentsRerun": false,
   "newPdfGenerated": false,
   "sourceAudit": {
-    "files": 2143,
+    "files": 2134,
     "secrets": 0,
     "forbiddenRuntimeFiles": 0,
     "over100MiB": 0,
     "unclassifiedMachinePaths": 0
   },
   "publicationAssets": {
-    "includedSealedArtifacts": 1265,
+    "includedSealedArtifacts": 1260,
     "originalSeals": 5,
-    "downloads": 4
+    "downloads": 4,
+    "totalMembers": 1265
   },
   "freshPublicCloneBuild": {
     "status": "passed",
@@ -35,7 +36,7 @@
   "publicArchiveActualMembers": 1270,
   "uploadedAt": "2026-10-04T16:13:37.283Z",
   "initialUploadCommit": "02de45a27feac9f917fae6662498482d7942a920",
-  "releaseUrl": "https://github.com/cabal312512/OmniCivitas/releases/tag/v0.1.1",
+  "releaseUrl": "https://github.com/cabal312512/OmniCivitas/releases/tag/v0.1.2",
   "releasePublishedAt": "2026-10-04T16:14:29Z",
   "releaseActions": {
     "run": 37215986520,
@@ -70,5 +71,24 @@
       "status": "success",
       "url": "https://github.com/cabal312512/OmniCivitas/actions/runs/37215986520"
     }
-  }
+  },
+  "deploymentLanguages": {
+    "default": "English",
+    "english": "docs/DEPLOY.en.md",
+    "chinese": "docs/DEPLOY.zh-CN.md"
+  },
+  "authorInputs": {
+    "excludedFromCurrentPublication": 12,
+    "allLocalFilesPreserved": true,
+    "policy": "config/source-publication.json",
+    "gitHistoryRewritten": false
+  },
+  "additionalCIFix": "The pre-existing storage test referenced the old private Map name after the author signature rename. Both assertions now refer to cabal312512; the two focused tests pass. Application behavior is unchanged.",
+  "additionalCIFailure": {
+    "run": 37216219962,
+    "builds": "Windows/Linux/macOS succeeded",
+    "browser": "success",
+    "workspaceTests": "failure due to old private-field assertion"
+  },
+  "indexCuration": "Independent source index; original index retained as backup. No local file deletion."
 }

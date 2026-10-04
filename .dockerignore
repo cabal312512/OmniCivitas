@@ -44,3 +44,11 @@ config/apps/portal/public/research/files
 config/apps/portal/public/research/downloads
 config/apps/portal/public/research/asset-manifest.json
 research/**/paper/*.pdf
+**/AGENTS.md
+AI写的提示词.txt
+PROJECT_SPEC.txt
+Prompt.txt
+docs/HANDOFF.md
+research/**/docs/initial-brief.txt
+research/**/docs/user-brief.txt
+research/**/docs/USER_BRIEF*.txt

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "scope": "Author-only AI inputs and handoff files are retained locally and excluded from the public index; no history rewriting.",
+  "reason": "User explicitly requested removal from publication while keeping every local file.",
+  "omissions": [
+    {
+      "file": "AGENTS.md",
+      "bytes": 2208,
+      "sha256": "59afc823d51db7fffb308c39b2f8e5358f3545f8876d1b18dfe54e18b2b8a18c"
+    },
+    {
+      "file": "config/apps/web2/AGENTS.md",
+      "bytes": 678,
+      "sha256": "63f2c50380ed6303237cce215ce27af1d620d094c215e28d1b1538a3c070e3bb"
+    },
+    {
+      "file": "AI写的提示词.txt",
+      "bytes": 7089,
+      "sha256": "8610a35a3c81070349378267d05bdf8e8b7fc466dec7a564b80f8e061a8fc522"
+    },
+    {
+      "file": "PROJECT_SPEC.txt",
+      "bytes": 54200,
+      "sha256": "e45a5752bc4dbce9a7738e6b2dfd629f7777c3d6fbc22531f69557e04e7fe958"
+    },
+    {
+      "file": "Prompt.txt",
+      "bytes": 25894,
+      "sha256": "f5bd3becbc2eb7a4ad471903daccfb41b9088ff3111d97f85a34fbdd6935e53d"
+    },
+    {
+      "file": "docs/HANDOFF.md",
+      "bytes": 73559,
+      "sha256": "38ff48863b1338ce8b11e619bda4f3cc8de3fdd63440f1c08983d8da81c4f29d"
+    },
+    {
+      "file": "historical/front_old/HANDOFF-pre-luminous.md",
+      "bytes": 11644,
+      "sha256": "8225d48145338a0edaf22d3edf4b72ae253b3c1a8ec67994ab6cc4fb38e4555c"
+    },
+    {
+      "file": "research/finite-memory-rsa/docs/initial-brief.txt",
+      "bytes": 25894,
+      "sha256": "f5bd3becbc2eb7a4ad471903daccfb41b9088ff3111d97f85a34fbdd6935e53d"
+    },
+    {
+      "file": "research/finite-memory-rsa/stage2/docs/user-brief.txt",
+      "bytes": 10835,
+      "sha256": "352e821bcba713bc5c69be62b017ffae5409a71927364c71cfb538e962bbb6bd"
+    },
+    {
+      "file": "research/finite-memory-rsa/stage3/docs/USER_BRIEF.zh.txt",
+      "bytes": 13082,
+      "sha256": "24aec41def2a360691327f1373619d0514a3b3ba398eaab91c7b93d4496c69a7"
+    },
+    {
+      "file": "research/finite-memory-rsa/stage4/docs/USER_BRIEF.zh.txt",
+      "bytes": 9204,
+      "sha256": "c5535235eb5b93b2293948ba54d87e62d5ee5deb0d433a2811dc6496457ff298"
+    },
+    {
+      "file": "research/finite-memory-rsa/stage5/docs/USER_BRIEF.zh.txt",
+      "bytes": 10925,
+      "sha256": "6ebe9558b827c4c8cfd432bd95855212af21281a00050067262c0249e2f9d378"
+    }
+  ],
+  "ledgers": {
+    "docs/requirements.json": "29e14b4438d6aad2e25f7b9851ecc5851d5b62dc8d2101e1f9318399fe40db26",
+    "docs/screenshot-requirements.json": "083dbf6c880d702264614db23f56190e57e4b4c06253efac068f3c792c1eec1f",
+    "docs/public-release-requirements.json": "a19dabf6aa84d997bc61a04ef2a8652134192109c08ff38ecffd18c8705730c2"
+  }
+}

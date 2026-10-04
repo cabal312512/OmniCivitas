@@ -7,8 +7,8 @@ test('offline storage is bounded and never claims a real database connection',as
   try {
     const store=new RuntimeStore();
     for(let i=0;i<100;i++) await store.save(`fiction-${i}`,'虚构演示');
-    expect(store.toyRecords.size).toBe(64);
-    expect(store.toyRecords.has('fiction-0')).toBe(false);
+    expect(store.cabal312512.size).toBe(64);
+    expect(store.cabal312512.has('fiction-0')).toBe(false);
     expect((await store.status()).postgres).toBe('not-connected');
     expect((await store.status()).storage).toBe('bounded-memory-demonstration');
     await store.onModuleDestroy();

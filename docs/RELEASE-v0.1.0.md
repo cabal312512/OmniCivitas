@@ -16,3 +16,5 @@ Windows clean-clone, Linux container userspace and isolated new-volume core depl
 Contact: user31436@proton.me.
 
 The v0.1.1 patch corrects cross-platform CI ordering: all build targets run before tests that import the compiled gateway. Application and scientific behavior are unchanged from v0.1.0.
+
+The v0.1.2 update makes deployment documentation English by default, retains a Chinese alternative, and excludes twelve author-only prompt/agent/handoff files from the current source and new release packages while preserving every local original. It also updates the two storage-test assertions after the internal variable rename. Original scientific seals remain untouched; the declared publication subset now omits five research briefs as well as the paper PDF. Prior commits and tags are retained.

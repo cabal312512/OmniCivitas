@@ -7,6 +7,36 @@
       "bytes": 903594,
       "sha256": "2078ec31d90b99bc8cdb1b2d0eae9bd6c5e6281ff1e7df21279e7cee4872359b",
       "reason": "Compiled paper PDF excluded from GitHub and release downloads at the author request; manuscript source remains."
+    },
+    {
+      "file": "docs/initial-brief.txt",
+      "bytes": 25894,
+      "sha256": "f5bd3becbc2eb7a4ad471903daccfb41b9088ff3111d97f85a34fbdd6935e53d",
+      "reason": "Author-only AI brief retained locally; excluded from published source and downloads at user request."
+    },
+    {
+      "file": "stage2/docs/user-brief.txt",
+      "bytes": 10835,
+      "sha256": "352e821bcba713bc5c69be62b017ffae5409a71927364c71cfb538e962bbb6bd",
+      "reason": "Author-only AI brief retained locally; excluded from published source and downloads at user request."
+    },
+    {
+      "file": "stage3/docs/USER_BRIEF.zh.txt",
+      "bytes": 13082,
+      "sha256": "24aec41def2a360691327f1373619d0514a3b3ba398eaab91c7b93d4496c69a7",
+      "reason": "Author-only AI brief retained locally; excluded from published source and downloads at user request."
+    },
+    {
+      "file": "stage4/docs/USER_BRIEF.zh.txt",
+      "bytes": 9204,
+      "sha256": "c5535235eb5b93b2293948ba54d87e62d5ee5deb0d433a2811dc6496457ff298",
+      "reason": "Author-only AI brief retained locally; excluded from published source and downloads at user request."
+    },
+    {
+      "file": "stage5/docs/USER_BRIEF.zh.txt",
+      "bytes": 10925,
+      "sha256": "6ebe9558b827c4c8cfd432bd95855212af21281a00050067262c0249e2f9d378",
+      "reason": "Author-only AI brief retained locally; excluded from published source and downloads at user request."
     }
   ]
 }

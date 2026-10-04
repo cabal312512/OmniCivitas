@@ -75,17 +75,19 @@ cd research/finite-memory-rsa
 node scripts/reproduce.mjs --profile quick --output ../rsa-check
 ```
 
-The output directory must not already exist. Manuscript sources, scientific figures, data and original seals are published. **Compiled paper PDFs are excluded**, including from regenerated website download bundles. The original seal still lists the omitted PDF; [the publication policy](config/research-publication.json) declares its path, original hash and size. This is a documented subset of the sealed archive, not a new scientific seal. Figure PDFs remain available. No new experiments or PDFs were generated for this release.
+The output directory must not already exist. Manuscript sources, scientific figures, data and original seals are published. **Compiled paper PDFs are excluded**, including from regenerated website download bundles. The original seal still lists the omitted PDF; [the publication policy](config/research-publication.json) declares its path, original hash and size. This is a documented subset of the sealed archive, not a new scientific seal. Author-only research briefs are also excluded from the public subset and retained locally. Figure PDFs remain available. No new experiments or PDFs were generated for this release.
 
 With these distinctions, the next step in relating the operational trace hierarchy to the full joint capability region would be to
 
-## 部署
+## Deployment
 
-回到仓库根目录。Web 界面使用 Astro、Next.js、Angular 和 NestJS；Docker 默认仅运行核心服务。常规开发、构建和主要功能不需要启动全部基础设施。
+[中文部署说明](docs/DEPLOY.zh-CN.md)
 
-### 本地开发
+The web interface uses Astro, Next.js, Angular and NestJS. Ordinary development, builds and primary features work without the entire infrastructure stack. Docker starts only core by default.
 
-安装 **Node.js 24.14.1**、**pnpm 10.34.6** 和 Git：
+### Local development
+
+Install **Node.js 24.14.1**, **pnpm 10.34.6** and Git:
 
 ```sh
 git clone https://github.com/cabal312512/OmniCivitas.git
@@ -94,7 +96,11 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-打开 **http://127.0.0.1:8080**，研究界面位于 **/research/**。首次启动顺序准备 Angular、网关与科研下载包，再启动开发服务；大体积原始记录需要处理时间。Ctrl+C 停止。没有数据库 URL 时，开发入口明确使用有容量限制的内存存储，重启后不保留该数据。需要 PostgreSQL/Redis 持久化时使用 Docker 核心模式。
+Open **http://127.0.0.1:8080**, or **/research/** for the research interface. Initial startup prepares Angular, the gateway and research downloads sequentially. The large research archive takes time to process. Stop with Ctrl+C.
+
+Without a database URL, development uses bounded in-memory storage; records do not survive a restart. Docker core uses real PostgreSQL/Redis persistence. Identity screens use local demonstration state; no account API is mounted. Do not enter real passwords.
+
+Build before testing: storage tests import compiled gateway code.
 
 ```sh
 pnpm build
@@ -102,20 +108,20 @@ pnpm test
 pnpm test:jest
 ```
 
-五个构建目标默认顺序运行。端口可用 `OCV_WEB_PORT`、`OCV_PORTAL_PORT`、`OCV_NEXT_PORT`、`OCV_GATEWAY_PORT` 调整，四个值应互不冲突。标准命令不要求特定盘符、Windows 用户名、本机 PowerShell wrapper 或缓存变量。
+Five build targets run sequentially. Change `OCV_WEB_PORT`, `OCV_PORTAL_PORT`, `OCV_NEXT_PORT` and `OCV_GATEWAY_PORT` to distinct available ports when necessary. Standard commands require no specific disk layout, username, local PowerShell wrapper or cache variables.
 
-### Docker 核心模式
+### Docker core
 
-Linux 使用 Docker Engine + Compose v2；Windows/macOS 使用 Docker Desktop 的 Linux 容器模式。在根目录运行：
+Use Docker Engine with Compose v2 on Linux, or Docker Desktop in Linux-container mode on Windows/macOS. From the root:
 
 ```sh
 docker compose up --build -d --wait
 docker compose ps
 ```
 
-默认启动 **edge、portal、next、gateway、PostgreSQL、Redis** 六个服务，入口仍是 **http://127.0.0.1:8080**。首次构建下载依赖并生成科研资源，请预留空间。仓库源文件接近 1 GB；安装包、镜像和构建缓存另占磁盘。
+Only **edge, portal, next, gateway, PostgreSQL and Redis** start by default. The entrance is **http://127.0.0.1:8080**. Initial builds download dependencies and generate research resources. Source files occupy approximately 1 GB; dependencies, images and caches need additional space.
 
-也可使用带预算的标准 Node 入口：
+Standard Node commands provide a bounded sequential builder:
 
 ```sh
 pnpm civilization:core
@@ -123,21 +129,21 @@ pnpm civilization:status
 pnpm civilization:stop
 ```
 
-控制器使用 3 GiB 构建器并顺序构建，完成后停止构建器。停止服务保留 named volumes。`docker compose down` 也保留数据；**`docker compose down -v` 会删除卷数据**。
+The builder has a 3 GiB cap and stops after compilation. Stopping services preserves named volumes. `docker compose down` also preserves data; **`docker compose down -v` deletes volume data**.
 
-### 按需服务
+### Optional profiles
 
-全部 24 个服务保留在 [compose.yaml](compose.yaml)。core 无需指定 profile，其余按工作需要选择。
+All 24 services remain in [compose.yaml](compose.yaml). Core needs no profile. Select optional groups when needed.
 
-| Profile | 额外服务 | 包含 core 的容器内存上限合计 |
+| Profile | Additional services | Container memory caps including core |
 | --- | --- | ---: |
-| core | 默认六服务 | 1728 MiB |
-| databases | MySQL、MongoDB、MinIO、archive API | 2944 MiB |
-| legacy | Spring、FastAPI、Laravel、Fiber、ASP.NET SOAP、Sinatra、Hono、MySQL | 3616 MiB |
-| messaging | RabbitMQ、Kafka、MongoDB、消息工作进程 | 3968 MiB |
+| core | Default six services | 1728 MiB |
+| databases | MySQL, MongoDB, MinIO, archive API | 2944 MiB |
+| legacy | Spring, FastAPI, Laravel, Fiber, ASP.NET SOAP, Sinatra, Hono, MySQL | 3616 MiB |
+| messaging | RabbitMQ, Kafka, MongoDB, message workers | 3968 MiB |
 | search | Elasticsearch | 3008 MiB |
-| monitoring | OpenTelemetry、Prometheus、Grafana | 2240 MiB |
-| maximum / everything | 全部可选服务 | 7840 MiB |
+| monitoring | OpenTelemetry, Prometheus, Grafana | 2240 MiB |
+| maximum / everything | All optional services | 7840 MiB |
 
 ```sh
 pnpm civilization:databases
@@ -149,20 +155,20 @@ pnpm civilization:batch legacy,messaging,search
 pnpm civilization:maximum
 ```
 
-控制器切换组时停止不相关的可选容器。直接用 Compose 则会保留之前启动的服务：
+The controller stops unrelated optional project containers before switching groups. Raw Compose commands retain previously started services:
 
 ```sh
 docker compose --profile legacy up --build -d --wait
 docker compose --profile legacy stop
 ```
 
-小内存机器分批使用 profiles，避免全栈运行时同时编译。表中是容器上限，不是主机总内存预测；Docker、系统、缓存和编译还会占用内存。maximum 控制器默认拒绝总容器预算超过 **8192 MiB**；其他硬件可通过 `OCV_CONTAINER_BUDGET_MIB` 调整。Java、Kafka、Elasticsearch 使用小型开发 heap。重要服务设置内存、CPU、PID 与日志限制。
+Smaller machines should use separate profile sessions and stop optional services before compiling. These are container caps, not total host RAM estimates; Docker, the OS, caches and compilation also consume memory. Maximum defaults to an **8192 MiB** aggregate budget; adjust `OCV_CONTAINER_BUDGET_MIB` on other hardware. Java, Kafka and Elasticsearch use small development heaps. Important services have memory, CPU, PID and log limits.
 
-原开发机的 24 GB RAM / WSL 日常 9 GiB、可选最大 11 GiB 设置属于本地优化。公开命令不会修改别人电脑的 WSL 设置，也不要求相同硬件。
+The original machine's 24 GB RAM and daily 9 GiB / optional maximum 11 GiB WSL settings are local optimizations. Public commands do not modify WSL settings or require equivalent hardware.
 
-### 配置与持久化
+### Configuration and persistence
 
-仓库仅提供 [.env.example](.env.example)。需要修改时复制成 `.env`；真实 `.env` 不提交。
+Only [.env.example](.env.example) is committed. Copy it to `.env` if needed; never commit actual environment files.
 
 ```sh
 # Linux / macOS
@@ -174,36 +180,37 @@ cp .env.example .env
 Copy-Item .env.example .env
 ```
 
-Compose 读取 `.env`；直接 `pnpm dev` 使用进程环境变量，需要在终端设置相应值。示例提供发布地址、端口、数据库/消息凭据、容器资源与 heap 参数。共享部署前更换示例凭据。`OCV_DATABASE_URL` / `OCV_RABBIT_URL` 可覆盖拼接的连接串，密码含保留字符须 URL 编码。
+Compose reads `.env`. Direct `pnpm dev` uses process environment variables; set overrides in the terminal. The example covers addresses, ports, database/message credentials, resources and heaps. Replace demo credentials before shared deployment. `OCV_DATABASE_URL` and `OCV_RABBIT_URL` override assembled connection strings; URL-encode reserved characters in credentials.
 
-数据库初始化用户名、密码和库名只对 **新卷** 生效。已有卷改配置后连接失败，应维护现有账号或另建项目卷；不要为排错直接删除重要数据。
+Initialization credentials apply only to **new volumes**. Environment changes do not modify an existing account. Maintain that account or create a separate project volume; do not delete important data to diagnose a credential mismatch.
 
-Docker 数据使用 **named volumes**，实际硬盘由 Docker 决定。默认 bind mounts 仅使用仓库内相对路径与只读配置。本机挂载放在忽略的 `compose.local.yaml`，显式执行：
+Docker uses **named volumes** and chooses their physical host disk. Default bind mounts are repository-relative, read-only configuration. Put machine-specific mounts in ignored `compose.local.yaml`:
 
 ```sh
 docker compose -f compose.yaml -f compose.local.yaml up -d --wait
 ```
 
-资源变量形如 `OCV_POSTGRES_MEM=512m`、`OCV_MESSAGE_BRIDGE_CPU=0.5`；完整参数见 `.env.example`。heap 应小于容器上限。发布地址默认 loopback。对外访问需显式调整 bind address，配置 HTTPS 反向代理、访问控制与防火墙；当前示例是开发部署配置。
+Resource overrides include `OCV_POSTGRES_MEM=512m` and `OCV_MESSAGE_BRIDGE_CPU=0.5`; see `.env.example`. Keep heaps below container caps. Published addresses default to loopback. External access needs an explicit bind address, HTTPS reverse proxy, access controls and firewall configuration. Defaults are for development.
 
-### 常见问题
+### Troubleshooting
 
-| 现象 | 处理 |
+| Symptom | Action |
 | --- | --- |
-| Node / pnpm 不匹配、安装失败 | 使用上述版本，保留 lockfile，确认 npm registry 网络 |
-| 首次进入前等待较久 | 初次科研下载包和前端构建需要时间；查看终端或容器日志 |
-| 端口被占用 | 调整四个 `OCV_*_PORT`，不要重复使用同一端口 |
-| Docker 无法连接 | 启动 Docker，确认 Linux 容器模式和 Compose v2，执行 `docker info` |
-| optional 接口返回降级状态 | 启动对应 profile；降级不代表实际数据库/消息服务已运行 |
-| 数据库改密码后无法连接 | 已有卷不会重新初始化；维护原账号或使用新项目卷 |
-| 内存不足、编译被终止 | 回到 core，停止可选组，顺序构建；检查可用内存后再调整预算 |
-| WebGL 场景为空 | 检查浏览器硬件加速和 WebGL；图形演示不改变原始科研结果 |
-| 音乐不自动播放 | 浏览器可能要求首次点击后才允许音频；页面提供开关和音量 |
-| 手工验封提示缺论文 PDF | 对照 publication policy 的明确排除项；其余文件仍必须匹配 |
+| Installation fails or versions differ | Use the versions above, retain the lockfile and check registry connectivity |
+| First startup is slow | Research packaging and frontend builds take time; inspect logs |
+| A port is occupied | Change the four `OCV_*_PORT` values without introducing another collision |
+| Docker cannot connect | Start Docker, select Linux containers, confirm Compose v2, run `docker info` |
+| An optional endpoint reports fallback | Start its profile; fallback does not prove a real service was exercised |
+| Changed database credentials do not work | Existing volumes do not reinitialize; maintain the account or use new project volumes |
+| RAM is exhausted or a build is killed | Return to core, stop optional groups and build sequentially before increasing budgets |
+| WebGL scenes are blank | Check hardware acceleration/WebGL; demos do not alter scientific results |
+| Music does not autoplay | A browser may require a first click; pages have audio controls |
+| Tests cannot find gateway/dist | Run `pnpm build` first; compiled outputs are absent from Git |
+| Seal verification reports missing inputs | Consult the explicit publication exclusions; retained artifacts must still match |
 
-### 测试与平台范围
+### Tests and platform scope
 
-单元测试不需要全栈。浏览器检查需要运行中的应用及相应浏览器：
+Unit tests need no full stack. Browser checks need a running application and the corresponding browser:
 
 ```sh
 pnpm exec cypress install
@@ -211,21 +218,21 @@ pnpm test:cypress
 pnpm exec playwright install chromium
 ```
 
-`OCV_BASE_URL` 可调整测试入口。日常使用专项检查。原生后端集成测试按需运行：
+Set `OCV_BASE_URL` for another entrance. Use focused checks during ordinary development. Native integration tests run on demand:
 
 ```sh
 pnpm civilization:legacy
 node scripts/test-languages.mjs java python php go dotnet ruby
 ```
 
-helper 依次使用 768 MiB 测试容器，SDK 按需下载。公开移植性审计已执行 Windows 干净 clone、Linux 容器用户空间及新卷六服务 Compose 验证；独立 macOS / Linux Engine 宿主未验证。Actions 配置三系统检查，配置存在不等于 CI 已通过。[完整审计与限制](docs/PUBLIC-RELEASE.md)保留具体证据。
+The helper uses one 768 MiB test container at a time and downloads SDKs only when selected. Earlier audits exercised a clean Windows clone, Linux container userspace and isolated six-service deployment with new volumes. Remote Actions has also built on Windows, Linux and macOS; current test results are recorded in [publication status](docs/github-publication.json). Independent Linux Engine/macOS Docker host deployments remain unverified. [The portability audit](docs/PUBLIC-RELEASE.md) preserves earlier evidence and its scope.
 
-本机 `ocv.ps1` / `scripts/Enter-OcvEnvironment.ps1` 仅用于原开发环境的工具、缓存和 Docker 存储位置，其他电脑使用标准入口。不要提交 node_modules、工具、缓存、构建输出、真实配置、token、证书、数据库数据、Docker volumes 或 WSL 磁盘。小型第三方包也通过 package.json / pnpm-lock.yaml 安装。
+`ocv.ps1` and `scripts/Enter-OcvEnvironment.ps1` are optional helpers for the original machine. Other users run standard commands. Dependencies, tools, caches, build output, real environment files, tokens, certificates, runtime databases, Docker volumes and WSL disks do not belong in Git. Small third-party packages also install from package.json / pnpm-lock.yaml.
 
-### 许可与联系
+### License and contact
 
-原创代码采用 **MIT — Copyright (c) 2026 cabal312512**，见 [LICENSE](LICENSE)。第三方代码、字体、音乐及其他素材保留自身权利与许可，MIT 不重新授权它们。必要代码来源见 [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt)、[EFFECT-SOURCES.md](docs/EFFECT-SOURCES.md) 和构建时生成的 `/licenses/bundled-notices.txt`。
+Original code: **MIT — Copyright (c) 2026 cabal312512**; see [LICENSE](LICENSE). Third-party code, fonts, music and other assets retain their own terms. MIT does not relicense them. Required notices: [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt), [EFFECT-SOURCES.md](docs/EFFECT-SOURCES.md), generated `/licenses/bundled-notices.txt`.
 
-素材声明：[MEDIA_NOTICE.md](MEDIA_NOTICE.md) / `/legal/`。研究音乐 **Holizna — Retro Wave Collection**，来源 [OpenGameArt](https://opengameart.org/content/retro-wave-collection)，CC0；其他既有作者与来源保留在声明中。联系：**user31436@proton.me**。
+Media: [MEDIA_NOTICE.md](MEDIA_NOTICE.md) / `/legal/`. Research music: **Holizna — Retro Wave Collection**, [OpenGameArt](https://opengameart.org/content/retro-wave-collection), CC0. Existing author/source credits remain. Contact: **user31436@proton.me**.
 
-项目文件地图、停点与完整验收入口：[docs/HANDOFF.md](docs/HANDOFF.md)。
+Author-only prompts and handoffs stay locally and are excluded from the current public source and new releases. [Source-publication policy](config/source-publication.json) declares them. Scientific sources/results and original seals remain; the scientific publication subset declares its exclusions separately.

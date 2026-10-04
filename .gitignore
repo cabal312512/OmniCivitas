@@ -54,3 +54,14 @@ config/apps/portal/public/research/asset-manifest.json
 
 # Compiled manuscripts are retained locally, never published.
 research/**/paper/*.pdf
+
+# Author-only inputs and agent handoffs stay on the author's machine.
+**/AGENTS.md
+AI写的提示词.txt
+PROJECT_SPEC.txt
+Prompt.txt
+docs/HANDOFF.md
+historical/front_old/HANDOFF-pre-luminous.md
+research/**/docs/initial-brief.txt
+research/**/docs/user-brief.txt
+research/**/docs/USER_BRIEF*.txt
