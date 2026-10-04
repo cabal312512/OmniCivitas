@@ -1,5 +1,5 @@
 {
-  "status": "ready-to-push",
+  "status": "uploaded-awaiting-actions-release",
   "repository": "https://github.com/cabal312512/OmniCivitas",
   "releaseTag": "v0.1.0",
   "releaseMechanism": "GitHub Actions: .github/workflows/release.yml",
@@ -29,8 +29,11 @@
     "nxCache": "skipped",
     "paperPdfPresent": false
   },
-  "uploaded": false,
+  "uploaded": true,
   "releasePublished": false,
   "preparedAt": "2026-10-04T16:11:14.056Z",
-  "publicArchiveActualMembers": 1270
+  "publicArchiveActualMembers": 1270,
+  "uploadedAt": "2026-10-04T16:13:37.283Z",
+  "initialUploadCommit": "02de45a27feac9f917fae6662498482d7942a920",
+  "releaseUrl": "https://github.com/cabal312512/OmniCivitas/releases/tag/v0.1.0"
 }
