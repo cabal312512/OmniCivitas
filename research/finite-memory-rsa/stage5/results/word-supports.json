@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "protocolSha256": "c4564f462ad464d23235c3d808f8dff92f0032b16bd58eca2a94d47c8a60060c",
+  "results": [
+    {
+      "index": 0,
+      "boundary": "periodic",
+      "upper": "8/9",
+      "meaning": "Parity bound; supremum equality is established separately by the small-switch macro-limit certificate."
+    },
+    {
+      "index": 1,
+      "boundary": "periodic",
+      "upper": "22112834417772/281474976710656",
+      "upperDecimal": 0.0785605693130691,
+      "lowerDecimal": -0.03235929475113012,
+      "intervalWidth": 0.11091986406419921,
+      "expanded": 20000,
+      "pruned": 0,
+      "maxDepth": 23,
+      "file": "data/word-certificate-1.json",
+      "sha256": "08f6cb68f170a0a2d83afe2c8720d16d3ad2fb3b996f8a32530eb65d3e48de59",
+      "comparator": "Unlimited-memory temporal word laws; lower point has at most two states"
+    },
+    {
+      "index": 2,
+      "boundary": "periodic",
+      "upper": "184906561315514/281474976710656",
+      "upperDecimal": 0.6569200696855901,
+      "lowerDecimal": 0.6538888888888889,
+      "intervalWidth": 0.0030311807967012827,
+      "expanded": 20000,
+      "pruned": 95,
+      "maxDepth": 28,
+      "file": "data/word-certificate-2.json",
+      "sha256": "55d6bcc37b0eccd94809b3ec75914cf944a8e4eec077029daf502abe20e10776",
+      "comparator": "Unlimited-memory temporal word laws; lower point has at most two states"
+    },
+    {
+      "index": 3,
+      "boundary": "open",
+      "upper": "8/9",
+      "meaning": "Parity bound; supremum equality is established separately by the small-switch macro-limit certificate."
+    },
+    {
+      "index": 4,
+      "boundary": "open",
+      "upper": "-175929514311563/281474976710656",
+      "upperDecimal": -0.6250271919994184,
+      "lowerDecimal": -0.7411708730529888,
+      "intervalWidth": 0.11614368105357042,
+      "expanded": 20000,
+      "pruned": 0,
+      "maxDepth": 17,
+      "file": "data/word-certificate-4.json",
+      "sha256": "e6b35ab2ff23038910b049757b237977aa5738bb16d645a4eca0dcd2ebf3cecc",
+      "comparator": "Unlimited-memory temporal word laws; lower point has at most two states"
+    },
+    {
+      "index": 5,
+      "boundary": "open",
+      "upper": "-304663487911779/281474976710656",
+      "upperDecimal": -1.0823821409352483,
+      "lowerDecimal": -1.2387162288728588,
+      "intervalWidth": 0.1563340879376105,
+      "expanded": 20000,
+      "pruned": 0,
+      "maxDepth": 17,
+      "file": "data/word-certificate-5.json",
+      "sha256": "001f615d7e79664024feb6bb831339da937b354d9b9d9838fa0b26191a5fe2f2",
+      "comparator": "Unlimited-memory temporal word laws; lower point has at most two states"
+    },
+    {
+      "index": 6,
+      "boundary": "open",
+      "upper": "-433128602124772/281474976710656",
+      "upperDecimal": -1.5387819094484172,
+      "lowerDecimal": -1.7360942109141158,
+      "intervalWidth": 0.19731230146569856,
+      "expanded": 20000,
+      "pruned": 0,
+      "maxDepth": 17,
+      "file": "data/word-certificate-6.json",
+      "sha256": "20531797977f681ffeac2fdaba6e89c533f4df36a9844024cfab821a4709fe5d",
+      "comparator": "Unlimited-memory temporal word laws; lower point has at most two states"
+    },
+    {
+      "index": 7,
+      "boundary": "open",
+      "upper": "186523533717896/281474976710656",
+      "upperDecimal": 0.6626647096577756,
+      "lowerDecimal": 0.6404573289898345,
+      "intervalWidth": 0.022207380667941035,
+      "expanded": 20000,
+      "pruned": 0,
+      "maxDepth": 20,
+      "file": "data/word-certificate-7.json",
+      "sha256": "3e1568507ff0cde8aaa8549f57918c1ebe3fb073f9d231f0d5d0737db26f755f",
+      "comparator": "Unlimited-memory temporal word laws; lower point has at most two states"
+    }
+  ],
+  "mixtureTheorem": "For proper outcome-independent random word laws and integrable reward, Tonelli/disintegration shows J equals the average of proper deterministic-word J values. Thus its supremum equals the proper deterministic-word supremum. Cost infinity has score -Infinity when nu>0."
+}

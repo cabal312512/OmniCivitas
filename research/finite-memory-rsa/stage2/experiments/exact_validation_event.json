@@ -1,0 +1,683 @@
+{
+  "name": "exact_validation_event",
+  "role": "independent exact correctness/kinetics check,not exploration/confirmation",
+  "engine": "event",
+  "strata": [
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30000001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30010001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30020001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30030001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30040001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30050001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30060001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30070001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30080001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30090001,
+      "points": [
+        {
+          "alpha": 0.25,
+          "beta": 0.75
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30100001,
+      "points": [
+        {
+          "alpha": 0.75,
+          "beta": 0.25
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30110001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0.25
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30120001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.25
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30130001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30140001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30150001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30160001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30170001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30180001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30190001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30200001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30210001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30220001,
+      "points": [
+        {
+          "alpha": 0.25,
+          "beta": 0.75
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30230001,
+      "points": [
+        {
+          "alpha": 0.75,
+          "beta": 0.25
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30240001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0.25
+        }
+      ]
+    },
+    {
+      "L": 2,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30250001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.25
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30260001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30270001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30280001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30290001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30300001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30310001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30320001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30330001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30340001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30350001,
+      "points": [
+        {
+          "alpha": 0.25,
+          "beta": 0.75
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30360001,
+      "points": [
+        {
+          "alpha": 0.75,
+          "beta": 0.25
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30370001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0.25
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic",
+      "repetitions": 2048,
+      "seedStart": 30380001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.25
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30390001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30400001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30410001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30420001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30430001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30440001,
+      "points": [
+        {
+          "alpha": 0.5,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30450001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30460001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.5
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30470001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 1
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30480001,
+      "points": [
+        {
+          "alpha": 0.25,
+          "beta": 0.75
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30490001,
+      "points": [
+        {
+          "alpha": 0.75,
+          "beta": 0.25
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30500001,
+      "points": [
+        {
+          "alpha": 0,
+          "beta": 0.25
+        }
+      ]
+    },
+    {
+      "L": 3,
+      "k": 2,
+      "boundary": "open",
+      "repetitions": 2048,
+      "seedStart": 30510001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.25
+        }
+      ]
+    }
+  ]
+}

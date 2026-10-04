@@ -1,0 +1,10 @@
+---
+import Fragments from '../../q7/1.astro';
+import Identity from '../../aaa/Identity.astro';
+import OpticalBench from '../../aaa/lens.astro';
+import {tools,groups,toolLink} from '../../tool/data.mjs';
+import '../../aaa/迷宫.css';
+import '../../aaa/临时修一下.css';
+import '../../tool/2.css';
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>工具 · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class="maze-page tool-page"><Fragments/><OpticalBench/><div class="maze-background" aria-hidden="true"><div class="maze-background-grid"></div></div><header class="maze-header"><a href="/#systems" aria-label="返回主页"><Identity id="tools" compact/></a><span>OCV</span><a href="/maze/" aria-label="迷宫目录">▦</a></header><main class="tool-directory"><h1>工具</h1>{groups.map(group=><section class="maze-panel tool-group route-panel"><h2 class="maze-title">{group}</h2>{tools.filter(tool=>tool.group===group).map((tool,i)=><a href={toolLink(tool)}><span>{tool.title}</span><small>{String(i+1).padStart(2,'0')}</small></a>)}</section>)}</main><a class="maze-exit" href="/#systems" aria-label="退出工具返回主页">↖</a><a class="maze-index" href="/maze/" aria-label="进入迷宫">▦</a></body></html>

@@ -1,0 +1,42 @@
+---
+import './0.css';
+const {home=false}=Astro.props;
+// Stable distribution: each address gets a different slice, not a new random DOM on every render.
+const path=Astro.url.pathname;
+const seed=[...path].reduce((n,c)=>(n*31+c.charCodeAt(0))>>>0,7);
+const ids=home?[0,1,4,7,13,17]:Array.from({length:6},(_,i)=>(seed+i*3)%20);
+const motion={3:'jump',4:'orbit',7:'blink',11:'crawl',13:'rail',14:'spasm',16:'spasm',18:'orbit'};
+const positions=[[6,16],[73,32],[3,48],[54,18],[61,57],[22,63],[37,40],[80,71],[11,34],[8,83],[64,42],[34,69],[28,23],[91,29],[46,55],[75,12],[7,70],[42,76],[69,45],[17,18]];
+const quiet=[2,9,12,14,16];
+---
+<div class="n3-layer" data-n3-layer data-n3-seed={seed}>
+ {ids.map(id=><section class={`n3-item n3-${id}`} data-n3-kind={id} data-n3-motion={motion[id]} aria-hidden={quiet.includes(id)?'true':undefined} style={`--n3-left:${positions[id][0]+(home?0:(seed%5)-2)}vw;--n3-top:${positions[id][1]+(home?0:(seed%7)-3)}vh;--n3-depth:${quiet.includes(id)?2:38+id%5}`}>
+  {id===0&&<><header data-n3-handle tabindex="0" aria-label="移动空白窗口"><span></span><i>−</i><i>□</i><button data-n3-close aria-label="关闭空白窗口">×</button></header><div class="n3-form"><i></i><i></i><div><span></span><span></span><span></span></div><i></i></div></>}
+  {id===1&&<><a class="n3-strip" href="/functions/json/" aria-label="打开 JSON 工具">→</a><div class="n3-input"></div><select aria-label="选项"><option>▾</option><option>1</option><option>2</option></select></>}
+  {id===2&&<><b>▣</b><p>本地</p><div>▸ src<br/>▸ temp<br/>　▸ 1<br/>　▸ 2<br/>▸ bin<br/>▸ data</div><i></i><i></i><i></i></>}
+  {id===3&&<><button class="n3-close-corner" data-n3-close aria-label="关闭控制台">×</button><pre>socket [0]
+00 00 01 ff
+▸ ready
+   ▸ ready
+      ▸ rea_</pre><a href="/functions/base64/">接入 ↗</a></>}
+  {id===4&&<><button class="n3-glass-handle" data-n3-handle aria-label="移动玻璃窗口">⋮</button><div class="n3-glass-disc"></div><i class="n3-glass-line"></i><button data-n3-close class="n3-close-corner" aria-label="关闭玻璃窗口">×</button><a href="/lab/field/surface/" aria-label="打开曲面">↗</a></>}
+  {id===5&&<fieldset><legend>設定</legend><label><input type="checkbox"/>auto</label><br/><label><input type="radio" name={`n3-${seed}`} checked/>1</label><label><input type="radio" name={`n3-${seed}`}/>2</label><p><select aria-label="模式"><option>local</option><option>remote</option></select></p><a href="/incidents/settings/">设置</a><button data-n3-close aria-label="关闭设置框">×</button></fieldset>}
+  {id===6&&<><header data-n3-handle tabindex="0" aria-label="移动表格">名称 <button data-n3-close aria-label="关闭表格">×</button></header><table><thead><tr><th>名称</th><th>类型</th><th>状态</th></tr></thead><tbody><tr><td>default</td><td>01</td><td>−</td></tr><tr><td>output</td><td>0</td><td>✓</td></tr></tbody></table><a href="/functions/csv/">导出 ↗</a></>}
+  {id===7&&<><a href="/functions/image-crop/" aria-label="打开图片裁剪">▧</a><button data-n3-pulse aria-label="刷新工具条">⟳</button><span>│</span><a href="/functions/" aria-label="工具">▦</a><button data-n3-close aria-label="关闭工具条">×</button></>}
+  {id===8&&<><div class="n3-card-back"><span>Options</span><i></i><i></i></div><div class="n3-card-front"><button data-n3-close aria-label="关闭选项窗口">×</button><label>显示 <input type="range" min="0" max="100" value="46" aria-label="显示"/></label><a href="/maze/display/">确定</a></div></>}
+  {id===9&&<><span>OK</span><i></i><small>service / local</small><i></i><span>0%</span><div class="n3-footer-overlap">········································</div></>}
+  {id===10&&<><b>0<span data-n3-count>04</span></b><button data-n3-add aria-label="增加计数">+</button><div class="n3-status-line"></div><button data-n3-close aria-label="关闭计数框">×</button></>}
+  {id===11&&<><div class="n3-load-top" data-n3-handle tabindex="0" aria-label="移动加载框">Loading<button data-n3-close aria-label="关闭加载框">×</button></div><progress aria-label="加载"></progress><div class="n3-scrollbar"><i></i></div></>}
+  {id===12&&<><div></div><div></div><span></span><span></span></>}
+  {id===13&&<><a href="/functions/sqlite/" aria-label="打开数据库">▤</a><a href="/functions/pipeline/" aria-label="打开流程工具">⏣</a><button data-n3-close aria-label="关闭侧栏">×</button><div class="n3-rail-block"></div><a href="/lab/space/orbit/" aria-label="打开轨道">⊙</a></>}
+  {id===14&&<><p>Ð¿Ð¾Ð»ÑŒ　▒▒</p><p>목록 / 00</p><p>Ð¿Ð¾Ð»ÑŒ</p><span>INDEX</span></>}
+  {id===15&&<><header data-n3-handle tabindex="0" aria-label="移动列表窗口">폴더</header><ul><li><input type="checkbox" aria-label="选择第一项"/>default</li><li><input type="checkbox" aria-label="选择第二项"/>default (1)</li><li><input type="checkbox" aria-label="选择第三项"/>new</li></ul><button data-n3-close aria-label="关闭列表">×</button><a href="/functions/file-manifest/">打开</a></>}
+  {id===16&&<><pre>∑ 0x00f1
+&gt; _ / / / /
+   [         ]</pre><i></i></>}
+  {id===17&&<><header data-n3-handle tabindex="0" aria-label="移动对话框">确认<button data-n3-close aria-label="关闭对话框">×</button></header><div class="n3-dialog-lines"><i></i><i></i></div><a class="n3-dialog-submit" href="/functions/calculator/">确定</a><a class="n3-dialog-cancel" href="/maze/cache/">取消</a></>}
+  {id===18&&<><header><span>output</span><button data-n3-close aria-label="关闭图形窗口">×</button></header><svg viewBox="0 0 300 190" aria-hidden="true"><path d="M0 155H300M12 0V190M0 30H300M0 70H300M0 110H300"/><path class="n3-plot-fill" d="M0 155L22 123L40 142L78 54L105 125L153 20L190 102L236 82L274 6L300 122V190H0Z"/><path d="M0 144L90 142L136 60L190 145L300 140"/></svg><a href="/functions/svg-chart/" aria-label="打开 SVG 图表">↗</a></>}
+  {id===19&&<><header data-n3-handle tabindex="0" aria-label="移动文件面板">文件 <button data-n3-close aria-label="关闭文件面板">×</button></header><details open><summary>▸ default</summary><a href="/functions/json-patch/">patch</a><a href="/functions/pivot/">table</a><details><summary>▸ temp</summary><span>0<br/>0<br/>0</span></details></details><div class="n3-empty-list"></div><select aria-label="文件视图"><option>▾</option><option>1</option></select></>}
+ </section>)}
+</div>
+<script>import './a.mjs';</script>

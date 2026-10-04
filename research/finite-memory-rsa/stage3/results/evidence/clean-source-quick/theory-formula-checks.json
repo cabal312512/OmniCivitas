@@ -1,0 +1,184 @@
+[
+  {
+    "name": "persistent-two-step mean = 2/epsilon+2",
+    "expected": {
+      "numerator": "22",
+      "denominator": "1",
+      "value": 22
+    },
+    "actual": {
+      "numerator": "22",
+      "denominator": "1",
+      "value": 22
+    }
+  },
+  {
+    "name": "reset-1-step mean = 2+sum epsilon^-i",
+    "expected": {
+      "numerator": "12",
+      "denominator": "1",
+      "value": 12
+    },
+    "actual": {
+      "numerator": "12",
+      "denominator": "1",
+      "value": 12
+    }
+  },
+  {
+    "name": "reset-2-step mean = 2+sum epsilon^-i",
+    "expected": {
+      "numerator": "112",
+      "denominator": "1",
+      "value": 112
+    },
+    "actual": {
+      "numerator": "112",
+      "denominator": "1",
+      "value": 112
+    }
+  },
+  {
+    "name": "reset-3-step mean = 2+sum epsilon^-i",
+    "expected": {
+      "numerator": "1112",
+      "denominator": "1",
+      "value": 1112
+    },
+    "actual": {
+      "numerator": "1112",
+      "denominator": "1",
+      "value": 1112
+    }
+  },
+  {
+    "name": "rare-entry-s1-r1 E[T]=1+w/p",
+    "expected": {
+      "numerator": "3",
+      "denominator": "2",
+      "value": 1.5
+    },
+    "actual": {
+      "numerator": "3",
+      "denominator": "2",
+      "value": 1.5
+    }
+  },
+  {
+    "name": "rare-entry-s1-r1 E[T^2]=1+2w/p+w(2-p)/p^2",
+    "expected": {
+      "numerator": "23",
+      "denominator": "2",
+      "value": 11.5
+    },
+    "actual": {
+      "numerator": "23",
+      "denominator": "2",
+      "value": 11.5
+    }
+  },
+  {
+    "name": "rare-entry-s2-r2 E[T]=1+w/p",
+    "expected": {
+      "numerator": "3",
+      "denominator": "2",
+      "value": 1.5
+    },
+    "actual": {
+      "numerator": "3",
+      "denominator": "2",
+      "value": 1.5
+    }
+  },
+  {
+    "name": "rare-entry-s2-r2 E[T^2]=1+2w/p+w(2-p)/p^2",
+    "expected": {
+      "numerator": "203",
+      "denominator": "2",
+      "value": 101.5
+    },
+    "actual": {
+      "numerator": "203",
+      "denominator": "2",
+      "value": 101.5
+    }
+  },
+  {
+    "name": "rare-entry-s3-r2 E[T]=1+w/p",
+    "expected": {
+      "numerator": "21",
+      "denominator": "20",
+      "value": 1.05
+    },
+    "actual": {
+      "numerator": "21",
+      "denominator": "20",
+      "value": 1.05
+    }
+  },
+  {
+    "name": "rare-entry-s3-r2 E[T^2]=1+2w/p+w(2-p)/p^2",
+    "expected": {
+      "numerator": "221",
+      "denominator": "20",
+      "value": 11.05
+    },
+    "actual": {
+      "numerator": "221",
+      "denominator": "20",
+      "value": 11.05
+    }
+  },
+  {
+    "name": "rare-entry-s1-r2 E[T]=1+w/p",
+    "expected": {
+      "numerator": "6",
+      "denominator": "1",
+      "value": 6
+    },
+    "actual": {
+      "numerator": "6",
+      "denominator": "1",
+      "value": 6
+    }
+  },
+  {
+    "name": "rare-entry-s1-r2 E[T^2]=1+2w/p+w(2-p)/p^2",
+    "expected": {
+      "numerator": "1006",
+      "denominator": "1",
+      "value": 1006
+    },
+    "actual": {
+      "numerator": "1006",
+      "denominator": "1",
+      "value": 1006
+    }
+  },
+  {
+    "name": "rare-entry-s3-r3 E[T]=1+w/p",
+    "expected": {
+      "numerator": "3",
+      "denominator": "2",
+      "value": 1.5
+    },
+    "actual": {
+      "numerator": "3",
+      "denominator": "2",
+      "value": 1.5
+    }
+  },
+  {
+    "name": "rare-entry-s3-r3 E[T^2]=1+2w/p+w(2-p)/p^2",
+    "expected": {
+      "numerator": "2003",
+      "denominator": "2",
+      "value": 1001.5
+    },
+    "actual": {
+      "numerator": "2003",
+      "denominator": "2",
+      "value": 1001.5
+    }
+  }
+]

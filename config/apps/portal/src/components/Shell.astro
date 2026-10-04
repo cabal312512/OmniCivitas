@@ -1,0 +1,6 @@
+---
+import Fragments from '../q7/1.astro';
+import '../styles/top.css';
+const {title='又一扇门'}=Astro.props;
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{title} · OmniCivitas</title><link rel="stylesheet" href="/bureau.css"/></head><body><Fragments/><a class="corridor-home" href="/">← 回总入口</a><slot/><footer class="bureau-foot"><a href="/corridors/canteen/line/0">厨房</a><a href="/corridors/warehouse/door/inside">收据柜后门</a><a href="/corridors/error/another-floor/tape">地下长廊</a></footer></body></html>

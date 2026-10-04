@@ -1,0 +1,539 @@
+{
+  "revision": "maintenance-css-collision",
+  "acceptedAt": "2026-10-02T13:41:17.349Z",
+  "phase": 3,
+  "nextPhaseAuthorized": false,
+  "previousAcceptance": "docs/reactor-acceptance.json",
+  "browserStats": {
+    "startTime": "2026-10-02T13:36:20.081Z",
+    "duration": 200633.93,
+    "expected": 20,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "passedChecks": [
+    {
+      "title": "Every maze URL is real, directory reaches all 27 pages and home has overlapping cumulative windows",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Original Vue, Svelte and Solid functions really hydrate inside the new materials and windows can be raised",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Existing IndexedDB/Cache/SVG/hash sources survive reload and Worker plus JSON export remain correct",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Lit notifications and real table sorting work, decorative confirmations do not capture essential actions",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Horizontal and unusually long rooms are intentional, keyboard movement and fixed exit survive reduced motion",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Every maze URL is real, directory reaches all 27 pages and home has overlapping cumulative windows",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Original Vue, Svelte and Solid functions really hydrate inside the new materials and windows can be raised",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Existing IndexedDB/Cache/SVG/hash sources survive reload and Worker plus JSON export remain correct",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Lit notifications and real table sorting work, decorative confirmations do not capture essential actions",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Horizontal and unusually long rooms are intentional, keyboard movement and fixed exit survive reduced motion",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Quiet cover keeps the previous field mounted and the new layer reveals real PBR and bloom after entry",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Existing controls command both old and new geometry, pointer moves the new camera and gallery stays usable",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "ScrollTrigger actually expands the assembly; hidden pages stop frames and return still works",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Reduced motion stays still with both layers present and icon navigation remains operable",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "GPU unavailable uses both fallbacks without blocking entry, status or old route redirects",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Quiet cover keeps the previous field mounted and the new layer reveals real PBR and bloom after entry",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Existing controls command both old and new geometry, pointer moves the new camera and gallery stays usable",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "ScrollTrigger actually expands the assembly; hidden pages stop frames and return still works",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Reduced motion stays still with both layers present and icon navigation remains operable",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "GPU unavailable uses both fallbacks without blocking entry, status or old route redirects",
+      "project": "mobile",
+      "status": "passed"
+    }
+  ],
+  "layoutEvidence": {
+    "results": [
+      {
+        "name": "home",
+        "url": "/",
+        "panels": [
+          {
+            "class": "wrong-window window-settings",
+            "rotate": "0deg",
+            "transform": "none"
+          },
+          {
+            "class": "wrong-window window-menu",
+            "rotate": "0deg",
+            "transform": "none"
+          },
+          {
+            "class": "wrong-window window-table",
+            "rotate": "0deg",
+            "transform": "none"
+          },
+          {
+            "class": "wrong-window window-toast",
+            "rotate": "0deg",
+            "transform": "none"
+          },
+          {
+            "class": "wrong-window window-ghost",
+            "rotate": "0deg",
+            "transform": "none"
+          }
+        ],
+        "fragments": 1,
+        "unfinishedCells": 2,
+        "tableContainer": {
+          "x": 417.59375,
+          "y": 730,
+          "width": 708,
+          "height": 112
+        },
+        "tableRow": {
+          "x": 418.59375,
+          "y": 771,
+          "width": 705,
+          "height": 12
+        },
+        "actualTableOverflow": false,
+        "compressedSidebar": {
+          "height": 278,
+          "contentHeight": 278
+        },
+        "blankFrame": {
+          "x": 633.59375,
+          "y": 470,
+          "width": 431,
+          "height": 160
+        },
+        "oldRenderer": "webgl",
+        "newRenderer": "three-webgl2",
+        "screenshot": "F:\\OCVdeps\\runtime\\reports\\maintenance-home.png"
+      },
+      {
+        "name": "settings",
+        "url": "/maze/offices/settings/",
+        "panels": [
+          {
+            "class": "maze-panel feature-panel",
+            "rotate": "0deg",
+            "transform": "none"
+          },
+          {
+            "class": "maze-panel route-panel",
+            "rotate": "0deg",
+            "transform": "none"
+          },
+          {
+            "class": "maze-panel floating-panel",
+            "rotate": "0deg",
+            "transform": "none"
+          }
+        ],
+        "fragments": 1,
+        "unfinishedCells": 2,
+        "tableContainer": {
+          "x": 345.59375,
+          "y": 826.5,
+          "width": 479,
+          "height": 112
+        },
+        "tableRow": {
+          "x": 346.59375,
+          "y": 867.5,
+          "width": 705,
+          "height": 12
+        },
+        "actualTableOverflow": true,
+        "compressedSidebar": {
+          "height": 278,
+          "contentHeight": 278
+        },
+        "blankFrame": {
+          "x": 460.796875,
+          "y": 536.5,
+          "width": 326,
+          "height": 122
+        },
+        "screenshot": "F:\\OCVdeps\\runtime\\reports\\maintenance-settings.png"
+      },
+      {
+        "name": "cache",
+        "url": "/maze/cache/",
+        "panels": [
+          {
+            "class": "maze-panel feature-panel",
+            "rotate": "0deg",
+            "transform": "none"
+          },
+          {
+            "class": "maze-panel route-panel",
+            "rotate": "0deg",
+            "transform": "none"
+          },
+          {
+            "class": "maze-panel floating-panel",
+            "rotate": "0deg",
+            "transform": "none"
+          }
+        ],
+        "fragments": 1,
+        "unfinishedCells": 2,
+        "tableContainer": {
+          "x": 806.390625,
+          "y": 855.5,
+          "width": 193,
+          "height": 112
+        },
+        "tableRow": {
+          "x": 807.390625,
+          "y": 896.5,
+          "width": 705,
+          "height": 12
+        },
+        "actualTableOverflow": true,
+        "compressedSidebar": {
+          "height": 278,
+          "contentHeight": 278
+        },
+        "blankFrame": {
+          "x": 532.796875,
+          "y": 565.5,
+          "width": 440,
+          "height": 160
+        },
+        "screenshot": "F:\\OCVdeps\\runtime\\reports\\maintenance-cache.png"
+      },
+      {
+        "name": "table",
+        "url": "/maze/table/",
+        "panels": [
+          {
+            "class": "maze-panel feature-panel",
+            "rotate": "0deg",
+            "transform": "none"
+          },
+          {
+            "class": "maze-panel route-panel",
+            "rotate": "0deg",
+            "transform": "none"
+          },
+          {
+            "class": "maze-panel floating-panel",
+            "rotate": "0deg",
+            "transform": "none"
+          }
+        ],
+        "fragments": 1,
+        "unfinishedCells": 2,
+        "tableContainer": {
+          "x": 417.59375,
+          "y": 986,
+          "width": 479,
+          "height": 112
+        },
+        "tableRow": {
+          "x": 418.59375,
+          "y": 1027,
+          "width": 705,
+          "height": 12
+        },
+        "actualTableOverflow": true,
+        "compressedSidebar": {
+          "height": 278,
+          "contentHeight": 278
+        },
+        "blankFrame": {
+          "x": 748.796875,
+          "y": 652.5,
+          "width": 326,
+          "height": 160
+        },
+        "screenshot": "F:\\OCVdeps\\runtime\\reports\\maintenance-table.png"
+      }
+    ],
+    "errors": []
+  },
+  "HTTP": [
+    {
+      "url": "/maze/",
+      "status": 200
+    },
+    {
+      "url": "/maze/offices/settings/",
+      "status": 200
+    },
+    {
+      "url": "/maze/offices/settings/backup/",
+      "status": 200
+    },
+    {
+      "url": "/maze/cache/",
+      "status": 200
+    },
+    {
+      "url": "/maze/cache/l1/",
+      "status": 200
+    },
+    {
+      "url": "/maze/cache/l1/l2/",
+      "status": 200
+    },
+    {
+      "url": "/maze/approval/",
+      "status": 200
+    },
+    {
+      "url": "/maze/approval/queue/",
+      "status": 200
+    },
+    {
+      "url": "/maze/approval/queue/0/",
+      "status": 200
+    },
+    {
+      "url": "/maze/display/",
+      "status": 200
+    },
+    {
+      "url": "/maze/display/fold/",
+      "status": 200
+    },
+    {
+      "url": "/maze/display/fold/back/",
+      "status": 200
+    },
+    {
+      "url": "/maze/notifications/",
+      "status": 200
+    },
+    {
+      "url": "/maze/notifications/unread/",
+      "status": 200
+    },
+    {
+      "url": "/maze/notifications/unread/all/",
+      "status": 200
+    },
+    {
+      "url": "/maze/table/",
+      "status": 200
+    },
+    {
+      "url": "/maze/table/header/body/",
+      "status": 200
+    },
+    {
+      "url": "/maze/table/header/body/footer/",
+      "status": 200
+    },
+    {
+      "url": "/maze/empty/",
+      "status": 200
+    },
+    {
+      "url": "/maze/empty/0/",
+      "status": 200
+    },
+    {
+      "url": "/maze/aside/",
+      "status": 200
+    },
+    {
+      "url": "/maze/aside/left/right/",
+      "status": 200
+    },
+    {
+      "url": "/maze/window/",
+      "status": 200
+    },
+    {
+      "url": "/maze/window/under/",
+      "status": 200
+    },
+    {
+      "url": "/maze/route/",
+      "status": 200
+    },
+    {
+      "url": "/maze/route/a/b/c/d/e/",
+      "status": 200
+    },
+    {
+      "url": "/maze/route/a/b/c/d/e/start/",
+      "status": 200
+    }
+  ],
+  "core": [
+    {
+      "service": "edge",
+      "health": "healthy",
+      "limitMiB": 64,
+      "image": "sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94"
+    },
+    {
+      "service": "gateway",
+      "health": "healthy",
+      "limitMiB": 512,
+      "image": "sha256:08562b2af6d5245c7e4ebc2fd31fa7aee62a44ef80e20331faba650b575e1c0b"
+    },
+    {
+      "service": "next",
+      "health": "healthy",
+      "limitMiB": 512,
+      "image": "sha256:2d18bf4ec5bdb253ae8a060507b9a845e0f150a959b9a14ef2985d8672fcb84b"
+    },
+    {
+      "service": "portal",
+      "health": "healthy",
+      "limitMiB": 128,
+      "image": "sha256:ac0c53b69ebab2503aed82d2108ae87785a410084face6fef83a182b88fe8198"
+    },
+    {
+      "service": "postgres",
+      "health": "healthy",
+      "limitMiB": 384,
+      "image": "sha256:ef257d85f76e48da1c64832459b59fcaba1a4dac97bf5d7450c77753542eee94"
+    },
+    {
+      "service": "redis",
+      "health": "healthy",
+      "limitMiB": 128,
+      "image": "sha256:02419de7eddf55aa5bcf49efb74e88fa8d931b4d77c07eff8a6b2144472b6952"
+    }
+  ],
+  "totalCapsMiB": 1728,
+  "builderStopped": true,
+  "builderCapMiB": 3072,
+  "memory": {
+    "sampledAt": "2026-10-02T13:39:23.6845801Z",
+    "group": "maintenance-delivery",
+    "totalWorkingSetMiB": 3340,
+    "processes": [
+      {
+        "name": "com.docker.backend",
+        "id": 6028,
+        "workingSetMiB": 224
+      },
+      {
+        "name": "com.docker.backend",
+        "id": 21520,
+        "workingSetMiB": 45.8
+      },
+      {
+        "name": "com.docker.build",
+        "id": 23840,
+        "workingSetMiB": 35.2
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 2276,
+        "workingSetMiB": 5.7
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 3956,
+        "workingSetMiB": 65.7
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 11788,
+        "workingSetMiB": 26.1
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 13080,
+        "workingSetMiB": 96.8
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 23924,
+        "workingSetMiB": 132.9
+      },
+      {
+        "name": "docker-agent",
+        "id": 23856,
+        "workingSetMiB": 46.1
+      },
+      {
+        "name": "vmmemWSL",
+        "id": 11784,
+        "workingSetMiB": 2661.7
+      }
+    ],
+    "note": "Observed Windows working sets; file cache included, shared pages can be counted twice, not a long-term peak guarantee."
+  },
+  "newDependencies": [],
+  "oldRules": "Retained in 迷宫.css; extra cascade corrects theatrical window rotations without deleting previous code or optical layers.",
+  "scope": "Append broken directory/file panes and unfinished frames; keep quiet cover, all 27 routes and existing completion paths. Phase 4 remains unauthorized.",
+  "limitations": [
+    "Aesthetic judgment is subjective; screenshots are evidence, not a user approval claim.",
+    "Mobile intentional cropping remains.",
+    "Portability clean-clone audit still pending in phase 9."
+  ]
+}

@@ -1,0 +1,23 @@
+---
+import './1.css';
+import Victory from './Victory.astro';
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#69bfff"/><meta http-equiv="Content-Security-Policy" content="object-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self' blob:"/><title></title><link rel="icon" href="/favicon.svg"/></head>
+<body class="aero-game"><main class="aero-window" id="aero-window"><canvas id="world" tabindex="0" aria-label="第一人称游戏画面"></canvas>
+ <div class="aero-vignette" aria-hidden="true"></div><div class="aero-flash" aria-hidden="true"></div><div class="aero-iris" aria-hidden="true"></div>
+ <div class="aero-reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+ <div class="aero-health" role="meter" aria-label="生命值" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><i></i></div>
+ <div class="aero-orbs" aria-hidden="true">{Array.from({length:8},()=> <i></i>)}</div>
+ <a class="aero-exit aero-icon" href="/functions/games/" aria-label="退出游戏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5 6 12l7 7M6 12h15"/></svg></a>
+ <button class="aero-full aero-icon" type="button" data-fullscreen aria-label="切换全屏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3H3v6M15 3h6v6M3 15v6h6m6 0h6v-6"/></svg></button>
+ <button class="aero-mute aero-icon" type="button" data-mute aria-label="静音" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9Zm13-2q7 5 0 10M16 10q3 2 0 4"/><path class="mute-slash" d="m3 3 18 18"/></svg></button>
+ <button class="aero-music aero-icon" type="button" data-music aria-label="背景音乐" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17V6l11-3v11M9 9l11-3"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="15" rx="3" ry="2"/><path class="music-slash" d="m3 3 18 18"/></svg></button>
+ <input class="aero-music-volume" data-music-volume type="range" min="0" max="1" step="0.01" value="0.32" aria-label="背景音乐音量"/>
+ <button class="aero-return aero-icon" type="button" data-return aria-label="返回存档点"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9a8 8 0 1 1-1 7M5 3v6h6"/></svg></button>
+ <button class="aero-save aero-icon" type="button" data-save aria-label="保存进度" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h13l3 3v15H4ZM8 3v7h8V3M8 21v-7h8v7"/></svg></button>
+ <button class="aero-travel aero-icon" type="button" data-travel aria-label="穿过附近光环"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="12" rx="6" ry="10"/><path d="m8 12 9 0m-3-3 3 3-3 3"/></svg></button>
+ <button class="aero-fire aero-icon" type="button" data-fire aria-label="发射"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 1v5m0 12v5M1 12h5m12 0h5"/></svg></button>
+ <div class="aero-touch" aria-hidden="true"><button data-walk="forward" tabindex="-1"><svg viewBox="0 0 24 24"><path d="m5 15 7-7 7 7"/></svg></button><button data-walk="left" tabindex="-1"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button><button data-walk="back" tabindex="-1"><svg viewBox="0 0 24 24"><path d="m5 8 7 7 7-7"/></svg></button><button data-walk="right" tabindex="-1"><svg viewBox="0 0 24 24"><path d="m8 5 7 7-7 7"/></svg></button></div>
+ <Victory />
+ </main><script>import './main.mjs';</script>
+</body></html>

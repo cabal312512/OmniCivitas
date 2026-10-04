@@ -1,0 +1,182 @@
+{
+  "policy": "feedback-4-09956",
+  "temporal": false,
+  "parameters": {
+    "L": 3,
+    "k": 2,
+    "boundary": "open"
+  },
+  "states": 4,
+  "metrics": {
+    "coverage": {
+      "numerator": "13747021",
+      "denominator": "16144128",
+      "value": 0.851518335335299
+    },
+    "absOrder": {
+      "numerator": "22321742441",
+      "denominator": "39391672320",
+      "value": 0.566661457266102
+    },
+    "inverseN": {
+      "numerator": "3788689",
+      "denominator": "14350336",
+      "value": 0.264013957582595
+    },
+    "attemptsPerParticle": {
+      "numerator": "5133615253251",
+      "denominator": "1436468633600",
+      "value": 3.573774695229794
+    }
+  },
+  "law": [
+    {
+      "key": "243:3",
+      "probability": {
+        "numerator": "603315",
+        "denominator": "7175168",
+        "value": 0.084083745495575
+      },
+      "attemptFirstMomentMass": {
+        "numerator": "65038412457",
+        "denominator": "143646863360",
+        "value": 0.452765977172813
+      }
+    },
+    {
+      "key": "255:1",
+      "probability": {
+        "numerator": "424357",
+        "denominator": "36541440",
+        "value": 0.011613034406963
+      },
+      "attemptFirstMomentMass": {
+        "numerator": "25789498789",
+        "denominator": "141667102720",
+        "value": 0.182042960531013
+      }
+    },
+    {
+      "key": "255:3",
+      "probability": {
+        "numerator": "4927476683",
+        "denominator": "26261114880",
+        "value": 0.187633948730511
+      },
+      "attemptFirstMomentMass": {
+        "numerator": "287155457186872283",
+        "denominator": "96211796141260800",
+        "value": 2.98461798556658
+      }
+    },
+    {
+      "key": "414:3",
+      "probability": {
+        "numerator": "603315",
+        "denominator": "7175168",
+        "value": 0.084083745495575
+      },
+      "attemptFirstMomentMass": {
+        "numerator": "65038412457",
+        "denominator": "143646863360",
+        "value": 0.452765977172813
+      }
+    },
+    {
+      "key": "447:1",
+      "probability": {
+        "numerator": "424357",
+        "denominator": "36541440",
+        "value": 0.011613034406963
+      },
+      "attemptFirstMomentMass": {
+        "numerator": "25789498789",
+        "denominator": "141667102720",
+        "value": 0.182042960531013
+      }
+    },
+    {
+      "key": "447:3",
+      "probability": {
+        "numerator": "4927476683",
+        "denominator": "26261114880",
+        "value": 0.187633948730511
+      },
+      "attemptFirstMomentMass": {
+        "numerator": "287155457186872283",
+        "denominator": "96211796141260800",
+        "value": 2.98461798556658
+      }
+    },
+    {
+      "key": "495:2",
+      "probability": {
+        "numerator": "1273271",
+        "denominator": "36541440",
+        "value": 0.034844576458946
+      },
+      "attemptFirstMomentMass": {
+        "numerator": "48807040973",
+        "denominator": "115909447680",
+        "value": 0.421079057401302
+      }
+    },
+    {
+      "key": "507:1",
+      "probability": {
+        "numerator": "424357",
+        "denominator": "36541440",
+        "value": 0.011613034406963
+      },
+      "attemptFirstMomentMass": {
+        "numerator": "25789498789",
+        "denominator": "141667102720",
+        "value": 0.182042960531013
+      }
+    },
+    {
+      "key": "507:3",
+      "probability": {
+        "numerator": "4927476683",
+        "denominator": "26261114880",
+        "value": 0.187633948730511
+      },
+      "attemptFirstMomentMass": {
+        "numerator": "287155457186872283",
+        "denominator": "96211796141260800",
+        "value": 2.98461798556658
+      }
+    },
+    {
+      "key": "510:1",
+      "probability": {
+        "numerator": "424357",
+        "denominator": "36541440",
+        "value": 0.011613034406963
+      },
+      "attemptFirstMomentMass": {
+        "numerator": "25789498789",
+        "denominator": "141667102720",
+        "value": 0.182042960531013
+      }
+    },
+    {
+      "key": "510:3",
+      "probability": {
+        "numerator": "4927476683",
+        "denominator": "26261114880",
+        "value": 0.187633948730511
+      },
+      "attemptFirstMomentMass": {
+        "numerator": "287155457186872283",
+        "denominator": "96211796141260800",
+        "value": 2.98461798556658
+      }
+    }
+  ],
+  "diagnostics": {
+    "physicalCountStates": 118,
+    "distinctFailureBlocks": 16
+  },
+  "convention": "Fixed initial realization, no uncounted persistent H/V coin. E[A/N] from terminal-weighted rewards; only geometric jam, finite absorption required."
+}

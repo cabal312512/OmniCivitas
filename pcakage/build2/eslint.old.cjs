@@ -1,0 +1,1 @@
+module.exports = [{files:['**/only-old-file.js'],languageOptions:{ecmaVersion:2022,sourceType:'script',globals:{window:'readonly'}},rules:{'no-undef':'error','no-dupe-keys':'error','valid-typeof':'error'}}];

@@ -1,0 +1,55 @@
+{
+  "name": "omnicivitas",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@10.34.6",
+  "engines": {
+    "node": ">=24.14.1 <25"
+  },
+  "scripts": {
+    "preinstall": "node scripts/guard-paths.mjs",
+    "ledger:sync": "node scripts/generate-ledgers.mjs",
+    "ledger:check": "node scripts/check-ledgers.mjs",
+    "build": "nx run-many -t build --parallel=1",
+    "test": "vitest run --maxWorkers=1 && node --test tests/research-display.test.mjs",
+    "test:e2e": "playwright test",
+    "civilization:dev": "node scripts/local-runtime.mjs dev",
+    "civilization:serve": "node scripts/local-runtime.mjs serve",
+    "civilization:doctor": "node scripts/doctor.mjs",
+    "civilization:docker": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Start-OcvDocker.ps1",
+    "civilization:core": "node scripts/compose-control.mjs core",
+    "civilization:maximum": "node scripts/compose-control.mjs maximum",
+    "civilization:stop": "node scripts/compose-control.mjs stop",
+    "civilization:status": "node scripts/compose-control.mjs status",
+    "civilization:verify": "node scripts/verify-runtime.mjs",
+    "civilization:verify-storage": "node scripts/verify-core-storage.mjs",
+    "civilization:databases": "node scripts/compose-control.mjs databases",
+    "civilization:messaging": "node scripts/compose-control.mjs messaging",
+    "civilization:monitoring": "node scripts/compose-control.mjs monitoring",
+    "civilization:legacy": "node scripts/compose-control.mjs legacy",
+    "civilization:search": "node scripts/compose-control.mjs search",
+    "civilization:batch": "node scripts/compose-control.mjs batch",
+    "civilization:verify-phase2": "node scripts/verify-phase2.mjs",
+    "dev": "node scripts/dev-server.mjs",
+    "test:jest": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config tests/frameworks/jest.config.cjs --runInBand",
+    "test:cypress": "cypress run --config-file tests/frameworks/cypress.config.cjs"
+  },
+  "devDependencies": {
+    "@babel/core": "8.0.6",
+    "@babel/preset-env": "8.0.6",
+    "@playwright/test": "1.63.0",
+    "cypress": "16.1.1",
+    "eslint": "10.11.0",
+    "gulp": "5.0.1",
+    "jest": "30.5.2",
+    "nx": "23.2.1",
+    "prettier": "3.9.9",
+    "stylelint": "17.16.0",
+    "typescript": "5.9.3",
+    "vitest": "5.0.3",
+    "webpack": "5.111.1"
+  },
+  "dependencies": {
+    "yaml": "2.9.1"
+  }
+}

@@ -1,0 +1,13 @@
+---
+import '../report/2.css';
+const {id='main',compact=false}=Astro.props;
+---
+<svg class:list={['identity-symbol',{'compact-symbol':compact}]} viewBox="0 0 440 310" role="img" aria-label="OmniCivitas 标志">
+ <defs><linearGradient id={`${id}-metal`} x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff"/><stop offset=".21" stop-color="#d7e4ed"/><stop offset=".45" stop-color="#8ea7ba"/><stop offset=".52" stop-color="#f9fdff"/><stop offset=".75" stop-color="#c4d2de"/><stop offset="1" stop-color="#90acc4"/></linearGradient><linearGradient id={`${id}-edge`} x2="1" y2="1"><stop stop-color="#94adc4"/><stop offset=".5" stop-color="#e8f7ff"/><stop offset="1" stop-color="#537d9f"/></linearGradient><filter id={`${id}-shadow`} x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="15" stdDeviation="9" flood-color="#5885aa" flood-opacity=".22"/></filter></defs>
+ <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter={`url(#${id}-shadow)`}>
+  <g transform="translate(0 7)" stroke={`url(#${id}-edge)`} stroke-width="39"><circle cx="155" cy="154" r="88"/><path d="M326 95a88 88 0 1 0 0 118"/><path d="M182 82l69 149 70-149"/></g>
+  <g stroke={`url(#${id}-metal)`} stroke-width="35"><circle cx="155" cy="154" r="88"/><path d="M326 95a88 88 0 1 0 0 118"/><path d="M182 82l69 149 70-149"/></g>
+  <g stroke="#fff" stroke-width="1.1" opacity=".8"><path d="M70 150a84 84 0 0 1 131-68"/><path d="M324 91a87 87 0 0 0-137 46"/><path d="M183 82l69 149"/></g>
+ </g>
+</svg>
+<script>import {ensureCivilizationMeasurement} from '../../../../../pinia/p.mjs';import {ensureAwards} from '../report/award.js';ensureCivilizationMeasurement();ensureAwards();</script>

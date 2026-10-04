@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "models": [{"epsilon":0.05,"levels":3},{"epsilon":0.02,"levels":3}],
+  "particles": 1000,
+  "batches": 32,
+  "naiveTrialsPerBatch": 4000,
+  "seedStart": 110000001,
+  "seedAllocation": "seedStart + modelIndex*100000 + methodIndex*10000 + batchIndex",
+  "truthForValidationOnly": "Entry probability=epsilon^3; conditional dwell=Geometric(epsilon^3), so exact mean tail contribution=1. The splitting algorithm never receives the entry probability.",
+  "methods": ["original-law naive", "unknown-entry fixed-effort splitting"],
+  "inference": "Implementation diagnostic only; no packing simulation, no p-values or claims from approximate batch confidence intervals",
+  "cost": "Nominal simulator-call budgets similar; actual simulator calls and extra resampling draws recorded. No equal wall-time claim.",
+  "numericalLimit": "xoshiro128** midpoint32 uniforms and double inverse-geometric sampling; unbiasedness and variance proofs apply to the ideal oracle law."
+}

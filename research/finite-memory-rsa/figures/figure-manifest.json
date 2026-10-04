@@ -1,0 +1,124 @@
+{
+  "source": "processed summaries only; no simulation or controller selection",
+  "inputAuditStatus": "complete",
+  "inputAuditErrors": [],
+  "figures": [
+    {
+      "name": "atlas-coverage",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "All 64 numerical controller IDs. Missing cells remain blank. Exploratory point estimates; see summary.csv for uncertainty."
+    },
+    {
+      "name": "atlas-deadlock",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "All 64 numerical controller IDs. Missing cells remain blank. Exploratory point estimates; see summary.csv for uncertainty."
+    },
+    {
+      "name": "atlas-absolute-order",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "All 64 numerical controller IDs. Missing cells remain blank. Exploratory point estimates; see summary.csv for uncertainty."
+    },
+    {
+      "name": "coverage-order-tradeoff",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "Exploratory terminal coverage versus mean absolute order. Dotted line is the prespecified isotropy threshold, not a significance decision."
+    },
+    {
+      "name": "signed-order-cancellation",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "Points near signed order zero but absolute order large are not isotropic. No averaging over controller IDs is performed."
+    },
+    {
+      "name": "finite-size",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "Actual sizes with pointwise Student-t 95% intervals. Connecting lines guide the eye; no thermodynamic-limit scaling law or fit is imposed."
+    },
+    {
+      "name": "holdout-coverage-order",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "All executed holdout classes and nine fixed IID biases, not a selected winner. Bars are pointwise t 95% CIs; low signed order is not used as isotropy. Confirmatory claims use comparisons.json, not this sample Pareto view."
+    },
+    {
+      "name": "holdout-effects-35-periodic",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "Fixed holdout family. Bars are Bonferroni simultaneous t intervals; circles denote Holm rejection, squares nonrejection, gray incomplete. Rejection alone does not establish isotropy or positive benefit."
+    },
+    {
+      "name": "holdout-effects-random-0.5-periodic",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "Fixed holdout family. Bars are Bonferroni simultaneous t intervals; circles denote Holm rejection, squares nonrejection, gray incomplete. Rejection alone does not establish isotropy or positive benefit."
+    },
+    {
+      "name": "outcome-conditioned-switching",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "Actual direct trajectories, 16 independent runs per cell, pointwise t CIs. Constant switching35 has zero conditional information; 38 and41 react oppositely to outcomes. IID plug-in information has positive finite-sample bias; not entropy rate or causal information."
+    },
+    {
+      "name": "external-rescue",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "Post-primary exploratory observer intervention, n256 each. Paired gain uses all runs, including geometric jams with zero gain. The observer sees terminal status and restarts with fair coin; this is not an admissible finite-memory controller or a primary-family benefit."
+    },
+    {
+      "name": "rrsa-reference",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "Exploratory nearest stochastic RRSA extension with independent seeds, not added to the sealed36 hypothesis family. Mean t CIs and deadlock Wilson CIs. Retaining a failed orientation can deadlock with legal opposite placements in this precise model."
+    },
+    {
+      "name": "snapshots-k4",
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "description": "Fixed-seed direct-engine examples, k=4, L=32, seed=500001. 0/1/2 occupancy checked against coverage. Individual examples are illustrative, not statistical evidence."
+    }
+  ]
+}

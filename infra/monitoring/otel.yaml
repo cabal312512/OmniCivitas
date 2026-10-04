@@ -1,0 +1,29 @@
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: 0.0.0.0:4318
+extensions:
+  health_check:
+    endpoint: 0.0.0.0:13133
+processors:
+  memory_limiter:
+    check_interval: 1s
+    limit_mib: 80
+    spike_limit_mib: 16
+  batch:
+    send_batch_size: 32
+    send_batch_max_size: 64
+    timeout: 1s
+exporters:
+  debug:
+    verbosity: detailed
+    sampling_initial: 30
+    sampling_thereafter: 100
+service:
+  extensions: [health_check]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [debug]

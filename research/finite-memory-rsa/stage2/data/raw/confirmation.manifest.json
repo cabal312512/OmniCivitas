@@ -1,0 +1,335 @@
+{
+  "configuration": {
+    "name": "confirmation",
+    "engine": "event",
+    "boundary": "periodic",
+    "strata": [
+      {
+        "L": 64,
+        "k": 4,
+        "repetitions": 1024,
+        "seedStart": 40000001,
+        "points": [
+          {
+            "alpha": 0,
+            "beta": 0,
+            "name": "a0-b0"
+          },
+          {
+            "alpha": 0.05,
+            "beta": 0.05,
+            "name": "a0.05-b0.05"
+          },
+          {
+            "alpha": 0.1,
+            "beta": 0.1,
+            "name": "a0.1-b0.1"
+          },
+          {
+            "alpha": 0.15,
+            "beta": 0.15,
+            "name": "a0.15-b0.15"
+          },
+          {
+            "alpha": 0.2,
+            "beta": 0.2,
+            "name": "a0.2-b0.2"
+          },
+          {
+            "alpha": 0.25,
+            "beta": 0.25,
+            "name": "a0.25-b0.25"
+          },
+          {
+            "alpha": 0.3,
+            "beta": 0.3,
+            "name": "a0.3-b0.3"
+          },
+          {
+            "alpha": 0.35,
+            "beta": 0.35,
+            "name": "a0.35-b0.35"
+          },
+          {
+            "alpha": 0.4,
+            "beta": 0.4,
+            "name": "a0.4-b0.4"
+          },
+          {
+            "alpha": 0.45,
+            "beta": 0.45,
+            "name": "a0.45-b0.45"
+          },
+          {
+            "alpha": 0.5,
+            "beta": 0.5,
+            "name": "a0.5-b0.5"
+          },
+          {
+            "alpha": 0.55,
+            "beta": 0.55,
+            "name": "a0.55-b0.55"
+          },
+          {
+            "alpha": 0.6,
+            "beta": 0.6,
+            "name": "a0.6-b0.6"
+          },
+          {
+            "alpha": 0.65,
+            "beta": 0.65,
+            "name": "a0.65-b0.65"
+          },
+          {
+            "alpha": 0.7,
+            "beta": 0.7,
+            "name": "a0.7-b0.7"
+          },
+          {
+            "alpha": 0.75,
+            "beta": 0.75,
+            "name": "a0.75-b0.75"
+          },
+          {
+            "alpha": 0.8,
+            "beta": 0.8,
+            "name": "a0.8-b0.8"
+          },
+          {
+            "alpha": 0.85,
+            "beta": 0.85,
+            "name": "a0.85-b0.85"
+          },
+          {
+            "alpha": 0.9,
+            "beta": 0.9,
+            "name": "a0.9-b0.9"
+          },
+          {
+            "alpha": 0.95,
+            "beta": 0.95,
+            "name": "a0.95-b0.95"
+          },
+          {
+            "alpha": 1,
+            "beta": 1,
+            "name": "a1-b1"
+          },
+          {
+            "alpha": 1,
+            "beta": 0.001,
+            "name": "a1-b0.001"
+          },
+          {
+            "alpha": 1,
+            "beta": 0.05,
+            "name": "a1-b0.05"
+          },
+          {
+            "alpha": 0.02,
+            "beta": 1,
+            "name": "a0.02-b1"
+          },
+          {
+            "alpha": 0.85,
+            "beta": 0.5,
+            "name": "a0.85-b0.5"
+          },
+          {
+            "alpha": 0.017899178761415512,
+            "beta": 0.017899178761415512,
+            "name": "proposal-k4-a1-b0.001"
+          },
+          {
+            "alpha": 0.06911854941535503,
+            "beta": 0.06911854941535503,
+            "name": "proposal-k4-a1-b0.05"
+          },
+          {
+            "alpha": 0.9798831438484163,
+            "beta": 0.9798831438484163,
+            "name": "proposal-k4-a0.02-b1"
+          },
+          {
+            "alpha": 0.5072324012942675,
+            "beta": 0.5072324012942675,
+            "name": "proposal-k4-a0.85-b0.5"
+          }
+        ]
+      },
+      {
+        "L": 64,
+        "k": 8,
+        "repetitions": 1024,
+        "seedStart": 40100001,
+        "points": [
+          {
+            "alpha": 0,
+            "beta": 0,
+            "name": "a0-b0"
+          },
+          {
+            "alpha": 0.05,
+            "beta": 0.05,
+            "name": "a0.05-b0.05"
+          },
+          {
+            "alpha": 0.1,
+            "beta": 0.1,
+            "name": "a0.1-b0.1"
+          },
+          {
+            "alpha": 0.15,
+            "beta": 0.15,
+            "name": "a0.15-b0.15"
+          },
+          {
+            "alpha": 0.2,
+            "beta": 0.2,
+            "name": "a0.2-b0.2"
+          },
+          {
+            "alpha": 0.25,
+            "beta": 0.25,
+            "name": "a0.25-b0.25"
+          },
+          {
+            "alpha": 0.3,
+            "beta": 0.3,
+            "name": "a0.3-b0.3"
+          },
+          {
+            "alpha": 0.35,
+            "beta": 0.35,
+            "name": "a0.35-b0.35"
+          },
+          {
+            "alpha": 0.4,
+            "beta": 0.4,
+            "name": "a0.4-b0.4"
+          },
+          {
+            "alpha": 0.45,
+            "beta": 0.45,
+            "name": "a0.45-b0.45"
+          },
+          {
+            "alpha": 0.5,
+            "beta": 0.5,
+            "name": "a0.5-b0.5"
+          },
+          {
+            "alpha": 0.55,
+            "beta": 0.55,
+            "name": "a0.55-b0.55"
+          },
+          {
+            "alpha": 0.6,
+            "beta": 0.6,
+            "name": "a0.6-b0.6"
+          },
+          {
+            "alpha": 0.65,
+            "beta": 0.65,
+            "name": "a0.65-b0.65"
+          },
+          {
+            "alpha": 0.7,
+            "beta": 0.7,
+            "name": "a0.7-b0.7"
+          },
+          {
+            "alpha": 0.75,
+            "beta": 0.75,
+            "name": "a0.75-b0.75"
+          },
+          {
+            "alpha": 0.8,
+            "beta": 0.8,
+            "name": "a0.8-b0.8"
+          },
+          {
+            "alpha": 0.85,
+            "beta": 0.85,
+            "name": "a0.85-b0.85"
+          },
+          {
+            "alpha": 0.9,
+            "beta": 0.9,
+            "name": "a0.9-b0.9"
+          },
+          {
+            "alpha": 0.95,
+            "beta": 0.95,
+            "name": "a0.95-b0.95"
+          },
+          {
+            "alpha": 1,
+            "beta": 1,
+            "name": "a1-b1"
+          },
+          {
+            "alpha": 1,
+            "beta": 0.001,
+            "name": "a1-b0.001"
+          },
+          {
+            "alpha": 1,
+            "beta": 0.05,
+            "name": "a1-b0.05"
+          },
+          {
+            "alpha": 0.02,
+            "beta": 1,
+            "name": "a0.02-b1"
+          },
+          {
+            "alpha": 0.85,
+            "beta": 0.5,
+            "name": "a0.85-b0.5"
+          },
+          {
+            "alpha": 0.01116871368486295,
+            "beta": 0.01116871368486295,
+            "name": "proposal-k8-a1-b0.001"
+          },
+          {
+            "alpha": 0.06146482435046821,
+            "beta": 0.06146482435046821,
+            "name": "proposal-k8-a1-b0.05"
+          },
+          {
+            "alpha": 0.987607659064015,
+            "beta": 0.987607659064015,
+            "name": "proposal-k8-a0.02-b1"
+          },
+          {
+            "alpha": 0.5051811708855898,
+            "beta": 0.5051811708855898,
+            "name": "proposal-k8-a0.85-b0.5"
+          }
+        ]
+      }
+    ]
+  },
+  "startedAt": "2026-10-03T19:41:14.219Z",
+  "finishedAt": "2026-10-03T19:42:12.285Z",
+  "runs": 59392,
+  "raw": "data/raw/confirmation.csv",
+  "sha256": "fb45f85117aa38b5a381e9f8b2124b3500f0fd1d549451d2d39258a6e54449bd",
+  "histograms": {
+    "raw": "data/raw/confirmation.runs.jsonl",
+    "sha256": "2b3a0645864e7cb233ef7c090e6685068f291bec82a277ddf1dee7573b8e8719"
+  },
+  "runtime": {
+    "node": "v24.14.1",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "sourceSha256": {
+    "src/stochastic.mjs": "49586d0fadb4ad0b5d93c1537c4025a17b9c1b121b5cbfab264934329f088c26",
+    "scripts/run-experiment.mjs": "03006c00e56b7a2f9fe6121d33eff2975946dffe63673a7b691e0c3ec6893498",
+    "../src/lattice.mjs": "dfb22252873f7ee861d24fc35b32f67e47785466b9ee8096c063e4aec041f029",
+    "../src/rng.mjs": "a0af386efd47f97c85eda77fbe7ee175af21dc7d828411004486298d5153aecc"
+  }
+}

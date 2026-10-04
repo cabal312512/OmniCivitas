@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "startedAtUTC": "2026-10-04T04:15:44.315Z",
+  "cases": [
+    {
+      "s": 1,
+      "r": 1,
+      "epsilon": 0.01,
+      "id": "s1-r1-e0.01",
+      "index": 0,
+      "c": 0.5
+    },
+    {
+      "s": 1,
+      "r": 1,
+      "epsilon": 0.0001,
+      "id": "s1-r1-e0.0001",
+      "index": 1,
+      "c": 0.5
+    },
+    {
+      "s": 1,
+      "r": 1,
+      "epsilon": 0.000001,
+      "id": "s1-r1-e0.000001",
+      "index": 2,
+      "c": 0.5
+    },
+    {
+      "s": 2,
+      "r": 2,
+      "epsilon": 0.1,
+      "id": "s2-r2-e0.1",
+      "index": 3,
+      "c": 0.5
+    },
+    {
+      "s": 2,
+      "r": 2,
+      "epsilon": 0.01,
+      "id": "s2-r2-e0.01",
+      "index": 4,
+      "c": 0.5
+    },
+    {
+      "s": 2,
+      "r": 2,
+      "epsilon": 0.001,
+      "id": "s2-r2-e0.001",
+      "index": 5,
+      "c": 0.5
+    },
+    {
+      "s": 3,
+      "r": 3,
+      "epsilon": 0.1,
+      "id": "s3-r3-e0.1",
+      "index": 6,
+      "c": 0.5
+    },
+    {
+      "s": 3,
+      "r": 3,
+      "epsilon": 0.01,
+      "id": "s3-r3-e0.01",
+      "index": 7,
+      "c": 0.5
+    },
+    {
+      "s": 3,
+      "r": 2,
+      "epsilon": 0.01,
+      "id": "s3-r2-e0.01",
+      "index": 8,
+      "c": 0.5
+    },
+    {
+      "s": 1,
+      "r": 2,
+      "epsilon": 0.001,
+      "id": "s1-r2-e0.001",
+      "index": 9,
+      "c": 0.5
+    }
+  ],
+  "methods": [
+    "naive",
+    "conditional"
+  ],
+  "batches": 100,
+  "drawsPerBatch": 1000,
+  "seedStart": 70000001,
+  "seedAllocation": "seed=70000001+caseIndex*100000+methodIndex*10000+batchIndex; one independent seeded stream per batch; draw index identifies each sample.",
+  "model": "T=1+B*G; B~Bernoulli(w=c*epsilon^s), G~Geometric(p=epsilon^r) on {1,2,...}, independent.",
+  "estimators": {
+    "naive": "Draw B and, only when B=1, G; observe original T.",
+    "conditional": "Draw G from the original conditional dwell law and use Y=1+w*G=E[T|G]. Known entry probability is integrated, not estimated."
+  },
+  "inference": "This is a fixed-model implementation/measurement diagnostic, not RSA packing confirmation. Each batch mean is an independent replicate. Pointwise t intervals may be invalid for unobserved rare tails; no new hypothesis tests are performed.",
+  "precisionTarget": {
+    "relativeError": 0.1,
+    "confidence": 0.95,
+    "chebyshev": "Known variance / (.05*.1^2*targetMean^2); a sufficient bound, not an exact sample-complexity optimum."
+  },
+  "numericalLimits": "32-bit midpoint uniform resolution; double-precision inverse geometric sampler; no arbitrary-precision or literal individual-transition timing claim.",
+  "sources": [
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/stage3/scripts/rare-event-study.mjs",
+      "sha256": "c86d806e2ae2a79e7a596d2576f68a6f50c2ed2b4631983d2c74ffd55ec6074d"
+    },
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/stage3/src/phase-type.mjs",
+      "sha256": "90d13720e6718aeae6e4d5d33068ef4493cc1b2c1b7beea6d3f604773b870949"
+    },
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/src/rng.mjs",
+      "sha256": "a0af386efd47f97c85eda77fbe7ee175af21dc7d828411004486298d5153aecc"
+    },
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/src/exact.mjs",
+      "sha256": "0adde531dfee6a04692b04c3208ff528f8bfb01936078b2932371d20dddb10af"
+    },
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/src/controllers.mjs",
+      "sha256": "6e31d6452c8bca9e78e651bb91ddfc06b9665bd3b33f59346a55499e0a301ba8"
+    },
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/analysis/summarize.mjs",
+      "sha256": "b97040d661e77d8169918881fd5d0f4073c7f2cc8bd506de049be2b6e2b2bafb"
+    }
+  ]
+}

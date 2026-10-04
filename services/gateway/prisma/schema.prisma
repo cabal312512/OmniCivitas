@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+  output = "../node_modules/.ocv-prisma"
+  engineType = "client"
+}
+datasource db {
+  provider = "postgresql"
+  schemas = ["ocv_prisma"]
+}
+model IdentityMap {
+  id Int @id @default(autoincrement())
+  rootId String @unique @map("root_id") @db.Uuid
+  foreignUuid String @unique @map("foreign_uuid") @db.Uuid
+  shortId String @unique @map("short_id") @db.VarChar(32)
+  cacheId String @unique @map("cache_id") @db.VarChar(32)
+  productName String @map("product_name") @db.VarChar(200)
+  isoTime String @map("iso_time") @db.VarChar(40)
+  createdAt DateTime @default(now()) @map("created_at")
+  @@map("identity_map")
+  @@schema("ocv_prisma")
+}

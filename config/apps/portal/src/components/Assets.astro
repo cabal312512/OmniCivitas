@@ -1,0 +1,10 @@
+---
+import assets from '../data/路过的十六位.json';
+const {id, class:className='', caption='', eager=false, style=''}=Astro.props;
+const asset=assets.find(a=>a.id===id);
+if(!asset)throw new Error('Unknown visitor '+id);
+---
+<figure class:list={['meme-asset',className]} style={style} data-meme-id={asset.id}>
+  <span class="meme-media" data-animated={asset.animated?'true':undefined}><img src={asset.src} width={asset.width} height={asset.height} alt={asset.alt} loading={eager?'eager':'lazy'} decoding="async"/></span>
+  {caption&&<figcaption>{caption}</figcaption>}
+</figure>

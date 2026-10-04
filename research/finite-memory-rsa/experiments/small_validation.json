@@ -1,0 +1,6 @@
+{
+ "name":"small_validation",
+ "purpose":"Independent Monte Carlo against complete rational absorbing distributions, including residual placements and both boundaries.",
+ "sizes":[2,3],"lengths":[2],"boundaries":["periodic","open"],
+ "controllers":[0,33,35,38,41,43,46,"random-0.5"],"repetitions":4096,"seedStart":400001,"engine":"event"
+}

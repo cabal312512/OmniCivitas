@@ -1,0 +1,23 @@
+{
+  "verifiedAtUTC": "2026-10-04T04:03:50.390Z",
+  "groups": [
+    {
+      "name": "Stage I",
+      "files": 165,
+      "manifestSha256": "7d676ec02885ac56e9530b9e524c62659423b75242f412d8e5c47b766ad5c06c",
+      "failures": []
+    },
+    {
+      "name": "Stage II",
+      "files": 368,
+      "manifestSha256": "32a608f0422bb05733b4a7971a922fcca3a2e9aea3ff681fcaef3e17f3ea43f3",
+      "failures": []
+    },
+    {
+      "name": "Website frozen9",
+      "files": 52,
+      "manifestSha256": "1875d64d492124257579e5d262e4f11edfcf6e625a37d75f7f37c40445820032",
+      "failures": []
+    }
+  ]
+}

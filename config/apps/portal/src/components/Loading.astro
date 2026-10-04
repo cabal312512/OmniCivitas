@@ -1,0 +1,22 @@
+---
+import Meme from './Assets.astro';
+---
+<section class="launch-bay" aria-labelledby="launch-title">
+  <div class="launch-grid" aria-hidden="true"></div>
+  <div class="launch-copy"><p class="eyebrow"><i></i> CIVILIZATION ENGINE / EXP.003</p><h2 id="launch-title">System loading<br/><span>过头了。</span><sup>®</sup></h2><p class="launch-sub">什么都有。正事另说。</p><div class="launch-actions"><a class="primary-flight" href="#districts">进入现场 <span>↘</span></a><a class="quiet-flight" href="/corridors/error/another-floor/tape">走错一层 ↗</a></div><div class="launch-coordinates"><span>31° N / 不明方向</span><span>↑ 此处没有天空</span></div></div>
+  <div class="gravity-stage" data-gravity-stage>
+    <div class="stage-cross cross-a" aria-hidden="true">+</div><div class="stage-cross cross-b" aria-hidden="true">+</div>
+    <div class="orbit-label">OCV—CORE<br/><span>UNNECESSARY / LIVE</span></div>
+    <div class="orb-fallback" aria-hidden="true"><i></i><i></i><i></i></div><canvas id="civilization-core" aria-label="随指针转动的金属环形体"></canvas>
+    <div class="orbital-ellipse orbit-one" aria-hidden="true"></div><div class="orbital-ellipse orbit-two" aria-hidden="true"></div>
+    <div class="orbital-word" aria-hidden="true">NOTHING REALLY MATTERS · EVERYTHING IS RUNNING · </div>
+    <Meme id={1} class="satellite cat-satellite" eager caption="观察员 01"/>
+    <Meme id={2} class="satellite flower-satellite" eager/>
+    <Meme id={4} class="satellite greeting-satellite" eager/>
+    <Meme id={15} class="satellite face-satellite" eager/>
+    <Meme id={16} class="satellite coin-satellite" eager/>
+    <div class="stage-console"><span><i class="live-dot"></i> LOCAL RENDER</span><b><output id="scene-fps">—</output> <small>FPS</small></b><svg viewBox="0 0 140 24" aria-label="实际渲染帧间隔"><polyline id="frame-wave" points="0,12 140,12"/></svg></div>
+  </div>
+  <div class="gravity-controls"><label for="local-gravity">重力 <output id="gravity-value">1.0</output></label><input id="local-gravity" type="range" min="0.3" max="1.8" value="1" step="0.1"/><button id="throw-civilization" type="button">Drop packet <span>↗</span></button><span class="throw-counter">在逃 <output id="airborne-count">0</output> / 8</span></div>
+  <div class="flight-ticker" aria-hidden="true"><div>{Array.from({length:4},()=> <span>ALL SYSTEMS <b>UNNECESSARY</b> <i>✳</i> 稼働中 <i>↗</i> なんで？ <i>✳</i> EST. TOMORROW <i>↗</i></span>)}</div></div>
+</section>

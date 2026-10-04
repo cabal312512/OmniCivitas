@@ -1,0 +1,1018 @@
+{
+  "id": null,
+  "uid": "ocv-cold-rice",
+  "title": "全球全链路土豆签收态势暨白饭凉透了监测大屏",
+  "schemaVersion": 41,
+  "version": 1,
+  "refresh": "5s",
+  "panels": [
+    {
+      "id": 1,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "第2次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 0,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 5,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "第5次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 5,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 5,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 5,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "第8次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 10,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 10,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 10,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "第11次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 10,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 15,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 15,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "第14次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 15,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 15,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 20,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "第17次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 20,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 20,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 20,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "第20次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 25,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 25,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 25,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "第23次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 25,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 30,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 30,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "第26次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 30,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 30,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 35,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "第29次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 35,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 35,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 35,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "title": "第32次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 40,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 40,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 40,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "title": "第35次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 40,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 45,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 45,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "title": "第38次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 45,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 45,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 50,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "title": "第41次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 50,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 50,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 50,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "title": "第44次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 55,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "title": "饭呢",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 55,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "title": "收到：没事",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 55,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_unnecessary_steps_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "title": "第47次确认锅还在",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 55,
+        "w": 6,
+        "h": 5
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "cold-rice"
+      },
+      "targets": [
+        {
+          "expr": "ocv_pebble_weight",
+          "refId": "A"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "configuration": {
+    "name": "large_size",
+    "role": "prespecified-size-study-not-pilot-winner",
+    "engine": "event",
+    "boundary": "periodic",
+    "initial": "fair",
+    "points": [
+      {
+        "alpha": 0,
+        "beta": 1,
+        "name": "policy41"
+      },
+      {
+        "alpha": 0.5,
+        "beta": 0.5,
+        "name": "fair"
+      },
+      {
+        "alpha": 1,
+        "beta": 1,
+        "name": "alternating"
+      }
+    ],
+    "strata": [
+      {
+        "L": 128,
+        "k": 4,
+        "repetitions": 128,
+        "seedStart": 20000001
+      },
+      {
+        "L": 128,
+        "k": 8,
+        "repetitions": 128,
+        "seedStart": 20100001
+      },
+      {
+        "L": 256,
+        "k": 4,
+        "repetitions": 128,
+        "seedStart": 20200001
+      },
+      {
+        "L": 256,
+        "k": 8,
+        "repetitions": 128,
+        "seedStart": 20300001
+      },
+      {
+        "L": 512,
+        "k": 4,
+        "repetitions": 128,
+        "seedStart": 20400001
+      },
+      {
+        "L": 512,
+        "k": 8,
+        "repetitions": 128,
+        "seedStart": 20500001
+      },
+      {
+        "L": 1024,
+        "k": 4,
+        "repetitions": 64,
+        "seedStart": 20600001
+      },
+      {
+        "L": 1024,
+        "k": 8,
+        "repetitions": 64,
+        "seedStart": 20700001
+      },
+      {
+        "L": 2048,
+        "k": 4,
+        "repetitions": 64,
+        "seedStart": 20800001
+      },
+      {
+        "L": 2048,
+        "k": 8,
+        "repetitions": 64,
+        "seedStart": 20900001
+      }
+    ]
+  },
+  "startedAt": "2026-10-03T19:14:32.314Z",
+  "finishedAt": "2026-10-03T19:23:52.175Z",
+  "runs": 3072,
+  "raw": "data/raw/large_size.csv",
+  "sha256": "c2770a8da1a2055a014217d002265b0f4217fec3932c08393a1fec0add22d699",
+  "histograms": {
+    "raw": "data/raw/large_size.runs.jsonl",
+    "sha256": "8ec461590f85e2f39dc8495c5c94b9dd87e7839f2f8257796f68257ad3989097"
+  },
+  "runtime": {
+    "node": "v24.14.1",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "sourceSha256": {
+    "src/stochastic.mjs": "49586d0fadb4ad0b5d93c1537c4025a17b9c1b121b5cbfab264934329f088c26",
+    "scripts/run-experiment.mjs": "03006c00e56b7a2f9fe6121d33eff2975946dffe63673a7b691e0c3ec6893498",
+    "../src/lattice.mjs": "dfb22252873f7ee861d24fc35b32f67e47785466b9ee8096c063e4aec041f029",
+    "../src/rng.mjs": "a0af386efd47f97c85eda77fbe7ee175af21dc7d828411004486298d5153aecc"
+  }
+}

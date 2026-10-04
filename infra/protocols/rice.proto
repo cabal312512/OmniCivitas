@@ -1,0 +1,7 @@
+syntax = "proto3";
+package municipal;
+option java_package = "ocv.generated";
+option java_multiple_files = true;
+service ReceiptOffice { rpc RubberStamp (StampRequest) returns (StampReply); }
+message StampRequest { string label = 1; string root_trace_id = 2; string iso_time = 3; }
+message StampReply { string label = 1; string root_trace_id = 2; string display_request_id = 3; int64 unix_seconds = 4; string sqlite_file = 5; bool can_continue = 6; }

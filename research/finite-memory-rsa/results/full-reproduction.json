@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "profile": "full",
+  "finishedAt": "2026-10-03T18:07:18.532Z",
+  "runtime": {
+    "executable": "F:\\OCVdeps\\tools\\node\\node.exe",
+    "node": "v24.14.1",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "sourceOnly": true,
+  "packagesInstalled": false,
+  "websiteStarted": false,
+  "sourceFiles": 43,
+  "sourceSha256": {
+    "src/controllers.mjs": "6e31d6452c8bca9e78e651bb91ddfc06b9665bd3b33f59346a55499e0a301ba8",
+    "src/exact.mjs": "0adde531dfee6a04692b04c3208ff528f8bfb01936078b2932371d20dddb10af",
+    "src/lattice.mjs": "dfb22252873f7ee861d24fc35b32f67e47785466b9ee8096c063e4aec041f029",
+    "src/rescue.mjs": "9c958e9427f8af1af76d405b18797b23ce4d3e480cbe2c67f9760641da514d43",
+    "src/rng.mjs": "a0af386efd47f97c85eda77fbe7ee175af21dc7d828411004486298d5153aecc",
+    "src/rrsa.mjs": "76ef1dcb90c99edc999fd1597856df7059ddf6a9ce6b7f663815b3dc23cac3ce",
+    "src/simulate.mjs": "3f4ce9e07d8efdfd4c933e6009390cd5a9f27b650d76b98575e8d258426d8f01",
+    "tests/controllers.test.mjs": "6a96307894b91063b4e4edf9f31af7b666011352cde3e3057a76799669aa3fc2",
+    "tests/exact.test.mjs": "99083a0bca42b8a483965a351668919807eb2212206a739f5b58a2bf9a891d8d",
+    "tests/extensions.test.mjs": "e44f961fe36a749838228f11e919e77d096de171b7421b93312d941d92721f99",
+    "tests/simulator-oracle.test.mjs": "9887932ec7ed0dd2663ad1963b21839a9f63482acad5d56785a6cfa0b4aff2f8",
+    "tests/simulator.test.mjs": "1172c1bad52906ea7e87c5cf5f4a46ec58f2205b9fc09420b8852ee153d36d9c",
+    "tests/statistics.test.mjs": "7b65ccb926b72ca32bfbb0cd77d9b31a59132d60bb3671100d558d457d3bdf8c",
+    "tests/fixtures/atlas-regression.csv": "8690bf3e2a8dae4739fce664f77ef55706a1d8ee0ea939dea4d2fd829d014183",
+    "scripts/archive-regression-fixture.mjs": "b7f7f067da81b7cb35ee7b3b903fd095b8c46ef72263abc6919f555063633d6a",
+    "scripts/descriptive-extensions.mjs": "82b677d5a2f3477cd63483ba8ff3c948d21cb84ea56603ed07594184aefb0a69",
+    "scripts/prepare-paper.mjs": "bdbafbbd1c467d3bf79616f0dbeb687eab5f9ca8cd5e36de6ce1fe3b0b4aed3d",
+    "scripts/render-paper.py": "4d6a2a45211bd70f2878a9c0340de741089de23a51a8ded668fa9f8218002006",
+    "scripts/reproduce.mjs": "996e80cc65080a9047c02b70e8dad56dc190df321d951f74667c921265c6492b",
+    "scripts/run-experiment.mjs": "81f12482b91298abed7419d50dfcd518672948394eab5a97874d292c1390f713",
+    "analysis/extensions.mjs": "f30f288639bc65dc410c43739abeae216f750f4bf6ba77fdb1f2cc0020b03a7d",
+    "analysis/figures.py": "5ce8070b935f26c92062f45a85b7009c3e1531bc171f631e8be76c5bfc4434c7",
+    "analysis/summarize.mjs": "b97040d661e77d8169918881fd5d0f4073c7f2cc8bd506de049be2b6e2b2bafb",
+    "experiments/atlas.json": "a4087586e7a8d559eb995e9aed7e25b3507dccf0c8956c5c70a7a5519676b3a4",
+    "experiments/confirmation.json": "eeb94efe864f6362e6d162f901c9cc13c688de00f0babd7984b4eeb9b911a503",
+    "experiments/finite_size.json": "13a526b3ed7df260c1c0d1dcaa8c1e54b892d74271791c1a29dd26bf2e853969",
+    "experiments/open_boundary.json": "cf014a856d0fc8d3e0dfeff2b229d681511298cff3e75a35225e26d288d1d63d",
+    "experiments/small_validation.json": "195760155c2f4b3e320428d538bd7b82b1df3d16cbedbf96a7c5bf1ff636c0ba",
+    "docs/confirmation-lock.json": "0ccbb6edbf1a7b8b86ff982924e49e1addce14a060aaba3eae44acf4d1814cd8",
+    "docs/family-spec.json": "2b51860d7daff2333a85114249e9ffb348bc46ba000efa9a4158113433811dd1",
+    "docs/initial-brief.txt": "f5bd3becbc2eb7a4ad471903daccfb41b9088ff3111d97f85a34fbdd6935e53d",
+    "docs/MODEL.md": "6875fb0cad4b96383c7952e372d92e9986f5c0346c2b33de7ad53b531dccf8d9",
+    "docs/PAPER_REVIEW_LITERATURE.md": "77ea838ead539a2470056df0149e2f5cd5f7e03f9dbc7db3c479afcf6d2d212c",
+    "docs/PAPER_REVIEW_THEORY.md": "ff8f0721c3b108da410e17fabd35dc9b1643af580379cc45dcaf6484688cbd9e",
+    "docs/REQUIREMENTS_COVERAGE.md": "c4d3b90161b31eea60d65b90185b4d5aa4c4b765d261a69ec86087354c3f25fc",
+    "docs/SIMULATOR_REVIEW.md": "5e50d34e45779d5a9027cf977f4b72c863ca043e8d839afe6f93ef822fb443eb",
+    "docs/STATISTICAL_PROTOCOL.md": "ac971bbfcb783c19b715dd24c79e6e97ad34b3097ab4c80fd4ee45915a42b96e",
+    "docs/THEORY.md": "3aad1036c7a6982cd079a9bd62a94b8f457b14d8a9c9f92cd87c7b0a3773c458",
+    "paper/manuscript.template.md": "8926c649df701b77840abc4e21f9239f6e3b8963ac22caaab72a671afc5507e2",
+    "paper/paper.md": "076c0937915ba868e0d1333e05e82e003c39bc39e6ddef2eefee66b2c65137f5",
+    "literature/notes.md": "dd766bbd922383c4777e9d6c28add4ded41c8a0ba2fdfd6017e8658ece1c089f",
+    "literature/references.bib": "4209a17eff8f218f98925c034e877a2d1d168f964a4c4e1ddcaafd1f85405ad2",
+    "literature/search-log.json": "48636397da2d6eefb72e5b34b4d6e239d000df3c692a7c9001be9bb8a17c6d2f"
+  },
+  "commands": [
+    {
+      "args": [
+        "--test",
+        "--test-concurrency=1",
+        "tests/controllers.test.mjs",
+        "tests/exact.test.mjs",
+        "tests/extensions.test.mjs",
+        "tests/simulator-oracle.test.mjs",
+        "tests/simulator.test.mjs",
+        "tests/statistics.test.mjs"
+      ],
+      "label": "unit-tests",
+      "startedAt": "2026-10-03T18:06:24.163Z",
+      "finishedAt": "2026-10-03T18:06:26.484Z",
+      "exitCode": 0
+    },
+    {
+      "args": [
+        "src/exact.mjs"
+      ],
+      "label": "exact-systems",
+      "startedAt": "2026-10-03T18:06:26.485Z",
+      "finishedAt": "2026-10-03T18:06:26.663Z",
+      "exitCode": 0
+    },
+    {
+      "args": [
+        "scripts/run-experiment.mjs",
+        "experiments/atlas.json"
+      ],
+      "label": "atlas",
+      "startedAt": "2026-10-03T18:06:26.663Z",
+      "finishedAt": "2026-10-03T18:06:29.747Z",
+      "exitCode": 0
+    },
+    {
+      "args": [
+        "analysis/summarize.mjs",
+        "--input",
+        "data/raw/atlas.csv",
+        "--output",
+        "data/processed/pilot",
+        "--lock-spec",
+        "docs/reproduction-family-spec.json",
+        "--write-lock",
+        "docs/reproduction-lock.json"
+      ],
+      "label": "lock-before-confirmation",
+      "startedAt": "2026-10-03T18:06:29.748Z",
+      "finishedAt": "2026-10-03T18:06:30.111Z",
+      "exitCode": 0
+    },
+    {
+      "args": [
+        "scripts/run-experiment.mjs",
+        "experiments/confirmation.json"
+      ],
+      "label": "confirmation",
+      "startedAt": "2026-10-03T18:06:30.111Z",
+      "finishedAt": "2026-10-03T18:06:48.657Z",
+      "exitCode": 0
+    },
+    {
+      "args": [
+        "scripts/run-experiment.mjs",
+        "experiments/finite_size.json"
+      ],
+      "label": "finite_size",
+      "startedAt": "2026-10-03T18:06:48.657Z",
+      "finishedAt": "2026-10-03T18:07:07.205Z",
+      "exitCode": 0
+    },
+    {
+      "args": [
+        "scripts/run-experiment.mjs",
+        "experiments/small_validation.json"
+      ],
+      "label": "small_validation",
+      "startedAt": "2026-10-03T18:07:07.205Z",
+      "finishedAt": "2026-10-03T18:07:08.799Z",
+      "exitCode": 0
+    },
+    {
+      "args": [
+        "scripts/run-experiment.mjs",
+        "experiments/open_boundary.json"
+      ],
+      "label": "open_boundary",
+      "startedAt": "2026-10-03T18:07:08.799Z",
+      "finishedAt": "2026-10-03T18:07:13.881Z",
+      "exitCode": 0
+    },
+    {
+      "args": [
+        "scripts/descriptive-extensions.mjs"
+      ],
+      "label": "descriptive-extensions",
+      "startedAt": "2026-10-03T18:07:13.881Z",
+      "finishedAt": "2026-10-03T18:07:16.506Z",
+      "exitCode": 0
+    },
+    {
+      "args": [
+        "analysis/summarize.mjs",
+        "--input",
+        "data/raw/*.csv",
+        "--output",
+        "data/processed",
+        "--lock",
+        "docs/reproduction-lock.json"
+      ],
+      "label": "main-analysis",
+      "startedAt": "2026-10-03T18:07:16.506Z",
+      "finishedAt": "2026-10-03T18:07:18.314Z",
+      "exitCode": 0
+    },
+    {
+      "args": [
+        "analysis/extensions.mjs",
+        "--rescue",
+        "data/raw/interventions/rescue.csv",
+        "--dynamics",
+        "data/raw/dynamics/summary.json",
+        "--output",
+        "data/processed"
+      ],
+      "label": "extension-analysis",
+      "startedAt": "2026-10-03T18:07:18.314Z",
+      "finishedAt": "2026-10-03T18:07:18.391Z",
+      "exitCode": 0
+    },
+    {
+      "args": [
+        "scripts/prepare-paper.mjs"
+      ],
+      "label": "paper-tables",
+      "startedAt": "2026-10-03T18:07:18.391Z",
+      "finishedAt": "2026-10-03T18:07:18.532Z",
+      "exitCode": 0
+    }
+  ],
+  "scientificReplay": null,
+  "scope": "All226816 main terminal runs,768 rescue pairs,192 direct trajectories and frozen deterministic exact study. Plot/PDF rendering requires optional Python dependencies separately."
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 2,
+  "createdAtUtc": "2026-10-03T19:39:40.694Z",
+  "rows": 80768,
+  "groups": 1078,
+  "inputs": [
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\landscape.csv",
+      "sha256": "df39c80a9b634e21c870357051717207d67594e21e1008923ec85b60009c1630",
+      "rows": 56448,
+      "experiments": [
+        "landscape"
+      ]
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\large_size.csv",
+      "sha256": "c2770a8da1a2055a014217d002265b0f4217fec3932c08393a1fec0add22d699",
+      "rows": 3072,
+      "experiments": [
+        "large_size"
+      ]
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\refinement.csv",
+      "sha256": "e8e17036ecb4f880ba1dc790d7ff0ebb2b625927bf817a2770f6571011b6f3cd",
+      "rows": 12800,
+      "experiments": [
+        "refinement"
+      ]
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\refinement_success_flip.csv",
+      "sha256": "33390e6c4f9d3a4f2edc41f52c7a83cc999215ec5adbd30c154ff7be05dfcae1",
+      "rows": 8448,
+      "experiments": [
+        "refinement_success_flip"
+      ]
+    }
+  ],
+  "analysisSourceSha256": "b158b2bdf12f4e198526b8967bfa0b2ce825088f7613eba8b60e23e43c770a52",
+  "stage1NumericsSha256": "b97040d661e77d8169918881fd5d0f4073c7f2cc8bd506de049be2b6e2b2bafb",
+  "histogramInputs": [
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\landscape.runs.jsonl",
+      "sha256": "1c9ce0c2cd21402fb1947048532ac3c7784418c0fa4756ebf700620febb4b1ba",
+      "rows": 56448
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\large_size.runs.jsonl",
+      "sha256": "8ec461590f85e2f39dc8495c5c94b9dd87e7839f2f8257796f68257ad3989097",
+      "rows": 3072
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\refinement.runs.jsonl",
+      "sha256": "3cf7a1633b7e66d57697153ccd82ecfb9019e147ff916e293e49251c68c3a980",
+      "rows": 12800
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\refinement_success_flip.runs.jsonl",
+      "sha256": "342696c0af210be00a8e5a78b6c29eae0b7481016a7fe580fc4a41cb1cecb285",
+      "rows": 8448
+    }
+  ],
+  "lockSha256": null,
+  "confirmation": {
+    "status": "not-requested",
+    "errors": []
+  },
+  "errors": [],
+  "limitations": [
+    "Independent lattice runs only; no trial pseudoreplication.",
+    "Conditional kinetic expectations are not actual waiting samples.",
+    "Signed cancellation is not within-run isotropy.",
+    "Exploratory finite-grid sample frontier does not prove continuum dominance.",
+    "No extrapolated thermodynamic limit or phase transition is generated.",
+    "Matched accepted lag1 is not proposal correlation."
+  ]
+}

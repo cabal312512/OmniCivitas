@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-03T07:33:54.470Z",
+  "scope": "media-notice maintenance only; not phase 9",
+  "checks": [
+    "20 existing notice/license resources HTTP 200 and byte-identical",
+    "deployed statement is the complete canonical repository text",
+    "home and both portals contain real statement entry links",
+    "root/public existing code notices identical; no runtime-software credits added",
+    "legal pages have no browser JavaScript errors",
+    "only six healthy core services; bounded builder stopped"
+  ],
+  "routes": [
+    {
+      "route": "/legal/",
+      "status": 200
+    },
+    {
+      "route": "/legal/code/",
+      "status": 200
+    }
+  ],
+  "statementSha256": "99d8166905af1ceb4bf53f5570bcb0b782849c28fef1de33467b2e6b573679d4",
+  "complete": true
+}

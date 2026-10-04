@@ -1,0 +1,11 @@
+---
+import {future} from '../../main1/catalogue.mjs';
+import {tools} from '../../tool/data.mjs';
+import ToolWindow from '../../tool/Tool.astro';
+import FutureWindow from '../../tool/Stub.astro';
+import SweepPage from '../../n9/2.astro';
+import WorldPage from '../../3d/1.astro';
+export function getStaticPaths(){return [...tools.map((tool,index)=>({params:{slug:tool.id},props:{tool,index}})),...future.filter(item=>!tools.some(t=>t.id===item.id)&&!['clock','games'].includes(item.id)).map(item=>({params:{slug:item.id},props:{item}}))];}
+const {tool,index,item}=Astro.props;
+---
+{tool?.ui==='world'?<WorldPage/>:tool?.ui==='sweep'?<SweepPage/>:tool?<ToolWindow tool={tool} index={index}/>:<FutureWindow item={item}/>}

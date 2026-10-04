@@ -1,0 +1,36 @@
+✔ RRSA retains original particle labels and diagnoses the held-direction terminal exactly (3.5402ms)
+✖ Diagnostic rescue preserves every original occupied cell, completes geometric jam, and cannot lose coverage (1.8715ms)
+✔ Temporal diagnostics require actual trial trajectories and retain exact feedback switching rules (2.1796ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 122.5358
+
+✖ failing tests:
+
+test at tests\extensions.test.mjs:6:1
+✖ Diagnostic rescue preserves every original occupied cell, completes geometric jam, and cannot lose coverage (1.8715ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 2
+  - 2.0000000000000018
+  
+      at TestContext.<anonymous> (file:///E:/OmniCivitas/research/finite-memory-rsa/tests/extensions.test.mjs:8:174)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 2.0000000000000018,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

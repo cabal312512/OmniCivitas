@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-10-03T17:19:51.553Z",
+  "rows": 224768,
+  "groups": 760,
+  "inputs": [
+    {
+      "file": "data/raw/atlas.csv",
+      "sha256": "e4c06a961bdcd631bf49099d0fbb733f1e585311c01d721d78cf9181e1b7c152",
+      "rows": 33280,
+      "experiments": [
+        "atlas"
+      ]
+    },
+    {
+      "file": "data/raw/confirmation.csv",
+      "sha256": "304447bc153da65d659d0c2b05f8ea2f9187cce928ab9a348ab41440aae43f73",
+      "rows": 45056,
+      "experiments": [
+        "confirmation"
+      ]
+    },
+    {
+      "file": "data/raw/finite_size.csv",
+      "sha256": "1bea8536c2beaf8efff70dc05394e445076698a6dac64d69f67e8df099ab286c",
+      "rows": 9600,
+      "experiments": [
+        "finite_size"
+      ]
+    },
+    {
+      "file": "data/raw/open_boundary.csv",
+      "sha256": "ac0bdf934eb061cf53348cf36a269ed3ba61279646b164dce0e88c0d5282032e",
+      "rows": 5760,
+      "experiments": [
+        "open_boundary"
+      ]
+    },
+    {
+      "file": "data/raw/small_validation.csv",
+      "sha256": "4f0bd8337071c224de23280d97449760f581a0c12c27f756ef6845caa693798a",
+      "rows": 131072,
+      "experiments": [
+        "small_validation"
+      ]
+    }
+  ],
+  "duplicateRunKeys": 0,
+  "analysisSourceSha256": "798e92a951cc496d4272443ecc1031b84a62515683b0f2f60becd6d817afa4c1",
+  "lockSha256": "0ccbb6edbf1a7b8b86ff982924e49e1addce14a060aaba3eae44acf4d1814cd8",
+  "confirmation": {
+    "status": "complete",
+    "expectedRepetitions": 512,
+    "confirmationRows": 45056,
+    "reusedPilotSeeds": [],
+    "familySize": 36,
+    "errors": [],
+    "tAssumption": "Independent runs; exact under normally distributed paired differences, approximate by CLT otherwise. Bounded/bimodal small-n data are descriptive."
+  },
+  "errors": [],
+  "limitations": [
+    "No individual attempt or pixel is treated as an independent replicate.",
+    "Terminal coverage includes geometric jamming and controller-induced deadlock; these must not be conflated.",
+    "Mean signed order can vanish through cancellation; isotropy requires mean absolute order.",
+    "Student-t intervals are approximate for nonnormal small-sample distributions.",
+    "No thermodynamic-limit fit, novelty claim, or causal attribution beyond the tested controller comparison is generated."
+  ]
+}

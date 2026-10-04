@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Independent read-only metadata, paired-contrast and whole-family validation; not new inferential sampling",
+  "verifiedAtUTC": "2026-10-04T04:27:58.220Z",
+  "runtime": {
+    "node": "v24.14.1",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "auditSourceSha256": "8da9e4b699ca682e46fd30533e51911c33903c15c0fbc356505e39595040ffd3",
+  "datasets": [
+    {
+      "name": "coarse",
+      "rows": 209928,
+      "boundaryValidated": "Every row exactly matches its planned boundary",
+      "rawSha256": "6b9ea6ff994460da185a7728db4019372526c772c0852df446c57f1080dade7c",
+      "planSha256": "ac8522e59ffff4e3a8a8498a5c0f6e0e67fe1f870d96f1c41bed011261aa29dc",
+      "seedMin": 80000001,
+      "seedMax": 80100012,
+      "startedAtUTC": "2026-10-04T04:15:01.840Z",
+      "finishedAtUTC": "2026-10-04T04:15:07.807Z"
+    },
+    {
+      "name": "middle",
+      "rows": 38784,
+      "boundaryValidated": "Every row exactly matches its planned boundary",
+      "rawSha256": "ea0e31458b8632494e47b91c5a3c81cdf84d621c10db1d11e62fd1750d43ba9e",
+      "planSha256": "60c1f554de017c4191ed1140513e761c8edc033f3f06e8cf800c8326b5485884",
+      "seedMin": 82000001,
+      "seedMax": 82110064,
+      "startedAtUTC": "2026-10-04T04:15:32.198Z",
+      "finishedAtUTC": "2026-10-04T04:15:46.322Z"
+    },
+    {
+      "name": "confirmation",
+      "rows": 35328,
+      "boundaryValidated": "Every row exactly matches its planned boundary",
+      "rawSha256": "38286fca3dee2c4dc01918350ced214f9f3390236497b3c0d48c5ddbbfa8731d",
+      "planSha256": "5caead60ef500efb7cb84663edba1f0c3cbbc4ec408e81dd3fd724f373c84575",
+      "seedMin": 90000001,
+      "seedMax": 90100768,
+      "startedAtUTC": "2026-10-04T04:17:16.346Z",
+      "finishedAtUTC": "2026-10-04T04:17:39.419Z"
+    }
+  ],
+  "reusedPilotSeeds": [],
+  "tests": 612,
+  "zeroSeTests": 0,
+  "numericStoredTestsCompared": 612,
+  "rejections": 379,
+  "marginQualifiedJointPairs": 36,
+  "oneBitEveryNullGate": false,
+  "twoBitEveryNullGate": false,
+  "status": "passed",
+  "interpretation": "Margins permit a .01 absolute-imbalance increase and 10% mean cost increase. Joint rejection is not strict Pareto dominance. Failure of the every-null gate does not prove absence among pruned controllers or no frontier expansion.",
+  "numericalIndependence": "Own Welford differences, seed/metadata checks and Holm implementation; uses the already validated frozen Stage I Student-t tail/quantile routines.",
+  "limitations": [
+    "The frozen analyzer is limited to this fixed L64,768-run paired design; its omitted metadata guards are supplied here.",
+    "All present SEs are positive, so its degenerate positive-constant p=0 branch is dormant. The validator rejects such future input instead of revising locked results.",
+    "Student-t/Bonferroni inference is finite-variance CLT-based, not an exact finite-sample guarantee for skewed costs.",
+    "The review itself is post-holdout validation, not a new preregistration."
+  ]
+}

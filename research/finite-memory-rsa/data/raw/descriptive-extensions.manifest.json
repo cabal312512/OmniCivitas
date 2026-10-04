@@ -1,0 +1,18 @@
+{
+  "startedAt": "2026-10-03T17:28:35.353Z",
+  "finishedAt": "2026-10-03T17:28:37.893Z",
+  "rrsaRuns": 2048,
+  "rescuePairs": 768,
+  "directTrajectories": 192,
+  "rrsaRawSha256": "80ab477833c1b6a61787be51eec8a66d0b0f457f2b32451bb7c7eb2feb8adc42",
+  "primaryFamilyChanged": false,
+  "limitations": "RRSA,rescue and temporal diagnostics chosen after initial confirmation results;exploratory only. Rescue uses forbidden external geometric information,not a new controller.",
+  "sourceSha256": {
+    "src/rrsa.mjs": "76ef1dcb90c99edc999fd1597856df7059ddf6a9ce6b7f663815b3dc23cac3ce",
+    "src/rescue.mjs": "9c958e9427f8af1af76d405b18797b23ce4d3e480cbe2c67f9760641da514d43",
+    "src/simulate.mjs": "3f4ce9e07d8efdfd4c933e6009390cd5a9f27b650d76b98575e8d258426d8f01",
+    "src/lattice.mjs": "dfb22252873f7ee861d24fc35b32f67e47785466b9ee8096c063e4aec041f029",
+    "src/rng.mjs": "a0af386efd47f97c85eda77fbe7ee175af21dc7d828411004486298d5153aecc",
+    "scripts/descriptive-extensions.mjs": "82b677d5a2f3477cd63483ba8ff3c948d21cb84ea56603ed07594184aefb0a69"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "revision": "expand-1",
+  "phase": 8,
+  "scope": "Additive user-authorized enhancement; phase 9 audit remains pending",
+  "backup": "F:\\OCVdeps\\runtime\\backups\\expand1-1791004858610",
+  "originalSources": [
+    {
+      "file": "PROJECT_SPEC.txt",
+      "sha256": "e45a5752bc4dbce9a7738e6b2dfd629f7777c3d6fbc22531f69557e04e7fe958"
+    },
+    {
+      "file": "AI写的提示词.txt",
+      "sha256": "8610a35a3c81070349378267d05bdf8e8b7fc466dec7a564b80f8e061a8fc522"
+    }
+  ],
+  "targets": {
+    "routeWindows": 27,
+    "advancedTools": 8,
+    "existingWorkbench": 101
+  },
+  "sources": [
+    "https://github.com/sql-js/sql.js",
+    "https://github.com/Starcounter-Jack/JSON-Patch",
+    "https://pdf-lib.js.org/",
+    "https://threejs.org/examples/webgl_shaders_ocean"
+  ],
+  "latestOverrides": {
+    "language": "Chinese remains primary; a small fraction of labels mix Japanese, Korean and Greek",
+    "removedBuiltinLabels": [
+      "U+6587 U+660E",
+      "U+4E00 U+53E3 U+7A7A U+9505"
+    ],
+    "search": "Actual function titles, IDs, aliases and deep labs; preserve user input verbatim",
+    "requirementLabelOverrides": [
+      {
+        "id": "B020",
+        "scope": "Builtin UI labels/messages only; original source text retained; existing algorithm and export semantics unchanged"
+      },
+      {
+        "id": "B028",
+        "scope": "Builtin UI labels/messages only; original source text retained; existing algorithm and export semantics unchanged"
+      },
+      {
+        "id": "B048",
+        "scope": "Builtin UI labels/messages only; original source text retained; existing algorithm and export semantics unchanged"
+      },
+      {
+        "id": "B055",
+        "scope": "Builtin UI labels/messages only; original source text retained; existing algorithm and export semantics unchanged"
+      },
+      {
+        "id": "B090",
+        "scope": "Builtin UI labels/messages only; original source text retained; existing algorithm and export semantics unchanged"
+      },
+      {
+        "id": "B198",
+        "scope": "Builtin UI labels/messages only; original source text retained; existing algorithm and export semantics unchanged"
+      },
+      {
+        "id": "B333",
+        "scope": "Builtin UI labels/messages only; original source text retained; existing algorithm and export semantics unchanged"
+      },
+      {
+        "id": "B334",
+        "scope": "Builtin UI labels/messages only; original source text retained; existing algorithm and export semantics unchanged"
+      },
+      {
+        "id": "B335",
+        "scope": "Builtin UI labels/messages only; original source text retained; existing algorithm and export semantics unchanged"
+      },
+      {
+        "id": "B336",
+        "scope": "Builtin UI labels/messages only; original source text retained; existing algorithm and export semantics unchanged"
+      }
+    ]
+  },
+  "historicalSnapshots": [
+    {
+      "file": "docs/naming-paths.json",
+      "sha256": "46ff3d00c8bc82dc36a46923aaec0f4753235f8f9d142fc9a6212df5bbf5debc"
+    },
+    {
+      "file": "docs/naming-acceptance.json",
+      "sha256": "8eff5efd421dee2d33340138b8d964589ff4e4806b0390ee81373f5b92e4d88a"
+    },
+    {
+      "file": "docs/NAMING-REVISION.md",
+      "sha256": "f219249e3343d75898ea4dfa9a53fdf06345cb38e81cc45af9981a2f48cd1a28"
+    },
+    {
+      "file": "docs/phase-8-acceptance.json",
+      "sha256": "133d387dfec873fd80be6893f39cc42263a9ffe0b3b8a38336d8595f1b43c380"
+    },
+    {
+      "file": "docs/PHASE-8-ACCEPTANCE.md",
+      "sha256": "b7d3928e8838cd440a39f47fb1b4373b947cbf90269815065352765c68eecbf1"
+    },
+    {
+      "file": "docs/requirements.json",
+      "sha256": "29e14b4438d6aad2e25f7b9851ecc5851d5b62dc8d2101e1f9318399fe40db26"
+    },
+    {
+      "file": "docs/technologies.json",
+      "sha256": "95c62496a22c75bebf49bdefef1faded8e9aa7ca23436fae5bced82e5a97ec1e"
+    },
+    {
+      "file": "docs/screenshot-requirements.json",
+      "sha256": "083dbf6c880d702264614db23f56190e57e4b4c06253efac068f3c792c1eec1f"
+    },
+    {
+      "file": "docs/REQUIREMENTS.md",
+      "sha256": "30b4f77a51fbec167c73e3976a57fbe0e448fae3ff07ce1da964db35679e0018"
+    },
+    {
+      "file": "docs/phase-8-plan.json",
+      "sha256": "75e04986df8000b56eafe5442eda289dae0fd952a4d9c4cdc5da3955784ac187"
+    }
+  ]
+}

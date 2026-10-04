@@ -1,0 +1,10 @@
+---
+import Fragments from '../../q7/1.astro';
+import Identity from '../../aaa/Identity.astro';
+import Panel from '../../z/Panel.astro';
+import {laboratories,labLink} from '../../z/map.mjs';
+import '../../aaa/迷宫.css';
+export function getStaticPaths(){return laboratories.map((item,index)=>({params:{path:item.path},props:{item,index}}));}
+const {item,index}=Astro.props;
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{item.title} · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class="maze-page lab-page" data-laboratory={item.path}><Fragments/><div class="maze-background"><div class="maze-background-grid"></div></div><header class="maze-header"><a href="/#systems" aria-label="返回主页"><Identity compact id={`laboratory-${index}`}/></a><a href="/lab/">实验室</a></header><main class="maze-floor"><h1>{item.title}</h1><Panel index={item.panel} standalone/><nav class="maze-crumb">{[laboratories[(index+1)%laboratories.length],laboratories[(index+3)%laboratories.length]].map(other=><a href={labLink(other)}>{other.title} ↗</a>)}</nav></main><a href="/#systems" class="maze-exit" aria-label="退出实验室返回主页">↖</a><a href="/lab/" class="maze-index">▦</a><script>import '../../aaa/迷宫.js';</script></body></html>

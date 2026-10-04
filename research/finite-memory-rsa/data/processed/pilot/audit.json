@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-10-03T17:17:38.461Z",
+  "rows": 33280,
+  "groups": 520,
+  "inputs": [
+    {
+      "file": "data/raw/atlas.csv",
+      "sha256": "e4c06a961bdcd631bf49099d0fbb733f1e585311c01d721d78cf9181e1b7c152",
+      "rows": 33280,
+      "experiments": [
+        "atlas"
+      ]
+    }
+  ],
+  "duplicateRunKeys": 0,
+  "analysisSourceSha256": "be4edbe74d0c1fd1541bba44265512ec3fef4ce635a0e7fb58e683a76b793c52",
+  "lockSha256": null,
+  "confirmation": {
+    "status": "sealed-awaiting-confirmation",
+    "errors": []
+  },
+  "errors": [],
+  "limitations": [
+    "No individual attempt or pixel is treated as an independent replicate.",
+    "Terminal coverage includes geometric jamming and controller-induced deadlock; these must not be conflated.",
+    "Mean signed order can vanish through cancellation; isotropy requires mean absolute order.",
+    "Student-t intervals are approximate for nonnormal small-sample distributions.",
+    "No thermodynamic-limit fit, novelty claim, or causal attribution beyond the tested controller comparison is generated."
+  ]
+}

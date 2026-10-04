@@ -1,0 +1,6 @@
+{
+ "name":"finite_size",
+ "purpose":"Descriptive independent finite-size study; no universal infinite-size or phase-transition claim.",
+ "sizes":[16,32,64,128,256],"lengths":[2,4,8],"boundaries":["periodic"],
+ "controllers":[0,35,38,41,"random-0.5"],"repetitions":128,"seedStart":300001,"engine":"event"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "createdBeforeScreening": true,
+  "scope": "Deterministic rooted Moore controllers with at most four states; uniform random anchor RSA; periodic square lattice",
+  "outcomes": ["F", "S"],
+  "objectives": ["maximize E coverage", "minimize E abs_order", "minimize E attempts_per_particle", "universal failure-cycle liveness"],
+  "symmetry": "Draw one global H/V exchange per realization. It selects a symmetry-equivalent concrete controller, uses no evolving extra controller state, and is shared with temporal nulls.",
+  "coarse": {"L": 16, "k": [4,8], "repetitions": 12, "seedStart": 80000001, "allLiveFeedbackClasses": true, "allLiveTemporalClasses": true},
+  "selection": {
+    "recordCompleteNonDominatedSet": true,
+    "advanceNonDominatedSetSubjectToCap": true,
+    "minimumStateStrata": [2,3,4],
+    "absOrderBudgets": [0.05,0.1,0.2,0.35,0.5,1],
+    "costMultipliersVsFair": [0.75,1,1.25,2,4],
+    "topPerBudgetCell": 2,
+    "includeAllOneBitLiveFeedback": true,
+    "includeAllMatchedMemoryTemporal": true,
+    "capFeedbackPerK": 180,
+    "capRule": "If needed, sort selected classes by frequency of winning budget cells, then Pareto status, coverage, canonical id. Preserve every lower-memory and temporal comparator."
+  },
+  "middle": {"L": [32,64], "repetitions": 64, "seedStart": 82000001},
+  "confirmation": {"lockedAfterMiddleBeforeSampling": true,"newSeedStart": 90000001,"primaryL": 64,"repetitions": 768,"maximumNewFeedbackCandidatesPerK": 3,"protectAllOutcomeSensitiveOneBitControllers": true,"allLiveTemporalComparators": true,"fairComparator": true,"isotropyNonInferiorityMargin": 0.01,"costNonInferiorityMultiplier": 1.10,"familywiseAlpha": 0.05,"adjustment": "Holm across all locked candidates, k values, nulls and three metrics"},
+  "largeSizeGate": "For a two-bit claim, new candidate must pass simultaneous density superiority and abs_order/cost noninferiority against every one of the 16 live temporal comparators with <=4 states at L64, including three-state candidates within the two-bit budget. The one-bit subset separately uses <=2-state comparators. Otherwise no new L256+ search.",
+  "exact": {"L": 3,"k": 2,"selectedFeedbackAndAllTemporal": true,"boundary": ["periodic","open"]},
+  "claims": "Structural enumeration is complete; Monte Carlo performance search is multifidelity and cannot establish absence of improvements among every pruned class at larger lattices. Ordinary mean Pareto points are exploratory, not simultaneous confidence frontiers."
+}

@@ -1,0 +1,12 @@
+---
+import Layout from '../../../research/Layout.astro';
+import {documents,prepareResearch,renderDocument} from '../../../research/data.mjs';
+export async function getStaticPaths(){await prepareResearch();return documents.map(doc=>({params:{document:doc.slug},props:{doc}}));}
+const {doc}=Astro.props;
+const body=renderDocument(doc);
+const headings=Array.from(body.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)).map(match=>({id:match[1],title:match[2].replace(/<[^>]*>/g,'')}));
+---
+<Layout title={doc.title} active="library">
+ <header class="reader-intro"><div class="research-breadcrumb"><a href="/research/">Research</a><span>/</span><a href="/research/library/">Library</a><span>/</span><span>{doc.category}</span></div><p class="eyebrow">{doc.category} / FULL TEXT</p><h1>{doc.title}</h1><p>{doc.summary}</p><div class="reader-actions"><a class="research-button" href={`/research/files/${doc.file}`} download>Download original Markdown ↓</a><a class="research-text-link" href="/research/library/#downloads">Complete evidence collection ↗</a></div></header>
+ <div class="reader-grid"><nav class="reader-sidebar" aria-label="Document contents"><span>IN THIS DOCUMENT</span>{headings.map(heading=><a href={`#${heading.id}`}>{heading.title}</a>)}<span class="sidebar-file">SOURCE / {doc.file}<br/>Original research text preserved.</span></nav><article class="research-paper" set:html={body}></article></div>
+</Layout>

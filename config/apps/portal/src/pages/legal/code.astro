@@ -1,0 +1,23 @@
+---
+import Fragments from '../../q7/1.astro';
+import notices from '../../../public/third-party-notices.txt?raw';
+import '../../styles/legal.css';
+import Field from '../../n9/n9.astro';
+const originals=Object.keys(import.meta.glob('../../../public/licenses/*.txt',{query:'?raw',import:'default',eager:true})).map(file=>file.split('/').pop()).sort();
+---
+<!doctype html>
+<html lang="zh-CN">
+ <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>第三方代码 · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head>
+ <body class="legal-page"><Fragments/>
+  <Field />
+  <header><a href="/#systems">← OmniCivitas</a><a href="/legal/">素材声明</a></header>
+  <main>
+   <h1>第三方代码</h1>
+   <p>相关代码继续适用各自的许可证。</p>
+   <p><a href="/third-party-notices.txt">查看声明原文</a></p>
+   <details><summary>版权与许可记录</summary><pre>{notices}</pre></details>
+   <h2>许可原文</h2>
+   <ul>{originals.map(name=><li><a href={`/licenses/${name}`}>{name}</a></li>)}</ul>
+  </main>
+ </body>
+</html>

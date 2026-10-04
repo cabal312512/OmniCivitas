@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "acceptedAtUTC": "2026-10-04T04:52:45.287Z",
+  "status": "completed-with-stated-limits",
+  "scope": "Stage III serious research only; no website integration or website phase nine",
+  "structuralEnumerationComplete": true,
+  "mainTerminalRuns": 284040,
+  "exactCases": 86,
+  "rareEventDraws": 2000000,
+  "fullMatchedMemoryJointBenefitEstablished": false,
+  "integratedTests": {
+    "passed": 32,
+    "total": 32
+  },
+  "cleanSourceReconstruction": {
+    "profile": "quick",
+    "status": "passed",
+    "fullStudyIndependentlyRerun": false
+  },
+  "originalStagesAndWebsitePreserved": true,
+  "localMarkdownLinksChecked": 28,
+  "pdfGenerated": false,
+  "nextPhaseAuthorized": false,
+  "evidence": [
+    "results/raw-audit.json",
+    "results/evidence/statistical-audit.json",
+    "results/clean-reconstruction.json",
+    "results/unit-summary.json",
+    "docs/REQUIREMENTS_COVERAGE.md"
+  ]
+}

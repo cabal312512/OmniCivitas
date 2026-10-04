@@ -1,0 +1,4 @@
+# Scientific manifests and retained evidence refer to exact bytes.
+# Disable checkout normalization on every platform; source files work with
+# their existing line endings, without changing frozen artifacts on clone.
+* -text

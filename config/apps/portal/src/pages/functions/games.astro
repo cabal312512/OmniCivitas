@@ -1,0 +1,12 @@
+---
+import Fragments from '../../q7/1.astro';
+import Identity from '../../aaa/Identity.astro';
+import OpticalBench from '../../aaa/lens.astro';
+import {tools,toolLink} from '../../tool/data.mjs';
+import MusicCredit from '../../components/MusicCredit.astro';
+import '../../aaa/迷宫.css';
+import '../../aaa/临时修一下.css';
+import '../../tool/2.css';
+const games=tools.filter(t=>t.group==='游戏');
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>小游戏 · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class="maze-page tool-page"><Fragments/><OpticalBench/><div class="maze-background" aria-hidden="true"><div class="maze-background-grid"></div><span class="maze-bignum">16</span></div><header class="maze-header"><a href="/#systems" aria-label="返回主页"><Identity id="games" compact/></a><span>OCV</span><a href="/functions/">▦</a></header><main class="tool-directory game-directory"><h1>小游戏</h1><section class="maze-panel tool-group route-panel"><h2 class="maze-title">游戏</h2>{games.map((tool,i)=><a href={toolLink(tool)}><span>{tool.title}</span><small>{String(i+1).padStart(2,'0')}</small></a>)}</section><MusicCredit/><div class="game-placeholder" aria-hidden="true"><i></i><i></i><i></i><i></i></div></main><a class="maze-exit" href="/#systems" aria-label="退出小游戏返回主页">↖</a><a class="maze-index" href="/functions/" aria-label="打开全部工具">▦</a><style>.game-directory .tool-group{margin-left:23%;width:367px}.game-placeholder{position:absolute;left:36%;top:295px;width:369px;height:231px;border:1px solid #2365fd33;display:grid;grid-template-columns:1fr 1fr;pointer-events:none;z-index:0}.game-placeholder i{border:1px solid #2365fd12;margin:9px}.game-placeholder i:nth-child(3){width:259px;margin-left:-41px}</style></body></html>

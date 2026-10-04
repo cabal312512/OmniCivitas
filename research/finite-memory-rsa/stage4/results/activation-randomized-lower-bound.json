@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "controller": "feedback-4-00124",
+  "realization": {
+    "id": 124,
+    "key": "3:001:1,1,2,0,1,0",
+    "outputs": [
+      0,
+      0,
+      1
+    ],
+    "transitions": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "initial": 0,
+    "minimalStateCount": 3,
+    "temporalEquivalent": false,
+    "constantAction": false,
+    "universalLiveness": true,
+    "failureCycles": [
+      {
+        "states": [
+          1,
+          2
+        ],
+        "actions": [
+          0,
+          1
+        ],
+        "mixedActions": true
+      }
+    ],
+    "deadlockCertificates": [],
+    "labelledMultiplicity": 456,
+    "firstLabelledRepresentative": 4691,
+    "labelledRootHorizontal": 228,
+    "labelledRootVertical": 228,
+    "classId": "feedback-4-00124"
+  },
+  "parameters": {
+    "L": 3,
+    "k": 2,
+    "boundary": "periodic"
+  },
+  "histories": [
+    {
+      "events": [
+        {
+          "action": 0,
+          "anchorIndex": 0,
+          "outcome": "S",
+          "mask": "3"
+        },
+        {
+          "action": 0,
+          "anchorIndex": 0,
+          "outcome": "F",
+          "mask": "3"
+        }
+      ],
+      "nextAction": 1,
+      "specificProbability": {
+        "numerator": "1",
+        "denominator": "81"
+      }
+    },
+    {
+      "events": [
+        {
+          "action": 0,
+          "anchorIndex": 0,
+          "outcome": "S",
+          "mask": "3"
+        },
+        {
+          "action": 0,
+          "anchorIndex": 3,
+          "outcome": "S",
+          "mask": "27"
+        },
+        {
+          "action": 0,
+          "anchorIndex": 0,
+          "outcome": "F",
+          "mask": "27"
+        }
+      ],
+      "nextAction": 0,
+      "specificProbability": {
+        "numerator": "1",
+        "denominator": "729"
+      }
+    }
+  ],
+  "minimalOperationalStates": {
+    "L2": 2,
+    "L3": 3,
+    "randomizedFeedbackAllowed": true
+  },
+  "smallSystemRealization": "feedback-4-00006",
+  "smallEquivalence": {
+    "status": "equivalent",
+    "geometry": {
+      "L": 2,
+      "k": 2,
+      "boundary": "periodic"
+    },
+    "exploredStates": 6
+  },
+  "lowerBound": "The target prescribes deterministic H and V actions on positive histories. Any two-state randomized realization must therefore have one H-only and one V-only emission state. Both histories immediately before their final failure prescribe H, hence concentrate on the same hidden H-only state. Given H and F, its outcome-dependent next-state kernel is identical for both histories: anchor failure likelihood cancels. It cannot prescribe V after SF and H after SSF. Thus two states are impossible, even for edge-emitting randomized feedback.",
+  "oneStateLowerBound": "Initial action is surely H, but a positive SF history requires V before jam. A stationary one-state emission cannot do both.",
+  "threeStateUpperBound": "The displayed deterministic3-state controller is itself a valid realization.",
+  "minimalGeometry": "For fixed k2, smallest admissible L is2. Two states suffice there and fail atL3, so activation threshold is exactly3 under periodic boundaries.",
+  "scope": "This strengthens one explicit threshold to randomized operational memory. Complete catalogue histograms remain deterministic-realization minima; no general stochastic positive-realization minimization is claimed."
+}

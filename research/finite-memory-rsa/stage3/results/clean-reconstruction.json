@@ -1,0 +1,1009 @@
+{
+  "schemaVersion": 1,
+  "profile": "quick",
+  "status": "passed",
+  "startedAtUTC": "2026-10-04T04:39:16.575Z",
+  "runtime": {
+    "node": "v24.14.1",
+    "platform": "win32",
+    "architecture": "x64"
+  },
+  "localExecutionDirectory": "F:/OCVdeps/tmp/rsa-stage3/clean-reconstruction-20261004",
+  "sourceOnly": true,
+  "copiedFiles": [
+    {
+      "file": "analysis/summarize.mjs",
+      "bytes": 28660,
+      "sha256": "b97040d661e77d8169918881fd5d0f4073c7f2cc8bd506de049be2b6e2b2bafb"
+    },
+    {
+      "file": "src/controllers.mjs",
+      "bytes": 5887,
+      "sha256": "6e31d6452c8bca9e78e651bb91ddfc06b9665bd3b33f59346a55499e0a301ba8"
+    },
+    {
+      "file": "src/exact.mjs",
+      "bytes": 11425,
+      "sha256": "0adde531dfee6a04692b04c3208ff528f8bfb01936078b2932371d20dddb10af"
+    },
+    {
+      "file": "src/lattice.mjs",
+      "bytes": 3408,
+      "sha256": "dfb22252873f7ee861d24fc35b32f67e47785466b9ee8096c063e4aec041f029"
+    },
+    {
+      "file": "src/rng.mjs",
+      "bytes": 1287,
+      "sha256": "a0af386efd47f97c85eda77fbe7ee175af21dc7d828411004486298d5153aecc"
+    },
+    {
+      "file": "stage2/src/stochastic.mjs",
+      "bytes": 13929,
+      "sha256": "49586d0fadb4ad0b5d93c1537c4025a17b9c1b121b5cbfab264934329f088c26"
+    },
+    {
+      "file": "stage3/experiments/search-protocol.json",
+      "bytes": 2513,
+      "sha256": "f10a5f4ec1c7f1b23d068897a2c0fe981abedcabff287bbab5c4d9bedc56f2db"
+    },
+    {
+      "file": "stage3/results/evidence/quick-reference.json",
+      "bytes": 110512,
+      "sha256": "153f5ab7f98092029ca99ca8b16caee6b52bbe2fd93286f12bcd80594bd436e6"
+    },
+    {
+      "file": "stage3/results/evidence/read-only-statistical-audit.mjs",
+      "bytes": 13028,
+      "sha256": "8da9e4b699ca682e46fd30533e51911c33903c15c0fbc356505e39595040ffd3"
+    },
+    {
+      "file": "stage3/scripts/analyze-confirmation.mjs",
+      "bytes": 6013,
+      "sha256": "2dabb451342754aac927a0c5bf64e3655fcfe6150d57b7cd5a697e6da395359b"
+    },
+    {
+      "file": "stage3/scripts/classify-controllers.mjs",
+      "bytes": 4963,
+      "sha256": "414b2fbb8ea1dc03057149c12000bee67f9ba380b6c4e7bc4467329cab9bf654"
+    },
+    {
+      "file": "stage3/scripts/lock-confirmation.mjs",
+      "bytes": 3960,
+      "sha256": "a12574894c13c3684eac604b22d86c431043b569174d9f615f3a51c512925ace"
+    },
+    {
+      "file": "stage3/scripts/preservation.mjs",
+      "bytes": 2476,
+      "sha256": "750ec3efd6982e92f7a0b4900d1ea9b5c4aa75619ac6b435281e8cacbd9cdf92"
+    },
+    {
+      "file": "stage3/scripts/rare-event-study.mjs",
+      "bytes": 10353,
+      "sha256": "c86d806e2ae2a79e7a596d2576f68a6f50c2ed2b4631983d2c74ffd55ec6074d"
+    },
+    {
+      "file": "stage3/scripts/reproduce.mjs",
+      "bytes": 20560,
+      "sha256": "dfacd9494e486a12c2e900ab94a86e585126da53f291960966d0a174f4c9d42d"
+    },
+    {
+      "file": "stage3/scripts/run-experiment.mjs",
+      "bytes": 5447,
+      "sha256": "aeeb57d4e3b256bb85790c39ec291b69056397c33b144f5eca94264392a055c0"
+    },
+    {
+      "file": "stage3/scripts/select-middle.mjs",
+      "bytes": 1570,
+      "sha256": "0c38f1400623ec4908c910fe409c35e423c3843279fd79ebe59a92d2b4f6e6ff"
+    },
+    {
+      "file": "stage3/src/controllers.mjs",
+      "bytes": 14850,
+      "sha256": "5e1581cd11c77842fa5372285a418a3f4dd8e86ea3e6ac6077d13c90a38b52fa"
+    },
+    {
+      "file": "stage3/src/convex-frontier.mjs",
+      "bytes": 1737,
+      "sha256": "72290def510ce4094eda63720ee87deac7656aba1b103d84ae60a0cfab31cef6"
+    },
+    {
+      "file": "stage3/src/exact.mjs",
+      "bytes": 9843,
+      "sha256": "0cc8ff86f1e34a221458f0a9d3fb18fd221eb167654d4ad403d8efee8c08587e"
+    },
+    {
+      "file": "stage3/src/frontier.mjs",
+      "bytes": 2228,
+      "sha256": "bceb52c21116169be7307daecddcee1cd616b9f6a5ee9e0079020be6701d30eb"
+    },
+    {
+      "file": "stage3/src/phase-type.mjs",
+      "bytes": 17583,
+      "sha256": "90d13720e6718aeae6e4d5d33068ef4493cc1b2c1b7beea6d3f604773b870949"
+    },
+    {
+      "file": "stage3/src/simulate.mjs",
+      "bytes": 12313,
+      "sha256": "f5fe4970d8f2d046fdcb705eb29a60e78a32403912c12ebce8db0d6593a061d9"
+    }
+  ],
+  "commands": [
+    {
+      "name": "classification",
+      "nodeArguments": [
+        "stage3/scripts/classify-controllers.mjs"
+      ],
+      "startedAtUTC": "2026-10-04T04:39:16.637Z",
+      "finishedAtUTC": "2026-10-04T04:39:19.793Z",
+      "elapsedSeconds": 3.1556459,
+      "exitCode": 0,
+      "stdout": "logs/classification.stdout.log",
+      "stderr": "logs/classification.stderr.log",
+      "stdoutSha256": "686166fb03d16412c349f96740e3593574c8dc0f8e11020598094d25a5de2824",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "singular-models",
+      "nodeArguments": [
+        "stage3/src/phase-type.mjs"
+      ],
+      "startedAtUTC": "2026-10-04T04:39:19.806Z",
+      "finishedAtUTC": "2026-10-04T04:39:20.097Z",
+      "elapsedSeconds": 0.29060559999999985,
+      "exitCode": 0,
+      "stdout": "logs/singular-models.stdout.log",
+      "stderr": "logs/singular-models.stderr.log",
+      "stdoutSha256": "3a985e50253197c3e6cd5ec82f548d406299def86dbc87241a49c5a78e1bb47a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scientific-quick-checks",
+      "nodeArguments": [
+        "stage3/scripts/reproduce.mjs",
+        "--worker"
+      ],
+      "startedAtUTC": "2026-10-04T04:39:20.111Z",
+      "finishedAtUTC": "2026-10-04T04:39:20.989Z",
+      "elapsedSeconds": 0.8777932,
+      "exitCode": 0,
+      "stdout": "logs/scientific-quick-checks.stdout.log",
+      "stderr": "logs/scientific-quick-checks.stderr.log",
+      "stdoutSha256": "c75759ce941372d86b969c915ff312b9db15713dea80e322a3a88aa69ccb7439",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "copiedResearchData": "Only quick-reference.json: 78 disclosed Stage III regression rows plus expected catalogue/exact/theory hashes. No archived full raw data, study results, plans or sealed lock copied as fresh inputs.",
+  "scope": "Full deterministic classification, representative row replays, eight small exact cases, nine singular models.",
+  "quick": {
+    "schemaVersion": 1,
+    "status": "passed",
+    "finishedAtUTC": "2026-10-04T04:39:20.940Z",
+    "referenceFixtureSha256": "153f5ab7f98092029ca99ca8b16caee6b52bbe2fd93286f12bcd80594bd436e6",
+    "classification": [
+      {
+        "stem": "feedback-1",
+        "scientificSha256": "be329dca568fa1d4b0b503b716a829926c797d1e421c03ea260ea3d4736bdab9",
+        "rawSha256": "22cc32bee82e5b898df340882b7a2b9d36830d7fc28d18585ea8845b7a082357",
+        "mappingSha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+        "labelledCount": 2,
+        "classCount": 1,
+        "liveClassCount": 0
+      },
+      {
+        "stem": "feedback-2",
+        "scientificSha256": "2a672cd0c78cedd4d1c9bc68ba0021769eb8d065053270a631db92a94ee5b879",
+        "rawSha256": "b1703229cf5f81d82bfe40971607031d46d56350e924a133686068de93e69e2f",
+        "mappingSha256": "9404c82bea92cb969ca8b9ff1fd25fa78ee2162b8cd4c58a7e1478b27462c696",
+        "labelledCount": 64,
+        "classCount": 13,
+        "liveClassCount": 4
+      },
+      {
+        "stem": "feedback-3",
+        "scientificSha256": "67b0a94105d097d5e63cc3e7ee5b7abe68521d51fb09bffdc80697f73c67d5f2",
+        "rawSha256": "95d1142222f883bef57543a5ca12d34cfaf2b8aa46b4d82c2dee1e0445011bb5",
+        "mappingSha256": "b57cea620ba5639bda87b3cf761f40b55081a44b223b8600618724e81ee14f43",
+        "labelledCount": 5832,
+        "classCount": 527,
+        "liveClassCount": 166
+      },
+      {
+        "stem": "feedback-4",
+        "scientificSha256": "5240eedf610054280a0971863d2bf6aa67a3688fecdc4a530a4fdbc276d51f4e",
+        "rawSha256": "90283d7da982e475891f7af4d2f427e563930058f8a94b76cc2795cc5fb07dc3",
+        "mappingSha256": "4528a140ae8bd166c1a00b26fcdc5657793cb698e77f810c007bfe7121bb2af5",
+        "labelledCount": 1048576,
+        "classCount": 28534,
+        "liveClassCount": 8730
+      },
+      {
+        "stem": "temporal-1",
+        "scientificSha256": "84038fcb0f1a2e58d07ff02b4176ce774ada15b99f91f1366fe8e14ba93bf0a9",
+        "rawSha256": "c1e85b72256a72d8fe482cc7bb9774a50c4871a8b22d1e98365ef81244967bfa",
+        "mappingSha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+        "labelledCount": 2,
+        "classCount": 1,
+        "liveClassCount": 0
+      },
+      {
+        "stem": "temporal-2",
+        "scientificSha256": "82de6ac18283866ad0249c10b108905ed6babd9c43f79afb3139b84be57aceb8",
+        "rawSha256": "99fb7db186918821eafce4a8d0e24d7c9837d029917513a590b41609bbb17881",
+        "mappingSha256": "4e024d3e7967998bc703b4084b688b83c64f25fde12e9c912c368c39ef57525f",
+        "labelledCount": 16,
+        "classCount": 3,
+        "liveClassCount": 1
+      },
+      {
+        "stem": "temporal-3",
+        "scientificSha256": "3ca3f7468ba80289bf49470b1c62616da528cbcfe492bed60f60ca0aa6c56c6a",
+        "rawSha256": "c22d005fcc373129c57284ae67a9b0d03fe475071c32c2131ac7f5cbd4bdc4ff",
+        "mappingSha256": "27e1739ae1d4d5ae236b6c477bcd84289e9fe4806997aa587615934e730c7813",
+        "labelledCount": 216,
+        "classCount": 9,
+        "liveClassCount": 5
+      },
+      {
+        "stem": "temporal-4",
+        "scientificSha256": "d531358435cc5a2142e2a3fa201d33313e8307d167177395ee70815f583e7332",
+        "rawSha256": "a2aa2b06fe3c197a276275d2a690014fe96e93070a41152f77154e4df4dda1a7",
+        "mappingSha256": "196788ac9544ee6c2862e3587d1cd35544eb759272b12fec66a29332f0784e05",
+        "labelledCount": 4096,
+        "classCount": 24,
+        "liveClassCount": 16
+      }
+    ],
+    "classificationCrossChecks": "All labelled encodings; independent accessible rooted-graph enumeration; combinatorial recurrence; temporal sequence formula and quotient inclusion, in the frozen classification generator.",
+    "replayedRows": 78,
+    "replayFields": 26,
+    "replayByExperiment": {
+      "coarse": 20,
+      "middle": 40,
+      "confirmation": 18
+    },
+    "exactCases": 8,
+    "exact": [
+      {
+        "controller": "iid-fair",
+        "L": 3,
+        "k": 2,
+        "boundary": "open",
+        "scientificSha256": "0ed4b38afe99c5fa00a8a84b73af78454161c3cd1b3e9a1ebedca66a8ab7059f",
+        "metrics": {
+          "coverage": {
+            "numerator": "1691",
+            "denominator": "1944",
+            "value": 0.8698559670781894
+          },
+          "coverageSquared": {
+            "numerator": "6653",
+            "denominator": "8748",
+            "value": 0.7605166895290352
+          },
+          "order": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "absOrder": {
+            "numerator": "557",
+            "denominator": "1080",
+            "value": 0.5157407407407407
+          },
+          "orderSquared": {
+            "numerator": "433",
+            "denominator": "1440",
+            "value": 0.30069444444444443
+          },
+          "orderFourth": {
+            "numerator": "803",
+            "denominator": "5760",
+            "value": 0.13940972222222223
+          },
+          "particleCount": {
+            "numerator": "1691",
+            "denominator": "432",
+            "value": 3.9143518518518516
+          },
+          "deadlockProbability": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "geometricProbability": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "expectedTerminalAttempts": {
+            "numerator": "5393",
+            "denominator": "360",
+            "value": 14.980555555555556
+          },
+          "expectedAttemptsPerParticle": {
+            "numerator": "196543",
+            "denominator": "51840",
+            "value": 3.7913387345679013
+          },
+          "coverageVariance": {
+            "numerator": "14615",
+            "denominator": "3779136",
+            "value": 0.00386728606750326
+          },
+          "expectedFailures": {
+            "numerator": "23903",
+            "denominator": "2160",
+            "value": 11.066203703703703
+          },
+          "expectedFailuresPerParticle": {
+            "numerator": "144703",
+            "denominator": "51840",
+            "value": 2.7913387345679013
+          }
+        },
+        "diagnostics": {
+          "memoizedStates": 98,
+          "failureBlocks": 0,
+          "deadCycleBlocks": 0
+        },
+        "matchedFullTerminalLawAndRewards": true
+      },
+      {
+        "controller": "iid-fair",
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic",
+        "scientificSha256": "dbd06c0f6a3a9a729116177ab6251fd03cbab8d392b40ec1cd7b32602f8a80fa",
+        "metrics": {
+          "coverage": {
+            "numerator": "48",
+            "denominator": "55",
+            "value": 0.8727272727272727
+          },
+          "coverageSquared": {
+            "numerator": "1136",
+            "denominator": "1485",
+            "value": 0.764983164983165
+          },
+          "order": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "absOrder": {
+            "numerator": "29",
+            "denominator": "66",
+            "value": 0.4393939393939394
+          },
+          "orderSquared": {
+            "numerator": "169",
+            "denominator": "660",
+            "value": 0.25606060606060604
+          },
+          "orderFourth": {
+            "numerator": "313",
+            "denominator": "2640",
+            "value": 0.11856060606060606
+          },
+          "particleCount": {
+            "numerator": "216",
+            "denominator": "55",
+            "value": 3.9272727272727272
+          },
+          "deadlockProbability": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "geometricProbability": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "expectedTerminalAttempts": {
+            "numerator": "1951",
+            "denominator": "110",
+            "value": 17.736363636363638
+          },
+          "expectedAttemptsPerParticle": {
+            "numerator": "324659",
+            "denominator": "72600",
+            "value": 4.4718870523415974
+          },
+          "coverageVariance": {
+            "numerator": "272",
+            "denominator": "81675",
+            "value": 0.003330272421181512
+          },
+          "expectedFailures": {
+            "numerator": "1519",
+            "denominator": "110",
+            "value": 13.809090909090909
+          },
+          "expectedFailuresPerParticle": {
+            "numerator": "252059",
+            "denominator": "72600",
+            "value": 3.471887052341598
+          }
+        },
+        "diagnostics": {
+          "memoizedStates": 202,
+          "failureBlocks": 0,
+          "deadCycleBlocks": 0
+        },
+        "matchedFullTerminalLawAndRewards": true
+      },
+      {
+        "controller": "temporal-4-00023",
+        "L": 3,
+        "k": 2,
+        "boundary": "open",
+        "scientificSha256": "06f34319cc1219219b2a3da91e9da0d052c2131661944ac32331b80e08d15649",
+        "metrics": {
+          "coverage": {
+            "numerator": "402212627",
+            "denominator": "453242400",
+            "value": 0.8874117403843947
+          },
+          "coverageSquared": {
+            "numerator": "1606841989",
+            "denominator": "2039590800",
+            "value": 0.787825670227577
+          },
+          "order": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "absOrder": {
+            "numerator": "48847769793327",
+            "denominator": "102591719401600",
+            "value": 0.47613754870517533
+          },
+          "orderSquared": {
+            "numerator": "49529714215321",
+            "denominator": "205183438803200",
+            "value": 0.24139235848769947
+          },
+          "orderFourth": {
+            "numerator": "824944319189",
+            "denominator": "12626673157120",
+            "value": 0.06533346582459258
+          },
+          "particleCount": {
+            "numerator": "1206637881",
+            "denominator": "302161600",
+            "value": 3.9933528317297764
+          },
+          "deadlockProbability": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "geometricProbability": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "expectedTerminalAttempts": {
+            "numerator": "2482345087043743",
+            "denominator": "132176663819200",
+            "value": 18.78050947358801
+          },
+          "expectedAttemptsPerParticle": {
+            "numerator": "2166683691230091132293",
+            "denominator": "460831294872364416000",
+            "value": 4.7016852269770295
+          },
+          "coverageVariance": {
+            "numerator": "200954388699013",
+            "denominator": "616286019473280000",
+            "value": 0.00032607325551659
+          },
+          "expectedFailures": {
+            "numerator": "977258516146373",
+            "denominator": "66088331909600",
+            "value": 14.787156641858232
+          },
+          "expectedFailuresPerParticle": {
+            "numerator": "1705852396357726716293",
+            "denominator": "460831294872364416000",
+            "value": 3.70168522697703
+          }
+        },
+        "diagnostics": {
+          "memoizedStates": 466,
+          "failureBlocks": 422,
+          "deadCycleBlocks": 0
+        },
+        "matchedFullTerminalLawAndRewards": true
+      },
+      {
+        "controller": "temporal-4-00023",
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic",
+        "scientificSha256": "6d689e03d7c1a5bcf55f1f76a8d6ea17bac7150165a18fe7ddf6f3dc76ecd435",
+        "metrics": {
+          "coverage": {
+            "numerator": "229261240",
+            "denominator": "258116463",
+            "value": 0.8882085138443881
+          },
+          "coverageSquared": {
+            "numerator": "1833036224",
+            "denominator": "2323048167",
+            "value": 0.789065095609789
+          },
+          "order": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "absOrder": {
+            "numerator": "379328595508249199",
+            "denominator": "973980784751298390",
+            "value": 0.3894620935515777
+          },
+          "orderSquared": {
+            "numerator": "127436873499068453",
+            "denominator": "649320523167532260",
+            "value": 0.19626189062591548
+          },
+          "orderFourth": {
+            "numerator": "7021101235630567",
+            "denominator": "136699057508954160",
+            "value": 0.05136173843166889
+          },
+          "particleCount": {
+            "numerator": "114630620",
+            "denominator": "28679607",
+            "value": 3.9969383122997466
+          },
+          "deadlockProbability": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "geometricProbability": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "expectedTerminalAttempts": {
+            "numerator": "23096866303897617709",
+            "denominator": "1273879939163564304",
+            "value": 18.131117065131846
+          },
+          "expectedAttemptsPerParticle": {
+            "numerator": "220939092502603559511400121",
+            "denominator": "48712501360526577277264704",
+            "value": 4.53557272428712
+          },
+          "coverageVariance": {
+            "numerator": "10042354746368",
+            "denominator": "66624108471630369",
+            "value": 0.00015073154413231958
+          },
+          "expectedFailures": {
+            "numerator": "18005246769784697069",
+            "denominator": "1273879939163564304",
+            "value": 14.1341787528321
+          },
+          "expectedFailuresPerParticle": {
+            "numerator": "172226591142076982234135417",
+            "denominator": "48712501360526577277264704",
+            "value": 3.53557272428712
+          }
+        },
+        "diagnostics": {
+          "memoizedStates": 1052,
+          "failureBlocks": 968,
+          "deadCycleBlocks": 0
+        },
+        "matchedFullTerminalLawAndRewards": true
+      },
+      {
+        "controller": "feedback-4-00006",
+        "L": 3,
+        "k": 2,
+        "boundary": "open",
+        "scientificSha256": "4126a886a7ecbb8aa03a011e1145a4418de78f9d8a729512f84c7910b235819c",
+        "metrics": {
+          "coverage": {
+            "numerator": "8651",
+            "denominator": "10080",
+            "value": 0.8582341269841269
+          },
+          "coverageSquared": {
+            "numerator": "4811",
+            "denominator": "6480",
+            "value": 0.7424382716049382
+          },
+          "order": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "absOrder": {
+            "numerator": "121489",
+            "denominator": "221760",
+            "value": 0.5478400072150073
+          },
+          "orderSquared": {
+            "numerator": "1901",
+            "denominator": "5544",
+            "value": 0.3428932178932179
+          },
+          "orderFourth": {
+            "numerator": "167813",
+            "denominator": "887040",
+            "value": 0.18918312590187591
+          },
+          "particleCount": {
+            "numerator": "8651",
+            "denominator": "2240",
+            "value": 3.8620535714285715
+          },
+          "deadlockProbability": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "geometricProbability": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "expectedTerminalAttempts": {
+            "numerator": "284699",
+            "denominator": "20160",
+            "value": 14.121974206349206
+          },
+          "expectedAttemptsPerParticle": {
+            "numerator": "40588543",
+            "denominator": "11289600",
+            "value": 3.5952153309240362
+          },
+          "coverageVariance": {
+            "numerator": "198893",
+            "denominator": "33868800",
+            "value": 0.005872454884731671
+          },
+          "expectedFailures": {
+            "numerator": "5171",
+            "denominator": "504",
+            "value": 10.259920634920634
+          },
+          "expectedFailuresPerParticle": {
+            "numerator": "29298943",
+            "denominator": "11289600",
+            "value": 2.5952153309240362
+          }
+        },
+        "diagnostics": {
+          "memoizedStates": 222,
+          "failureBlocks": 198,
+          "deadCycleBlocks": 0
+        },
+        "matchedFullTerminalLawAndRewards": true
+      },
+      {
+        "controller": "feedback-4-00006",
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic",
+        "scientificSha256": "1d9bf15ec2454e69a34ac84b1110fae2d2598d1865d1eea6dedf8ca8f4274fb9",
+        "metrics": {
+          "coverage": {
+            "numerator": "2320",
+            "denominator": "2691",
+            "value": 0.8621330360460795
+          },
+          "coverageSquared": {
+            "numerator": "18128",
+            "denominator": "24219",
+            "value": 0.7485032412568644
+          },
+          "order": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "absOrder": {
+            "numerator": "114809",
+            "denominator": "233818",
+            "value": 0.49101865553550195
+          },
+          "orderSquared": {
+            "numerator": "10997",
+            "denominator": "35972",
+            "value": 0.30570999666407206
+          },
+          "orderFourth": {
+            "numerator": "311873",
+            "denominator": "1870544",
+            "value": 0.16672850251049962
+          },
+          "particleCount": {
+            "numerator": "1160",
+            "denominator": "299",
+            "value": 3.879598662207358
+          },
+          "deadlockProbability": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "geometricProbability": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "expectedTerminalAttempts": {
+            "numerator": "243675",
+            "denominator": "13754",
+            "value": 17.716664243129273
+          },
+          "expectedAttemptsPerParticle": {
+            "numerator": "3207255",
+            "denominator": "715208",
+            "value": 4.484366785606425
+          },
+          "coverageVariance": {
+            "numerator": "4208",
+            "denominator": "804609",
+            "value": 0.005229869414833789
+          },
+          "expectedFailures": {
+            "numerator": "190315",
+            "denominator": "13754",
+            "value": 13.837065580921914
+          },
+          "expectedFailuresPerParticle": {
+            "numerator": "2492047",
+            "denominator": "715208",
+            "value": 3.484366785606425
+          }
+        },
+        "diagnostics": {
+          "memoizedStates": 524,
+          "failureBlocks": 476,
+          "deadCycleBlocks": 0
+        },
+        "matchedFullTerminalLawAndRewards": true
+      },
+      {
+        "controller": "feedback-4-23071",
+        "L": 3,
+        "k": 2,
+        "boundary": "open",
+        "scientificSha256": "8c12b2e7e6c098641a5ef4bb1cf8d186ef16c8aeb93a74b0b7bbd2729063853d",
+        "metrics": {
+          "coverage": {
+            "numerator": "962357",
+            "denominator": "1088640",
+            "value": 0.8839993018812463
+          },
+          "coverageSquared": {
+            "numerator": "547637",
+            "denominator": "699840",
+            "value": 0.7825174325560128
+          },
+          "order": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "absOrder": {
+            "numerator": "7540219",
+            "denominator": "15966720",
+            "value": 0.47224595909491746
+          },
+          "orderSquared": {
+            "numerator": "7891537",
+            "denominator": "31933440",
+            "value": 0.24712455031465447
+          },
+          "orderFourth": {
+            "numerator": "1999889",
+            "denominator": "25546752",
+            "value": 0.07828349372945727
+          },
+          "particleCount": {
+            "numerator": "962357",
+            "denominator": "241920",
+            "value": 3.9779968584656085
+          },
+          "deadlockProbability": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "geometricProbability": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "expectedTerminalAttempts": {
+            "numerator": "22902263",
+            "denominator": "1451520",
+            "value": 15.77812431106702
+          },
+          "expectedAttemptsPerParticle": {
+            "numerator": "1610547857",
+            "denominator": "406425600",
+            "value": 3.9627126268620874
+          },
+          "coverageVariance": {
+            "numerator": "1259405831",
+            "denominator": "1185137049600",
+            "value": 0.0010626668294819294
+          },
+          "expectedFailures": {
+            "numerator": "17128121",
+            "denominator": "1451520",
+            "value": 11.80012745260141
+          },
+          "expectedFailuresPerParticle": {
+            "numerator": "1204122257",
+            "denominator": "406425600",
+            "value": 2.9627126268620874
+          }
+        },
+        "diagnostics": {
+          "memoizedStates": 308,
+          "failureBlocks": 274,
+          "deadCycleBlocks": 0
+        },
+        "matchedFullTerminalLawAndRewards": true
+      },
+      {
+        "controller": "feedback-4-23071",
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic",
+        "scientificSha256": "c1f95cd287ebb106863d7975898ade77d88437bff7ac155670ec87682bfa464f",
+        "metrics": {
+          "coverage": {
+            "numerator": "1737496",
+            "denominator": "1961739",
+            "value": 0.8856917255557442
+          },
+          "coverageSquared": {
+            "numerator": "13862336",
+            "denominator": "17655651",
+            "value": 0.7851500916052316
+          },
+          "order": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "absOrder": {
+            "numerator": "188087963",
+            "denominator": "511359966",
+            "value": 0.3678191010361574
+          },
+          "orderSquared": {
+            "numerator": "195445019",
+            "denominator": "1022719932",
+            "value": 0.1911031680176543
+          },
+          "orderFourth": {
+            "numerator": "239587355",
+            "denominator": "4090879728",
+            "value": 0.05856621825377703
+          },
+          "particleCount": {
+            "numerator": "868748",
+            "denominator": "217971",
+            "value": 3.9856127650008486
+          },
+          "deadlockProbability": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "geometricProbability": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "expectedTerminalAttempts": {
+            "numerator": "4940134631",
+            "denominator": "277661520",
+            "value": 17.791931092936466
+          },
+          "expectedAttemptsPerParticle": {
+            "numerator": "837021002879",
+            "denominator": "187699187520",
+            "value": 4.459374672518561
+          },
+          "coverageVariance": {
+            "numerator": "2694890240",
+            "denominator": "3848419904121",
+            "value": 0.0007002588873200227
+          },
+          "expectedFailures": {
+            "numerator": "49835283323",
+            "denominator": "3609599760",
+            "value": 13.806318327935616
+          },
+          "expectedFailuresPerParticle": {
+            "numerator": "649321815359",
+            "denominator": "187699187520",
+            "value": 3.4593746725185612
+          }
+        },
+        "diagnostics": {
+          "memoizedStates": 746,
+          "failureBlocks": 680,
+          "deadCycleBlocks": 0
+        },
+        "matchedFullTerminalLawAndRewards": true
+      }
+    ],
+    "singularModels": 9,
+    "theory": [
+      {
+        "name": "persistent-two-step",
+        "scientificSha256": "3502fe5c7ac902bbcfb73190944318d5c37bac0157aeaa1068e18ffba6779fd7",
+        "exactKernelForestEndpointValuesMatched": true
+      },
+      {
+        "name": "reset-1-step",
+        "scientificSha256": "29bbd59e472c6830d35d6212534a5da15baf15195e0d723b108e749dec9dead1",
+        "exactKernelForestEndpointValuesMatched": true
+      },
+      {
+        "name": "reset-2-step",
+        "scientificSha256": "6dd986766ff5c38d95d020170e1a19569cfd9a421817ffb3b496c325881705cf",
+        "exactKernelForestEndpointValuesMatched": true
+      },
+      {
+        "name": "reset-3-step",
+        "scientificSha256": "7c5c6ced4ec1cfdb92a934708818f890da2319f63e520f0e645216ed324c0fff",
+        "exactKernelForestEndpointValuesMatched": true
+      },
+      {
+        "name": "rare-entry-s1-r1",
+        "scientificSha256": "0d7433c0b6b30df96a2c419667c9b14b6934682880e1bb7ea060950925d33fd5",
+        "exactKernelForestEndpointValuesMatched": true
+      },
+      {
+        "name": "rare-entry-s2-r2",
+        "scientificSha256": "b9e9c2cdccb364ccafea767a70ec79da6abe1cc520566380418d4b45de646828",
+        "exactKernelForestEndpointValuesMatched": true
+      },
+      {
+        "name": "rare-entry-s3-r2",
+        "scientificSha256": "733a048e4e90d34e7a62730ae22a3878b3ec08c98ce7f347e4924d16da05a9d2",
+        "exactKernelForestEndpointValuesMatched": true
+      },
+      {
+        "name": "rare-entry-s1-r2",
+        "scientificSha256": "44adaa94f57e77a2f906928acf47b061b47ebe96de0f24e1201d13bf2a942685",
+        "exactKernelForestEndpointValuesMatched": true
+      },
+      {
+        "name": "rare-entry-s3-r3",
+        "scientificSha256": "488f580b269471a634bc162d18c4461032169d08dff03d5d2969d66b7c12c28b",
+        "exactKernelForestEndpointValuesMatched": true
+      }
+    ],
+    "independentRationalFormulaChecks": 14,
+    "scope": "Source-only fresh execution plus a small, disclosed regression-reference fixture. This is not a full study rerun or a new independent inferential sample."
+  },
+  "quickEvidenceSha256": "522cfd174d79b4071155cd79c27d7feade52064a052ff4dc424bcc7bf5deecfa",
+  "copiedSourceHashesUnchanged": true,
+  "fullStudyIndependentlyRerun": false,
+  "limitations": [
+    "Actual runtime and platform are recorded; untested operating systems are not certified by this run.",
+    "Quick replay is seeded implementation validation, not new independent statistical evidence or a full study rerun.",
+    "Full means all Stage III primary pilot/confirmation workflows and rare-entry diagnostics; only the disclosed eight-case exact subset is solved here. Paper, plots, PDF and exhaustive exact survey are not rebuilt.",
+    "The new metadata/degenerate-SE validator is post-holdout validation. It does not change frozen analysis or certify a general-purpose statistics library."
+  ],
+  "finishedAtUTC": "2026-10-04T04:39:21.007Z",
+  "elapsedSeconds": 4.4311327
+}

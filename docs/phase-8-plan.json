@@ -1,0 +1,2552 @@
+{
+  "phase": 8,
+  "status": "complete",
+  "requirements": [
+    {
+      "id": "A174",
+      "text": "代码里循环能解决的问题故意人工展开。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A175",
+      "text": "固定十二个选项时可以写十二个 if.",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A176",
+      "text": "十二个月手写十二个分支。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A177",
+      "text": "DOM 元素可以一个一个创建，不 map()。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A178",
+      "text": "三个几乎一样的弹窗复制三遍。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A179",
+      "text": "不抽公共组件。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A180",
+      "text": "如果后来多一个情况，就补一个 handleOtherThingsTemporarily()。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A181",
+      "text": "大量复制粘贴后变量名忘记修改。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A182",
+      "text": "用户名变量可以叫 receiverAddress.",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A183",
+      "text": "某个 ID 可以叫 skuId.",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A184",
+      "text": "透明度可以叫 discountRate.",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A185",
+      "text": "函数叫 paymentSuccess()，实际上完全不是付款。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A186",
+      "text": "注释写“计算商品运费”，代码实际处理别的东西。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A187",
+      "text": "文件名、函数名、变量名、实际业务之间经常只剩历史关系。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A188",
+      "text": "一个 boolean 先转 \"yes\"。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A189",
+      "text": "\"yes\" 再转成 1.",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A190",
+      "text": "再包成 { value: 1 }.",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A191",
+      "text": "再 JSON.stringify()。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A192",
+      "text": "跨几个函数以后又 JSON.parse()。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A193",
+      "text": "最终再恢复成 boolean。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A194",
+      "text": "普通同步逻辑可以先包 callback。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A195",
+      "text": "callback 外面再包 Promise。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A196",
+      "text": ".then() 里再调用 async 函数。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A197",
+      "text": "最后 await 一个本来已经算完的值。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A198",
+      "text": "可以为了显示效果加入固定的短 setTimeout，但必须有上限，不能造成真的无限等待。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A199",
+      "text": "一个函数可以有十几个位置参数，而不是传对象。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A200",
+      "text": "一堆参数永远没有使用。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A201",
+      "text": "简单函数套成 class，并且 class 只有一个 static method。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A202",
+      "text": "一个 600 行 switch 可以存在，只要所有分支是确定的。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A203",
+      "text": "同一个枚举在三个文件分别手写三遍。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A204",
+      "text": "三份枚举名字还稍微不一样。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A205",
+      "text": "可以有大量 magic number。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A206",
+      "text": "可以保留 if (true) 这种历史分支。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A207",
+      "text": "变量名存在 data2、data2New、data2NewFinal。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A208",
+      "text": "文件存在 login.ts.",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A209",
+      "text": "它调用 login_old.ts.",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A210",
+      "text": "login_old.ts 再调用 login_new_final.ts.",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A211",
+      "text": "最终实际工作的可能是 login_2019_backup.js.",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A212",
+      "text": "一部分旧文件仍然参与调用链。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A213",
+      "text": "一部分完全没人使用。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A214",
+      "text": "一部分只导出一个常量。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A215",
+      "text": "常量又从另一份配置文件读取。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A216",
+      "text": "同一个配置值可能同时出现在 .env、YAML、JSON 和数据库。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A217",
+      "text": "不同服务的配置优先级不同。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A218",
+      "text": "前端甚至可以有某些本地配置覆盖服务器配置。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A219",
+      "text": "同一概念在不同文件中有四种默认值，但最终适配层选择固定一个，保证行为稳定。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A229",
+      "text": "Gulp 只负责复制两个 CSS 文件。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A230",
+      "text": "Babel 只负责编译一个特别老的 JS 文件。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A231",
+      "text": "Webpack 直接或间接存在。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A232",
+      "text": "Vite 也存在。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A236",
+      "text": "ESLint 可以存在多套 scoped 配置。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A237",
+      "text": "Prettier 存在。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A238",
+      "text": "再放一个 Biome 配置，但只扫描历史目录或者完全没有接进 CI。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A239",
+      "text": "Stylelint 专门检查一部分 CSS，其他 CSS 不检查。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A243",
+      "text": "历史目录里再塞 CoffeeScript。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A244",
+      "text": "项目存在 Java/Spring 的旧代码。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A245",
+      "text": "Python/FastAPI 的旧代码。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A246",
+      "text": "PHP 的旧代码。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A247",
+      "text": "Go 的旧代码。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A248",
+      "text": "Rust 的旧代码。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A249",
+      "text": "C# 的旧代码。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A250",
+      "text": "Ruby 的旧代码。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A251",
+      "text": "Lua 的旧代码。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A252",
+      "text": "SQL 文件散得到处都是。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A253",
+      "text": ".proto 文件存在多个版本。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A254",
+      "text": "这些旧代码内容来自完全不相关的虚构旧项目，例如海鲜库存。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A255",
+      "text": "也可以有学校排课。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A256",
+      "text": "停车计费。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A257",
+      "text": "仓鼠饲养排班。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A258",
+      "text": "卫星轨道计算。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A259",
+      "text": "餐饮优惠券核销。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A260",
+      "text": "它们不是直接复制第三方项目，而是自己写成“明显像从别处复制来的遗迹”，避免真的夹进未知版权和危险代码。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A261",
+      "text": "大部分历史代码不参与默认构建。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A262",
+      "text": "但少量旧函数真的被主程序调用。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A263",
+      "text": "比如一个叫 calculateFrozenShrimpDispatch() 的函数可能真的被复用来计算某个完全不相关的排序。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A264",
+      "text": "函数里的 frozenLevel、truckCount、warehouseId 一个都不改名。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A265",
+      "text": "某个学校项目里的“补考次数”常量可以被莫名其妙拿来当另一处限制。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A266",
+      "text": "老停车项目的费率数组可以拿来计算别的等级。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A267",
+      "text": "仓库里留 Kubernetes YAML。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A268",
+      "text": "里面服务名还是 shrimp-warehouse.",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A269",
+      "text": "留一套 Maven 配置，description 还是“图书管理系统”。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A270",
+      "text": "留 Terraform。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A271",
+      "text": "Terraform 里绝大多数资源被注释。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A272",
+      "text": "文件顶部写“生产环境严禁修改”。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A273",
+      "text": "实际项目根本不执行它。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A274",
+      "text": "可以保留类似“暂时别删，虽然查不到调用”的注释。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A275",
+      "text": "“原商城逻辑，领导说先上线。”",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A276",
+      "text": "“理论上不会进入这里。”",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A277",
+      "text": "“TODO: 2019 年以后处理。”",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A278",
+      "text": "这些历史注释都只是代码故事，不依赖具体网站主题。",
+      "route": "archive",
+      "kind": "source-role",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A288",
+      "text": "用户界面里的一个按钮可以躲鼠标。",
+      "route": "existing-windows",
+      "kind": "existing-interaction",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A289",
+      "text": "但只躲固定次数，例如两次或三次，之后必须停下来让人点击。",
+      "route": "existing-windows",
+      "kind": "existing-interaction",
+      "overridden": true,
+      "override": "Latest user: teleport 5–30; mobile offscreen accepted; no stop-motion button. Original text preserved."
+    },
+    {
+      "id": "A290",
+      "text": "逃跑按钮不能跑出屏幕。",
+      "route": "existing-windows",
+      "kind": "existing-interaction",
+      "overridden": true,
+      "override": "Latest user: teleport 5–30; mobile offscreen accepted; no stop-motion button. Original text preserved."
+    },
+    {
+      "id": "A291",
+      "text": "不能覆盖真正的退出/返回入口。",
+      "route": "existing-windows",
+      "kind": "existing-interaction",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A292",
+      "text": "触屏不能按鼠标逻辑无限躲，可以只移动一次或改成另一种轻微捉弄。",
+      "route": "existing-windows",
+      "kind": "existing-interaction",
+      "overridden": true,
+      "override": "Latest user: teleport 5–30; mobile offscreen accepted; no stop-motion button. Original text preserved."
+    },
+    {
+      "id": "A293",
+      "text": "键盘必须始终有办法完成对应操作。",
+      "route": "existing-windows",
+      "kind": "existing-interaction",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A294",
+      "text": "某些日期控件可以要求“先选日、再选年、最后选月”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A295",
+      "text": "某个数值不让直接输入，却用看起来像音量控制的 slider。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A296",
+      "text": "下拉菜单可以同时有“其他”和“另外的其他”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A297",
+      "text": "选完“其他”以后再让用户选择“其他属于哪种其他”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A298",
+      "text": "但不能所有页面都玩同一个梗，否则只会变成重复烦人。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A299",
+      "text": "“保存”旁边可以有“保存但不承认已保存”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A300",
+      "text": "点击“取消”可以问“取消本次取消还是取消原操作”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A301",
+      "text": "最终必须给文字足够明确的选项，让人认真读完能完成。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A302",
+      "text": "一个复制按钮可以先要求生成“复制许可”。",
+      "route": "clipboard",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A303",
+      "text": "获得许可以后确实正确复制。",
+      "route": "clipboard",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A304",
+      "text": "不去全局劫持用户剪贴板快捷键。",
+      "route": "clipboard",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A305",
+      "text": "进度条可以跑到 103%。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A306",
+      "text": "然后出现“正在回收超额进度”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A307",
+      "text": "最后回到 100% 并正常完成。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A308",
+      "text": "成功提示可以故意使用红色。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A309",
+      "text": "但文字明确写成功，避免真的让用户以为失败。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A310",
+      "text": "列表实际三项，页脚可以写“共三项，另有一项为本说明”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A311",
+      "text": "新旧版 UI 可以同时存在。",
+      "route": "old",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A312",
+      "text": "新版里出现“切换旧版”。",
+      "route": "old",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A313",
+      "text": "旧版里又提示“建议使用新版”。",
+      "route": "old",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A314",
+      "text": "仍然保证两边至少有一条确定可完成路径。",
+      "route": "old",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A315",
+      "text": "字体设置可以使用完全不专业的分类名称。",
+      "route": "settings",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A316",
+      "text": "某个“字号”按钮第一次只改变角落里一个不重要的文本。",
+      "route": "settings",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A317",
+      "text": "然后再提供真正的“应用到全部”。",
+      "route": "settings",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A318",
+      "text": "可以统计一堆完全没意义的指标，例如鼠标移动距离、弹窗关闭次数、阅读某行文字所花的秒数。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A319",
+      "text": "这些指标只影响展示、文案和玩笑。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A320",
+      "text": "不允许隐藏指标真正阻塞主要流程。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A321",
+      "text": "某些无意义数据可以写数据库，认真设计索引。",
+      "route": "archive",
+      "kind": "postgresql",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A322",
+      "text": "真正重要但很小的数据反而存在 localStorage。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "A381",
+      "text": "变量名可以乱写 比如随便拍键盘敲出的。",
+      "route": "archive",
+      "kind": "active-source",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B147",
+      "text": "某些按钮只是画出来的，看上去完全可以点击，实际上没有事件处理。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B148",
+      "text": "点这种假按钮时最好什么都不发生，连 hover 都特别认真。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B149",
+      "text": "另一些看起来只是装饰文字，实际上可以点击。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B150",
+      "text": "有一个“不建议点击”的按钮，点击后进入模拟浏览器卡死。",
+      "route": "hangar",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B151",
+      "text": "页面瞬间停止本站自己的动画，本站按钮暂时失去响应，光标变等待状态。",
+      "route": "hangar",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B152",
+      "text": "屏幕角落显示极小的“系统没有响应”。",
+      "route": "hangar",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B153",
+      "text": "3～5 秒以后自动恢复，并弹出“系统成功处理了系统未响应问题”。",
+      "route": "hangar",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B154",
+      "text": "绝对不要真的使用无限循环、巨量 DOM、内存分配等方式把浏览器主线程真正锁死。",
+      "route": "hangar",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B155",
+      "text": "可以有一个模块永远显示 Loading。",
+      "route": "hangar",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B156",
+      "text": "它从用户打开页面开始永远是“正在加载 99%”。",
+      "route": "hangar",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B157",
+      "text": "点击它旁边的“为什么这么慢”，回答“该模块用于验证加载动画的长期稳定性”。",
+      "route": "hangar",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B158",
+      "text": "永久加载模块不能挡住其他内容，也不能成为任何正常功能的依赖。",
+      "route": "hangar",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B159",
+      "text": "可以有一个进度条从 0 到 99% 很快，然后永久保持 99%。",
+      "route": "hangar",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B160",
+      "text": "另一个进度条从 97% 倒退到 41%，然后跳到 100%。",
+      "route": "hangar",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B161",
+      "text": "某些模块会轻微来回抽搐。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B162",
+      "text": "卡片每隔十几秒左右移动 1～3px。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B163",
+      "text": "某个按钮在 hover 时往旁边挪。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B164",
+      "text": "逃跑按钮最多躲两三次，之后停住。",
+      "route": "existing-windows",
+      "kind": "existing-interaction",
+      "overridden": true,
+      "override": "Latest user: teleport 5–30; mobile offscreen accepted; no stop-motion button. Original text preserved."
+    },
+    {
+      "id": "B165",
+      "text": "一个模块的标题会慢慢偏移，刷新页面又恢复。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B166",
+      "text": "某个 Dropdown 打开后会因为布局变化把自己顶到另一个位置。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B167",
+      "text": "Tooltip 有时候故意出现在目标元素远处。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B168",
+      "text": "模态框略微偏离屏幕中心，例如向右 37px。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B169",
+      "text": "部分窗口的关闭按钮在左上角。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B170",
+      "text": "另一些关闭按钮在右下角。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B171",
+      "text": "少量窗口同时存在两个 X，其中一个只是图标。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B172",
+      "text": "有些按钮文字和功能故意不完全对应，例如“返回”实际返回该模块首页，而不是浏览器上一页。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B173",
+      "text": "但不要劫持浏览器原生后退键做无限循环。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B174",
+      "text": "某些表格表头和数据故意错开 2～3px。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B175",
+      "text": "某些输入框 label 轻微没有对齐。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B176",
+      "text": "一个页面可以同时出现 12px、14px、15px、16px、18px 字号。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B177",
+      "text": "某些卡片的内边距明显比其他卡片大一倍。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B178",
+      "text": "某些按钮故意特别长，因为里面塞了完整句子。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B179",
+      "text": "有个按钮只显示一个“？”。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B180",
+      "text": "点进去发现是“关闭帮助”。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B181",
+      "text": "有些操作成功以后显示红色 Toast。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B182",
+      "text": "有些错误反而显示绿色 Toast。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B183",
+      "text": "但文本必须明确写“成功”或者“失败”，别真的把结果搞不清。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B184",
+      "text": "Toast 的出现位置不统一：右上、左下、中间都有。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B185",
+      "text": "某些 Toast 会挡住刚刚需要点击的按钮两秒。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B186",
+      "text": "某个 Toast 有关闭按钮，但鼠标移上关闭按钮时 Toast 自己消失。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B187",
+      "text": "系统通知数量可以显示成 1+，实际上只有一个。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B188",
+      "text": "未读数可以显示 (0)，但仍有一个红点。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B189",
+      "text": "一个“全部已读”按钮点完以后红点消失，但数字从 3 变成“已读”。",
+      "route": "layout",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B190",
+      "text": "页面标题偶尔添加类似 [1]、[重要]、[已解决]。",
+      "route": "global",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B191",
+      "text": "浏览器标签页标题可以在几个正式名称间轮换。",
+      "route": "global",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B192",
+      "text": "页面 favicon 偶尔切成 Loading 图标。",
+      "route": "global",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B193",
+      "text": "不要让 favicon 高频闪烁，避免真的造成刺激问题。",
+      "route": "global",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B194",
+      "text": "可以有突然出现的轻度惊吓页面，但不要血腥，也不要高频闪屏。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B195",
+      "text": "比如用户点击一个极其普通的“查看更多”时，短暂出现一个本站自制的诡异虚构图形、巨大眼睛、奇怪卡通脸之类，然后恢复。不要使用真实事故、尸体、血腥图片。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B196",
+      "text": "可以同时播放很短、音量明显偏低的提示音，但遵循浏览器音频规则，不尝试绕过静音和自动播放限制。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B197",
+      "text": "这种惊吓事件极少出现，次数固定，否则从“好笑”迅速变成纯烦。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B198",
+      "text": "设置里提供“减少惊吓/减少动态效果”，入口名字可以故意写成“文明程度兼容模式”。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B199",
+      "text": "惊吓内容不能和保存、返回、退出这类必要操作绑定。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B200",
+      "text": "可以存在“绝对不要点”页面，里面各种元素表现得像网页坏了。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B201",
+      "text": "鼠标经过文字，文字轻微逃跑。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B202",
+      "text": "图片加载出来以后自己变小。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B203",
+      "text": "一段文字每隔几秒交换两个词的位置。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B204",
+      "text": "一个输入框输入越多反而越窄，但有最小宽度。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B205",
+      "text": "一个进度条会根据鼠标移动增长，而不是任务进度。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B206",
+      "text": "有一个“关闭动画”按钮本身一直缓慢移动。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": true,
+      "override": "Latest user: teleport 5–30; mobile offscreen accepted; no stop-motion button. Original text preserved."
+    },
+    {
+      "id": "B207",
+      "text": "但通过键盘焦点仍然能够稳定选中它。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": true,
+      "override": "Latest user: teleport 5–30; mobile offscreen accepted; no stop-motion button. Original text preserved."
+    },
+    {
+      "id": "B208",
+      "text": "有些链接第一次点击只把颜色从蓝变紫。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B209",
+      "text": "第二次点击才真的导航。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B210",
+      "text": "另外一些链接 hover 后出现“这是链接”的 Tooltip。",
+      "route": "unwise",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B211",
+      "text": "某些页面需要点击“下一步”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B212",
+      "text": "但“下一步”在左边，“上一步”在右边。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B213",
+      "text": "另一页又恢复正常。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B214",
+      "text": "有些确认框按钮顺序是“取消 / 确定”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B215",
+      "text": "另一些是“确定 / 取消”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B216",
+      "text": "某一个最恶心的可以是“否 / 是 / 取消否”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B217",
+      "text": "一个弹窗问“确定不取消本次操作吗？”",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B218",
+      "text": "点“否”以后再问“是否确认刚才的否？”",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B219",
+      "text": "最多两层，不能真的无限套娃。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B220",
+      "text": "表单里可以出现互相矛盾的必填标志：字段旁有 *，下面文字写“此项非必填”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B221",
+      "text": "实际提交时按照明确固定规则处理，例如确实非必填。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B222",
+      "text": "一个输入框 placeholder 写“请勿输入”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B223",
+      "text": "用户不输入时又出现“请输入内容”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B224",
+      "text": "有些表单的“重置”按钮不是清空，而是恢复页面刚打开时的状态。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B225",
+      "text": "另一个地方“清空”才是真清空。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B226",
+      "text": "可以故意出现两个几乎一样的按钮：“提交”和“提交申请”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B227",
+      "text": "两个实际上执行同一个函数。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B228",
+      "text": "再放一个“快速提交”，它比正常提交慢 800ms。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B229",
+      "text": "“高级模式”打开后反而隐藏选项。",
+      "route": "settings",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B230",
+      "text": "“简单模式”会显示更多解释文字。",
+      "route": "settings",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B231",
+      "text": "某些开关状态语义倒置。",
+      "route": "settings",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B232",
+      "text": "比如开关标题“禁用动画”，开的时候显示 ON，表示“禁用”开启，而不是动画开启。",
+      "route": "settings",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B233",
+      "text": "可以在下方再用一句人话解释实际状态，确保用户最终能判断。",
+      "route": "settings",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B234",
+      "text": "有些 checkbox 是圆形。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B235",
+      "text": "某些 radio 看起来像方形 checkbox。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B236",
+      "text": "滑块中间值不一定在视觉正中。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B237",
+      "text": "一个评分控件从 2 分开始，没有 1 分。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B238",
+      "text": "另一个评分是 A、B、C、7、很好。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B239",
+      "text": "日期选择器可以故意先让用户选择“日”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B240",
+      "text": "再弹出年份。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B241",
+      "text": "最后才选择月份。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B242",
+      "text": "最终仍输出正确日期。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B243",
+      "text": "下拉菜单可以包含“其他”“其它”“其余”“另外”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B244",
+      "text": "其中三个实际是不同选项。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B245",
+      "text": "一个下拉框默认项叫“请选择（已选择）”。",
+      "route": "intake",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B246",
+      "text": "表格分页可以显示“上一页 / 下一页 / 第下一页”。",
+      "route": "table",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B247",
+      "text": "总共只有一页时仍然显示分页器。",
+      "route": "table",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B248",
+      "text": "第 1 页可以写作“第 01/1 页”。",
+      "route": "table",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B249",
+      "text": "排序按钮第一次点升序，第二次点降序，第三次进入“原始但不是原始顺序”。",
+      "route": "table",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B250",
+      "text": "某个列表总是空着一个位置，看起来好像没加载完。",
+      "route": "table",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B251",
+      "text": "页面可以存在两个滚动条：外层一个、某个内容区域一个。",
+      "route": "scroll",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B252",
+      "text": "但不要做成用户完全无法滚到按钮。",
+      "route": "scroll",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B253",
+      "text": "某个区域滚动到最底下会自动往上回弹 10px。",
+      "route": "scroll",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B254",
+      "text": "点击“回到顶部”，先移动到 80%，停半秒，再到顶部。",
+      "route": "scroll",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B255",
+      "text": "一个悬浮按钮会挡住内容，但拖一下就可以移动。",
+      "route": "scroll",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B256",
+      "text": "系统可以记录用户把它拖到哪里，下次继续挡在那里。",
+      "route": "scroll",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B257",
+      "text": "页面右下角长期存在一个虚假的“在线客服”。",
+      "route": "support",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B258",
+      "text": "点进去只有“您好”。",
+      "route": "support",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B259",
+      "text": "用户回复任何内容，它先显示“正在输入……”。",
+      "route": "support",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B260",
+      "text": "然后回复“收到”。",
+      "route": "support",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B261",
+      "text": "再问任何内容，偶尔回复“这个问题很好”。",
+      "route": "support",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B262",
+      "text": "但不要伪装成真实人工客服。",
+      "route": "support",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B263",
+      "text": "某个模块展示“在线人数”，数值可以是确定性伪数据，例如按照当前分钟计算。",
+      "route": "telemetry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B264",
+      "text": "每过一分钟在线人数变化得毫无规律。",
+      "route": "telemetry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B265",
+      "text": "旁边写“数据仅供精确参考”。",
+      "route": "telemetry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B266",
+      "text": "状态页可以永远显示“所有系统运行正常”，下面同时列出三个“严重异常”。",
+      "route": "telemetry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B267",
+      "text": "一个系统健康度可以显示 108%。",
+      "route": "telemetry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B268",
+      "text": "CPU 使用率展示 3%，旁边写“压力极高”。",
+      "route": "telemetry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B269",
+      "text": "内存图表可以有单位 MB/s² 这种故意错误的显示单位，但只是娱乐面板，不冒充真实监控。",
+      "route": "telemetry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B270",
+      "text": "一个系统时间区域同时显示本地时间、UTC 和“平台标准时间”。",
+      "route": "telemetry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B271",
+      "text": "平台标准时间比真实时间快 43 秒，没有任何原因。",
+      "route": "telemetry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B272",
+      "text": "可以有一个“同步时间”按钮，点击后只把平台标准时间换成另一个固定偏差。",
+      "route": "telemetry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B273",
+      "text": "某些模块使用古老 iframe，边框还保留默认样式。",
+      "route": "uniform",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B274",
+      "text": "iframe 里面再显示一个完全不同风格的小网站。",
+      "route": "uniform",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B275",
+      "text": "iframe 顶部写“您正在使用统一体验”。",
+      "route": "uniform",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B276",
+      "text": "某些 iframe 高度差 20px，需要里面再滚一下。",
+      "route": "uniform",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B277",
+      "text": "页面上可以混入像广告一样的卡片，但其实都是本站功能。",
+      "route": "uniform",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B278",
+      "text": "某个功能入口故意设计得像“关闭广告”的 X。",
+      "route": "uniform",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B279",
+      "text": "点 X 实际进入该功能。",
+      "route": "uniform",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B280",
+      "text": "真正关闭这块区域的按钮在卡片底部写“暂时不处理”。",
+      "route": "uniform",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B281",
+      "text": "不要假装是真实商业广告或诱导外部购买。",
+      "route": "uniform",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B282",
+      "text": "可以有一个“系统公告”不断强调这个平台极其先进。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B283",
+      "text": "例如“本平台已采用 37 类前端技术，可充分保障不确定性”。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B284",
+      "text": "“经过架构升级，页面数量减少了 -4 个。”",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B285",
+      "text": "“目前已解决 104% 的已知问题。”",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B286",
+      "text": "“为提高兼容性，本系统同时保留不兼容版本。”",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B287",
+      "text": "“由于系统性能较高，部分功能可能表现为缓慢。”",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B288",
+      "text": "每个模块底部可以显示“由不同技术部门开发”。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B289",
+      "text": "技术部门名称完全不统一。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B290",
+      "text": "某一页页脚是 © 2017。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B291",
+      "text": "另一页是 © 2024。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B292",
+      "text": "另一页写“版权所有 1998—未来”。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B293",
+      "text": "有些模块版本是 v2.3.1。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B294",
+      "text": "有些是 2026.10。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B295",
+      "text": "有些是 FINAL。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B296",
+      "text": "有些是 beta2-final-stable-dev。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B297",
+      "text": "可以有“系统总版本”，每刷新一次小版本号增加，但只是显示层伪版本。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B298",
+      "text": "某些模块故意显示“即将上线”，但点进去其实能正常使用。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B299",
+      "text": "另一些写“稳定运行”，点进去第一屏就是错误页。",
+      "route": "announcements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B300",
+      "text": "错误页点“重试”以后立即正常，形成固定喜剧效果。",
+      "route": "retry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B301",
+      "text": "有个错误页面错误编号每秒变化。",
+      "route": "retry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B302",
+      "text": "错误描述始终不变。",
+      "route": "retry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B303",
+      "text": "“复制错误信息”会复制一份比页面显示长十倍的诊断文本。",
+      "route": "retry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B304",
+      "text": "诊断文本最后一句是“建议重新尝试”。",
+      "route": "retry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B305",
+      "text": "404 页面可以提供搜索、小游戏和计算器。",
+      "route": "404",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B306",
+      "text": "404 页面甚至可能比首页功能更多。",
+      "route": "404",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B307",
+      "text": "500 页面可以显示“服务器内部非常外部错误”。",
+      "route": "retry",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B308",
+      "text": "网络断开时可以显示“互联网暂时不在互联网中”。",
+      "route": "global",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B309",
+      "text": "网络恢复以后出现“互联网已重新连接互联网”。",
+      "route": "global",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B310",
+      "text": "页面首次加载可以显示三层 Loading：网站 Loading、应用 Loading、组件 Loading。",
+      "route": "load",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B311",
+      "text": "第一层 200ms。",
+      "route": "load",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B312",
+      "text": "第二层 400ms。",
+      "route": "load",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B313",
+      "text": "第三层某些时候显示“正在关闭加载动画”。",
+      "route": "load",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B314",
+      "text": "不需要所有页面都这么做，否则真的太拖。",
+      "route": "load",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B315",
+      "text": "某些功能第一次进入会有毫无必要的新手教程。",
+      "route": "tutorial",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B316",
+      "text": "教程第一步教用户“这是一个按钮”。",
+      "route": "tutorial",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B317",
+      "text": "第二步要求点击下一步。",
+      "route": "tutorial",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B318",
+      "text": "下一步按钮被教程遮罩挡住一半。",
+      "route": "tutorial",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B319",
+      "text": "第三步告诉用户“您已掌握基本操作”。",
+      "route": "tutorial",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B320",
+      "text": "教程随时可以跳过。",
+      "route": "tutorial",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B321",
+      "text": "但“跳过教程”点击后可以问一句“确定已经掌握教程内容吗？”",
+      "route": "tutorial",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B322",
+      "text": "确认以后真的跳过，绝不无限确认。",
+      "route": "tutorial",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B323",
+      "text": "页面可以有成就系统。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B324",
+      "text": "“成功关闭一个弹窗”。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B325",
+      "text": "“第一次刷新页面”。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B326",
+      "text": "“连续点了三次同一个按钮”。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B327",
+      "text": "“发现一个假按钮”。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B328",
+      "text": "“等待加载超过十秒”。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B329",
+      "text": "“使用五种互不相关的工具”。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B330",
+      "text": "“同时打开三个本站标签页”。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B331",
+      "text": "成就没有任何实际价值，但界面做得极其隆重。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B332",
+      "text": "解锁成就时可以弹出一个比当前任务成功提示还大的窗口。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B333",
+      "text": "首页还可以有“文明指数”。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B334",
+      "text": "使用不同类别功能会增加文明指数。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B335",
+      "text": "文明指数达到 100 后继续增长到 104、117，完全没有上限。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B336",
+      "text": "旁边解释“100 仅代表传统文明上限”。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B337",
+      "text": "可以统计访问者使用过多少种技术栈，但这个数当然只是网站内部预设的玩笑数据。",
+      "route": "achievements",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    },
+    {
+      "id": "B351",
+      "text": "多种语言混杂 。",
+      "route": "global",
+      "kind": "interactive",
+      "overridden": false,
+      "override": null
+    }
+  ],
+  "acceptedAt": "2026-10-02T21:14:46.697Z",
+  "acceptance": "docs/phase-8-acceptance.json"
+}

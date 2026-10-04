@@ -1,0 +1,1686 @@
+{
+  "schemaVersion": 1,
+  "completedAtUTC": "2026-10-04T06:09:59.748Z",
+  "designSha256": "fd11baa3478533906d3d42cf2da6c54ba3a630ebc6380fcef7dd9b3db4ba60bf",
+  "results": [
+    {
+      "model": {
+        "epsilon": 0.05,
+        "levels": 3
+      },
+      "entryProbabilityForValidation": 0.00012500000000000003,
+      "dwellHazard": 0.00012500000000000003,
+      "exactMeanContribution": 1,
+      "methods": [
+        {
+          "method": "naive",
+          "batches": [
+            {
+              "batch": 0,
+              "seed": 110000001,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4213,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 1,
+              "seed": 110000002,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4232,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 2,
+              "seed": 110000003,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4207,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 3,
+              "seed": 110000004,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4199,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 4,
+              "seed": 110000005,
+              "entryEstimate": 0.00025,
+              "contribution": 0.43,
+              "entries": 1,
+              "oracleCalls": 4195,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 5,
+              "seed": 110000006,
+              "entryEstimate": 0.00025,
+              "contribution": 2.56375,
+              "entries": 1,
+              "oracleCalls": 4219,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 6,
+              "seed": 110000007,
+              "entryEstimate": 0.00025,
+              "contribution": 3.84325,
+              "entries": 1,
+              "oracleCalls": 4218,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 7,
+              "seed": 110000008,
+              "entryEstimate": 0.00025,
+              "contribution": 1.56775,
+              "entries": 1,
+              "oracleCalls": 4195,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 8,
+              "seed": 110000009,
+              "entryEstimate": 0.00025,
+              "contribution": 3.69825,
+              "entries": 1,
+              "oracleCalls": 4218,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 9,
+              "seed": 110000010,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4224,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 10,
+              "seed": 110000011,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4213,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 11,
+              "seed": 110000012,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4207,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 12,
+              "seed": 110000013,
+              "entryEstimate": 0.00025,
+              "contribution": 0.79925,
+              "entries": 1,
+              "oracleCalls": 4199,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 13,
+              "seed": 110000014,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4191,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 14,
+              "seed": 110000015,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4201,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 15,
+              "seed": 110000016,
+              "entryEstimate": 0.0005,
+              "contribution": 7.263,
+              "entries": 2,
+              "oracleCalls": 4221,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 16,
+              "seed": 110000017,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4193,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 17,
+              "seed": 110000018,
+              "entryEstimate": 0.00025,
+              "contribution": 2.492,
+              "entries": 1,
+              "oracleCalls": 4186,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 18,
+              "seed": 110000019,
+              "entryEstimate": 0.00025,
+              "contribution": 1.214,
+              "entries": 1,
+              "oracleCalls": 4207,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 19,
+              "seed": 110000020,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4192,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 20,
+              "seed": 110000021,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4217,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 21,
+              "seed": 110000022,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4205,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 22,
+              "seed": 110000023,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4204,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 23,
+              "seed": 110000024,
+              "entryEstimate": 0.00025,
+              "contribution": 0.27375,
+              "entries": 1,
+              "oracleCalls": 4213,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 24,
+              "seed": 110000025,
+              "entryEstimate": 0.00025,
+              "contribution": 3.136,
+              "entries": 1,
+              "oracleCalls": 4191,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 25,
+              "seed": 110000026,
+              "entryEstimate": 0.00025,
+              "contribution": 0.014,
+              "entries": 1,
+              "oracleCalls": 4210,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 26,
+              "seed": 110000027,
+              "entryEstimate": 0.00025,
+              "contribution": 0.17475,
+              "entries": 1,
+              "oracleCalls": 4201,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 27,
+              "seed": 110000028,
+              "entryEstimate": 0.0005,
+              "contribution": 3.429,
+              "entries": 2,
+              "oracleCalls": 4198,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 28,
+              "seed": 110000029,
+              "entryEstimate": 0.00025,
+              "contribution": 3.152,
+              "entries": 1,
+              "oracleCalls": 4209,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 29,
+              "seed": 110000030,
+              "entryEstimate": 0.00025,
+              "contribution": 0.0685,
+              "entries": 1,
+              "oracleCalls": 4199,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 30,
+              "seed": 110000031,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4243,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 31,
+              "seed": 110000032,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4217,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            }
+          ],
+          "theoreticalRelativeRMSE": 1.9998749960935056,
+          "observedRelativeRMSE": 1.7151577295133456,
+          "mean": 1.0662265624999998,
+          "zeroEntryBatches": 16,
+          "simulatorCalls": 134637,
+          "resamplingDraws": 0
+        },
+        {
+          "method": "splitting",
+          "batches": [
+            {
+              "batch": 0,
+              "seed": 110010001,
+              "entryEstimate": 0.0001152,
+              "contribution": 0.8944748927999999,
+              "conditionalMarkMean": 7764.539,
+              "survivorCounts": [
+                60,
+                40,
+                48
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 1,
+              "seed": 110010002,
+              "entryEstimate": 0.00014616,
+              "contribution": 1.2217432550399998,
+              "conditionalMarkMean": 8358.944,
+              "survivorCounts": [
+                45,
+                58,
+                56
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 2,
+              "seed": 110010003,
+              "entryEstimate": 0.000108,
+              "contribution": 0.896864616,
+              "conditionalMarkMean": 8304.302,
+              "survivorCounts": [
+                45,
+                50,
+                48
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 3,
+              "seed": 110010004,
+              "entryEstimate": 0.00007790000000000001,
+              "contribution": 0.6488253608000001,
+              "conditionalMarkMean": 8328.952,
+              "survivorCounts": [
+                50,
+                41,
+                38
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 4,
+              "seed": 110010005,
+              "entryEstimate": 0.000151424,
+              "contribution": 1.1750022385919998,
+              "conditionalMarkMean": 7759.683,
+              "survivorCounts": [
+                56,
+                52,
+                52
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 5,
+              "seed": 110010006,
+              "entryEstimate": 0.00014535,
+              "contribution": 1.1512789775999999,
+              "conditionalMarkMean": 7920.736,
+              "survivorCounts": [
+                57,
+                51,
+                50
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 6,
+              "seed": 110010007,
+              "entryEstimate": 0.000172224,
+              "contribution": 1.3260645216,
+              "conditionalMarkMean": 7699.65,
+              "survivorCounts": [
+                69,
+                48,
+                52
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 7,
+              "seed": 110010008,
+              "entryEstimate": 0.00010848600000000002,
+              "contribution": 0.8862494724720001,
+              "conditionalMarkMean": 8169.252,
+              "survivorCounts": [
+                54,
+                41,
+                49
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 8,
+              "seed": 110010009,
+              "entryEstimate": 0.0000962,
+              "contribution": 0.7757939332,
+              "conditionalMarkMean": 8064.386,
+              "survivorCounts": [
+                37,
+                52,
+                50
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 9,
+              "seed": 110010010,
+              "entryEstimate": 0.0001078,
+              "contribution": 0.822570056,
+              "conditionalMarkMean": 7630.52,
+              "survivorCounts": [
+                44,
+                49,
+                50
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 10,
+              "seed": 110010011,
+              "entryEstimate": 0.00014112,
+              "contribution": 1.18107321696,
+              "conditionalMarkMean": 8369.283,
+              "survivorCounts": [
+                56,
+                42,
+                60
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 11,
+              "seed": 110010012,
+              "entryEstimate": 0.000148512,
+              "contribution": 1.182230964096,
+              "conditionalMarkMean": 7960.508,
+              "survivorCounts": [
+                51,
+                56,
+                52
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 12,
+              "seed": 110010013,
+              "entryEstimate": 0.00011853100000000001,
+              "contribution": 0.9482167078160001,
+              "conditionalMarkMean": 7999.736,
+              "survivorCounts": [
+                59,
+                49,
+                41
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 13,
+              "seed": 110010014,
+              "entryEstimate": 0.00017641,
+              "contribution": 1.3840022509299998,
+              "conditionalMarkMean": 7845.373,
+              "survivorCounts": [
+                59,
+                65,
+                46
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 14,
+              "seed": 110010015,
+              "entryEstimate": 0.00013483199999999999,
+              "contribution": 1.0902392822879998,
+              "conditionalMarkMean": 8085.909,
+              "survivorCounts": [
+                53,
+                53,
+                48
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 15,
+              "seed": 110010016,
+              "entryEstimate": 0.000144478,
+              "contribution": 1.104937981532,
+              "conditionalMarkMean": 7647.794,
+              "survivorCounts": [
+                53,
+                58,
+                47
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 16,
+              "seed": 110010017,
+              "entryEstimate": 0.00010584000000000002,
+              "contribution": 0.8052130447200001,
+              "conditionalMarkMean": 7607.833,
+              "survivorCounts": [
+                56,
+                45,
+                42
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 17,
+              "seed": 110010018,
+              "entryEstimate": 0.00008528,
+              "contribution": 0.6561423585599999,
+              "conditionalMarkMean": 7693.977,
+              "survivorCounts": [
+                52,
+                41,
+                40
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 18,
+              "seed": 110010019,
+              "entryEstimate": 0.00013244699999999997,
+              "contribution": 1.0459363430459998,
+              "conditionalMarkMean": 7897.018,
+              "survivorCounts": [
+                49,
+                53,
+                51
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 19,
+              "seed": 110010020,
+              "entryEstimate": 0.00012464399999999998,
+              "contribution": 1.0383429780359998,
+              "conditionalMarkMean": 8330.469,
+              "survivorCounts": [
+                52,
+                47,
+                51
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 20,
+              "seed": 110010021,
+              "entryEstimate": 0.00012152400000000001,
+              "contribution": 1.0429720739880002,
+              "conditionalMarkMean": 8582.437,
+              "survivorCounts": [
+                57,
+                52,
+                41
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 21,
+              "seed": 110010022,
+              "entryEstimate": 0.00010264800000000001,
+              "contribution": 0.8051881568640001,
+              "conditionalMarkMean": 7844.168,
+              "survivorCounts": [
+                52,
+                42,
+                47
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 22,
+              "seed": 110010023,
+              "entryEstimate": 0.000114048,
+              "contribution": 0.903901908096,
+              "conditionalMarkMean": 7925.627,
+              "survivorCounts": [
+                48,
+                54,
+                44
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 23,
+              "seed": 110010024,
+              "entryEstimate": 0.0001428,
+              "contribution": 1.1150529432,
+              "conditionalMarkMean": 7808.494,
+              "survivorCounts": [
+                51,
+                56,
+                50
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 24,
+              "seed": 110010025,
+              "entryEstimate": 0.00011447999999999999,
+              "contribution": 0.9254250669599998,
+              "conditionalMarkMean": 8083.727,
+              "survivorCounts": [
+                53,
+                48,
+                45
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 25,
+              "seed": 110010026,
+              "entryEstimate": 0.000128478,
+              "contribution": 1.0440765954780002,
+              "conditionalMarkMean": 8126.501,
+              "survivorCounts": [
+                46,
+                49,
+                57
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 26,
+              "seed": 110010027,
+              "entryEstimate": 0.00011394999999999999,
+              "contribution": 0.9272626554,
+              "conditionalMarkMean": 8137.452,
+              "survivorCounts": [
+                53,
+                50,
+                43
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 27,
+              "seed": 110010028,
+              "entryEstimate": 0.00011504999999999999,
+              "contribution": 0.94524401205,
+              "conditionalMarkMean": 8215.941,
+              "survivorCounts": [
+                59,
+                50,
+                39
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 28,
+              "seed": 110010029,
+              "entryEstimate": 0.000124656,
+              "contribution": 0.9788211007680001,
+              "conditionalMarkMean": 7852.178,
+              "survivorCounts": [
+                49,
+                53,
+                48
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 29,
+              "seed": 110010030,
+              "entryEstimate": 0.000208692,
+              "contribution": 1.607857496784,
+              "conditionalMarkMean": 7704.452,
+              "survivorCounts": [
+                62,
+                66,
+                51
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 30,
+              "seed": 110010031,
+              "entryEstimate": 0.00016248599999999996,
+              "contribution": 1.2732411084299997,
+              "conditionalMarkMean": 7836.005,
+              "survivorCounts": [
+                59,
+                54,
+                51
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 31,
+              "seed": 110010032,
+              "entryEstimate": 0.00016245000000000002,
+              "contribution": 1.32598789065,
+              "conditionalMarkMean": 8162.437,
+              "survivorCounts": [
+                50,
+                57,
+                57
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            }
+          ],
+          "theoreticalRelativeRMSE": 0.24320324133894158,
+          "observedRelativeRMSE": 0.21453190958334487,
+          "mean": 1.0353197956486246,
+          "zeroEntryBatches": 0,
+          "simulatorCalls": 128000,
+          "resamplingDraws": 96000
+        }
+      ]
+    },
+    {
+      "model": {
+        "epsilon": 0.02,
+        "levels": 3
+      },
+      "entryProbabilityForValidation": 0.000008000000000000001,
+      "dwellHazard": 0.000008000000000000001,
+      "exactMeanContribution": 1,
+      "methods": [
+        {
+          "method": "naive",
+          "batches": [
+            {
+              "batch": 0,
+              "seed": 110100001,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4072,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 1,
+              "seed": 110100002,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4074,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 2,
+              "seed": 110100003,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4085,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 3,
+              "seed": 110100004,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4086,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 4,
+              "seed": 110100005,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4070,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 5,
+              "seed": 110100006,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4077,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 6,
+              "seed": 110100007,
+              "entryEstimate": 0.00025,
+              "contribution": 3.83525,
+              "entries": 1,
+              "oracleCalls": 4084,
+              "resamplingDraws": 0,
+              "zeroEntry": false
+            },
+            {
+              "batch": 7,
+              "seed": 110100008,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4087,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 8,
+              "seed": 110100009,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4088,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 9,
+              "seed": 110100010,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4076,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 10,
+              "seed": 110100011,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4090,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 11,
+              "seed": 110100012,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4066,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 12,
+              "seed": 110100013,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4077,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 13,
+              "seed": 110100014,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4070,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 14,
+              "seed": 110100015,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4084,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 15,
+              "seed": 110100016,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4077,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 16,
+              "seed": 110100017,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4075,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 17,
+              "seed": 110100018,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4093,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 18,
+              "seed": 110100019,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4081,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 19,
+              "seed": 110100020,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4102,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 20,
+              "seed": 110100021,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4087,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 21,
+              "seed": 110100022,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4070,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 22,
+              "seed": 110100023,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4080,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 23,
+              "seed": 110100024,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4072,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 24,
+              "seed": 110100025,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4072,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 25,
+              "seed": 110100026,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4086,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 26,
+              "seed": 110100027,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4103,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 27,
+              "seed": 110100028,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4079,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 28,
+              "seed": 110100029,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4084,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 29,
+              "seed": 110100030,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4085,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 30,
+              "seed": 110100031,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4083,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            },
+            {
+              "batch": 31,
+              "seed": 110100032,
+              "entryEstimate": 0,
+              "contribution": 0,
+              "entries": 0,
+              "oracleCalls": 4081,
+              "resamplingDraws": 0,
+              "zeroEntry": true
+            }
+          ],
+          "theoreticalRelativeRMSE": 7.9056625275811,
+          "observedRelativeRMSE": 1.1045168989554326,
+          "mean": 0.1198515625,
+          "zeroEntryBatches": 31,
+          "simulatorCalls": 130596,
+          "resamplingDraws": 0
+        },
+        {
+          "method": "splitting",
+          "batches": [
+            {
+              "batch": 0,
+              "seed": 110110001,
+              "entryEstimate": 0.000006776,
+              "contribution": 0.8635779108880001,
+              "conditionalMarkMean": 127446.563,
+              "survivorCounts": [
+                22,
+                14,
+                22
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 1,
+              "seed": 110110002,
+              "entryEstimate": 0.00000988,
+              "contribution": 1.2292374998800002,
+              "conditionalMarkMean": 124416.751,
+              "survivorCounts": [
+                19,
+                20,
+                26
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 2,
+              "seed": 110110003,
+              "entryEstimate": 0.000004616999999999999,
+              "contribution": 0.5561070724529998,
+              "conditionalMarkMean": 120447.709,
+              "survivorCounts": [
+                9,
+                27,
+                19
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 3,
+              "seed": 110110004,
+              "entryEstimate": 0.000007106,
+              "contribution": 0.8816722742520001,
+              "conditionalMarkMean": 124074.342,
+              "survivorCounts": [
+                19,
+                22,
+                17
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 4,
+              "seed": 110110005,
+              "entryEstimate": 0.000005796,
+              "contribution": 0.764329219416,
+              "conditionalMarkMean": 131871.846,
+              "survivorCounts": [
+                23,
+                18,
+                14
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 5,
+              "seed": 110110006,
+              "entryEstimate": 0.000009408,
+              "contribution": 1.248746315712,
+              "conditionalMarkMean": 132732.389,
+              "survivorCounts": [
+                21,
+                32,
+                14
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 6,
+              "seed": 110110007,
+              "entryEstimate": 0.000008721,
+              "contribution": 1.166963193189,
+              "conditionalMarkMean": 133810.709,
+              "survivorCounts": [
+                17,
+                19,
+                27
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 7,
+              "seed": 110110008,
+              "entryEstimate": 0.000006468000000000001,
+              "contribution": 0.812339708796,
+              "conditionalMarkMean": 125593.647,
+              "survivorCounts": [
+                22,
+                14,
+                21
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 8,
+              "seed": 110110009,
+              "entryEstimate": 0.00000576,
+              "contribution": 0.7072108012799999,
+              "conditionalMarkMean": 122779.653,
+              "survivorCounts": [
+                18,
+                16,
+                20
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 9,
+              "seed": 110110010,
+              "entryEstimate": 0.0000054910000000000005,
+              "contribution": 0.689180379355,
+              "conditionalMarkMean": 125510.905,
+              "survivorCounts": [
+                17,
+                19,
+                17
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 10,
+              "seed": 110110011,
+              "entryEstimate": 0.000013068,
+              "contribution": 1.531511003088,
+              "conditionalMarkMean": 117195.516,
+              "survivorCounts": [
+                22,
+                22,
+                27
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 11,
+              "seed": 110110012,
+              "entryEstimate": 0.000012240000000000001,
+              "contribution": 1.4652608040000001,
+              "conditionalMarkMean": 119710.85,
+              "survivorCounts": [
+                17,
+                30,
+                24
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 12,
+              "seed": 110110013,
+              "entryEstimate": 0.000009384,
+              "contribution": 1.1350499216160002,
+              "conditionalMarkMean": 120955.874,
+              "survivorCounts": [
+                24,
+                17,
+                23
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 13,
+              "seed": 110110014,
+              "entryEstimate": 0.00000378,
+              "contribution": 0.48290471459999995,
+              "conditionalMarkMean": 127752.57,
+              "survivorCounts": [
+                15,
+                12,
+                21
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 14,
+              "seed": 110110015,
+              "entryEstimate": 0.000007499999999999999,
+              "contribution": 0.902371905,
+              "conditionalMarkMean": 120316.254,
+              "survivorCounts": [
+                15,
+                20,
+                25
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 15,
+              "seed": 110110016,
+              "entryEstimate": 0.000006720000000000001,
+              "contribution": 0.8569912848000001,
+              "conditionalMarkMean": 127528.465,
+              "survivorCounts": [
+                14,
+                24,
+                20
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 16,
+              "seed": 110110017,
+              "entryEstimate": 0.00000812,
+              "contribution": 1.04779059812,
+              "conditionalMarkMean": 129038.251,
+              "survivorCounts": [
+                14,
+                29,
+                20
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 17,
+              "seed": 110110018,
+              "entryEstimate": 0.000005852,
+              "contribution": 0.755520364984,
+              "conditionalMarkMean": 129104.642,
+              "survivorCounts": [
+                11,
+                19,
+                28
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 18,
+              "seed": 110110019,
+              "entryEstimate": 0.00001012,
+              "contribution": 1.2566400197999998,
+              "conditionalMarkMean": 124173.915,
+              "survivorCounts": [
+                22,
+                23,
+                20
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 19,
+              "seed": 110110020,
+              "entryEstimate": 0.000005399999999999999,
+              "contribution": 0.6742585529999999,
+              "conditionalMarkMean": 124862.695,
+              "survivorCounts": [
+                15,
+                18,
+                20
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 20,
+              "seed": 110110021,
+              "entryEstimate": 0.000006783000000000001,
+              "contribution": 0.8266833004290002,
+              "conditionalMarkMean": 121875.763,
+              "survivorCounts": [
+                17,
+                21,
+                19
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 21,
+              "seed": 110110022,
+              "entryEstimate": 0.000009996000000000002,
+              "contribution": 1.1741892463560002,
+              "conditionalMarkMean": 117465.911,
+              "survivorCounts": [
+                17,
+                21,
+                28
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 22,
+              "seed": 110110023,
+              "entryEstimate": 0.0000036960000000000003,
+              "contribution": 0.48826422321600005,
+              "conditionalMarkMean": 132106.121,
+              "survivorCounts": [
+                14,
+                11,
+                24
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 23,
+              "seed": 110110024,
+              "entryEstimate": 0.00000429,
+              "contribution": 0.53001929838,
+              "conditionalMarkMean": 123547.622,
+              "survivorCounts": [
+                13,
+                15,
+                22
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 24,
+              "seed": 110110025,
+              "entryEstimate": 0.000005600000000000001,
+              "contribution": 0.6744723160000001,
+              "conditionalMarkMean": 120441.485,
+              "survivorCounts": [
+                14,
+                25,
+                16
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 25,
+              "seed": 110110026,
+              "entryEstimate": 0.000005129999999999999,
+              "contribution": 0.6326249515199999,
+              "conditionalMarkMean": 123318.704,
+              "survivorCounts": [
+                19,
+                18,
+                15
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 26,
+              "seed": 110110027,
+              "entryEstimate": 0.000009384,
+              "contribution": 1.0911039176639998,
+              "conditionalMarkMean": 116272.796,
+              "survivorCounts": [
+                23,
+                24,
+                17
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 27,
+              "seed": 110110028,
+              "entryEstimate": 0.000005865,
+              "contribution": 0.7440515477849999,
+              "conditionalMarkMean": 126863.009,
+              "survivorCounts": [
+                17,
+                23,
+                15
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 28,
+              "seed": 110110029,
+              "entryEstimate": 0.000010846000000000001,
+              "contribution": 1.300167460416,
+              "conditionalMarkMean": 119875.296,
+              "survivorCounts": [
+                29,
+                17,
+                22
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 29,
+              "seed": 110110030,
+              "entryEstimate": 0.000005015999999999999,
+              "contribution": 0.5877880018559999,
+              "conditionalMarkMean": 117182.616,
+              "survivorCounts": [
+                12,
+                22,
+                19
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 30,
+              "seed": 110110031,
+              "entryEstimate": 0.000006335999999999999,
+              "contribution": 0.8121334573439999,
+              "conditionalMarkMean": 128177.629,
+              "survivorCounts": [
+                22,
+                12,
+                24
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            },
+            {
+              "batch": 31,
+              "seed": 110110032,
+              "entryEstimate": 0.000010867999999999998,
+              "contribution": 1.4035733019879997,
+              "conditionalMarkMean": 129147.341,
+              "survivorCounts": [
+                22,
+                26,
+                19
+              ],
+              "oracleCalls": 4000,
+              "resamplingDraws": 3000,
+              "extinct": false
+            }
+          ],
+          "theoreticalRelativeRMSE": 0.3943031326459819,
+          "observedRelativeRMSE": 0.30668157767038334,
+          "mean": 0.9153979552244688,
+          "zeroEntryBatches": 0,
+          "simulatorCalls": 128000,
+          "resamplingDraws": 96000
+        }
+      ]
+    }
+  ],
+  "batches": 128,
+  "retainedConditionalDwells": 64019,
+  "evidence": [
+    {
+      "file": "data/splitting-dwell.csv",
+      "sha256": "078ba1aa2b8f16434875ad93b8008f9db6defe8d0d6f59981316005e6e60c336"
+    },
+    {
+      "file": "data/splitting-batches.json",
+      "sha256": "d8bad78a37e950125c1b073baaa7292b4db54d7ea120d150ced9eb1ecbbbc7ad"
+    }
+  ],
+  "interpretation": "Unknown-entry splitting is unbiased under exact nested-level simulation and unbiased resampling. Uniform variance scaling here belongs to the product-level benchmark, not arbitrary RSA levels. Actual RSA level design remains open."
+}

@@ -1,0 +1,4249 @@
+{
+  "name": "middle",
+  "kind": "exploratory",
+  "sourceCoarseSha256": "14b881aff9a887dae6cea387ae759c179083bc27e9f608630a3c5f6481ba01bb",
+  "arms": [
+    {
+      "controller": "feedback-4-00005",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00006",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00009",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00010",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00001",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00003",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00004",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00006",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00008",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00009",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00010",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00011",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00013",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00015",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00016",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00017",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00018",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00020",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00021",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "temporal-4-00023",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "iid-fair",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-23077",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00338",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00473",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-22583",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-14970",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-08046",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-08707",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00202",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00486",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-24389",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-12825",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-10676",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-18704",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00205",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00122",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00081",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00363",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-18956",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-12735",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-18627",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-18931",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-18383",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-03706",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-19081",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-19326",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-18274",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-02794",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-04822",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-04854",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-16321",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-16450",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-23408",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-20431",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00314",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-10674",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-10857",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-25318",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00078",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00372",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-11945",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-23043",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-20074",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-20145",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-26783",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-12225",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00270",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-14033",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-19854",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00523",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-01971",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-01999",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-14105",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-23071",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-17534",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00188",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-17512",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00269",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-02000",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-06061",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-16132",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-25397",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00248",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00087",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00468",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-18952",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-05865",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00284",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00474",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-05949",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-20844",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-22305",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-02015",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-05849",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-16336",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00275",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-13885",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-19232",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-01983",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-02433",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-05835",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-16161",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-20294",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-03826",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-05925",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00096",
+      "L": 32,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82000001
+    },
+    {
+      "controller": "feedback-4-00005",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00006",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00009",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00010",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00001",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00003",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00004",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00006",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00008",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00009",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00010",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00011",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00013",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00015",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00016",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00017",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00018",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00020",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00021",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "temporal-4-00023",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "iid-fair",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-23077",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00338",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00473",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-22583",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-14970",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-08046",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-08707",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00202",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00486",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-24389",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-12825",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-10676",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-18704",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00205",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00122",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00081",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00363",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-18956",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-12735",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-18627",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-18931",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-18383",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-03706",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-19081",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-19326",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-18274",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-02794",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-04822",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-04854",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-16321",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-16450",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-23408",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-20431",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00314",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-10674",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-10857",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-25318",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00078",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00372",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-11945",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-23043",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-20074",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-20145",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-26783",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-12225",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00270",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-14033",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-19854",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00523",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-01971",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-01999",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-14105",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-23071",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-17534",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00188",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-17512",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00269",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-02000",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-06061",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-16132",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-25397",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00248",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00087",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00468",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-18952",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-05865",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00284",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00474",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-05949",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-20844",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-22305",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-02015",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-05849",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-16336",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00275",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-13885",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-19232",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-01983",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-02433",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-05835",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-16161",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-20294",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-03826",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-05925",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00096",
+      "L": 64,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 82010001
+    },
+    {
+      "controller": "feedback-4-00005",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00006",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00009",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00010",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00001",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00003",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00004",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00006",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00008",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00009",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00010",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00011",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00013",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00015",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00016",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00017",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00018",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00020",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00021",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "temporal-4-00023",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "iid-fair",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01555",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01556",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-23417",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00321",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-23531",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00297",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-25275",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00474",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00337",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-19227",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-23351",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00299",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00510",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00473",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00442",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-24390",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01668",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00080",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00079",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00276",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-11743",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-25407",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-08245",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-25395",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00329",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-22552",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-18546",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00518",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00144",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-20432",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-23413",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00480",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01670",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-18419",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00206",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-19873",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01557",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01558",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01589",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16344",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-02420",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16167",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16698",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-15786",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-15871",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16521",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-04207",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-04209",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01669",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-20490",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-15117",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13955",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-19157",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-03939",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06065",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-15990",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13899",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16201",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01797",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06596",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13952",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16610",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00330",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06018",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00078",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00372",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01717",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01718",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06802",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16349",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00370",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01716",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-05939",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06234",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-04343",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06062",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-14089",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00077",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00365",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13887",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-14046",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16433",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-04230",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06503",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13933",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-14045",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-03817",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-04121",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-14035",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00087",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-01827",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13932",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13966",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13956",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00135",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13944",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00122",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06066",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13945",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00269",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00123",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-17914",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-04564",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06712",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16716",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00249",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00275",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-19991",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00132",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00267",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-04565",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-04953",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06684",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06790",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-15881",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16539",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00096",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00414",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-19796",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-04373",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13908",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00415",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-06067",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00322",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16188",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-12296",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-17962",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-21710",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-08141",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-08441",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-14538",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-20779",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00324",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-13906",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16360",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-18846",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00336",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-07914",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-14449",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16198",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-18011",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-12285",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16647",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00095",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-02792",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-04853",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-14725",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-16627",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-09993",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-14633",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-23561",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-18055",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-22589",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00331",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-22333",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-17899",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00270",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-24798",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-08247",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-25233",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-04944",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-10676",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-20074",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-20145",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-18197",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-10713",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-10678",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-10741",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-19118",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-20142",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-20818",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-22758",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-10659",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-24389",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-24700",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-25263",
+      "L": 32,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82100001
+    },
+    {
+      "controller": "feedback-4-00005",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00006",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00009",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00010",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00001",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00003",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00004",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00006",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00008",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00009",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00010",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00011",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00013",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00015",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00016",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00017",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00018",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00020",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00021",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "temporal-4-00023",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "iid-fair",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01555",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01556",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-23417",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00321",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-23531",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00297",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-25275",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00474",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00337",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-19227",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-23351",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00299",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00510",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00473",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00442",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-24390",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01668",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00080",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00079",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00276",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-11743",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-25407",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-08245",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-25395",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00329",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-22552",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-18546",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00518",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00144",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-20432",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-23413",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00480",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01670",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-18419",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00206",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-19873",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01557",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01558",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01589",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16344",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-02420",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16167",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16698",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-15786",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-15871",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16521",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-04207",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-04209",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01669",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-20490",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-15117",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13955",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-19157",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-03939",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06065",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-15990",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13899",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16201",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01797",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06596",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13952",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16610",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00330",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06018",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00078",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00372",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01717",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01718",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06802",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16349",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00370",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01716",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-05939",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06234",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-04343",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06062",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-14089",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00077",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00365",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13887",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-14046",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16433",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-04230",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06503",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13933",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-14045",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-03817",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-04121",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-14035",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00087",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-01827",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13932",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13966",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13956",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00135",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13944",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00122",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06066",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13945",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00269",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00123",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-17914",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-04564",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06712",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16716",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00249",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00275",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-19991",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00132",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00267",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-04565",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-04953",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06684",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06790",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-15881",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16539",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00096",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00414",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-19796",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-04373",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13908",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00415",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-06067",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00322",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16188",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-12296",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-17962",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-21710",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-08141",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-08441",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-14538",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-20779",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00324",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-13906",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16360",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-18846",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00336",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-07914",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-14449",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16198",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-18011",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-12285",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16647",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00095",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-02792",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-04853",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-14725",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-16627",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-09993",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-14633",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-23561",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-18055",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-22589",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00331",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-22333",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-17899",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-00270",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-24798",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-08247",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-25233",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-04944",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-10676",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-20074",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-20145",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-18197",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-10713",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-10678",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-10741",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-19118",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-20142",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-20818",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-22758",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-10659",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-24389",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-24700",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    },
+    {
+      "controller": "feedback-4-25263",
+      "L": 64,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 82110001
+    }
+  ]
+}

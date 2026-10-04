@@ -1,0 +1,13 @@
+---
+const {kind}=Astro.props;
+import {documents} from './data.mjs';
+const labels={explore:'JOINT TRANSITION FIELD',atlas:'PARAMETER TOPOGRAPHY',library:'ARCHIVE MATRIX'};
+---
+<div class={`research-accent accent-${kind}`}>
+ <canvas data-research-hero data-research-scene={kind} tabindex="0" aria-label={`Interactive three-dimensional conceptual visualization: ${labels[kind].toLowerCase()}. Drag to rotate, scroll to zoom, click to interact; double-click or Escape to reset.`}></canvas>
+ <div class="hero-frame-corners" aria-hidden="true"></div>
+ <div class="accent-coordinate" aria-hidden="true"><span>{kind==='explore'?'K_H / K_V':kind==='atlas'?'φ / ψ / θ':'SOURCE / TRACE / SEAL'}</span><i></i></div>
+ <div class="hero-object-label"><span>{labels[kind]}</span><span>CONCEPTUAL / POINTER REACTIVE</span></div>
+ <span class="accent-gesture" aria-hidden="true">DRAG / SCROLL / CLICK</span>
+ {kind==='library'&&<><script type="application/json" data-accent-documents set:html={JSON.stringify(documents.map(doc=>({title:doc.title,url:`/research/read/${doc.slug}/`}))).replaceAll('<','\\u003c')}></script><div class="accent-inspector" hidden><span data-accent-document-title></span><a data-accent-document-link href="/research/library/">Read ↗</a></div></>}
+</div>

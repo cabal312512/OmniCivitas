@@ -1,0 +1,181 @@
+{
+  "scope": "User-authorized additive maintenance after Phase 8; research interface frozen",
+  "status": "complete",
+  "finishedAt": "2026-10-04T11:06:24.812Z",
+  "nextPhaseAuthorized": false,
+  "newKinds": 20,
+  "build": {
+    "status": "passed",
+    "pages": 217,
+    "ordinaryPagesWithAdditions": 177,
+    "researchRoutesWithoutAdditions": 30
+  },
+  "browser": {
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "singleRun": true,
+    "fullRegression": false
+  },
+  "visualInspection": [
+    "windows20-display.png",
+    "windows20-table.png"
+  ],
+  "research": {
+    "protectedInterfaceAndMusicFiles": 23,
+    "changedFiles": [],
+    "scientificExperimentsRerun": false,
+    "newPdf": false
+  },
+  "deployment": {
+    "target": "portal",
+    "storageGuard": "verified actual F disk before build",
+    "http": [
+      {
+        "route": "/",
+        "status": 200,
+        "additions": 6
+      },
+      {
+        "route": "/maze/",
+        "status": 200,
+        "additions": 6
+      },
+      {
+        "route": "/maze/display/",
+        "status": 200,
+        "additions": 6
+      },
+      {
+        "route": "/maze/table/",
+        "status": 200,
+        "additions": 6
+      },
+      {
+        "route": "/functions/json/",
+        "status": 200,
+        "additions": 6
+      },
+      {
+        "route": "/lab/",
+        "status": 200,
+        "additions": 6
+      },
+      {
+        "route": "/portals/unified/",
+        "status": 200,
+        "additions": 6
+      },
+      {
+        "route": "/legal/",
+        "status": 200,
+        "additions": 6
+      },
+      {
+        "route": "/media/",
+        "status": 200,
+        "additions": 6
+      },
+      {
+        "route": "/incidents/",
+        "status": 200,
+        "additions": 6
+      },
+      {
+        "route": "/research/",
+        "status": 200,
+        "additions": 0
+      },
+      {
+        "route": "/research/explore/",
+        "status": 200,
+        "additions": 0
+      },
+      {
+        "route": "/research/atlas/",
+        "status": 200,
+        "additions": 0
+      },
+      {
+        "route": "/research/library/",
+        "status": 200,
+        "additions": 0
+      },
+      {
+        "route": "/functions/3d-world/",
+        "status": 200,
+        "additions": 0
+      }
+    ],
+    "native": {
+      "motionDistance": 11.107513427734375,
+      "close": true
+    },
+    "containers": [
+      {
+        "service": "edge",
+        "status": "running",
+        "health": "healthy",
+        "memoryMiB": 64
+      },
+      {
+        "service": "gateway",
+        "status": "running",
+        "health": "healthy",
+        "memoryMiB": 512
+      },
+      {
+        "service": "next",
+        "status": "running",
+        "health": "healthy",
+        "memoryMiB": 512
+      },
+      {
+        "service": "portal",
+        "status": "running",
+        "health": "healthy",
+        "memoryMiB": 128
+      },
+      {
+        "service": "postgres",
+        "status": "running",
+        "health": "healthy",
+        "memoryMiB": 384
+      },
+      {
+        "service": "redis",
+        "status": "running",
+        "health": "healthy",
+        "memoryMiB": 128
+      }
+    ],
+    "builder": "exited"
+  },
+  "requirementLedgers": [
+    {
+      "path": "docs/requirements.json",
+      "sha256": "29e14b4438d6aad2e25f7b9851ecc5851d5b62dc8d2101e1f9318399fe40db26"
+    },
+    {
+      "path": "docs/screenshot-requirements.json",
+      "sha256": "083dbf6c880d702264614db23f56190e57e4b4c06253efac068f3c792c1eec1f"
+    },
+    {
+      "path": "docs/public-release-requirements.json",
+      "sha256": "a19dabf6aa84d997bc61a04ef2a8652134192109c08ff38ecffd18c8705730c2"
+    }
+  ],
+  "evidence": {
+    "build": "runtime/reports/windows20-build.log",
+    "tests": "runtime/reports/windows20-browser.json",
+    "deploy": "runtime/reports/windows20-deploy.log",
+    "runtime": "runtime/reports/windows20-live.json",
+    "researchBaseline": "runtime/reports/window-research-before.json",
+    "root": "local OCV_DEPS_ROOT"
+  },
+  "limitations": [
+    "Not a complete old-site regression",
+    "No public-release portability audit",
+    "No changes to research content or interface"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "revision": "author-mark-1",
+  "status": "complete",
+  "finishedAt": "2026-10-04T15:36:01.066Z",
+  "authorizedBy": "User: scatter cabal312512 in code, never comments or visible page text; publish contact and research music attribution on media notice page",
+  "markedBusinessAndBuildFiles": 22,
+  "oneTimeHelper": "scripts/apply-author-mark.mjs",
+  "map": "docs/author-mark-map.json",
+  "signatureRendered": false,
+  "mailContact": "user31436@proton.me",
+  "researchMusic": {
+    "author": "Holizna",
+    "source": "https://opengameart.org/content/retro-wave-collection",
+    "license": "CC0 1.0",
+    "verifiedSource": "https://opengameart.org/content/retro-wave-collection"
+  },
+  "verification": {
+    "changedJavaScriptSyntax": 13,
+    "vitest": 4,
+    "jest": 3,
+    "gatewayTypeScriptBuild": "passed",
+    "portalBuild": {
+      "pages": 216,
+      "allGeneratedHtml": 217,
+      "signatureVisible": false
+    },
+    "deployedNoticeBrowser": "contact, author/source and exactly100 options verified; Japanese selection changes only statement, contact persists",
+    "retainedOriginalMemesByteMatched": 16,
+    "originalLedgersUnchanged": true,
+    "researchUIAndMusicUnchanged": 23,
+    "scientificSealsUnchanged": 5,
+    "scienceSourcesTouched": false
+  },
+  "deployment": {
+    "reconstructedFromPublicSource": true,
+    "updatedCoreImages": [
+      "portal",
+      "gateway"
+    ],
+    "optionalBackendSourceOnly": true,
+    "optionalServicesStarted": false,
+    "coreHealthy": 6,
+    "builderRunning": false,
+    "dependenciesAdded": 0
+  },
+  "scope": "Post-Phase-9 user-authorized maintenance; historical audits are retained as their own snapshots, not overwritten or re-sealed",
+  "evidence": [
+    "author-mark-vitest.log",
+    "author-mark-jest.log",
+    "author-mark-gateway-build.log",
+    "author-mark-portal-build.log",
+    "author-mark-deployment.log",
+    "author-mark-runtime.json",
+    "author-mark-ledger.log"
+  ],
+  "earlyAttempts": "Wrong test runner and unresolvable local image-parent attempt failed before production changes; corrected targeted tests and source deployment passed. Raw early logs preserved."
+}

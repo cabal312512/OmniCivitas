@@ -1,0 +1,11 @@
+---
+import Fragments from '../../q7/1.astro';
+import Identity from '../../aaa/Identity.astro';
+import OpticalBench from '../../aaa/lens.astro';
+import {phase6Tools,toolLink} from '../../tool/data.mjs';
+import '../../aaa/迷宫.css';
+import '../../aaa/临时修一下.css';
+import '../../tool/2.css';
+const timers=phase6Tools.filter(tool=>['countdown','stopwatch','pomodoro','todo'].includes(tool.id));
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>时间工具 · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class="maze-page tool-page"><Fragments/><OpticalBench/><div class="maze-background" aria-hidden="true"><div class="maze-background-grid"></div><span class="maze-bignum">00</span></div><header class="maze-header"><a href="/#systems" aria-label="返回主页"><Identity id="clock-tools" compact/></a><span>OCV</span><a href="/functions/">▦</a></header><main class="tool-directory clock-directory"><h1>时间工具</h1><section class="maze-panel tool-group route-panel"><h2 class="maze-title">时间</h2>{timers.map((tool,i)=><a href={toolLink(tool)}><span>{tool.title}</span><small>0{i+1}</small></a>)}</section><div class="clock-cutout" aria-hidden="true">00:0<span>0</span></div></main><a class="maze-exit" href="/#systems" aria-label="退出时间工具返回主页">↖</a><a class="maze-index" href="/functions/" aria-label="打开全部工具">▦</a><style>.clock-directory .tool-group{margin-left:19%;width:380px}.clock-cutout{position:absolute;top:307px;left:38%;font:170px monospace;color:#164dff0e;width:395px;height:111px;overflow:hidden;border:1px solid #164dff66;pointer-events:none}.clock-cutout span{position:relative;left:-63px;top:23px}</style></body></html>

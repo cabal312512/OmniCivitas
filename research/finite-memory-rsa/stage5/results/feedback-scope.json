@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "structuralClasses": 13,
+  "results": [
+    {
+      "boundary": "periodic",
+      "rows": [
+        {
+          "controller": "feedback-4-00000",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 1,
+          "reachableTraceStates": 64,
+          "universalOperationalKey": "0|1:0:0,0"
+        },
+        {
+          "controller": "feedback-4-00001",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 289,
+          "universalOperationalKey": "0|2:10:1,1,1,0"
+        },
+        {
+          "controller": "feedback-4-00002",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 334,
+          "universalOperationalKey": "0|2:10:1,0,1,0"
+        },
+        {
+          "controller": "feedback-4-00003",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 121,
+          "universalOperationalKey": "0|2:10:0,1,1,0"
+        },
+        {
+          "controller": "feedback-4-00004",
+          "universalLive": false,
+          "fixedGeometryProper": true,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 121,
+          "universalOperationalKey": "0|1:1:0,0"
+        },
+        {
+          "controller": "feedback-4-00005",
+          "universalLive": true,
+          "fixedGeometryProper": true,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 334,
+          "universalOperationalKey": "0|2:01:1,0,0,0"
+        },
+        {
+          "controller": "feedback-4-00006",
+          "universalLive": true,
+          "fixedGeometryProper": true,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 334,
+          "universalOperationalKey": "0|2:01:1,0,0,1"
+        },
+        {
+          "controller": "feedback-4-00007",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 334,
+          "universalOperationalKey": "0|2:01:1,0,1,0"
+        },
+        {
+          "controller": "feedback-4-00008",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 232,
+          "universalOperationalKey": "0|2:01:1,0,1,1"
+        },
+        {
+          "controller": "feedback-4-00009",
+          "universalLive": true,
+          "fixedGeometryProper": true,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 334,
+          "universalOperationalKey": "0|2:10:1,1,0,0"
+        },
+        {
+          "controller": "feedback-4-00010",
+          "universalLive": true,
+          "fixedGeometryProper": true,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 334,
+          "universalOperationalKey": "0|2:10:1,0,0,0"
+        },
+        {
+          "controller": "feedback-4-00011",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 244,
+          "universalOperationalKey": "0|2:10:0,1,0,0"
+        },
+        {
+          "controller": "feedback-4-00012",
+          "universalLive": false,
+          "fixedGeometryProper": true,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 121,
+          "universalOperationalKey": "0|1:1:0,0"
+        }
+      ],
+      "properPhysicalClasses": [
+        [
+          "feedback-4-00004",
+          "feedback-4-00012"
+        ],
+        [
+          "feedback-4-00005"
+        ],
+        [
+          "feedback-4-00006"
+        ],
+        [
+          "feedback-4-00009"
+        ],
+        [
+          "feedback-4-00010"
+        ]
+      ]
+    },
+    {
+      "boundary": "open",
+      "rows": [
+        {
+          "controller": "feedback-4-00000",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 1,
+          "reachableTraceStates": 27,
+          "universalOperationalKey": "0|1:0:0,0"
+        },
+        {
+          "controller": "feedback-4-00001",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 112,
+          "universalOperationalKey": "0|2:10:1,1,1,0"
+        },
+        {
+          "controller": "feedback-4-00002",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 156,
+          "universalOperationalKey": "0|2:10:1,0,1,0"
+        },
+        {
+          "controller": "feedback-4-00003",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 46,
+          "universalOperationalKey": "0|2:10:0,1,1,0"
+        },
+        {
+          "controller": "feedback-4-00004",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 49,
+          "universalOperationalKey": "0|1:1:0,0"
+        },
+        {
+          "controller": "feedback-4-00005",
+          "universalLive": true,
+          "fixedGeometryProper": true,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 156,
+          "universalOperationalKey": "0|2:01:1,0,0,0"
+        },
+        {
+          "controller": "feedback-4-00006",
+          "universalLive": true,
+          "fixedGeometryProper": true,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 156,
+          "universalOperationalKey": "0|2:01:1,0,0,1"
+        },
+        {
+          "controller": "feedback-4-00007",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 156,
+          "universalOperationalKey": "0|2:01:1,0,1,0"
+        },
+        {
+          "controller": "feedback-4-00008",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 106,
+          "universalOperationalKey": "0|2:01:1,0,1,1"
+        },
+        {
+          "controller": "feedback-4-00009",
+          "universalLive": true,
+          "fixedGeometryProper": true,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 156,
+          "universalOperationalKey": "0|2:10:1,1,0,0"
+        },
+        {
+          "controller": "feedback-4-00010",
+          "universalLive": true,
+          "fixedGeometryProper": true,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 156,
+          "universalOperationalKey": "0|2:10:1,0,0,0"
+        },
+        {
+          "controller": "feedback-4-00011",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 106,
+          "universalOperationalKey": "0|2:10:0,1,0,0"
+        },
+        {
+          "controller": "feedback-4-00012",
+          "universalLive": false,
+          "fixedGeometryProper": false,
+          "randomizedOperationalMinimum": 2,
+          "reachableTraceStates": 49,
+          "universalOperationalKey": "0|1:1:0,0"
+        }
+      ],
+      "properPhysicalClasses": [
+        [
+          "feedback-4-00005"
+        ],
+        [
+          "feedback-4-00006"
+        ],
+        [
+          "feedback-4-00009"
+        ],
+        [
+          "feedback-4-00010"
+        ]
+      ]
+    }
+  ],
+  "meaning": "Proper iff every reachable finite product state has a path to geometric jam. Two deterministic action labels on positive histories prove randomized minimum two. This uses no terminal mean to establish equivalence."
+}

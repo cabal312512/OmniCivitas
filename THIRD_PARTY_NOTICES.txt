@@ -1,0 +1,123 @@
+OmniCivitas additional visual dependencies
+
+Three.js 0.186.1
+https://github.com/mrdoob/three.js
+
+The MIT License
+
+Copyright © 2010-2026 three.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+GSAP / ScrollTrigger 3.15.0
+Copyright (c) 2008-2026, GreenSock. All rights reserved.
+Standard GSAP license: https://gsap.com/community/standard-license/
+GSAP is not MIT licensed. Installed source and bundled proprietary notices
+must be retained. This website uses GSAP to animate its own pages; it does
+not implement a GSAP visual animation builder.
+
+This file records dependencies newly used in the visual revision. Existing
+workspace packages retain their respective licenses; this is not a claim
+that the phase 9 public release license/portability audit has been completed.
+
+
+Phase 5 local text and calculation tools
+
+marked 18.0.14
+https://github.com/markedjs/marked
+Copyright (c) 2018+, MarkedJS (https://github.com/markedjs/)
+Copyright (c) 2011-2018, Christopher Jeffrey (https://github.com/chjj/)
+MIT license and original Markdown redistribution notices:
+/licenses/marked-18.0.14-LICENSE.txt
+The installed license also retains Copyright © 2004, John Gruber,
+http://daringfireball.net/, All rights reserved.
+
+DOMPurify 3.4.16
+https://github.com/cure53/DOMPurify
+(c) Cure53 and other contributors
+Released under the Apache license 2.0 and Mozilla Public License 2.0.
+Package license choice: MPL-2.0 OR Apache-2.0.
+OmniCivitas uses the Apache-2.0 option; both original license texts remain:
+/licenses/dompurify-3.4.16-LICENSE-APACHE-2.0.txt
+/licenses/dompurify-3.4.16-LICENSE-MPL-2.0.txt
+
+Papa Parse 5.7.0
+https://github.com/mholt/PapaParse
+Copyright (c) 2015 Matthew Holt
+MIT license: /licenses/papaparse-5.7.0-LICENSE.txt
+
+math.js 15.2.0
+https://github.com/josdejong/mathjs
+Copyright (C) 2013-2026 Jos de Jong <wjosdejong@gmail.com>
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+https://www.apache.org/licenses/LICENSE-2.0
+Full installed license: /licenses/mathjs-15.2.0-LICENSE.txt
+Full installed attribution notice: /licenses/mathjs-15.2.0-NOTICE.txt
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+License texts above were copied byte-for-byte from the actual installed
+versions. Third-party packages retain their original copyrights and licenses.
+This addition does not replace the preserved Three.js / GSAP declarations,
+or complete the phase 9 full dependency and public release license audit.
+
+
+Phase 6 local image and file tools
+
+Cropper.js 1.6.2
+https://github.com/fengyuanchen/cropperjs
+Copyright 2015-present Chen Fengyuan
+MIT license: /licenses/cropperjs-1.6.2-LICENSE.txt
+
+node-qrcode 1.5.4
+https://github.com/soldair/node-qrcode
+Copyright (c) 2012 Ryan Day
+MIT license: /licenses/qrcode-1.5.4-LICENSE.txt
+
+jsQR 1.4.0
+https://github.com/cozmo/jsQR
+Licensed under the Apache License, Version 2.0.
+Full original license: /licenses/jsqr-1.4.0-LICENSE.txt
+
+pdf-lib 1.17.1
+https://github.com/Hopding/pdf-lib
+Copyright (c) 2019 Andrew Dillon
+MIT license: /licenses/pdf-lib-1.17.1-LICENSE.txt
+
+These four license files were copied byte-for-byte from the installed
+versions. The pre-existing notices above remain intact. This addition
+does not complete the phase 9 full dependency/public release audit.
+
+Phase 8 small build tools (direct development packages):
+gulp 5.0.1: /licenses/phase8-gulp-5.0.1.txt; original MIT license bytes preserved.
+@babel/core 8.0.6: /licenses/phase8--babel-core-8.0.6.txt; original MIT license bytes preserved.
+@babel/preset-env 8.0.6: /licenses/phase8--babel-preset-env-8.0.6.txt; original MIT license bytes preserved.
+webpack 5.111.1: /licenses/phase8-webpack-5.111.1.txt; original MIT license bytes preserved.
+eslint 10.11.0: /licenses/phase8-eslint-10.11.0.txt; original MIT license bytes preserved.
+prettier 3.9.9: /licenses/phase8-prettier-3.9.9.txt; original MIT license bytes preserved.
+stylelint 17.16.0: /licenses/phase8-stylelint-17.16.0.txt; original MIT license bytes preserved.
+
+Expansion 1 local workbench libraries:
+sql.js 1.14.2 — MIT — /licenses/sql.js-1.14.2.txt
+fast-json-patch 3.1.1 — MIT — /licenses/fast-json-patch-3.1.1.txt

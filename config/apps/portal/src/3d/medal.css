@@ -1,0 +1,20 @@
+.aero-medal-home{position:fixed;left:25px;bottom:20px;z-index:170;color:#195b8c;font:12px/1.4 Arial,sans-serif}
+.aero-medal-trigger{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #8dc1dc;border-radius:9px;background:linear-gradient(130deg,#fffffff0,#cbf0ffa8);color:#215579;backdrop-filter:blur(18px);box-shadow:0 6px 23px #1477a329;cursor:pointer;font:12px Arial,sans-serif}
+.aero-medal-trigger>svg{width:18px;height:18px;fill:none;stroke:#2c7ca4;stroke-width:1.4}
+.aero-medal-trigger[data-earned=true]{border-color:#29a8db;box-shadow:inset 0 0 12px #fff,0 0 18px #49c6ed47}
+body[data-cover=true] .aero-medal-home{visibility:hidden;pointer-events:none}
+.aero-medal-dialog{box-sizing:border-box;position:fixed;inset:0;width:min(470px,88vw);max-height:90vh;border:1px solid #9fcbe4;border-radius:26px;padding:22px 28px 28px;background:linear-gradient(145deg,#fffffffc,#e4f7fff5);box-shadow:0 35px 90px #082e5d56,inset 0 0 25px #fff;color:#195b8c;font:14px/1.4 Arial,sans-serif;text-align:center;overflow:auto}
+.aero-medal-dialog::backdrop{background:#0d365a5c;backdrop-filter:blur(10px)}
+.aero-medal-dialog h2,.aero-victory-card h1{margin:4px 0 6px;font:500 22px/1.3 Arial,sans-serif;letter-spacing:.12em;color:#216793}
+.aero-medal-art{width:min(300px,60vh,100%);margin:0 auto;filter:drop-shadow(0 8px 18px #1b749733)}
+.aero-medal-art>svg{display:block;width:100%;height:auto;overflow:visible}
+.aero-medal-empty{margin:38px 0;color:#527188;font-size:13px}
+.aero-medal-close{position:absolute;right:12px;top:11px;display:grid;place-items:center;width:33px;height:33px;border:1px solid #b3d6e9;border-radius:50%;background:#f5fcffd9;color:#276a94;font:24px/1 Arial,sans-serif;cursor:pointer}
+.aero-medal-download{display:inline-flex;align-items:center;justify-content:center;min-height:39px;margin-top:11px;padding:9px 26px;border:1px solid #52aace;border-radius:8px;background:linear-gradient(145deg,#ecfbff,#7dc8e94f);color:#1a648e;box-shadow:inset 0 1px #fff,0 4px 12px #287ca31a;font:13px Arial,sans-serif;cursor:pointer}
+.aero-medal-download:hover,.aero-medal-trigger:hover{border-color:#127bb5;background:#e4f9ff}
+.aero-medal-close:focus-visible,.aero-medal-download:focus-visible,.aero-medal-trigger:focus-visible{outline:2px solid #0b92c8;outline-offset:4px}
+.aero-medal-download[hidden],.aero-medal-art[hidden],.aero-medal-empty[hidden],.aero-victory[hidden]{display:none!important}
+.aero-victory{position:absolute;inset:0;z-index:120;display:grid;place-items:center;background:#b9e5f27d;backdrop-filter:blur(12px);pointer-events:auto}
+.aero-victory-card{box-sizing:border-box;position:relative;width:min(400px,82%);max-height:95%;overflow:auto;padding:18px 25px 21px;border:1px solid #f9feff;border-radius:25px;background:linear-gradient(130deg,#ffffffee,#d6f0fff0);box-shadow:0 15px 70px #13688b5b,inset 0 0 30px #fff;text-align:center}
+.aero-victory .aero-medal-art{width:min(258px,42vh,100%)}
+.aero-victory-card h1{font-size:25px}

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-03T18:08:39.371Z",
+  "rows": 226816,
+  "excludedFields": [
+    "elapsed_ms"
+  ],
+  "comparisons": [
+    {
+      "filename": "data/raw/atlas.csv",
+      "rows": 33280,
+      "matched": true,
+      "scientificSha256": "f11e48969bf97a4341c5a130a89e08ef9635a67961e86e6adfc0e4c44a88188b"
+    },
+    {
+      "filename": "data/raw/confirmation.csv",
+      "rows": 45056,
+      "matched": true,
+      "scientificSha256": "1acfd1be095cca73897fea9f6663245a77fcf831b26cb1777d4c8e00e951f8e4"
+    },
+    {
+      "filename": "data/raw/finite_size.csv",
+      "rows": 9600,
+      "matched": true,
+      "scientificSha256": "452188e552fbd1d49e41c49276158a732b4b7e05faa7a4af3f2aaf18712f4ea8"
+    },
+    {
+      "filename": "data/raw/small_validation.csv",
+      "rows": 131072,
+      "matched": true,
+      "scientificSha256": "e958104876b6c9f10f23f68aab84f43fdde592bded9639970b2d7a77de8d88fa"
+    },
+    {
+      "filename": "data/raw/open_boundary.csv",
+      "rows": 5760,
+      "matched": true,
+      "scientificSha256": "b407293877d6f46da131f8519bbd204fc134da968954394c7a1eb4361575ea61"
+    },
+    {
+      "filename": "data/raw/rrsa.csv",
+      "rows": 2048,
+      "matched": true,
+      "scientificSha256": "0c41f3158f42c1f1fef9360fc14ae80e0ba06fb84924b0063b39fe848dc362af"
+    }
+  ],
+  "rescuePairs": {
+    "rows": 768,
+    "matched": true
+  },
+  "directTrajectories": {
+    "rows": 192,
+    "matched": true
+  },
+  "lockedTests": {
+    "count": 36,
+    "matched": true
+  },
+  "limitations": "This is a same-runtime deterministic reconstruction check, not replication on a second OS or an independent scientific experiment."
+}

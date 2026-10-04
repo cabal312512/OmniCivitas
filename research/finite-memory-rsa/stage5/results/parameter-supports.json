@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "results": [
+    {
+      "index": 0,
+      "upper": "8/9",
+      "method": "Parity + small-switch macro-limit theorem"
+    },
+    {
+      "index": 1,
+      "upper": "31402729956930/281474976710656",
+      "upperDecimal": 0.11156490826966348,
+      "lowerDecimal": -0.03235929475113012,
+      "intervalWidth": 0.1439242030207936,
+      "evaluated": 2999,
+      "pruned": 0,
+      "file": "data/parameter-certificate-1.json",
+      "sha256": "daf182597dabdbec75f772f4afe8c84e03445f7fcb6209fef4d7ace90a21a0a0"
+    },
+    {
+      "index": 2,
+      "upper": "186091033850425/281474976710656",
+      "upperDecimal": 0.661128161462532,
+      "lowerDecimal": 0.6538888888888889,
+      "intervalWidth": 0.007239272573643096,
+      "evaluated": 2999,
+      "pruned": 393,
+      "file": "data/parameter-certificate-2.json",
+      "sha256": "da88e21c3fc320ab9c34a7a68c7d198239172183136231476f02af2b15a0577f"
+    },
+    {
+      "index": 3,
+      "upper": "8/9",
+      "method": "Parity + small-switch macro-limit theorem"
+    },
+    {
+      "index": 4,
+      "upper": "-147591259147010/281474976710656",
+      "upperDecimal": -0.524349485242972,
+      "lowerDecimal": -0.7411708730529888,
+      "intervalWidth": 0.2168213878100168,
+      "evaluated": 2999,
+      "pruned": 8,
+      "file": "data/parameter-certificate-4.json",
+      "sha256": "82510e1bfac2239f6a793d0362db87e0f7f4c216e7e74220144bd1694f65065d"
+    },
+    {
+      "index": 5,
+      "upper": "-267199095130887/281474976710656",
+      "upperDecimal": -0.9492818802346186,
+      "lowerDecimal": -1.2387162288728588,
+      "intervalWidth": 0.28943434863824025,
+      "evaluated": 2999,
+      "pruned": 10,
+      "file": "data/parameter-certificate-5.json",
+      "sha256": "457799056fb851c7a0f35d021430fb815edb8a958400a8c89922b46a91f83ff8"
+    },
+    {
+      "index": 6,
+      "upper": "-386806698923958/281474976710656",
+      "upperDecimal": -1.3742134503188126,
+      "lowerDecimal": -1.7360942109141158,
+      "intervalWidth": 0.36188076059530316,
+      "evaluated": 2999,
+      "pruned": 9,
+      "file": "data/parameter-certificate-6.json",
+      "sha256": "5d50d3112fed972996134c88edcb60beb6b5fba5620917dd91b17f6688180bc8"
+    },
+    {
+      "index": 7,
+      "upper": "190434968309965/281474976710656",
+      "upperDecimal": 0.6765609168367526,
+      "lowerDecimal": 0.6404573289898345,
+      "intervalWidth": 0.03610358784691803,
+      "evaluated": 2999,
+      "pruned": 1,
+      "file": "data/parameter-certificate-7.json",
+      "sha256": "5e68a6318842affa08e8a4e7ae0fe0d6108129460e336c00fd84a1e987d400f6"
+    }
+  ],
+  "protocolSha256": "c4564f462ad464d23235c3d808f8dff92f0032b16bd58eca2a94d47c8a60060c",
+  "globalOptimumClaimed": false
+}

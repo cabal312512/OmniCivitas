@@ -1,0 +1,90 @@
+{
+  "source": "User instruction, 2026-10-02: public GitHub deployment portability",
+  "auditPhase": 9,
+  "status": "pending",
+  "requirements": [
+    {
+      "id": "P01",
+      "text": "不要在应用代码、Dockerfile、docker-compose 主配置、数据库配置或正常启动脚本中写死 F:\\、C:\\Users\\... 或当前用户名等本机绝对路径。",
+      "status": "partial",
+      "verification": [],
+      "notes": "新增代码立即遵守；现存入口耦合见 PUBLIC-RELEASE.md，发布前独立搜索。"
+    },
+    {
+      "id": "P02",
+      "text": "Docker 数据优先使用 named volumes。项目不应该关心 Docker Desktop 实际把 volume 存在 C、D、F 还是其他磁盘。",
+      "status": "partial",
+      "verification": [],
+      "notes": "当前主 Compose 使用 named volumes；发布前检查全部配置。"
+    },
+    {
+      "id": "P03",
+      "text": "如果确实需要本机 bind mount，请放进单独的 local override 配置中，不要作为公开版默认配置。",
+      "status": "pending",
+      "verification": []
+    },
+    {
+      "id": "P04",
+      "text": "pnpm、npm、Maven、Gradle、NuGet、Go、Python 等工具的缓存位置只能是本地开发优化，项目正常命令不能依赖这些工具安装在 F 盘。",
+      "status": "pending",
+      "verification": [],
+      "notes": "preinstall/.npmrc/Nx 本机缓存耦合保留；Astro 环境变量已可选。公开从零部署审计待阶段9。"
+    },
+    {
+      "id": "P05",
+      "text": "`ocv.ps1`、`Enter-OcvEnvironment.ps1` 等本机辅助脚本可以保留，但公开版必须同时支持正常标准入口，例如：\n   pnpm install\n   pnpm dev\n   pnpm build\n   docker compose up",
+      "status": "partial",
+      "verification": [
+        "F:/OCVdeps/runtime/reports/phase3-dev.json"
+      ],
+      "notes": "通用 pnpm dev 已提供，并在本机通过 9 项实际检查；退出无残留监听。安装入口 preinstall/.npmrc/Nx 历史耦合及干净 clone/三平台审计仍待阶段9。"
+    },
+    {
+      "id": "P06",
+      "text": "所有机器相关参数尽量通过环境变量、`.env`、Compose override 或开发脚本配置。",
+      "status": "pending",
+      "verification": []
+    },
+    {
+      "id": "P07",
+      "text": "仓库只提供 `.env.example`，不要提交真实 `.env`、密码、token、证书、数据库实际数据、Docker volume 内容或本机缓存。",
+      "status": "partial",
+      "verification": [],
+      "notes": "新增 .env.example，扩展 gitignore/dockerignore；跟踪文件和 secrets 审计未执行。"
+    },
+    {
+      "id": "P08",
+      "text": "RAM 限制不要写成只能适用于我的 24 GB 电脑。保留 core / databases / messaging / monitoring / legacy / maximum 等 profiles，让不同机器选择不同启动规模。",
+      "status": "partial",
+      "verification": [],
+      "notes": "完整分组已存在；资源参数可调整性留到公开部署审计，9 GiB WSL 仅本地配置。"
+    },
+    {
+      "id": "P09",
+      "text": "Windows + Docker Desktop + WSL2 是我当前的开发环境，但正式仓库应尽可能支持：\n   - Windows + Docker Desktop\n   - Linux + Docker Engine\n   - macOS + Docker Desktop",
+      "status": "pending",
+      "verification": [],
+      "notes": "当前实际证据仅用户本机 Windows 环境；不得声称其他平台通过。"
+    },
+    {
+      "id": "P10",
+      "text": "不需要现在大规模重构已有代码，但从现在开始不要继续增加新的本机硬编码。",
+      "status": "active",
+      "verification": [],
+      "notes": "本轮记录边界与待办，后续阶段持续检查。"
+    },
+    {
+      "id": "P11",
+      "text": "在项目主要功能完成之后，必须单独进行一次“public release portability audit”：\n   - 搜索 C:\\、D:\\、F:\\、用户名和绝对路径\n   - 搜索本机端口/host 假设\n   - 检查 Compose volumes\n   - 检查环境变量\n   - 检查 secrets\n   - 检查 gitignore\n   - 检查全新 clone 是否能部署\n   - 使用干净环境执行一次从零安装和启动测试",
+      "status": "pending",
+      "verification": [],
+      "notes": "第九阶段独立退出条件；未授权提前开展该阶段。"
+    },
+    {
+      "id": "P12",
+      "text": "最终目标是：开发时可以充分利用我的 F 盘和 24 GB RAM，但 GitHub 上的代码不能要求别人拥有相同磁盘布局和硬件。",
+      "status": "pending",
+      "verification": []
+    }
+  ]
+}

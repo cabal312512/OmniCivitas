@@ -1,0 +1,4010 @@
+{
+  "parameters": {
+    "L": 3,
+    "k": 2,
+    "boundary": "periodic"
+  },
+  "scope": "Exploratory lower points only; 400 rational transition configurations, floating evaluation",
+  "rows": [
+    {
+      "alpha": "1/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8483844241922098,
+        "absOrder": 0.5586728929728086,
+        "inverseN": 0.2651891742612533,
+        "attemptsPerParticle": 7.62294798932694
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8476197631031952,
+        "absOrder": 0.5668593380049319,
+        "inverseN": 0.26547592216963317,
+        "attemptsPerParticle": 8.732897580060225
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8470006676702423,
+        "absOrder": 0.5729123740841886,
+        "inverseN": 0.26570808295699033,
+        "attemptsPerParticle": 9.946417183510038
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8464864301713777,
+        "absOrder": 0.5775983334462051,
+        "inverseN": 0.2659009220190641,
+        "attemptsPerParticle": 11.192834724948678
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.846050562747362,
+        "absOrder": 0.5813465857100323,
+        "inverseN": 0.2660643723030687,
+        "attemptsPerParticle": 12.4569022526983
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8456750404846063,
+        "absOrder": 0.5844190149245868,
+        "inverseN": 0.26620519315160207,
+        "attemptsPerParticle": 13.732903089573789
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8453471392539433,
+        "absOrder": 0.5869857405309781,
+        "inverseN": 0.26632815611310046,
+        "attemptsPerParticle": 15.017991171266113
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8450575978704774,
+        "absOrder": 0.5891627796349569,
+        "inverseN": 0.2664367341318995,
+        "attemptsPerParticle": 16.310478065111894
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8447994988251557,
+        "absOrder": 0.5910323698029799,
+        "inverseN": 0.2665335212738949,
+        "attemptsPerParticle": 17.60923814776743
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.84456755924899,
+        "absOrder": 0.5926546629732168,
+        "inverseN": 0.26662049861495607,
+        "attemptsPerParticle": 18.913457897019313
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8443576663661377,
+        "absOrder": 0.5940748138816113,
+        "inverseN": 0.2666992084460257,
+        "attemptsPerParticle": 20.2225146246381
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8441665641277948,
+        "absOrder": 0.5953274661043066,
+        "inverseN": 0.266770871785404,
+        "attemptsPerParticle": 21.535911417299115
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8439916363684682,
+        "absOrder": 0.5964396960866326,
+        "inverseN": 0.26683646969515085,
+        "attemptsPerParticle": 22.853239286016162
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8438307533403755,
+        "absOrder": 0.5974330060011807,
+        "inverseN": 0.2668968008306848,
+        "attemptsPerParticle": 24.17415365992103
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8436821609080986,
+        "absOrder": 0.5983247093051628,
+        "inverseN": 0.26695252299278766,
+        "attemptsPerParticle": 25.498358982540427
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8435443990999415,
+        "absOrder": 0.5991289167746048,
+        "inverseN": 0.26700418367084655,
+        "attemptsPerParticle": 26.82559815350284
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8434162412656898,
+        "absOrder": 0.5998572527275419,
+        "inverseN": 0.2670522428586906,
+        "attemptsPerParticle": 28.155645010612837
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8432966479598174,
+        "absOrder": 0.6005193847709385,
+        "inverseN": 0.2670970903483928,
+        "attemptsPerParticle": 29.488298799852455
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.843184731519711,
+        "absOrder": 0.601123421989387,
+        "inverseN": 0.26713905901343166,
+        "attemptsPerParticle": 30.823379992446974
+      }
+    },
+    {
+      "alpha": "1/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8430797285273992,
+        "absOrder": 0.6016762185974791,
+        "inverseN": 0.2671784351355477,
+        "attemptsPerParticle": 32.160727043774955
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8555936531471695,
+        "absOrder": 0.5159071096537421,
+        "inverseN": 0.2624857134031446,
+        "attemptsPerParticle": 5.490515371105373
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8543505919088744,
+        "absOrder": 0.5280431801404137,
+        "inverseN": 0.2629518613675051,
+        "attemptsPerParticle": 5.754649445140217
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.853324524822109,
+        "absOrder": 0.5376404829215008,
+        "inverseN": 0.2633366365250421,
+        "attemptsPerParticle": 6.221856312650941
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8524586642608967,
+        "absOrder": 0.5454365141259097,
+        "inverseN": 0.26366133423549676,
+        "attemptsPerParticle": 6.746939132032032
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8517150081808701,
+        "absOrder": 0.5519023178851794,
+        "inverseN": 0.2639402052655062,
+        "attemptsPerParticle": 7.29969189079123
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8510670877595932,
+        "absOrder": 0.5573543423932181,
+        "inverseN": 0.2641831754234852,
+        "attemptsPerParticle": 7.869390158061439
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8504958463359608,
+        "absOrder": 0.5620139406579379,
+        "inverseN": 0.26439739095734743,
+        "attemptsPerParticle": 8.451033605980658
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8499871760212381,
+        "absOrder": 0.5660411406787056,
+        "inverseN": 0.2645881423253682,
+        "attemptsPerParticle": 9.041854545533287
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8495303814452738,
+        "absOrder": 0.5695548489666133,
+        "inverseN": 0.2647594402913548,
+        "attemptsPerParticle": 9.640128162134017
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.849117186541692,
+        "absOrder": 0.5726454790542757,
+        "inverseN": 0.2649143883801974,
+        "attemptsPerParticle": 10.244682770347634
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8487410721683637,
+        "absOrder": 0.5753831432705174,
+        "inverseN": 0.26505543127019604,
+        "attemptsPerParticle": 10.85466935777434
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8483968222530298,
+        "absOrder": 0.577823138139018,
+        "inverseN": 0.26518452498844614,
+        "attemptsPerParticle": 11.469441662315742
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.848080205333254,
+        "absOrder": 0.5800097201129136,
+        "inverseN": 0.2653032563333616,
+        "attemptsPerParticle": 12.08848864815749
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8477877463384682,
+        "absOrder": 0.5819787678605445,
+        "inverseN": 0.265412928456406,
+        "attemptsPerParticle": 12.711393983495991
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8475165599348572,
+        "absOrder": 0.5837596997095538,
+        "inverseN": 0.2655146233577599,
+        "attemptsPerParticle": 13.337810404580308
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8472642267514031,
+        "absOrder": 0.5853768808663352,
+        "inverseN": 0.2656092483015553,
+        "attemptsPerParticle": 13.96744275856698
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8470287000394373,
+        "absOrder": 0.586850673655451,
+        "inverseN": 0.26569757081854156,
+        "attemptsPerParticle": 14.600036350579153
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.846808234300926,
+        "absOrder": 0.5881982332165343,
+        "inverseN": 0.2657802454704844,
+        "attemptsPerParticle": 15.235368666361842
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8466013300216534,
+        "absOrder": 0.5894341185744462,
+        "inverseN": 0.2658578345752109,
+        "attemptsPerParticle": 15.873243320091222
+      }
+    },
+    {
+      "alpha": "2/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8464066903783176,
+        "absOrder": 0.5905707677086932,
+        "inverseN": 0.2659308244414616,
+        "attemptsPerParticle": 16.513485515099728
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8614970015491908,
+        "absOrder": 0.48221545223601425,
+        "inverseN": 0.2602719577523863,
+        "attemptsPerParticle": 5.0970551931997035
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8599705569402534,
+        "absOrder": 0.49555549156436074,
+        "inverseN": 0.26084437448073805,
+        "attemptsPerParticle": 4.9803611814356366
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8586880761275587,
+        "absOrder": 0.5067711636143519,
+        "inverseN": 0.2613253047854982,
+        "attemptsPerParticle": 5.165273461615535
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8575898435547554,
+        "absOrder": 0.5163008128010281,
+        "inverseN": 0.26173714200029974,
+        "attemptsPerParticle": 5.4327296185810985
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8566348633961873,
+        "absOrder": 0.524481492850909,
+        "inverseN": 0.2620952595597623,
+        "attemptsPerParticle": 5.737727496155151
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8557939596960168,
+        "absOrder": 0.5315703781803524,
+        "inverseN": 0.26241059844732684,
+        "attemptsPerParticle": 6.064599912130198
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8550457341757138,
+        "absOrder": 0.5377649459531555,
+        "inverseN": 0.26269118301744065,
+        "attemptsPerParticle": 6.4062241344767985
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8543740873489977,
+        "absOrder": 0.5432185341021242,
+        "inverseN": 0.262943050577459,
+        "attemptsPerParticle": 6.7587704561478175
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8537666384255279,
+        "absOrder": 0.5480517016636627,
+        "inverseN": 0.26317084392376,
+        "attemptsPerParticle": 7.119924727255713
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8532136841852491,
+        "absOrder": 0.5523604177210453,
+        "inverseN": 0.2633782017638642,
+        "attemptsPerParticle": 7.4881629240926415
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.852707492971519,
+        "absOrder": 0.5562219791511518,
+        "inverseN": 0.26356802346901353,
+        "attemptsPerParticle": 7.862413226134965
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.852241813719652,
+        "absOrder": 0.5596993251054375,
+        "inverseN": 0.2637426531884634,
+        "attemptsPerParticle": 8.241882176614265
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.851811526837649,
+        "absOrder": 0.5628442186846657,
+        "inverseN": 0.26390401076921427,
+        "attemptsPerParticle": 8.625958030193821
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8514123909842547,
+        "absOrder": 0.5656996221224676,
+        "inverseN": 0.26405368671423685,
+        "attemptsPerParticle": 9.014153538488783
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8510408561110454,
+        "absOrder": 0.5683014917246012,
+        "inverseN": 0.2641930122916904,
+        "attemptsPerParticle": 9.40607027835357
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8506939232009745,
+        "absOrder": 0.570680150439813,
+        "inverseN": 0.26432311213296755,
+        "attemptsPerParticle": 9.801375416632137
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8503690375035391,
+        "absOrder": 0.5728613492915539,
+        "inverseN": 0.26444494426950516,
+        "attemptsPerParticle": 10.199785996815985
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8500640061884875,
+        "absOrder": 0.5748670969027124,
+        "inverseN": 0.2645593310126499,
+        "attemptsPerParticle": 10.60105796036749
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8497769340639454,
+        "absOrder": 0.576716314204841,
+        "inverseN": 0.2646669830593533,
+        "attemptsPerParticle": 11.004978253342044
+      }
+    },
+    {
+      "alpha": "3/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8495061728395054,
+        "absOrder": 0.578425355944179,
+        "inverseN": 0.2647685185185183,
+        "attemptsPerParticle": 11.411359005663297
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8663634394628542,
+        "absOrder": 0.4562977370014561,
+        "inverseN": 0.2584470435347629,
+        "attemptsPerParticle": 5.1105522046513565
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8646877709024602,
+        "absOrder": 0.4691048402953789,
+        "inverseN": 0.25907541924491095,
+        "attemptsPerParticle": 4.738907270058788
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8632565572456283,
+        "absOrder": 0.48056236031039595,
+        "inverseN": 0.25961212436622283,
+        "attemptsPerParticle": 4.760891875780179
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8620139413790218,
+        "absOrder": 0.49074697033880793,
+        "inverseN": 0.26007810531620085,
+        "attemptsPerParticle": 4.888418323509032
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8609206557924511,
+        "absOrder": 0.49979626202072774,
+        "inverseN": 0.2604880874111644,
+        "attemptsPerParticle": 5.062675176489183
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.859948180488337,
+        "absOrder": 0.5078543350497883,
+        "inverseN": 0.2608527656502072,
+        "attemptsPerParticle": 5.263388847481208
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8590752242926166,
+        "absOrder": 0.5150534438863964,
+        "inverseN": 0.2611801242236028,
+        "attemptsPerParticle": 5.481461170763531
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8582855155625119,
+        "absOrder": 0.521509087780497,
+        "inverseN": 0.26147626499739196,
+        "attemptsPerParticle": 5.712074857749729
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8575663649528823,
+        "absOrder": 0.5273200720314557,
+        "inverseN": 0.26174594647600313,
+        "attemptsPerParticle": 5.952367968982451
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8569077013521461,
+        "absOrder": 0.5325702493444433,
+        "inverseN": 0.26199294532627876,
+        "attemptsPerParticle": 6.200488973303034
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8563014076798547,
+        "absOrder": 0.5373306534817542,
+        "inverseN": 0.2622203054533886,
+        "attemptsPerParticle": 6.455158858291114
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8557408523653259,
+        "absOrder": 0.5416615399314929,
+        "inverseN": 0.26243051369633696,
+        "attemptsPerParticle": 6.715447192400726
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8552205518695838,
+        "absOrder": 0.5456141746145634,
+        "inverseN": 0.2626256263822405,
+        "attemptsPerParticle": 6.9806484306598735
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8547359230090166,
+        "absOrder": 0.5492323425600465,
+        "inverseN": 0.26280736220495293,
+        "attemptsPerParticle": 7.250209212448494
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8542830981023658,
+        "absOrder": 0.5525535977069914,
+        "inverseN": 0.26297717154494676,
+        "attemptsPerParticle": 7.523683380413563
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8538587848932689,
+        "absOrder": 0.5556102900930495,
+        "inverseN": 0.2631362889983585,
+        "attemptsPerParticle": 7.800702920883002
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.853460158928325,
+        "absOrder": 0.558430407971224,
+        "inverseN": 0.2632857737352123,
+        "attemptsPerParticle": 8.08095848187775
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8530847798247082,
+        "absOrder": 0.561038268581133,
+        "inverseN": 0.2634265408990688,
+        "attemptsPerParticle": 8.364185885220229
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.852730525370909,
+        "absOrder": 0.5634550860906881,
+        "inverseN": 0.2635593863192433,
+        "attemptsPerParticle": 8.650156521029311
+      }
+    },
+    {
+      "alpha": "4/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8523955391123333,
+        "absOrder": 0.5656994401128026,
+        "inverseN": 0.26368500616620977,
+        "attemptsPerParticle": 8.938670333721705
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8703960724117434,
+        "absOrder": 0.4368532368948731,
+        "inverseN": 0.2569348061789287,
+        "attemptsPerParticle": 5.2591452547135376
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8686639613333936,
+        "absOrder": 0.44804475495286505,
+        "inverseN": 0.2575843478333104,
+        "attemptsPerParticle": 4.694237013581902
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8671613752678744,
+        "absOrder": 0.45879000815754634,
+        "inverseN": 0.25814781760788,
+        "attemptsPerParticle": 4.604881237820282
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8658395454763806,
+        "absOrder": 0.4688214558597965,
+        "inverseN": 0.2586435037796906,
+        "attemptsPerParticle": 4.641515543756748
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8646634055439084,
+        "absOrder": 0.4780652890086853,
+        "inverseN": 0.25908455625436744,
+        "attemptsPerParticle": 4.733040353246545
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.86360698125404,
+        "absOrder": 0.48653307476836877,
+        "inverseN": 0.2594807153630681,
+        "attemptsPerParticle": 4.855087341236528
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8626505421917176,
+        "absOrder": 0.4942724480006204,
+        "inverseN": 0.2598393800114392,
+        "attemptsPerParticle": 4.996804032818949
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8617787735633659,
+        "absOrder": 0.5013440775548902,
+        "inverseN": 0.2601662932470711,
+        "attemptsPerParticle": 5.15249674653017
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8609795637799253,
+        "absOrder": 0.5078108612006351,
+        "inverseN": 0.2604659969158615,
+        "attemptsPerParticle": 5.3188176337725
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.860243177183067,
+        "absOrder": 0.5137329957503924,
+        "inverseN": 0.26074214188968264,
+        "attemptsPerParticle": 5.493624687128556
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8595616752764828,
+        "absOrder": 0.5191659229537617,
+        "inverseN": 0.26099770510465226,
+        "attemptsPerParticle": 5.675455103937291
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8589285027498939,
+        "absOrder": 0.5241596875313624,
+        "inverseN": 0.26123514480212306,
+        "attemptsPerParticle": 5.863256909469722
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8583381854717156,
+        "absOrder": 0.5287589758468716,
+        "inverseN": 0.26145651378143964,
+        "attemptsPerParticle": 6.056241291525017
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8577861062304338,
+        "absOrder": 0.5330034643382665,
+        "inverseN": 0.26166354349692045,
+        "attemptsPerParticle": 6.253796175576299
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8572683355292045,
+        "absOrder": 0.5369282891022019,
+        "inverseN": 0.26185770750988135,
+        "attemptsPerParticle": 6.455432997145488
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8567815020589687,
+        "absOrder": 0.5405645419197184,
+        "inverseN": 0.2620402700612201,
+        "attemptsPerParticle": 6.660752482720504
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8563226922326665,
+        "absOrder": 0.5439397469496309,
+        "inverseN": 0.26221232374608283,
+        "attemptsPerParticle": 6.869421828414495
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8558893713190417,
+        "absOrder": 0.5470782979014922,
+        "inverseN": 0.26237481908869265,
+        "attemptsPerParticle": 7.081158987574902
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8554793208476725,
+        "absOrder": 0.5500018487631565,
+        "inverseN": 0.2625285880154558,
+        "attemptsPerParticle": 7.295721546336545
+      }
+    },
+    {
+      "alpha": "5/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.855090588423921,
+        "absOrder": 0.5527296578536245,
+        "inverseN": 0.2626743626743626,
+        "attemptsPerParticle": 7.512898650031687
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8737508566285134,
+        "absOrder": 0.4227477892942467,
+        "inverseN": 0.2556767620976399,
+        "attemptsPerParticle": 5.449954884294327
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8720264980427586,
+        "absOrder": 0.4316659904658588,
+        "inverseN": 0.25632339656729897,
+        "attemptsPerParticle": 4.733686419246074
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8705081799415594,
+        "absOrder": 0.4410526722315707,
+        "inverseN": 0.25689276585524834,
+        "attemptsPerParticle": 4.562494189687837
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.869155470328167,
+        "absOrder": 0.4503412743795183,
+        "inverseN": 0.2574000319602708,
+        "attemptsPerParticle": 4.534627436901957
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8679386457164228,
+        "absOrder": 0.45925925925925914,
+        "inverseN": 0.2578563411896742,
+        "attemptsPerParticle": 4.56856177585975
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8668352529716269,
+        "absOrder": 0.4676847834156796,
+        "inverseN": 0.2582701134689733,
+        "attemptsPerParticle": 4.636457968651349
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8658279336745409,
+        "absOrder": 0.47557479485382187,
+        "inverseN": 0.25864785820538033,
+        "attemptsPerParticle": 4.725977694764482
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8649029982363308,
+        "absOrder": 0.48292755267545134,
+        "inverseN": 0.25899470899470883,
+        "attemptsPerParticle": 4.830685478582153
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8640494625441871,
+        "absOrder": 0.489762527576754,
+        "inverseN": 0.259314784879263,
+        "attemptsPerParticle": 4.946822375217259
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8632583795478985,
+        "absOrder": 0.49610941741466047,
+        "inverseN": 0.25961144100287065,
+        "attemptsPerParticle": 5.0720006889693305
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8625223644626828,
+        "absOrder": 0.5020020910308135,
+        "inverseN": 0.25988744665982705,
+        "attemptsPerParticle": 5.20460218477538
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8618352503833068,
+        "absOrder": 0.5074752610204419,
+        "inverseN": 0.2601451144395927,
+        "attemptsPerParticle": 5.343472103968253
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8611918337756977,
+        "absOrder": 0.5125626943573922,
+        "inverseN": 0.2603863956674463,
+        "attemptsPerParticle": 5.487751223203944
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8605876831997676,
+        "absOrder": 0.517296299236443,
+        "inverseN": 0.26061295213341973,
+        "attemptsPerParticle": 5.636777826505115
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.860018993352325,
+        "absOrder": 0.5217057129172098,
+        "inverseN": 0.26082621082621055,
+        "attemptsPerParticle": 5.790027505952007
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8594824721454135,
+        "absOrder": 0.5258181743103251,
+        "inverseN": 0.26102740627880283,
+        "attemptsPerParticle": 5.94707458062426
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8589752522387099,
+        "absOrder": 0.5296585552036168,
+        "inverseN": 0.26121761374381597,
+        "attemptsPerParticle": 6.107566451519016
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.85849482093032,
+        "absOrder": 0.533249476105062,
+        "inverseN": 0.26139777548446236,
+        "attemptsPerParticle": 6.271206007458132
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8580389640089668,
+        "absOrder": 0.5366114632160852,
+        "inverseN": 0.26156872182997015,
+        "attemptsPerParticle": 6.437739215133131
+      }
+    },
+    {
+      "alpha": "6/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8576057203508182,
+        "absOrder": 0.5397631211634545,
+        "inverseN": 0.26173118820177627,
+        "attemptsPerParticle": 6.606946148220422
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8765493065081532,
+        "absOrder": 0.4130350644059848,
+        "inverseN": 0.25462734339277504,
+        "attemptsPerParticle": 5.642434579655736
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8748768851123662,
+        "absOrder": 0.4193006762908109,
+        "inverseN": 0.25525450141619604,
+        "attemptsPerParticle": 4.808873483053264
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8733827460419222,
+        "absOrder": 0.42690310870729153,
+        "inverseN": 0.25581480356761244,
+        "attemptsPerParticle": 4.5760867967953445
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8720349563046197,
+        "absOrder": 0.43502813468809937,
+        "inverseN": 0.2563202247191013,
+        "attemptsPerParticle": 4.500498697077278
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8708094973467135,
+        "absOrder": 0.443227280245393,
+        "inverseN": 0.2567797718283155,
+        "attemptsPerParticle": 4.492235749014769
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8696878482508638,
+        "absOrder": 0.4512538844714798,
+        "inverseN": 0.2572003902392595,
+        "attemptsPerParticle": 4.520681205674091
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8686554207745506,
+        "absOrder": 0.45897585573787153,
+        "inverseN": 0.2575875505428772,
+        "attemptsPerParticle": 4.572308686287049
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8677005123942945,
+        "absOrder": 0.46632742616659517,
+        "inverseN": 0.2579456411854728,
+        "attemptsPerParticle": 4.640089993209571
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8668135856804003,
+        "absOrder": 0.4732816295387806,
+        "inverseN": 0.25827823870318356,
+        "attemptsPerParticle": 4.719937882552599
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8659867597065667,
+        "absOrder": 0.47983420636536805,
+        "inverseN": 0.25858829844337095,
+        "attemptsPerParticle": 4.809268545837689
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8652134430434142,
+        "absOrder": 0.4859940093572603,
+        "inverseN": 0.25887829219205355,
+        "attemptsPerParticle": 4.906339735994422
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8644880636188216,
+        "absOrder": 0.4917772048512498,
+        "inverseN": 0.25915030947627543,
+        "attemptsPerParticle": 5.009914731684233
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8638058663104583,
+        "absOrder": 0.49720373996547,
+        "inverseN": 0.2594061334669116,
+        "attemptsPerParticle": 5.119078200779834
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8631627588376779,
+        "absOrder": 0.5022951866651835,
+        "inverseN": 0.2596472987692043,
+        "attemptsPerParticle": 5.233128906441669
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8625551927134055,
+        "absOrder": 0.5070734346474942,
+        "inverseN": 0.25987513606580603,
+        "attemptsPerParticle": 5.351513940732079
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8619800700608782,
+        "absOrder": 0.5115599130985983,
+        "inverseN": 0.26009080706050397,
+        "attemptsPerParticle": 5.473786660073694
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8614346697957499,
+        "absOrder": 0.51577514422773,
+        "inverseN": 0.260295332159927,
+        "attemptsPerParticle": 5.599578784609959
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.860916588505016,
+        "absOrder": 0.5197385054516157,
+        "inverseN": 0.26048961264395254,
+        "attemptsPerParticle": 5.728581300548856
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8604236926193036,
+        "absOrder": 0.5234681224303706,
+        "inverseN": 0.26067444860109446,
+        "attemptsPerParticle": 5.860531022627896
+      }
+    },
+    {
+      "alpha": "7/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8599540793633618,
+        "absOrder": 0.52698084336197,
+        "inverseN": 0.2608505535720726,
+        "attemptsPerParticle": 5.995200905670974
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8788873261447087,
+        "absOrder": 0.4069376356109675,
+        "inverseN": 0.2537505860290667,
+        "attemptsPerParticle": 5.816305079122338
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8772968705139251,
+        "absOrder": 0.41035530493652744,
+        "inverseN": 0.25434700689061146,
+        "attemptsPerParticle": 4.895766342263325
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8758553274682301,
+        "absOrder": 0.415905195007579,
+        "inverseN": 0.2548875855327467,
+        "attemptsPerParticle": 4.617046384142221
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8745388525780685,
+        "absOrder": 0.4225742363742292,
+        "inverseN": 0.2553812636165578,
+        "attemptsPerParticle": 4.505732972285662
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8733290477838764,
+        "absOrder": 0.4297637578239837,
+        "inverseN": 0.25583494041437954,
+        "attemptsPerParticle": 4.465802741921761
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8722113926792285,
+        "absOrder": 0.43711520414306804,
+        "inverseN": 0.2562540610786225,
+        "attemptsPerParticle": 4.464595214849241
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8711742045075381,
+        "absOrder": 0.44441330036852017,
+        "inverseN": 0.2566430066430069,
+        "attemptsPerParticle": 4.487710721804681
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8702079272254709,
+        "absOrder": 0.4515302507589257,
+        "inverseN": 0.2570053606237817,
+        "attemptsPerParticle": 4.527685785087941
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8693046322675955,
+        "absOrder": 0.4583925914243125,
+        "inverseN": 0.25734409623298526,
+        "attemptsPerParticle": 4.580192271522583
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8684576595374711,
+        "absOrder": 0.46496099393494833,
+        "inverseN": 0.25766171100678126,
+        "attemptsPerParticle": 4.642502601913864
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8676613537201746,
+        "absOrder": 0.4712176980218956,
+        "inverseN": 0.2579603256882682,
+        "attemptsPerParticle": 4.712783711139101
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8669108669108668,
+        "absOrder": 0.47715855572998433,
+        "inverseN": 0.25824175824175827,
+        "attemptsPerParticle": 4.789738935515035
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8662020083525764,
+        "absOrder": 0.48278792563109374,
+        "inverseN": 0.25850758020111697,
+        "attemptsPerParticle": 4.872411982531276
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8655311282762262,
+        "absOrder": 0.48811536250817134,
+        "inverseN": 0.2587591602297484,
+        "attemptsPerParticle": 4.960072832867568
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8648950268535951,
+        "absOrder": 0.4931534568164005,
+        "inverseN": 0.25899769826323493,
+        "attemptsPerParticle": 5.052147885667203
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8642908819342342,
+        "absOrder": 0.4979164207061562,
+        "inverseN": 0.2592242526079956,
+        "attemptsPerParticle": 5.148175335124682
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8637161910341508,
+        "absOrder": 0.5024191643932804,
+        "inverseN": 0.2594397616955263,
+        "attemptsPerParticle": 5.2477756123580015
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8631687242798349,
+        "absOrder": 0.506676697558737,
+        "inverseN": 0.259645061728395,
+        "attemptsPerParticle": 5.350631182403643
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8626464858752888,
+        "absOrder": 0.5107037476690492,
+        "inverseN": 0.25984090113009967,
+        "attemptsPerParticle": 5.456472350956104
+      }
+    },
+    {
+      "alpha": "8/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8621476822734688,
+        "absOrder": 0.5145145236928347,
+        "inverseN": 0.26002795248078275,
+        "attemptsPerParticle": 5.5650670480425495
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8808414745205378,
+        "absOrder": 0.40381966739011776,
+        "inverseN": 0.253017780388131,
+        "attemptsPerParticle": 5.960644132124976
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8793529161345254,
+        "absOrder": 0.40431597926526963,
+        "inverseN": 0.2535759897828864,
+        "attemptsPerParticle": 4.981286358812147
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8779839254934747,
+        "absOrder": 0.4076571517622856,
+        "inverseN": 0.2540893612732804,
+        "attemptsPerParticle": 4.669724057019692
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8767180584268438,
+        "absOrder": 0.4126744443898911,
+        "inverseN": 0.2545640614232675,
+        "attemptsPerParticle": 4.532009900671267
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8755422088755428,
+        "absOrder": 0.4186442219935043,
+        "inverseN": 0.255005005005005,
+        "attemptsPerParticle": 4.468231324175107
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8744457227903364,
+        "absOrder": 0.42511043758771755,
+        "inverseN": 0.2554161872869573,
+        "attemptsPerParticle": 4.444438006675166
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8734197941019655,
+        "absOrder": 0.43178255769466245,
+        "inverseN": 0.25580091054509685,
+        "attemptsPerParticle": 4.445680195362655
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8724570407418304,
+        "absOrder": 0.43847482878317656,
+        "inverseN": 0.25616194305514706,
+        "attemptsPerParticle": 4.464220718593605
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8715511992789233,
+        "absOrder": 0.445069080845496,
+        "inverseN": 0.2565016336037377,
+        "attemptsPerParticle": 4.4955802457379965
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8706968999206445,
+        "absOrder": 0.45149137863018723,
+        "inverseN": 0.2568219958630919,
+        "attemptsPerParticle": 4.536941140954993
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8698894973404789,
+        "absOrder": 0.45769705451050785,
+        "inverseN": 0.2571247718306544,
+        "attemptsPerParticle": 4.586413599736714
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8691249411679522,
+        "absOrder": 0.46366094148561365,
+        "inverseN": 0.2574114803953515,
+        "attemptsPerParticle": 4.642663640097605
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.868399675233,
+        "absOrder": 0.46937090291245825,
+        "inverseN": 0.2576834551209584,
+        "attemptsPerParticle": 4.704709588760177
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8677105580418629,
+        "absOrder": 0.47482349221965453,
+        "inverseN": 0.25794187406763475,
+        "attemptsPerParticle": 4.771803701762495
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8670547991923403,
+        "absOrder": 0.4800210118178107,
+        "inverseN": 0.25818778363620576,
+        "attemptsPerParticle": 4.843359736017641
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8664299079373337,
+        "absOrder": 0.48496950460219546,
+        "inverseN": 0.25842211785683367,
+        "attemptsPerParticle": 4.918906713886597
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8658336511354882,
+        "absOrder": 0.4896773749634172,
+        "inverseN": 0.25864571415752513,
+        "attemptsPerParticle": 4.998058320020112
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8652640185469563,
+        "absOrder": 0.4941544393895451,
+        "inverseN": 0.25885932637822484,
+        "attemptsPerParticle": 5.08049200089476
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.864719193942757,
+        "absOrder": 0.49841127296851595,
+        "inverseN": 0.2590636356047997,
+        "attemptsPerParticle": 5.165934294419351
+      }
+    },
+    {
+      "alpha": "9/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8641975308641976,
+        "absOrder": 0.502458761282291,
+        "inverseN": 0.25925925925925947,
+        "attemptsPerParticle": 5.254150280245051
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8824734919362012,
+        "absOrder": 0.4031609195402289,
+        "inverseN": 0.25240577385725704,
+        "attemptsPerParticle": 6.069396508974049
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8810995179042956,
+        "absOrder": 0.40074314851737874,
+        "inverseN": 0.25292101411922224,
+        "attemptsPerParticle": 5.0579000392361975
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8798167732426116,
+        "absOrder": 0.4017991829436273,
+        "inverseN": 0.25340204336735367,
+        "attemptsPerParticle": 4.724982717921491
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8786154160464644,
+        "absOrder": 0.40504141545093264,
+        "inverseN": 0.25385255231590936,
+        "attemptsPerParticle": 4.568558494878098
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8774871823347579,
+        "absOrder": 0.40964442462927897,
+        "inverseN": 0.25427563995779867,
+        "attemptsPerParticle": 4.487104886273299
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8764250369120717,
+        "absOrder": 0.4150690148649885,
+        "inverseN": 0.254673944491306,
+        "attemptsPerParticle": 4.446141581079385
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.875422922542546,
+        "absOrder": 0.4209581044316953,
+        "inverseN": 0.25504973737987874,
+        "attemptsPerParticle": 4.43049440735116
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8744755746129542,
+        "absOrder": 0.4270731246881827,
+        "inverseN": 0.2554049928534753,
+        "attemptsPerParticle": 4.432315280235281
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8735783808247575,
+        "absOrder": 0.4332540911172068,
+        "inverseN": 0.2557414405240493,
+        "attemptsPerParticle": 4.447064021017161
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8727272727272724,
+        "absOrder": 0.4393939393939391,
+        "inverseN": 0.2560606060606059,
+        "attemptsPerParticle": 4.471887052341592
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8719186403328162,
+        "absOrder": 0.4454216915620886,
+        "inverseN": 0.2563638432085273,
+        "attemptsPerParticle": 4.504872175412968
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.87114926383689,
+        "absOrder": 0.45129121816934875,
+        "inverseN": 0.2566523593944995,
+        "attemptsPerParticle": 4.544670903656323
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.870416258264409,
+        "absOrder": 0.45697362104718964,
+        "inverseN": 0.2569272364841796,
+        "attemptsPerParticle": 4.590291905127091
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8697170280550167,
+        "absOrder": 0.4624520020493842,
+        "inverseN": 0.2571894478127018,
+        "attemptsPerParticle": 4.64098088046792
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8690492294095887,
+        "absOrder": 0.46771782990154886,
+        "inverseN": 0.2574398723047369,
+        "attemptsPerParticle": 4.6961470846909155
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8684107387811093,
+        "absOrder": 0.47276839304790524,
+        "inverseN": 0.2576793062904174,
+        "attemptsPerParticle": 4.75531643228619
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8677996262898313,
+        "absOrder": 0.4776050000236476,
+        "inverseN": 0.25790847347464607,
+        "attemptsPerParticle": 4.818100465171992
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8672141331284134,
+        "absOrder": 0.48223170026123774,
+        "inverseN": 0.25812803341017804,
+        "attemptsPerParticle": 4.884175165170458
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.866652652231798,
+        "absOrder": 0.4866543708851285,
+        "inverseN": 0.2583385887464086,
+        "attemptsPerParticle": 4.953266086869516
+      }
+    },
+    {
+      "alpha": "10/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8661137116421667,
+        "absOrder": 0.49088006315846855,
+        "inverseN": 0.25854069146752046,
+        "attemptsPerParticle": 5.025137670430531
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8838336240110626,
+        "absOrder": 0.4045346202209051,
+        "inverseN": 0.25189572432918406,
+        "attemptsPerParticle": 6.13925979365072
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8825817056356504,
+        "absOrder": 0.3992629237267499,
+        "inverseN": 0.25236519371996446,
+        "attemptsPerParticle": 5.121132004972836
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.881394246268798,
+        "absOrder": 0.39801393951795455,
+        "inverseN": 0.25281049098253394,
+        "attemptsPerParticle": 4.777249722000312
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8802671926946033,
+        "absOrder": 0.39941192542765275,
+        "inverseN": 0.25323313607285747,
+        "attemptsPerParticle": 4.608728091687149
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8791966252916736,
+        "absOrder": 0.4025502179690241,
+        "inverseN": 0.2536345988489557,
+        "attemptsPerParticle": 4.514702512448249
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8781788231733226,
+        "absOrder": 0.4068199672092253,
+        "inverseN": 0.2540162746433373,
+        "attemptsPerParticle": 4.4609186122150355
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8772102938064471,
+        "absOrder": 0.4118062883322388,
+        "inverseN": 0.25437947315591614,
+        "attemptsPerParticle": 4.432301744025354
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8762877820349088,
+        "absOrder": 0.4172233791832854,
+        "inverseN": 0.25472541507024277,
+        "attemptsPerParticle": 4.421054820901812
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.875408267282449,
+        "absOrder": 0.4228729252311596,
+        "inverseN": 0.2550552331024155,
+        "attemptsPerParticle": 4.422666686482077
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8745689541709439,
+        "absOrder": 0.42861683136467416,
+        "inverseN": 0.25536997551922924,
+        "attemptsPerParticle": 4.4343016594327045
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8737672597054866,
+        "absOrder": 0.43435899427295754,
+        "inverseN": 0.25567061094377636,
+        "attemptsPerParticle": 4.454059326381444
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8730007989267251,
+        "absOrder": 0.4400329085965718,
+        "inverseN": 0.2559580337358115,
+        "attemptsPerParticle": 4.480599410480714
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8722673701689493,
+        "absOrder": 0.44559311283340014,
+        "inverseN": 0.25623306951997776,
+        "attemptsPerParticle": 4.512936584059968
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8715649405930967,
+        "absOrder": 0.4510092075040368,
+        "inverseN": 0.2564964806109222,
+        "attemptsPerParticle": 4.550321127550004
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8708916323731141,
+        "absOrder": 0.45626162383900126,
+        "inverseN": 0.2567489711934157,
+        "attemptsPerParticle": 4.592165916157918
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8702457097334634,
+        "absOrder": 0.4613386006943407,
+        "inverseN": 0.2569911921832848,
+        "attemptsPerParticle": 4.6379998122187756
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8696255669239767,
+        "absOrder": 0.466234006026043,
+        "inverseN": 0.25722374573684204,
+        "attemptsPerParticle": 4.687436816628424
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8690297171500183,
+        "absOrder": 0.4709457554660266,
+        "inverseN": 0.2574471894020768,
+        "attemptsPerParticle": 4.74015500219743
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8684567824352774,
+        "absOrder": 0.47547465737628647,
+        "inverseN": 0.2576620399201045,
+        "attemptsPerParticle": 4.795881728536373
+      }
+    },
+    {
+      "alpha": "11/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8679054843713485,
+        "absOrder": 0.4798235653091429,
+        "inverseN": 0.25786877669407815,
+        "attemptsPerParticle": 4.854383012153825
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8849630987363364,
+        "absOrder": 0.4075894167803037,
+        "inverseN": 0.2514721713072063,
+        "attemptsPerParticle": 6.168583841782552
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8838369486280823,
+        "absOrder": 0.3995578989631211,
+        "inverseN": 0.2518944775978023,
+        "attemptsPerParticle": 5.168304395202502
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8827503473667916,
+        "absOrder": 0.39602382386932145,
+        "inverseN": 0.25230195307078607,
+        "attemptsPerParticle": 4.823034568127935
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.881704251882177,
+        "absOrder": 0.39554864684916596,
+        "inverseN": 0.25269423887751735,
+        "attemptsPerParticle": 4.648269230347505
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8806985847636256,
+        "absOrder": 0.39716228320355895,
+        "inverseN": 0.2530713640469738,
+        "attemptsPerParticle": 4.546037134094389
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8797326130659464,
+        "absOrder": 0.40019851081440816,
+        "inverseN": 0.2534336034336034,
+        "attemptsPerParticle": 4.4830549747131085
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8788051965236363,
+        "absOrder": 0.4041930000169711,
+        "inverseN": 0.2537813846369701,
+        "attemptsPerParticle": 4.444666941585422
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8779149519890261,
+        "absOrder": 0.4088183421516755,
+        "inverseN": 0.2541152263374486,
+        "attemptsPerParticle": 4.423286547129141
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8770603631105245,
+        "absOrder": 0.41384163362725335,
+        "inverseN": 0.254435697166887,
+        "attemptsPerParticle": 4.414520255827815
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8762398536536037,
+        "absOrder": 0.41909619186258845,
+        "inverseN": 0.25474338821323184,
+        "attemptsPerParticle": 4.415603368825189
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.875451836371377,
+        "absOrder": 0.4244623406746024,
+        "inverseN": 0.2550388946940673,
+        "attemptsPerParticle": 4.424680971330428
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8746947452635118,
+        "absOrder": 0.42985414118278453,
+        "inverseN": 0.2553228038595169,
+        "attemptsPerParticle": 4.4404434095770124
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8739670564624015,
+        "absOrder": 0.43521009470959066,
+        "inverseN": 0.25559568715993297,
+        "attemptsPerParticle": 4.461926823311431
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8732673012936627,
+        "absOrder": 0.4404865444719659,
+        "inverseN": 0.25585809534820986,
+        "attemptsPerParticle": 4.488397072324038
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8725940739394058,
+        "absOrder": 0.44565293902088715,
+        "inverseN": 0.25611055560605595,
+        "attemptsPerParticle": 4.5192786804511025
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.871946035382462,
+        "absOrder": 0.4506883976769427,
+        "inverseN": 0.25635357006491033,
+        "attemptsPerParticle": 4.554109447992397
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8713219148001754,
+        "absOrder": 0.45557919781522244,
+        "inverseN": 0.2565876152832673,
+        "attemptsPerParticle": 4.59251039005873
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8707205092264159,
+        "absOrder": 0.4603169221753215,
+        "inverseN": 0.2568131423734274,
+        "attemptsPerParticle": 4.6341651928348035
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8701406820576816,
+        "absOrder": 0.4648970835389329,
+        "inverseN": 0.25703057756170267,
+        "attemptsPerParticle": 4.678805785270017
+      }
+    },
+    {
+      "alpha": "12/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8695813608094314,
+        "absOrder": 0.46931809784330913,
+        "inverseN": 0.25724032302979677,
+        "attemptsPerParticle": 4.726201958523853
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8858959970071066,
+        "absOrder": 0.4120349060603837,
+        "inverseN": 0.25112233445566734,
+        "attemptsPerParticle": 6.156752170627263
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8848966247296562,
+        "absOrder": 0.40135862869979,
+        "inverseN": 0.2514970990597124,
+        "attemptsPerParticle": 5.197847885746512
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8839138717163848,
+        "absOrder": 0.3955870828995319,
+        "inverseN": 0.2518656314396891,
+        "attemptsPerParticle": 4.860125631159641
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8829529866566912,
+        "absOrder": 0.39323961894090015,
+        "inverseN": 0.2522259633370747,
+        "attemptsPerParticle": 4.684405318167942
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8820172523971842,
+        "absOrder": 0.39329797294638336,
+        "inverseN": 0.25257686368438914,
+        "attemptsPerParticle": 4.57779790306308
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.881108597351663,
+        "absOrder": 0.3950494967013072,
+        "inverseN": 0.25291760932645957,
+        "attemptsPerParticle": 4.508720749965123
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8802280108702859,
+        "absOrder": 0.39798816694819894,
+        "inverseN": 0.2532478292569764,
+        "attemptsPerParticle": 4.46324955697566
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8793758297304399,
+        "absOrder": 0.40175040450436705,
+        "inverseN": 0.25356739718441845,
+        "attemptsPerParticle": 4.434164734155066
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8785519382373354,
+        "absOrder": 0.40607249530176937,
+        "inverseN": 0.25387635649433316,
+        "attemptsPerParticle": 4.417277145436453
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8777559094252599,
+        "absOrder": 0.4107617683341947,
+        "inverseN": 0.2541748672988609,
+        "attemptsPerParticle": 4.409945082420033
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8769871055045753,
+        "absOrder": 0.415676736530939,
+        "inverseN": 0.25446316876911806,
+        "attemptsPerParticle": 4.410392167177097
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8762447497442888,
+        "absOrder": 0.4207131964911377,
+        "inverseN": 0.25474155217922556,
+        "attemptsPerParticle": 4.417361341937907
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8755279781091686,
+        "absOrder": 0.42579436204844573,
+        "inverseN": 0.25501034154239555,
+        "attemptsPerParticle": 4.429925379842497
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8748358764087741,
+        "absOrder": 0.4308637731161343,
+        "inverseN": 0.2552698796800431,
+        "attemptsPerParticle": 4.4473765136257395
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8741675069932264,
+        "absOrder": 0.4358801420026827,
+        "inverseN": 0.2555205182108735,
+        "attemptsPerParticle": 4.469158798171115
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8735219278551117,
+        "absOrder": 0.44081357028107554,
+        "inverseN": 0.2557626103876667,
+        "attemptsPerParticle": 4.494824856371743
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8728982061842641,
+        "absOrder": 0.4456427468568476,
+        "inverseN": 0.25599650601423407,
+        "attemptsPerParticle": 4.52400719530649
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8722954278534759,
+        "absOrder": 0.45035285617919063,
+        "inverseN": 0.25622254788828,
+        "attemptsPerParticle": 4.556398579157899
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8717127039109455,
+        "absOrder": 0.4549340055401059,
+        "inverseN": 0.25644106936672884,
+        "attemptsPerParticle": 4.591738226878051
+      }
+    },
+    {
+      "alpha": "13/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8711491748679036,
+        "absOrder": 0.4593800352539332,
+        "inverseN": 0.25665239275786944,
+        "attemptsPerParticle": 4.629801869158449
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8866606822416916,
+        "absOrder": 0.4176301056700439,
+        "inverseN": 0.25083557749269797,
+        "attemptsPerParticle": 6.103812853111725
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.885787164575043,
+        "absOrder": 0.40443614182122833,
+        "inverseN": 0.25116314661769196,
+        "attemptsPerParticle": 5.2089019111969215
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8849093293537731,
+        "absOrder": 0.3964936297658341,
+        "inverseN": 0.251492334825668,
+        "attemptsPerParticle": 4.887128173189211
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.884036069110484,
+        "absOrder": 0.39229661133164323,
+        "inverseN": 0.25181980741690213,
+        "attemptsPerParticle": 4.715300669124211
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8831735782404742,
+        "absOrder": 0.3907915520160049,
+        "inverseN": 0.2521432414931551,
+        "attemptsPerParticle": 4.607745209553652
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8823261325312183,
+        "absOrder": 0.3912289949108941,
+        "inverseN": 0.2524610336341263,
+        "attemptsPerParticle": 4.535290725535001
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8814966295538895,
+        "absOrder": 0.3930682699953586,
+        "inverseN": 0.2527720972506249,
+        "attemptsPerParticle": 4.485049105181274
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8806869691416382,
+        "absOrder": 0.39591473813127676,
+        "inverseN": 0.2530757199052187,
+        "attemptsPerParticle": 4.450319979630593
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8798983248944633,
+        "absOrder": 0.3994775525586964,
+        "inverseN": 0.2533714614979098,
+        "attemptsPerParticle": 4.427203199825231
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8791313401755159,
+        "absOrder": 0.40354068082551947,
+        "inverseN": 0.25365908076751426,
+        "attemptsPerParticle": 4.413230755155484
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8783862710085246,
+        "absOrder": 0.407942684720394,
+        "inverseN": 0.2539384817051366,
+        "attemptsPerParticle": 4.406737026383587
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8776630911421439,
+        "absOrder": 0.4125623971603752,
+        "inverseN": 0.2542096741550293,
+        "attemptsPerParticle": 4.406538989308212
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.87696156984193,
+        "absOrder": 0.41730863875579033,
+        "inverseN": 0.25447274464260927,
+        "attemptsPerParticle": 4.41176085293106
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8762813298176098,
+        "absOrder": 0.42211274504352403,
+        "inverseN": 0.25472783465172943,
+        "attemptsPerParticle": 4.421731762505553
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8756218905472632,
+        "absOrder": 0.42692307692307674,
+        "inverseN": 0.2549751243781093,
+        "attemptsPerParticle": 4.435923004566244
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8749827007783456,
+        "absOrder": 0.4317009483648259,
+        "inverseN": 0.25521482054145367,
+        "attemptsPerParticle": 4.453907776390242
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8743631629491018,
+        "absOrder": 0.43641757875760345,
+        "inverseN": 0.2554471472274197,
+        "attemptsPerParticle": 4.475334455970404
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.873762651540429,
+        "absOrder": 0.44105179390904814,
+        "inverseN": 0.2556723390056721,
+        "attemptsPerParticle": 4.499908275438577
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8731805268433369,
+        "absOrder": 0.44558827936419526,
+        "inverseN": 0.2558906357670818,
+        "attemptsPerParticle": 4.527378407161248
+      }
+    },
+    {
+      "alpha": "14/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8726161452478618,
+        "absOrder": 0.45001624482248886,
+        "inverseN": 0.25610227886538467,
+        "attemptsPerParticle": 4.557528641757939
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8872809050698363,
+        "absOrder": 0.42417427473531827,
+        "inverseN": 0.25060299393214386,
+        "attemptsPerParticle": 6.0102477479057494
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8865309512804537,
+        "absOrder": 0.40859554319077707,
+        "inverseN": 0.25088422660316306,
+        "attemptsPerParticle": 5.201071232279504
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8857576815416074,
+        "absOrder": 0.3985610325920651,
+        "inverseN": 0.25117420275523034,
+        "attemptsPerParticle": 4.903185461879613
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8849730566614398,
+        "absOrder": 0.39255302768365946,
+        "inverseN": 0.25146843708529387,
+        "attemptsPerParticle": 4.739740549989933
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8841857730746616,
+        "absOrder": 0.38949357520786054,
+        "inverseN": 0.25176366843033493,
+        "attemptsPerParticle": 4.634347442680773
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8834021596997801,
+        "absOrder": 0.3886047740060558,
+        "inverseN": 0.2520575234459156,
+        "attemptsPerParticle": 4.560936781023201
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8826268092406228,
+        "absOrder": 0.38931762553940114,
+        "inverseN": 0.25234827986809993,
+        "attemptsPerParticle": 4.5079524565472076
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8818630293556543,
+        "absOrder": 0.3912111472400179,
+        "inverseN": 0.25263469732496274,
+        "attemptsPerParticle": 4.469361232887884
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8811131694154746,
+        "absOrder": 0.39397085283151556,
+        "inverseN": 0.2529158948025305,
+        "attemptsPerParticle": 4.441634101951046
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.880378859942516,
+        "absOrder": 0.39735991910454405,
+        "inverseN": 0.25319126085488947,
+        "attemptsPerParticle": 4.4225260119030905
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8796611898820428,
+        "absOrder": 0.4011988364415108,
+        "inverseN": 0.25346038712756747,
+        "attemptsPerParticle": 4.410513414435544
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8789608390374047,
+        "absOrder": 0.4053508380901071,
+        "inverseN": 0.2537230186943067,
+        "attemptsPerParticle": 4.4045081585257355
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8782781777942187,
+        "absOrder": 0.4097113312375952,
+        "inverseN": 0.2539790166605013,
+        "attemptsPerParticle": 4.403700284103001
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8776133427296215,
+        "absOrder": 0.4142001409443268,
+        "inverseN": 0.254228329809725,
+        "attemptsPerParticle": 4.4074661026364
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8769662942761635,
+        "absOrder": 0.41875575809818966,
+        "inverseN": 0.2544709729797719,
+        "attemptsPerParticle": 4.4153116272738435
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8763368609179121,
+        "absOrder": 0.42333103276632783,
+        "inverseN": 0.2547070104891165,
+        "attemptsPerParticle": 4.426836230363669
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8757247732016917,
+        "absOrder": 0.42788992177966245,
+        "inverseN": 0.25493654338269867,
+        "attemptsPerParticle": 4.441708426654577
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8751296899930039,
+        "absOrder": 0.43240501316800695,
+        "inverseN": 0.25515969958595663,
+        "attemptsPerParticle": 4.459649220119736
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8745512187900607,
+        "absOrder": 0.43685562845515785,
+        "inverseN": 0.25537662628706026,
+        "attemptsPerParticle": 4.480420333498736
+      }
+    },
+    {
+      "alpha": "15/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8739889314601957,
+        "absOrder": 0.4412263585271907,
+        "inverseN": 0.2555874840357598,
+        "attemptsPerParticle": 4.503815685727295
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8877766655544419,
+        "absOrder": 0.4314995895176673,
+        "inverseN": 0.2504170837504167,
+        "attemptsPerParticle": 5.876822837711017
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8871470340396895,
+        "absOrder": 0.41367062090847745,
+        "inverseN": 0.2506531955684498,
+        "attemptsPerParticle": 5.174271766770348
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.886476933073424,
+        "absOrder": 0.40163085635368917,
+        "inverseN": 0.2509044834307992,
+        "attemptsPerParticle": 4.907803570664525
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8857808857808863,
+        "absOrder": 0.39386169386169434,
+        "inverseN": 0.2511655011655014,
+        "attemptsPerParticle": 4.756930860514786
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8850697220001777,
+        "absOrder": 0.3892698298025312,
+        "inverseN": 0.2514321875832667,
+        "attemptsPerParticle": 4.656553936609774
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8843515528001552,
+        "absOrder": 0.3870561379741519,
+        "inverseN": 0.25170150103327515,
+        "attemptsPerParticle": 4.5843733043659345
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8836324653318123,
+        "absOrder": 0.38662889933389327,
+        "inverseN": 0.2519711588339041,
+        "attemptsPerParticle": 4.530451274218792
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8829170255526843,
+        "absOrder": 0.387545083579656,
+        "inverseN": 0.25223944875107673,
+        "attemptsPerParticle": 4.489564975764035
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8822086466797052,
+        "absOrder": 0.3894698265010804,
+        "inverseN": 0.25250509082844425,
+        "attemptsPerParticle": 4.458636113712078
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.881509862352774,
+        "absOrder": 0.3921479749767301,
+        "inverseN": 0.25276713495104297,
+        "attemptsPerParticle": 4.4356903198591695
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8808225312348945,
+        "absOrder": 0.3953837946960193,
+        "inverseN": 0.2530248841202482,
+        "attemptsPerParticle": 4.41937646172124
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8801479916614974,
+        "absOrder": 0.39902629739135187,
+        "inverseN": 0.25327783646027213,
+        "attemptsPerParticle": 4.408721464043823
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.87948717948718,
+        "absOrder": 0.40295849849765153,
+        "inverseN": 0.2535256410256412,
+        "attemptsPerParticle": 4.40299515780992
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.878840718538974,
+        "absOrder": 0.40708946347668185,
+        "inverseN": 0.25376806388121803,
+        "attemptsPerParticle": 4.401630968419258
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8782089904896926,
+        "absOrder": 0.4113483585883978,
+        "inverseN": 0.2540049618996988,
+        "attemptsPerParticle": 4.404176909835069
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8775921891390306,
+        "absOrder": 0.4156799595844783,
+        "inverseN": 0.25423626240619723,
+        "attemptsPerParticle": 4.41026396740412
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8769903627900639,
+        "absOrder": 0.4200412323555315,
+        "inverseN": 0.25446194728705945,
+        "attemptsPerParticle": 4.419584936190288
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8764034474726295,
+        "absOrder": 0.42439870961058146,
+        "inverseN": 0.25468204053109716,
+        "attemptsPerParticle": 4.431879802485235
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8758312930839885,
+        "absOrder": 0.42872646411363946,
+        "inverseN": 0.25489659842683754,
+        "attemptsPerParticle": 4.44692536392633
+      }
+    },
+    {
+      "alpha": "16/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8752736840168539,
+        "absOrder": 0.43300453276790724,
+        "inverseN": 0.2551057018270134,
+        "attemptsPerParticle": 4.4645276792241875
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8881648923989515,
+        "absOrder": 0.43946527769931615,
+        "inverseN": 0.25027149868372567,
+        "attemptsPerParticle": 5.7044883588044435
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8876516986823247,
+        "absOrder": 0.41951933294310884,
+        "inverseN": 0.2504639463274613,
+        "attemptsPerParticle": 5.128629762731383
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8870826120769668,
+        "absOrder": 0.4055654179708091,
+        "inverseN": 0.2506773538044703,
+        "attemptsPerParticle": 4.900737599251195
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8864742765899447,
+        "absOrder": 0.39609270909771227,
+        "inverseN": 0.2509054796121044,
+        "attemptsPerParticle": 4.766368423445347
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8858393268649675,
+        "absOrder": 0.3900000902801697,
+        "inverseN": 0.25114358575897017,
+        "attemptsPerParticle": 4.673648151148163
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8851874096318535,
+        "absOrder": 0.3864734031913091,
+        "inverseN": 0.251388054721388,
+        "attemptsPerParticle": 4.604692680239103
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8845259203453854,
+        "absOrder": 0.38490314777683843,
+        "inverseN": 0.2516361132038142,
+        "attemptsPerParticle": 4.551459480972495
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.883860541884629,
+        "absOrder": 0.3848281201674618,
+        "inverseN": 0.25188563012659726,
+        "attemptsPerParticle": 4.509674463900506
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8831956434295616,
+        "absOrder": 0.3858960858067787,
+        "inverseN": 0.25213496704724775,
+        "attemptsPerParticle": 4.476786956742047
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.882534579112486,
+        "absOrder": 0.38783588055881457,
+        "inverseN": 0.2523828661661505,
+        "attemptsPerParticle": 4.451139414896158
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8818799138727647,
+        "absOrder": 0.3904373240572056,
+        "inverseN": 0.2526283656310467,
+        "attemptsPerParticle": 4.431582467463605
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8812335958005248,
+        "absOrder": 0.3935365644448883,
+        "inverseN": 0.25287073490813644,
+        "attemptsPerParticle": 4.417277658735997
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8805970887156589,
+        "absOrder": 0.397005257075445,
+        "inverseN": 0.25310942506496104,
+        "attemptsPerParticle": 4.407588120373494
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8799714749027147,
+        "absOrder": 0.40074248706670235,
+        "inverseN": 0.2533440302448152,
+        "attemptsPerParticle": 4.402014021935585
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8793575352434675,
+        "absOrder": 0.40466868027530906,
+        "inverseN": 0.2535742576170326,
+        "attemptsPerParticle": 4.400152422887867
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8787558120891455,
+        "absOrder": 0.4087209718022604,
+        "inverseN": 0.2537999037999038,
+        "attemptsPerParticle": 4.401671189914471
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8781666588510646,
+        "absOrder": 0.41284965412443475,
+        "inverseN": 0.2540208362641837,
+        "attemptsPerParticle": 4.4062914142341425
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8775902792996804,
+        "absOrder": 0.4170154326601476,
+        "inverseN": 0.25423697859595284,
+        "attemptsPerParticle": 4.413775177114676
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8770267588375448,
+        "absOrder": 0.4211872905786471,
+        "inverseN": 0.2544482987692534,
+        "attemptsPerParticle": 4.423916799562412
+      }
+    },
+    {
+      "alpha": "17/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8764760894759682,
+        "absOrder": 0.4253408170911279,
+        "inverseN": 0.25465479977984506,
+        "attemptsPerParticle": 4.436536431583115
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8884599825513093,
+        "absOrder": 0.44795290005719,
+        "inverseN": 0.25016083987659166,
+        "attemptsPerParticle": 5.494310680126859
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8880589272746139,
+        "absOrder": 0.4260200411903198,
+        "inverseN": 0.25031123560535334,
+        "attemptsPerParticle": 5.064414099442186
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8875881612500227,
+        "absOrder": 0.41024495312582154,
+        "inverseN": 0.2504877728645747,
+        "attemptsPerParticle": 4.881915700224537
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8870660663621334,
+        "absOrder": 0.3991314465348551,
+        "inverseN": 0.25068355844753376,
+        "attemptsPerParticle": 4.767754571634411
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8865067912686957,
+        "absOrder": 0.391576826809155,
+        "inverseN": 0.25089328660757226,
+        "attemptsPerParticle": 4.685149959150683
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8859212961777061,
+        "absOrder": 0.3867571887275141,
+        "inverseN": 0.2511128472666933,
+        "attemptsPerParticle": 4.621255851229213
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8853181141025664,
+        "absOrder": 0.3840495754207962,
+        "inverseN": 0.2513390405448713,
+        "attemptsPerParticle": 4.570191852499641
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8847039129525008,
+        "absOrder": 0.3829780771313757,
+        "inverseN": 0.2515693659761457,
+        "attemptsPerParticle": 4.528766202270198
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8840839155387965,
+        "absOrder": 0.3831758363152239,
+        "inverseN": 0.25180186500628515,
+        "attemptsPerParticle": 4.495030070904542
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8834622167955499,
+        "absOrder": 0.3843578375403139,
+        "inverseN": 0.25203500203500195,
+        "attemptsPerParticle": 4.467687273885012
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8828420256991689,
+        "absOrder": 0.38630114282700917,
+        "inverseN": 0.25226757369614533,
+        "attemptsPerParticle": 4.44581853580628
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8822258513844996,
+        "absOrder": 0.38883035095045504,
+        "inverseN": 0.25249863906414627,
+        "attemptsPerParticle": 4.428738896365208
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.881615647471299,
+        "absOrder": 0.3918067759761169,
+        "inverseN": 0.2527274655315966,
+        "attemptsPerParticle": 4.415917840246678
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.881012924794019,
+        "absOrder": 0.3951203090353084,
+        "inverseN": 0.25295348653557603,
+        "attemptsPerParticle": 4.406931588716051
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8804188400306941,
+        "absOrder": 0.39868323942175304,
+        "inverseN": 0.25317626832182305,
+        "attemptsPerParticle": 4.401433057821112
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8798342657991786,
+        "absOrder": 0.40242552227175626,
+        "inverseN": 0.25339548365864173,
+        "attemptsPerParticle": 4.399132091041148
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8792598463959964,
+        "absOrder": 0.40629112513903276,
+        "inverseN": 0.2536108909348345,
+        "attemptsPerParticle": 4.399781961172338
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8786960423356922,
+        "absOrder": 0.4102351867694055,
+        "inverseN": 0.253822317457449,
+        "attemptsPerParticle": 4.403169857054056
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8781431660983479,
+        "absOrder": 0.41422179258996195,
+        "inverseN": 0.2540296460464526,
+        "attemptsPerParticle": 4.409109993592376
+      }
+    },
+    {
+      "alpha": "18/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8776014109347441,
+        "absOrder": 0.4182222222222222,
+        "inverseN": 0.2542328042328042,
+        "attemptsPerParticle": 4.417438502067492
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8886742332769852,
+        "absOrder": 0.4568625369639613,
+        "inverseN": 0.2500804958544633,
+        "attemptsPerParticle": 5.247425075089234
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8883807709102456,
+        "absOrder": 0.43306837129812953,
+        "inverseN": 0.25019054424199116,
+        "attemptsPerParticle": 4.981989846760491
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8880052588417382,
+        "absOrder": 0.41556516523168624,
+        "inverseN": 0.25033136126768124,
+        "attemptsPerParticle": 4.851387153067336
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8875674859364974,
+        "absOrder": 0.4028767386702682,
+        "inverseN": 0.2504955261071469,
+        "attemptsPerParticle": 4.760936169891938
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8870828589454001,
+        "absOrder": 0.39390394633458337,
+        "inverseN": 0.25067726122880796,
+        "attemptsPerParticle": 4.690748991283838
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.886563452653179,
+        "absOrder": 0.38781762577829326,
+        "inverseN": 0.25087203858839074,
+        "attemptsPerParticle": 4.63361767448635
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.8860187823150785,
+        "absOrder": 0.3839851297351803,
+        "inverseN": 0.2510762899651789,
+        "attemptsPerParticle": 4.586081209188332
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8854563790540119,
+        "absOrder": 0.3819189277546834,
+        "inverseN": 0.2512871911880785,
+        "attemptsPerParticle": 4.546158862216076
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.8848822233911461,
+        "absOrder": 0.3812400305933008,
+        "inverseN": 0.2515024995616535,
+        "attemptsPerParticle": 4.51257518369645
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8843010752688164,
+        "absOrder": 0.3816515650248365,
+        "inverseN": 0.25172043010752665,
+        "attemptsPerParticle": 4.484438285648478
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8837167276359724,
+        "absOrder": 0.3829194208389925,
+        "inverseN": 0.2519395604698436,
+        "attemptsPerParticle": 4.461086311493367
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8831322029617,
+        "absOrder": 0.38485790253313956,
+        "inverseN": 0.25215875722269576,
+        "attemptsPerParticle": 4.442006004474917
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.882549906704496,
+        "absOrder": 0.3873189727430777,
+        "inverseN": 0.25237711831914716,
+        "attemptsPerParticle": 4.4267857970494875
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.881971748015361,
+        "absOrder": 0.39018410648550744,
+        "inverseN": 0.2525939278275725,
+        "attemptsPerParticle": 4.415086946478612
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8813992352853675,
+        "absOrder": 0.393358065409466,
+        "inverseN": 0.25280862010132016,
+        "attemptsPerParticle": 4.406624802188451
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8808335522283514,
+        "absOrder": 0.3967640991734488,
+        "inverseN": 0.2530207512477015,
+        "attemptsPerParticle": 4.401156106326009
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8802756187923444,
+        "absOrder": 0.40034021803980424,
+        "inverseN": 0.2532299762862035,
+        "attemptsPerParticle": 4.398470067578177
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8797261401665344,
+        "absOrder": 0.40403627683569915,
+        "inverseN": 0.25343603077088245,
+        "attemptsPerParticle": 4.398381894229475
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8791856463886855,
+        "absOrder": 0.40781167861877987,
+        "inverseN": 0.2536387159375754,
+        "attemptsPerParticle": 4.400727987058997
+      }
+    },
+    {
+      "alpha": "19/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8786545244878569,
+        "absOrder": 0.41163355533954044,
+        "inverseN": 0.2538378866503864,
+        "attemptsPerParticle": 4.405362286489277
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "1/20",
+      "metrics": {
+        "coverage": 0.8888181906554603,
+        "absOrder": 0.4661096911427304,
+        "inverseN": 0.2500265118375352,
+        "attemptsPerParticle": 4.965002605588511
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "2/20",
+      "metrics": {
+        "coverage": 0.8886276540410932,
+        "absOrder": 0.4405745922709027,
+        "inverseN": 0.2500979630679234,
+        "attemptsPerParticle": 4.8817858534576475
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "3/20",
+      "metrics": {
+        "coverage": 0.8883440835108809,
+        "absOrder": 0.42143511610623263,
+        "inverseN": 0.2502043020167527,
+        "attemptsPerParticle": 4.809286173631488
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "4/20",
+      "metrics": {
+        "coverage": 0.8879883899964226,
+        "absOrder": 0.4072392555539628,
+        "inverseN": 0.25033768708467513,
+        "attemptsPerParticle": 4.745864521925594
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "5/20",
+      "metrics": {
+        "coverage": 0.8875770140792275,
+        "absOrder": 0.3968956077943483,
+        "inverseN": 0.2504919530536227,
+        "attemptsPerParticle": 4.690258190280322
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "6/20",
+      "metrics": {
+        "coverage": 0.8871229680084505,
+        "absOrder": 0.38957354998895605,
+        "inverseN": 0.25066222033016405,
+        "attemptsPerParticle": 4.6414748982304985
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "7/20",
+      "metrics": {
+        "coverage": 0.886636608906848,
+        "absOrder": 0.38463401060862595,
+        "inverseN": 0.2508446049932654,
+        "attemptsPerParticle": 4.598720686465255
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "8/20",
+      "metrics": {
+        "coverage": 0.8861262194595522,
+        "absOrder": 0.38158056979076493,
+        "inverseN": 0.25103600103600093,
+        "attemptsPerParticle": 4.561349765555388
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "9/20",
+      "metrics": {
+        "coverage": 0.885598448792526,
+        "absOrder": 0.3800243524167996,
+        "inverseN": 0.2512339150361362,
+        "attemptsPerParticle": 4.528828954872487
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "10/20",
+      "metrics": {
+        "coverage": 0.8850586505249473,
+        "absOrder": 0.37965845458582415,
+        "inverseN": 0.25143633938647775,
+        "attemptsPerParticle": 4.50071201893298
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "11/20",
+      "metrics": {
+        "coverage": 0.8845111443189139,
+        "absOrder": 0.38023906987136813,
+        "inverseN": 0.2516416542137408,
+        "attemptsPerParticle": 4.476620844223264
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "12/20",
+      "metrics": {
+        "coverage": 0.8839594199071327,
+        "absOrder": 0.3815713949323616,
+        "inverseN": 0.2518485508681587,
+        "attemptsPerParticle": 4.456231424959425
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "13/20",
+      "metrics": {
+        "coverage": 0.8834062974491232,
+        "absOrder": 0.38349899098955664,
+        "inverseN": 0.25205597178991207,
+        "attemptsPerParticle": 4.439263282903864
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "14/20",
+      "metrics": {
+        "coverage": 0.8828540544344704,
+        "absOrder": 0.3858956751340342,
+        "inverseN": 0.25226306292040673,
+        "attemptsPerParticle": 4.425471375155757
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "15/20",
+      "metrics": {
+        "coverage": 0.8823045267489709,
+        "absOrder": 0.3886592845213534,
+        "inverseN": 0.252469135802469,
+        "attemptsPerParticle": 4.414639828851361
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "16/20",
+      "metrics": {
+        "coverage": 0.8817591896332904,
+        "absOrder": 0.3917068414761337,
+        "inverseN": 0.2526736372208496,
+        "attemptsPerParticle": 4.406577034278758
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "17/20",
+      "metrics": {
+        "coverage": 0.8812192228823702,
+        "absOrder": 0.39497077646564877,
+        "inverseN": 0.25287612475244414,
+        "attemptsPerParticle": 4.401111759991188
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "18/20",
+      "metrics": {
+        "coverage": 0.8806855636123921,
+        "absOrder": 0.39839595693254215,
+        "inverseN": 0.2530762469786858,
+        "attemptsPerParticle": 4.398090045365933
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "19/20",
+      "metrics": {
+        "coverage": 0.8801589491598459,
+        "absOrder": 0.4019373350121128,
+        "inverseN": 0.2532737273983905,
+        "attemptsPerParticle": 4.397372690781016
+      }
+    },
+    {
+      "alpha": "20/20",
+      "beta": "20/20",
+      "metrics": {
+        "coverage": 0.8796399521037198,
+        "absOrder": 0.40555807413363265,
+        "inverseN": 0.25346835129443807,
+        "attemptsPerParticle": 4.39883321174218
+      }
+    }
+  ]
+}

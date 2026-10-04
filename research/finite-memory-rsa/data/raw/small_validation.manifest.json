@@ -1,0 +1,47 @@
+{
+  "configuration": {
+    "name": "small_validation",
+    "purpose": "Independent Monte Carlo against complete rational absorbing distributions, including residual placements and both boundaries.",
+    "sizes": [
+      2,
+      3
+    ],
+    "lengths": [
+      2
+    ],
+    "boundaries": [
+      "periodic",
+      "open"
+    ],
+    "controllers": [
+      0,
+      33,
+      35,
+      38,
+      41,
+      43,
+      46,
+      "random-0.5"
+    ],
+    "repetitions": 4096,
+    "seedStart": 400001,
+    "engine": "event"
+  },
+  "startedAt": "2026-10-03T17:18:19.938Z",
+  "finishedAt": "2026-10-03T17:18:21.255Z",
+  "runs": 131072,
+  "raw": "data/raw/small_validation.csv",
+  "sha256": "4f0bd8337071c224de23280d97449760f581a0c12c27f756ef6845caa693798a",
+  "runtime": {
+    "node": "v24.14.1",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "sourceSha256": {
+    "src/controllers.mjs": "6e31d6452c8bca9e78e651bb91ddfc06b9665bd3b33f59346a55499e0a301ba8",
+    "src/exact.mjs": "0adde531dfee6a04692b04c3208ff528f8bfb01936078b2932371d20dddb10af",
+    "src/lattice.mjs": "dfb22252873f7ee861d24fc35b32f67e47785466b9ee8096c063e4aec041f029",
+    "src/rng.mjs": "a0af386efd47f97c85eda77fbe7ee175af21dc7d828411004486298d5153aecc",
+    "src/simulate.mjs": "3f4ce9e07d8efdfd4c933e6009390cd5a9f27b650d76b98575e8d258426d8f01"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "budgetsMiB": {
+    "core": 6144,
+    "maximum": 8192,
+    "build": 3072
+  },
+  "profiles": {
+    "core": {
+      "implementedInPhase": 3,
+      "services": [
+        "edge",
+        "portal",
+        "gateway",
+        "postgres",
+        "redis",
+        "next"
+      ]
+    },
+    "databases": {
+      "implementedInPhase": 2,
+      "services": [
+        "mysql",
+        "mongo",
+        "minio",
+        "hono"
+      ]
+    },
+    "search": {
+      "implementedInPhase": 2,
+      "services": [
+        "elasticsearch"
+      ]
+    },
+    "messaging": {
+      "implementedInPhase": 2,
+      "services": [
+        "rabbitmq",
+        "kafka",
+        "message-bridge",
+        "message-consumer"
+      ]
+    },
+    "monitoring": {
+      "implementedInPhase": 2,
+      "services": [
+        "otel",
+        "prometheus",
+        "grafana"
+      ]
+    },
+    "legacy": {
+      "implementedInPhase": 2,
+      "services": [
+        "hono",
+        "spring",
+        "fastapi",
+        "laravel",
+        "fiber",
+        "dotnet",
+        "sinatra"
+      ]
+    },
+    "everything": {
+      "implementedInPhase": 2,
+      "policy": "All real configurations remain; over-budget combinations run in batches."
+    }
+  },
+  "plannedOptionalLimitsMiB": {
+    "mysql": 384,
+    "mongo": 512,
+    "minio": 192,
+    "elasticsearch": 1280,
+    "rabbitmq": 256,
+    "kafka": 1024,
+    "hono": 128,
+    "message-bridge": 192,
+    "message-consumer": 256,
+    "spring": 512,
+    "fastapi": 256,
+    "laravel": 256,
+    "fiber": 64,
+    "dotnet": 192,
+    "sinatra": 96,
+    "otel": 128,
+    "prometheus": 192,
+    "grafana": 192,
+    "next": 512
+  },
+  "plannedHeapMiB": {
+    "elasticsearch": 384,
+    "kafka": 320,
+    "spring": 256
+  },
+  "recommendedBatches": [
+    [
+      "core",
+      "current-language-service",
+      "its-database"
+    ],
+    [
+      "core",
+      "rabbitmq",
+      "kafka",
+      "message-consumer"
+    ],
+    [
+      "core",
+      "mongo",
+      "elasticsearch",
+      "replication-worker"
+    ],
+    [
+      "core",
+      "monitoring",
+      "current-traced-services"
+    ]
+  ],
+  "rules": [
+    "No optional infrastructure in default depends_on",
+    "Build heavy targets sequentially",
+    "Stop this project's unselected containers when changing modes; never delete data volumes",
+    "Never treat local fallback as evidence of real external services",
+    "Never raise WSL limits or shut down other distributions silently"
+  ]
+}

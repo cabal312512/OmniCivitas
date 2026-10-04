@@ -1,0 +1,183 @@
+{
+  "phase": 9,
+  "status": "complete-with-validation-limits",
+  "nextPhaseAuthorized": false,
+  "updatedAt": "2026-10-04T15:36:01.066Z",
+  "acceptance": "docs/phase-9-acceptance.json",
+  "previousAcceptance": "docs/phase-8-acceptance.json",
+  "outstanding": [
+    {
+      "item": "macOS and independent Linux Engine host execution",
+      "status": "unverified-host-unavailable"
+    },
+    {
+      "item": "Remote CI execution",
+      "status": "not-run-no-publication-authorized"
+    },
+    {
+      "item": "Full natural tower ascent and Boss win",
+      "status": "not-rerun-under-user-brief-test-scope"
+    }
+  ],
+  "publicRelease": {
+    "status": "completed-with-platform-validation-limits",
+    "standardInstallBuildDevVerified": true,
+    "cleanComposeFreshNamedVolumesVerified": true,
+    "windowsHostVerified": true,
+    "linuxContainerUserspaceVerified": true,
+    "linuxEngineHostVerified": false,
+    "macOSHostVerified": false,
+    "remoteCIRun": false,
+    "publishedToGitHub": false,
+    "sourceSnapshot": "Independent temporary Git repository; main workspace has no Git repository created by this task",
+    "finalTrackedFileScan": "phase9-public-final-source-audit.json",
+    "finalExactCloneComparison": "phase9-final-clone-fidelity.json",
+    "auditPhase": 9,
+    "cleanCloneVerified": true,
+    "allHostPlatformsVerified": false
+  },
+  "activeWork": {
+    "name": "phase-9-final-audit-and-public-portability",
+    "authorizedBy": "User: 然后开始网站的下一阶段 应该是第九阶段了吧",
+    "authorizedAt": "2026-10-04T12:00:49.730Z",
+    "scope": "Independent 732-item audit, all technical items, batched infrastructure, clean installation/deployment, release/license/secret checks; no GitHub publication and no research/UI redesign",
+    "status": "complete-with-validation-limits",
+    "finishedAt": "2026-10-04T14:52:30.466Z"
+  },
+  "namingRevision": {
+    "revision": "names-1",
+    "status": "complete",
+    "requestedBy": "User: 文件夹和文件的名字也都大改一下；不仅提到的其他也多改一点",
+    "paths": "docs/naming-paths.json",
+    "nextPhaseAuthorized": false,
+    "acceptance": "docs/naming-acceptance.json",
+    "finishedAt": "2026-10-03T05:12:04.439Z"
+  },
+  "expansion": {
+    "revision": "expand-1",
+    "status": "complete",
+    "authorizedBy": "User: 路由特色窗口、科技效果、增强正常功能、新增高级功能、分散入口；保持一致风格并累加",
+    "phase": 8,
+    "nextPhaseAuthorized": false,
+    "backup": "F:\\OCVdeps\\runtime\\backups\\expand1-1791004858610",
+    "finishedAt": "2026-10-03T06:52:33.563Z",
+    "acceptance": "docs/expansion-acceptance.json"
+  },
+  "mediaNotice": {
+    "revision": "media-1",
+    "status": "complete",
+    "authorizedBy": "User: unified media statement; no per-asset sources or authorization prerequisite; retain necessary code notices only",
+    "finishedAt": "2026-10-03T07:35:21.201Z",
+    "statement": "MEDIA_NOTICE.md",
+    "website": "/legal/",
+    "codeNotices": "/legal/code/",
+    "acceptance": "docs/MEDIA-NOTICE-MAINTENANCE.md",
+    "verification": "docs/media-notice-checks.json",
+    "fullCodeLicenseAuditComplete": true,
+    "nextPhaseAuthorized": false,
+    "fullCodeLicenseAuditScope": "Actually distributed code/known source references; third-party media authorization not claimed"
+  },
+  "mediaAdditions": {
+    "revision": "media-2-placement",
+    "status": "complete",
+    "phase": 8,
+    "authorizedBy": "User: media/legal effects, 100 statement languages, developer sweep, corner BGM/background, daily category and old-year cleanup",
+    "finishedAt": "2026-10-03T08:41:27.354Z",
+    "acceptance": "docs/media-additions-acceptance.json",
+    "fileMap": "docs/MEDIA-ADDITIONS.md",
+    "nextPhaseAuthorized": false
+  },
+  "game3D": {
+    "revision": "aero-1",
+    "phase": 8,
+    "status": "complete",
+    "authorizedBy": "User: text-free first-person large Frutiger Aero/dreamcore game, more realistic light/materials, expanded enemies/healing/checkpoints/windowed view and distinct cities",
+    "fileMap": "docs/3D-GAME.md",
+    "nextPhaseAuthorized": false,
+    "latestSteering": "Remove stamina bar/constraint; sprint 58m/s; varied giant meadow artifacts and harmless moving destructible city NPCs",
+    "finishedAt": "2026-10-03T11:25:51.808Z",
+    "acceptance": "docs/3d-game-acceptance.json",
+    "verified": {
+      "unit": 248,
+      "browser": 16,
+      "supplementalNativeVisual": 2,
+      "tools": 111,
+      "games": 11,
+      "meadowArtifacts": 16,
+      "cityNPCs": 40
+    }
+  },
+  "gameExpansion": {
+    "revision": "aero-capital-1",
+    "phase": 8,
+    "status": "complete",
+    "authorizedBy": "User: scattered houses, larger pale spacious cities connected by highways, monumental capital/white climbable truncated-cone tower, summit boss and downloadable medal visible on homepage",
+    "nextPhaseAuthorized": false,
+    "fileMap": "docs/3D-CAPITAL.md",
+    "latestSteering": "Everywhere visible monsters across the whole map; keep region caps and infinite respawns, tower density and summit fall/guard fix. User confirms stopping owned GPU test removes lag; no further performance investigation needed; future tests need not coordinate with user playing. Brief targeted tests only.",
+    "deployedAt": "2026-10-03T15:38:06.754Z",
+    "verification": {
+      "currentTargetedUnit": 9,
+      "unchangedTowerUnit": 19,
+      "previousFullUnitBaseline": 294,
+      "previousFullUnitVersion": "frozen7 before latest density",
+      "pages": 186,
+      "sourceFiles": 52,
+      "originalAssets": 14,
+      "httpRoutes": 9,
+      "licenseResources": 20,
+      "sourceFrozen": "3d-capital-source-frozen9.json",
+      "runtime": "3d-capital-runtime8.json",
+      "browserStatus": "brief-only-initial-4-passed-1-serialization-failed-then-test-only-affected-case-1-passed",
+      "scope": [
+        "3d-capital-brief8",
+        "3d-capital-brief8-media"
+      ],
+      "singleFullPassingRun": false,
+      "completeNativeRun": false,
+      "nativeFullAscentLastPercent": 73.4826,
+      "performanceInvestigationCancelledByUser": true
+    },
+    "finishedAt": "2026-10-03T15:58:30.029Z",
+    "acceptance": "docs/3d-capital-acceptance.json",
+    "deployedAtBasis": "Successful final8 deployment log last-modified timestamp",
+    "runtimeVerifiedAt": "2026-10-03T15:44:17.474Z"
+  },
+  "researchPublication": {
+    "status": "complete",
+    "revision": "research-overview-2",
+    "authorizedBy": "User: publish all frozen research and densify Overview, remove extra text",
+    "fileMap": "docs/RESEARCH-SITE.md",
+    "acceptance": "docs/research-site-acceptance.json",
+    "researchExpansionStatus": "paused-after-stage-v",
+    "nextPhaseAuthorized": false,
+    "latestVisualRevision": {
+      "revision": "research-headers-5",
+      "status": "complete",
+      "acceptance": "docs/research-compact-acceptance.json",
+      "compactPages": 3,
+      "overviewFixedViewHoverClick": true,
+      "nextPhaseAuthorized": false
+    }
+  },
+  "windowAdditions": {
+    "revision": "windows20",
+    "status": "complete",
+    "authorizedBy": "User: keep research interface unchanged; add twenty different broken windows and background fragments to other pages",
+    "finishedAt": "2026-10-04T11:06:24.812Z",
+    "nextPhaseAuthorized": false,
+    "acceptance": "docs/window-additions-acceptance.json"
+  },
+  "toolEntry": {
+    "status": "complete",
+    "nextPhaseAuthorized": false,
+    "acceptance": "docs/tool-entry-acceptance.json",
+    "finishedAt": "2026-10-04T11:18:38.858Z"
+  },
+  "authorMaintenance": {
+    "status": "complete",
+    "finishedAt": "2026-10-04T15:36:01.066Z",
+    "acceptance": "docs/author-mark-acceptance.json",
+    "nextPhaseAuthorized": false
+  }
+}

@@ -1,0 +1,5 @@
+---
+import Fragments from '../q7/1.astro';
+const {item}=Astro.props;
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{item.title} · OmniCivitas</title></head><body><Fragments/><main><a href="/portals/unified/">← 门户</a><h1>{item.title}</h1><p>尚未开放</p>{item.id==='image-compress'&&<details id="search-notice" open><summary>关于图片压缩功能搜索结果的说明</summary><p>入口仍在这里。</p></details>}<a href="/maze/cache/">档案</a></main><style>body{margin:0;background:#f2f7ff;color:#203c64;font:14px Arial}main{margin:15vh auto;width:510px;max-width:80vw;border:1px solid #b0c4df;background:#ffffffde;padding:35px}h1{font-weight:400}a{color:#164dff}details{margin:30px 0;border-top:1px solid #ccd8ec;padding-top:10px}</style></body></html>

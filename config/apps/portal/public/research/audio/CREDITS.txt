@@ -1,0 +1,14 @@
+Retro Wave (Collection)
+Author: Holizna / HoliznaCC0
+Source: https://opengameart.org/content/retro-wave-collection
+License: CC0 1.0 Universal
+License reference: https://creativecommons.org/publicdomain/zero/1.0/
+
+Tracks used, original filenames:
+07 HoliznaCC0 - Mutant Club.mp3
+09 HoliznaCC0 - Machines With Feelings.ogg
+13 HoliznaCC0 - Dear Mr Super Computer.ogg
+
+The original audio bytes are preserved. One track is selected on entering the
+research experience and loops until disabled or the experience is left.
+Music credit is also displayed in the research page footer.

@@ -1,0 +1,86 @@
+{
+  "name": "large_size",
+  "role": "prespecified-size-study-not-pilot-winner",
+  "engine": "event",
+  "boundary": "periodic",
+  "initial": "fair",
+  "points": [
+    {
+      "alpha": 0,
+      "beta": 1,
+      "name": "policy41"
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.5,
+      "name": "fair"
+    },
+    {
+      "alpha": 1,
+      "beta": 1,
+      "name": "alternating"
+    }
+  ],
+  "strata": [
+    {
+      "L": 128,
+      "k": 4,
+      "repetitions": 128,
+      "seedStart": 20000001
+    },
+    {
+      "L": 128,
+      "k": 8,
+      "repetitions": 128,
+      "seedStart": 20100001
+    },
+    {
+      "L": 256,
+      "k": 4,
+      "repetitions": 128,
+      "seedStart": 20200001
+    },
+    {
+      "L": 256,
+      "k": 8,
+      "repetitions": 128,
+      "seedStart": 20300001
+    },
+    {
+      "L": 512,
+      "k": 4,
+      "repetitions": 128,
+      "seedStart": 20400001
+    },
+    {
+      "L": 512,
+      "k": 8,
+      "repetitions": 128,
+      "seedStart": 20500001
+    },
+    {
+      "L": 1024,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 20600001
+    },
+    {
+      "L": 1024,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 20700001
+    },
+    {
+      "L": 2048,
+      "k": 4,
+      "repetitions": 64,
+      "seedStart": 20800001
+    },
+    {
+      "L": 2048,
+      "k": 8,
+      "repetitions": 64,
+      "seedStart": 20900001
+    }
+  ]
+}

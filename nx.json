@@ -1,0 +1,7 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "parallel": 1,
+  "cacheDirectory": ".nx/cache",
+  "namedInputs": { "default": ["{projectRoot}/**/*", "!{projectRoot}/dist/**/*", "!{projectRoot}/node_modules/**/*", "!{projectRoot}/.astro/**/*"] },
+  "targetDefaults": { "build": { "cache": true, "dependsOn": ["^build"], "inputs": ["default", "{workspaceRoot}/pnpm-lock.yaml"] } }
+}

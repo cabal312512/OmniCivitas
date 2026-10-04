@@ -1,0 +1,159 @@
+{
+  "name": "confirmation_stability",
+  "engine": "event",
+  "boundary": "periodic",
+  "strata": [
+    {
+      "L": 256,
+      "k": 4,
+      "repetitions": 128,
+      "seedStart": 41000001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.001,
+          "name": "a1-b0.001"
+        },
+        {
+          "alpha": 1,
+          "beta": 0.05,
+          "name": "a1-b0.05"
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.5,
+          "name": "a0.5-b0.5"
+        },
+        {
+          "alpha": 1,
+          "beta": 1,
+          "name": "a1-b1"
+        },
+        {
+          "alpha": 0.017899178761415512,
+          "beta": 0.017899178761415512,
+          "name": "proposal-k4-a1-b0.001"
+        },
+        {
+          "alpha": 0.06911854941535503,
+          "beta": 0.06911854941535503,
+          "name": "proposal-k4-a1-b0.05"
+        }
+      ]
+    },
+    {
+      "L": 256,
+      "k": 8,
+      "repetitions": 128,
+      "seedStart": 41100001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.001,
+          "name": "a1-b0.001"
+        },
+        {
+          "alpha": 1,
+          "beta": 0.05,
+          "name": "a1-b0.05"
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.5,
+          "name": "a0.5-b0.5"
+        },
+        {
+          "alpha": 1,
+          "beta": 1,
+          "name": "a1-b1"
+        },
+        {
+          "alpha": 0.01116871368486295,
+          "beta": 0.01116871368486295,
+          "name": "proposal-k8-a1-b0.001"
+        },
+        {
+          "alpha": 0.06146482435046821,
+          "beta": 0.06146482435046821,
+          "name": "proposal-k8-a1-b0.05"
+        }
+      ]
+    },
+    {
+      "L": 512,
+      "k": 4,
+      "repetitions": 128,
+      "seedStart": 42000001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.001,
+          "name": "a1-b0.001"
+        },
+        {
+          "alpha": 1,
+          "beta": 0.05,
+          "name": "a1-b0.05"
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.5,
+          "name": "a0.5-b0.5"
+        },
+        {
+          "alpha": 1,
+          "beta": 1,
+          "name": "a1-b1"
+        },
+        {
+          "alpha": 0.017899178761415512,
+          "beta": 0.017899178761415512,
+          "name": "proposal-k4-a1-b0.001"
+        },
+        {
+          "alpha": 0.06911854941535503,
+          "beta": 0.06911854941535503,
+          "name": "proposal-k4-a1-b0.05"
+        }
+      ]
+    },
+    {
+      "L": 512,
+      "k": 8,
+      "repetitions": 128,
+      "seedStart": 42100001,
+      "points": [
+        {
+          "alpha": 1,
+          "beta": 0.001,
+          "name": "a1-b0.001"
+        },
+        {
+          "alpha": 1,
+          "beta": 0.05,
+          "name": "a1-b0.05"
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.5,
+          "name": "a0.5-b0.5"
+        },
+        {
+          "alpha": 1,
+          "beta": 1,
+          "name": "a1-b1"
+        },
+        {
+          "alpha": 0.01116871368486295,
+          "beta": 0.01116871368486295,
+          "name": "proposal-k8-a1-b0.001"
+        },
+        {
+          "alpha": 0.06146482435046821,
+          "beta": 0.06146482435046821,
+          "name": "proposal-k8-a1-b0.05"
+        }
+      ]
+    }
+  ]
+}

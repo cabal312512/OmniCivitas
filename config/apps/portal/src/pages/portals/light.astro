@@ -1,0 +1,18 @@
+---
+import Fragments from '../../q7/1.astro';
+import Dock from '../../main1/index.astro';
+import Identity from '../../aaa/Identity.astro';
+import VueWindow from '../../ui/饭票.vue';
+import SvelteWindow from '../../ui/停机表.svelte';
+import SolidWindow from '../../ui/main.tsx';
+import '../../main1/main.css';
+import OpticalBench from '../../aaa/lens.astro';
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>轻量版 · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class="portal-page light-portal"><Fragments/>
+<header class="portal-page-header"><Identity id="light" compact/><h1>轻量版</h1><a href="/portals/unified/">统一门户</a></header>
+<OpticalBench />
+<main class="light-grid"><canvas class="light-circuit" aria-hidden="true"></canvas><div class="light-scan" aria-hidden="true"></div><Dock/>
+<div class="light-islands"><section><VueWindow client:load/></section><section><SvelteWindow client:load/></section><section><SolidWindow client:load/></section></div>
+<div class="light-note"><ocv-notices></ocv-notices></div></main><a href="/#systems" class="portal-fixed-exit" aria-label="返回经典主页">↖</a>
+<script>import '../../main1/index.js';import '../../main1/light.js';import '../../aaa/b.js';</script>
+</body></html>

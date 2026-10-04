@@ -1,0 +1,33 @@
+<button type="button" class="laowu-trigger" data-laowu>老吴</button>
+<div class="laowu-visit" hidden aria-label="老吴"></div>
+<style>
+ .laowu-trigger{position:fixed;top:145px;right:26px;z-index:105;min-width:86px;padding:12px 20px;border:1px solid #96c4ff;border-radius:7px;background:linear-gradient(150deg,#186cff,#0734cb);color:white;font:600 18px/1.2 system-ui;box-shadow:0 5px 28px #105aff48;cursor:pointer}
+ .laowu-trigger:hover{box-shadow:0 3px 39px #0658ff83}.laowu-trigger:focus-visible{outline:2px solid #1656ff;outline-offset:4px}
+ .laowu-visit{position:fixed;inset:0;z-index:1200;pointer-events:none;display:grid;place-items:center;background:radial-gradient(ellipse at center,#a0c8ff24,transparent 58%)}
+ .laowu-visit[hidden]{display:none}
+ .laowu-visit :global(img),.laowu-visit :global(canvas){display:block;width:auto;height:min(640px,80vh);max-width:80vw;object-fit:contain;transform:none;box-shadow:0 15px 75px #07377c67;border:1px solid #c1deffb3;border-radius:4px}
+</style>
+<script>
+ const trigger=document.querySelector('[data-laowu]'),visit=document.querySelector('.laowu-visit');
+ if(trigger&&visit){
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)'),life=new AbortController(),duration=12000;
+  const state=window.__ocvLaowu={active:false,opens:0,expiresAt:0,reduced:reduce.matches,duration};
+  let timer=0,image,still;
+  const on=(node,type,fn)=>node.addEventListener(type,fn,{signal:life.signal});
+  function render(){
+   state.reduced=reduce.matches;if(!state.active||!image?.complete||!image.naturalWidth)return;
+   if(reduce.matches){if(!still){still=document.createElement('canvas');still.width=image.naturalWidth;still.height=image.naturalHeight;still.setAttribute('role','img');still.setAttribute('aria-label','老吴');}still.getContext('2d').drawImage(image,0,0);visit.replaceChildren(still);}
+   else visit.replaceChildren(image);
+  }
+  function finish(){clearTimeout(timer);timer=0;state.active=false;state.expiresAt=0;visit.hidden=true;visit.replaceChildren();}
+  function arm(){clearTimeout(timer);const remaining=state.expiresAt-Date.now();if(remaining<=0){finish();return;}timer=setTimeout(finish,remaining);}
+  on(trigger,'click',()=>{if(state.active)return;state.active=true;state.opens++;state.expiresAt=Date.now()+duration;visit.hidden=false;
+   if(!image){image=new Image();image.alt='老吴';image.decoding='async';on(image,'load',render);on(image,'error',finish);image.src='/forgotten-cache/laowu.gif';}
+   render();arm();
+  });
+  on(reduce,'change',render);
+  on(document,'visibilitychange',()=>{if(!document.hidden&&state.active)arm();});
+  on(window,'pagehide',e=>{clearTimeout(timer);if(!e.persisted){finish();life.abort();}});
+  on(window,'pageshow',()=>{if(state.active){arm();render();}});
+ }
+</script>

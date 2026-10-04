@@ -1,0 +1,46 @@
+✔ rational stochastic probabilities preserve decimal/rational values and reject invalid inputs (1.004ms)
+✔ frozen failure inverse obeys exact matrix identity and total next-success probability (1.5337ms)
+✔ blocked-direction waiting has exact 1/beta divergence and legal-start mean discontinuity (0.3941ms)
+✔ exact survival tails distinguish long waiting from a true beta-zero deadlock (0.3519ms)
+✔ rare-excursion kinetic variance diverges even when the legal-start mean stays finite (0.2369ms)
+✔ 2x2 dimers have analytic endpoint density/deadlock and recognition-time laws (7.5716ms)
+✔ special stochastic points agree with read-only Stage I exact references (49.3729ms)
+✔ monomers fill the lattice with controller-independent coupon-collector attempt mean (3.8051ms)
+✔ geometry-weighted action/failure transitions can remove an apparently reachable bad class (0.8574ms)
+✔ transient support of a legal orientation does not establish almost-sure success (0.2769ms)
+✔ a strong full-action-support certificate is not necessary for a specific physical lattice (0.1396ms)
+✔ all nine core points match an independent full-trial global Markov oracle for both boundaries (3.2823ms)
+✔ the full small-system reference conserves probability and beta-positive liveness (113.73ms)
+✔ phase-type expected waiting is noninteger and never silently reclassified as actual attempts (3.345ms)
+✔ actual counters must be integral; accepted lag1 is a distinct product statistic (0.4396ms)
+✔ moments and signed distributions expose cancellation rather than calling it isotropy (1.1854ms)
+✔ type-7 quantiles and DKW inverse bounds are explicit and conservative (0.2392ms)
+✔ frontier retains every arm and matches against the entire observed null line without inference (7.7006ms)
+✔ explicit lock fixes both comparison hypotheses, parameter signatures and independent seed blocks (3.6173ms)
+✔ one-sided paired anisotropy noninferiority shares the complete corrected family (2.4301ms)
+✔ missing, unexpected, duplicate and leaked paired seeds remain in their original family slots (1.2997ms)
+✔ constant nonzero paired effects are not assigned an artificial zero p value (0.7827ms)
+✔ sampled event counters, numeric initialization and missing proposal histograms retain their meaning (0.6625ms)
+✔ combined exploration pools the same observations once and rejects repeated underlying seeds (0.3757ms)
+✔ finite-size effects preserve paired covariance without unregistered p values (0.4756ms)
+✔ new proposal-matched null is fixed from pilot actual switching without fictional null observations (1.4647ms)
+✔ a coverage less-than-positive-margin rejection cannot be mislabeled as a positive benefit (0.7386ms)
+✔ explicit seed and probabilities are validated; event never invents an attempt trace (2.0786ms)
+✔ two-state absorption probabilities and mean waiting agree with independent linear algebra (0.3935ms)
+✔ cycle event sampler preserves joint orientation, failures and switches against direct trials (63.7381ms)
+✔ large-count NB aggregation retains its exact discrete mean, variance and CDF (27.4376ms)
+✔ tiny positive beta recovers the other orientation without a failure timeout (2.6601ms)
+✔ dense legal-anchor update is consistent with occupancy at periodic and open boundaries (4.0975ms)
+✔ the five special points implement the requested outcome rules and honest terminal states (3.5862ms)
+✔ beta zero terminal deadlock retains genuinely legal placements in the other direction (0.4037ms)
+✔ monomers fill the whole lattice at every special point without fictitious deadlock (1.0754ms)
+✔ event and direct terminal ensembles agree; seed equality does not imply trajectory equality (157.8463ms)
+✔ repeated event runs reproduce all scientific fields and return no live lattice buffers (0.8354ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 372.2001

@@ -1,0 +1,39 @@
+---
+import Identity from '../光学实验室/Identity.astro';
+import Diagram from '../光学实验室/Diagram.astro';
+import '../光学实验室/光场.css';
+const shapes=['环形','球体','流线','阵列'];
+---
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#f8fbfd"/><title>OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head>
+<body class="luminous-home" data-cover="true">
+ <canvas id="optical-field" aria-label="可通过指针和滚动交互的三维光场"></canvas><div class="ambient-light" aria-hidden="true"></div><div class="optical-grain" aria-hidden="true"></div>
+ <header class="optical-nav" inert><a class="mini-identity" href="#home" aria-label="OmniCivitas 首页"><Identity id="nav" compact/></a><nav aria-label="页面导航"><a href="#systems" aria-label="光场" title="光场"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><ellipse cx="12" cy="12" rx="4" ry="8"/></svg></a><a href="#collection" aria-label="图形" title="图形"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></a><a href="/status" aria-label="运行状态" title="运行状态"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></a></nav></header>
+ <main>
+  <section class="identity-scene" id="home" data-optical-section="0" aria-label="OmniCivitas">
+   <div class="halo-shell" aria-hidden="true"><div class="glass-orbit orbit-a"></div><div class="glass-orbit orbit-b"></div><div class="glass-orbit orbit-c"></div>{Array.from({length:24},(_,i)=><span class="glass-shard" style={`--shard:${i};--delay:${-i*.37}s;left:${50+43*Math.cos(i*Math.PI/12)}%;top:${50+40*Math.sin(i*Math.PI/12)}%`}></span>)}<div class="orbital-reticle"><i></i><i></i><i></i><i></i></div></div>
+   <a class="main-identity" id="main-identity" href="#systems" aria-label="进入主页"><Identity id="hero"/><h1>OMNICIVITAS</h1></a>
+
+   <a class="scroll-orbit" href="#systems" aria-label="向下探索"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18"/><path d="M20 11v17m-6-6 6 6 6-6"/></svg></a>
+  </section>
+  <section class="systems-scene" id="systems" data-optical-section="1" aria-label="光场变形">
+   <div class="systems-sticky"><div class="shard-cage" aria-hidden="true">{Array.from({length:30},(_,i)=><span class="glass-shard" style={`--shard:${i};--delay:${-i*.31}s;left:${50+46*Math.cos(i*Math.PI/15)}%;top:${50+42*Math.sin(i*Math.PI/15)}%`}></span>)}</div><div class="scene-coordinate" aria-hidden="true">01<span></span></div>   <div class="satellite-instruments" aria-hidden="true">{Array.from({length:6},(_,i)=><div class={`instrument instrument-${i}`}><span class="instrument-cross">+</span><Diagram variant={i} id={`hero-${i}`}/><div class="micro-ruler">{Array.from({length:18},()=> <i></i>)}</div></div>)}</div>
+<div class="system-orbits" aria-hidden="true"><div class="longitude-glass"></div><div class="latitude-glass"></div><div class="precision-cross cross-left"></div><div class="precision-cross cross-right"></div></div>
+    <div class="wafer wafer-a"><Diagram variant={4} id="wafer-a"/><div class="wafer-footer"><span aria-hidden="true">↗</span><div class="bars" aria-hidden="true">{Array.from({length:28},(_,i)=><i style={`--bar:${18+(i*17)%65}%;--delay:${-i*.11}s`}></i>)}</div></div></div>
+    <div class="wafer wafer-b"><Diagram variant={2} id="wafer-b"/><span class="wafer-number" aria-hidden="true">02</span></div>
+    <div class="wafer wafer-c"><Diagram variant={1} id="wafer-c"/></div>
+    <div class="wafer wafer-d"><Diagram variant={5} id="wafer-d"/></div>
+    <div class="glass-assembly" aria-hidden="true">{Array.from({length:9},(_,i)=><i style={`--layer:${i};--delay:${-i*.18}s`}></i>)}</div>
+    <div class="geometry-controls" role="group" aria-label="选择光场形态">{shapes.map((name,i)=><button type="button" data-geometry={i} aria-label={name} aria-pressed={i===1?'true':'false'}><svg viewBox="0 0 36 36">{i===0?<><ellipse cx="18" cy="18" rx="13" ry="6"/><ellipse cx="18" cy="18" rx="6" ry="13"/></>:i===1?<><circle cx="18" cy="18" r="12"/><ellipse cx="18" cy="18" rx="5" ry="12"/><path d="M6 18h24"/></>:i===2?<><path d="M4 12q14-12 28 0M4 18q14-12 28 0M4 24q14-12 28 0"/></>:<><path d="M7 7h22v22H7zM7 14h22M7 22h22M14 7v22M22 7v22"/></>}</svg></button>)}</div>
+   </div>
+  </section>
+  <section class="ribbon-scene" id="ribbons" data-optical-section="2" aria-label="光线过渡"><div class="ribbon-gates" aria-hidden="true">{Array.from({length:12},(_,i)=><i style={`--gate:${i};--delay:${-i*.24}s`}></i>)}</div><div class="waveglass" aria-hidden="true"><Diagram variant={4} id="waveglass"/></div><div class="scene-coordinate" aria-hidden="true">02<span></span></div></section>
+  <section class="collection-scene" id="collection" data-optical-section="3" aria-label="图形集合"><div class="collection-toolbar"><span aria-hidden="true">03</span><div><button id="gallery-prev" aria-label="上一组图形"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button><button id="gallery-next" aria-label="下一组图形"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button></div></div><div class="geometry-gallery" id="geometry-gallery" tabindex="0" aria-label="横向图形集合">{Array.from({length:6},(_,i)=><button class={`specimen specimen-${i}`} data-geometry={i%4} type="button" aria-label={`${shapes[i%4]}图形 ${i+1}`}><span class="specimen-index" aria-hidden="true">0{i+1}<i>↗</i></span><Diagram variant={i} id={`specimen-${i}`}/><div class="specimen-edge" aria-hidden="true"></div></button>)}</div></section>
+  <section class="array-scene" id="array" data-optical-section="3" aria-label="光学阵列"><div class="array-floor" aria-hidden="true"></div><div class="array-stack" aria-hidden="true">{Array.from({length:24},(_,i)=><i style={`--tile:${i};--delay:${-i*.09}s`}></i>)}</div><div class="array-identity"><Identity id="end"/><span>OMNICIVITAS</span></div><a class="return-orbit" href="#home" aria-label="返回顶部"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18"/><path d="M20 29V12m-6 6 6-6 6 6"/></svg></a></section>
+ </main>
+ <div class="page-axis" aria-hidden="true"><span></span><i id="axis-progress"></i><span></span></div><div class="light-cursor" id="light-cursor" aria-hidden="true"></div>
+ <script>import '../光学实验室/光场.js';</script>
+</body></html>
+
+
+

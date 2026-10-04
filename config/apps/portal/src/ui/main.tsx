@@ -1,0 +1,2 @@
+import {createSignal} from 'solid-js';
+export default function CompletelyUnnecessaryCivilization(){const [word,setWord]=createSignal('在。');return <section data-framework="solid" style={{background:'#ff63cf',color:'#101000',padding:'16px','border-radius':'50% 0 38% 4%','min-height':'150px',width:'165px',border:'6px double #1514ef'}}><p style={{'font-size':'34px','font-family':'serif'}} data-testid="solid-word">{word()}</p><button onClick={()=>setWord(word()==='在。'?'不在。':'在。')}>翻面</button></section>}

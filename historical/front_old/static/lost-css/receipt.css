@@ -1,0 +1,13 @@
+/* This stylesheet is deliberately attached to print media in the HTML.
+   The screen looks naked because the export office copied the wrong media.
+   CSS is still real, valid, and applied when printing. */
+:root{--paper-ink:#253950;--receipt-total:43}
+body{background:#e7dbca;color:var(--paper-ink);font-family:Arial,sans-serif;padding:28px}
+.receipt-cabinet{max-width:700px;margin:auto;border:3px double #752957;background:#fffaf0;padding:32px;box-shadow:10px 10px #ddc2a5}
+.receipt-cabinet h1{font-size:38px;color:#742864;letter-spacing:3px}
+.receipt-cabinet table{border-collapse:collapse;width:100%;background:#fff}
+.receipt-cabinet th,.receipt-cabinet td{padding:16px;border:1px solid #3c6588;text-align:left}
+.receipt-cabinet input{border:2px inset #bacce0;padding:12px;border-radius:8px}
+.receipt-cabinet button{background:#861759;color:white;padding:14px;border:0;border-radius:20px;font-weight:bold}
+.receipt-cabinet footer{border-top:2px dashed #294566;margin-top:23px;padding-top:17px}
+@media print{a{color:#253950}button{border:2px solid #253950;background:white!important;color:black!important}}

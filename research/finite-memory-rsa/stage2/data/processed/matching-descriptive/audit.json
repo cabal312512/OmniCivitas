@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "createdAtUtc": "2026-10-03T19:49:08.166Z",
+  "rows": 143232,
+  "groups": 1160,
+  "inputs": [
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\confirmation.csv",
+      "sha256": "fb45f85117aa38b5a381e9f8b2124b3500f0fd1d549451d2d39258a6e54449bd",
+      "rows": 59392,
+      "experiments": [
+        "confirmation"
+      ]
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\confirmation_stability.csv",
+      "sha256": "abacadee209613b449bb46f62b4d62a2ca3d589cf93b81c53122385aff2821b1",
+      "rows": 3072,
+      "experiments": [
+        "confirmation_stability"
+      ]
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\landscape.csv",
+      "sha256": "df39c80a9b634e21c870357051717207d67594e21e1008923ec85b60009c1630",
+      "rows": 56448,
+      "experiments": [
+        "landscape"
+      ]
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\large_size.csv",
+      "sha256": "c2770a8da1a2055a014217d002265b0f4217fec3932c08393a1fec0add22d699",
+      "rows": 3072,
+      "experiments": [
+        "large_size"
+      ]
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\refinement.csv",
+      "sha256": "e8e17036ecb4f880ba1dc790d7ff0ebb2b625927bf817a2770f6571011b6f3cd",
+      "rows": 12800,
+      "experiments": [
+        "refinement"
+      ]
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\refinement_success_flip.csv",
+      "sha256": "33390e6c4f9d3a4f2edc41f52c7a83cc999215ec5adbd30c154ff7be05dfcae1",
+      "rows": 8448,
+      "experiments": [
+        "refinement_success_flip"
+      ]
+    }
+  ],
+  "analysisSourceSha256": "47fe48e4561234a7f55e3299bea582b8d6604215c7d729b18b429261148061ae",
+  "stage1NumericsSha256": "b97040d661e77d8169918881fd5d0f4073c7f2cc8bd506de049be2b6e2b2bafb",
+  "histogramInputs": [
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\confirmation.runs.jsonl",
+      "sha256": "2b3a0645864e7cb233ef7c090e6685068f291bec82a277ddf1dee7573b8e8719",
+      "rows": 59392
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\confirmation_stability.runs.jsonl",
+      "sha256": "1e9236cb3003d3e3ceaab2af2dc4979d69633bd61bc16dcc89b2a5da5b52e745",
+      "rows": 3072
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\landscape.runs.jsonl",
+      "sha256": "1c9ce0c2cd21402fb1947048532ac3c7784418c0fa4756ebf700620febb4b1ba",
+      "rows": 56448
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\large_size.runs.jsonl",
+      "sha256": "8ec461590f85e2f39dc8495c5c94b9dd87e7839f2f8257796f68257ad3989097",
+      "rows": 3072
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\refinement.runs.jsonl",
+      "sha256": "3cf7a1633b7e66d57697153ccd82ecfb9019e147ff916e293e49251c68c3a980",
+      "rows": 12800
+    },
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\refinement_success_flip.runs.jsonl",
+      "sha256": "342696c0af210be00a8e5a78b6c29eae0b7481016a7fe580fc4a41cb1cecb285",
+      "rows": 8448
+    }
+  ],
+  "lockSha256": "faeea3841023fcf5635d6bea1b833738ee0cf3079637d8ecebf2bbd1a1a7e425",
+  "confirmation": {
+    "status": "complete",
+    "errors": [],
+    "familySize": 400,
+    "confirmationRows": 62464,
+    "reusedPilotSeeds": [],
+    "jointBenefitRule": "Coverage rejection with positive effect AND same-pair abs_order noninferiority rejection; never implies continuum dominance"
+  },
+  "errors": [],
+  "limitations": [
+    "Independent lattice runs only; no trial pseudoreplication.",
+    "Conditional kinetic expectations are not actual waiting samples.",
+    "Signed cancellation is not within-run isotropy.",
+    "Exploratory finite-grid sample frontier does not prove continuum dominance.",
+    "No extrapolated thermodynamic limit or phase transition is generated.",
+    "Matched accepted lag1 is not proposal correlation."
+  ]
+}

@@ -1,0 +1,29 @@
+import { test,expect } from '@playwright/test';
+import path from 'node:path';
+test('real entrance, keyboard submission, safe text and browser history',async({page},testInfo)=>{
+  const errors=[];page.on('pageerror',error=>errors.push(error.message));
+  await page.goto('/');
+  await expect(page.getByRole('heading',{name:/超级无敌万能网站/})).toBeVisible();
+  await page.getByRole('button',{name:'请系统证明系统确实收到了系统的请求'}).click();
+  await expect(page.locator('#ping-output')).toContainText('NestJS');
+  const label='<img src=x onerror="window.ocvInjected=true"> 虚构文明';
+  await page.getByLabel('虚构项目名称').fill(label);
+  await page.getByLabel('虚构项目名称').press('Enter');
+  await expect(page.locator('#record-output')).toContainText('成功：已保存');
+  await expect(page.locator('#record-output')).toContainText(process.env.OCV_EXPECT_DATABASE==='true'?'postgresql':'bounded-memory-demonstration');
+  expect(await page.evaluate(()=>window.ocvInjected)).toBeUndefined();
+  await page.screenshot({path:path.join(process.env.OCV_DEPS_ROOT,'runtime/reports',`stage1-${testInfo.project.name}.png`),fullPage:true});
+  await page.getByRole('link',{name:'真实状态，暂不美化'}).click();
+  await expect(page.getByRole('heading',{name:'真实运行状态'})).toBeVisible();
+  await expect(page.locator('#status')).toContainText('accountSystem');
+  await page.goBack();await expect(page.locator('#receiverAddress')).toBeVisible();
+  await page.reload();await expect(page.getByRole('heading',{name:/超级无敌万能网站/})).toBeVisible();
+  expect(errors).toEqual([]);
+});
+test('a failed request releases the button and can be retried',async({page})=>{
+  await page.goto('/');
+  await page.route('**/api/ping.php',route=>route.abort('failed'),{times:1});
+  const button=page.getByRole('button',{name:'请系统证明系统确实收到了系统的请求'});
+  await button.click();await expect(page.locator('#ping-output')).toContainText('失败');await expect(button).toBeEnabled();
+  await button.click();await expect(page.locator('#ping-output')).toContainText('NestJS');
+});

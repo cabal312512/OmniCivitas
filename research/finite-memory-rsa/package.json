@@ -1,0 +1,13 @@
+{
+  "name": "finite-memory-rsa-research",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "reproduce": "node scripts/reproduce.mjs --profile quick",
+    "reproduce:full": "node scripts/reproduce.mjs --profile full",
+    "analyze": "node analysis/summarize.mjs --input data/raw/*.csv --output data/processed --lock docs/confirmation-lock.json",
+    "paper:tables": "node scripts/prepare-paper.mjs"
+  }
+}

@@ -1,0 +1,24 @@
+---
+import {recommend} from './catalogue.mjs';
+const {home=false}=Astro.props;
+---
+<div class={`portal-dock ${home?'dock-home':'dock-page'}`}>
+ <nav class="portal-nav-bar" aria-label="门户导航">
+  <a href="/portals/unified/">全部功能</a><a href="/portals/unified/">建议使用新版</a><a href="/portals/light/">轻量版</a>
+  <a href="/identity/register/">注册</a><a href="/identity/login/">登录</a><span class="fiction-badge" data-fiction-badge></span><button class="fiction-out" data-fiction-out hidden>退出</button>
+ </nav>
+ <section class="search-everywhere" aria-label="万能搜索">
+  <div class="search-line"><label for="portal-search">万能搜索</label><input id="portal-search" type="search" maxlength="80" autocomplete="off" placeholder="搜索"/><button data-search aria-label="搜索功能">↗</button><button data-voice aria-label="语音搜索">♩</button></div>
+  <output class="voice-note" aria-live="polite"></output><div class="search-results" aria-live="polite" hidden></div>
+ </section>
+ <section class="portal-recommend" aria-label="推荐功能"><span>推荐</span>{recommend().map(r=><a href={r.url}>{r.title}</a>)}</section>
+ <section class="portal-weather" aria-label="天气样式卡片"><span>天气</span><strong>24°</strong><i>◌</i><small>示意</small></section>
+ <section class="portal-news" aria-label="站内新闻"><div>站内新闻</div><a href="/maze/cache/">档案已迁移</a><a href="/maze/notifications/">通知</a><span>OCV / 0.0.4</span></section>
+ <section class="portal-login-card"><b>账户</b><a href="/identity/login/">登录</a><a href="/identity/register/">注册</a></section>
+ <a class="portal-icon-entry" href="/maze/display/" aria-label="小游戏翻面">▧<small>翻面</small></a>
+ <a class="portal-shortcut" href="/maze/cache/" aria-label="档案快捷方式"><span>◧</span><small>档案</small></a>
+ <div class="portal-countdown" aria-label="本页倒计时">00:<output data-dock-seconds>59</output><small>0.0.4</small></div>
+ <details class="portal-tree"><summary>目录</summary><ul><li><a href="/maze/cache/">缓存</a><ul><li><a href="/maze/cache/l1/">一级</a><ul><li><a href="/maze/cache/l1/l2/">二级</a></li></ul></li></ul></li><li><a href="/maze/">全部</a></li></ul></details>
+ <a class="portal-app-entry" href="/maze/notifications/">通知 <span>2</span></a>
+ <div class="portal-spill"><a href="/maze/table/">表格 ↗</a><a href="/functions/">工具</a><a href="/status">系统公告</a><a href="/legal/">素材声明</a><span>04</span></div>
+</div>

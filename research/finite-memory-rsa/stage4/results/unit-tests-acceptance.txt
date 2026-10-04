@@ -1,0 +1,32 @@
+✔ universal minimum formula equals independent minimum over the complete frozen catalogue (170.2671ms)
+✔ initial failure branch is deleted only when it is not revisited after success (0.2274ms)
+✔ a nonreusable forced initial action requires one additional stationary state (0.1018ms)
+✔ Stage III structurally3-state example is universally exactly2-state operational (0.1053ms)
+✔ geometry activation has a two-state realization at L2 and distinguishes every <=2-state controller at L3 (2.5688ms)
+✔ constructive finite distinguishing witnesses exist for all distinct live one-bit laws (1.5004ms)
+✔ edge-emitting family includes action/next-state correlations missing from factorized HMMs (0.6296ms)
+✔ causal policy validation rejects an action coin that changes with the next outcome (0.6141ms)
+✔ Hankel rank certifies positive minimality and a nonpermutation similarity preserves the law (1.1071ms)
+✔ rational row-span equivalence accepts a redundant IID realization and supplies a real witness for inequality (0.3788ms)
+✔ unreachable closed hidden states do not invalidate exact proper absorption (38.3336ms)
+✔ the independent general stochastic solver matches the frozen deterministic alternation point (8.4914ms)
+✔ the periodic density optimum is proper while the same open-boundary temporal schedule is not (7.594ms)
+✔ Bellman residual validation rejects a changed exact metric (1.1325ms)
+✔ three/four-state edge HMMs have independently verifiable rational absorption and reward laws (3.3882ms)
+✔ raw anchor-tree enumeration independently reproduces a finite-prefix upper value (6.6564ms)
+✔ finite-prefix certificates enumerate every prefix and tighten the cruder global relaxation (14.1289ms)
+✔ certificate construction refuses unsafe path counts and invalid dual multipliers (0.9732ms)
+✔ higher-moment forest valuation yields geometric factorial constants (2.0086ms)
+✔ rare-entry graphs capture moment thresholds and critical leading-constant addition (3.4053ms)
+✔ rational kernels and support pruning have graph certificates without determinants (0.704ms)
+✔ unknown-entry splitting uses sampled survival weights and terminal marks only (0.2762ms)
+✔ particle extinction contributes zero and does not invent a conditional dwell (0.0735ms)
+✔ independent exact binomial enumeration verifies unknown-entry product unbiasedness and variance (0.174ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 532.1078

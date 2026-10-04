@@ -1,0 +1,20 @@
+---
+import {ClientRouter} from 'astro:transitions';
+import './research.css';
+const {title='Outcome-only control',active='',wide=false,compact=false}=Astro.props;
+---
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#080c12"/><title>{title} — OCV Research</title><link rel="icon" href="/favicon.svg"/><ClientRouter/></head>
+<body class:list={['research-body',active&&`research-view-${active}`,{'research-compact':compact}]}>
+ <div class="research-ambient" aria-hidden="true"><canvas data-research-background></canvas><div class="research-grain"></div></div>
+ <header class="research-header">
+  <a class="research-wordmark" href="/research/" aria-label="Research home"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9Z"/><path d="m4 9 12 7 12-7M16 16v14M10 12V7l6-3 6 3v5"/></svg><span>OCV<span class="wordmark-divider">/</span>RESEARCH</span></a>
+  <nav aria-label="Research navigation"><a aria-current={active==='overview'?'page':undefined} href="/research/">Overview</a><a aria-current={active==='explore'?'page':undefined} href="/research/explore/">Explore</a><a aria-current={active==='atlas'?'page':undefined} href="/research/atlas/">Atlas</a><a aria-current={active==='library'?'page':undefined} href="/research/library/">Library</a></nav>
+  <div class="research-sound" transition:persist="research-sound"><audio data-research-audio loop preload="none"></audio><button type="button" data-research-sound aria-label="Turn background music off" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 9 5 0 5-4v14l-5-4H4ZM18 8q5 4 0 8"/></svg><span data-sound-label>Sound</span></button><input data-research-volume aria-label="Music volume" type="range" min="0" max="100" value="24"/></div>
+  <a class="research-back" href="/#systems" aria-label="Return to the website">Exit ↗</a>
+ </header>
+ <main class:list={['research-main',{'research-wide':wide}]}><slot/></main>
+ <footer class="research-footer"><div><a class="footer-brand" href="/research/">OCV / RESEARCH</a><p>Outcome-only control. Finite memory. Verifiable evidence.</p><small>AI-assisted research draft · Not peer reviewed · Research expansion paused</small></div><div><a href="/research/read/review/">Research integrity</a><a href="/research/read/literature/">References & attribution</a><a href="/research/library/#downloads">Source & evidence</a></div><div class="music-credit">Music: <a href="https://opengameart.org/content/retro-wave-collection" target="_blank" rel="noopener noreferrer">Retro Wave — Holizna</a><br/><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0 1.0</a><span data-research-track></span></div></footer>
+ <div class="research-transition" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+ <script>import './interface.mjs';</script>
+</body></html>

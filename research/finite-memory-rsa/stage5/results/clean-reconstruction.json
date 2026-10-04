@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "exactNewLowerCases": 6,
+  "bellmanScalarEquations": 6800,
+  "freshMacroTraversal": [
+    {
+      "boundary": "periodic",
+      "states": 120,
+      "terminalAtoms": 9
+    },
+    {
+      "boundary": "open",
+      "states": 62,
+      "terminalAtoms": 8
+    }
+  ],
+  "negativeCertificateRows": 5,
+  "freshWordPrefixCertificate": {
+    "status": "passed",
+    "prefixBounds": 31,
+    "tailInequalities": 810,
+    "method": "Independent raw-anchor propagation, exact rational suffix supersolution inequalities, complete prefix partition; no word-bound engine call."
+  },
+  "freshParameterCertificate": {
+    "status": "passed",
+    "partitionBoxes": 3,
+    "leaves": 2,
+    "replayedLeafBounds": 2,
+    "method": "Full dyadic simplex partition and every retained/pruned leaf bound replay. Bellman engine shared; independent raw geometry and LP-dual tests supplement it."
+  },
+  "scope": "Current-source independent directory reconstruction of new exact cases and small fresh certificates; not replay of old experiments or all 240006 prefixes.",
+  "completedAtUTC": "2026-10-04T08:02:41.409Z",
+  "runtime": "v24.14.1",
+  "platform": "win32",
+  "localWorkdir": "F:\\OCVdeps\\tmp\\rsa-final-quick-1791100960715",
+  "sourceAndInputFiles": 14,
+  "copiedInputHashes": {
+    "src/controllers.mjs": "6e31d6452c8bca9e78e651bb91ddfc06b9665bd3b33f59346a55499e0a301ba8",
+    "src/exact.mjs": "0adde531dfee6a04692b04c3208ff528f8bfb01936078b2932371d20dddb10af",
+    "stage3/src/phase-type.mjs": "90d13720e6718aeae6e4d5d33068ef4493cc1b2c1b7beea6d3f604773b870949",
+    "stage4/src/bellman-check.mjs": "fb5a096518d936848a70ccc89fb83d5bd827860941f8fa22702e4c022b813b9c",
+    "stage4/src/envelope.mjs": "cd8cbd2cd574c9e6f20fa2621aee0f50e17b1713630c3c459ef84e0f5c7c5c8f",
+    "stage4/src/geometry-model.mjs": "12f8bdc59efcbbadba5fdea000253b25cdcef108f39e5c45d176b20b3165cecf",
+    "stage4/src/rational.mjs": "191ebad74961aa55609220bd751c21c9c3746614c1302a7b9a28b6ac952ba2a4",
+    "stage4/src/temporal.mjs": "4a16d14a23b24ccb339965b38570b5db3cbd2351269c68bbaa36bfa85a646035",
+    "stage5/experiments/quick-fixture.json": "9e5285b02082341ea0c547d82bcb64ee2d44a0a49beddfdcbf9b51b43cc020cd",
+    "stage5/scripts/reconstruct-worker.mjs": "037b1caafe63bba5166278bd091bda52875a5f840c8f6555dd91bfdd1284dde9",
+    "stage5/src/fixed-point.mjs": "243f9f8a51dd9baa941c30f3465adc29b70bddb77ffa4593cfe90a5758087811",
+    "stage5/src/parameter-bound.mjs": "33803208f1abf7408db27fd007140b0831728f1a47a620a3a2d62e36293e528e",
+    "stage5/src/verify-certificates.mjs": "0a345a1f4f9120fe348be9382ad3e5854fd67f12fe1d22703848e613e5d004f8",
+    "stage5/src/word-bound.mjs": "2e4e51a123e18e39e1026e53f7fb9751c3a109c459251a5aa5d55ffdcb59fdb9"
+  },
+  "changedInputs": [],
+  "externalPackagesInstalled": 0,
+  "oldExperimentsRerun": false,
+  "websiteCleanCloneAudit": false
+}

@@ -1,0 +1,10 @@
+---
+import Fragments from '../../q7/1.astro';
+import Identity from '../../aaa/Identity.astro';
+import Panel from '../../report/index.astro';
+import {accidentCatalogue} from '../../report/list.mjs';
+import '../../report/2.css';
+export function getStaticPaths(){return accidentCatalogue.map(room=>({params:{floor:room.id},props:{room}}));}
+const {room}=Astro.props;
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{room.title} · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class="incident-page" data-incident={room.id}><Fragments/><header class="incident-head"><Identity id={`incident-${room.id}`} compact/><h1>{room.title}</h1><nav><a href="/incidents/">目录</a><a href="/functions/">工具</a><a href="/incidents/old/">切换旧版</a></nav></header><main class="incident-workfloor" id="incident-main"><Panel id={room.id}/></main><footer class="incident-footer"><span>{room.copyright}</span><span>　{room.version}　</span><span>由 {room.department} 开发</span><span>　準備中 / готово</span></footer><a class="incident-exit" href="/#systems" aria-label="返回首页" data-incident-exit>↗</a>{room.id==='archive'&&<><script is:inline src="/legacy-assets/old-invoice.js"></script><script is:inline src="/legacy-assets/warehouse.bundle.js"></script></>}<script>import '../../report/report.js';</script></body></html>

@@ -1,0 +1,155 @@
+{
+  "name": "refinement_success_flip",
+  "role": "Adaptive exploratory follow-up to opposite-corner alpha1 beta.05 signal;not confirmation",
+  "engine": "event",
+  "boundary": "periodic",
+  "initial": "fair",
+  "points": [
+    {
+      "alpha": 0.95,
+      "beta": 0.0001
+    },
+    {
+      "alpha": 0.95,
+      "beta": 0.001
+    },
+    {
+      "alpha": 0.95,
+      "beta": 0.002
+    },
+    {
+      "alpha": 0.95,
+      "beta": 0.005
+    },
+    {
+      "alpha": 0.95,
+      "beta": 0.01
+    },
+    {
+      "alpha": 0.95,
+      "beta": 0.02
+    },
+    {
+      "alpha": 0.95,
+      "beta": 0.05
+    },
+    {
+      "alpha": 0.95,
+      "beta": 0.075
+    },
+    {
+      "alpha": 0.95,
+      "beta": 0.1
+    },
+    {
+      "alpha": 0.95,
+      "beta": 0.15
+    },
+    {
+      "alpha": 0.95,
+      "beta": 0.2
+    },
+    {
+      "alpha": 0.99,
+      "beta": 0.0001
+    },
+    {
+      "alpha": 0.99,
+      "beta": 0.001
+    },
+    {
+      "alpha": 0.99,
+      "beta": 0.002
+    },
+    {
+      "alpha": 0.99,
+      "beta": 0.005
+    },
+    {
+      "alpha": 0.99,
+      "beta": 0.01
+    },
+    {
+      "alpha": 0.99,
+      "beta": 0.02
+    },
+    {
+      "alpha": 0.99,
+      "beta": 0.05
+    },
+    {
+      "alpha": 0.99,
+      "beta": 0.075
+    },
+    {
+      "alpha": 0.99,
+      "beta": 0.1
+    },
+    {
+      "alpha": 0.99,
+      "beta": 0.15
+    },
+    {
+      "alpha": 0.99,
+      "beta": 0.2
+    },
+    {
+      "alpha": 1,
+      "beta": 0.0001
+    },
+    {
+      "alpha": 1,
+      "beta": 0.001
+    },
+    {
+      "alpha": 1,
+      "beta": 0.002
+    },
+    {
+      "alpha": 1,
+      "beta": 0.005
+    },
+    {
+      "alpha": 1,
+      "beta": 0.01
+    },
+    {
+      "alpha": 1,
+      "beta": 0.02
+    },
+    {
+      "alpha": 1,
+      "beta": 0.05
+    },
+    {
+      "alpha": 1,
+      "beta": 0.075
+    },
+    {
+      "alpha": 1,
+      "beta": 0.1
+    },
+    {
+      "alpha": 1,
+      "beta": 0.15
+    },
+    {
+      "alpha": 1,
+      "beta": 0.2
+    }
+  ],
+  "strata": [
+    {
+      "L": 64,
+      "k": 4,
+      "repetitions": 128,
+      "seedStart": 14000001
+    },
+    {
+      "L": 64,
+      "k": 8,
+      "repetitions": 128,
+      "seedStart": 14100001
+    }
+  ]
+}

@@ -1,0 +1,6533 @@
+{
+  "interpretation": "Descriptive16seeds/stratum;CMI estimates are plug-in nonstationary diagnostics,not causal information–performance effects.",
+  "records": [
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500001,
+      "coverage": 0.908203125,
+      "deadlock": 0,
+      "attempts": 7842,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3696
+          ],
+          [
+            0,
+            225
+          ]
+        ],
+        [
+          [
+            0,
+            3681
+          ],
+          [
+            0,
+            239
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500002,
+      "coverage": 0.892578125,
+      "deadlock": 0,
+      "attempts": 13029,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            6266
+          ],
+          [
+            0,
+            248
+          ]
+        ],
+        [
+          [
+            0,
+            6306
+          ],
+          [
+            0,
+            208
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500003,
+      "coverage": 0.912109375,
+      "deadlock": 0,
+      "attempts": 6327,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2935
+          ],
+          [
+            0,
+            228
+          ]
+        ],
+        [
+          [
+            0,
+            2925
+          ],
+          [
+            0,
+            238
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500004,
+      "coverage": 0.91796875,
+      "deadlock": 0,
+      "attempts": 7116,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3320
+          ],
+          [
+            0,
+            238
+          ]
+        ],
+        [
+          [
+            0,
+            3326
+          ],
+          [
+            0,
+            231
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500005,
+      "coverage": 0.91015625,
+      "deadlock": 0,
+      "attempts": 14366,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            6945
+          ],
+          [
+            0,
+            238
+          ]
+        ],
+        [
+          [
+            0,
+            6955
+          ],
+          [
+            0,
+            227
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500006,
+      "coverage": 0.9140625,
+      "deadlock": 0,
+      "attempts": 10284,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4894
+          ],
+          [
+            0,
+            248
+          ]
+        ],
+        [
+          [
+            0,
+            4922
+          ],
+          [
+            0,
+            219
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500007,
+      "coverage": 0.908203125,
+      "deadlock": 0,
+      "attempts": 9164,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4363
+          ],
+          [
+            0,
+            219
+          ]
+        ],
+        [
+          [
+            0,
+            4336
+          ],
+          [
+            0,
+            245
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500008,
+      "coverage": 0.904296875,
+      "deadlock": 0,
+      "attempts": 11908,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            5714
+          ],
+          [
+            0,
+            240
+          ]
+        ],
+        [
+          [
+            0,
+            5731
+          ],
+          [
+            0,
+            222
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500009,
+      "coverage": 0.900390625,
+      "deadlock": 0,
+      "attempts": 10259,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4894
+          ],
+          [
+            0,
+            235
+          ]
+        ],
+        [
+          [
+            0,
+            4904
+          ],
+          [
+            0,
+            225
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500010,
+      "coverage": 0.91796875,
+      "deadlock": 0,
+      "attempts": 12061,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            5786
+          ],
+          [
+            0,
+            244
+          ]
+        ],
+        [
+          [
+            0,
+            5805
+          ],
+          [
+            0,
+            225
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500011,
+      "coverage": 0.90625,
+      "deadlock": 0,
+      "attempts": 8214,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3869
+          ],
+          [
+            0,
+            238
+          ]
+        ],
+        [
+          [
+            0,
+            3881
+          ],
+          [
+            0,
+            225
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500012,
+      "coverage": 0.9140625,
+      "deadlock": 0,
+      "attempts": 9977,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4752
+          ],
+          [
+            0,
+            236
+          ]
+        ],
+        [
+          [
+            0,
+            4757
+          ],
+          [
+            0,
+            231
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500013,
+      "coverage": 0.8984375,
+      "deadlock": 0,
+      "attempts": 16476,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            7993
+          ],
+          [
+            0,
+            245
+          ]
+        ],
+        [
+          [
+            0,
+            8023
+          ],
+          [
+            0,
+            214
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500014,
+      "coverage": 0.90234375,
+      "deadlock": 0,
+      "attempts": 10095,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4793
+          ],
+          [
+            0,
+            254
+          ]
+        ],
+        [
+          [
+            0,
+            4840
+          ],
+          [
+            0,
+            207
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500015,
+      "coverage": 0.900390625,
+      "deadlock": 0,
+      "attempts": 10625,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            5073
+          ],
+          [
+            0,
+            239
+          ]
+        ],
+        [
+          [
+            0,
+            5091
+          ],
+          [
+            0,
+            221
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "seed": 500016,
+      "coverage": 0.896484375,
+      "deadlock": 0,
+      "attempts": 12155,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            5842
+          ],
+          [
+            0,
+            235
+          ]
+        ],
+        [
+          [
+            0,
+            5854
+          ],
+          [
+            0,
+            223
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500001,
+      "coverage": 0.904296875,
+      "deadlock": 1,
+      "attempts": 6891,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.3534059270581096,
+      "transitionCounts": [
+        [
+          [
+            2647,
+            0
+          ],
+          [
+            0,
+            231
+          ]
+        ],
+        [
+          [
+            3781,
+            0
+          ],
+          [
+            0,
+            231
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500002,
+      "coverage": 0.904296875,
+      "deadlock": 1,
+      "attempts": 7222,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.3426456996222724,
+      "transitionCounts": [
+        [
+          [
+            3055,
+            0
+          ],
+          [
+            0,
+            231
+          ]
+        ],
+        [
+          [
+            3704,
+            0
+          ],
+          [
+            0,
+            231
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500003,
+      "coverage": 0.90234375,
+      "deadlock": 1,
+      "attempts": 6629,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.36036423474804713,
+      "transitionCounts": [
+        [
+          [
+            3963,
+            0
+          ],
+          [
+            0,
+            231
+          ]
+        ],
+        [
+          [
+            2204,
+            0
+          ],
+          [
+            0,
+            230
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500004,
+      "coverage": 0.900390625,
+      "deadlock": 1,
+      "attempts": 6113,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.3839247048273808,
+      "transitionCounts": [
+        [
+          [
+            3284,
+            0
+          ],
+          [
+            0,
+            230
+          ]
+        ],
+        [
+          [
+            2368,
+            0
+          ],
+          [
+            0,
+            230
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500005,
+      "coverage": 0.908203125,
+      "deadlock": 0,
+      "attempts": 8438,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.307030561297006,
+      "transitionCounts": [
+        [
+          [
+            4292,
+            0
+          ],
+          [
+            0,
+            232
+          ]
+        ],
+        [
+          [
+            3681,
+            0
+          ],
+          [
+            0,
+            232
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500006,
+      "coverage": 0.8984375,
+      "deadlock": 1,
+      "attempts": 8234,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.3095448881085419,
+      "transitionCounts": [
+        [
+          [
+            4456,
+            0
+          ],
+          [
+            0,
+            230
+          ]
+        ],
+        [
+          [
+            3318,
+            0
+          ],
+          [
+            0,
+            229
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500007,
+      "coverage": 0.90625,
+      "deadlock": 1,
+      "attempts": 8650,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.29493410468241454,
+      "transitionCounts": [
+        [
+          [
+            5731,
+            0
+          ],
+          [
+            0,
+            232
+          ]
+        ],
+        [
+          [
+            2455,
+            0
+          ],
+          [
+            0,
+            231
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500008,
+      "coverage": 0.89453125,
+      "deadlock": 1,
+      "attempts": 6925,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.3456065926853473,
+      "transitionCounts": [
+        [
+          [
+            4318,
+            0
+          ],
+          [
+            0,
+            229
+          ]
+        ],
+        [
+          [
+            2149,
+            0
+          ],
+          [
+            0,
+            228
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500009,
+      "coverage": 0.8984375,
+      "deadlock": 1,
+      "attempts": 5962,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.3813969639031589,
+      "transitionCounts": [
+        [
+          [
+            3925,
+            0
+          ],
+          [
+            0,
+            230
+          ]
+        ],
+        [
+          [
+            1577,
+            0
+          ],
+          [
+            0,
+            229
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500010,
+      "coverage": 0.904296875,
+      "deadlock": 0,
+      "attempts": 10317,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.2618329062042766,
+      "transitionCounts": [
+        [
+          [
+            6157,
+            0
+          ],
+          [
+            0,
+            231
+          ]
+        ],
+        [
+          [
+            3697,
+            0
+          ],
+          [
+            0,
+            231
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500011,
+      "coverage": 0.9140625,
+      "deadlock": 1,
+      "attempts": 7750,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.3284873791129176,
+      "transitionCounts": [
+        [
+          [
+            3711,
+            0
+          ],
+          [
+            0,
+            234
+          ]
+        ],
+        [
+          [
+            3571,
+            0
+          ],
+          [
+            0,
+            233
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500012,
+      "coverage": 0.90234375,
+      "deadlock": 1,
+      "attempts": 9098,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.284104753328153,
+      "transitionCounts": [
+        [
+          [
+            5934,
+            0
+          ],
+          [
+            0,
+            231
+          ]
+        ],
+        [
+          [
+            2702,
+            0
+          ],
+          [
+            0,
+            230
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500013,
+      "coverage": 0.916015625,
+      "deadlock": 1,
+      "attempts": 7285,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.34360485638565835,
+      "transitionCounts": [
+        [
+          [
+            3048,
+            0
+          ],
+          [
+            0,
+            234
+          ]
+        ],
+        [
+          [
+            3768,
+            0
+          ],
+          [
+            0,
+            234
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500014,
+      "coverage": 0.89453125,
+      "deadlock": 1,
+      "attempts": 9391,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.27195978391290615,
+      "transitionCounts": [
+        [
+          [
+            6626,
+            0
+          ],
+          [
+            0,
+            229
+          ]
+        ],
+        [
+          [
+            2307,
+            0
+          ],
+          [
+            0,
+            228
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500015,
+      "coverage": 0.90234375,
+      "deadlock": 1,
+      "attempts": 8288,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.3032227250963086,
+      "transitionCounts": [
+        [
+          [
+            5491,
+            0
+          ],
+          [
+            0,
+            231
+          ]
+        ],
+        [
+          [
+            2335,
+            0
+          ],
+          [
+            0,
+            230
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "seed": 500016,
+      "coverage": 0.908203125,
+      "deadlock": 1,
+      "attempts": 11755,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.23101187479512814,
+      "transitionCounts": [
+        [
+          [
+            2665,
+            0
+          ],
+          [
+            0,
+            232
+          ]
+        ],
+        [
+          [
+            8625,
+            0
+          ],
+          [
+            0,
+            232
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500001,
+      "coverage": 0.900390625,
+      "deadlock": 0,
+      "attempts": 8066,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.315029994474556,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3803
+          ],
+          [
+            203,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3802
+          ],
+          [
+            257,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500002,
+      "coverage": 0.91796875,
+      "deadlock": 0,
+      "attempts": 11353,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.24802317173345456,
+      "transitionCounts": [
+        [
+          [
+            0,
+            5442
+          ],
+          [
+            257,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            5441
+          ],
+          [
+            212,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500003,
+      "coverage": 0.91015625,
+      "deadlock": 0,
+      "attempts": 5825,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.40147013638131324,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2680
+          ],
+          [
+            245,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2679
+          ],
+          [
+            220,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500004,
+      "coverage": 0.88671875,
+      "deadlock": 0,
+      "attempts": 8116,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.31051792608611417,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3831
+          ],
+          [
+            214,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3831
+          ],
+          [
+            239,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500005,
+      "coverage": 0.904296875,
+      "deadlock": 0,
+      "attempts": 12205,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.23052129933283133,
+      "transitionCounts": [
+        [
+          [
+            0,
+            5871
+          ],
+          [
+            292,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            5871
+          ],
+          [
+            170,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500006,
+      "coverage": 0.904296875,
+      "deadlock": 0,
+      "attempts": 8657,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.3002559439195317,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4097
+          ],
+          [
+            252,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4097
+          ],
+          [
+            210,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500007,
+      "coverage": 0.91796875,
+      "deadlock": 0,
+      "attempts": 6174,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.3878335146634242,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2852
+          ],
+          [
+            237,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2852
+          ],
+          [
+            232,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500008,
+      "coverage": 0.9140625,
+      "deadlock": 0,
+      "attempts": 10105,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.26970319210040483,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4819
+          ],
+          [
+            207,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4818
+          ],
+          [
+            260,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500009,
+      "coverage": 0.9140625,
+      "deadlock": 0,
+      "attempts": 10046,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.2692690688605503,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4789
+          ],
+          [
+            292,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4789
+          ],
+          [
+            175,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500010,
+      "coverage": 0.904296875,
+      "deadlock": 0,
+      "attempts": 10469,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.2606612526442237,
+      "transitionCounts": [
+        [
+          [
+            0,
+            5003
+          ],
+          [
+            253,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            5003
+          ],
+          [
+            209,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500011,
+      "coverage": 0.9140625,
+      "deadlock": 0,
+      "attempts": 7317,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.3421101812032401,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3425
+          ],
+          [
+            255,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3424
+          ],
+          [
+            212,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500012,
+      "coverage": 0.916015625,
+      "deadlock": 0,
+      "attempts": 12098,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.2362362219612307,
+      "transitionCounts": [
+        [
+          [
+            0,
+            5815
+          ],
+          [
+            231,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            5814
+          ],
+          [
+            237,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500013,
+      "coverage": 0.912109375,
+      "deadlock": 0,
+      "attempts": 12796,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.2249917833568569,
+      "transitionCounts": [
+        [
+          [
+            0,
+            6165
+          ],
+          [
+            270,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            6164
+          ],
+          [
+            196,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500014,
+      "coverage": 0.9140625,
+      "deadlock": 0,
+      "attempts": 7199,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.34561392899326804,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3366
+          ],
+          [
+            267,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3365
+          ],
+          [
+            200,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500015,
+      "coverage": 0.90234375,
+      "deadlock": 0,
+      "attempts": 13632,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.21182056592676016,
+      "transitionCounts": [
+        [
+          [
+            0,
+            6585
+          ],
+          [
+            286,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            6585
+          ],
+          [
+            175,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "seed": 500016,
+      "coverage": 0.90625,
+      "deadlock": 0,
+      "attempts": 8659,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.3008222366653328,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4098
+          ],
+          [
+            247,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4097
+          ],
+          [
+            216,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500001,
+      "coverage": 0.90625,
+      "deadlock": 0,
+      "attempts": 10421,
+      "switchAfterFailure": 0.5002510796424626,
+      "switchAfterSuccess": 0.5226781857451404,
+      "conditionalMI": 0.00009594315091349936,
+      "transitionCounts": [
+        [
+          [
+            2482,
+            2501
+          ],
+          [
+            108,
+            111
+          ]
+        ],
+        [
+          [
+            2494,
+            2480
+          ],
+          [
+            113,
+            131
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500002,
+      "coverage": 0.921875,
+      "deadlock": 0,
+      "attempts": 13651,
+      "switchAfterFailure": 0.5039836102890963,
+      "switchAfterSuccess": 0.49469214437367304,
+      "conditionalMI": 0.000025662984533165466,
+      "transitionCounts": [
+        [
+          [
+            3293,
+            3321
+          ],
+          [
+            113,
+            116
+          ]
+        ],
+        [
+          [
+            3244,
+            3321
+          ],
+          [
+            125,
+            117
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500003,
+      "coverage": 0.90625,
+      "deadlock": 0,
+      "attempts": 9156,
+      "switchAfterFailure": 0.5059825126553152,
+      "switchAfterSuccess": 0.5010799136069114,
+      "conditionalMI": 0.000021891697121383156,
+      "transitionCounts": [
+        [
+          [
+            2148,
+            2197
+          ],
+          [
+            123,
+            118
+          ]
+        ],
+        [
+          [
+            2146,
+            2201
+          ],
+          [
+            108,
+            114
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500004,
+      "coverage": 0.900390625,
+      "deadlock": 0,
+      "attempts": 10262,
+      "switchAfterFailure": 0.5051525354555657,
+      "switchAfterSuccess": 0.48043478260869565,
+      "conditionalMI": 0.0000948758701392672,
+      "transitionCounts": [
+        [
+          [
+            2469,
+            2489
+          ],
+          [
+            112,
+            97
+          ]
+        ],
+        [
+          [
+            2381,
+            2462
+          ],
+          [
+            127,
+            124
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500005,
+      "coverage": 0.90625,
+      "deadlock": 0,
+      "attempts": 13004,
+      "switchAfterFailure": 0.4988835725677831,
+      "switchAfterSuccess": 0.4816414686825054,
+      "conditionalMI": 0.00004620386047477902,
+      "transitionCounts": [
+        [
+          [
+            3097,
+            3118
+          ],
+          [
+            136,
+            122
+          ]
+        ],
+        [
+          [
+            3187,
+            3138
+          ],
+          [
+            104,
+            101
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500006,
+      "coverage": 0.908203125,
+      "deadlock": 0,
+      "attempts": 10763,
+      "switchAfterFailure": 0.5037871431345893,
+      "switchAfterSuccess": 0.5193965517241379,
+      "conditionalMI": 0.00006743627165727798,
+      "transitionCounts": [
+        [
+          [
+            2550,
+            2598
+          ],
+          [
+            99,
+            116
+          ]
+        ],
+        [
+          [
+            2560,
+            2590
+          ],
+          [
+            124,
+            125
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500007,
+      "coverage": 0.90234375,
+      "deadlock": 0,
+      "attempts": 8761,
+      "switchAfterFailure": 0.49945776599590314,
+      "switchAfterSuccess": 0.45336225596529284,
+      "conditionalMI": 0.0003082461172716397,
+      "transitionCounts": [
+        [
+          [
+            2082,
+            2069
+          ],
+          [
+            133,
+            108
+          ]
+        ],
+        [
+          [
+            2072,
+            2076
+          ],
+          [
+            119,
+            101
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500008,
+      "coverage": 0.90234375,
+      "deadlock": 0,
+      "attempts": 8036,
+      "switchAfterFailure": 0.49115394771587007,
+      "switchAfterSuccess": 0.48156182212581344,
+      "conditionalMI": 0.00015436833905831696,
+      "transitionCounts": [
+        [
+          [
+            1945,
+            1855
+          ],
+          [
+            112,
+            116
+          ]
+        ],
+        [
+          [
+            1909,
+            1865
+          ],
+          [
+            127,
+            106
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500009,
+      "coverage": 0.912109375,
+      "deadlock": 0,
+      "attempts": 14029,
+      "switchAfterFailure": 0.49705058250995426,
+      "switchAfterSuccess": 0.5300429184549357,
+      "conditionalMI": 0.00010775296466911693,
+      "transitionCounts": [
+        [
+          [
+            3373,
+            3382
+          ],
+          [
+            101,
+            112
+          ]
+        ],
+        [
+          [
+            3448,
+            3359
+          ],
+          [
+            118,
+            135
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500010,
+      "coverage": 0.90625,
+      "deadlock": 0,
+      "attempts": 7418,
+      "switchAfterFailure": 0.504601668104688,
+      "switchAfterSuccess": 0.4838012958963283,
+      "conditionalMI": 0.00022441237874182063,
+      "transitionCounts": [
+        [
+          [
+            1739,
+            1747
+          ],
+          [
+            143,
+            119
+          ]
+        ],
+        [
+          [
+            1706,
+            1762
+          ],
+          [
+            96,
+            105
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500011,
+      "coverage": 0.900390625,
+      "deadlock": 0,
+      "attempts": 9219,
+      "switchAfterFailure": 0.5082210550353962,
+      "switchAfterSuccess": 0.5065217391304347,
+      "conditionalMI": 0.000030635995557967615,
+      "transitionCounts": [
+        [
+          [
+            2215,
+            2225
+          ],
+          [
+            124,
+            117
+          ]
+        ],
+        [
+          [
+            2092,
+            2226
+          ],
+          [
+            103,
+            116
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500012,
+      "coverage": 0.896484375,
+      "deadlock": 0,
+      "attempts": 10268,
+      "switchAfterFailure": 0.5055561219288408,
+      "switchAfterSuccess": 0.47161572052401746,
+      "conditionalMI": 0.0002471887119756249,
+      "transitionCounts": [
+        [
+          [
+            2471,
+            2474
+          ],
+          [
+            115,
+            113
+          ]
+        ],
+        [
+          [
+            2379,
+            2485
+          ],
+          [
+            127,
+            103
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500013,
+      "coverage": 0.912109375,
+      "deadlock": 0,
+      "attempts": 15524,
+      "switchAfterFailure": 0.5010294215315135,
+      "switchAfterSuccess": 0.49141630901287553,
+      "conditionalMI": 0.00011149522543360047,
+      "transitionCounts": [
+        [
+          [
+            3839,
+            3772
+          ],
+          [
+            104,
+            114
+          ]
+        ],
+        [
+          [
+            3674,
+            3772
+          ],
+          [
+            133,
+            115
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500014,
+      "coverage": 0.89453125,
+      "deadlock": 0,
+      "attempts": 11518,
+      "switchAfterFailure": 0.4969258589511754,
+      "switchAfterSuccess": 0.5339168490153173,
+      "conditionalMI": 0.00019714073691310305,
+      "transitionCounts": [
+        [
+          [
+            2775,
+            2743
+          ],
+          [
+            102,
+            127
+          ]
+        ],
+        [
+          [
+            2789,
+            2753
+          ],
+          [
+            111,
+            117
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500015,
+      "coverage": 0.912109375,
+      "deadlock": 0,
+      "attempts": 11532,
+      "switchAfterFailure": 0.4974243108901943,
+      "switchAfterSuccess": 0.4957081545064378,
+      "conditionalMI": 0.000006774920359104806,
+      "transitionCounts": [
+        [
+          [
+            2737,
+            2747
+          ],
+          [
+            124,
+            120
+          ]
+        ],
+        [
+          [
+            2824,
+            2757
+          ],
+          [
+            111,
+            111
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "seed": 500016,
+      "coverage": 0.908203125,
+      "deadlock": 0,
+      "attempts": 9579,
+      "switchAfterFailure": 0.5075707702435813,
+      "switchAfterSuccess": 0.47413793103448276,
+      "conditionalMI": 0.00017907596078235017,
+      "transitionCounts": [
+        [
+          [
+            2239,
+            2309
+          ],
+          [
+            119,
+            114
+          ]
+        ],
+        [
+          [
+            2249,
+            2317
+          ],
+          [
+            125,
+            106
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500001,
+      "coverage": 0.796875,
+      "deadlock": 0,
+      "attempts": 5232,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2517
+          ],
+          [
+            0,
+            99
+          ]
+        ],
+        [
+          [
+            0,
+            2511
+          ],
+          [
+            0,
+            104
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500002,
+      "coverage": 0.8046875,
+      "deadlock": 0,
+      "attempts": 7386,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3591
+          ],
+          [
+            0,
+            102
+          ]
+        ],
+        [
+          [
+            0,
+            3589
+          ],
+          [
+            0,
+            103
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500003,
+      "coverage": 0.81640625,
+      "deadlock": 0,
+      "attempts": 6517,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3165
+          ],
+          [
+            0,
+            93
+          ]
+        ],
+        [
+          [
+            0,
+            3143
+          ],
+          [
+            0,
+            115
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500004,
+      "coverage": 0.8125,
+      "deadlock": 0,
+      "attempts": 7110,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3421
+          ],
+          [
+            0,
+            134
+          ]
+        ],
+        [
+          [
+            0,
+            3481
+          ],
+          [
+            0,
+            73
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500005,
+      "coverage": 0.8203125,
+      "deadlock": 0,
+      "attempts": 16081,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            7936
+          ],
+          [
+            0,
+            104
+          ]
+        ],
+        [
+          [
+            0,
+            7935
+          ],
+          [
+            0,
+            105
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500006,
+      "coverage": 0.8203125,
+      "deadlock": 0,
+      "attempts": 10213,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4990
+          ],
+          [
+            0,
+            116
+          ]
+        ],
+        [
+          [
+            0,
+            5013
+          ],
+          [
+            0,
+            93
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500007,
+      "coverage": 0.8203125,
+      "deadlock": 0,
+      "attempts": 8942,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4385
+          ],
+          [
+            0,
+            86
+          ]
+        ],
+        [
+          [
+            0,
+            4347
+          ],
+          [
+            0,
+            123
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500008,
+      "coverage": 0.83203125,
+      "deadlock": 0,
+      "attempts": 7244,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3526
+          ],
+          [
+            0,
+            96
+          ]
+        ],
+        [
+          [
+            0,
+            3505
+          ],
+          [
+            0,
+            116
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500009,
+      "coverage": 0.81640625,
+      "deadlock": 0,
+      "attempts": 11166,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            5470
+          ],
+          [
+            0,
+            113
+          ]
+        ],
+        [
+          [
+            0,
+            5487
+          ],
+          [
+            0,
+            95
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500010,
+      "coverage": 0.8046875,
+      "deadlock": 0,
+      "attempts": 7777,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3772
+          ],
+          [
+            0,
+            116
+          ]
+        ],
+        [
+          [
+            0,
+            3799
+          ],
+          [
+            0,
+            89
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500011,
+      "coverage": 0.81640625,
+      "deadlock": 0,
+      "attempts": 8214,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4005
+          ],
+          [
+            0,
+            102
+          ]
+        ],
+        [
+          [
+            0,
+            4000
+          ],
+          [
+            0,
+            106
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500012,
+      "coverage": 0.80859375,
+      "deadlock": 0,
+      "attempts": 5563,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2676
+          ],
+          [
+            0,
+            105
+          ]
+        ],
+        [
+          [
+            0,
+            2680
+          ],
+          [
+            0,
+            101
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500013,
+      "coverage": 0.796875,
+      "deadlock": 0,
+      "attempts": 8690,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4242
+          ],
+          [
+            0,
+            103
+          ]
+        ],
+        [
+          [
+            0,
+            4244
+          ],
+          [
+            0,
+            100
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500014,
+      "coverage": 0.8203125,
+      "deadlock": 0,
+      "attempts": 9061,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4425
+          ],
+          [
+            0,
+            105
+          ]
+        ],
+        [
+          [
+            0,
+            4426
+          ],
+          [
+            0,
+            104
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500015,
+      "coverage": 0.80078125,
+      "deadlock": 0,
+      "attempts": 5349,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2563
+          ],
+          [
+            0,
+            111
+          ]
+        ],
+        [
+          [
+            0,
+            2581
+          ],
+          [
+            0,
+            93
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "seed": 500016,
+      "coverage": 0.80859375,
+      "deadlock": 0,
+      "attempts": 7693,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3745
+          ],
+          [
+            0,
+            101
+          ]
+        ],
+        [
+          [
+            0,
+            3741
+          ],
+          [
+            0,
+            105
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500001,
+      "coverage": 0.76953125,
+      "deadlock": 1,
+      "attempts": 4179,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.2575743207563339,
+      "transitionCounts": [
+        [
+          [
+            753,
+            0
+          ],
+          [
+            0,
+            98
+          ]
+        ],
+        [
+          [
+            3229,
+            0
+          ],
+          [
+            0,
+            98
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500002,
+      "coverage": 0.80859375,
+      "deadlock": 1,
+      "attempts": 6418,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.19384820185985652,
+      "transitionCounts": [
+        [
+          [
+            1166,
+            0
+          ],
+          [
+            0,
+            103
+          ]
+        ],
+        [
+          [
+            5045,
+            0
+          ],
+          [
+            0,
+            103
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500003,
+      "coverage": 0.765625,
+      "deadlock": 1,
+      "attempts": 5484,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.20280910184319365,
+      "transitionCounts": [
+        [
+          [
+            4591,
+            0
+          ],
+          [
+            0,
+            98
+          ]
+        ],
+        [
+          [
+            697,
+            0
+          ],
+          [
+            0,
+            97
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500004,
+      "coverage": 0.75390625,
+      "deadlock": 1,
+      "attempts": 5197,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.2051776310206177,
+      "transitionCounts": [
+        [
+          [
+            565,
+            0
+          ],
+          [
+            0,
+            96
+          ]
+        ],
+        [
+          [
+            4439,
+            0
+          ],
+          [
+            0,
+            96
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500005,
+      "coverage": 0.7734375,
+      "deadlock": 1,
+      "attempts": 5727,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.21069407436026827,
+      "transitionCounts": [
+        [
+          [
+            4013,
+            0
+          ],
+          [
+            0,
+            99
+          ]
+        ],
+        [
+          [
+            1516,
+            0
+          ],
+          [
+            0,
+            98
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500006,
+      "coverage": 0.82421875,
+      "deadlock": 1,
+      "attempts": 7414,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.18362936809744607,
+      "transitionCounts": [
+        [
+          [
+            2407,
+            0
+          ],
+          [
+            0,
+            105
+          ]
+        ],
+        [
+          [
+            4796,
+            0
+          ],
+          [
+            0,
+            105
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500007,
+      "coverage": 0.81640625,
+      "deadlock": 1,
+      "attempts": 5388,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.22673821754202153,
+      "transitionCounts": [
+        [
+          [
+            1192,
+            0
+          ],
+          [
+            0,
+            104
+          ]
+        ],
+        [
+          [
+            3987,
+            0
+          ],
+          [
+            0,
+            104
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500008,
+      "coverage": 0.7734375,
+      "deadlock": 1,
+      "attempts": 5109,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.2239834658197849,
+      "transitionCounts": [
+        [
+          [
+            3932,
+            0
+          ],
+          [
+            0,
+            99
+          ]
+        ],
+        [
+          [
+            979,
+            0
+          ],
+          [
+            0,
+            98
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500009,
+      "coverage": 0.7734375,
+      "deadlock": 1,
+      "attempts": 3832,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.28692407507411477,
+      "transitionCounts": [
+        [
+          [
+            2517,
+            0
+          ],
+          [
+            0,
+            99
+          ]
+        ],
+        [
+          [
+            1117,
+            0
+          ],
+          [
+            0,
+            98
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500010,
+      "coverage": 0.78125,
+      "deadlock": 1,
+      "attempts": 4431,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.25246196354586475,
+      "transitionCounts": [
+        [
+          [
+            3326,
+            0
+          ],
+          [
+            0,
+            100
+          ]
+        ],
+        [
+          [
+            905,
+            0
+          ],
+          [
+            0,
+            99
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500011,
+      "coverage": 0.78125,
+      "deadlock": 1,
+      "attempts": 6941,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.1783974626885509,
+      "transitionCounts": [
+        [
+          [
+            5441,
+            0
+          ],
+          [
+            0,
+            100
+          ]
+        ],
+        [
+          [
+            1300,
+            0
+          ],
+          [
+            0,
+            99
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500012,
+      "coverage": 0.796875,
+      "deadlock": 1,
+      "attempts": 6248,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.20161735030545974,
+      "transitionCounts": [
+        [
+          [
+            4398,
+            0
+          ],
+          [
+            0,
+            102
+          ]
+        ],
+        [
+          [
+            1646,
+            0
+          ],
+          [
+            0,
+            101
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500013,
+      "coverage": 0.76953125,
+      "deadlock": 1,
+      "attempts": 5719,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.20541557412365535,
+      "transitionCounts": [
+        [
+          [
+            1141,
+            0
+          ],
+          [
+            0,
+            98
+          ]
+        ],
+        [
+          [
+            4381,
+            0
+          ],
+          [
+            0,
+            98
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500014,
+      "coverage": 0.8125,
+      "deadlock": 1,
+      "attempts": 3928,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.2969814285377286,
+      "transitionCounts": [
+        [
+          [
+            2149,
+            0
+          ],
+          [
+            0,
+            104
+          ]
+        ],
+        [
+          [
+            1571,
+            0
+          ],
+          [
+            0,
+            103
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500015,
+      "coverage": 0.8046875,
+      "deadlock": 1,
+      "attempts": 6968,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.18015936365110322,
+      "transitionCounts": [
+        [
+          [
+            5600,
+            0
+          ],
+          [
+            0,
+            103
+          ]
+        ],
+        [
+          [
+            1162,
+            0
+          ],
+          [
+            0,
+            102
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "seed": 500016,
+      "coverage": 0.7890625,
+      "deadlock": 0,
+      "attempts": 7948,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.16998942969478537,
+      "transitionCounts": [
+        [
+          [
+            4317,
+            0
+          ],
+          [
+            0,
+            101
+          ]
+        ],
+        [
+          [
+            3429,
+            0
+          ],
+          [
+            0,
+            100
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500001,
+      "coverage": 0.828125,
+      "deadlock": 0,
+      "attempts": 4562,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.27029343155289776,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2175
+          ],
+          [
+            107,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2175
+          ],
+          [
+            104,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500002,
+      "coverage": 0.80078125,
+      "deadlock": 0,
+      "attempts": 6390,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.20355722696180514,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3093
+          ],
+          [
+            88,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3092
+          ],
+          [
+            116,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500003,
+      "coverage": 0.8125,
+      "deadlock": 0,
+      "attempts": 10002,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.14524276270299244,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4897
+          ],
+          [
+            112,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4897
+          ],
+          [
+            95,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500004,
+      "coverage": 0.8203125,
+      "deadlock": 0,
+      "attempts": 7536,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.18099996182234007,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3663
+          ],
+          [
+            72,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3663
+          ],
+          [
+            137,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500005,
+      "coverage": 0.7890625,
+      "deadlock": 0,
+      "attempts": 8384,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.15402742146869627,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4091
+          ],
+          [
+            171,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4091
+          ],
+          [
+            30,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500006,
+      "coverage": 0.8125,
+      "deadlock": 0,
+      "attempts": 10022,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.14148132311055905,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4907
+          ],
+          [
+            154,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4907
+          ],
+          [
+            53,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500007,
+      "coverage": 0.81640625,
+      "deadlock": 0,
+      "attempts": 5777,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.21511638158071456,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2784
+          ],
+          [
+            163,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2784
+          ],
+          [
+            45,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500008,
+      "coverage": 0.8203125,
+      "deadlock": 0,
+      "attempts": 7539,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.1813934358242386,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3665
+          ],
+          [
+            133,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3664
+          ],
+          [
+            76,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500009,
+      "coverage": 0.80078125,
+      "deadlock": 0,
+      "attempts": 6674,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.1965766189710859,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3235
+          ],
+          [
+            84,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3234
+          ],
+          [
+            120,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500010,
+      "coverage": 0.8203125,
+      "deadlock": 0,
+      "attempts": 11588,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.1302254312128827,
+      "transitionCounts": [
+        [
+          [
+            0,
+            5689
+          ],
+          [
+            98,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            5689
+          ],
+          [
+            111,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500011,
+      "coverage": 0.83984375,
+      "deadlock": 0,
+      "attempts": 6140,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.21820306877644602,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2963
+          ],
+          [
+            107,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2962
+          ],
+          [
+            107,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500012,
+      "coverage": 0.81640625,
+      "deadlock": 0,
+      "attempts": 5305,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.23856128561144235,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2548
+          ],
+          [
+            111,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2548
+          ],
+          [
+            97,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500013,
+      "coverage": 0.79296875,
+      "deadlock": 0,
+      "attempts": 6071,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.20974912899385803,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2934
+          ],
+          [
+            120,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2934
+          ],
+          [
+            82,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500014,
+      "coverage": 0.82421875,
+      "deadlock": 0,
+      "attempts": 5883,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.22164810150893507,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2836
+          ],
+          [
+            89,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2836
+          ],
+          [
+            121,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500015,
+      "coverage": 0.8125,
+      "deadlock": 0,
+      "attempts": 7633,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.17732797734482772,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3713
+          ],
+          [
+            67,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3712
+          ],
+          [
+            140,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "seed": 500016,
+      "coverage": 0.8125,
+      "deadlock": 0,
+      "attempts": 9238,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.15227834873086687,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4515
+          ],
+          [
+            144,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4515
+          ],
+          [
+            63,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500001,
+      "coverage": 0.828125,
+      "deadlock": 0,
+      "attempts": 6018,
+      "switchAfterFailure": 0.4977609369617637,
+      "switchAfterSuccess": 0.5497630331753555,
+      "conditionalMI": 0.00028489350650172103,
+      "transitionCounts": [
+        [
+          [
+            1432,
+            1451
+          ],
+          [
+            44,
+            52
+          ]
+        ],
+        [
+          [
+            1484,
+            1439
+          ],
+          [
+            51,
+            64
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500002,
+      "coverage": 0.81640625,
+      "deadlock": 0,
+      "attempts": 7199,
+      "switchAfterFailure": 0.5025751072961373,
+      "switchAfterSuccess": 0.46153846153846156,
+      "conditionalMI": 0.0003933978656286909,
+      "transitionCounts": [
+        [
+          [
+            1806,
+            1761
+          ],
+          [
+            40,
+            43
+          ]
+        ],
+        [
+          [
+            1671,
+            1752
+          ],
+          [
+            72,
+            53
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500003,
+      "coverage": 0.8203125,
+      "deadlock": 0,
+      "attempts": 8611,
+      "switchAfterFailure": 0.5032734198309725,
+      "switchAfterSuccess": 0.5406698564593302,
+      "conditionalMI": 0.00009874778480135167,
+      "transitionCounts": [
+        [
+          [
+            2100,
+            2113
+          ],
+          [
+            50,
+            57
+          ]
+        ],
+        [
+          [
+            2073,
+            2115
+          ],
+          [
+            46,
+            56
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500004,
+      "coverage": 0.8203125,
+      "deadlock": 0,
+      "attempts": 8667,
+      "switchAfterFailure": 0.5041977060423318,
+      "switchAfterSuccess": 0.47368421052631576,
+      "conditionalMI": 0.00006805479585589565,
+      "transitionCounts": [
+        [
+          [
+            2164,
+            2139
+          ],
+          [
+            48,
+            42
+          ]
+        ],
+        [
+          [
+            2029,
+            2125
+          ],
+          [
+            62,
+            57
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500005,
+      "coverage": 0.7890625,
+      "deadlock": 0,
+      "attempts": 8423,
+      "switchAfterFailure": 0.49312735676924946,
+      "switchAfterSuccess": 0.5074626865671642,
+      "conditionalMI": 0.000029858583249304357,
+      "transitionCounts": [
+        [
+          [
+            2101,
+            2030
+          ],
+          [
+            50,
+            48
+          ]
+        ],
+        [
+          [
+            2066,
+            2024
+          ],
+          [
+            49,
+            54
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500006,
+      "coverage": 0.80859375,
+      "deadlock": 0,
+      "attempts": 6676,
+      "switchAfterFailure": 0.5039418766424486,
+      "switchAfterSuccess": 0.5533980582524272,
+      "conditionalMI": 0.0005533835460716876,
+      "transitionCounts": [
+        [
+          [
+            1569,
+            1636
+          ],
+          [
+            29,
+            51
+          ]
+        ],
+        [
+          [
+            1640,
+            1624
+          ],
+          [
+            63,
+            63
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500007,
+      "coverage": 0.828125,
+      "deadlock": 0,
+      "attempts": 6864,
+      "switchAfterFailure": 0.5022549609140108,
+      "switchAfterSuccess": 0.4549763033175355,
+      "conditionalMI": 0.000247538703603299,
+      "transitionCounts": [
+        [
+          [
+            1653,
+            1664
+          ],
+          [
+            59,
+            54
+          ]
+        ],
+        [
+          [
+            1658,
+            1677
+          ],
+          [
+            56,
+            42
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500008,
+      "coverage": 0.80859375,
+      "deadlock": 0,
+      "attempts": 6389,
+      "switchAfterFailure": 0.4856033646069233,
+      "switchAfterSuccess": 0.5388349514563107,
+      "conditionalMI": 0.0002685854714696688,
+      "transitionCounts": [
+        [
+          [
+            1580,
+            1500
+          ],
+          [
+            50,
+            56
+          ]
+        ],
+        [
+          [
+            1600,
+            1502
+          ],
+          [
+            45,
+            55
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500009,
+      "coverage": 0.8125,
+      "deadlock": 0,
+      "attempts": 7770,
+      "switchAfterFailure": 0.4941814334832055,
+      "switchAfterSuccess": 0.5507246376811594,
+      "conditionalMI": 0.00024755278328397745,
+      "transitionCounts": [
+        [
+          [
+            1903,
+            1874
+          ],
+          [
+            43,
+            51
+          ]
+        ],
+        [
+          [
+            1922,
+            1863
+          ],
+          [
+            50,
+            63
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500010,
+      "coverage": 0.8046875,
+      "deadlock": 0,
+      "attempts": 7053,
+      "switchAfterFailure": 0.5060610486344385,
+      "switchAfterSuccess": 0.47804878048780486,
+      "conditionalMI": 0.00008494495618662211,
+      "transitionCounts": [
+        [
+          [
+            1720,
+            1725
+          ],
+          [
+            66,
+            56
+          ]
+        ],
+        [
+          [
+            1662,
+            1740
+          ],
+          [
+            41,
+            42
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500011,
+      "coverage": 0.80078125,
+      "deadlock": 0,
+      "attempts": 11036,
+      "switchAfterFailure": 0.5078016803619241,
+      "switchAfterSuccess": 0.5147058823529411,
+      "conditionalMI": 0.000007776615887481085,
+      "transitionCounts": [
+        [
+          [
+            2763,
+            2753
+          ],
+          [
+            50,
+            49
+          ]
+        ],
+        [
+          [
+            2568,
+            2747
+          ],
+          [
+            49,
+            56
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500012,
+      "coverage": 0.7890625,
+      "deadlock": 0,
+      "attempts": 5200,
+      "switchAfterFailure": 0.5044017607042817,
+      "switchAfterSuccess": 0.527363184079602,
+      "conditionalMI": 0.00007433473891609935,
+      "transitionCounts": [
+        [
+          [
+            1254,
+            1255
+          ],
+          [
+            55,
+            58
+          ]
+        ],
+        [
+          [
+            1223,
+            1266
+          ],
+          [
+            40,
+            48
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500013,
+      "coverage": 0.78515625,
+      "deadlock": 0,
+      "attempts": 3650,
+      "switchAfterFailure": 0.49985503044360685,
+      "switchAfterSuccess": 0.475,
+      "conditionalMI": 0.00011241922252861914,
+      "transitionCounts": [
+        [
+          [
+            905,
+            868
+          ],
+          [
+            46,
+            41
+          ]
+        ],
+        [
+          [
+            820,
+            856
+          ],
+          [
+            59,
+            54
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500014,
+      "coverage": 0.8046875,
+      "deadlock": 0,
+      "attempts": 6741,
+      "switchAfterFailure": 0.4996174445294568,
+      "switchAfterSuccess": 0.5073170731707317,
+      "conditionalMI": 0.000052673191203416,
+      "transitionCounts": [
+        [
+          [
+            1611,
+            1627
+          ],
+          [
+            50,
+            57
+          ]
+        ],
+        [
+          [
+            1659,
+            1638
+          ],
+          [
+            51,
+            47
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500015,
+      "coverage": 0.8046875,
+      "deadlock": 0,
+      "attempts": 8773,
+      "switchAfterFailure": 0.49807400490253295,
+      "switchAfterSuccess": 0.5073170731707317,
+      "conditionalMI": 0.000017535843104904187,
+      "transitionCounts": [
+        [
+          [
+            2096,
+            2131
+          ],
+          [
+            54,
+            54
+          ]
+        ],
+        [
+          [
+            2204,
+            2136
+          ],
+          [
+            47,
+            50
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "seed": 500016,
+      "coverage": 0.8125,
+      "deadlock": 0,
+      "attempts": 9579,
+      "switchAfterFailure": 0.5063493757336464,
+      "switchAfterSuccess": 0.48792270531400966,
+      "conditionalMI": 0.000052227770102392405,
+      "transitionCounts": [
+        [
+          [
+            2301,
+            2373
+          ],
+          [
+            57,
+            50
+          ]
+        ],
+        [
+          [
+            2325,
+            2372
+          ],
+          [
+            49,
+            51
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500001,
+      "coverage": 0.7421875,
+      "deadlock": 0,
+      "attempts": 5111,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2508
+          ],
+          [
+            0,
+            47
+          ]
+        ],
+        [
+          [
+            0,
+            2508
+          ],
+          [
+            0,
+            47
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500002,
+      "coverage": 0.7734375,
+      "deadlock": 0,
+      "attempts": 5683,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2800
+          ],
+          [
+            0,
+            41
+          ]
+        ],
+        [
+          [
+            0,
+            2784
+          ],
+          [
+            0,
+            57
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500003,
+      "coverage": 0.734375,
+      "deadlock": 0,
+      "attempts": 8558,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4241
+          ],
+          [
+            0,
+            38
+          ]
+        ],
+        [
+          [
+            0,
+            4223
+          ],
+          [
+            0,
+            55
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500004,
+      "coverage": 0.7421875,
+      "deadlock": 0,
+      "attempts": 5203,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2551
+          ],
+          [
+            0,
+            50
+          ]
+        ],
+        [
+          [
+            0,
+            2557
+          ],
+          [
+            0,
+            44
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500005,
+      "coverage": 0.75,
+      "deadlock": 0,
+      "attempts": 5703,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2805
+          ],
+          [
+            0,
+            46
+          ]
+        ],
+        [
+          [
+            0,
+            2802
+          ],
+          [
+            0,
+            49
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500006,
+      "coverage": 0.75,
+      "deadlock": 0,
+      "attempts": 5868,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2887
+          ],
+          [
+            0,
+            47
+          ]
+        ],
+        [
+          [
+            0,
+            2885
+          ],
+          [
+            0,
+            48
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500007,
+      "coverage": 0.75,
+      "deadlock": 0,
+      "attempts": 5397,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2663
+          ],
+          [
+            0,
+            35
+          ]
+        ],
+        [
+          [
+            0,
+            2638
+          ],
+          [
+            0,
+            60
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500008,
+      "coverage": 0.7265625,
+      "deadlock": 0,
+      "attempts": 3854,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            1898
+          ],
+          [
+            0,
+            29
+          ]
+        ],
+        [
+          [
+            0,
+            1863
+          ],
+          [
+            0,
+            63
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500009,
+      "coverage": 0.7734375,
+      "deadlock": 0,
+      "attempts": 2785,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            1335
+          ],
+          [
+            0,
+            57
+          ]
+        ],
+        [
+          [
+            0,
+            1351
+          ],
+          [
+            0,
+            41
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500010,
+      "coverage": 0.7734375,
+      "deadlock": 0,
+      "attempts": 9050,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4479
+          ],
+          [
+            0,
+            46
+          ]
+        ],
+        [
+          [
+            0,
+            4472
+          ],
+          [
+            0,
+            52
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500011,
+      "coverage": 0.78125,
+      "deadlock": 0,
+      "attempts": 4371,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2123
+          ],
+          [
+            0,
+            62
+          ]
+        ],
+        [
+          [
+            0,
+            2148
+          ],
+          [
+            0,
+            37
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500012,
+      "coverage": 0.765625,
+      "deadlock": 0,
+      "attempts": 3671,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            1782
+          ],
+          [
+            0,
+            53
+          ]
+        ],
+        [
+          [
+            0,
+            1791
+          ],
+          [
+            0,
+            44
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500013,
+      "coverage": 0.703125,
+      "deadlock": 0,
+      "attempts": 4271,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2086
+          ],
+          [
+            0,
+            49
+          ]
+        ],
+        [
+          [
+            0,
+            2095
+          ],
+          [
+            0,
+            40
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500014,
+      "coverage": 0.75,
+      "deadlock": 0,
+      "attempts": 3684,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            1794
+          ],
+          [
+            0,
+            48
+          ]
+        ],
+        [
+          [
+            0,
+            1794
+          ],
+          [
+            0,
+            47
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500015,
+      "coverage": 0.7265625,
+      "deadlock": 0,
+      "attempts": 7951,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3916
+          ],
+          [
+            0,
+            59
+          ]
+        ],
+        [
+          [
+            0,
+            3942
+          ],
+          [
+            0,
+            33
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "seed": 500016,
+      "coverage": 0.734375,
+      "deadlock": 0,
+      "attempts": 4038,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0,
+      "transitionCounts": [
+        [
+          [
+            0,
+            1983
+          ],
+          [
+            0,
+            36
+          ]
+        ],
+        [
+          [
+            0,
+            1961
+          ],
+          [
+            0,
+            57
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500001,
+      "coverage": 0.7578125,
+      "deadlock": 1,
+      "attempts": 2725,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.2092699928379682,
+      "transitionCounts": [
+        [
+          [
+            528,
+            0
+          ],
+          [
+            0,
+            48
+          ]
+        ],
+        [
+          [
+            2100,
+            0
+          ],
+          [
+            0,
+            48
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500002,
+      "coverage": 0.7109375,
+      "deadlock": 1,
+      "attempts": 2247,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.23940311389286656,
+      "transitionCounts": [
+        [
+          [
+            721,
+            0
+          ],
+          [
+            0,
+            45
+          ]
+        ],
+        [
+          [
+            1435,
+            0
+          ],
+          [
+            0,
+            45
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500003,
+      "coverage": 0.640625,
+      "deadlock": 1,
+      "attempts": 4087,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.12836004569177112,
+      "transitionCounts": [
+        [
+          [
+            3544,
+            0
+          ],
+          [
+            0,
+            41
+          ]
+        ],
+        [
+          [
+            461,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500004,
+      "coverage": 0.671875,
+      "deadlock": 1,
+      "attempts": 4584,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.12317863988846084,
+      "transitionCounts": [
+        [
+          [
+            3913,
+            0
+          ],
+          [
+            0,
+            43
+          ]
+        ],
+        [
+          [
+            585,
+            0
+          ],
+          [
+            0,
+            42
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500005,
+      "coverage": 0.6796875,
+      "deadlock": 1,
+      "attempts": 1475,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.31169570669982233,
+      "transitionCounts": [
+        [
+          [
+            378,
+            0
+          ],
+          [
+            0,
+            43
+          ]
+        ],
+        [
+          [
+            1010,
+            0
+          ],
+          [
+            0,
+            43
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500006,
+      "coverage": 0.75,
+      "deadlock": 1,
+      "attempts": 2670,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.22155737666734224,
+      "transitionCounts": [
+        [
+          [
+            1402,
+            0
+          ],
+          [
+            0,
+            48
+          ]
+        ],
+        [
+          [
+            1172,
+            0
+          ],
+          [
+            0,
+            47
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500007,
+      "coverage": 0.71875,
+      "deadlock": 1,
+      "attempts": 4563,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.1336281734365729,
+      "transitionCounts": [
+        [
+          [
+            3693,
+            0
+          ],
+          [
+            0,
+            46
+          ]
+        ],
+        [
+          [
+            778,
+            0
+          ],
+          [
+            0,
+            45
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500008,
+      "coverage": 0.703125,
+      "deadlock": 1,
+      "attempts": 2406,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.22385793711144414,
+      "transitionCounts": [
+        [
+          [
+            1636,
+            0
+          ],
+          [
+            0,
+            45
+          ]
+        ],
+        [
+          [
+            680,
+            0
+          ],
+          [
+            0,
+            44
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500009,
+      "coverage": 0.7265625,
+      "deadlock": 1,
+      "attempts": 1936,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.27170557117877076,
+      "transitionCounts": [
+        [
+          [
+            602,
+            0
+          ],
+          [
+            0,
+            46
+          ]
+        ],
+        [
+          [
+            1241,
+            0
+          ],
+          [
+            0,
+            46
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500010,
+      "coverage": 0.65625,
+      "deadlock": 1,
+      "attempts": 2347,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.20460036005964236,
+      "transitionCounts": [
+        [
+          [
+            1928,
+            0
+          ],
+          [
+            0,
+            42
+          ]
+        ],
+        [
+          [
+            335,
+            0
+          ],
+          [
+            0,
+            41
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500011,
+      "coverage": 0.71875,
+      "deadlock": 1,
+      "attempts": 2810,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.20011804832711727,
+      "transitionCounts": [
+        [
+          [
+            2036,
+            0
+          ],
+          [
+            0,
+            46
+          ]
+        ],
+        [
+          [
+            682,
+            0
+          ],
+          [
+            0,
+            45
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500012,
+      "coverage": 0.6328125,
+      "deadlock": 1,
+      "attempts": 3212,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.1499814652194687,
+      "transitionCounts": [
+        [
+          [
+            300,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        [
+          [
+            2831,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500013,
+      "coverage": 0.6796875,
+      "deadlock": 1,
+      "attempts": 2490,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.19657366481713973,
+      "transitionCounts": [
+        [
+          [
+            291,
+            0
+          ],
+          [
+            0,
+            43
+          ]
+        ],
+        [
+          [
+            2112,
+            0
+          ],
+          [
+            0,
+            43
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500014,
+      "coverage": 0.7109375,
+      "deadlock": 1,
+      "attempts": 2104,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.2437172464031159,
+      "transitionCounts": [
+        [
+          [
+            438,
+            0
+          ],
+          [
+            0,
+            45
+          ]
+        ],
+        [
+          [
+            1575,
+            0
+          ],
+          [
+            0,
+            45
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500015,
+      "coverage": 0.734375,
+      "deadlock": 1,
+      "attempts": 3651,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.16171836566048606,
+      "transitionCounts": [
+        [
+          [
+            2935,
+            0
+          ],
+          [
+            0,
+            47
+          ]
+        ],
+        [
+          [
+            622,
+            0
+          ],
+          [
+            0,
+            46
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "seed": 500016,
+      "coverage": 0.7421875,
+      "deadlock": 1,
+      "attempts": 2795,
+      "switchAfterFailure": 0,
+      "switchAfterSuccess": 1,
+      "conditionalMI": 0.20823761872438235,
+      "transitionCounts": [
+        [
+          [
+            808,
+            0
+          ],
+          [
+            0,
+            47
+          ]
+        ],
+        [
+          [
+            1892,
+            0
+          ],
+          [
+            0,
+            47
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500001,
+      "coverage": 0.7578125,
+      "deadlock": 0,
+      "attempts": 8105,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.0877815252947689,
+      "transitionCounts": [
+        [
+          [
+            0,
+            4004
+          ],
+          [
+            83,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4004
+          ],
+          [
+            13,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500002,
+      "coverage": 0.75,
+      "deadlock": 0,
+      "attempts": 5059,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.12071355828859151,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2482
+          ],
+          [
+            91,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2481
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500003,
+      "coverage": 0.7421875,
+      "deadlock": 0,
+      "attempts": 3445,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.17389836118060314,
+      "transitionCounts": [
+        [
+          [
+            0,
+            1675
+          ],
+          [
+            74,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1675
+          ],
+          [
+            20,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500004,
+      "coverage": 0.75,
+      "deadlock": 0,
+      "attempts": 3375,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.16904667292233974,
+      "transitionCounts": [
+        [
+          [
+            0,
+            1640
+          ],
+          [
+            87,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1639
+          ],
+          [
+            8,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500005,
+      "coverage": 0.765625,
+      "deadlock": 0,
+      "attempts": 6064,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.11757912030666154,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2983
+          ],
+          [
+            61,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2983
+          ],
+          [
+            36,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500006,
+      "coverage": 0.75,
+      "deadlock": 0,
+      "attempts": 2949,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.19384537466543988,
+      "transitionCounts": [
+        [
+          [
+            0,
+            1427
+          ],
+          [
+            80,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1426
+          ],
+          [
+            15,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500007,
+      "coverage": 0.7421875,
+      "deadlock": 0,
+      "attempts": 3241,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.189414378699318,
+      "transitionCounts": [
+        [
+          [
+            0,
+            1573
+          ],
+          [
+            47,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1573
+          ],
+          [
+            47,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500008,
+      "coverage": 0.7578125,
+      "deadlock": 0,
+      "attempts": 5461,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.1262305901969067,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2682
+          ],
+          [
+            32,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2682
+          ],
+          [
+            64,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500009,
+      "coverage": 0.75,
+      "deadlock": 0,
+      "attempts": 4785,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.14051608377685487,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2345
+          ],
+          [
+            52,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2344
+          ],
+          [
+            43,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500010,
+      "coverage": 0.7421875,
+      "deadlock": 0,
+      "attempts": 5859,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.11810622312043016,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2882
+          ],
+          [
+            57,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2882
+          ],
+          [
+            37,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500011,
+      "coverage": 0.78125,
+      "deadlock": 0,
+      "attempts": 4220,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.14679598945044198,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2060
+          ],
+          [
+            91,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2060
+          ],
+          [
+            8,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500012,
+      "coverage": 0.6953125,
+      "deadlock": 0,
+      "attempts": 4083,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.1453123939838081,
+      "transitionCounts": [
+        [
+          [
+            0,
+            1997
+          ],
+          [
+            68,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1997
+          ],
+          [
+            20,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500013,
+      "coverage": 0.7421875,
+      "deadlock": 0,
+      "attempts": 4268,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.14361993201854464,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2087
+          ],
+          [
+            81,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2086
+          ],
+          [
+            13,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500014,
+      "coverage": 0.7265625,
+      "deadlock": 0,
+      "attempts": 6011,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.11208771410706436,
+      "transitionCounts": [
+        [
+          [
+            0,
+            2959
+          ],
+          [
+            66,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2959
+          ],
+          [
+            26,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500015,
+      "coverage": 0.7421875,
+      "deadlock": 0,
+      "attempts": 3335,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.16825621677056735,
+      "transitionCounts": [
+        [
+          [
+            0,
+            1620
+          ],
+          [
+            87,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1620
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "seed": 500016,
+      "coverage": 0.765625,
+      "deadlock": 0,
+      "attempts": 7016,
+      "switchAfterFailure": 1,
+      "switchAfterSuccess": 0,
+      "conditionalMI": 0.09351626202269149,
+      "transitionCounts": [
+        [
+          [
+            0,
+            3459
+          ],
+          [
+            95,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3459
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500001,
+      "coverage": 0.765625,
+      "deadlock": 0,
+      "attempts": 6121,
+      "switchAfterFailure": 0.4987547733687531,
+      "switchAfterSuccess": 0.5567010309278351,
+      "conditionalMI": 0.000307774486307208,
+      "transitionCounts": [
+        [
+          [
+            1481,
+            1501
+          ],
+          [
+            27,
+            28
+          ]
+        ],
+        [
+          [
+            1538,
+            1503
+          ],
+          [
+            16,
+            26
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500002,
+      "coverage": 0.7734375,
+      "deadlock": 0,
+      "attempts": 11131,
+      "switchAfterFailure": 0.503535170413343,
+      "switchAfterSuccess": 0.46938775510204084,
+      "conditionalMI": 0.00004579278379945383,
+      "transitionCounts": [
+        [
+          [
+            2785,
+            2785
+          ],
+          [
+            15,
+            15
+          ]
+        ],
+        [
+          [
+            2692,
+            2770
+          ],
+          [
+            37,
+            31
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500003,
+      "coverage": 0.7421875,
+      "deadlock": 0,
+      "attempts": 4373,
+      "switchAfterFailure": 0.517531556802244,
+      "switchAfterSuccess": 0.5212765957446809,
+      "conditionalMI": 0.000011591311112684263,
+      "transitionCounts": [
+        [
+          [
+            1067,
+            1107
+          ],
+          [
+            24,
+            24
+          ]
+        ],
+        [
+          [
+            997,
+            1107
+          ],
+          [
+            21,
+            25
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500004,
+      "coverage": 0.7265625,
+      "deadlock": 0,
+      "attempts": 4366,
+      "switchAfterFailure": 0.4956704891177159,
+      "switchAfterSuccess": 0.43478260869565216,
+      "conditionalMI": 0.000549792077204979,
+      "transitionCounts": [
+        [
+          [
+            1131,
+            1068
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        [
+          [
+            1024,
+            1050
+          ],
+          [
+            43,
+            29
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500005,
+      "coverage": 0.734375,
+      "deadlock": 0,
+      "attempts": 4688,
+      "switchAfterFailure": 0.49216369177187635,
+      "switchAfterSuccess": 0.4838709677419355,
+      "conditionalMI": 0.00004756220728842703,
+      "transitionCounts": [
+        [
+          [
+            1160,
+            1131
+          ],
+          [
+            26,
+            22
+          ]
+        ],
+        [
+          [
+            1173,
+            1130
+          ],
+          [
+            22,
+            23
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500006,
+      "coverage": 0.7265625,
+      "deadlock": 0,
+      "attempts": 6790,
+      "switchAfterFailure": 0.5048529192175601,
+      "switchAfterSuccess": 0.5,
+      "conditionalMI": 0.0001695336803889006,
+      "transitionCounts": [
+        [
+          [
+            1628,
+            1696
+          ],
+          [
+            11,
+            17
+          ]
+        ],
+        [
+          [
+            1688,
+            1685
+          ],
+          [
+            35,
+            29
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500007,
+      "coverage": 0.75,
+      "deadlock": 0,
+      "attempts": 5559,
+      "switchAfterFailure": 0.5066813106351822,
+      "switchAfterSuccess": 0.4421052631578947,
+      "conditionalMI": 0.0003232362273218291,
+      "transitionCounts": [
+        [
+          [
+            1346,
+            1381
+          ],
+          [
+            25,
+            24
+          ]
+        ],
+        [
+          [
+            1349,
+            1387
+          ],
+          [
+            28,
+            18
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500008,
+      "coverage": 0.765625,
+      "deadlock": 0,
+      "attempts": 15836,
+      "switchAfterFailure": 0.494281357224552,
+      "switchAfterSuccess": 0.5257731958762887,
+      "conditionalMI": 0.000019427896256196702,
+      "transitionCounts": [
+        [
+          [
+            3903,
+            3888
+          ],
+          [
+            25,
+            27
+          ]
+        ],
+        [
+          [
+            4056,
+            3891
+          ],
+          [
+            21,
+            24
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500009,
+      "coverage": 0.7421875,
+      "deadlock": 0,
+      "attempts": 6028,
+      "switchAfterFailure": 0.4945221641665262,
+      "switchAfterSuccess": 0.5638297872340425,
+      "conditionalMI": 0.00022047140385701974,
+      "transitionCounts": [
+        [
+          [
+            1473,
+            1462
+          ],
+          [
+            25,
+            31
+          ]
+        ],
+        [
+          [
+            1526,
+            1472
+          ],
+          [
+            16,
+            22
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500010,
+      "coverage": 0.7734375,
+      "deadlock": 0,
+      "attempts": 8742,
+      "switchAfterFailure": 0.4994793474488025,
+      "switchAfterSuccess": 0.5714285714285714,
+      "conditionalMI": 0.00018513556552009,
+      "transitionCounts": [
+        [
+          [
+            2188,
+            2157
+          ],
+          [
+            24,
+            29
+          ]
+        ],
+        [
+          [
+            2138,
+            2160
+          ],
+          [
+            18,
+            27
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500011,
+      "coverage": 0.734375,
+      "deadlock": 0,
+      "attempts": 4117,
+      "switchAfterFailure": 0.5060899826000497,
+      "switchAfterSuccess": 0.46236559139784944,
+      "conditionalMI": 0.000137348470669574,
+      "transitionCounts": [
+        [
+          [
+            1035,
+            1023
+          ],
+          [
+            19,
+            16
+          ]
+        ],
+        [
+          [
+            952,
+            1013
+          ],
+          [
+            31,
+            27
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500012,
+      "coverage": 0.75,
+      "deadlock": 0,
+      "attempts": 6956,
+      "switchAfterFailure": 0.5020408163265306,
+      "switchAfterSuccess": 0.5263157894736842,
+      "conditionalMI": 0.00003619186420623476,
+      "transitionCounts": [
+        [
+          [
+            1727,
+            1721
+          ],
+          [
+            22,
+            26
+          ]
+        ],
+        [
+          [
+            1689,
+            1723
+          ],
+          [
+            23,
+            24
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500013,
+      "coverage": 0.734375,
+      "deadlock": 0,
+      "attempts": 13771,
+      "switchAfterFailure": 0.5023031366527747,
+      "switchAfterSuccess": 0.5591397849462365,
+      "conditionalMI": 0.0001443061890769533,
+      "transitionCounts": [
+        [
+          [
+            3478,
+            3441
+          ],
+          [
+            11,
+            20
+          ]
+        ],
+        [
+          [
+            3329,
+            3429
+          ],
+          [
+            30,
+            32
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500014,
+      "coverage": 0.7265625,
+      "deadlock": 0,
+      "attempts": 5072,
+      "switchAfterFailure": 0.5023097007431211,
+      "switchAfterSuccess": 0.4891304347826087,
+      "conditionalMI": 0.000012031223488396784,
+      "transitionCounts": [
+        [
+          [
+            1247,
+            1249
+          ],
+          [
+            26,
+            24
+          ]
+        ],
+        [
+          [
+            1231,
+            1252
+          ],
+          [
+            21,
+            21
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500015,
+      "coverage": 0.78125,
+      "deadlock": 0,
+      "attempts": 5095,
+      "switchAfterFailure": 0.4974974974974975,
+      "switchAfterSuccess": 0.5353535353535354,
+      "conditionalMI": 0.00007864580702824725,
+      "transitionCounts": [
+        [
+          [
+            1297,
+            1243
+          ],
+          [
+            23,
+            26
+          ]
+        ],
+        [
+          [
+            1213,
+            1242
+          ],
+          [
+            23,
+            27
+          ]
+        ]
+      ]
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "seed": 500016,
+      "coverage": 0.7578125,
+      "deadlock": 0,
+      "attempts": 2575,
+      "switchAfterFailure": 0.49838579499596447,
+      "switchAfterSuccess": 0.5416666666666666,
+      "conditionalMI": 0.00021554158237022507,
+      "transitionCounts": [
+        [
+          [
+            614,
+            618
+          ],
+          [
+            23,
+            26
+          ]
+        ],
+        [
+          [
+            629,
+            617
+          ],
+          [
+            21,
+            26
+          ]
+        ]
+      ]
+    }
+  ]
+}

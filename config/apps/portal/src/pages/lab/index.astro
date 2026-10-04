@@ -1,0 +1,6 @@
+---
+import Fragments from '../../q7/1.astro';
+import {laboratories,labLink} from '../../z/map.mjs';
+import '../../aaa/迷宫.css';import '../../z/0.css';
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>实验室 · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class="maze-page"><Fragments/><div class="maze-background"><div class="maze-background-grid"></div></div><header class="maze-header"><a href="/maze/">OCV</a><a href="/functions/">工具</a></header><main class="lab-directory">{laboratories.map(item=><a href={labLink(item)}>{item.title} ↗</a>)}</main><a href="/#systems" class="maze-exit" aria-label="返回主页">↖</a></body></html>

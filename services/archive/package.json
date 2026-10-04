@@ -1,0 +1,36 @@
+{
+  "name": "@omnicivitas/archive",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "node --check src/api/main.mjs"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.17",
+    "@nestjs/common": "12.1.2",
+    "@nestjs/core": "12.1.2",
+    "@omnicivitas/shared-types": "workspace:*",
+    "amqplib": "~0.10.9",
+    "csv-parse": "^6.2.1",
+    "got": "^14.6.6",
+    "graphql": "^16.14.2",
+    "hono": "^4.13.12",
+    "ioredis": "^6.0.0",
+    "kafkajs": "2.2.4",
+    "minio": "^8.0.7",
+    "mongoose": "^8.24.4",
+    "pg": "^8.23.1",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "yaml": "^2.9.1"
+  },
+  "nx": {
+    "name": "archive",
+    "targets": {
+      "build": {
+        "outputs": []
+      }
+    }
+  }
+}

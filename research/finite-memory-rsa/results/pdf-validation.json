@@ -1,0 +1,21 @@
+{
+  "pages": 10,
+  "sha256": "2078ec31d90b99bc8cdb1b2d0eae9bd6c5e6281ff1e7df21279e7cee4872359b",
+  "renderDpi": 100,
+  "allPagesRendered": true,
+  "allPagesVisuallyReviewed": true,
+  "lastEditorialPagesReviewed": [
+    6,
+    9
+  ],
+  "finalFontAttachmentPixelChanges": [],
+  "embeddedFontNotice": true,
+  "textTokensVerified": [
+    "Abstract",
+    "References",
+    "0.906823",
+    "226,816",
+    "0.00703"
+  ],
+  "observations": "All10pages inspected; no clipped text, overlaps, broken tables or unreadable replacement glyphs. Final font-notice attachment left every rendered pixel unchanged."
+}

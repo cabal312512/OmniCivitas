@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "profile": "quick",
+  "startedAt": "2026-10-03T19:53:15.551Z",
+  "status": "passed",
+  "runtime": {
+    "node": "v24.14.1",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "sourceOnly": true,
+  "archivedRawCopied": false,
+  "archivedLocksCopied": false,
+  "packagesInstalled": false,
+  "stage1SimulationRun": false,
+  "testsRun": false,
+  "websiteStarted": false,
+  "scientificSampleSizeIncremented": false,
+  "sourceSha256": {
+    "THIRD_PARTY_NOTICES.md": "49d6b13ef432e06e05efb6f276195218c672cb6cf48af86cab850ce4d0bcd74a",
+    "analysis/summarize.mjs": "b97040d661e77d8169918881fd5d0f4073c7f2cc8bd506de049be2b6e2b2bafb",
+    "src/controllers.mjs": "6e31d6452c8bca9e78e651bb91ddfc06b9665bd3b33f59346a55499e0a301ba8",
+    "src/exact.mjs": "0adde531dfee6a04692b04c3208ff528f8bfb01936078b2932371d20dddb10af",
+    "src/lattice.mjs": "dfb22252873f7ee861d24fc35b32f67e47785466b9ee8096c063e4aec041f029",
+    "src/rng.mjs": "a0af386efd47f97c85eda77fbe7ee175af21dc7d828411004486298d5153aecc",
+    "stage2/analysis/figures-screen.py": "5a5bfde4403ac1cbf5e3cde6fbca71d1c5df1a49bcd7928297695b6ec750c7cb",
+    "stage2/analysis/figures.py": "758783e296d5b1acb09d270047eda7f08134eec28c83bf8846c2ec9220570a54",
+    "stage2/analysis/summarize-guard-amendment.mjs": "47fe48e4561234a7f55e3299bea582b8d6604215c7d729b18b429261148061ae",
+    "stage2/analysis/summarize.mjs": "b158b2bdf12f4e198526b8967bfa0b2ce825088f7613eba8b60e23e43c770a52",
+    "stage2/docs/ANALYSIS_SOURCE_AMENDMENT.md": "7552749dcd53c2df60a1064dc8e019856404b9f6e997e0befa3962f6a798385b",
+    "stage2/docs/EXACT_VALIDATION.md": "06fd23082c455c4b258fda26785e7157759dca16bbafad035c5802cde0f658b5",
+    "stage2/docs/EXECUTION_PLAN.md": "eff7d1b4ba9c76aaeb069fc41a4fa132dd1c8bbac4bc56c7fc698044d38cb145",
+    "stage2/docs/OPEN_QUESTIONS.md": "ceeab7f7db69a7acac1e7bae54f9e156e5973ee52a61d6d5171f112296650df2",
+    "stage2/docs/RARE_EXCURSIONS.md": "8ea25e12bb20f5217479a2ac6b1f6e0288e3737ed3bb8c1939a39826a3e9bdb3",
+    "stage2/docs/REPRODUCTION.md": "3b7b03b3af95c03b1f2cc80b212a446edd098818eabd15fbce55b25fa2e549f4",
+    "stage2/docs/REQUIREMENTS_COVERAGE.md": "e131667b95c2649f4060892e92bed1be09f3cf124ed1617403e864fb74ac2ac5",
+    "stage2/docs/SIMULATOR.md": "c9a63c05598d9d8e4644957413eb7d1ea2657adbf6146945dc726787ca2dbee7",
+    "stage2/docs/SIMULATOR_REVIEW.md": "ba1ccb2f184799c52670e7d0d4fd3908287d85a954f473d1b4b8c4cbad93d3cc",
+    "stage2/docs/STATISTICAL_PROTOCOL.md": "7532859f4485e3e45df3ae65dd4eeff1fd7c1f49f867a135147919e01407537a",
+    "stage2/docs/THEORY.md": "68ce899e1fe86330c8fc45021ce45cba7931b819b02240f9b6df697389733710",
+    "stage2/docs/confirmation-before-run.json": "10f4b77c1ad71987bc8f7e58b0153d6bd2e7ae7d6b22b4182a16d9008be19fb6",
+    "stage2/docs/reproduction-plan.json": "5cfee1374d271bdeb26dd62e9d33430b93e984ed190d23f087669e72bc2b6cd8",
+    "stage2/docs/stage1-preservation-before.json": "1313e8b44184032a937e374d3cfac15ccffe1dda2ef40d6e7937a562cd349dff",
+    "stage2/docs/user-brief.txt": "352e821bcba713bc5c69be62b017ffae5409a71927364c71cfb538e962bbb6bd",
+    "stage2/experiments/confirmation-spec.json": "c2b154d45df1ed66c345b94371a1c52a78a2330e205fb66ac8f5a0f7ca2f3955",
+    "stage2/experiments/confirmation.json": "c36546054773257a42b2e2d671cbee8f57bf755173321c124471b3ecb1292374",
+    "stage2/experiments/confirmation_stability.json": "a75f64cf5609c321fa48e5613f333d177d94af4e8cef13a1580db3b10a820c89",
+    "stage2/experiments/exact_validation_direct.json": "f44c44d6ef6bed5a12e771a9a9c003a3b8fc40891a3b19ba2a1516f6edbb22bd",
+    "stage2/experiments/exact_validation_event.json": "5bfa47777a5ea0f886d42735d37b85c35d0f11fb9e3bef65ae6ddf87734f0370",
+    "stage2/experiments/landscape.json": "b34e9e8897a0060386b4e78d258c5c2d66023ccfe44ce45f84e84e33bee715a5",
+    "stage2/experiments/large_size.json": "445ac6c9aa375ed7b703475dfa1ffcb46a78861cefc938afa8adde7d4612b5d7",
+    "stage2/experiments/refinement.json": "0b649f2c9f9854bc18fe575c008f9c75cbc7111c72032a71b92c6acd713d2888",
+    "stage2/experiments/refinement_success_flip.json": "08c753d1d0238ef03b382fd1f071bea4d537a5852342101a3740930bb3203651",
+    "stage2/literature/notes.md": "f57559de871c60f01b1893b18b4ce577e0bd658dd12bc36bfe75598644a0a2a4",
+    "stage2/literature/references.bib": "c27ce74d9fe315cac4577ad26103148cceab5f953f827296bc7505959c640119",
+    "stage2/scripts/prepare-confirmation.mjs": "9af40bd9947c462d4a5e2ad674a4622cffa114588e1e2ea7e690d4f0461b5629",
+    "stage2/scripts/rare-excursions.mjs": "db06d0c6d6c822921575ee6d2a8511d20766beb54fed7f76fd09d871af54033c",
+    "stage2/scripts/reproduce.mjs": "a91ba4258edd869fe028952b9ccc8c4f638f7c91869048e84634cdf894cb24af",
+    "stage2/scripts/run-experiment.mjs": "03006c00e56b7a2f9fe6121d33eff2975946dffe63673a7b691e0c3ec6893498",
+    "stage2/scripts/validate-exact.mjs": "4005086c2d718cac6cc3d5b71bfed8eccc386408b52fcf3cef988eaffcd6ac87",
+    "stage2/src/exact-stochastic.mjs": "c4f03b22c066a97cf7ad3f84c8ef631be9ac1acbca09ebda165b3d3c362f8fb5",
+    "stage2/src/stochastic.mjs": "49586d0fadb4ad0b5d93c1537c4025a17b9c1b121b5cbfab264934329f088c26",
+    "stage2/tests/exact-stochastic.test.mjs": "5d9d958f98ff94c3f2a2809d90efdec235794bce6d6ce040a94da655581e35a3",
+    "stage2/tests/statistics.test.mjs": "ed929b485d73da4db8fc18009dda37e2d78afb8be5241cb582fe78e01b117140",
+    "stage2/tests/stochastic.test.mjs": "c14893b44f3529ee6e0db3f38e5036151ee1edd1963167797b8a18f54394cd05"
+  },
+  "commands": [
+    {
+      "label": "stage2-exact",
+      "args": [
+        "stage2/src/exact-stochastic.mjs"
+      ],
+      "startedAt": "2026-10-03T19:53:15.578Z",
+      "log": "stage2/results/stage2-exact.log",
+      "finishedAt": "2026-10-03T19:53:15.763Z",
+      "exitCode": 0
+    },
+    {
+      "label": "quick-simulation",
+      "args": [
+        "stage2/scripts/run-experiment.mjs",
+        "experiments/reproduction-quick.json"
+      ],
+      "startedAt": "2026-10-03T19:53:15.771Z",
+      "log": "stage2/results/quick-simulation.log",
+      "finishedAt": "2026-10-03T19:53:15.881Z",
+      "exitCode": 0
+    },
+    {
+      "label": "quick-analysis",
+      "args": [
+        "stage2/analysis/summarize.mjs",
+        "--input",
+        "stage2/data/raw/quick-pilot.csv",
+        "--output",
+        "stage2/data/processed/quick"
+      ],
+      "startedAt": "2026-10-03T19:53:15.881Z",
+      "log": "stage2/results/quick-analysis.log",
+      "finishedAt": "2026-10-03T19:53:16.516Z",
+      "exitCode": 0
+    }
+  ],
+  "experiments": [
+    {
+      "experiment": "quick-pilot",
+      "rows": 128,
+      "seedBlocks": [
+        {
+          "L": 16,
+          "k": 4,
+          "boundary": "periodic",
+          "seedStart": 60000001,
+          "repetitions": 16,
+          "arms": 8
+        }
+      ],
+      "manifest": "stage2/data/raw/quick-pilot.manifest.json",
+      "sha256": "04c44faf527746619950724e76b9efbb17771ec90d67aad3b779be7d81ec9688",
+      "histogramSha256": "13906b063c5ef1a1e231fc1019e8998c4e3afeba850d5475164dc94b44a93f7d",
+      "startedAt": "2026-10-03T19:53:15.837Z",
+      "finishedAt": "2026-10-03T19:53:15.858Z"
+    }
+  ],
+  "limitations": [
+    "Quick is an implementation smoke check, not independent scientific confirmation.",
+    "Full reconstructs the frozen seed blocks; replay does not add independent samples.",
+    "No Stage I simulation, integrated test suite, optional Python plots/PDFs or rare-excursion diagnostic is run.",
+    "Actual cross-platform execution must be recorded separately."
+  ],
+  "sourceFiles": 46,
+  "exact": {
+    "cases": 52,
+    "coreGrid": [
+      "0",
+      "1/2",
+      "1"
+    ],
+    "additionalPairs": [
+      [
+        "1/4",
+        "3/4"
+      ],
+      [
+        "3/4",
+        "1/4"
+      ],
+      [
+        "0",
+        "1/4"
+      ],
+      [
+        "1",
+        "1/4"
+      ]
+    ],
+    "sha256": "97287489ae97af65a36c9f77d1e4880c456975fdf2c5c9cca2d470213f2d2a93"
+  },
+  "analysis": {
+    "rows": 128,
+    "groups": 8,
+    "confirmation": "not-requested"
+  },
+  "finishedAt": "2026-10-03T19:53:16.518Z"
+}

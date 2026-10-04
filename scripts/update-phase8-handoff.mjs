@@ -1,0 +1,34 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {read,sha} from './inspect-phase8-runtime.mjs';
+const state=read('docs/phase-state.json'),r=read('docs/phase-8-acceptance.json');assert.equal(state.phase,8);assert.equal(state.status,'complete');assert.equal(state.nextPhaseAuthorized,false);assert.equal(r.requirementCount,318);assert.equal(r.browser.count,460);assert.equal(r.unit.count,190);
+const protectedFiles=['PROJECT_SPEC.txt','AI写的提示词.txt','docs/requirements.json','docs/technologies.json','docs/phase-state.json','docs/phase-8-acceptance.json','docs/phase-7-acceptance.json'],protectedHashes=new Map(protectedFiles.map(f=>[f,sha(fs.readFileSync(f))]));
+const status=`2026-10-03，第八阶段已完成并停止。318 条逐条核对：312 verified、6 verified-with-override；新增 18 个事故页面，原 101 工具/13 组和旧叠层保留。460/460 全新完整浏览器检查（本阶段 88＋旧回归 372），190/190 合并单测（本阶段 22＋旧 168）通过，无失败、跳过、flaky 或重试拼接。第九阶段未授权。报告 docs/PHASE-8-ACCEPTANCE.md / phase-8-acceptance.json。`;
+const runtime=`${r.HTTP.length} 页面 HTTP 200，真实 404 页内小游戏/计算器/搜索工作；8 次账户 GET/POST 均 404，PostgreSQL 停用账户表 0|0|0。仅六健康 core，caps 合计 ${r.totalCapsMiB} MiB，3 GiB builder 已停止。Hono 128 MiB 只在配置核对时临时启动，已关闭。Docker/WSL 工作集最后采样 ${r.memory.totalWorkingSetMiB.toFixed(1)} MiB（${r.memory.sampledAt}），不是长期峰值保证。`;
+const files=[
+ ['config/apps/portal/src/report/list.mjs、index.astro、2.css','18 房间真实路由/分散表单、复制许可、假死、错位窗、滚动回弹、客服、假状态、旧 iframe、公告、错误、加载、教程、成就及历史货架；固定出口优先'],
+ ['config/apps/portal/src/report/report.js','原生操作、真实四秒恢复、有限确认、103→100、取消 job 序号、精确 clipboard、实际 200/400 ms、拖动位置、离开清理/返回重启；SVG 使用 hidden attribute'],
+ ['config/apps/portal/src/report/price.mjs、award.js、badge.astro','Gregorian 日期、非线性 slider、43/-17 秒、本地具名进度；真实七成就、五组使用、三页 BroadcastChannel、任意精度文明指数，安静扉页不显示新牌匾'],
+ ['config/apps/portal/src/pages/incidents/、pages/404.astro、pages/500.astro、pages/search.astro、infra/nginx/portal.conf','真实静态事故页、旧 iframe、HTTP 404 内联井字棋与有限加法、HTTP 500 有限重试、GET 搜索；未挂账户 API'],
+ ['config/apps/portal/src/old/','login→login_old→login_new_final→login_2019_backup 是固定虚构货架调用，绝非账号。十二 if/16 参数/callback Promise async/606 行 switch/三手写 enum/海鲜排序/补考限制/停车数组实际调用'],
+ ['historical/旧业务/','21 个原创停用文件，Java/Spring/Python/FastAPI/PHP/Go/Rust/C#/Ruby/Lua/CoffeeScript/Shell/三 SQL/两 proto/Kubernetes/Maven/Terraform/Biome；不入默认构建，不安装历史链'],
+ ['pcakage/build2/、scripts/phase8-build.mjs','Gulp 真复制两 CSS；Babel 单旧 JS；Webpack CommonJS 真停车数组；两个 ESLint scope、Prettier、局部 Stylelint 真校验并拒绝坏样例；四输出按 byte/hash 部署'],
+ ['services/gateway/src/runtime-store.ts、main.ts、prisma/migrations/20261003010000_museum/','核心 PostgreSQL 配置 46 与无意义数值指标；三索引、128 行保留；严格 enum/数值输入，没有任意用户内容'],
+ ['services/archive/src/api/main.mjs、scripts/verify-phase8-secondary.mjs','真实 Hono JSON 优先选 44，真实 Nest 环境优先选 43，都读核心 PG，最终固定适配 43；临时单服务验证后关停，不依赖可选服务运行普通工具'],
+ ['tests/phase8-models.test.mjs、tests/browser/phase8.spec.mjs、tests/browser/phase8-errors.spec.mjs、playwright.phase8.config.mjs','22 新单测/88 新浏览器检查，合并原 168/372；真实等待与 native 表单、pointer drag、keyboard、clipboard、离线/多页；模拟 clock/seek/persisted 明示'],
+ ['scripts/phase8-source-review.mjs、inspect-phase8-runtime.mjs、record-phase8-acceptance.mjs、update-phase8-handoff.mjs','91 项实际源体/停用角色审查、真实 HTTP/许可/PG/core/F 存储保护；仅全部最终证明通过后写 318 行与 21 技术角色'],
+ ['docs/phase-8-plan.json、PHASE-8-SOURCES.md、PHASE-8-ACCEPTANCE.md、phase-8-acceptance.json','318 原文、六最新覆盖、18 页面、独立证据/源 hash/失败诊断；完整栈/公开部署审计仍待第九阶段'],
+];
+const boundaries='日期、导出、复制和正常工具仍保证正确；新事件不收集账户信息，不上传客服输入。成就仅存 version/index/awards/tools/groups/compat，指数无自设数值上限；localStorage 满则退内存。悬浮挡板只显式记录当前位置，不记录路径。展示用指标不影响正常权限。四秒假死暂停本站动画/操作而不锁主线程，固定出口仍可用。';
+const history='第一次专项 75/80：SVG hidden 属性写法错误、时钟安装晚于创建定时器、手机错位 toast 原生悬停不可达。修正原生 SVG attribute，时钟在导航前安装；桌面真实悬停关闭，手机原生键盘关闭，未修整用户要求的手机越界。修正后专项 84/84。第一次完整 456/458，发现玻璃滤镜使卡内 fixed 定位失效，聚焦提前滚动，80% 返回顶部步骤落空；把按钮移出该卡片，保持原中间态断言。另补真实 HTTP 500、旧版顺序、真实 pointer 拖动和 1100 位 BigInt 边界。Docker Hub token EOF 曾阻止部署，一次 0/4 专项误测旧版本，独立保留且不计验收；按相同 F 存储保护重试。500 页因 Astro 实际输出 500.html 而非 500/index.html 曾返回 404，修正 Nginx 后四项专项通过。final-2 主动中断：固定费率原先只打印，现真正用于 opacity；诊断原先仅为整个可见提示的 9.8 倍，增至十倍以上并核对最终建议。final-3 实际完整 459/460，清理时已完成，并非未完成运行：旧逃跑测试的悬停鼠标会在读数与按键之间触发额外逃跑，验证首次悬停后移开真实鼠标，保留 5–30 次与完成断言；桌面和手机各五次专项通过。中断/清理记录和所有旧失败均保留、不作为验收。最终只使用修复后全新完整 460/460 与 190/190，无拼接，成功 sealed 构建日志保留，未改 C 默认路径。';
+const handoff=[status,'',runtime,'',boundaries,'','### 第八阶段文件地图','', '| 文件/目录 | 作用 |','| --- | --- |',...files.map(([f,d])=>`| ${f} | ${d} |`),'',
+ '入口 /incidents/，经典首页牌匾和原目录搜索可进入；18 页面内容不同，不把所有戏法塞首页。旧的登录蓝色临时信息卡保持停用，四个指定素材与 27 迷宫保留。逃跑 5–30 次、持续变速不自动停止、手机越界以及没有“停止乱动”按钮继续遵从最新用户要求。', '',
+ `完整证明 ${r.browser.report}；单测 ${r.unit.report}；小构建 runtime/reports/phase8-build.json，实际部署成功日志 runtime/reports/phase8-build-sealed.log，配置服务分批证据 runtime/reports/phase8-secondary.json。`, '',history,'',
+ '实际四秒恢复、十秒成就等待和 200/400 ms 阶段使用真实计时；CSS 时间轴 seek、标签标题 clock、persisted 事件属于模拟检查，不能当作实际长时运行/BFCache/系统挂起证明。', '',
+ '七个新直接构建包已按需装在本地依赖根，版本/原始 MIT 许可核对。原十份许可逐字节保留，归属声明只追加新工具段。停用历史源码全部原创，未执行 Terraform/Kubernetes 或安装 Rust/Lua 等历史链。', '',
+ '第九阶段没有开始。下一阶段需独立从两原文审计 732 项及 146 技术/34 类别/12 截图要求，真实完整栈按内存分批验证，再做 public release portability audit：本机路径、ports/host、named volumes、env/secrets/gitignore、全部许可/用户素材、干净 clone 从零安装启动及多平台。当前 standard 安装 guard 仍有本机耦合；不要宣称已经可公开部署，不自动发布仓库。',
+].join('\n');
+const marker=b=>'<!-- phase8-current-start -->\n'+b+'\n<!-- phase8-current-end -->';
+for(const[file,body]of [['docs/HANDOFF.md',handoff],['docs/PROGRESS.md',status+'\n\n'+runtime+'\n\n'+boundaries+'\n\n'+history],['docs/PHASES.md',status],['docs/DECISIONS.md',status+'\n\n'+boundaries+'\n\n'+history]]){let text=fs.readFileSync(file,'utf8').replace(/\r\n/g,'\n');assert.ok(text.includes('<!-- phase8-current-start -->'));text=text.replace(/<!-- phase8-current-start -->[\s\S]*?<!-- phase8-current-end -->/,marker(body));if(file==='docs/PROGRESS.md')text=text.replace(/^# 第八阶段进行中/, '# 第八阶段已完成并停止');fs.writeFileSync(file,text);}
+const sources=fs.readFileSync('docs/PHASE-8-SOURCES.md','utf8').replace('它保留原文，状态仍待真实验收；第九阶段不自动开始。','原文保留，318 条已完成真实验收，详见 PHASE-8-ACCEPTANCE.md；第九阶段未授权。');fs.writeFileSync('docs/PHASE-8-SOURCES.md',sources);
+let readme=fs.readFileSync('README.md','utf8').replace(/\r\n/g,'\n');const at=readme.indexOf('\n当前网页：');assert.ok(at>0);readme='# OmniCivitas / 人类文明技术结晶\n\n接手入口：[零上下文交接文档](docs/HANDOFF.md)。[第八阶段](docs/PHASE-8-ACCEPTANCE.md)已完成：318 条逐条核对，18 新事故页面，累计 101 工具/13 组。460/460 全新完整浏览器检查、190/190 合并单测通过。第九阶段未授权。\n\n入口 /incidents/、/functions/、/functions/games/。安静扉页、失修重叠窗、27 迷宫和四个指定素材保留；旧版前端源码保留停用。\n\n'+runtime+'\n\n'+boundaries+'\n\nGulp/Babel/Webpack/ESLint/Prettier/Stylelint 执行各自很小的真实任务；历史多语言/Kubernetes/Maven/Terraform/Biome 只按停用源码角色保留。原十份及七份新直接依赖许可核对。公开部署、干净 clone、多平台和完整许可审计仍在第九阶段。\n'+readme.slice(at);fs.writeFileSync('README.md',readme);
+for(const[f,hash]of protectedHashes)assert.equal(sha(fs.readFileSync(f)),hash,'Protected delivery changed '+f);
+console.log('Phase 8 handoff and current file map updated; phase 9 not authorized.');

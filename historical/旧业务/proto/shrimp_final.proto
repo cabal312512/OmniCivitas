@@ -1,0 +1,1 @@
+syntax = "proto3"; package shrimp.v2; message Dispatch { string warehouse_id = 1; uint32 box_count = 2; string frozen_level = 3; }

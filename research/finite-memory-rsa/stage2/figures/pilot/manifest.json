@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 2,
+  "figures": [
+    {
+      "name": "landscape-landscape-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-landscape-L64-k4-periodic.pdf",
+          "sha256": "1fd5d78260bdbdf5e62f6c091bc8561912baa9267d00fa06249dee27961709e2"
+        },
+        {
+          "file": "landscape-landscape-L64-k4-periodic.png",
+          "sha256": "9bffaae023dba4056b3720dd8ece5625fb4956c8e8143043ceb4a6f8085adbf9"
+        },
+        {
+          "file": "landscape-landscape-L64-k4-periodic.svg",
+          "sha256": "3daf63cea2ce1a68ce2f3f9d5c671ca3d7c4da4962ced590365c0470e6d61d78"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-landscape-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-landscape-L64-k8-periodic.pdf",
+          "sha256": "96d8ea58237cbbe5a4dcc444008a42babed4a270c5417f674faf44d7b1805419"
+        },
+        {
+          "file": "landscape-landscape-L64-k8-periodic.png",
+          "sha256": "4bb0328f3ed504ce4f2f12cc4630cad742c49f40269cb686114c7577c8afd87c"
+        },
+        {
+          "file": "landscape-landscape-L64-k8-periodic.svg",
+          "sha256": "9caf726cec1e8f3487e94cf2e3178bb8ae0696a81192d44f28fdddbd6a64409c"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-refinement-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-refinement-L64-k4-periodic.pdf",
+          "sha256": "5fab5b26025faccebfc753f49bcc089e2e092bc1a4e397ba3a61dcd5b1645ae0"
+        },
+        {
+          "file": "landscape-refinement-L64-k4-periodic.png",
+          "sha256": "ac5ab8c8f611e59cf27a567d7532b34bb464335de6524f9c23e81435cc23faa6"
+        },
+        {
+          "file": "landscape-refinement-L64-k4-periodic.svg",
+          "sha256": "f8e668b37483a986f237c68602eeb6cdf4a6070262b2f10bf521b3343bc87995"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-refinement-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-refinement-L64-k8-periodic.pdf",
+          "sha256": "85aee74cdf83b68d8a9ec1d6cf9b00a96bfd556b13d0d847288aee41d8c43428"
+        },
+        {
+          "file": "landscape-refinement-L64-k8-periodic.png",
+          "sha256": "63f77db0a79d4cc1664c513c1af16d9bf455b0256a28cb8f8ba7a8606e657999"
+        },
+        {
+          "file": "landscape-refinement-L64-k8-periodic.svg",
+          "sha256": "0d1f5c8ec3c4d12f827c17536c34d66ceeeea5571abccc5e98760a920b8286d9"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "frontier-landscape-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-landscape-L64-k4-periodic.pdf",
+          "sha256": "69e7679dd92c593ca22ade1cd013e60e271534961a17d8349927e90b1f44e558"
+        },
+        {
+          "file": "frontier-landscape-L64-k4-periodic.png",
+          "sha256": "1c9d3578880ec378fba6df2d3e0110e1fd66de04412409b9aee3a5ff83cab84d"
+        },
+        {
+          "file": "frontier-landscape-L64-k4-periodic.svg",
+          "sha256": "d1e7a865aed73b8a0429ee5653660ac576a15018225b8007da34414823a3c2d1"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "frontier-landscape-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-landscape-L64-k8-periodic.pdf",
+          "sha256": "f232fb40d9ce386b854fcd82296334b0ef56dc685e825b15d4260845e16ea71c"
+        },
+        {
+          "file": "frontier-landscape-L64-k8-periodic.png",
+          "sha256": "5c0cad28b2d85a011fe9a60cb54a4cffc2637572e32ff841e6ef6b21758286d5"
+        },
+        {
+          "file": "frontier-landscape-L64-k8-periodic.svg",
+          "sha256": "98d7ac088113661d2cb73e58ac0206e4da30f029a778f688d4d4ff76689c72f3"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "landscape-exploration-combined-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-exploration-combined-L64-k4-periodic.pdf",
+          "sha256": "1234418e9b681b77d637a641c953b612676bc1f4794c2f3f27edd90697e64dac"
+        },
+        {
+          "file": "landscape-exploration-combined-L64-k4-periodic.png",
+          "sha256": "4c5cfb6a9862d9ee3a757fcc620fd7017ba3e6f241d746e7616ec8d6f67fc6bb"
+        },
+        {
+          "file": "landscape-exploration-combined-L64-k4-periodic.svg",
+          "sha256": "03490c8907524e5e2b146e09a3d634b68bd88be089011e936b0b761cc5d898d2"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-exploration-combined-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-exploration-combined-L64-k8-periodic.pdf",
+          "sha256": "66444c940cac382bb7416cecb2faf6483e4fb27f52b86b8b15b81173593f35bc"
+        },
+        {
+          "file": "landscape-exploration-combined-L64-k8-periodic.png",
+          "sha256": "50781735a91904b71e429cb10e53085e8271498ca7fdbb2c5038ea15df84de80"
+        },
+        {
+          "file": "landscape-exploration-combined-L64-k8-periodic.svg",
+          "sha256": "7d7abdf62bdce287d14f6603bee9f1304097326535533d703e0eac3372beb115"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "frontier-exploration-combined-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-exploration-combined-L64-k4-periodic.pdf",
+          "sha256": "e434aade48b3e6839e9286108df9ec3e3dd7fc9189b2037f25dac4cca35b83e4"
+        },
+        {
+          "file": "frontier-exploration-combined-L64-k4-periodic.png",
+          "sha256": "623a4d2849d0a29f84045c52aa82b7e5488ae816cee3e2ba27129a7954d90878"
+        },
+        {
+          "file": "frontier-exploration-combined-L64-k4-periodic.svg",
+          "sha256": "c0553a7580c740beab699a502e77c0ebc939bcf33848c13f97b07c6831ecb96c"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "frontier-exploration-combined-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-exploration-combined-L64-k8-periodic.pdf",
+          "sha256": "9f35e9860b9c07d245825106566fb3acc2bf836a6d702b80767ad383c46bba9b"
+        },
+        {
+          "file": "frontier-exploration-combined-L64-k8-periodic.png",
+          "sha256": "bedb59c82922101d8be178f5b174ad0968261512866b0c22ec46eac20e051c77"
+        },
+        {
+          "file": "frontier-exploration-combined-L64-k8-periodic.svg",
+          "sha256": "db176ae444815571c592f3b0454b24daccd32a1746ce47b236e143171ea4f1d7"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "accepted-run-lengths-landscape-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "accepted-run-lengths-landscape-L64-k4-periodic.pdf",
+          "sha256": "1e2ae908878fbd2c6359a57c49dbc70a5d6f08fa97517ba898b9be71142c75a8"
+        },
+        {
+          "file": "accepted-run-lengths-landscape-L64-k4-periodic.png",
+          "sha256": "d761af701d871bc2e6a518f6a63d89f7a4d2f3a4e8938621074601b224c4b646"
+        },
+        {
+          "file": "accepted-run-lengths-landscape-L64-k4-periodic.svg",
+          "sha256": "2cd980adbf8fbfd3ee1cea00bb85504be66a09e238e3d94319a8f46885d836ef"
+        }
+      ],
+      "interpretation": "Actual accepted sequence runs; pooled counts are descriptive, not independent lattice observations. Event-engine proposal run histograms remain unavailable."
+    },
+    {
+      "name": "accepted-run-lengths-landscape-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "accepted-run-lengths-landscape-L64-k8-periodic.pdf",
+          "sha256": "20b78ac99ee820a27f2493a161fa6a882f6a8003d0596668d5007fc96e5d75c1"
+        },
+        {
+          "file": "accepted-run-lengths-landscape-L64-k8-periodic.png",
+          "sha256": "5d997f188b0d627f451a6aecb0dc21432a9b2adfa31b70698cb8b03efbe25a56"
+        },
+        {
+          "file": "accepted-run-lengths-landscape-L64-k8-periodic.svg",
+          "sha256": "1343ade55c89f258583c471233998c8756080936ff602e625bbb4694f484e8c3"
+        }
+      ],
+      "interpretation": "Actual accepted sequence runs; pooled counts are descriptive, not independent lattice observations. Event-engine proposal run histograms remain unavailable."
+    }
+  ],
+  "inputs": [
+    {
+      "file": "summary.json",
+      "sha256": "a3de9188e4535d83a985292cc72f6becb5c053ca27cbe4890beac68fb6aaeb61"
+    },
+    {
+      "file": "comparisons.json",
+      "sha256": "095ff42438e5e5fc949d8cb56a4136a50a48d77e1833cc561be2c8fd2ef95951"
+    },
+    {
+      "file": "frontiers.csv",
+      "sha256": "d7be623111b442235af4247ea310ec2c656ba3dc8e6d4037a8003402c6ea9eaf"
+    }
+  ],
+  "limitations": "Finite-grid exploratory landscape; no continuum optimality, forced limit fit or phase-transition claim."
+}

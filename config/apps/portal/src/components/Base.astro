@@ -1,0 +1,19 @@
+---
+import Meme from './Assets.astro';
+const labels=['ВОЗВРАТ','受付終了','TEMP / 000','锅の锅','Ð»Þ 43','货到倒付','CAUTION','入口在楼上','SOUPE FROIDE','0000／╳','कड़ाही','待盖章'];
+---
+<div class="overhead-noise" aria-hidden="true">{labels.slice(0,6).map((text,i)=><span class="jitter-piece flying-note" style={`--i:${i};left:${8+i*16}%;animation-delay:${-i*2}s`}>{text}</span>)}</div>
+<div class="section-index" id="districts"><span>01 / DEPARTMENTS</span><h2>各自为政。</h2><span>6 个方向 · 自行抵达</span></div>
+<section class="map-of-wrong-building" aria-label="区域目录">
+  <div class="map-rail"><b>∅</b><span>YOU<br/>ARE<br/>HERE.</span><small>不按比例</small></div>
+  <div class="map-canteen"><span class="district-number">01</span><a href="/corridors/canteen/line/0">① 厨房 / 领票 / 停机</a><i class="district-blob" aria-hidden="true">✳</i><small>OPEN UNTIL YESTERDAY</small></div>
+  <div class="map-finance"><span class="district-number">02</span><a href="/borrowed">② 收据柜 / 盖章 / 缓存</a><a class="mini-route" href="/corridors/warehouse/door/inside">往里走 ↘</a><span class="finance-graphic" aria-hidden="true">↗</span><small>PAPERWORK AS A SERVICE</small></div>
+  <div class="map-basement"><span class="district-number">03 / 06</span><a href="/corridors/error/another-floor/tape">③ 地下长廊 →→→</a><a href="/corridors/archive/print-preview/receipt">⑥ 打印室 / 样式未到</a><div class="hall-scan" aria-hidden="true"></div><small>NO SIGNAL · STILL OPEN</small></div>
+  <div class="map-clone"><span class="district-number">04 / 05</span><a href="#browser-cabinet">④ 本机抽屉 / 迁移</a><a href="#gateway">⑤ 验收窗口 ↓</a><span class="clone-orbs" aria-hidden="true"><i></i><i></i><i></i></span><small>LOCAL FIRST. LOCAL LAST.</small></div>
+</section>
+<div class="paper-orbit">
+  <div class="receipt-intro"><span class="eyebrow">02 / WINDOW IN A WINDOW</span><h2>另一家公司<br/>好像搬进来了。</h2><a href="/borrowed">进入收据柜 ↗</a><Meme id={3} class="budget-visitor" caption="预算已到位"/></div>
+  <section class="paper-layers"><div class="old-cabinet-title"><span class="window-traffic"><i></i><i></i><i></i></span><b>RECEIPT / 临时租户</b><a href="/borrowed">打开大窗 ↗</a></div><iframe title="临时收据柜" loading="lazy" src="/borrowed" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><span class="receipt-staple" aria-hidden="true">APPROVED<br/>BY NOBODY</span></section>
+  <Meme id={12} class="sync-visitors" caption="同步中。"/>
+</div>
+<section class="billboard-stripe" aria-label="长卷公告"><a href="#after-long-paper">跳过这卷纸 ↓</a><div class="scrolling-long-paper">{Array.from({length:36},(_,i)=><p style={`font-size:${i%7===0?36:i%3===0?11:17}px; padding-left:${i%4*13}px`}><span>{String(i).padStart(3,'0')}</span> {labels[i%labels.length]} <b>{i%5===0?'此处留白，但印刷厂不同意。':'━━━━━━━━━━━'}</b></p>)}</div><a id="after-long-paper" href="/corridors/error/another-floor/tape">卷纸后门 →</a></section>

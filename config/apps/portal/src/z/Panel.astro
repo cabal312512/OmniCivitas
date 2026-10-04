@@ -1,0 +1,20 @@
+---
+import {panels,laboratories,labLink} from './map.mjs';
+import {toolById,toolLink} from '../tool/data.mjs';
+import './0.css';
+const {index=0,standalone=false}=Astro.props;
+const p=panels[index%panels.length],near=laboratories[index%laboratories.length];
+---
+<section class={`lab-window lab-${p.kind} skin-${p.skin} ${standalone?'lab-main':''}`} data-lab={p.index} data-kind={p.kind} data-draggable style={`--lab-width:${p.width}px;--lab-left:${p.left}%;--lab-top:${p.top}px;--lab-variant:${p.variant}`}>
+ <header class="lab-title"><span>{p.title}</span><small>OCV / {String(index).padStart(2,'0')}</small>{p.kind!=='stream'&&<button data-drag aria-label="移动实验窗口">↔</button>}<button data-front aria-label="实验窗口置顶">↥</button>{p.index%4!==1&&<button data-lab-close aria-label="关闭实验窗口">×</button>}</header>
+ <div class="lab-glass"><canvas class="lab-canvas" width="900" height="500" tabindex="0" aria-label={`${p.title}交互画布`}></canvas><div class="lab-reticle" aria-hidden="true"><i></i><i></i><i></i><span>{String(p.index+1).padStart(3,'0')}</span></div></div>
+ <div class="lab-controls"><label>{p.kind==='wave'?'频率':p.kind==='topology'?'距离':'倍率'}<input data-lab-scale type="range" min="1" max="80" value={18+p.variant*11}/></label><button data-lab-reset type="button">复位</button><button data-lab-action type="button">{['nodes','bytes','data'].includes(p.kind)?'计算':p.kind==='topology'?'加节点':'切换'}</button><output data-lab-stat role="status"></output></div>
+ {['nodes','bytes','data'].includes(p.kind)&&<div class="lab-input"><textarea data-lab-input aria-label="实验输入" maxlength="8192" spellcheck="false">{p.kind==='bytes'?'OmniCivitas · OCV':p.kind==='data'?'region,item,value\nEast,A,12\nWest,B,9\nEast,C,18\nWest,D,7':'  alpha\nbeta\nalpha  '}</textarea><pre data-lab-output></pre></div>}
+ <nav class="lab-links">{p.tools.map(id=><a href={toolLink(toolById(id))}>{toolById(id).title}<span>↗</span></a>)}<a href={labLink(near)}>{near.title}<span>◎</span></a></nav>
+ <button class="lab-embed-toggle" type="button" data-lab-embed>打开 {toolById(p.tools[0]).title}</button><div class="lab-embedded" hidden data-tool-url={toolLink(toolById(p.tools[0]))}></div>
+</section>
+<aside class={`lab-dock skin-${p.skin}`} style={`--dock-left:${[12,68,36,5,52][index%5]}%;--dock-top:${[360,630,1200,490][index%4]}px`} data-lab-dock>
+ <span>{['索引','检验','数据集','输出','任务'][index%5]}</span><svg viewBox="0 0 240 95" aria-hidden="true"><path d={`M5 68 ${Array.from({length:18},(_,i)=>`L${10+i*13} ${10+(i*31+index*17)%70}`).join(' ')}`} fill="none" stroke="currentColor"/><path d="M5 80H235M5 5V85" fill="none" stroke="currentColor" opacity=".25"/></svg><a href={toolLink(toolById(p.tools[1]))}>{toolById(p.tools[1]).title} ↗</a>{index%3===0&&<button data-lab-dock-close aria-label="关闭索引窗">×</button>}
+</aside>
+<button class="lab-reopen" type="button" data-lab-reopen>实验台 ▧</button>
+<script>import './a.js';</script>

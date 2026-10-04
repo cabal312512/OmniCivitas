@@ -1,0 +1,307 @@
+继续现有项目进入 Stage IV。不要重做 Stage I–III，也不要继续无目标扩大 controller memory 或 Monte Carlo 数量。
+
+Stage III 已经回答了 deterministic fixed-memory controller 的主要结构问题。现在最重要的两个缺口是：
+
+1. 完整 temporal null 目前只覆盖 deterministic outcome-blind controllers，没有覆盖 stochastic outcome-blind controllers。
+2. Moore controller 的 arbitrary-word memory 不一定等于真实 RSA 从空格子出发时实际需要的 operational memory。
+
+Stage IV 的目标是把这两个缺口尽可能封死，并据此重新回答：
+
+> **在相同真实记忆预算下，success/failure feedback 是否仍然提供 outcome-blind temporal stochasticity 无法复制的控制能力？**
+
+---
+
+## 1. 完整 stochastic temporal null
+
+定义 outcome-blind finite-state controller：
+
+- 最多 4 个内部状态；
+- action 可以随机选择 H/V；
+- internal state 可以随机转移；
+- 但所有概率都不能依赖 success/failure。
+
+因此它本质上产生一个与 adsorption outcome 无关的有限状态 stochastic orientation process。
+
+不要把它缩减成：
+
+- IID coin；
+- 一阶 Markov flip probability；
+- deterministic cycle；
+- deterministic-controller mixture。
+
+这些都只是 stochastic temporal null 的子类。
+
+首先形式化这个完整 family，并研究参数冗余、state relabeling、不可达状态和等价 HMM 表示。
+
+---
+
+## 2. 小系统上做“真正的全局 temporal envelope”
+
+对于现有 exact small RSA systems，stochastic temporal controller 的：
+
+- expected coverage；
+- E|S|；
+- expected A/N；
+- terminal law
+
+应该可以表示成有限 Markov absorption 问题，并最终成为 controller probability parameters 的有理函数或可精确评价函数。
+
+目标不是随便用 optimizer 找一个好点。
+
+尝试建立**带认证的全局优化或上下界**。
+
+可以探索：
+
+- interval branch-and-bound；
+- exact rational subdivision；
+- Bernstein / polynomial bounds；
+- nonlinear programming + independent bound verification；
+- exhaustive low-dimensional reductions；
+- symmetry reduction。
+
+对于给定约束，例如：
+
+\[
+E|S|\le s,\qquad E[A/N]\le c,
+\]
+
+求 stochastic temporal controller 能达到的最大 coverage 上界。
+
+然后把 feedback controller 的 exact point 与这个**完整 stochastic temporal envelope**比较。
+
+如果 feedback point 严格越过一个经过认证的 temporal bound，这将比此前所有有限样本比较都强。
+
+如果所有 feedback point 都落回 stochastic envelope，也同样重要。
+
+---
+
+## 3. 不要只比较已有 feedback candidates
+
+利用 exact small-system solver，对反馈 controller 做更系统的 capability search。
+
+重点不是百万策略重新全部模拟，而是寻找：
+
+> 是否存在一个 finite-state feedback controller 的 exact objective point，严格位于所有同状态 stochastic temporal controllers 的 attainable region 之外？
+
+优先研究 1-bit 和 2-bit。
+
+如果 one-bit 已经存在 strict gap，证明它。
+
+如果只有 two-bit 出现，研究 minimal operational memory。
+
+如果完全没有，尝试解释为什么。
+
+---
+
+## 4. 定义 Operational Equivalence
+
+Stage III 已经证明：
+
+两个 Moore controllers 可以在所有抽象 outcome words 上不同，却从 empty RSA 起点产生完全相同的实际随机过程。
+
+把这个从个案例提升成正式对象。
+
+定义：
+
+> 两个 controller 在指定 RSA family 上 operationally equivalent，当从同样初态出发时，它们诱导相同的 action/outcome/occupancy/terminal process law。
+
+至少研究：
+
+- fixed L,k,boundary；
+- all L for fixed k，如可行；
+- 或明确声明的 RSA geometry family。
+
+不要用 Monte Carlo 均值判断 equivalence。
+
+使用：
+
+- exact product-state Markov models；
+- probabilistic bisimulation；
+- coupling；
+- reachable-history analysis；
+- symbolic certificates。
+
+---
+
+## 5. Operational Memory
+
+定义 controller 在真实 RSA 环境下的：
+
+**minimal operational state count**
+
+而不是 arbitrary-word Moore state count。
+
+研究：
+
+- 多少 4-state structural classes 实际只需 1/2/3 states；
+- 哪些 outcome distinctions 在物理上永远不可达；
+- first-success 等几何事实如何删除 controller memory；
+- operational quotient 是否依赖 L、k、boundary；
+- memory 是否随系统尺寸发生“激活”。
+
+寻找类似：
+
+> 一个 controller 在小系统上 operationally 只有 2 states，但从某个最小 L 开始必须使用 3/4 states。
+
+这种现象如果存在会非常有意思。
+
+---
+
+## 6. 自动寻找“最小区分几何”
+
+对于任意两个 structural controllers，如果它们不是 universally operationally equivalent，尝试自动寻找最小：
+
+\[
+(L,k,\text{boundary})
+\]
+
+以及一条正概率历史，使二者的实际过程第一次产生差异。
+
+这相当于一个 **physical distinguishing witness**。
+
+最终希望得到：
+
+structural memory  
+→ operational memory  
+→ minimal geometry required to expose that memory
+
+之间的关系。
+
+---
+
+## 7. 重新定义 feedback value
+
+Stage IV 以后，不再把“feedback value”定义为：
+
+feedback candidate vs deterministic temporal catalogue。
+
+而定义为：
+
+> feedback controller 与**完整同 operational-memory stochastic outcome-blind attainable set**之间的差距。
+
+研究四维目标：
+
+\[
+(\theta,\ E|S|,\ E[A/N],\ liveness)
+\]
+
+可以使用 Pareto / constrained frontier。
+
+如果 stochastic temporal set 是连续区域，重点给 certified bound，而不是画很多散点假装穷尽。
+
+---
+
+## 8. Rare-event 理论继续，但只做真正的新一步
+
+Stage III 的 tree/forest valuation 已经很好，不要重复证明。
+
+下一步优先尝试两个问题：
+
+### A. Higher-moment valuation
+
+对一般 polynomial/rational failure kernel：
+
+\[
+F_\varepsilon
+\]
+
+能否从图结构直接得到：
+
+\[
+E[T^j]\sim C_j\varepsilon^{-r_j}
+\]
+
+的 exponent \(r_j\)，而不是每次做 determinant algebra？
+
+寻找 graph/forest interpretation。
+
+### B. Unknown rare-entry probability
+
+Stage III 的 conditional Monte Carlo 假定 rare-entry probability 已知。
+
+现实 RSA 中它通常未知。
+
+设计并验证一种方法，在 entry probability 未知时仍能可靠估计 long-tail contribution，例如：
+
+- splitting；
+- adaptive importance sampling；
+- conditional decomposition；
+- regenerative estimation。
+
+如果做不出真正改进，不必强行保留这条线。
+
+---
+
+## 9. 不要上 3-bit，除非出现明确理由
+
+只有以下情况才考虑更高 memory：
+
+- 已经严格证明 1/2-bit feedback 存在 stochastic-null gap，需要研究它如何随 memory 扩张；
+- 或已经证明 ≤4 states 无 gap，并出现一个清晰理论理由说明 5+ states 可能改变能力。
+
+不要因为机器还能跑就扩大状态数。
+
+---
+
+## 10. Stage IV 最理想的结果
+
+任何一种都值得：
+
+### A
+找到 exact feedback point，严格超过 certified stochastic temporal envelope。
+
+这是目前最强可能正结果。
+
+### B
+证明某个小系统/目标下 feedback attainable region 完全包含于 stochastic temporal region。
+
+这会成为真正的 capability negative result。
+
+### C
+建立 operational-equivalence quotient，并证明 structural memory 系统性高估真实 memory。
+
+### D
+发现 operational memory 随 geometry 出现明确 threshold。
+
+### E
+得到“最小区分几何”理论或算法。
+
+### F
+得到一般 higher-moment rare-event graph valuation 或真正可用于未知 rare probability 的 estimator。
+
+---
+
+## 11. 科研要求
+
+继续维持之前的纪律：
+
+- exact claim 与 Monte Carlo claim 分开；
+- exploratory optimization 与 certified bound 分开；
+- 新 winner 必须独立验证；
+- 不把局部 optimizer 当全局 optimum；
+- 不把 deterministic null 当 stochastic null；
+- 不把 arbitrary-word automaton complexity 当 physical memory；
+- 不为了得到 feedback advantage 改目标函数。
+
+如果完整 stochastic null 最终吃掉此前所有优势，保留并解释这个结果。
+
+---
+
+直接开展研究，不要只回复计划。
+
+优先顺序：
+
+1. formalize ≤4-state stochastic outcome-blind temporal controllers；
+2. 在 tiny exact RSA 上建立 certified stochastic temporal envelope；
+3. 建立 operational equivalence / operational memory；
+4. 自动搜索 physical distinguishing witnesses；
+5. 再根据结果决定是扩大 feedback search，还是转向 capability theorem；
+6. rare-event 理论作为独立高价值支线继续推进。
+
+这一阶段最重要的不是再跑更多实验，而是把项目从：
+
+“我们测试了很多 controller”
+
+推进到：
+
+> **“我们知道什么才算公平的完整无反馈对照，也知道一个 controller 在真实物理系统里究竟用了多少记忆。”**

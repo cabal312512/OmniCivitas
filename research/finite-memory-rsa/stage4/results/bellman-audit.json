@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "verifiedAtUTC": "2026-10-04T06:17:00.608Z",
+  "checked": [
+    {
+      "file": "results/proper-boundary-null.json",
+      "sha256": "fc9c5bab5939b94e0c7ce3e14d84ee100ae903a5549c2f6b821c537f43240ca8",
+      "status": "passed",
+      "reachableProductStates": 121,
+      "exactScalarEquations": 484,
+      "almostSureGeometricAbsorption": true,
+      "method": "Raw anchor enumeration, rational one-step residuals, reverse reachability to jam; no matrix inverse and no floating comparison."
+    },
+    {
+      "file": "data/refined-temporal-periodic.json",
+      "sha256": "f254a9316b729290ed850aa1a47a4f1a2dfe162280a3c74a4a0132d57d8163d4",
+      "status": "passed",
+      "reachableProductStates": 493,
+      "exactScalarEquations": 1972,
+      "almostSureGeometricAbsorption": true,
+      "method": "Raw anchor enumeration, rational one-step residuals, reverse reachability to jam; no matrix inverse and no floating comparison."
+    },
+    {
+      "file": "data/refined-temporal-open.json",
+      "sha256": "530b8675b36f19114cb1bba1419138ee6c2ddf8b3e15515cde70658db185b374",
+      "status": "passed",
+      "reachableProductStates": 232,
+      "exactScalarEquations": 928,
+      "almostSureGeometricAbsorption": true,
+      "method": "Raw anchor enumeration, rational one-step residuals, reverse reachability to jam; no matrix inverse and no floating comparison."
+    }
+  ],
+  "scalarEquations": 3384,
+  "status": "passed"
+}

@@ -1,0 +1,576 @@
+继续现有项目进入 Stage III。Stage I/II 的代码、数据、负结果和理论结论全部冻结，不要为了获得正结果而重做旧检验。
+
+这一阶段不要再把重点放在继续细扫 \((\alpha,\beta)\) 或单纯把 policy 41 推到更大的 L。我们现在要把问题提升一个层级：
+
+> **在严格相同的内部记忆预算下，看到 success/failure 这一个反馈信号究竟能提供多少额外控制能力？最少需要多少 memory 才可能产生真正超越纯时间策略的行为？而极小 exploration 为什么会产生奇异的长尾代价？**
+
+目标是从“一个 RSA 模拟项目”推进成：
+
+**finite-state control + statistical physics + stochastic-process theory + controller synthesis**
+
+的完整研究。
+
+你有充分研究自主权。如果过程中出现更强的问题或定理，可以转向。
+
+---
+
+# 1. 核心任务：完整进入 2-bit controller space
+
+考虑 4 个内部状态：
+
+\[
+q\in\{0,1,2,3\}.
+\]
+
+每个状态输出 H 或 V：
+
+\[
+g:Q\to\{H,V\}.
+\]
+
+状态根据 success/failure 更新：
+
+\[
+f:Q\times\{S,F\}\to Q.
+\]
+
+固定 rooted initial state 后，labelled deterministic feedback controllers 总数为：
+
+\[
+2^4\cdot4^8=1,048,576.
+\]
+
+这次可以真正完整处理这个空间，但不要对一百万个 controller 直接做大尺寸 Monte Carlo。
+
+先做结构化压缩：
+
+- unreachable-state removal；
+- rooted automaton minimization；
+- state relabel canonicalization；
+- H/V exchange symmetry；
+- behavioural equivalence；
+- liveness certificate；
+- obviously degenerate policies。
+
+给出：
+
+**1,048,576 labelled controllers → 真正不同 behavioural classes**
+
+的完整分类。
+
+如果可以，得到精确计数和分类定理，而不只是程序输出。
+
+---
+
+# 2. 必须建立“同等记忆”的强 temporal null
+
+这是 Stage III 最重要的方法学升级。
+
+不能再只拿 feedback controller 和 fair / alternation / 一阶 Markov null 比。
+
+对于完全相同的 4-state memory budget，定义 outcome-blind controller：
+
+\[
+f:Q\to Q
+\]
+
+也就是状态更新完全不读取 success/failure。
+
+这样的 deterministic temporal controllers 有：
+
+\[
+2^4\cdot4^4=4096.
+\]
+
+完整枚举它们。
+
+因此真正的问题变成：
+
+> **在相同的 4-state 内部复杂度下，允许状态转移读取 success/failure，是否扩大 achievable frontier？**
+
+比较至少三个层级：
+
+- memoryless / 0-bit；
+- one-bit feedback 与 one-bit temporal null；
+- two-bit feedback 与 two-bit temporal null。
+
+最终希望得到：
+
+\[
+\text{memory budget}
+\rightarrow
+\text{best achievable control frontier}
+\]
+
+而不是挑几个策略讲故事。
+
+---
+
+# 3. 不再只优化 coverage
+
+controller quality 至少是四维的：
+
+\[
+(\theta,\ |S|,\ \text{kinetic cost},\ \text{liveness})
+\]
+
+其中：
+
+- \(\theta\)：terminal coverage；
+- \(|S|\)：run-wise orientation imbalance；
+- kinetic cost：attempts/failures per accepted particle 或更合理的等待指标；
+- liveness：是否保证最终只在 geometric jam 停止。
+
+只把满足严格 liveness 条件的 controller 作为主要竞争者。
+
+建立 feedback 与 temporal-null 的 Pareto frontiers。
+
+最关键的问题：
+
+> 是否存在一个 feedback controller，在同等 memory budget 下，对所有 outcome-blind controllers 形成真正不可由 temporal structure 解释的 Pareto improvement？
+
+如果没有，同样是重要结果。
+
+---
+
+# 4. 用 multi-fidelity search，而不是蛮力模拟
+
+建议：
+
+### Level 1
+只做 automata/liveness 分类，无 RSA simulation。
+
+### Level 2
+小 lattice + 少量 seeds 快速筛掉绝大多数 controller。
+
+### Level 3
+利用现有 exact solver，对小系统精确计算最有希望的 behavioural classes。
+
+### Level 4
+中等 L 做 Pareto screening。
+
+### Level 5
+只有极少量候选进入大 L、独立 seed 的正式 confirmation。
+
+允许使用：
+
+- successive halving；
+- racing；
+- branch-and-bound；
+- symbolic pruning；
+- controller graph invariants。
+
+目的不是“跑了一百万个策略”，而是理解为什么少数结构能进入 frontier。
+
+---
+
+# 5. 自动 controller synthesis
+
+除了穷举 deterministic 2-bit controllers，再反过来研究：
+
+> 给定约束，能否自动合成最小 controller？
+
+例如：
+
+\[
+\max \theta
+\]
+
+subject to：
+
+\[
+E|S|\le s_0
+\]
+
+\[
+\text{universal liveness}
+\]
+
+\[
+E[\text{attempt cost}]\le C.
+\]
+
+优先使用：
+
+- exhaustive/canonical search；
+- combinatorial optimization；
+- symbolic synthesis；
+- evolutionary/local search。
+
+不要默认使用 RL。
+
+如果算法发现非常奇怪但性能好的 automaton，必须把它化简成人可以理解的状态机，并解释机制。
+
+---
+
+# 6. 研究“最少需要多少 memory”
+
+这是 Stage III 最值得冲击的科学问题之一。
+
+尝试回答：
+
+> one bit 是否不足？
+
+> two bits 是否第一次产生无法由同等复杂度 temporal controller 模拟的反馈优势？
+
+如果 2-bit 找到真正优势：
+
+继续问它是否可以化简到更小 controller。
+
+如果 2-bit 仍然没有优势：
+
+不要立刻上 3-bit 暴力。
+
+先寻找理论解释或 upper bound。
+
+尝试证明或反驳类似命题：
+
+> 在无空间观测、均匀随机 anchor 的条件下，有限 outcome memory 对 asymptotic packing density 的控制能力受到某种基本限制。
+
+不要假设这个命题为真。
+
+尝试构造 counterexample、coupling 或 bound。
+
+一个真正的“不可能性结果”可能比找到一个多 0.1% coverage 的策略更强。
+
+---
+
+# 7. 把 Stage II 的稀有等待提升成一般理论
+
+Stage II 已经出现：
+
+\[
+\beta\to0^+
+\]
+
+时极小概率进入 blocked excursion，但 excursion 长度为：
+
+\[
+O(1/\beta).
+\]
+
+结果可以出现：
+
+- distribution 弱收敛；
+- mean 不收敛；
+- variance 发散；
+- naive Monte Carlo 极易遗漏关键事件。
+
+不要把这个当 appendix。
+
+把它推广到任意 finite-state controller。
+
+考虑对一个可能 deadlock 的 controller 加：
+
+\[
+\varepsilon
+\]
+
+级 exploration，使原本封闭的 failure class 获得极小 leakage。
+
+研究：
+
+\[
+F_\varepsilon
+\]
+
+作为 substochastic failure kernel 的奇异扰动。
+
+重点尝试证明：
+
+### A
+何时：
+
+\[
+E[T_\varepsilon]\sim C\varepsilon^{-r}
+\]
+
+### B
+指数 \(r\) 是否可以由 controller graph 中“逃离 nonleaking recurrent class 所需的最少 exploration transitions”决定。
+
+### C
+哪些 observables 在：
+
+\[
+\varepsilon\to0^+
+\]
+
+下连续，哪些不连续。
+
+### D
+何时出现 weak convergence but failure of uniform integrability。
+
+### E
+variance / higher moments 如何发散。
+
+如果能得到 graph-theoretic exponent：
+
+\[
+r
+\]
+
+和 leading constant：
+
+\[
+C,
+\]
+
+这将是非常强的理论结果。
+
+---
+
+# 8. 研究 Monte Carlo 的“稀有事件失明”
+
+Stage II 已经实际出现：
+
+真实均值是 3，
+
+但 \(10^5\) 个样本在极小 exploration 下可以看起来接近 2。
+
+系统研究这种现象。
+
+推导或估计：
+
+为了以给定相对误差和置信水平估计：
+
+\[
+E[T_\varepsilon]
+\]
+
+需要多少样本：
+
+\[
+N(\varepsilon)?
+\]
+
+检查是否存在类似：
+
+\[
+N\sim\varepsilon^{-1},
+\quad
+\varepsilon^{-2},
+\]
+
+或更复杂 scaling。
+
+然后实现：
+
+- importance sampling；
+- splitting；
+- conditional Monte Carlo；
+- exact phase-type calculation；
+
+至少一种 rare-event 方法。
+
+比较：
+
+naive Monte Carlo
+
+vs
+
+rare-event estimator。
+
+这会让项目从“发现长尾”升级成：
+
+**解释为什么标准模拟会错，以及怎样正确测量它。**
+
+---
+
+# 9. 可以大胆尝试理论自动发现
+
+让程序在小系统和 controller graph 上自动搜索：
+
+- invariant；
+- exact rational sequence；
+- scaling exponent；
+- controller equivalence；
+- forbidden structure；
+- possible theorem counterexample。
+
+如果出现明显规律，尝试：
+
+1. 自动生成 conjecture；
+2. 穷举小系统寻找反例；
+3. 再人工化简成证明。
+
+不要把“几万个样本都成立”写成 theorem。
+
+---
+
+# 10. stochastic 2-bit controllers 只在必要时进入
+
+deterministic 2-bit landscape 完成以后，如果 frontier 上出现明确结构，再允许 transition probabilities 连续化。
+
+不要一开始优化几十个自由概率。
+
+优先围绕最优秀 deterministic automata 做小维度 stochastic relaxation。
+
+问题是：
+
+> randomization 能否扩大 deterministic memory frontier？
+
+而不是“让优化器随便找数字”。
+
+---
+
+# 11. 大尺寸 simulation 要更克制
+
+policy 41 可以保留少量更大尺寸验证，但不要继续把大量计算预算砸在它身上。
+
+目前更重要的是：
+
+**新的 2-bit candidate 是否在增大 L 后仍保留优势。**
+
+只有真正通过 matched-memory temporal null 的 candidate 才值得：
+
+\[
+L=256,512,1024,2048,\ldots
+\]
+
+的大规模研究。
+
+如果没有 candidate，就把资源投入理论和 capability bounds。
+
+---
+
+# 12. 一个可选但很有价值的泛化
+
+如果核心结果足够强，可选择一个多于两个 actions 的简单几何系统，测试 liveness 和 minimal-memory theory 是否仍成立。
+
+例如：
+
+- 多取向粒子；
+- 简单 L-tromino；
+- 三种 orientation 的 lattice object。
+
+目的不是再做一篇 packing survey。
+
+只回答：
+
+> two-action RSA 中得到的 finite-state control conclusions 是否依赖 H/V 二元结构？
+
+只做一个干净 extension 即可。
+
+---
+
+# 13. 文献检索需要升级
+
+重点搜索：
+
+- finite-state controller synthesis；
+- limited-memory stochastic control；
+- finite-memory POMDP policies；
+- singular perturbation of absorbing Markov chains；
+- metastability / nearly decomposable Markov chains；
+- rare-event simulation；
+- non-uniform integrability in singular stochastic limits；
+- feedback-controlled adsorption；
+- Markov-modulated RSA。
+
+不要把经典有限 Markov 链理论包装成原创。
+
+真正的新颖性应来自：
+
+**这些理论与 outcome-limited irreversible adsorption 的结合、matched-memory feedback value、minimal-memory frontier，以及具体的新定理/现象。**
+
+---
+
+# 14. Stage III 最理想的几种结果
+
+以下任一种都足够值得继续：
+
+### A
+2-bit feedback 首次严格突破同等记忆 temporal-null frontier。
+
+那么得到：
+
+**minimal memory for useful feedback ≤ 2 bits**
+
+并继续寻找是否恰好等于 2。
+
+### B
+完整 2-bit feedback space 仍无法突破 matched-memory null。
+
+那么开始寻找：
+
+**finite-memory outcome feedback limitation**
+
+的理论解释。
+
+### C
+得到一般 epsilon-exploration singularity theorem：
+
+\[
+E[T_\varepsilon]\sim C\varepsilon^{-r}.
+\]
+
+### D
+证明 graph topology 决定 rare-event exponent。
+
+### E
+得到 naive Monte Carlo sample complexity 的异常 scaling，并建立有效 rare-event estimator。
+
+### F
+发现 memory、packing、isotropy、kinetic cost 之间新的非平凡 Pareto structure。
+
+不要要求所有方向都成功。
+
+优先追最强的一个。
+
+---
+
+# 15. 科研纪律
+
+继续保持 Stage II 的标准：
+
+- exploratory / confirmatory 严格分开；
+- 不为显著性调整问题；
+- 所有 negative results 保留；
+- exact / independent implementation 尽量交叉验证；
+- 大规模搜索后的 winner 必须用全新 seeds 复验；
+- 不把有限尺寸 crossover 叫 phase transition；
+- 不把一般 Markov-chain 已知理论声称为原创。
+
+如果一个“漂亮结果”经不起 matched-memory null，就不要保留漂亮叙事。
+
+---
+
+# 最终目标
+
+Stage III 最终应该尽可能回答：
+
+\[
+\boxed{\text{How much is outcome feedback actually worth under a fixed memory budget?}}
+\]
+
+以及：
+
+\[
+\boxed{\text{What is the minimum internal memory required for genuinely new control power?}}
+\]
+
+同时解释：
+
+\[
+\boxed{\text{Why can arbitrarily weak exploration restore liveness yet create singular rare-event costs?}}
+\]
+
+不要只回复研究计划。
+
+直接继续现有项目，优先开始：
+
+1. 完整 2-bit controller canonicalization；
+2. 完整 matched-memory temporal-null classification；
+3. liveness pruning；
+4. multi-fidelity controller screening；
+5. epsilon-exploration singular perturbation theory。
+
+根据真实结果决定哪条线成为 Stage III 的主故事。
+
+这一次可以大胆。
+
+目标不再是“再找到一个更好的 packing 参数”。
+
+目标是尝试把这个项目推进到：
+
+**有限记忆、反馈价值和不可逆随机系统之间的一般能力边界。**

@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "date": "2026-10-04",
+  "authorizedBy": "User: fix blank effects on first entry and add corresponding effects to Explore, Atlas and Library",
+  "cause": "Repeated readiness handlers disposed and attempted to recreate a renderer on the same canvas, losing its WebGL context.",
+  "changes": [
+    "Initialize once per actual main element; invalidate on page swap.",
+    "Observe actual canvas size and mark WebGL ready only after drawing a real frame.",
+    "Add three original interactive conceptual header scenes with shared PBR/particles/bloom."
+  ],
+  "scenes": {
+    "overview": "Existing adsorption lattice preserved",
+    "explore": "Paired orbital transition network",
+    "atlas": "Four layered translucent parameter surfaces",
+    "library": "Eighteen floating archive plates"
+  },
+  "verification": {
+    "browser": {
+      "passed": 5,
+      "total": 5,
+      "failed": 0,
+      "flaky": 0,
+      "workers": 1,
+      "scope": "First entry, reload, duplicate readiness events, section navigation/back, actual frames/nonlost contexts, existing lab/audio/gallery/readers/assets"
+    },
+    "hostBuild": {
+      "passed": true,
+      "pages": 216
+    },
+    "linuxPortalBuild": "passed",
+    "visualInspection": [
+      "explore",
+      "atlas",
+      "library"
+    ],
+    "deployment": {
+      "status": "passed",
+      "checks": [
+        {
+          "route": "/research/",
+          "scene": "overview",
+          "frames": 4,
+          "contextLost": false
+        },
+        {
+          "route": "/research/explore/",
+          "scene": "explore",
+          "frames": 3,
+          "contextLost": false
+        },
+        {
+          "route": "/research/atlas/",
+          "scene": "atlas",
+          "frames": 4,
+          "contextLost": false
+        },
+        {
+          "route": "/research/library/",
+          "scene": "library",
+          "frames": 5,
+          "contextLost": false
+        }
+      ],
+      "pageErrors": [],
+      "containers": [
+        {
+          "service": "edge",
+          "status": "healthy"
+        },
+        {
+          "service": "gateway",
+          "status": "healthy"
+        },
+        {
+          "service": "next",
+          "status": "healthy"
+        },
+        {
+          "service": "portal",
+          "status": "healthy"
+        },
+        {
+          "service": "postgres",
+          "status": "healthy"
+        },
+        {
+          "service": "redis",
+          "status": "healthy"
+        }
+      ],
+      "builderStopped": true
+    },
+    "preservation": {
+      "status": "passed",
+      "scientificFiles": 1266,
+      "ledgersUnchanged": true,
+      "researchRecomputed": false
+    }
+  },
+  "resolvedDevelopmentError": "Scene extraction initially placed the particle colour helper inside the Overview branch; corrected before the final complete passing browser run.",
+  "constraints": {
+    "newDependencies": 0,
+    "researchRerun": false,
+    "newPdf": false,
+    "phase9Authorized": false
+  },
+  "evidence": {
+    "browser": "runtime/reports/research-site/browser.json",
+    "bugProbe": "runtime/reports/research-site/initial-visual-bug.json",
+    "build": "runtime/reports/research-site-accents-docker.log",
+    "deployment": "runtime/reports/research-site/accent-deployment.json",
+    "preservation": "runtime/reports/research-site/accent-preservation.json"
+  },
+  "files": [
+    "config/apps/portal/src/research/interface.mjs",
+    "config/apps/portal/src/research/visual.mjs",
+    "config/apps/portal/src/research/Accent.astro",
+    "config/apps/portal/src/research/accent-scenes.mjs",
+    "config/apps/portal/src/research/research.css",
+    "config/apps/portal/src/pages/research/explore.astro",
+    "config/apps/portal/src/pages/research/atlas.astro",
+    "config/apps/portal/src/pages/research/library.astro",
+    "tests/browser/research.spec.mjs"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "IV",
+  "date": "2026-10-04",
+  "scope": "Serious research only; no website integration, PDF, old-stage reruns or larger-memory controllers",
+  "temporalFamily": "All at-most-four-state edge-emitting stochastic controllers (pi,K_H,K_V), nonnegative, (K_H+K_V)1=1, independent of outcomes and anchors",
+  "objective": ["E[coverage]", "E[run-wise absolute imbalance]", "E[A/N]", "almost-sure geometric absorption"],
+  "certification": "Exact rational finite-prefix open-loop upper envelopes. These relax the complete temporal family to arbitrary random infinite orientation words; no parameter-grid optimality claim.",
+  "tinySystems": [{"L":3,"k":2,"boundary":"periodic"},{"L":3,"k":2,"boundary":"open"}],
+  "prefixHorizons": [4,8,12],
+  "supportMultipliers": [{"imbalance":"0","cost":"0"},{"imbalance":"0","cost":"1/20"},{"imbalance":"1/10","cost":"1/20"},{"imbalance":"1","cost":"1/20"},{"imbalance":"1/10","cost":"1/5"}],
+  "temporalFeasibleSearch": "Exploratory <=2-state rational transition grid; genuinely edge-emitting stochastic examples with <=4 states; exact evaluation of selected points. The grid is a lower-bound pool, never the complete stochastic null.",
+  "feedbackSearch": "All universally-live <=2-state controllers plus systematic structural invariant representatives of <=4-state operational classes, exact tiny-system evaluations; no Monte Carlo packing survey",
+  "operationalScope": "Deterministic realizations, full action/outcome/occupancy process, stop only at geometric jam. Universal fixed-k RSA family theorem and complete existing <=4-state structural catalogue quotient; stochastic realization minimality kept separate.",
+  "witnesses": "Exact product-state reachability. Smallest checked geometry explicitly distinguished from analytically guaranteed finite witness bound.",
+  "rareBranch": "New layered forest valuations of higher moments; unknown-entry splitting estimator if a provably unbiased implementation succeeds. Any finite benchmark is an implementation diagnostic, not RSA confirmation.",
+  "researchDiscipline": "New exact claims use independent implementation/certificates. No p-value search, no old-source changes, no local optimum called global and no process-law gap inferred to be an objective gap. Deferred problems are retained."
+}

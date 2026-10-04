@@ -1,0 +1,63 @@
+name: checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  workspace:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 35
+    env:
+      NX_DAEMON: 'false'
+      NX_SKIP_NX_CACHE: 'true'
+      ASTRO_TELEMETRY_DISABLED: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      NG_BUILD_MAX_WORKERS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.1
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm ledger:check
+      - run: pnpm test
+      - run: pnpm test:jest
+      - run: pnpm build
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NX_DAEMON: 'false'
+      ASTRO_TELEMETRY_DISABLED: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      NG_BUILD_MAX_WORKERS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.1
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec cypress install
+      - name: Start and exercise the standard development entrance
+        shell: bash
+        run: |
+          pnpm dev > /tmp/ocv-dev.log 2>&1 &
+          dev_pid=$!
+          trap 'kill "$dev_pid" || true' EXIT
+          for attempt in $(seq 1 120); do
+            if curl --fail --silent http://127.0.0.1:8080/functions/json/ > /dev/null; then break; fi
+            sleep 2
+          done
+          curl --fail http://127.0.0.1:8080/functions/json/ > /dev/null
+          pnpm test:cypress

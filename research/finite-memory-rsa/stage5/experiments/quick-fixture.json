@@ -1,0 +1,786 @@
+{
+  "schemaVersion": 1,
+  "scope": "Expected retained Stage V targets and archived exact coordinates are fixtures, not raw experiments to rerun.",
+  "candidates": [
+    {
+      "file": "data/lower-1.json",
+      "realization": {
+        "initial": [
+          "1/1",
+          "0/1"
+        ],
+        "H": [
+          [
+            "0/1",
+            "1/1"
+          ],
+          [
+            "0/1",
+            "0/1"
+          ]
+        ],
+        "V": [
+          [
+            "0/1",
+            "0/1"
+          ],
+          [
+            "77/128",
+            "51/128"
+          ]
+        ]
+      },
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic"
+      },
+      "metrics": {
+        "coverage": {
+          "numerator": "29664956",
+          "denominator": "33559839",
+          "value": 0.88394214286904
+        },
+        "absOrder": {
+          "numerator": "1885819994927819",
+          "denominator": "4941573941866770",
+          "value": 0.381623348575335
+        },
+        "inverseN": {
+          "numerator": "11269619",
+          "denominator": "44746452",
+          "value": 0.251855029757443
+        },
+        "attemptsPerParticle": {
+          "numerator": "7210180341029247428881345099",
+          "denominator": "1618210393601817358722574080",
+          "value": 4.45565074204029
+        }
+      },
+      "lawSha256": "d79f720363e64dd5b195f63f866552757b31fd97bdf44da94b70d1550a0bd6f0"
+    },
+    {
+      "file": "data/lower-2.json",
+      "realization": {
+        "initial": [
+          "1/1",
+          "0/1"
+        ],
+        "H": [
+          [
+            "0/1",
+            "1/1"
+          ],
+          [
+            "0/1",
+            "0/1"
+          ]
+        ],
+        "V": [
+          [
+            "0/1",
+            "0/1"
+          ],
+          [
+            "83/128",
+            "45/128"
+          ]
+        ]
+      },
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic"
+      },
+      "metrics": {
+        "coverage": {
+          "numerator": "31179452",
+          "denominator": "35293887",
+          "value": 0.88342357983976
+        },
+        "absOrder": {
+          "numerator": "2147547088915733",
+          "denominator": "5600868817690926",
+          "value": 0.383431063790046
+        },
+        "inverseN": {
+          "numerator": "11861075",
+          "denominator": "47058516",
+          "value": 0.252049490893422
+        },
+        "attemptsPerParticle": {
+          "numerator": "91947694921113914319856907",
+          "denominator": "20710133159264722818627840",
+          "value": 4.439744264994303
+        }
+      },
+      "lawSha256": "5e41905326ccd5812d4e82f288df1150adbf702176c2874b6a6f7f1b825d887e"
+    },
+    {
+      "file": "data/lower-4.json",
+      "realization": {
+        "initial": [
+          "1/1",
+          "0/1"
+        ],
+        "H": [
+          [
+            "0/1",
+            "0/1"
+          ],
+          [
+            "31/32",
+            "0/1"
+          ]
+        ],
+        "V": [
+          [
+            "1/32",
+            "31/32"
+          ],
+          [
+            "0/1",
+            "1/32"
+          ]
+        ]
+      },
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "metrics": {
+        "coverage": {
+          "numerator": "4544638151436095",
+          "denominator": "5186713057763328",
+          "value": 0.876207744832501
+        },
+        "absOrder": {
+          "numerator": "300951806639226927496426267",
+          "denominator": "605464013374263479730438144",
+          "value": 0.497059775628969
+        },
+        "inverseN": {
+          "numerator": "3523582160640193",
+          "denominator": "13831234820702208",
+          "value": 0.254755429021145
+        },
+        "attemptsPerParticle": {
+          "numerator": "3310919698991870412907495346965268107193020109",
+          "denominator": "886601092682621804177236710519178967448944640",
+          "value": 3.734396140855069
+        }
+      },
+      "lawSha256": "573d3c2bcaaa95841547790dc2110d45f2b80ed63fd230665a0e3aaa85480084"
+    },
+    {
+      "file": "data/lower-5.json",
+      "realization": {
+        "initial": [
+          "1/1",
+          "0/1"
+        ],
+        "H": [
+          [
+            "11/256",
+            "245/256"
+          ],
+          [
+            "0/1",
+            "11/256"
+          ]
+        ],
+        "V": [
+          [
+            "0/1",
+            "0/1"
+          ],
+          [
+            "245/256",
+            "0/1"
+          ]
+        ]
+      },
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "metrics": {
+        "coverage": {
+          "numerator": "74296027516655409599135",
+          "denominator": "84841561269916993585152",
+          "value": 0.875703209660277
+        },
+        "absOrder": {
+          "numerator": "1257497756358120885375752060629918019155",
+          "denominator": "2521715299762538811272194615328026656768",
+          "value": 0.498667615839319
+        },
+        "inverseN": {
+          "numerator": "57679734458771024866657",
+          "denominator": "226244163386445316227072",
+          "value": 0.254944629710729
+        },
+        "attemptsPerParticle": {
+          "numerator": "728193882358726402912365760254104667528263735180533631663077792273",
+          "denominator": "195346052584852936642988038901136288353054739369518866231801675776",
+          "value": 3.727712296834967
+        }
+      },
+      "lawSha256": "98c305bb4ccd3352b82c2b680c43fe16ede82e1aaf7b5a91db89fe4489827266"
+    },
+    {
+      "file": "data/lower-6.json",
+      "realization": {
+        "initial": [
+          "1/1",
+          "0/1"
+        ],
+        "H": [
+          [
+            "0/1",
+            "0/1"
+          ],
+          [
+            "243/256",
+            "0/1"
+          ]
+        ],
+        "V": [
+          [
+            "3/64",
+            "61/64"
+          ],
+          [
+            "0/1",
+            "13/256"
+          ]
+        ]
+      },
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "metrics": {
+        "coverage": {
+          "numerator": "14553244655104469",
+          "denominator": "16623748426260480",
+          "value": 0.875449043256378
+        },
+        "absOrder": {
+          "numerator": "6119152567661565076068080203",
+          "denominator": "12251035287535386064810147840",
+          "value": 0.499480445859738
+        },
+        "inverseN": {
+          "numerator": "33917758690568833",
+          "denominator": "132989987410083840",
+          "value": 0.255039942112191
+        },
+        "attemptsPerParticle": {
+          "numerator": "389012511672037595531966906369881027769197659272638781",
+          "denominator": "104442837864331600692770271320676077753841404972236800",
+          "value": 3.724645170761773
+        }
+      },
+      "lawSha256": "9069e864c3393ee792b59ba8e068ef3fdd7600f6095a7e66660ff10bdd3c8d5c"
+    },
+    {
+      "file": "data/lower-7.json",
+      "realization": {
+        "initial": [
+          "1/1",
+          "0/1"
+        ],
+        "H": [
+          [
+            "0/1",
+            "1/1"
+          ],
+          [
+            "0/1",
+            "0/1"
+          ]
+        ],
+        "V": [
+          [
+            "0/1",
+            "0/1"
+          ],
+          [
+            "1/1",
+            "0/1"
+          ]
+        ]
+      },
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "metrics": {
+        "coverage": {
+          "numerator": "5897",
+          "denominator": "6720",
+          "value": 0.877529761904761
+        },
+        "absOrder": {
+          "numerator": "48579",
+          "denominator": "98560",
+          "value": 0.492887581168831
+        },
+        "inverseN": {
+          "numerator": "13669",
+          "denominator": "53760",
+          "value": 0.254259672619047
+        },
+        "attemptsPerParticle": {
+          "numerator": "28266701",
+          "denominator": "7526400",
+          "value": 3.755673495960884
+        }
+      },
+      "lawSha256": "28e726cea750e87db2f01c9e66ec03d6bc19f0e97c659031f4fd9bf9470a06b9"
+    }
+  ],
+  "negative": {
+    "schemaVersion": 1,
+    "parameters": {
+      "L": 3,
+      "k": 2,
+      "boundary": "periodic"
+    },
+    "rows": [
+      {
+        "feedback": "feedback-4-00005",
+        "feedbackMetrics": {
+          "coverage": {
+            "numerator": "2320",
+            "denominator": "2691",
+            "value": 0.8621330360460795
+          },
+          "absOrder": {
+            "numerator": "115601",
+            "denominator": "233818",
+            "value": 0.4944059054478269
+          },
+          "attemptsPerParticle": {
+            "numerator": "127869221",
+            "denominator": "28608320",
+            "value": 4.469651520956141
+          }
+        },
+        "components": [
+          {
+            "policy": "switch-20-20",
+            "weight": "1/1",
+            "states": 2,
+            "metrics": {
+              "coverage": {
+                "numerator": "21304",
+                "denominator": "24219",
+                "value": 0.87963995210372
+              },
+              "absOrder": {
+                "numerator": "853441",
+                "denominator": "2104362",
+                "value": 0.405558074133632
+              },
+              "inverseN": {
+                "numerator": "8185",
+                "denominator": "32292",
+                "value": 0.253468351294438
+              },
+              "attemptsPerParticle": {
+                "numerator": "84944179",
+                "denominator": "19310616",
+                "value": 4.398833211742183
+              }
+            }
+          }
+        ],
+        "dominatingHullVector": {
+          "coverage": {
+            "numerator": "21304",
+            "denominator": "24219",
+            "value": 0.87963995210372
+          },
+          "absOrder": {
+            "numerator": "853441",
+            "denominator": "2104362",
+            "value": 0.405558074133632
+          },
+          "attemptsPerParticle": {
+            "numerator": "84944179",
+            "denominator": "19310616",
+            "value": 4.398833211742183
+          }
+        },
+        "coordinateSlacks": {
+          "coverageGain": {
+            "numerator": "424",
+            "denominator": "24219",
+            "value": 0.01750691605764
+          },
+          "orderReduction": {
+            "numerator": "93484",
+            "denominator": "1052181",
+            "value": 0.088847831314194
+          },
+          "costReduction": {
+            "numerator": "54701807",
+            "denominator": "772424640",
+            "value": 0.070818309213957
+          }
+        }
+      },
+      {
+        "feedback": "feedback-4-00006",
+        "feedbackMetrics": {
+          "coverage": {
+            "numerator": "2320",
+            "denominator": "2691",
+            "value": 0.8621330360460795
+          },
+          "absOrder": {
+            "numerator": "114809",
+            "denominator": "233818",
+            "value": 0.49101865553550195
+          },
+          "attemptsPerParticle": {
+            "numerator": "3207255",
+            "denominator": "715208",
+            "value": 4.484366785606425
+          }
+        },
+        "components": [
+          {
+            "policy": "switch-20-20",
+            "weight": "1/1",
+            "states": 2,
+            "metrics": {
+              "coverage": {
+                "numerator": "21304",
+                "denominator": "24219",
+                "value": 0.87963995210372
+              },
+              "absOrder": {
+                "numerator": "853441",
+                "denominator": "2104362",
+                "value": 0.405558074133632
+              },
+              "inverseN": {
+                "numerator": "8185",
+                "denominator": "32292",
+                "value": 0.253468351294438
+              },
+              "attemptsPerParticle": {
+                "numerator": "84944179",
+                "denominator": "19310616",
+                "value": 4.398833211742183
+              }
+            }
+          }
+        ],
+        "dominatingHullVector": {
+          "coverage": {
+            "numerator": "21304",
+            "denominator": "24219",
+            "value": 0.87963995210372
+          },
+          "absOrder": {
+            "numerator": "853441",
+            "denominator": "2104362",
+            "value": 0.405558074133632
+          },
+          "attemptsPerParticle": {
+            "numerator": "84944179",
+            "denominator": "19310616",
+            "value": 4.398833211742183
+          }
+        },
+        "coordinateSlacks": {
+          "coverageGain": {
+            "numerator": "424",
+            "denominator": "24219",
+            "value": 0.01750691605764
+          },
+          "orderReduction": {
+            "numerator": "89920",
+            "denominator": "1052181",
+            "value": 0.085460581401869
+          },
+          "costReduction": {
+            "numerator": "825853",
+            "denominator": "9655308",
+            "value": 0.085533573864241
+          }
+        }
+      },
+      {
+        "feedback": "feedback-4-00009",
+        "feedbackMetrics": {
+          "coverage": {
+            "numerator": "21304",
+            "denominator": "24219",
+            "value": 0.8796399521037203
+          },
+          "absOrder": {
+            "numerator": "853441",
+            "denominator": "2104362",
+            "value": 0.40555807413363293
+          },
+          "attemptsPerParticle": {
+            "numerator": "84944179",
+            "denominator": "19310616",
+            "value": 4.398833211742184
+          }
+        },
+        "components": [
+          {
+            "policy": "switch-20-20",
+            "weight": "1/1",
+            "states": 2,
+            "metrics": {
+              "coverage": {
+                "numerator": "21304",
+                "denominator": "24219",
+                "value": 0.87963995210372
+              },
+              "absOrder": {
+                "numerator": "853441",
+                "denominator": "2104362",
+                "value": 0.405558074133632
+              },
+              "inverseN": {
+                "numerator": "8185",
+                "denominator": "32292",
+                "value": 0.253468351294438
+              },
+              "attemptsPerParticle": {
+                "numerator": "84944179",
+                "denominator": "19310616",
+                "value": 4.398833211742183
+              }
+            }
+          }
+        ],
+        "dominatingHullVector": {
+          "coverage": {
+            "numerator": "21304",
+            "denominator": "24219",
+            "value": 0.87963995210372
+          },
+          "absOrder": {
+            "numerator": "853441",
+            "denominator": "2104362",
+            "value": 0.405558074133632
+          },
+          "attemptsPerParticle": {
+            "numerator": "84944179",
+            "denominator": "19310616",
+            "value": 4.398833211742183
+          }
+        },
+        "coordinateSlacks": {
+          "coverageGain": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "orderReduction": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costReduction": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          }
+        }
+      },
+      {
+        "feedback": "feedback-4-00010",
+        "feedbackMetrics": {
+          "coverage": {
+            "numerator": "21304",
+            "denominator": "24219",
+            "value": 0.8796399521037203
+          },
+          "absOrder": {
+            "numerator": "859453",
+            "denominator": "2104362",
+            "value": 0.40841499703948275
+          },
+          "attemptsPerParticle": {
+            "numerator": "3377320357",
+            "denominator": "772424640",
+            "value": 4.372362276014395
+          }
+        },
+        "components": [
+          {
+            "policy": "switch-20-14",
+            "weight": "9/10",
+            "states": 2,
+            "metrics": {
+              "coverage": {
+                "numerator": "802856",
+                "denominator": "909387",
+                "value": 0.88285405443447
+              },
+              "absOrder": {
+                "numerator": "11505230203",
+                "denominator": "29814353838",
+                "value": 0.385895675134034
+              },
+              "inverseN": {
+                "numerator": "305873",
+                "denominator": "1212516",
+                "value": 0.252263062920406
+              },
+              "attemptsPerParticle": {
+                "numerator": "3723184272175786717",
+                "denominator": "841307954916947760",
+                "value": 4.425471375155762
+              }
+            }
+          },
+          {
+            "policy": "H-once-V-forever",
+            "weight": "1/10",
+            "states": 2,
+            "metrics": {
+              "coverage": {
+                "numerator": "8",
+                "denominator": "9",
+                "value": 0.888888888888888
+              },
+              "absOrder": {
+                "numerator": "1",
+                "denominator": "2",
+                "value": 0.5
+              },
+              "inverseN": {
+                "numerator": "1",
+                "denominator": "4",
+                "value": 0.25
+              },
+              "attemptsPerParticle": {
+                "numerator": "37",
+                "denominator": "10",
+                "value": 3.7
+              }
+            }
+          }
+        ],
+        "dominatingHullVector": {
+          "coverage": {
+            "numerator": "446336",
+            "denominator": "505215",
+            "value": 0.883457537879912
+          },
+          "absOrder": {
+            "numerator": "6580791597",
+            "denominator": "16563529910",
+            "value": 0.39730610762063
+          },
+          "attemptsPerParticle": {
+            "numerator": "813811064061661937",
+            "denominator": "186957323314877280",
+            "value": 4.352924237640185
+          }
+        },
+        "coordinateSlacks": {
+          "coverageGain": {
+            "numerator": "5190136",
+            "denominator": "1359533565",
+            "value": 0.003817585776192
+          },
+          "orderReduction": {
+            "numerator": "96801926273279",
+            "denominator": "8713915732116855",
+            "value": 0.011108889418851
+          },
+          "costReduction": {
+            "numerator": "5848032782749165024711",
+            "denominator": "300855089910120186767040",
+            "value": 0.019438038374209
+          }
+        }
+      },
+      {
+        "feedback": [
+          "feedback-4-00004",
+          "feedback-4-00012"
+        ],
+        "components": [
+          {
+            "policy": "H-once-V-forever",
+            "weight": "1/1",
+            "states": 2,
+            "metrics": {
+              "coverage": {
+                "numerator": "8",
+                "denominator": "9",
+                "value": 0.888888888888888
+              },
+              "absOrder": {
+                "numerator": "1",
+                "denominator": "2",
+                "value": 0.5
+              },
+              "inverseN": {
+                "numerator": "1",
+                "denominator": "4",
+                "value": 0.25
+              },
+              "attemptsPerParticle": {
+                "numerator": "37",
+                "denominator": "10",
+                "value": 3.7
+              }
+            }
+          }
+        ],
+        "meaning": "Same complete physical process by forced-first-success and fixed trace encoding."
+      }
+    ],
+    "sources": [
+      {
+        "file": "../stage4/results/capability-search.json",
+        "sha256": "b2477aaabff6aff6fade41d86d5a2b4e7a7efe8ad3ebf52504c9f3e86a81c6f0"
+      },
+      {
+        "file": "../stage4/results/proper-boundary-null.json",
+        "sha256": "fc9c5bab5939b94e0c7ce3e14d84ee100ae903a5549c2f6b821c537f43240ca8"
+      }
+    ],
+    "theorem": "For every mu,nu>=0, the maximum J over all fixed-proper deterministic one-bit feedback physical classes is <= the supremum over complete fixed-proper <=2-state stochastic temporal controllers. All feedback points lie in the monotone dominated closure of the temporal convex hull.",
+    "proof": "Each feedback vector is weakly dominated by an explicit convex combination of proper <=2-state temporal vectors. For linear nonnegative scalarization, its reward is <= the combination average <= one constituent reward <= full temporal support. The mixture itself is not required to use only two states.",
+    "limits": "Not equality of nonconvex attainable sets, not exact raw point inclusion, not arbitrary stochastic feedback, not universal-liveness scope, not larger lattices. First-V label counterparts have identical three objectives by transposition."
+  },
+  "densityExpected": [
+    {
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic"
+      },
+      "macroStates": 120,
+      "terminalAtoms": 9
+    },
+    {
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "macroStates": 62,
+      "terminalAtoms": 8
+    }
+  ]
+}

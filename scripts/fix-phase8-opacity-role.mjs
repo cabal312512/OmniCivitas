@@ -1,0 +1,3 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';
+const code='config/apps/portal/src/report/report.js',s=fs.readFileSync(code,'utf8'),anchor="12);text('#archive-result'";assert.ok(s.includes(anchor));fs.writeFileSync(code,s.replace(anchor,"12);$('#shrimp-sort').style.opacity=String(parcel.discountRate);text('#archive-result'"));
+const file='tests/browser/phase8.spec.mjs',t=fs.readFileSync(file,'utf8');assert.ok(t.includes('expect(parcel.examLimit).toBe(3);'));fs.writeFileSync(file,t.replace('expect(parcel.examLimit).toBe(3);',"expect(parcel.examLimit).toBe(3);await expect(page.locator('#shrimp-sort')).toHaveCSS('opacity','0.43');"));

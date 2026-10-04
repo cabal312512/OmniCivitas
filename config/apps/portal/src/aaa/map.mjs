@@ -1,0 +1,32 @@
+// Deliberately unreasonable routes; each is a real static page, not a dead link.
+export const rooms=[
+ {path:'',title:'目录',layout:'atlas',feature:'table'},
+ {path:'offices/settings',title:'设置',layout:'overlap',feature:'vue'},
+ {path:'offices/settings/backup',title:'副本',layout:'reversed',feature:'vue'},
+ {path:'cache',title:'缓存',layout:'drawer',feature:'vault'},
+ {path:'cache/l1',title:'一级',layout:'horizontal',feature:'vault'},
+ {path:'cache/l1/l2',title:'二级',layout:'narrow',feature:'vault'},
+ {path:'approval',title:'审核',layout:'oversized',feature:'svelte'},
+ {path:'approval/queue',title:'队列',layout:'stairs',feature:'svelte'},
+ {path:'approval/queue/0',title:'第零项',layout:'footer-first',feature:'svelte'},
+ {path:'display',title:'显示',layout:'offset',feature:'solid'},
+ {path:'display/fold',title:'折叠',layout:'sideways',feature:'solid'},
+ {path:'display/fold/back',title:'背面',layout:'postage',feature:'solid'},
+ {path:'notifications',title:'通知',layout:'double-modal',feature:'lit'},
+ {path:'notifications/unread',title:'未读',layout:'blackout',feature:'lit'},
+ {path:'notifications/unread/all',title:'全部',layout:'wrong-grid',feature:'lit'},
+ {path:'table',title:'表格',layout:'table-over',feature:'table'},
+ {path:'table/header/body',title:'表头',layout:'header-side',feature:'table'},
+ {path:'table/header/body/footer',title:'页脚',layout:'footer-first',feature:'table'},
+ {path:'empty',title:'空层',layout:'empty',feature:'solid'},
+ {path:'empty/0',title:'零层',layout:'unpainted',feature:'table'},
+ {path:'aside',title:'侧栏',layout:'long',feature:'svelte'},
+ {path:'aside/left/right',title:'右边',layout:'horizontal',feature:'solid'},
+ {path:'window',title:'窗口',layout:'double-modal',feature:'vue'},
+ {path:'window/under',title:'下面',layout:'under',feature:'vault'},
+ {path:'route',title:'路由',layout:'atlas',feature:'table'},
+ {path:'route/a/b/c/d/e',title:'下一层',layout:'stairs',feature:'lit'},
+ {path:'route/a/b/c/d/e/start',title:'入口',layout:'postage',feature:'solid'},
+];
+export const address=room=>'/maze/'+room.path+(room.path?'/':'');
+export const linksFor=index=>[rooms[(index+1)%rooms.length],rooms[(index*7+5)%rooms.length],rooms[(index+rooms.length-3)%rooms.length]];

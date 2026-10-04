@@ -1,0 +1,966 @@
+{
+  "schemaVersion": 1,
+  "name": "confirmation",
+  "kind": "confirmatory",
+  "lockedAtUTC": "2026-10-04T04:17:16.153Z",
+  "selectionSourceSha256": "b02c5141c64df52f6f14b926d60c92689042687a3eaec98676a90e5086dd96f5",
+  "protocolSha256": "f10a5f4ec1c7f1b23d068897a2c0fe981abedcabff287bbab5c4d9bedc56f2db",
+  "sourceSeal": {
+    "stage3/src/simulate.mjs": "f5fe4970d8f2d046fdcb705eb29a60e78a32403912c12ebce8db0d6593a061d9",
+    "stage3/src/controllers.mjs": "5e1581cd11c77842fa5372285a418a3f4dd8e86ea3e6ac6077d13c90a38b52fa",
+    "src/lattice.mjs": "dfb22252873f7ee861d24fc35b32f67e47785466b9ee8096c063e4aec041f029",
+    "src/rng.mjs": "a0af386efd47f97c85eda77fbe7ee175af21dc7d828411004486298d5153aecc",
+    "stage2/src/stochastic.mjs": "49586d0fadb4ad0b5d93c1537c4025a17b9c1b121b5cbfab264934329f088c26",
+    "stage3/scripts/run-experiment.mjs": "aeeb57d4e3b256bb85790c39ec291b69056397c33b144f5eca94264392a055c0",
+    "stage3/data/classification/feedback-4.json": "90283d7da982e475891f7af4d2f427e563930058f8a94b76cc2795cc5fb07dc3",
+    "stage3/data/classification/temporal-4.json": "a2aa2b06fe3c197a276275d2a690014fe96e93070a41152f77154e4df4dda1a7"
+  },
+  "analysisSeal": {
+    "scripts/analyze-confirmation.mjs": "2dabb451342754aac927a0c5bf64e3655fcfe6150d57b7cd5a697e6da395359b",
+    "src/frontier.mjs": "bceb52c21116169be7307daecddcee1cd616b9f6a5ee9e0079020be6701d30eb",
+    "src/convex-frontier.mjs": "72290def510ce4094eda63720ee87deac7656aba1b103d84ae60a0cfab31cef6",
+    "../analysis/summarize.mjs": "b97040d661e77d8169918881fd5d0f4073c7f2cc8bd506de049be2b6e2b2bafb"
+  },
+  "metrics": [
+    "coverage-superiority",
+    "absolute-imbalance-noninferiority",
+    "kinetic-cost-noninferiority"
+  ],
+  "absMargin": 0.01,
+  "costMultiplier": 1.1,
+  "alpha": 0.05,
+  "testFamilySize": 612,
+  "comparisonScope": "All 16 live deterministic temporal behaviors <=4 states, and IID fair reference; one-bit subset separately <=2 states plus IID",
+  "families": [
+    {
+      "k": 4,
+      "L": 64,
+      "newCandidateCount": 3,
+      "candidates": [
+        {
+          "controller": "feedback-4-23071",
+          "kind": "feedback",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8112335205078125,
+          "abs_order": 0.04827485297897017,
+          "cost": 55.30720023589674,
+          "deadlock": 0,
+          "reasons": [
+            "balanced-coverage"
+          ]
+        },
+        {
+          "controller": "feedback-4-23408",
+          "kind": "feedback",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8087615966796875,
+          "abs_order": 0.026526558965638554,
+          "cost": 53.96685316844161,
+          "deadlock": 0,
+          "reasons": [
+            "low-imbalance"
+          ]
+        },
+        {
+          "controller": "feedback-4-20844",
+          "kind": "feedback",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8108978271484375,
+          "abs_order": 0.06205551555696368,
+          "cost": 50.20272098608698,
+          "deadlock": 0,
+          "reasons": [
+            "low-cost"
+          ]
+        },
+        {
+          "controller": "feedback-4-00005",
+          "kind": "feedback",
+          "states": 2,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8062896728515625,
+          "abs_order": 0.5296443714432177,
+          "cost": 49.947783190922614,
+          "deadlock": 0,
+          "reasons": [
+            "protected-one-bit"
+          ]
+        },
+        {
+          "controller": "feedback-4-00006",
+          "kind": "feedback",
+          "states": 2,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.809783935546875,
+          "abs_order": 0.1815522794096707,
+          "cost": 51.715245271648236,
+          "deadlock": 0,
+          "reasons": [
+            "protected-one-bit"
+          ]
+        },
+        {
+          "controller": "feedback-4-00010",
+          "kind": "feedback",
+          "states": 2,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8057098388671875,
+          "abs_order": 0.523677844473808,
+          "cost": 52.5195580009342,
+          "deadlock": 0,
+          "reasons": [
+            "protected-one-bit"
+          ]
+        }
+      ],
+      "nulls": [
+        {
+          "controller": "temporal-4-00001",
+          "kind": "temporal",
+          "states": 2,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8117218017578125,
+          "abs_order": 0.03262825969513803,
+          "cost": 54.41880808772382,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00003",
+          "kind": "temporal",
+          "states": 3,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.80859375,
+          "abs_order": 0.3940992733021984,
+          "cost": 63.466446208669055,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00004",
+          "kind": "temporal",
+          "states": 3,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8111419677734375,
+          "abs_order": 0.035901783107734904,
+          "cost": 52.773515612602644,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00006",
+          "kind": "temporal",
+          "states": 3,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.808380126953125,
+          "abs_order": 0.38717551307961356,
+          "cost": 67.53297571321275,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00008",
+          "kind": "temporal",
+          "states": 3,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8096466064453125,
+          "abs_order": 0.3757923291746645,
+          "cost": 64.08848254321586,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00009",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.805938720703125,
+          "abs_order": 0.5678986072858592,
+          "cost": 81.01476208944013,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00010",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8079986572265625,
+          "abs_order": 0.3842730700289135,
+          "cost": 65.51592128652652,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00011",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.811370849609375,
+          "abs_order": 0.03377181115500788,
+          "cost": 52.21599073339726,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00013",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.80596923828125,
+          "abs_order": 0.5686404467887908,
+          "cost": 78.56683457190825,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00015",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8105621337890625,
+          "abs_order": 0.0351843839442283,
+          "cost": 51.92528358075641,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00016",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.807281494140625,
+          "abs_order": 0.38479306638330774,
+          "cost": 66.23937494673984,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00017",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8060150146484375,
+          "abs_order": 0.5733498737819298,
+          "cost": 83.20312154794894,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00018",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.809356689453125,
+          "abs_order": 0.3826192156034545,
+          "cost": 69.37013210228069,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00020",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.810272216796875,
+          "abs_order": 0.03267430928953778,
+          "cost": 53.835680202101464,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00021",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.810516357421875,
+          "abs_order": 0.03236088370789894,
+          "cost": 53.88278790263152,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00023",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.8064422607421875,
+          "abs_order": 0.5694571966086481,
+          "cost": 82.43810511752409,
+          "deadlock": 0
+        },
+        {
+          "controller": "iid-fair",
+          "kind": "iid-reference",
+          "states": 1,
+          "L": 64,
+          "k": 4,
+          "n": 64,
+          "coverage": 0.810272216796875,
+          "abs_order": 0.0572324818682592,
+          "cost": 52.09761843962727,
+          "deadlock": 0
+        }
+      ]
+    },
+    {
+      "k": 8,
+      "L": 64,
+      "newCandidateCount": 3,
+      "candidates": [
+        {
+          "controller": "feedback-4-19873",
+          "kind": "feedback",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.74945068359375,
+          "abs_order": 0.09095510889385941,
+          "cost": 83.98114613334747,
+          "deadlock": 0,
+          "reasons": [
+            "balanced-coverage"
+          ]
+        },
+        {
+          "controller": "feedback-4-00206",
+          "kind": "feedback",
+          "states": 3,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.747406005859375,
+          "abs_order": 0.07266711596163579,
+          "cost": 86.18772012323141,
+          "deadlock": 0,
+          "reasons": [
+            "low-imbalance"
+          ]
+        },
+        {
+          "controller": "feedback-4-25275",
+          "kind": "feedback",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.745758056640625,
+          "abs_order": 0.14076770241910055,
+          "cost": 82.39146798523316,
+          "deadlock": 0,
+          "reasons": [
+            "low-cost"
+          ]
+        },
+        {
+          "controller": "feedback-4-00005",
+          "kind": "feedback",
+          "states": 2,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.753936767578125,
+          "abs_order": 0.7374323943247293,
+          "cost": 87.64514444093929,
+          "deadlock": 0,
+          "reasons": [
+            "protected-one-bit"
+          ]
+        },
+        {
+          "controller": "feedback-4-00006",
+          "kind": "feedback",
+          "states": 2,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.7525634765625,
+          "abs_order": 0.5546520857445976,
+          "cost": 84.63657585089018,
+          "deadlock": 0,
+          "reasons": [
+            "protected-one-bit"
+          ]
+        },
+        {
+          "controller": "feedback-4-00010",
+          "kind": "feedback",
+          "states": 2,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.751922607421875,
+          "abs_order": 0.6992512647843592,
+          "cost": 86.29835991168002,
+          "deadlock": 0,
+          "reasons": [
+            "protected-one-bit"
+          ]
+        }
+      ],
+      "nulls": [
+        {
+          "controller": "temporal-4-00001",
+          "kind": "temporal",
+          "states": 2,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.746429443359375,
+          "abs_order": 0.0719233716804172,
+          "cost": 94.04050454206488,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00003",
+          "kind": "temporal",
+          "states": 3,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.747314453125,
+          "abs_order": 0.4679510342563667,
+          "cost": 97.10890595304689,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00004",
+          "kind": "temporal",
+          "states": 3,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.748687744140625,
+          "abs_order": 0.08024275197764845,
+          "cost": 83.4945199991812,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00006",
+          "kind": "temporal",
+          "states": 3,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.7503662109375,
+          "abs_order": 0.4811122550700435,
+          "cost": 101.71959611663306,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00008",
+          "kind": "temporal",
+          "states": 3,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.748931884765625,
+          "abs_order": 0.4602752821870917,
+          "cost": 110.82620672383382,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00009",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.7506103515625,
+          "abs_order": 0.6783580117688256,
+          "cost": 123.24607026242117,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00010",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.744903564453125,
+          "abs_order": 0.49460950313983376,
+          "cost": 100.9544311235624,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00011",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.748626708984375,
+          "abs_order": 0.0976682364425136,
+          "cost": 88.24792714176681,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00013",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.7493896484375,
+          "abs_order": 0.6698362346093266,
+          "cost": 123.6708273499808,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00015",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.74896240234375,
+          "abs_order": 0.06418191488159686,
+          "cost": 86.17296400575282,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00016",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.74859619140625,
+          "abs_order": 0.4389111426318591,
+          "cost": 104.03265336788034,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00017",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.7532958984375,
+          "abs_order": 0.6605951017388476,
+          "cost": 121.48805409490657,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00018",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.74676513671875,
+          "abs_order": 0.4622738446826859,
+          "cost": 101.00925312758936,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00020",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.74481201171875,
+          "abs_order": 0.07429385920500652,
+          "cost": 84.49302432889839,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00021",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.747833251953125,
+          "abs_order": 0.07939536471154104,
+          "cost": 87.78982367536464,
+          "deadlock": 0
+        },
+        {
+          "controller": "temporal-4-00023",
+          "kind": "temporal",
+          "states": 4,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.747314453125,
+          "abs_order": 0.6478477563504569,
+          "cost": 125.64608133821274,
+          "deadlock": 0
+        },
+        {
+          "controller": "iid-fair",
+          "kind": "iid-reference",
+          "states": 1,
+          "L": 64,
+          "k": 8,
+          "n": 64,
+          "coverage": 0.748809814453125,
+          "abs_order": 0.1179090134760428,
+          "cost": 88.44057999678145,
+          "deadlock": 0
+        }
+      ]
+    }
+  ],
+  "arms": [
+    {
+      "controller": "feedback-4-23071",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "feedback-4-23408",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "feedback-4-20844",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "feedback-4-00005",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "feedback-4-00006",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "feedback-4-00010",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00001",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00003",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00004",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00006",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00008",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00009",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00010",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00011",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00013",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00015",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00016",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00017",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00018",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00020",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00021",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "temporal-4-00023",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "iid-fair",
+      "L": 64,
+      "k": 4,
+      "repetitions": 768,
+      "seedStart": 90000001
+    },
+    {
+      "controller": "feedback-4-19873",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "feedback-4-00206",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "feedback-4-25275",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "feedback-4-00005",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "feedback-4-00006",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "feedback-4-00010",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00001",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00003",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00004",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00006",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00008",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00009",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00010",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00011",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00013",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00015",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00016",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00017",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00018",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00020",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00021",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "temporal-4-00023",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    },
+    {
+      "controller": "iid-fair",
+      "L": 64,
+      "k": 8,
+      "repetitions": 768,
+      "seedStart": 90100001
+    }
+  ]
+}

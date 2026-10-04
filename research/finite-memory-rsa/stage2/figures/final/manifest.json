@@ -1,0 +1,598 @@
+{
+  "schemaVersion": 2,
+  "figures": [
+    {
+      "name": "landscape-confirmation-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-confirmation-L64-k4-periodic.png",
+          "sha256": "d715ebd18cefb6eaa016ece2d016ee307c436f7c43746ee5ef0bbb09d3987946"
+        },
+        {
+          "file": "landscape-confirmation-L64-k4-periodic.svg",
+          "sha256": "12855c0a222803bb4cb0eff3675186bde2162f255666b3bd1c49c73d2269717d"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-confirmation-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-confirmation-L64-k8-periodic.png",
+          "sha256": "a6e3e8cc27a3198431744e6a2676f953dab69509950d53d2aa1c73312050c82e"
+        },
+        {
+          "file": "landscape-confirmation-L64-k8-periodic.svg",
+          "sha256": "bc5ffca45fc63c5c4ec0f03b4b6deb1092d830fc3a906996648baae81f719cd8"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-confirmation_stability-L256-k4-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-confirmation_stability-L256-k4-periodic.png",
+          "sha256": "0373c441f84e2507b437d7207f00844e3598fd7de236882ac6c16b284da29086"
+        },
+        {
+          "file": "landscape-confirmation_stability-L256-k4-periodic.svg",
+          "sha256": "d161146d01c81ce6423e63220e03892b20cba4e4bbe65935834fbacc0bfe8e06"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-confirmation_stability-L256-k8-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-confirmation_stability-L256-k8-periodic.png",
+          "sha256": "3f157349f2e0805fa827b848c091442b9136ddf2c5262400195522aaa98ab0b1"
+        },
+        {
+          "file": "landscape-confirmation_stability-L256-k8-periodic.svg",
+          "sha256": "e0a367ed612e51e9887cb56a0e34b0b26d0a4aaaeb53991e01e532266ca862ba"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-confirmation_stability-L512-k4-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-confirmation_stability-L512-k4-periodic.png",
+          "sha256": "8fa6c5c17742c64ef870f005b502fb203d8fcf199b736f6048eeb066d696e53c"
+        },
+        {
+          "file": "landscape-confirmation_stability-L512-k4-periodic.svg",
+          "sha256": "da7b062df9adb6c20e0feca57ed4cdd3ca262d9a927cfab5f3c3fef2ce706b45"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-confirmation_stability-L512-k8-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-confirmation_stability-L512-k8-periodic.png",
+          "sha256": "0b555e91258b22356e9705b869171c96a0ab350f0b1c93c83b7f56442a776c0d"
+        },
+        {
+          "file": "landscape-confirmation_stability-L512-k8-periodic.svg",
+          "sha256": "9de892c9ea8354d13377e33647643c573e684a92f642c9efc00e204fb247255a"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-landscape-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-landscape-L64-k4-periodic.png",
+          "sha256": "3568130e3c0681501d5dd94a2b64117c9af419c155a95495249963e4ecd19228"
+        },
+        {
+          "file": "landscape-landscape-L64-k4-periodic.svg",
+          "sha256": "69acad08396d08e1fc91f7ba607f90bdfea6e2bfa8098289f3e40bb1ba1434be"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-landscape-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-landscape-L64-k8-periodic.png",
+          "sha256": "249a6fbed78e271d158aca9fc06944f3ca3a0147888c8d5f6f309a755e5fd557"
+        },
+        {
+          "file": "landscape-landscape-L64-k8-periodic.svg",
+          "sha256": "3ef060826609c128f43b50a45734e6167ed8084cfa85b0e9169227a38a23aeab"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-refinement-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-refinement-L64-k4-periodic.png",
+          "sha256": "c6d7cc738f0ef6beebbe49e3f3f0ce20441b288808900eb2340c4cf5aee7f867"
+        },
+        {
+          "file": "landscape-refinement-L64-k4-periodic.svg",
+          "sha256": "bfdf0545533d1d8edbf26cba4ef3c4201d8a925c2c5bd9cafba8c52a322e692f"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-refinement-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-refinement-L64-k8-periodic.png",
+          "sha256": "84aac9ef4772e1958e38e95a53d051eadcdfee4735e92244ba1114de979bf6e3"
+        },
+        {
+          "file": "landscape-refinement-L64-k8-periodic.svg",
+          "sha256": "abbce7d7630c97a96c82e303290617b03c7c2ed388a9310ef8089dacb72e104c"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "frontier-confirmation-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-confirmation-L64-k4-periodic.png",
+          "sha256": "04beba043606a781178093b15934d848ec3dfa6e2ff59dd357f483aac23623c1"
+        },
+        {
+          "file": "frontier-confirmation-L64-k4-periodic.svg",
+          "sha256": "c1f24823da867c66c042ae5c73a68d7b77cbbbb0e89e086c8ec8c0cee3cff888"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "frontier-confirmation-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-confirmation-L64-k8-periodic.png",
+          "sha256": "2cae4e9270edca607c466ba1e4654781a49dfc6df4d33d9e0272f07d5a141847"
+        },
+        {
+          "file": "frontier-confirmation-L64-k8-periodic.svg",
+          "sha256": "8331ac1bed06275e44651d4aefd64b41b8adb77000035abe0a8cfe8bf654153e"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "frontier-confirmation_stability-L256-k4-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-confirmation_stability-L256-k4-periodic.png",
+          "sha256": "6bc17fb37916e37f684b04d1e3d28dc71084ba7a8c0c15d344bf39fd3c6ea256"
+        },
+        {
+          "file": "frontier-confirmation_stability-L256-k4-periodic.svg",
+          "sha256": "27a6047d8b7ed193146223065a118e9f365edef9b425df10863f33aba7776284"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "frontier-confirmation_stability-L256-k8-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-confirmation_stability-L256-k8-periodic.png",
+          "sha256": "34f22f4e6ac352d9eaaae524afcbb54dc093cdcc8c1fe8d05d73157935a5bc13"
+        },
+        {
+          "file": "frontier-confirmation_stability-L256-k8-periodic.svg",
+          "sha256": "55a609c79beee78e5d86aa56ce4e9f98a3a26c5073bc243f2f9433c2fe7b8641"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "frontier-confirmation_stability-L512-k4-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-confirmation_stability-L512-k4-periodic.png",
+          "sha256": "d04d17ab9879a12668fff18efd5f74da50e7921ed33c438001dcb26c6a5f02e5"
+        },
+        {
+          "file": "frontier-confirmation_stability-L512-k4-periodic.svg",
+          "sha256": "4c5ae6bd23c1de83a26143106aa4067a1bb085bfa9ebe944eab089960b43da1d"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "frontier-confirmation_stability-L512-k8-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-confirmation_stability-L512-k8-periodic.png",
+          "sha256": "0442462cd913634f9d2504ff078b6863567b4a4e8936c9589f4c9449254911ec"
+        },
+        {
+          "file": "frontier-confirmation_stability-L512-k8-periodic.svg",
+          "sha256": "f3a0c414b37bb4d255da88f96ad79a654cc20bf4a670cbfe163c2942980cc6ab"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "frontier-landscape-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-landscape-L64-k4-periodic.png",
+          "sha256": "807a0419db0ab7c8165e1d1c97c0786fa1ea59b24a8b2edf9688151fe7a8f590"
+        },
+        {
+          "file": "frontier-landscape-L64-k4-periodic.svg",
+          "sha256": "0573e381aa7f74723a566e6bc8f14445c2afc0e23ce3e9e1ae898d0589a7b0c1"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "frontier-landscape-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-landscape-L64-k8-periodic.png",
+          "sha256": "4aa0d3d524ad7bfb7e85f5adda70214d9370f60f36e8625014d2187c81b8872d"
+        },
+        {
+          "file": "frontier-landscape-L64-k8-periodic.svg",
+          "sha256": "fd99cfbe7e520511c8b6f01c5cff96179b736c0f9a80c1111193419104da31a4"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "landscape-exploration-combined-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-exploration-combined-L64-k4-periodic.png",
+          "sha256": "67d4dddfafbb797a5e23642af06f92de194a89eaeced8c019d76fa4ed6bbb1d5"
+        },
+        {
+          "file": "landscape-exploration-combined-L64-k4-periodic.svg",
+          "sha256": "605c5ae070829f32c0209df798e6b9039fa0d07a3183100d90ccad7aa69608c6"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "landscape-exploration-combined-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "landscape-exploration-combined-L64-k8-periodic.png",
+          "sha256": "93453d70d48acd8d5ee66ef5346161ea4817fdaf32dad8bb5d9daafda31ac12d"
+        },
+        {
+          "file": "landscape-exploration-combined-L64-k8-periodic.svg",
+          "sha256": "5e4e262e37bdb56d36fa121e2d01a36c6b33e4ac63b97033468a06258ff68f00"
+        }
+      ],
+      "interpretation": "All measured points, no interpolation; diagonal is the outcome-independent null. Kinetic cost respects actual/conditional-expectation labels."
+    },
+    {
+      "name": "frontier-exploration-combined-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-exploration-combined-L64-k4-periodic.png",
+          "sha256": "33dc054fcc5b36854da1a74b28094930c4edeb94791dafc8a3031369278c028c"
+        },
+        {
+          "file": "frontier-exploration-combined-L64-k4-periodic.svg",
+          "sha256": "5f9df6aa7a34bdbe3a9b2e7f66d356240877ca95431306d233650d37ad51fa08"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "frontier-exploration-combined-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "frontier-exploration-combined-L64-k8-periodic.png",
+          "sha256": "325c9151b693a546e0930c15aa514734f5fe1a52046ae657ef6fcae1cd4db333"
+        },
+        {
+          "file": "frontier-exploration-combined-L64-k8-periodic.svg",
+          "sha256": "9b942b71161e6cff026702c806d702ce51ce6c5ab47c4d92f8a4e0c1b95feaaf"
+        }
+      ],
+      "interpretation": "All points retained. Frontiers connect exploratory noisy means only, with no claim about the parameter continuum."
+    },
+    {
+      "name": "finite-size-large_size-k4-periodic",
+      "artifacts": [
+        {
+          "file": "finite-size-large_size-k4-periodic.png",
+          "sha256": "41bd1b4dfda4b1c4ffa951b03c9cfb859fc7e6afaa1b5acd1e48575a1a6d40ae"
+        },
+        {
+          "file": "finite-size-large_size-k4-periodic.svg",
+          "sha256": "c59eab3dc7917ce193aeca5aa7ad065e6e996995da2feb864bf594ba43e6cb92"
+        }
+      ],
+      "interpretation": "Actual finite sizes and replicate counts only. No extrapolation or forced limit fit; CIs use independent lattice runs."
+    },
+    {
+      "name": "signed-S-large_size-k4-periodic",
+      "artifacts": [
+        {
+          "file": "signed-S-large_size-k4-periodic.png",
+          "sha256": "1445e8d1db91004f2908e25896a0ff182ae1548f6b25aeb62a71b6c54f1a763e"
+        },
+        {
+          "file": "signed-S-large_size-k4-periodic.svg",
+          "sha256": "5dfd50d87415baec0e54eb14bca128f652137359a205517d8b94507d4d45864e"
+        }
+      ],
+      "interpretation": "Equal H/V ensemble means do not establish isotropy. Histogram is descriptive, not a formal bimodality test."
+    },
+    {
+      "name": "signed-S-ecdf-large_size-k4-periodic",
+      "artifacts": [
+        {
+          "file": "signed-S-ecdf-large_size-k4-periodic.png",
+          "sha256": "12756a897d62b74c4efe8f9442c80e0d9104dc40955f64537458894e599665a2"
+        },
+        {
+          "file": "signed-S-ecdf-large_size-k4-periodic.svg",
+          "sha256": "e1ee418f11f93200d6aa6f13d43a4ea03b0ee85f67247a619eeae11d47b7def7"
+        }
+      ],
+      "interpretation": "Distribution bands are uniform within one policy/size group, not simultaneous over all plotted sizes."
+    },
+    {
+      "name": "finite-size-large_size-k8-periodic",
+      "artifacts": [
+        {
+          "file": "finite-size-large_size-k8-periodic.png",
+          "sha256": "1e8bc07da36415807da46439c05d1f1f18eafb8e80426dac76fae648d43bb1e9"
+        },
+        {
+          "file": "finite-size-large_size-k8-periodic.svg",
+          "sha256": "43dd8e4f9ae59ca21b15f9f0643dbd0dd4cbb5bcc03b8efcbda9172fdda8af27"
+        }
+      ],
+      "interpretation": "Actual finite sizes and replicate counts only. No extrapolation or forced limit fit; CIs use independent lattice runs."
+    },
+    {
+      "name": "signed-S-large_size-k8-periodic",
+      "artifacts": [
+        {
+          "file": "signed-S-large_size-k8-periodic.png",
+          "sha256": "104f992b29b99ebe449819cd599269da74d6bcb38e35e7e345cbaf2c23d226dc"
+        },
+        {
+          "file": "signed-S-large_size-k8-periodic.svg",
+          "sha256": "dae1a96a88ae4619e787217950b4c7d63b1609232174abb6be82bc2bf6b35e0c"
+        }
+      ],
+      "interpretation": "Equal H/V ensemble means do not establish isotropy. Histogram is descriptive, not a formal bimodality test."
+    },
+    {
+      "name": "signed-S-ecdf-large_size-k8-periodic",
+      "artifacts": [
+        {
+          "file": "signed-S-ecdf-large_size-k8-periodic.png",
+          "sha256": "59b296324ef5676c9f25d5435a6c1cc5c0f1209ade928d89111a559649765296"
+        },
+        {
+          "file": "signed-S-ecdf-large_size-k8-periodic.svg",
+          "sha256": "d7b14f7872b81a74964667b3461df452cc67eed4aa1a58baede403471a564802"
+        }
+      ],
+      "interpretation": "Distribution bands are uniform within one policy/size group, not simultaneous over all plotted sizes."
+    },
+    {
+      "name": "locked-coverage-effects",
+      "artifacts": [
+        {
+          "file": "locked-coverage-effects.png",
+          "sha256": "817f90270420d6b9409d3cf9d053d65e72623826720c672fb0be917276a0418a"
+        },
+        {
+          "file": "locked-coverage-effects.svg",
+          "sha256": "0aebbe0e865a08198ddc16b91da86a8d74ed348d48677a5bd142efe04211c09c"
+        }
+      ],
+      "interpretation": "Fixed holdout family only. Noninferiority needs the one-sided margin test; positive coverage needs a positive effect and adjusted rejection."
+    },
+    {
+      "name": "locked-abs_order-effects",
+      "artifacts": [
+        {
+          "file": "locked-abs_order-effects.png",
+          "sha256": "622d4d8110dfdb13f7a43e8b815a10735d1f037b514a7c9b94d1c7578f060b16"
+        },
+        {
+          "file": "locked-abs_order-effects.svg",
+          "sha256": "2e8b6e723b5223a305e953c0f4b8578848435318bbd24e437c5b33dc31c41d93"
+        }
+      ],
+      "interpretation": "Fixed holdout family only. Noninferiority needs the one-sided margin test; positive coverage needs a positive effect and adjusted rejection."
+    },
+    {
+      "name": "finite-effects-large_size-k4-periodic",
+      "artifacts": [
+        {
+          "file": "finite-effects-large_size-k4-periodic.png",
+          "sha256": "bc278eb2db5007f984926202058012489a18e16f46129edb99c7c9bcd1510aca"
+        },
+        {
+          "file": "finite-effects-large_size-k4-periodic.svg",
+          "sha256": "0789e9277dc493936eac60f8df84fed70148197849c8d6cb42f6615a3414b324"
+        }
+      ],
+      "interpretation": "Same-seed run-wise differences at each actual L; pointwise CIs. These descriptive comparisons are not an unregistered confirmatory family."
+    },
+    {
+      "name": "finite-effects-large_size-k8-periodic",
+      "artifacts": [
+        {
+          "file": "finite-effects-large_size-k8-periodic.png",
+          "sha256": "7096045b287f5a16515a22b6bb774a2aea3b0411653c3f8010e3ced79d11f861"
+        },
+        {
+          "file": "finite-effects-large_size-k8-periodic.svg",
+          "sha256": "2e2082a99c9de0ce4ee6a2aa32ed3f463bc74862119f0e30091a91f335c184c8"
+        }
+      ],
+      "interpretation": "Same-seed run-wise differences at each actual L; pointwise CIs. These descriptive comparisons are not an unregistered confirmatory family."
+    },
+    {
+      "name": "accepted-run-lengths-landscape-L64-k4-periodic",
+      "artifacts": [
+        {
+          "file": "accepted-run-lengths-landscape-L64-k4-periodic.png",
+          "sha256": "c2d8e989e288e5c498357151bd26e19d5141ebcfd54b1dcac9054728df6df7f0"
+        },
+        {
+          "file": "accepted-run-lengths-landscape-L64-k4-periodic.svg",
+          "sha256": "7c8d00be9bd35bd85430ea119eb4554f799fd0ab13b24f40b3bf007ae3d6b6a8"
+        }
+      ],
+      "interpretation": "Actual accepted sequence runs; pooled counts are descriptive, not independent lattice observations. Event-engine proposal run histograms remain unavailable."
+    },
+    {
+      "name": "accepted-run-lengths-landscape-L64-k8-periodic",
+      "artifacts": [
+        {
+          "file": "accepted-run-lengths-landscape-L64-k8-periodic.png",
+          "sha256": "6be27c62404de76a2345a9bf09aec7be498afd56d3398eaf9cd03b315fe4cf72"
+        },
+        {
+          "file": "accepted-run-lengths-landscape-L64-k8-periodic.svg",
+          "sha256": "565ed1e89cf01d1f4c8053db744c75513cee84624d78087b02fb53279e6ee62f"
+        }
+      ],
+      "interpretation": "Actual accepted sequence runs; pooled counts are descriptive, not independent lattice observations. Event-engine proposal run histograms remain unavailable."
+    },
+    {
+      "name": "accepted-run-lengths-large_size-L2048-k4-periodic",
+      "artifacts": [
+        {
+          "file": "accepted-run-lengths-large_size-L2048-k4-periodic.png",
+          "sha256": "d3e9c21b3a5e1093696cada6c1dc2ecffa5f14b4ae6a23f76cde3ea54c4fe94c"
+        },
+        {
+          "file": "accepted-run-lengths-large_size-L2048-k4-periodic.svg",
+          "sha256": "4ba30ea28c5a786e974e3a2a71c1b9cd8caada41b795a4145a4f1e70b5a1f72c"
+        }
+      ],
+      "interpretation": "Actual accepted sequence runs; pooled counts are descriptive, not independent lattice observations. Event-engine proposal run histograms remain unavailable."
+    },
+    {
+      "name": "accepted-run-lengths-large_size-L2048-k8-periodic",
+      "artifacts": [
+        {
+          "file": "accepted-run-lengths-large_size-L2048-k8-periodic.png",
+          "sha256": "61a7a84bbe904cb1b4d09f9c217b4557db1d4ce957044af3037392683bd771f6"
+        },
+        {
+          "file": "accepted-run-lengths-large_size-L2048-k8-periodic.svg",
+          "sha256": "bd7477499aa3c08cdc415d9d474a572d388378d574a65e9030968d36b151a8f5"
+        }
+      ],
+      "interpretation": "Actual accepted sequence runs; pooled counts are descriptive, not independent lattice observations. Event-engine proposal run histograms remain unavailable."
+    },
+    {
+      "name": "locked-tradeoff",
+      "artifacts": [
+        {
+          "file": "locked-tradeoff.png",
+          "sha256": "89db2d8bec15d31b7bb85c199ca44128921ee8b797f2c727f127fc2c1feb32b8"
+        },
+        {
+          "file": "locked-tradeoff.svg",
+          "sha256": "3918f528fa85b2d42a2ff8989bdefb5aa4d383053f368b12b631fce08f0aa1cf"
+        }
+      ],
+      "interpretation": "Held-out point estimates and processed pointwise 95% Student-t intervals. Lines link frozen proposal-matched arms, not a fitted Pareto bound or continuum dominance claim."
+    },
+    {
+      "name": "locked-selected-effects",
+      "artifacts": [
+        {
+          "file": "locked-selected-effects.png",
+          "sha256": "364a47dc01ce774564542ab15a9136a1780475ba4f32d073b17c338704b67ce6"
+        },
+        {
+          "file": "locked-selected-effects.svg",
+          "sha256": "bcfe9bba35cbc854107b6ecf99f017a3a05c4c41b4529614fdffa2b875945bb6"
+        }
+      ],
+      "interpretation": "Subset of the unchanged 400-test family, not a new correction. Fair, strict alternation and each frozen proposal match stay visible. Holm and Bonferroni have different rejection thresholds."
+    }
+  ],
+  "inputs": [
+    {
+      "file": "summary.json",
+      "sha256": "941d8933376746adf523a16b6f0c63913ee7d7de588d099477429c1fdb05cbbe"
+    },
+    {
+      "file": "comparisons.json",
+      "sha256": "cfc3afad6c7eba9994ac92a01cceb2e8f38978f6e54f146436d9d1abe22b876d"
+    },
+    {
+      "file": "frontiers.csv",
+      "sha256": "47ea5cb53746b6f6a488d14213f8d7dc23b9098ce56b54310c19f3adbdf37165"
+    }
+  ],
+  "limitations": "Finite-grid exploratory landscape; no continuum optimality, forced limit fit or phase-transition claim.",
+  "exportFormats": [
+    "png",
+    "svg"
+  ],
+  "pdfExportSkipped": true,
+  "reason": "User asked to defer PDF generation during the original final export.",
+  "frozenFigureSourceSha256": "758783e296d5b1acb09d270047eda7f08134eec28c83bf8846c2ec9220570a54",
+  "screenAdapterSha256": "2a1448e5659d35ac8a0f34e540bcca04e451b7c8962dd87e857c5f52188c327f",
+  "retainedEarlierPDFs": [
+    "accepted-run-lengths-landscape-L64-k4-periodic.pdf",
+    "accepted-run-lengths-landscape-L64-k8-periodic.pdf",
+    "accepted-run-lengths-large_size-L2048-k4-periodic.pdf",
+    "finite-effects-large_size-k4-periodic.pdf",
+    "finite-effects-large_size-k8-periodic.pdf",
+    "finite-size-large_size-k4-periodic.pdf",
+    "finite-size-large_size-k8-periodic.pdf",
+    "frontier-confirmation-L64-k4-periodic.pdf",
+    "frontier-confirmation-L64-k8-periodic.pdf",
+    "frontier-confirmation_stability-L256-k4-periodic.pdf",
+    "frontier-confirmation_stability-L256-k8-periodic.pdf",
+    "frontier-confirmation_stability-L512-k4-periodic.pdf",
+    "frontier-confirmation_stability-L512-k8-periodic.pdf",
+    "frontier-exploration-combined-L64-k4-periodic.pdf",
+    "frontier-exploration-combined-L64-k8-periodic.pdf",
+    "frontier-landscape-L64-k4-periodic.pdf",
+    "frontier-landscape-L64-k8-periodic.pdf",
+    "landscape-confirmation-L64-k4-periodic.pdf",
+    "landscape-confirmation-L64-k8-periodic.pdf",
+    "landscape-confirmation_stability-L256-k4-periodic.pdf",
+    "landscape-confirmation_stability-L256-k8-periodic.pdf",
+    "landscape-confirmation_stability-L512-k4-periodic.pdf",
+    "landscape-confirmation_stability-L512-k8-periodic.pdf",
+    "landscape-exploration-combined-L64-k4-periodic.pdf",
+    "landscape-exploration-combined-L64-k8-periodic.pdf",
+    "landscape-landscape-L64-k4-periodic.pdf",
+    "landscape-landscape-L64-k8-periodic.pdf",
+    "landscape-refinement-L64-k4-periodic.pdf",
+    "landscape-refinement-L64-k8-periodic.pdf",
+    "locked-abs_order-effects.pdf",
+    "locked-coverage-effects.pdf",
+    "signed-S-ecdf-large_size-k4-periodic.pdf",
+    "signed-S-ecdf-large_size-k8-periodic.pdf",
+    "signed-S-large_size-k4-periodic.pdf",
+    "signed-S-large_size-k8-periodic.pdf"
+  ],
+  "retainedPDFInterpretation": "Earlier PDF files were preserved after interruption; this adapter neither writes nor verifies them."
+}

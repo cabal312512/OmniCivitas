@@ -1,0 +1,716 @@
+{
+  "schemaVersion": 1,
+  "samplingUnit": "Independent direct trajectory, not individual attempts",
+  "records": 192,
+  "groups": [
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 2,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.9064941406250001,
+          "sd": 0.0076770484402475065,
+          "se": 0.0019192621100618766,
+          "ciLow": 0.9024033302726986,
+          "ciHigh": 0.9105849509773016,
+          "min": 0.892578125,
+          "max": 0.91796875
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 10618.625,
+          "sd": 2676.8935945731323,
+          "se": 669.2233986432831,
+          "ciLow": 9192.209091083807,
+          "ciHigh": 12045.040908916193,
+          "min": 6327,
+          "max": 16476
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 0,
+          "ciHigh": 0,
+          "min": 0,
+          "max": 0
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 2,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.9036865234375,
+          "sd": 0.006039705506275871,
+          "se": 0.0015099263765689678,
+          "ciLow": 0.9004681915483334,
+          "ciHigh": 0.9069048553266666,
+          "min": 0.89453125,
+          "max": 0.916015625
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 8059.25,
+          "sd": 1559.1288807108497,
+          "se": 389.7822201777124,
+          "ciLow": 7228.448863934936,
+          "ciHigh": 8890.051136065065,
+          "min": 5962,
+          "max": 11755
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0.31894237223547667,
+          "sd": 0.04356371233688515,
+          "se": 0.010890928084221287,
+          "ciLow": 0.295728908519639,
+          "ciHigh": 0.3421558359513143,
+          "min": 0.23101187479512814,
+          "max": 0.38392470482738084
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 0,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 0,
+          "ciHigh": 0,
+          "min": 0,
+          "max": 0
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 2,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.90869140625,
+          "sd": 0.008209323055285466,
+          "se": 0.0020523307638213666,
+          "ciLow": 0.9043169667761146,
+          "ciHigh": 0.9130658457238854,
+          "min": 0.88671875,
+          "max": 0.91796875
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 9544.812499999998,
+          "sd": 2408.6785095773994,
+          "se": 602.1696273943498,
+          "ciLow": 8261.318321340414,
+          "ciHigh": 10828.306678659583,
+          "min": 5825,
+          "max": 13632
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0.2909300261439433,
+          "sd": 0.0573249333986792,
+          "se": 0.0143312333496698,
+          "ciLow": 0.26038372533347853,
+          "ciHigh": 0.3214763269544081,
+          "min": 0.21182056592676013,
+          "max": 0.4014701363813131
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 0,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 0,
+          "ciHigh": 0,
+          "min": 0,
+          "max": 0
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 2,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.906005859375,
+          "sd": 0.006761123345993593,
+          "se": 0.0016902808364983983,
+          "ciLow": 0.9024031110541771,
+          "ciHigh": 0.9096086076958229,
+          "min": 0.89453125,
+          "max": 0.921875
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 10821.312500000002,
+          "sd": 2271.831440893741,
+          "se": 567.9578602234352,
+          "ciLow": 9610.73897692966,
+          "ciHigh": 12031.886023070343,
+          "min": 7418,
+          "max": 15524
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0.00011994407410012612,
+          "sd": 0.00009022525710954508,
+          "se": 0.00002255631427738627,
+          "ciLow": 0.00007186642828408773,
+          "ciHigh": 0.00016802171991616452,
+          "min": 0.000006774920359104737,
+          "max": 0.0003082461172716404
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 0.5016894972907455,
+          "sd": 0.004687058877076301,
+          "se": 0.0011717647192690753,
+          "ciLow": 0.4991919399123565,
+          "ciHigh": 0.5041870546691346,
+          "min": 0.49115394771587007,
+          "max": 0.5082210550353962
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 0.49512550265043753,
+          "sd": 0.022655459343413793,
+          "se": 0.005663864835853448,
+          "ciLow": 0.48305326051994574,
+          "ciHigh": 0.5071977447809294,
+          "min": 0.45336225596529284,
+          "max": 0.5339168490153173
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 4,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.8122558593749999,
+          "sd": 0.00982727933398011,
+          "se": 0.0024568198334950276,
+          "ciLow": 0.8070192718573747,
+          "ciHigh": 0.8174924468926251,
+          "min": 0.796875,
+          "max": 0.83203125
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 8264.875,
+          "sd": 2662.68560855389,
+          "se": 665.6714021384724,
+          "ciLow": 6846.029992419816,
+          "ciHigh": 9683.720007580185,
+          "min": 5232,
+          "max": 16081
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 0,
+          "ciHigh": 0,
+          "min": 0,
+          "max": 0
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 4,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.787109375,
+          "sd": 0.02091455521381383,
+          "se": 0.005228638803453457,
+          "ciLow": 0.7759647951984829,
+          "ciHigh": 0.7982539548015171,
+          "min": 0.75390625,
+          "max": 0.82421875
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 5683.1875,
+          "sd": 1245.0194225392631,
+          "se": 311.2548556348158,
+          "ciLow": 5019.763479403899,
+          "ciHigh": 6346.611520596101,
+          "min": 3832,
+          "max": 7948
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0.21727506430754906,
+          "sd": 0.0381150443745503,
+          "se": 0.009528761093637575,
+          "ciLow": 0.1969649908047676,
+          "ciHigh": 0.23758513781033053,
+          "min": 0.16998942969478537,
+          "max": 0.2969814285377286
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 0,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 0,
+          "ciHigh": 0,
+          "min": 0,
+          "max": 0
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 4,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.8137207031249999,
+          "sd": 0.012972730156055165,
+          "se": 0.0032431825390137913,
+          "ciLow": 0.8068080231760516,
+          "ciHigh": 0.8206333830739482,
+          "min": 0.7890625,
+          "max": 0.83984375
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 7421.500000000001,
+          "sd": 1964.612701441856,
+          "se": 491.153175360464,
+          "ciLow": 6374.6317875777,
+          "ciHigh": 8468.368212422301,
+          "min": 4562,
+          "max": 11588
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0.18979261913591178,
+          "sd": 0.03899773198793517,
+          "se": 0.009749432996983793,
+          "ciLow": 0.1690121946050252,
+          "ciHigh": 0.21057304366679835,
+          "min": 0.1302254312128827,
+          "max": 0.2702934315528977
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 0,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 0,
+          "ciHigh": 0,
+          "min": 0,
+          "max": 0
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 4,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.8083496093749998,
+          "sd": 0.013031408466012872,
+          "se": 0.003257852116503218,
+          "ciLow": 0.8014056619617781,
+          "ciHigh": 0.8152935567882215,
+          "min": 0.78515625,
+          "max": 0.828125
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 7415.5625,
+          "sd": 1776.6286037980287,
+          "se": 444.1571509495072,
+          "ciLow": 6468.8639424515495,
+          "ciHigh": 8362.26105754845,
+          "min": 3650,
+          "max": 11036
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0.00016212033614969567,
+          "sd": 0.00015553158600674992,
+          "se": 0.00003888289650168748,
+          "ciLow": 0.0000792434040711262,
+          "ciHigh": 0.0002449972682282652,
+          "min": 0.000007776615887481044,
+          "max": 0.0005533835460716877
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 0.5005672817410581,
+          "sd": 0.0058021626296844205,
+          "se": 0.0014505406574211051,
+          "ciLow": 0.49747552751598195,
+          "ciHigh": 0.5036590359661344,
+          "min": 0.4856033646069233,
+          "max": 0.5078016803619241
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 0.5080454310968676,
+          "sd": 0.033273279521608794,
+          "se": 0.008318319880402198,
+          "ciLow": 0.4903153519679635,
+          "ciHigh": 0.5257755102257717,
+          "min": 0.4549763033175355,
+          "max": 0.5533980582524272
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    },
+    {
+      "controller": "35",
+      "L": 32,
+      "k": 8,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.7485351562499999,
+          "sd": 0.02119838054877365,
+          "se": 0.005299595137193413,
+          "ciLow": 0.7372393366031782,
+          "ciHigh": 0.7598309758968216,
+          "min": 0.703125,
+          "max": 0.78125
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 5324.874999999999,
+          "sd": 1818.0023789863421,
+          "se": 454.50059474658553,
+          "ciLow": 4356.129913870743,
+          "ciHigh": 6293.6200861292555,
+          "min": 2785,
+          "max": 9050
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 0,
+          "ciHigh": 0,
+          "min": 0,
+          "max": 0
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    },
+    {
+      "controller": "38",
+      "L": 32,
+      "k": 8,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.7021484375000001,
+          "sd": 0.03825998559063807,
+          "se": 0.009564996397659517,
+          "ciLow": 0.6817611302749279,
+          "ciHigh": 0.7225357447250723,
+          "min": 0.6328125,
+          "max": 0.7578125
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 2881.3750000000005,
+          "sd": 913.1166318348019,
+          "se": 228.27915795870047,
+          "ciLow": 2394.8094925081605,
+          "ciHigh": 3367.9405074918404,
+          "min": 1475,
+          "max": 4584
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0.20172520791352322,
+          "sd": 0.05270091226845643,
+          "se": 0.013175228067114108,
+          "ciLow": 0.17364287403722647,
+          "ciHigh": 0.22980754178981996,
+          "min": 0.12317863988846084,
+          "max": 0.31169570669982233
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 0,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 0,
+          "ciHigh": 0,
+          "min": 0,
+          "max": 0
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    },
+    {
+      "controller": "41",
+      "L": 32,
+      "k": 8,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.74755859375,
+          "sd": 0.018862240012980754,
+          "se": 0.0047155600032451886,
+          "ciLow": 0.7375076155240232,
+          "ciHigh": 0.7576095719759768,
+          "min": 0.6953125,
+          "max": 0.78125
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 4829.75,
+          "sd": 1494.713238941392,
+          "se": 373.678309735348,
+          "ciLow": 4033.273536529048,
+          "ciHigh": 5626.226463470952,
+          "min": 2949,
+          "max": 8105
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0.14042002480031454,
+          "sd": 0.03207021576938463,
+          "se": 0.008017553942346158,
+          "ciLow": 0.12333101309339986,
+          "ciHigh": 0.15750903650722922,
+          "min": 0.08778152529476892,
+          "max": 0.19384537466543988
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 1,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 1,
+          "ciHigh": 1,
+          "min": 1,
+          "max": 1
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 0,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 0,
+          "ciHigh": 0,
+          "min": 0,
+          "max": 0
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    },
+    {
+      "controller": "random-0.5",
+      "L": 32,
+      "k": 8,
+      "n": 16,
+      "metrics": {
+        "coverage": {
+          "n": 16,
+          "mean": 0.7490234375,
+          "sd": 0.018460217290049243,
+          "se": 0.004615054322512311,
+          "ciLow": 0.7391866820615475,
+          "ciHigh": 0.7588601929384525,
+          "min": 0.7265625,
+          "max": 0.78125
+        },
+        "attempts": {
+          "n": 16,
+          "mean": 6951.25,
+          "sd": 3671.9289299585666,
+          "se": 917.9822324896417,
+          "ciLow": 4994.617187728007,
+          "ciHigh": 8907.882812271993,
+          "min": 2575,
+          "max": 15836
+        },
+        "conditionalMI": {
+          "n": 16,
+          "mean": 0.00015652392349352608,
+          "sd": 0.00014600560502243772,
+          "se": 0.00003650140125560943,
+          "ciLow": 0.00007872302837496243,
+          "ciHigh": 0.00023432481861208974,
+          "min": 0.000011591311112684312,
+          "max": 0.0005497920772049789
+        },
+        "switchAfterFailure": {
+          "n": 16,
+          "mean": 0.5010062318114057,
+          "sd": 0.006203694507988614,
+          "se": 0.0015509236269971535,
+          "ciLow": 0.4977005163514447,
+          "ciHigh": 0.5043119472713666,
+          "min": 0.49216369177187635,
+          "max": 0.517531556802244
+        },
+        "switchAfterSuccess": {
+          "n": 16,
+          "mean": 0.5114454736580951,
+          "sd": 0.04391289659608586,
+          "se": 0.010978224149021465,
+          "ciLow": 0.48804594278461,
+          "ciHigh": 0.5348450045315802,
+          "min": 0.43478260869565216,
+          "max": 0.5714285714285714
+        }
+      },
+      "interpretation": "Exploratory per-run statistics from actual direct attempt trajectories. Conditional plug-in I(Y_previous;switch | O_previous), in bits; finite-sample bias and nonstationarity remain. Not directed causal information, entropy rate, or information-per-packing advantage."
+    }
+  ],
+  "rationale": "Conditioning on previous orientation reveals feedback dependence masked in pooled next-orientation MI by XOR/symmetry. A deterministic constant-switch rule35 has conditional MI zero; a switching rule depending on success/failure can have positive conditional MI without coverage benefit."
+}

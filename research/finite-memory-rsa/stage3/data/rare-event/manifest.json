@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "startedAtUTC": "2026-10-04T04:15:44.315Z",
+  "completedAtUTC": "2026-10-04T04:15:46.068Z",
+  "runtime": "v24.14.1",
+  "platform": "win32",
+  "architecture": "x64",
+  "draws": 2000000,
+  "batchReplicates": 2000,
+  "files": [
+    {
+      "name": "design.json",
+      "sha256": "95509d883147e1c7659d449d2bd501cc040aed7095fd5eb14b503a69c17e3c81"
+    },
+    {
+      "name": "draws.csv.gz",
+      "sha256": "b3c07da0ab070a79382e7187f4c7f750ccab9c022fbc9643256bb8928e2931eb"
+    },
+    {
+      "name": "batches.csv",
+      "sha256": "cda05d130467663e95e935093278d98134fb887e516539cc5a64bdf2c3ee4295"
+    },
+    {
+      "name": "summary.json",
+      "sha256": "f1bb6064a9f7587e4c9a58b037cae32b1bf3c31da64eb3c713b1df89c1657da3"
+    }
+  ],
+  "sources": [
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/stage3/scripts/rare-event-study.mjs",
+      "sha256": "c86d806e2ae2a79e7a596d2576f68a6f50c2ed2b4631983d2c74ffd55ec6074d"
+    },
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/stage3/src/phase-type.mjs",
+      "sha256": "90d13720e6718aeae6e4d5d33068ef4493cc1b2c1b7beea6d3f604773b870949"
+    },
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/src/rng.mjs",
+      "sha256": "a0af386efd47f97c85eda77fbe7ee175af21dc7d828411004486298d5153aecc"
+    },
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/src/exact.mjs",
+      "sha256": "0adde531dfee6a04692b04c3208ff528f8bfb01936078b2932371d20dddb10af"
+    },
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/src/controllers.mjs",
+      "sha256": "6e31d6452c8bca9e78e651bb91ddfc06b9665bd3b33f59346a55499e0a301ba8"
+    },
+    {
+      "path": "E:/OmniCivitas/research/finite-memory-rsa/analysis/summarize.mjs",
+      "sha256": "b97040d661e77d8169918881fd5d0f4073c7f2cc8bd506de049be2b6e2b2bafb"
+    }
+  ],
+  "sourceHashesUnchanged": true,
+  "seedRange": [
+    70000001,
+    70910100
+  ]
+}

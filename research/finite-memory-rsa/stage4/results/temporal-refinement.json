@@ -1,0 +1,809 @@
+{
+  "schemaVersion": 1,
+  "completedAtUTC": "2026-10-04T06:06:38.305Z",
+  "design": {
+    "scope": "Exploratory feasibility search in the complete two-state edge-emitting parameterization, targeted at the frozen one-bit tradeoff point; no optimizer optimum is a theorem",
+    "parameterization": "Two four-entry stochastic rows, each three stick-breaking coordinates; one initial-mixture coordinate. Seven coordinates cover the full two-state edge-emitting family, including its boundary.",
+    "gridResolution": 1000,
+    "startsPerBoundary": 16,
+    "perStartEvaluationCap": 600,
+    "steps": [
+      250,
+      100,
+      50,
+      20,
+      10,
+      5,
+      1
+    ],
+    "startGeneratorSeed": 4100401,
+    "objective": "Minimize E[A/N] under coverage>=the exact feedback coverage and E|S|<=the exact feedback imbalance. A fixed penalty is only a numerical search aid; rational feasibility decides any claim.",
+    "verification": "Retain exact rational law and Bellman residual certificate for any feasible improvement. No Monte Carlo packing runs or p-values. Store unsuccessful searches too."
+  },
+  "results": [
+    {
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic"
+      },
+      "target": "feedback-4-00010",
+      "evaluations": 3233,
+      "trials": [
+        {
+          "start": 0,
+          "evaluations": 82,
+          "coordinates": [
+            0,
+            1000,
+            500,
+            0,
+            0,
+            941,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8802531922711297,
+            "absOrder": 0.4012930572194301,
+            "inverseN": 0.25323838623165906,
+            "attemptsPerParticle": 4.3973375703458295
+          },
+          "score": 4.3973375703458295,
+          "feasible": true
+        },
+        {
+          "start": 1,
+          "evaluations": 99,
+          "coordinates": [
+            0,
+            1000,
+            500,
+            0,
+            0,
+            941,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8802531922711297,
+            "absOrder": 0.4012930572194301,
+            "inverseN": 0.25323838623165906,
+            "attemptsPerParticle": 4.3973375703458295
+          },
+          "score": 4.3973375703458295,
+          "feasible": true
+        },
+        {
+          "start": 2,
+          "evaluations": 453,
+          "coordinates": [
+            0,
+            0,
+            59,
+            1000,
+            544,
+            0,
+            0
+          ],
+          "metrics": {
+            "coverage": 0.8802531922711297,
+            "absOrder": 0.4012930572194301,
+            "inverseN": 0.25323838623165895,
+            "attemptsPerParticle": 4.397337570345827
+          },
+          "score": 4.397337570345827,
+          "feasible": true
+        },
+        {
+          "start": 3,
+          "evaluations": 150,
+          "coordinates": [
+            43,
+            0,
+            0,
+            1000,
+            250,
+            0,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8800303772095761,
+            "absOrder": 0.40279764331765777,
+            "inverseN": 0.25332194187974205,
+            "attemptsPerParticle": 4.3977366987977735
+          },
+          "score": 4.3977366987977735,
+          "feasible": true
+        },
+        {
+          "start": 4,
+          "evaluations": 175,
+          "coordinates": [
+            0,
+            0,
+            59,
+            1000,
+            40,
+            60,
+            0
+          ],
+          "metrics": {
+            "coverage": 0.8802531922711297,
+            "absOrder": 0.4012930572194301,
+            "inverseN": 0.25323838623165895,
+            "attemptsPerParticle": 4.397337570345827
+          },
+          "score": 4.397337570345827,
+          "feasible": true
+        },
+        {
+          "start": 5,
+          "evaluations": 138,
+          "coordinates": [
+            0,
+            0,
+            59,
+            1000,
+            638,
+            745,
+            0
+          ],
+          "metrics": {
+            "coverage": 0.8802531922711297,
+            "absOrder": 0.4012930572194301,
+            "inverseN": 0.25323838623165895,
+            "attemptsPerParticle": 4.397337570345827
+          },
+          "score": 4.397337570345827,
+          "feasible": true
+        },
+        {
+          "start": 6,
+          "evaluations": 245,
+          "coordinates": [
+            0,
+            0,
+            59,
+            1000,
+            0,
+            20,
+            0
+          ],
+          "metrics": {
+            "coverage": 0.8802531922711297,
+            "absOrder": 0.4012930572194301,
+            "inverseN": 0.25323838623165895,
+            "attemptsPerParticle": 4.397337570345827
+          },
+          "score": 4.397337570345827,
+          "feasible": true
+        },
+        {
+          "start": 7,
+          "evaluations": 600,
+          "coordinates": [
+            482,
+            719,
+            166,
+            0,
+            0,
+            967,
+            0
+          ],
+          "metrics": {
+            "coverage": 0.8796408051302377,
+            "absOrder": 0.4039878876684451,
+            "inverseN": 0.25346803140949353,
+            "attemptsPerParticle": 4.4139345646691615
+          },
+          "score": 4.4139345646691615,
+          "feasible": true
+        },
+        {
+          "start": 8,
+          "evaluations": 165,
+          "coordinates": [
+            475,
+            888,
+            0,
+            0,
+            0,
+            823,
+            0
+          ],
+          "metrics": {
+            "coverage": 0.8796517951907505,
+            "absOrder": 0.4023646463138418,
+            "inverseN": 0.25346391013680136,
+            "attemptsPerParticle": 4.413046990511481
+          },
+          "score": 4.413046990511481,
+          "feasible": true
+        },
+        {
+          "start": 9,
+          "evaluations": 208,
+          "coordinates": [
+            129,
+            23,
+            967,
+            552,
+            1000,
+            0,
+            0
+          ],
+          "metrics": {
+            "coverage": 0.8796426262414081,
+            "absOrder": 0.39783598102816936,
+            "inverseN": 0.25346734849280583,
+            "attemptsPerParticle": 4.792700942712792
+          },
+          "score": 4.792700942712792,
+          "feasible": true
+        },
+        {
+          "start": 10,
+          "evaluations": 149,
+          "coordinates": [
+            43,
+            0,
+            0,
+            1000,
+            250,
+            714,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8800303772095761,
+            "absOrder": 0.40279764331765777,
+            "inverseN": 0.25332194187974205,
+            "attemptsPerParticle": 4.3977366987977735
+          },
+          "score": 4.3977366987977735,
+          "feasible": true
+        },
+        {
+          "start": 11,
+          "evaluations": 182,
+          "coordinates": [
+            41,
+            1,
+            0,
+            1000,
+            581,
+            1000,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8800159893790123,
+            "absOrder": 0.4028700749033366,
+            "inverseN": 0.25332733731620405,
+            "attemptsPerParticle": 4.397734784135594
+          },
+          "score": 4.397734784135594,
+          "feasible": true
+        },
+        {
+          "start": 12,
+          "evaluations": 139,
+          "coordinates": [
+            225,
+            876,
+            1000,
+            0,
+            0,
+            968,
+            0
+          ],
+          "metrics": {
+            "coverage": 0.8796506050045001,
+            "absOrder": 0.4031885918914273,
+            "inverseN": 0.2534643564566457,
+            "attemptsPerParticle": 4.39922381430844
+          },
+          "score": 4.39922381430844,
+          "feasible": true
+        },
+        {
+          "start": 13,
+          "evaluations": 140,
+          "coordinates": [
+            250,
+            1000,
+            1000,
+            0,
+            1,
+            550,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8796414818735032,
+            "absOrder": 0.40129702636446113,
+            "inverseN": 0.2534677776307696,
+            "attemptsPerParticle": 4.41035852769912
+          },
+          "score": 4.41035852769912,
+          "feasible": true
+        },
+        {
+          "start": 14,
+          "evaluations": 172,
+          "coordinates": [
+            43,
+            0,
+            0,
+            1000,
+            0,
+            1000,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8800303772095761,
+            "absOrder": 0.40279764331765777,
+            "inverseN": 0.25332194187974205,
+            "attemptsPerParticle": 4.3977366987977735
+          },
+          "score": 4.3977366987977735,
+          "feasible": true
+        },
+        {
+          "start": 15,
+          "evaluations": 136,
+          "coordinates": [
+            342,
+            1000,
+            1000,
+            0,
+            100,
+            266,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8796421273738707,
+            "absOrder": 0.39882515160510895,
+            "inverseN": 0.25346753556813173,
+            "attemptsPerParticle": 4.4755570753822145
+          },
+          "score": 4.4755570753822145,
+          "feasible": true
+        }
+      ],
+      "bestFeasible": {
+        "coordinates": [
+          0,
+          0,
+          59,
+          1000,
+          544,
+          0,
+          0
+        ],
+        "metrics": {
+          "coverage": 0.8802531922711297,
+          "absOrder": 0.4012930572194301,
+          "inverseN": 0.25323838623165895,
+          "attemptsPerParticle": 4.397337570345827
+        },
+        "score": 4.397337570345827
+      },
+      "exact": {
+        "file": "data/refined-temporal-periodic.json",
+        "metrics": {
+          "coverage": {
+            "numerator": "631811489",
+            "denominator": "717761088",
+            "value": 0.88025319227113
+          },
+          "absOrder": {
+            "numerator": "13315421076407616257",
+            "denominator": "33181289426411951616",
+            "value": 0.40129305721943
+          },
+          "inverseN": {
+            "numerator": "484705759",
+            "denominator": "1914029568",
+            "value": 0.253238386231659
+          },
+          "attemptsPerParticle": {
+            "numerator": "519513108927372657124056256962089",
+            "denominator": "118142648958950589093345200701440",
+            "value": 4.397337570345834
+          }
+        }
+      },
+      "exactDominatesTarget": false
+    },
+    {
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "target": "feedback-4-00010",
+      "evaluations": 1943,
+      "trials": [
+        {
+          "start": 0,
+          "evaluations": 66,
+          "coordinates": [
+            0,
+            1000,
+            500,
+            0,
+            0,
+            1000,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.492887581168831,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608855
+          },
+          "score": 3.7556734959611076,
+          "feasible": true
+        },
+        {
+          "start": 1,
+          "evaluations": 57,
+          "coordinates": [
+            0,
+            1000,
+            500,
+            0,
+            0,
+            1000,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.492887581168831,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608855
+          },
+          "score": 3.7556734959611076,
+          "feasible": true
+        },
+        {
+          "start": 2,
+          "evaluations": 176,
+          "coordinates": [
+            29,
+            0,
+            0,
+            995,
+            0,
+            1000,
+            825
+          ],
+          "metrics": {
+            "coverage": 0.8775299822883458,
+            "absOrder": 0.49288024043351497,
+            "inverseN": 0.2542595899752034,
+            "attemptsPerParticle": 3.760526854191625
+          },
+          "score": 3.760526854191625,
+          "feasible": true
+        },
+        {
+          "start": 3,
+          "evaluations": 132,
+          "coordinates": [
+            0,
+            0,
+            0,
+            1000,
+            684,
+            623,
+            931
+          ],
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.4928875811688311,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.755673495960885
+          },
+          "score": 3.755673495961107,
+          "feasible": true
+        },
+        {
+          "start": 4,
+          "evaluations": 126,
+          "coordinates": [
+            707,
+            488,
+            400,
+            0,
+            0,
+            750,
+            0
+          ],
+          "metrics": {
+            "coverage": 0.8776060767282226,
+            "absOrder": 0.494583606907973,
+            "inverseN": 0.25423105456024975,
+            "attemptsPerParticle": 4.228117342507509
+          },
+          "score": 4.228117342507509,
+          "feasible": true
+        },
+        {
+          "start": 5,
+          "evaluations": 174,
+          "coordinates": [
+            159,
+            0,
+            499,
+            919,
+            1000,
+            0,
+            53
+          ],
+          "metrics": {
+            "coverage": 0.8775365491777871,
+            "absOrder": 0.4929050235251271,
+            "inverseN": 0.2542571273916636,
+            "attemptsPerParticle": 3.90454815515174
+          },
+          "score": 3.90454815515174,
+          "feasible": true
+        },
+        {
+          "start": 6,
+          "evaluations": 128,
+          "coordinates": [
+            0,
+            0,
+            0,
+            1000,
+            832,
+            250,
+            868
+          ],
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.4928875811688311,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608846
+          },
+          "score": 3.7556734959611067,
+          "feasible": true
+        },
+        {
+          "start": 7,
+          "evaluations": 110,
+          "coordinates": [
+            0,
+            0,
+            0,
+            1000,
+            718,
+            203,
+            949
+          ],
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.492887581168831,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.755673495960884
+          },
+          "score": 3.7556734959611062,
+          "feasible": true
+        },
+        {
+          "start": 8,
+          "evaluations": 162,
+          "coordinates": [
+            148,
+            0,
+            0,
+            823,
+            554,
+            401,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8775300730335377,
+            "absOrder": 0.4930195142055953,
+            "inverseN": 0.2542595559457564,
+            "attemptsPerParticle": 3.80397250017356
+          },
+          "score": 3.80397250017356,
+          "feasible": true
+        },
+        {
+          "start": 9,
+          "evaluations": 94,
+          "coordinates": [
+            0,
+            0,
+            0,
+            1000,
+            691,
+            0,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.4928875811688311,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608846
+          },
+          "score": 3.7556734959611067,
+          "feasible": true
+        },
+        {
+          "start": 10,
+          "evaluations": 106,
+          "coordinates": [
+            0,
+            0,
+            0,
+            1000,
+            0,
+            0,
+            564
+          ],
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.492887581168831,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608846
+          },
+          "score": 3.7556734959611067,
+          "feasible": true
+        },
+        {
+          "start": 11,
+          "evaluations": 140,
+          "coordinates": [
+            0,
+            0,
+            0,
+            1000,
+            906,
+            250,
+            873
+          ],
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.4928875811688311,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608846
+          },
+          "score": 3.7556734959611067,
+          "feasible": true
+        },
+        {
+          "start": 12,
+          "evaluations": 109,
+          "coordinates": [
+            0,
+            0,
+            0,
+            1000,
+            531,
+            544,
+            997
+          ],
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.4928875811688311,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608846
+          },
+          "score": 3.7556734959611067,
+          "feasible": true
+        },
+        {
+          "start": 13,
+          "evaluations": 111,
+          "coordinates": [
+            0,
+            0,
+            0,
+            1000,
+            843,
+            679,
+            302
+          ],
+          "metrics": {
+            "coverage": 0.8775297619047616,
+            "absOrder": 0.492887581168831,
+            "inverseN": 0.2542596726190475,
+            "attemptsPerParticle": 3.755673495960884
+          },
+          "score": 3.7556734959612172,
+          "feasible": true
+        },
+        {
+          "start": 14,
+          "evaluations": 160,
+          "coordinates": [
+            283,
+            1000,
+            574,
+            0,
+            0,
+            859,
+            55
+          ],
+          "metrics": {
+            "coverage": 0.8775318636847731,
+            "absOrder": 0.49282659902129955,
+            "inverseN": 0.25425888445154293,
+            "attemptsPerParticle": 3.828542907182726
+          },
+          "score": 3.828542907182726,
+          "feasible": true
+        },
+        {
+          "start": 15,
+          "evaluations": 92,
+          "coordinates": [
+            0,
+            0,
+            0,
+            1000,
+            0,
+            264,
+            1000
+          ],
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.4928875811688311,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608846
+          },
+          "score": 3.7556734959611067,
+          "feasible": true
+        }
+      ],
+      "bestFeasible": {
+        "coordinates": [
+          0,
+          0,
+          0,
+          1000,
+          718,
+          203,
+          949
+        ],
+        "metrics": {
+          "coverage": 0.8775297619047617,
+          "absOrder": 0.492887581168831,
+          "inverseN": 0.2542596726190476,
+          "attemptsPerParticle": 3.755673495960884
+        },
+        "score": 3.7556734959611062
+      },
+      "exact": {
+        "file": "data/refined-temporal-open.json",
+        "metrics": {
+          "coverage": {
+            "numerator": "5897",
+            "denominator": "6720",
+            "value": 0.877529761904761
+          },
+          "absOrder": {
+            "numerator": "48579",
+            "denominator": "98560",
+            "value": 0.492887581168831
+          },
+          "inverseN": {
+            "numerator": "13669",
+            "denominator": "53760",
+            "value": 0.254259672619047
+          },
+          "attemptsPerParticle": {
+            "numerator": "28266701",
+            "denominator": "7526400",
+            "value": 3.755673495960884
+          }
+        }
+      },
+      "exactDominatesTarget": false
+    }
+  ],
+  "fullStochasticFamilyOptimumClaimed": false,
+  "interpretation": "Bounded local search is only a feasible-point search. Failure does not exclude a two-state or four-state stochastic improvement."
+}

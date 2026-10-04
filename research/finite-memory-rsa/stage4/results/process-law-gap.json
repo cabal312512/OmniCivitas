@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "controller": "feedback-2-00006",
+  "realization": {
+    "id": 6,
+    "key": "2:01:1,0,0,1",
+    "outputs": [
+      0,
+      1
+    ],
+    "transitions": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "initial": 0,
+    "minimalStateCount": 2,
+    "temporalEquivalent": false,
+    "constantAction": false,
+    "universalLiveness": true,
+    "failureCycles": [
+      {
+        "states": [
+          0,
+          1
+        ],
+        "actions": [
+          0,
+          1
+        ],
+        "mixedActions": true
+      }
+    ],
+    "deadlockCertificates": [],
+    "labelledMultiplicity": 2,
+    "firstLabelledRepresentative": 37,
+    "labelledRootHorizontal": 1,
+    "labelledRootVertical": 1,
+    "classId": "feedback-2-00006"
+  },
+  "parameters": {
+    "L": 3,
+    "k": 2,
+    "boundary": "periodic"
+  },
+  "histories": [
+    {
+      "events": [
+        {
+          "action": 0,
+          "anchorIndex": 0,
+          "outcome": "S",
+          "mask": "3"
+        },
+        {
+          "action": 0,
+          "anchorIndex": 3,
+          "outcome": "S",
+          "mask": "27"
+        }
+      ],
+      "nextAction": 0,
+      "specificHistoryProbability": {
+        "numerator": "1",
+        "denominator": "81"
+      }
+    },
+    {
+      "events": [
+        {
+          "action": 0,
+          "anchorIndex": 0,
+          "outcome": "S",
+          "mask": "3"
+        },
+        {
+          "action": 0,
+          "anchorIndex": 0,
+          "outcome": "F",
+          "mask": "3"
+        }
+      ],
+      "nextAction": 1,
+      "specificHistoryProbability": {
+        "numerator": "1",
+        "denominator": "81"
+      }
+    }
+  ],
+  "operational": {
+    "key": "0|2:01:1,0,0,1",
+    "firstAction": 0,
+    "continuation": {
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0
+    },
+    "continuationStates": 2,
+    "initialReusableStates": [
+      0
+    ],
+    "minimalDeterministicOperationalStates": 2,
+    "realization": {
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0
+    }
+  },
+  "theorem": "Given the same planned action prefix HH, every outcome-blind orientation process has the same next-action conditional law under both positive-probability anchor/outcome histories. The feedback controller requires H after SS and V after SF; no outcome-blind law of any state count can match its full process.",
+  "minimumStates": 2,
+  "minimumScope": "Deterministic or randomized stationary feedback realizations with actions emitted only from internal state; one-state realization has no stored outcome.",
+  "objectiveGapClaimed": false,
+  "observationalScope": "Full action/outcome/occupancy process, before geometric jam. This conditional-law obstruction is not a Pareto or packing advantage."
+}

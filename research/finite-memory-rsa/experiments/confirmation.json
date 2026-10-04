@@ -1,0 +1,7 @@
+{
+ "name":"confirmation",
+ "purpose":"Locked independent holdout: all13 H-first classes and a fixed memoryless bias grid. Primary family specified before generation in docs/confirmation-lock.json.",
+ "sizes":[64],"lengths":[2,3,4,8],"boundaries":["periodic"],
+ "controllers":[0,33,34,35,37,38,39,41,42,43,45,46,47,"random-0.1","random-0.2","random-0.3","random-0.4","random-0.5","random-0.6","random-0.7","random-0.8","random-0.9"],
+ "repetitions":512,"seedStart":200001,"engine":"event"
+}

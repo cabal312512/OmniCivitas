@@ -1,0 +1,504 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "b2477aaabff6aff6fade41d86d5a2b4e7a7efe8ad3ebf52504c9f3e86a81c6f0",
+  "outcomes": [
+    {
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic"
+      },
+      "rows": [
+        {
+          "feedback": "feedback-4-00005",
+          "metrics": {
+            "coverage": {
+              "numerator": "2320",
+              "denominator": "2691",
+              "value": 0.8621330360460795
+            },
+            "absOrder": {
+              "numerator": "115601",
+              "denominator": "233818",
+              "value": 0.4944059054478269
+            },
+            "attemptsPerParticle": {
+              "numerator": "127869221",
+              "denominator": "28608320",
+              "value": 4.469651520956141
+            }
+          },
+          "randomizedOperationalMinimum": 2,
+          "certificate": {
+            "type": "single-feasible-dominator",
+            "points": [
+              {
+                "policy": "switch-20-20",
+                "states": 2,
+                "metrics": {
+                  "coverage": {
+                    "numerator": "21304",
+                    "denominator": "24219",
+                    "value": 0.87963995210372
+                  },
+                  "absOrder": {
+                    "numerator": "853441",
+                    "denominator": "2104362",
+                    "value": 0.405558074133632
+                  },
+                  "inverseN": {
+                    "numerator": "8185",
+                    "denominator": "32292",
+                    "value": 0.253468351294438
+                  },
+                  "attemptsPerParticle": {
+                    "numerator": "84944179",
+                    "denominator": "19310616",
+                    "value": 4.398833211742183
+                  }
+                },
+                "weight": "1/1"
+              }
+            ]
+          },
+          "meaning": "Nonnegative scalarizations cannot beat this feasible same-memory point."
+        },
+        {
+          "feedback": "feedback-4-00006",
+          "metrics": {
+            "coverage": {
+              "numerator": "2320",
+              "denominator": "2691",
+              "value": 0.8621330360460795
+            },
+            "absOrder": {
+              "numerator": "114809",
+              "denominator": "233818",
+              "value": 0.49101865553550195
+            },
+            "attemptsPerParticle": {
+              "numerator": "3207255",
+              "denominator": "715208",
+              "value": 4.484366785606425
+            }
+          },
+          "randomizedOperationalMinimum": 2,
+          "certificate": {
+            "type": "single-feasible-dominator",
+            "points": [
+              {
+                "policy": "switch-20-20",
+                "states": 2,
+                "metrics": {
+                  "coverage": {
+                    "numerator": "21304",
+                    "denominator": "24219",
+                    "value": 0.87963995210372
+                  },
+                  "absOrder": {
+                    "numerator": "853441",
+                    "denominator": "2104362",
+                    "value": 0.405558074133632
+                  },
+                  "inverseN": {
+                    "numerator": "8185",
+                    "denominator": "32292",
+                    "value": 0.253468351294438
+                  },
+                  "attemptsPerParticle": {
+                    "numerator": "84944179",
+                    "denominator": "19310616",
+                    "value": 4.398833211742183
+                  }
+                },
+                "weight": "1/1"
+              }
+            ]
+          },
+          "meaning": "Nonnegative scalarizations cannot beat this feasible same-memory point."
+        },
+        {
+          "feedback": "feedback-4-00009",
+          "metrics": {
+            "coverage": {
+              "numerator": "21304",
+              "denominator": "24219",
+              "value": 0.8796399521037203
+            },
+            "absOrder": {
+              "numerator": "853441",
+              "denominator": "2104362",
+              "value": 0.40555807413363293
+            },
+            "attemptsPerParticle": {
+              "numerator": "84944179",
+              "denominator": "19310616",
+              "value": 4.398833211742184
+            }
+          },
+          "randomizedOperationalMinimum": 2,
+          "certificate": {
+            "type": "exact-hull-membership",
+            "points": [
+              {
+                "policy": "switch-20-20",
+                "states": 2,
+                "metrics": {
+                  "coverage": {
+                    "numerator": "21304",
+                    "denominator": "24219",
+                    "value": 0.87963995210372
+                  },
+                  "absOrder": {
+                    "numerator": "853441",
+                    "denominator": "2104362",
+                    "value": 0.405558074133632
+                  },
+                  "inverseN": {
+                    "numerator": "8185",
+                    "denominator": "32292",
+                    "value": 0.253468351294438
+                  },
+                  "attemptsPerParticle": {
+                    "numerator": "84944179",
+                    "denominator": "19310616",
+                    "value": 4.398833211742183
+                  }
+                },
+                "evidenceFile": "data/temporal-periodic-switch-20-20.json",
+                "weight": "1/1"
+              },
+              {
+                "policy": "switch-10-10",
+                "states": 2,
+                "metrics": {
+                  "coverage": {
+                    "numerator": "48",
+                    "denominator": "55",
+                    "value": 0.872727272727272
+                  },
+                  "absOrder": {
+                    "numerator": "29",
+                    "denominator": "66",
+                    "value": 0.439393939393939
+                  },
+                  "inverseN": {
+                    "numerator": "169",
+                    "denominator": "660",
+                    "value": 0.256060606060606
+                  },
+                  "attemptsPerParticle": {
+                    "numerator": "324659",
+                    "denominator": "72600",
+                    "value": 4.471887052341597
+                  }
+                },
+                "evidenceFile": "data/temporal-periodic-switch-10-10.json",
+                "weight": "0/1"
+              },
+              {
+                "policy": "switch-20-1",
+                "states": 2,
+                "metrics": {
+                  "coverage": {
+                    "numerator": "100576",
+                    "denominator": "113157",
+                    "value": 0.88881819065546
+                  },
+                  "absOrder": {
+                    "numerator": "27305336705",
+                    "denominator": "58581353754",
+                    "value": 0.46610969114273
+                  },
+                  "inverseN": {
+                    "numerator": "37723",
+                    "denominator": "150876",
+                    "value": 0.250026511837535
+                  },
+                  "attemptsPerParticle": {
+                    "numerator": "273362726902932823",
+                    "denominator": "55057922143935480",
+                    "value": 4.965002605588579
+                  }
+                },
+                "evidenceFile": "data/temporal-periodic-switch-20-1.json",
+                "weight": "0/1"
+              },
+              {
+                "policy": "switch-20-10",
+                "states": 2,
+                "metrics": {
+                  "coverage": {
+                    "numerator": "25880",
+                    "denominator": "29241",
+                    "value": 0.885058650524947
+                  },
+                  "absOrder": {
+                    "numerator": "657461",
+                    "denominator": "1731717",
+                    "value": 0.379658454585824
+                  },
+                  "inverseN": {
+                    "numerator": "9803",
+                    "denominator": "38988",
+                    "value": 0.251436339386477
+                  },
+                  "attemptsPerParticle": {
+                    "numerator": "109355247353",
+                    "denominator": "24297321600",
+                    "value": 4.500712018932983
+                  }
+                },
+                "evidenceFile": "data/temporal-periodic-switch-20-10.json",
+                "weight": "0/1"
+              }
+            ]
+          },
+          "meaning": "Exact objective point is in convex hull of proper <=2-state temporal objective points. Persistent selector implementation is not free two-state memory."
+        },
+        {
+          "feedback": "feedback-4-00010",
+          "metrics": {
+            "coverage": {
+              "numerator": "21304",
+              "denominator": "24219",
+              "value": 0.8796399521037203
+            },
+            "absOrder": {
+              "numerator": "859453",
+              "denominator": "2104362",
+              "value": 0.40841499703948275
+            },
+            "attemptsPerParticle": {
+              "numerator": "3377320357",
+              "denominator": "772424640",
+              "value": 4.372362276014395
+            }
+          },
+          "randomizedOperationalMinimum": 2,
+          "certificate": null,
+          "meaning": "No archived-pool inclusion certificate; this is not exclusion."
+        }
+      ]
+    },
+    {
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "rows": [
+        {
+          "feedback": "feedback-4-00005",
+          "metrics": {
+            "coverage": {
+              "numerator": "8651",
+              "denominator": "10080",
+              "value": 0.8582341269841269
+            },
+            "absOrder": {
+              "numerator": "81247",
+              "denominator": "147840",
+              "value": 0.5495603354978355
+            },
+            "attemptsPerParticle": {
+              "numerator": "13385921",
+              "denominator": "3763200",
+              "value": 3.5570580888605443
+            }
+          },
+          "randomizedOperationalMinimum": 2,
+          "certificate": null,
+          "meaning": "No archived-pool inclusion certificate; this is not exclusion."
+        },
+        {
+          "feedback": "feedback-4-00006",
+          "metrics": {
+            "coverage": {
+              "numerator": "8651",
+              "denominator": "10080",
+              "value": 0.8582341269841269
+            },
+            "absOrder": {
+              "numerator": "121489",
+              "denominator": "221760",
+              "value": 0.5478400072150073
+            },
+            "attemptsPerParticle": {
+              "numerator": "40588543",
+              "denominator": "11289600",
+              "value": 3.5952153309240362
+            }
+          },
+          "randomizedOperationalMinimum": 2,
+          "certificate": null,
+          "meaning": "No archived-pool inclusion certificate; this is not exclusion."
+        },
+        {
+          "feedback": "feedback-4-00009",
+          "metrics": {
+            "coverage": {
+              "numerator": "5897",
+              "denominator": "6720",
+              "value": 0.877529761904762
+            },
+            "absOrder": {
+              "numerator": "48579",
+              "denominator": "98560",
+              "value": 0.4928875811688312
+            },
+            "attemptsPerParticle": {
+              "numerator": "28266701",
+              "denominator": "7526400",
+              "value": 3.755673495960884
+            }
+          },
+          "randomizedOperationalMinimum": 2,
+          "certificate": {
+            "type": "exact-hull-membership",
+            "points": [
+              {
+                "policy": "switch-20-20",
+                "states": 2,
+                "metrics": {
+                  "coverage": {
+                    "numerator": "5897",
+                    "denominator": "6720",
+                    "value": 0.877529761904761
+                  },
+                  "absOrder": {
+                    "numerator": "48579",
+                    "denominator": "98560",
+                    "value": 0.492887581168831
+                  },
+                  "inverseN": {
+                    "numerator": "13669",
+                    "denominator": "53760",
+                    "value": 0.254259672619047
+                  },
+                  "attemptsPerParticle": {
+                    "numerator": "28266701",
+                    "denominator": "7526400",
+                    "value": 3.755673495960884
+                  }
+                },
+                "evidenceFile": "data/temporal-open-switch-20-20.json",
+                "weight": "1/1"
+              },
+              {
+                "policy": "switch-10-10",
+                "states": 2,
+                "metrics": {
+                  "coverage": {
+                    "numerator": "1691",
+                    "denominator": "1944",
+                    "value": 0.869855967078189
+                  },
+                  "absOrder": {
+                    "numerator": "557",
+                    "denominator": "1080",
+                    "value": 0.51574074074074
+                  },
+                  "inverseN": {
+                    "numerator": "1333",
+                    "denominator": "5184",
+                    "value": 0.257137345679012
+                  },
+                  "attemptsPerParticle": {
+                    "numerator": "196543",
+                    "denominator": "51840",
+                    "value": 3.791338734567901
+                  }
+                },
+                "evidenceFile": "data/temporal-open-switch-10-10.json",
+                "weight": "0/1"
+              },
+              {
+                "policy": "switch-20-1",
+                "states": 2,
+                "metrics": {
+                  "coverage": {
+                    "numerator": "2097461",
+                    "denominator": "2359968",
+                    "value": 0.888766712091011
+                  },
+                  "absOrder": {
+                    "numerator": "16551832467",
+                    "denominator": "33590211200",
+                    "value": 0.492757618237303
+                  },
+                  "inverseN": {
+                    "numerator": "4720801",
+                    "denominator": "18879744",
+                    "value": 0.250045816299204
+                  },
+                  "attemptsPerParticle": {
+                    "numerator": "7686453980607079",
+                    "denominator": "519815236362240",
+                    "value": 14.786896271833545
+                  }
+                },
+                "evidenceFile": "data/temporal-open-switch-20-1.json",
+                "weight": "0/1"
+              },
+              {
+                "policy": "switch-20-8",
+                "states": 2,
+                "metrics": {
+                  "coverage": {
+                    "numerator": "98618",
+                    "denominator": "111435",
+                    "value": 0.884982276663525
+                  },
+                  "absOrder": {
+                    "numerator": "33741081",
+                    "denominator": "70724080",
+                    "value": 0.477080521938213
+                  },
+                  "inverseN": {
+                    "numerator": "28022",
+                    "denominator": "111435",
+                    "value": 0.251464979584511
+                  },
+                  "attemptsPerParticle": {
+                    "numerator": "30978851999",
+                    "denominator": "6817593300",
+                    "value": 4.543957176060942
+                  }
+                },
+                "evidenceFile": "data/temporal-open-switch-20-8.json",
+                "weight": "0/1"
+              }
+            ]
+          },
+          "meaning": "Exact objective point is in convex hull of proper <=2-state temporal objective points. Persistent selector implementation is not free two-state memory."
+        },
+        {
+          "feedback": "feedback-4-00010",
+          "metrics": {
+            "coverage": {
+              "numerator": "5897",
+              "denominator": "6720",
+              "value": 0.877529761904762
+            },
+            "absOrder": {
+              "numerator": "48747",
+              "denominator": "98560",
+              "value": 0.49459212662337665
+            },
+            "attemptsPerParticle": {
+              "numerator": "28045781",
+              "denominator": "7526400",
+              "value": 3.726320817389456
+            }
+          },
+          "randomizedOperationalMinimum": 2,
+          "certificate": null,
+          "meaning": "No archived-pool inclusion certificate; this is not exclusion."
+        }
+      ]
+    }
+  ],
+  "fullStochasticRegionInclusionClaimed": false,
+  "scope": "Exact archived-pool hull membership/single domination for proper deterministic one-bit laws; no claim that convex mixing costs no extra memory."
+}

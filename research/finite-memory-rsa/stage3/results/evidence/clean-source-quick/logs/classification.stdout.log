@@ -1,0 +1,9 @@
+classification 0/1048576; 1 classes
+classification 131072/1048576; 13503 classes
+classification 262144/1048576; 16012 classes
+classification 393216/1048576; 25308 classes
+classification 524288/1048576; 28374 classes
+classification 655360/1048576; 28374 classes
+classification 786432/1048576; 28374 classes
+classification 917504/1048576; 28534 classes
+{"output":"F:\\OCVdeps\\tmp\\rsa-stage3\\clean-reconstruction-20261004\\source\\stage3\\data\\classification","counts":[{"stateCount":1,"temporal":false,"labelled":2,"classes":1,"live":0},{"stateCount":2,"temporal":false,"labelled":64,"classes":13,"live":4},{"stateCount":3,"temporal":false,"labelled":5832,"classes":527,"live":166},{"stateCount":4,"temporal":false,"labelled":1048576,"classes":28534,"live":8730},{"stateCount":1,"temporal":true,"labelled":2,"classes":1,"live":0},{"stateCount":2,"temporal":true,"labelled":16,"classes":3,"live":1},{"stateCount":3,"temporal":true,"labelled":216,"classes":9,"live":5},{"stateCount":4,"temporal":true,"labelled":4096,"classes":24,"live":16}]}

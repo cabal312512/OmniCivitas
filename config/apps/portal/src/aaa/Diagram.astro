@@ -1,0 +1,14 @@
+---
+const {variant=0,id='graphic'}=Astro.props;
+---
+<svg class="technical-graphic" viewBox="0 0 360 240" aria-hidden="true">
+ <defs><linearGradient id={`${id}-ink`}><stop stop-color="#78a7c9" stop-opacity=".25"/><stop offset=".5" stop-color="#89cde5"/><stop offset="1" stop-color="#57789d" stop-opacity=".5"/></linearGradient><radialGradient id={`${id}-glass`}><stop stop-color="#fff" stop-opacity=".9"/><stop offset=".65" stop-color="#e0f1fa" stop-opacity=".4"/><stop offset="1" stop-color="#83a7c9" stop-opacity=".6"/></radialGradient></defs>
+ <g fill="none" stroke={`url(#${id}-ink)`} stroke-width=".8">
+ {variant===0 && <g class="graphic-spin" style="transform-origin:180px 120px">{Array.from({length:19},(_,i)=><ellipse cx="180" cy="120" rx={70+i*3} ry={26+i*1.8} transform={`rotate(${i*10} 180 120)`}/>)}<circle cx="180" cy="120" r="105" stroke-dasharray="1 7"/></g>}
+ {variant===1 && <g>{Array.from({length:24},(_,i)=><path d={`M${24+i*13} 220 Q${80+i*7} ${-30+i*5} ${290-i*2} ${30+i*8}`} stroke-opacity={.3+i/50}/>)}{Array.from({length:9},(_,i)=><circle cx={50+i*31} cy={190-Math.sin(i)*45} r="2" fill="#72a8c7"/>)}</g>}
+ {variant===2 && <g class="graphic-lattice">{Array.from({length:7},(_,i)=><g transform={`translate(${(i-3)*16} ${(i-3)*-11})`}><path d="M90 80l90-48 90 48v90l-90 48-90-48z"/><path d="M90 80l90 50 90-50M180 130v88"/></g>)}</g>}
+ {variant===3 && <g>{Array.from({length:22},(_,i)=><ellipse cx="180" cy="120" rx={15+i*5} ry="88" transform={`rotate(${i*8.2} 180 120)`}/>)}<circle cx="180" cy="120" r="90"/><circle cx="180" cy="120" r="105" stroke-dasharray="2 9"/></g>}
+ {variant===4 && <g>{Array.from({length:28},(_,i)=><path class="signal-line" style={`--delay:${-i*.17}s`} d={`M20 ${35+i*6} Q90 ${30+i*6} 125 ${85+i*2} T230 ${100+i*3} T340 ${35+i*6}`}/>)}<path d="M20 225H340M20 15V225" stroke-opacity=".25"/></g>}
+ {variant===5 && <g>{Array.from({length:40},(_,i)=><path d={`M${(i%8)*39+34} ${Math.floor(i/8)*37+40}l20-12 20 12-20 12z`} fill={`url(#${id}-glass)`}/>)}<path d="M35 210L330 35" stroke-dasharray="2 5"/></g>}
+ </g>
+</svg>

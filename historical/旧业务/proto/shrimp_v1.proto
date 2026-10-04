@@ -1,0 +1,1 @@
+syntax = "proto3"; package shrimp.v1; message Dispatch { int32 warehouse_id = 1; int32 box_count = 2; }

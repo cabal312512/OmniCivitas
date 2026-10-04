@@ -1,0 +1,306 @@
+{
+  "source": "assets/reference-registration.jpg",
+  "phase": 4,
+  "requirements": [
+    {
+      "id": "S001",
+      "text": "浅灰背景、白色纵向卡片、蓝色主按钮；作为一个模块的视觉参考，不统一全站",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    },
+    {
+      "id": "S002",
+      "text": "邮箱字段带邮箱强度条及大小写数字特殊字符建议",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    },
+    {
+      "id": "S003",
+      "text": "昵称被占用时展示虚构占用邮箱和虚构口令",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    },
+    {
+      "id": "S004",
+      "text": "性别枚举可显示被占用，但后续确定路径可以通过",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    },
+    {
+      "id": "S005",
+      "text": "密码被别人使用提示及虚构占用者",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    },
+    {
+      "id": "S006",
+      "text": "首次捉弄可展示相同确认密码却提示不一致；固定生成数据后可通过",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    },
+    {
+      "id": "S007",
+      "text": "本站自制字符验证码，首次提示输入为敏感词",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    },
+    {
+      "id": "S008",
+      "text": "人机验证加载区域是有限本地模拟，不使用外部 reCAPTCHA",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    },
+    {
+      "id": "S009",
+      "text": "邮箱、昵称、性别、密码、确认密码、验证码字段都存在",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    },
+    {
+      "id": "S010",
+      "text": "按钮与底部登录注册导航按 B141—146 故意互换",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    },
+    {
+      "id": "S011",
+      "text": "不复制图中具体账号口令，所有人物及凭据使用原创虚构数据",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    },
+    {
+      "id": "S012",
+      "text": "小屏纵向表单和桌面都能完成，不保存最初输入的密码",
+      "status": "verified",
+      "implementation": [
+        "config/apps/portal/src/pages/identity/[mode].astro",
+        "config/apps/portal/src/main1/identity.mjs",
+        "config/apps/portal/src/main1/identity.js",
+        "config/apps/portal/src/main1/form.css"
+      ],
+      "verification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "runtime/reports/interaction-delivery/interaction-playwright.json :: desktop/mobile :: Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification"
+      ],
+      "notes": "正常白卡参考，全部身份原创虚构；二次固定对不受假枚举/确认/验证码阻断；人机验证纯本地有限模拟。",
+      "historicalVerification": [
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Explicit regeneration changes the round, real clipboard and autofill operate, fake human verification never blocks completion",
+        "F: runtime/reports/phase4-playwright.json :: desktop/mobile :: Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms"
+      ],
+      "currentRevisionNote": "原字段占用提示保留；截图之后新增的临时信息卡已按最新用户要求去掉。"
+    }
+  ]
+}

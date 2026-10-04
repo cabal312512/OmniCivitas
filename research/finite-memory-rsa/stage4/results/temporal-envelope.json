@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUTC": "2026-10-04T05:53:10.071Z",
+  "protocolSha256": "8a4400ad14eeedf9fbcef1a3988ddb181501127c92f53df95b19c5377f64cb6b",
+  "certificates": [
+    {
+      "file": "data/envelope-periodic.json",
+      "sha256": "a7e1d39d10dc44789ce7566cdecf0451a6be39d85f2287cbee718731cf918628",
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic"
+      },
+      "bounds": [
+        {
+          "horizon": 4,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "integerDenominator": "236196",
+          "rawMaxNumerator": "209952",
+          "supportUpper": {
+            "numerator": "8",
+            "denominator": "9",
+            "value": 0.888888888888888
+          },
+          "maximizingPrefix": "0011",
+          "completePrefixes": 8
+        },
+        {
+          "horizon": 4,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "4723920",
+          "rawMaxNumerator": "3863538",
+          "supportUpper": {
+            "numerator": "23849",
+            "denominator": "29160",
+            "value": 0.817866941015089
+          },
+          "maximizingPrefix": "0101",
+          "completePrefixes": 8
+        },
+        {
+          "horizon": 4,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "4723920",
+          "rawMaxNumerator": "3793554",
+          "supportUpper": {
+            "numerator": "23417",
+            "denominator": "29160",
+            "value": 0.803052126200274
+          },
+          "maximizingPrefix": "0011",
+          "completePrefixes": 8
+        },
+        {
+          "horizon": 4,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "4723920",
+          "rawMaxNumerator": "3172446",
+          "supportUpper": {
+            "numerator": "19583",
+            "denominator": "29160",
+            "value": 0.671570644718792
+          },
+          "maximizingPrefix": "0011",
+          "completePrefixes": 8
+        },
+        {
+          "horizon": 4,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "5",
+            "value": 0.2
+          },
+          "integerDenominator": "2361960",
+          "rawMaxNumerator": "1392066",
+          "supportUpper": {
+            "numerator": "8593",
+            "denominator": "14580",
+            "value": 0.589368998628257
+          },
+          "maximizingPrefix": "0011",
+          "completePrefixes": 8
+        },
+        {
+          "horizon": 8,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "integerDenominator": "1549681956",
+          "rawMaxNumerator": "1377495072",
+          "supportUpper": {
+            "numerator": "8",
+            "denominator": "9",
+            "value": 0.888888888888888
+          },
+          "maximizingPrefix": "00111111",
+          "completePrefixes": 128
+        },
+        {
+          "horizon": 8,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "30993639120",
+          "rawMaxNumerator": "24253067628",
+          "supportUpper": {
+            "numerator": "74855147",
+            "denominator": "95659380",
+            "value": 0.782517584788862
+          },
+          "maximizingPrefix": "01111111",
+          "completePrefixes": 128
+        },
+        {
+          "horizon": 8,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "30993639120",
+          "rawMaxNumerator": "23554925874",
+          "supportUpper": {
+            "numerator": "145400777",
+            "denominator": "191318760",
+            "value": 0.759992261083021
+          },
+          "maximizingPrefix": "00111111",
+          "completePrefixes": 128
+        },
+        {
+          "horizon": 8,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "30993639120",
+          "rawMaxNumerator": "18257215806",
+          "supportUpper": {
+            "numerator": "112698863",
+            "denominator": "191318760",
+            "value": 0.589063315066436
+          },
+          "maximizingPrefix": "00111111",
+          "completePrefixes": 128
+        },
+        {
+          "horizon": 8,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "5",
+            "value": 0.2
+          },
+          "integerDenominator": "15496819560",
+          "rawMaxNumerator": "6782919426",
+          "supportUpper": {
+            "numerator": "41869873",
+            "denominator": "95659380",
+            "value": 0.437697515915323
+          },
+          "maximizingPrefix": "01111110",
+          "completePrefixes": 128
+        },
+        {
+          "horizon": 12,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "integerDenominator": "10167463313316",
+          "rawMaxNumerator": "9037745167392",
+          "supportUpper": {
+            "numerator": "8",
+            "denominator": "9",
+            "value": 0.888888888888888
+          },
+          "maximizingPrefix": "001111111111",
+          "completePrefixes": 2048
+        },
+        {
+          "horizon": 12,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "203349266266320",
+          "rawMaxNumerator": "153588695523012",
+          "supportUpper": {
+            "numerator": "474039183713",
+            "denominator": "627621192180",
+            "value": 0.755295056348331
+          },
+          "maximizingPrefix": "011111111111",
+          "completePrefixes": 2048
+        },
+        {
+          "horizon": 12,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "203349266266320",
+          "rawMaxNumerator": "147132811619478",
+          "supportUpper": {
+            "numerator": "908227232219",
+            "denominator": "1255242384360",
+            "value": 0.723547295355287
+          },
+          "maximizingPrefix": "011111111000",
+          "completePrefixes": 2048
+        },
+        {
+          "horizon": 12,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "203349266266320",
+          "rawMaxNumerator": "107202796308126",
+          "supportUpper": {
+            "numerator": "661745656223",
+            "denominator": "1255242384360",
+            "value": 0.527185557521146
+          },
+          "maximizingPrefix": "001111111111",
+          "completePrefixes": 2048
+        },
+        {
+          "horizon": 12,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "5",
+            "value": 0.2
+          },
+          "integerDenominator": "101674633133160",
+          "rawMaxNumerator": "32672337263154",
+          "supportUpper": {
+            "numerator": "201681094217",
+            "denominator": "627621192180",
+            "value": 0.321342071825959
+          },
+          "maximizingPrefix": "011111111110",
+          "completePrefixes": 2048
+        }
+      ],
+      "independentBigIntMaximizingPrefixReplays": 15
+    },
+    {
+      "file": "data/envelope-open.json",
+      "sha256": "524972d53d1d9b5e1247b95056375b0ed4aacadf5c09e516c24dc1901ea102e7",
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "bounds": [
+        {
+          "horizon": 4,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "integerDenominator": "46656",
+          "rawMaxNumerator": "41472",
+          "supportUpper": {
+            "numerator": "8",
+            "denominator": "9",
+            "value": 0.888888888888888
+          },
+          "maximizingPrefix": "0011",
+          "completePrefixes": 8
+        },
+        {
+          "horizon": 4,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "933120",
+          "rawMaxNumerator": "763344",
+          "supportUpper": {
+            "numerator": "589",
+            "denominator": "720",
+            "value": 0.818055555555555
+          },
+          "maximizingPrefix": "0101",
+          "completePrefixes": 8
+        },
+        {
+          "horizon": 4,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "933120",
+          "rawMaxNumerator": "727200",
+          "supportUpper": {
+            "numerator": "505",
+            "denominator": "648",
+            "value": 0.77932098765432
+          },
+          "maximizingPrefix": "0110",
+          "completePrefixes": 8
+        },
+        {
+          "horizon": 4,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "933120",
+          "rawMaxNumerator": "405432",
+          "supportUpper": {
+            "numerator": "1877",
+            "denominator": "4320",
+            "value": 0.43449074074074
+          },
+          "maximizingPrefix": "0111",
+          "completePrefixes": 8
+        },
+        {
+          "horizon": 4,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "5",
+            "value": 0.2
+          },
+          "integerDenominator": "466560",
+          "rawMaxNumerator": "264456",
+          "supportUpper": {
+            "numerator": "3673",
+            "denominator": "6480",
+            "value": 0.56682098765432
+          },
+          "maximizingPrefix": "0110",
+          "completePrefixes": 8
+        },
+        {
+          "horizon": 8,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "integerDenominator": "60466176",
+          "rawMaxNumerator": "53747712",
+          "supportUpper": {
+            "numerator": "8",
+            "denominator": "9",
+            "value": 0.888888888888888
+          },
+          "maximizingPrefix": "00111111",
+          "completePrefixes": 128
+        },
+        {
+          "horizon": 8,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "1209323520",
+          "rawMaxNumerator": "947323512",
+          "supportUpper": {
+            "numerator": "1461919",
+            "denominator": "1866240",
+            "value": 0.783349944272976
+          },
+          "maximizingPrefix": "01111110",
+          "completePrefixes": 128
+        },
+        {
+          "horizon": 8,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "1209323520",
+          "rawMaxNumerator": "893218248",
+          "supportUpper": {
+            "numerator": "12405809",
+            "denominator": "16796160",
+            "value": 0.738609837010364
+          },
+          "maximizingPrefix": "01111110",
+          "completePrefixes": 128
+        },
+        {
+          "horizon": 8,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "1209323520",
+          "rawMaxNumerator": "425760912",
+          "supportUpper": {
+            "numerator": "2956673",
+            "denominator": "8398080",
+            "value": 0.352065353033074
+          },
+          "maximizingPrefix": "00111111",
+          "completePrefixes": 128
+        },
+        {
+          "horizon": 8,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "5",
+            "value": 0.2
+          },
+          "integerDenominator": "604661760",
+          "rawMaxNumerator": "255163032",
+          "supportUpper": {
+            "numerator": "3543931",
+            "denominator": "8398080",
+            "value": 0.421993003162627
+          },
+          "maximizingPrefix": "01111110",
+          "completePrefixes": 128
+        },
+        {
+          "horizon": 12,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "integerDenominator": "78364164096",
+          "rawMaxNumerator": "69657034752",
+          "supportUpper": {
+            "numerator": "8",
+            "denominator": "9",
+            "value": 0.888888888888888
+          },
+          "maximizingPrefix": "001111111111",
+          "completePrefixes": 2048
+        },
+        {
+          "horizon": 12,
+          "imbalanceMultiplier": {
+            "numerator": "0",
+            "denominator": "1",
+            "value": 0
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "1567283281920",
+          "rawMaxNumerator": "1185502173580",
+          "supportUpper": {
+            "numerator": "59275108679",
+            "denominator": "78364164096",
+            "value": 0.756405805673943
+          },
+          "maximizingPrefix": "011111111100",
+          "completePrefixes": 2048
+        },
+        {
+          "horizon": 12,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "1567283281920",
+          "rawMaxNumerator": "1112252692824",
+          "supportUpper": {
+            "numerator": "15447954067",
+            "denominator": "21767823360",
+            "value": 0.709669212742086
+          },
+          "maximizingPrefix": "011111111000",
+          "completePrefixes": 2048
+        },
+        {
+          "horizon": 12,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "1",
+            "value": 1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "20",
+            "value": 0.05
+          },
+          "integerDenominator": "1567283281920",
+          "rawMaxNumerator": "474228589968",
+          "supportUpper": {
+            "numerator": "3293254097",
+            "denominator": "10883911680",
+            "value": 0.302580009267403
+          },
+          "maximizingPrefix": "001111111111",
+          "completePrefixes": 2048
+        },
+        {
+          "horizon": 12,
+          "imbalanceMultiplier": {
+            "numerator": "1",
+            "denominator": "10",
+            "value": 0.1
+          },
+          "costMultiplier": {
+            "numerator": "1",
+            "denominator": "5",
+            "value": 0.2
+          },
+          "integerDenominator": "783641640960",
+          "rawMaxNumerator": "245128021560",
+          "supportUpper": {
+            "numerator": "680911171",
+            "denominator": "2176782336",
+            "value": 0.312806273617244
+          },
+          "maximizingPrefix": "011111111000",
+          "completePrefixes": 2048
+        }
+      ],
+      "independentBigIntMaximizingPrefixReplays": 15
+    }
+  ],
+  "meaning": "Globally valid upper supports for the complete stochastic temporal family; explicit finite-prefix relaxation, not an exact attained four-state envelope."
+}

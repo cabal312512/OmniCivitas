@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-04",
+  "runtime": "Node v24.14.1 on Windows x64",
+  "commandFromResearchRoot": "node --test stage3/tests/*.test.mjs",
+  "execution": "One complete combined run of the current new Stage III test files, recorded in the task tool transcript; no Stage I/II test suites rerun",
+  "exitCode": 0,
+  "tests": 32,
+  "passed": 32,
+  "failed": 0,
+  "skipped": 0,
+  "cancelled": 0,
+  "reportedDurationMs": 3638.9003,
+  "composition": {"classification": 10,"exact": 3,"frontierAndInference": 4,"phaseType": 10,"simulation": 5},
+  "note": "Component-only earlier runs are not added to this 32-test total. A separate plotting invocation initially used a wrong relative path and failed before opening the script; corrected rendering succeeded and is not represented as a test failure."
+}

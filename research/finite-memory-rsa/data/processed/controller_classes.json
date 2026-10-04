@@ -1,0 +1,2461 @@
+{
+  "generatedAtUTC": "2026-10-03T17:06:29.445Z",
+  "nodeVersion": "v24.14.1",
+  "sourceHashes": {
+    "src/controllers.mjs": "6e31d6452c8bca9e78e651bb91ddfc06b9665bd3b33f59346a55499e0a301ba8",
+    "src/exact.mjs": "0adde531dfee6a04692b04c3208ff528f8bfb01936078b2932371d20dddb10af"
+  },
+  "encoding": "id = transitionBits + 16 * orientationBits; bit (4+q) is g(q), bit (2*q+y) is f(q,y), y=0 failure / 1 success; initial q=0",
+  "equivalence": "All finite binary feedback words from the fixed initial state; optional H/V exchange is a separate quotient.",
+  "total": 64,
+  "orientedClassCount": 26,
+  "exchangeClassCount": 13,
+  "orientedClasses": [
+    {
+      "key": "[[0,0,0]]",
+      "ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        32,
+        36,
+        40,
+        44
+      ],
+      "representative": 0
+    },
+    {
+      "key": "[[1,0,0]]",
+      "ids": [
+        16,
+        20,
+        24,
+        28,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "representative": 16
+    },
+    {
+      "key": "[[1,1,0],[0,0,0]]",
+      "ids": [
+        17
+      ],
+      "representative": 17
+    },
+    {
+      "key": "[[1,0,1],[0,0,0]]",
+      "ids": [
+        18
+      ],
+      "representative": 18
+    },
+    {
+      "key": "[[1,1,1],[0,0,0]]",
+      "ids": [
+        19
+      ],
+      "representative": 19
+    },
+    {
+      "key": "[[1,1,0],[0,1,0]]",
+      "ids": [
+        21
+      ],
+      "representative": 21
+    },
+    {
+      "key": "[[1,0,1],[0,1,0]]",
+      "ids": [
+        22
+      ],
+      "representative": 22
+    },
+    {
+      "key": "[[1,1,1],[0,1,0]]",
+      "ids": [
+        23
+      ],
+      "representative": 23
+    },
+    {
+      "key": "[[1,1,0],[0,0,1]]",
+      "ids": [
+        25
+      ],
+      "representative": 25
+    },
+    {
+      "key": "[[1,0,1],[0,0,1]]",
+      "ids": [
+        26
+      ],
+      "representative": 26
+    },
+    {
+      "key": "[[1,1,1],[0,0,1]]",
+      "ids": [
+        27
+      ],
+      "representative": 27
+    },
+    {
+      "key": "[[1,1,0],[0,1,1]]",
+      "ids": [
+        29
+      ],
+      "representative": 29
+    },
+    {
+      "key": "[[1,0,1],[0,1,1]]",
+      "ids": [
+        30
+      ],
+      "representative": 30
+    },
+    {
+      "key": "[[1,1,1],[0,1,1]]",
+      "ids": [
+        31
+      ],
+      "representative": 31
+    },
+    {
+      "key": "[[0,1,0],[1,0,0]]",
+      "ids": [
+        33
+      ],
+      "representative": 33
+    },
+    {
+      "key": "[[0,0,1],[1,0,0]]",
+      "ids": [
+        34
+      ],
+      "representative": 34
+    },
+    {
+      "key": "[[0,1,1],[1,0,0]]",
+      "ids": [
+        35
+      ],
+      "representative": 35
+    },
+    {
+      "key": "[[0,1,0],[1,1,0]]",
+      "ids": [
+        37
+      ],
+      "representative": 37
+    },
+    {
+      "key": "[[0,0,1],[1,1,0]]",
+      "ids": [
+        38
+      ],
+      "representative": 38
+    },
+    {
+      "key": "[[0,1,1],[1,1,0]]",
+      "ids": [
+        39
+      ],
+      "representative": 39
+    },
+    {
+      "key": "[[0,1,0],[1,0,1]]",
+      "ids": [
+        41
+      ],
+      "representative": 41
+    },
+    {
+      "key": "[[0,0,1],[1,0,1]]",
+      "ids": [
+        42
+      ],
+      "representative": 42
+    },
+    {
+      "key": "[[0,1,1],[1,0,1]]",
+      "ids": [
+        43
+      ],
+      "representative": 43
+    },
+    {
+      "key": "[[0,1,0],[1,1,1]]",
+      "ids": [
+        45
+      ],
+      "representative": 45
+    },
+    {
+      "key": "[[0,0,1],[1,1,1]]",
+      "ids": [
+        46
+      ],
+      "representative": 46
+    },
+    {
+      "key": "[[0,1,1],[1,1,1]]",
+      "ids": [
+        47
+      ],
+      "representative": 47
+    }
+  ],
+  "exchangeClasses": [
+    {
+      "key": "[[0,0,0]]",
+      "ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "representative": 0
+    },
+    {
+      "key": "[[0,1,0],[1,0,0]]",
+      "ids": [
+        17,
+        33
+      ],
+      "representative": 17
+    },
+    {
+      "key": "[[0,0,1],[1,0,0]]",
+      "ids": [
+        18,
+        34
+      ],
+      "representative": 18
+    },
+    {
+      "key": "[[0,1,1],[1,0,0]]",
+      "ids": [
+        19,
+        35
+      ],
+      "representative": 19
+    },
+    {
+      "key": "[[0,1,0],[1,1,0]]",
+      "ids": [
+        21,
+        37
+      ],
+      "representative": 21
+    },
+    {
+      "key": "[[0,0,1],[1,1,0]]",
+      "ids": [
+        22,
+        38
+      ],
+      "representative": 22
+    },
+    {
+      "key": "[[0,1,1],[1,1,0]]",
+      "ids": [
+        23,
+        39
+      ],
+      "representative": 23
+    },
+    {
+      "key": "[[0,1,0],[1,0,1]]",
+      "ids": [
+        25,
+        41
+      ],
+      "representative": 25
+    },
+    {
+      "key": "[[0,0,1],[1,0,1]]",
+      "ids": [
+        26,
+        42
+      ],
+      "representative": 26
+    },
+    {
+      "key": "[[0,1,1],[1,0,1]]",
+      "ids": [
+        27,
+        43
+      ],
+      "representative": 27
+    },
+    {
+      "key": "[[0,1,0],[1,1,1]]",
+      "ids": [
+        29,
+        45
+      ],
+      "representative": 29
+    },
+    {
+      "key": "[[0,0,1],[1,1,1]]",
+      "ids": [
+        30,
+        46
+      ],
+      "representative": 30
+    },
+    {
+      "key": "[[0,1,1],[1,1,1]]",
+      "ids": [
+        31,
+        47
+      ],
+      "representative": 31
+    }
+  ],
+  "records": [
+    {
+      "id": 0,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 1,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 6,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 7,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 8,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 9,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 10,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 11,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 12,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 13,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 14,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 15,
+      "outputs": [
+        0,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 16,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 17,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,1,0],[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,1,0],[1,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": true,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 18,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,1],[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,1],[1,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 19,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,1,1],[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,1,1],[1,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": true,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 20,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 21,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,1,0],[0,1,0]]",
+      "exchangeCanonicalKey": "[[0,1,0],[1,1,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 22,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,1],[0,1,0]]",
+      "exchangeCanonicalKey": "[[0,0,1],[1,1,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 23,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,1,1],[0,1,0]]",
+      "exchangeCanonicalKey": "[[0,1,1],[1,1,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 24,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 25,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,1,0],[0,0,1]]",
+      "exchangeCanonicalKey": "[[0,1,0],[1,0,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": true,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 26,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,1],[0,0,1]]",
+      "exchangeCanonicalKey": "[[0,0,1],[1,0,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 27,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,1,1],[0,0,1]]",
+      "exchangeCanonicalKey": "[[0,1,1],[1,0,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": true,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 28,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 29,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,1,0],[0,1,1]]",
+      "exchangeCanonicalKey": "[[0,1,0],[1,1,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 30,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,1],[0,1,1]]",
+      "exchangeCanonicalKey": "[[0,0,1],[1,1,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 31,
+      "outputs": [
+        1,
+        0
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,1,1],[0,1,1]]",
+      "exchangeCanonicalKey": "[[0,1,1],[1,1,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 32,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 33,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,1,0],[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,1,0],[1,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": true,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 34,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,1],[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,1],[1,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 35,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,1,1],[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,1,1],[1,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": true,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 36,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 37,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,1,0],[1,1,0]]",
+      "exchangeCanonicalKey": "[[0,1,0],[1,1,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 38,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,1],[1,1,0]]",
+      "exchangeCanonicalKey": "[[0,0,1],[1,1,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 39,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,1,1],[1,1,0]]",
+      "exchangeCanonicalKey": "[[0,1,1],[1,1,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 40,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 41,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,1,0],[1,0,1]]",
+      "exchangeCanonicalKey": "[[0,1,0],[1,0,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": true,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 42,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,1],[1,0,1]]",
+      "exchangeCanonicalKey": "[[0,0,1],[1,0,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 43,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,1,1],[1,0,1]]",
+      "exchangeCanonicalKey": "[[0,1,1],[1,0,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": true,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 44,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 45,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,1,0],[1,1,1]]",
+      "exchangeCanonicalKey": "[[0,1,0],[1,1,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 46,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,0,1],[1,1,1]]",
+      "exchangeCanonicalKey": "[[0,0,1],[1,1,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 47,
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[0,1,1],[1,1,1]]",
+      "exchangeCanonicalKey": "[[0,1,1],[1,1,1]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 48,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 49,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 50,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 51,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 52,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 53,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 54,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 55,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 56,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 57,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 58,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 59,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": 60,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "id": 61,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 62,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "id": 63,
+      "outputs": [
+        1,
+        1
+      ],
+      "transitions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial": 0,
+      "canonicalKey": "[[1,0,0]]",
+      "exchangeCanonicalKey": "[[0,0,0]]",
+      "reachableStates": [
+        0,
+        1
+      ],
+      "universallyFailureFair": false,
+      "failureCycles": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ]
+    }
+  ]
+}

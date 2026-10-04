@@ -1,0 +1,15 @@
+{
+  "pilotExperiments": ["atlas"],
+  "confirmationExperiments": ["confirmation"],
+  "selectedControllers": [33,41,43],
+  "baselineControllers": ["random-0.5",35],
+  "strata": [{"L":64,"k":2,"boundary":"periodic"},{"L":64,"k":3,"boundary":"periodic"},{"L":64,"k":4,"boundary":"periodic"},{"L":64,"k":8,"boundary":"periodic"}],
+  "expectedRepetitions": 512,
+  "alpha": 0.05,
+  "isotropyThreshold": 0.1,
+  "metrics": ["coverage"],
+  "includeIsotropyTests": true,
+  "selectionRule": "After the complete 64-code exploratory atlas, confirm all three H-first universally failure-fair feedback classes33/41/43 against fixed fair coin and fixed open-loop35. All13 quotient representatives and nine bias baselines are retained descriptively; no holdout winner is selected.",
+  "descriptiveControllers": [0,33,34,35,37,38,39,41,42,43,45,46,47],
+  "pilotAtlasSha256": "e4c06a961bdcd631bf49099d0fbb733f1e585311c01d721d78cf9181e1b7c152"
+}

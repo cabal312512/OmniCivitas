@@ -1,0 +1,798 @@
+name: omnicivitas
+services:
+  postgres:
+    image: postgres:17.6-alpine
+    environment:
+      POSTGRES_USER: ${OCV_PG_USER:-ocv_demo}
+      POSTGRES_PASSWORD: ${OCV_PG_PASSWORD:-ocv-fiction-only-not-real}
+      POSTGRES_DB: ${OCV_PG_DATABASE:-civilization}
+    command:
+      - postgres
+      - -c
+      - shared_buffers=64MB
+      - -c
+      - max_connections=20
+      - -c
+      - work_mem=2MB
+      - -c
+      - maintenance_work_mem=32MB
+    volumes:
+      - postgres_core:/var/lib/postgresql/data
+      - ./infra/postgres/001-core.sql:/docker-entrypoint-initdb.d/001-core.sql:ro
+    mem_limit: ${OCV_POSTGRES_MEM:-384m}
+    memswap_limit: ${OCV_POSTGRES_MEM:-384m}
+    cpus: ${OCV_POSTGRES_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    logging: &a1
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: "2"
+  redis:
+    image: redis:7.4.2-alpine
+    command:
+      - redis-server
+      - --maxmemory
+      - 64mb
+      - --maxmemory-policy
+      - noeviction
+      - --appendonly
+      - yes
+    volumes:
+      - redis_core:/data
+    mem_limit: ${OCV_REDIS_MEM:-128m}
+    memswap_limit: ${OCV_REDIS_MEM:-128m}
+    cpus: ${OCV_REDIS_CPU:-0.5}
+    pids_limit: 64
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    logging: *a1
+  gateway:
+    build:
+      context: .
+      dockerfile: infra/Dockerfile
+      target: gateway
+    image: omnicivitas/gateway:stage2
+    environment:
+      DATABASE_URL: ${OCV_DATABASE_URL:-postgresql://${OCV_PG_USER:-ocv_demo}:${OCV_PG_PASSWORD:-ocv-fiction-only-not-real}@postgres:5432/${OCV_PG_DATABASE:-civilization}}
+      REDIS_URL: redis://redis:6379
+      OCV_REQUIRE_INFRASTRUCTURE: "true"
+      OCV_PROFILE: ${OCV_ACTIVE_GROUP:-core}
+      OCV_MUSEUM_DELAY: ${OCV_MUSEUM_DELAY:-43}
+      MONGO_URL: mongodb://mongo:27017/civilization
+      ELASTIC_URL: http://elasticsearch:9200
+      RABBIT_URL: ${OCV_RABBIT_URL:-amqp://${OCV_RABBIT_USER:-ocv}:${OCV_RABBIT_PASSWORD:-ocv-broker-fiction}@rabbitmq:5672}
+      KAFKA_BROKERS: kafka:9092
+      NODE_OPTIONS: --max-old-space-size=256
+      OCV_OTEL_URL: http://otel:4318/v1/traces
+      OCV_LOG_DIR: /ocv-data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    mem_limit: ${OCV_GATEWAY_MEM:-512m}
+    memswap_limit: ${OCV_GATEWAY_MEM:-512m}
+    cpus: ${OCV_GATEWAY_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:3000/health/ready',{signal:AbortSignal.timeout(5000)}).then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))
+      interval: 10s
+      timeout: 6s
+      retries: 12
+    logging: *a1
+    volumes:
+      - gateway_logs:/ocv-data
+  portal:
+    build:
+      context: .
+      dockerfile: infra/Dockerfile
+      target: portal
+    image: omnicivitas/portal:stage2
+    mem_limit: ${OCV_PORTAL_MEM:-128m}
+    memswap_limit: ${OCV_PORTAL_MEM:-128m}
+    cpus: ${OCV_PORTAL_CPU:-0.5}
+    pids_limit: 64
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - --spider
+        - http://127.0.0.1:4321/
+      interval: 10s
+      timeout: 3s
+      retries: 6
+    logging: *a1
+  edge:
+    image: nginx:1.30.5-alpine
+    ports:
+      - ${OCV_BIND_ADDRESS:-127.0.0.1}:${OCV_WEB_PORT:-8080}:8080
+    volumes:
+      - ./infra/nginx/edge.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      gateway:
+        condition: service_healthy
+        restart: true
+      portal:
+        condition: service_healthy
+        restart: true
+      next:
+        condition: service_healthy
+        restart: true
+    mem_limit: ${OCV_EDGE_MEM:-64m}
+    memswap_limit: ${OCV_EDGE_MEM:-64m}
+    cpus: ${OCV_EDGE_CPU:-0.5}
+    pids_limit: 64
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - --spider
+        - http://127.0.0.1:8080/health/ready
+      interval: 10s
+      timeout: 6s
+      retries: 6
+    logging: *a1
+  mysql:
+    profiles:
+      - databases
+      - everything
+      - maximum
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: ${OCV_MYSQL_ROOT_PASSWORD:-ocv-root-fiction-only}
+      MYSQL_DATABASE: ${OCV_MYSQL_DATABASE:-civilization}
+      MYSQL_USER: ${OCV_MYSQL_USER:-ocv_demo}
+      MYSQL_PASSWORD: ${OCV_MYSQL_PASSWORD:-ocv-fiction-only-not-real}
+    command:
+      - --innodb-buffer-pool-size=64M
+      - --performance-schema=OFF
+      - --max-connections=20
+      - --mysqlx=OFF
+    volumes:
+      - mysql_data:/var/lib/mysql
+    mem_limit: ${OCV_MYSQL_MEM:-384m}
+    memswap_limit: ${OCV_MYSQL_MEM:-384m}
+    cpus: ${OCV_MYSQL_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - mysqladmin ping -h 127.0.0.1 -u"$$MYSQL_USER" -p"$$MYSQL_PASSWORD" --silent
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: &a2
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: "2"
+  mongo:
+    profiles:
+      - databases
+      - everything
+      - maximum
+    image: mongo:8.0
+    command:
+      - mongod
+      - --wiredTigerCacheSizeGB
+      - "0.25"
+      - --bind_ip_all
+    volumes:
+      - mongo_data:/data/db
+    mem_limit: ${OCV_MONGO_MEM:-512m}
+    memswap_limit: ${OCV_MONGO_MEM:-512m}
+    cpus: ${OCV_MONGO_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - mongosh
+        - --quiet
+        - --eval
+        - quit(db.adminCommand({ping:1}).ok?0:1)
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  minio:
+    profiles:
+      - databases
+      - everything
+      - maximum
+    build:
+      context: .
+      dockerfile: services/minio/Dockerfile
+    image: omnicivitas/minio:stage2
+    environment:
+      MINIO_ROOT_USER: ${OCV_MINIO_USER:-ocv-fiction}
+      MINIO_ROOT_PASSWORD: ${OCV_MINIO_PASSWORD:-ocv-file-fiction-only}
+    command:
+      - server
+      - /data
+    volumes:
+      - minio_data:/data
+    mem_limit: ${OCV_MINIO_MEM:-192m}
+    memswap_limit: ${OCV_MINIO_MEM:-192m}
+    cpus: ${OCV_MINIO_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - /ocv-health
+        - http://127.0.0.1:9000/minio/health/live
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  elasticsearch:
+    profiles:
+      - search
+      - everything
+      - maximum
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.19.0
+    environment:
+      discovery.type: single-node
+      xpack.security.enabled: "false"
+      xpack.ml.enabled: "false"
+      ES_JAVA_OPTS: ${OCV_ES_JAVA_OPTS:--Xms384m -Xmx384m}
+      node.store.allow_mmap: "false"
+      node.processors: "1"
+    volumes:
+      - elastic_data:/usr/share/elasticsearch/data
+    mem_limit: ${OCV_ELASTICSEARCH_MEM:-1280m}
+    memswap_limit: ${OCV_ELASTICSEARCH_MEM:-1280m}
+    cpus: ${OCV_ELASTICSEARCH_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -fsS --max-time 3 "http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=2s" >/dev/null
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  rabbitmq:
+    profiles:
+      - messaging
+      - everything
+      - maximum
+    image: rabbitmq:4.1-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: ${OCV_RABBIT_USER:-ocv}
+      RABBITMQ_DEFAULT_PASS: ${OCV_RABBIT_PASSWORD:-ocv-broker-fiction}
+      RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: +S 2:2 +A 2
+      RABBITMQ_CONFIG_FILE: /etc/rabbitmq/rabbitmq
+    volumes:
+      - rabbit_data:/var/lib/rabbitmq
+      - ./infra/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+    mem_limit: ${OCV_RABBITMQ_MEM:-256m}
+    memswap_limit: ${OCV_RABBITMQ_MEM:-256m}
+    cpus: ${OCV_RABBITMQ_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - rabbitmq-diagnostics
+        - -q
+        - ping
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  kafka:
+    profiles:
+      - messaging
+      - everything
+      - maximum
+    image: apache/kafka:3.9.1
+    environment:
+      KAFKA_NODE_ID: "1"
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: "1"
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: "1"
+      KAFKA_NUM_PARTITIONS: "1"
+      KAFKA_LOG_RETENTION_HOURS: "1"
+      KAFKA_LOG_RETENTION_BYTES: "16777216"
+      KAFKA_LOG_SEGMENT_BYTES: "8388608"
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+      KAFKA_HEAP_OPTS: ${OCV_KAFKA_HEAP_OPTS:--Xms128m -Xmx320m}
+      KAFKA_NUM_NETWORK_THREADS: "2"
+      KAFKA_NUM_IO_THREADS: "2"
+      CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    mem_limit: ${OCV_KAFKA_MEM:-1024m}
+    memswap_limit: ${OCV_KAFKA_MEM:-1024m}
+    cpus: ${OCV_KAFKA_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - KAFKA_HEAP_OPTS="-Xms32m -Xmx64m" /opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 >/dev/null
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  hono:
+    profiles:
+      - legacy
+      - everything
+      - databases
+      - maximum
+    build:
+      context: .
+      dockerfile: infra/Dockerfile
+      target: archive
+    image: omnicivitas/archive:stage2
+    environment:
+      DATABASE_URL: ${OCV_DATABASE_URL:-postgresql://${OCV_PG_USER:-ocv_demo}:${OCV_PG_PASSWORD:-ocv-fiction-only-not-real}@postgres:5432/${OCV_PG_DATABASE:-civilization}}
+      REDIS_URL: redis://redis:6379
+      MONGO_URL: mongodb://mongo:27017/civilization
+      ELASTIC_URL: http://elasticsearch:9200
+      RABBIT_URL: ${OCV_RABBIT_URL:-amqp://${OCV_RABBIT_USER:-ocv}:${OCV_RABBIT_PASSWORD:-ocv-broker-fiction}@rabbitmq:5672}
+      KAFKA_BROKERS: kafka:9092
+      NODE_OPTIONS: --max-old-space-size=128
+      OCV_SERVICE: hono
+      MINIO_ACCESS_KEY: ${OCV_MINIO_USER:-ocv-fiction}
+      MINIO_SECRET_KEY: ${OCV_MINIO_PASSWORD:-ocv-file-fiction-only}
+    depends_on: {}
+    volumes:
+      - hono_logs:/ocv-data
+    mem_limit: ${OCV_HONO_MEM:-128m}
+    memswap_limit: ${OCV_HONO_MEM:-128m}
+    cpus: ${OCV_HONO_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:3100/health',{signal:AbortSignal.timeout(2000)}).then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  message-bridge:
+    profiles:
+      - messaging
+      - everything
+      - maximum
+    build:
+      context: .
+      dockerfile: infra/Dockerfile
+      target: archive
+    image: omnicivitas/archive:stage2
+    environment:
+      DATABASE_URL: ${OCV_DATABASE_URL:-postgresql://${OCV_PG_USER:-ocv_demo}:${OCV_PG_PASSWORD:-ocv-fiction-only-not-real}@postgres:5432/${OCV_PG_DATABASE:-civilization}}
+      REDIS_URL: redis://redis:6379
+      MONGO_URL: mongodb://mongo:27017/civilization
+      ELASTIC_URL: http://elasticsearch:9200
+      RABBIT_URL: ${OCV_RABBIT_URL:-amqp://${OCV_RABBIT_USER:-ocv}:${OCV_RABBIT_PASSWORD:-ocv-broker-fiction}@rabbitmq:5672}
+      KAFKA_BROKERS: kafka:9092
+      NODE_OPTIONS: --max-old-space-size=128
+      OCV_SERVICE: bridge
+      MINIO_ACCESS_KEY: ${OCV_MINIO_USER:-ocv-fiction}
+      MINIO_SECRET_KEY: ${OCV_MINIO_PASSWORD:-ocv-file-fiction-only}
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    volumes:
+      - message_bridge_logs:/ocv-data
+    mem_limit: ${OCV_MESSAGE_BRIDGE_MEM:-192m}
+    memswap_limit: ${OCV_MESSAGE_BRIDGE_MEM:-192m}
+    cpus: ${OCV_MESSAGE_BRIDGE_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:3100/health',{signal:AbortSignal.timeout(2000)}).then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  message-consumer:
+    profiles:
+      - messaging
+      - everything
+      - maximum
+    build:
+      context: .
+      dockerfile: infra/Dockerfile
+      target: archive
+    image: omnicivitas/archive:stage2
+    environment:
+      DATABASE_URL: ${OCV_DATABASE_URL:-postgresql://${OCV_PG_USER:-ocv_demo}:${OCV_PG_PASSWORD:-ocv-fiction-only-not-real}@postgres:5432/${OCV_PG_DATABASE:-civilization}}
+      REDIS_URL: redis://redis:6379
+      MONGO_URL: mongodb://mongo:27017/civilization
+      ELASTIC_URL: http://elasticsearch:9200
+      RABBIT_URL: ${OCV_RABBIT_URL:-amqp://${OCV_RABBIT_USER:-ocv}:${OCV_RABBIT_PASSWORD:-ocv-broker-fiction}@rabbitmq:5672}
+      KAFKA_BROKERS: kafka:9092
+      NODE_OPTIONS: --max-old-space-size=128
+      OCV_SERVICE: consumer
+      MINIO_ACCESS_KEY: ${OCV_MINIO_USER:-ocv-fiction}
+      MINIO_SECRET_KEY: ${OCV_MINIO_PASSWORD:-ocv-file-fiction-only}
+    depends_on:
+      mongo:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    volumes:
+      - message_consumer_logs:/ocv-data
+    mem_limit: ${OCV_MESSAGE_CONSUMER_MEM:-256m}
+    memswap_limit: ${OCV_MESSAGE_CONSUMER_MEM:-256m}
+    cpus: ${OCV_MESSAGE_CONSUMER_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:3100/health',{signal:AbortSignal.timeout(2000)}).then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  spring:
+    profiles:
+      - legacy
+      - everything
+      - maximum
+    build:
+      context: .
+      dockerfile: services/spring/Dockerfile
+    image: omnicivitas/spring:stage2
+    environment:
+      JAVA_TOOL_OPTIONS: ${OCV_JAVA_TOOL_OPTIONS:--Xms64m -Xmx256m -XX:MaxMetaspaceSize=128m -XX:ActiveProcessorCount=2}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${OCV_PG_DATABASE:-civilization}
+      SPRING_DATASOURCE_USERNAME: ${OCV_PG_USER:-ocv_demo}
+      SPRING_DATASOURCE_PASSWORD: ${OCV_PG_PASSWORD:-ocv-fiction-only-not-real}
+      SPRING_DATA_REDIS_HOST: redis
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - spring_logs:/ocv-data
+    mem_limit: ${OCV_SPRING_MEM:-512m}
+    memswap_limit: ${OCV_SPRING_MEM:-512m}
+    cpus: ${OCV_SPRING_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -fsS
+        - --max-time
+        - "3"
+        - http://localhost:8081/health
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  fastapi:
+    profiles:
+      - legacy
+      - everything
+      - maximum
+    build:
+      context: .
+      dockerfile: services/fastapi/Dockerfile
+    image: omnicivitas/fastapi:stage2
+    volumes:
+      - python_data:/ocv-data
+    mem_limit: ${OCV_FASTAPI_MEM:-256m}
+    memswap_limit: ${OCV_FASTAPI_MEM:-256m}
+    cpus: ${OCV_FASTAPI_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request; urllib.request.urlopen('http://localhost:8000/health',timeout=2)
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  laravel:
+    profiles:
+      - legacy
+      - everything
+      - maximum
+    build:
+      context: .
+      dockerfile: services/laravel/Dockerfile
+    image: omnicivitas/laravel:stage2
+    environment:
+      APP_ENV: local
+      APP_DEBUG: "false"
+      APP_KEY: base64:b2N2LXNpbGx5LXRveS1ub3QtcmVhbC1rZXktMDAwMDA=
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_DATABASE: ${OCV_MYSQL_DATABASE:-civilization}
+      DB_USERNAME: ${OCV_MYSQL_USER:-ocv_demo}
+      DB_PASSWORD: ${OCV_MYSQL_PASSWORD:-ocv-fiction-only-not-real}
+      LOG_CHANNEL: stderr
+      CACHE_STORE: array
+      SESSION_DRIVER: array
+      QUEUE_CONNECTION: sync
+    depends_on:
+      mysql:
+        condition: service_healthy
+    mem_limit: ${OCV_LARAVEL_MEM:-256m}
+    memswap_limit: ${OCV_LARAVEL_MEM:-256m}
+    cpus: ${OCV_LARAVEL_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - php
+        - -r
+        - exit(@file_get_contents('http://localhost:8001/health')===false?1:0);
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  fiber:
+    profiles:
+      - legacy
+      - everything
+      - maximum
+    build:
+      context: .
+      dockerfile: services/fiber/Dockerfile
+      target: fiber
+    image: omnicivitas/fiber:stage2
+    mem_limit: ${OCV_FIBER_MEM:-64m}
+    memswap_limit: ${OCV_FIBER_MEM:-64m}
+    cpus: ${OCV_FIBER_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - /ocv-health
+        - http://localhost:8002/health
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  dotnet:
+    profiles:
+      - legacy
+      - everything
+      - maximum
+    build:
+      context: .
+      dockerfile: services/dotnet/Dockerfile
+    image: omnicivitas/dotnet:stage2
+    environment:
+      ASPNETCORE_URLS: http://+:8003
+      DOTNET_GCHeapHardLimit: "0x4000000"
+      DOTNET_PROCESSOR_COUNT: "2"
+    mem_limit: ${OCV_DOTNET_MEM:-192m}
+    memswap_limit: ${OCV_DOTNET_MEM:-192m}
+    cpus: ${OCV_DOTNET_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -fsS
+        - --max-time
+        - "3"
+        - http://localhost:8003/health
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  sinatra:
+    profiles:
+      - legacy
+      - everything
+      - maximum
+    build:
+      context: .
+      dockerfile: services/sinatra/Dockerfile
+    image: omnicivitas/sinatra:stage2
+    mem_limit: ${OCV_SINATRA_MEM:-96m}
+    memswap_limit: ${OCV_SINATRA_MEM:-96m}
+    cpus: ${OCV_SINATRA_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - ruby
+        - -rnet/http
+        - -e
+        - "exit(Net::HTTP.get_response(URI('http://localhost:8004/health')).is_a?(Net::HTTPSuccess) ? 0 : 1)"
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  otel:
+    profiles:
+      - monitoring
+      - everything
+      - maximum
+    build:
+      context: .
+      dockerfile: services/fiber/Dockerfile
+      target: otel
+    image: omnicivitas/otel:stage2
+    command:
+      - --config=/etc/otel/config.yaml
+    volumes:
+      - ./infra/monitoring/otel.yaml:/etc/otel/config.yaml:ro
+    mem_limit: ${OCV_OTEL_MEM:-128m}
+    memswap_limit: ${OCV_OTEL_MEM:-128m}
+    cpus: ${OCV_OTEL_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - /ocv-health
+        - http://localhost:13133/
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  prometheus:
+    profiles:
+      - monitoring
+      - everything
+      - maximum
+    image: prom/prometheus:v3.3.0
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.retention.time=2h
+      - --storage.tsdb.retention.size=32MB
+    volumes:
+      - ./infra/monitoring/prometheus.yaml:/etc/prometheus/prometheus.yml:ro
+      - prom_data:/prometheus
+    depends_on:
+      otel:
+        condition: service_healthy
+    mem_limit: ${OCV_PROMETHEUS_MEM:-192m}
+    memswap_limit: ${OCV_PROMETHEUS_MEM:-192m}
+    cpus: ${OCV_PROMETHEUS_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - --spider
+        - http://localhost:9090/-/healthy
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  grafana:
+    profiles:
+      - monitoring
+      - everything
+      - maximum
+    image: grafana/grafana:12.0.0
+    ports:
+      - ${OCV_BIND_ADDRESS:-127.0.0.1}:${OCV_GRAFANA_PORT:-3001}:3000
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_AUTH_DISABLE_LOGIN_FORM: "true"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+      GF_SECURITY_ADMIN_USER: ${OCV_GRAFANA_USER:-fiction-only-administrator}
+      GF_SECURITY_ADMIN_PASSWORD: ${OCV_GRAFANA_PASSWORD:-ocv-dashboard-fiction-only}
+    volumes:
+      - ./infra/monitoring/provisioning:/etc/grafana/provisioning:ro
+      - ./infra/monitoring/dashboards:/ocv-dashboards:ro
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      prometheus:
+        condition: service_healthy
+    mem_limit: ${OCV_GRAFANA_MEM:-192m}
+    memswap_limit: ${OCV_GRAFANA_MEM:-192m}
+    cpus: ${OCV_GRAFANA_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - --spider
+        - http://localhost:3000/api/health
+      interval: 10s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    logging: *a2
+  next:
+    build:
+      context: .
+      dockerfile: infra/Dockerfile
+      target: next
+    image: omnicivitas/next:stage3
+    environment:
+      OCV_GATEWAY_URL: http://gateway:3000
+      NODE_OPTIONS: --max-old-space-size=256
+      NEXT_TELEMETRY_DISABLED: "1"
+    mem_limit: ${OCV_NEXT_MEM:-512m}
+    memswap_limit: ${OCV_NEXT_MEM:-512m}
+    cpus: ${OCV_NEXT_CPU:-1}
+    pids_limit: 128
+    healthcheck:
+      test: [ CMD, node, -e, "fetch('http://127.0.0.1:3200/next-api/health',{signal:AbortSignal.timeout(3000)}).then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))" ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+    logging: *a1
+volumes:
+  postgres_core: null
+  redis_core: null
+  gateway_logs: null
+  mysql_data: null
+  mongo_data: null
+  minio_data: null
+  elastic_data: null
+  rabbit_data: null
+  kafka_data: null
+  hono_logs: null
+  message_bridge_logs: null
+  message_consumer_logs: null
+  spring_logs: null
+  python_data: null
+  prom_data: null
+  grafana_data: null

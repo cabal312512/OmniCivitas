@@ -1,0 +1,6584 @@
+{
+  "schemaVersion": 2,
+  "pilotExperiments": [
+    "landscape",
+    "refinement",
+    "refinement_success_flip"
+  ],
+  "familyAlpha": 0.05,
+  "armParameters": {
+    "proposal-k4-a1-b0.001": {
+      "alpha": 0.017899178761415512,
+      "beta": 0.017899178761415512,
+      "initial_mode": "fair",
+      "engine": "event",
+      "kinetic_kind": "sampled-actual",
+      "source": {
+        "kind": "pilot-trial-switch-match",
+        "controller": "a1-b0.001",
+        "L": 64,
+        "k": 4,
+        "boundary": "periodic",
+        "experiments": [
+          "landscape",
+          "refinement",
+          "refinement_success_flip"
+        ],
+        "metric": "trial_switch_fraction"
+      }
+    },
+    "proposal-k4-a1-b0.05": {
+      "alpha": 0.06911854941535503,
+      "beta": 0.06911854941535503,
+      "initial_mode": "fair",
+      "engine": "event",
+      "kinetic_kind": "sampled-actual",
+      "source": {
+        "kind": "pilot-trial-switch-match",
+        "controller": "a1-b0.05",
+        "L": 64,
+        "k": 4,
+        "boundary": "periodic",
+        "experiments": [
+          "landscape",
+          "refinement",
+          "refinement_success_flip"
+        ],
+        "metric": "trial_switch_fraction"
+      }
+    },
+    "proposal-k4-a0.02-b1": {
+      "alpha": 0.9798831438484163,
+      "beta": 0.9798831438484163,
+      "initial_mode": "fair",
+      "engine": "event",
+      "kinetic_kind": "sampled-actual",
+      "source": {
+        "kind": "pilot-trial-switch-match",
+        "controller": "a0.02-b1",
+        "L": 64,
+        "k": 4,
+        "boundary": "periodic",
+        "experiments": [
+          "landscape",
+          "refinement",
+          "refinement_success_flip"
+        ],
+        "metric": "trial_switch_fraction"
+      }
+    },
+    "proposal-k4-a0.85-b0.5": {
+      "alpha": 0.5072324012942675,
+      "beta": 0.5072324012942675,
+      "initial_mode": "fair",
+      "engine": "event",
+      "kinetic_kind": "sampled-actual",
+      "source": {
+        "kind": "pilot-trial-switch-match",
+        "controller": "a0.85-b0.5",
+        "L": 64,
+        "k": 4,
+        "boundary": "periodic",
+        "experiments": [
+          "landscape",
+          "refinement",
+          "refinement_success_flip"
+        ],
+        "metric": "trial_switch_fraction"
+      }
+    },
+    "proposal-k8-a1-b0.001": {
+      "alpha": 0.01116871368486295,
+      "beta": 0.01116871368486295,
+      "initial_mode": "fair",
+      "engine": "event",
+      "kinetic_kind": "sampled-actual",
+      "source": {
+        "kind": "pilot-trial-switch-match",
+        "controller": "a1-b0.001",
+        "L": 64,
+        "k": 8,
+        "boundary": "periodic",
+        "experiments": [
+          "landscape",
+          "refinement",
+          "refinement_success_flip"
+        ],
+        "metric": "trial_switch_fraction"
+      }
+    },
+    "proposal-k8-a1-b0.05": {
+      "alpha": 0.06146482435046821,
+      "beta": 0.06146482435046821,
+      "initial_mode": "fair",
+      "engine": "event",
+      "kinetic_kind": "sampled-actual",
+      "source": {
+        "kind": "pilot-trial-switch-match",
+        "controller": "a1-b0.05",
+        "L": 64,
+        "k": 8,
+        "boundary": "periodic",
+        "experiments": [
+          "landscape",
+          "refinement",
+          "refinement_success_flip"
+        ],
+        "metric": "trial_switch_fraction"
+      }
+    },
+    "proposal-k8-a0.02-b1": {
+      "alpha": 0.987607659064015,
+      "beta": 0.987607659064015,
+      "initial_mode": "fair",
+      "engine": "event",
+      "kinetic_kind": "sampled-actual",
+      "source": {
+        "kind": "pilot-trial-switch-match",
+        "controller": "a0.02-b1",
+        "L": 64,
+        "k": 8,
+        "boundary": "periodic",
+        "experiments": [
+          "landscape",
+          "refinement",
+          "refinement_success_flip"
+        ],
+        "metric": "trial_switch_fraction"
+      }
+    },
+    "proposal-k8-a0.85-b0.5": {
+      "alpha": 0.5051811708855898,
+      "beta": 0.5051811708855898,
+      "initial_mode": "fair",
+      "engine": "event",
+      "kinetic_kind": "sampled-actual",
+      "source": {
+        "kind": "pilot-trial-switch-match",
+        "controller": "a0.85-b0.5",
+        "L": 64,
+        "k": 8,
+        "boundary": "periodic",
+        "experiments": [
+          "landscape",
+          "refinement",
+          "refinement_success_flip"
+        ],
+        "metric": "trial_switch_fraction"
+      }
+    }
+  },
+  "selectionRule": "Four fixed mechanism representatives, not pilot density maxima: success-alternation with beta .001 and .05, the requested small-alpha (.02,1) corner, and (.85,.5) near an attainable accepted-correlation null. Preserve regression of the coarse winner in the independent refinement. Compare every candidate with all21 prespecified diagonal nulls and its own pilot-proposal-persistence null. Add independently seeded L256/512 stability for the two success-alternation candidates. No holdout retuning, interpolation, candidate dropping or seed augmentation.",
+  "design": {
+    "primaryOutcome": "coverage",
+    "companion": "mean run-wise abs_order",
+    "noninferiorityMargin": 0.01,
+    "marginInterpretation": "Comparable anisotropy permits an absolute .01 increase; this is not strict Pareto dominance. Strict improvement requires an upper confidence bound below zero.",
+    "tests": "Paired independent-seed-block Student-t, two-sided coverage and lower-tail noninferiority; approximate finite-sample inference.",
+    "multiplicity": "Single Holm family of400 tests across both outcomes, all comparisons, lengths and sizes.",
+    "matching": "Diagonal p equals pilot mean per-run trial_switches/(attempts-1). Matches one scalar proposal persistence at L64 only, not accepted correlation or complete run distributions; matched p is not re-estimated at larger sizes.",
+    "continuum": "Finite21-point null line plus pilot-fitted points; no universal claim about all temporal controllers."
+  },
+  "tests": [
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0-b0/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0-b0",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0-b0/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0-b0",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.05-b0.05/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.05-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.05-b0.05/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.05-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.1-b0.1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.1-b0.1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.1-b0.1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.1-b0.1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.15-b0.15/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.15-b0.15",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.15-b0.15/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.15-b0.15",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.2-b0.2/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.2-b0.2",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.2-b0.2/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.2-b0.2",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.25-b0.25/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.25-b0.25",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.25-b0.25/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.25-b0.25",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.3-b0.3/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.3-b0.3",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.3-b0.3/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.3-b0.3",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.35-b0.35/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.35-b0.35",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.35-b0.35/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.35-b0.35",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.4-b0.4/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.4-b0.4",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.4-b0.4/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.4-b0.4",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.45-b0.45/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.45-b0.45",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.45-b0.45/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.45-b0.45",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.5-b0.5/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.5-b0.5/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.55-b0.55/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.55-b0.55",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.55-b0.55/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.55-b0.55",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.6-b0.6/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.6-b0.6",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.6-b0.6/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.6-b0.6",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.65-b0.65/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.65-b0.65",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.65-b0.65/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.65-b0.65",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.7-b0.7/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.7-b0.7",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.7-b0.7/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.7-b0.7",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.75-b0.75/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.75-b0.75",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.75-b0.75/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.75-b0.75",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.8-b0.8/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.8-b0.8",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.8-b0.8/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.8-b0.8",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.85-b0.85/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.85-b0.85",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.85-b0.85/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.85-b0.85",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.9-b0.9/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.9-b0.9",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.9-b0.9/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.9-b0.9",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.95-b0.95/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.95-b0.95",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a0.95-b0.95/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.95-b0.95",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a1-b1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/a1-b1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/proposal-k4-a1-b0.001/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k4-a1-b0.001",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.001/proposal-k4-a1-b0.001/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k4-a1-b0.001",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0-b0/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0-b0",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0-b0/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0-b0",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.05-b0.05/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.05-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.05-b0.05/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.05-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.1-b0.1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.1-b0.1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.1-b0.1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.1-b0.1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.15-b0.15/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.15-b0.15",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.15-b0.15/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.15-b0.15",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.2-b0.2/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.2-b0.2",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.2-b0.2/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.2-b0.2",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.25-b0.25/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.25-b0.25",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.25-b0.25/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.25-b0.25",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.3-b0.3/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.3-b0.3",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.3-b0.3/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.3-b0.3",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.35-b0.35/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.35-b0.35",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.35-b0.35/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.35-b0.35",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.4-b0.4/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.4-b0.4",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.4-b0.4/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.4-b0.4",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.45-b0.45/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.45-b0.45",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.45-b0.45/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.45-b0.45",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.5-b0.5/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.5-b0.5/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.55-b0.55/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.55-b0.55",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.55-b0.55/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.55-b0.55",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.6-b0.6/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.6-b0.6",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.6-b0.6/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.6-b0.6",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.65-b0.65/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.65-b0.65",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.65-b0.65/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.65-b0.65",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.7-b0.7/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.7-b0.7",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.7-b0.7/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.7-b0.7",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.75-b0.75/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.75-b0.75",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.75-b0.75/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.75-b0.75",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.8-b0.8/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.8-b0.8",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.8-b0.8/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.8-b0.8",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.85-b0.85/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.85-b0.85",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.85-b0.85/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.85-b0.85",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.9-b0.9/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.9-b0.9",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.9-b0.9/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.9-b0.9",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.95-b0.95/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.95-b0.95",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a0.95-b0.95/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.95-b0.95",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a1-b1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/a1-b1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/proposal-k4-a1-b0.05/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k4-a1-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a1-b0.05/proposal-k4-a1-b0.05/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k4-a1-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0-b0/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0-b0",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0-b0/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0-b0",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.05-b0.05/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.05-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.05-b0.05/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.05-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.1-b0.1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.1-b0.1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.1-b0.1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.1-b0.1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.15-b0.15/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.15-b0.15",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.15-b0.15/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.15-b0.15",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.2-b0.2/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.2-b0.2",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.2-b0.2/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.2-b0.2",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.25-b0.25/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.25-b0.25",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.25-b0.25/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.25-b0.25",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.3-b0.3/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.3-b0.3",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.3-b0.3/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.3-b0.3",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.35-b0.35/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.35-b0.35",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.35-b0.35/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.35-b0.35",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.4-b0.4/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.4-b0.4",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.4-b0.4/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.4-b0.4",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.45-b0.45/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.45-b0.45",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.45-b0.45/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.45-b0.45",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.5-b0.5/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.5-b0.5/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.55-b0.55/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.55-b0.55",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.55-b0.55/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.55-b0.55",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.6-b0.6/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.6-b0.6",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.6-b0.6/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.6-b0.6",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.65-b0.65/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.65-b0.65",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.65-b0.65/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.65-b0.65",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.7-b0.7/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.7-b0.7",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.7-b0.7/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.7-b0.7",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.75-b0.75/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.75-b0.75",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.75-b0.75/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.75-b0.75",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.8-b0.8/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.8-b0.8",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.8-b0.8/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.8-b0.8",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.85-b0.85/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.85-b0.85",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.85-b0.85/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.85-b0.85",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.9-b0.9/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.9-b0.9",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.9-b0.9/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.9-b0.9",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.95-b0.95/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.95-b0.95",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a0.95-b0.95/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.95-b0.95",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a1-b1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/a1-b1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/proposal-k4-a0.02-b1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "proposal-k4-a0.02-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.02-b1/proposal-k4-a0.02-b1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "proposal-k4-a0.02-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0-b0/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0-b0",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0-b0/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0-b0",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.05-b0.05/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.05-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.05-b0.05/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.05-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.1-b0.1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.1-b0.1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.1-b0.1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.1-b0.1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.15-b0.15/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.15-b0.15",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.15-b0.15/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.15-b0.15",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.2-b0.2/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.2-b0.2",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.2-b0.2/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.2-b0.2",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.25-b0.25/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.25-b0.25",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.25-b0.25/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.25-b0.25",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.3-b0.3/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.3-b0.3",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.3-b0.3/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.3-b0.3",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.35-b0.35/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.35-b0.35",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.35-b0.35/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.35-b0.35",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.4-b0.4/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.4-b0.4",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.4-b0.4/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.4-b0.4",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.45-b0.45/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.45-b0.45",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.45-b0.45/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.45-b0.45",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.5-b0.5/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.5-b0.5/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.55-b0.55/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.55-b0.55",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.55-b0.55/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.55-b0.55",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.6-b0.6/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.6-b0.6",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.6-b0.6/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.6-b0.6",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.65-b0.65/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.65-b0.65",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.65-b0.65/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.65-b0.65",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.7-b0.7/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.7-b0.7",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.7-b0.7/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.7-b0.7",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.75-b0.75/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.75-b0.75",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.75-b0.75/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.75-b0.75",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.8-b0.8/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.8-b0.8",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.8-b0.8/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.8-b0.8",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.85-b0.85/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.85-b0.85",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.85-b0.85/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.85-b0.85",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.9-b0.9/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.9-b0.9",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.9-b0.9/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.9-b0.9",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.95-b0.95/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.95-b0.95",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a0.95-b0.95/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.95-b0.95",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a1-b1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/a1-b1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/proposal-k4-a0.85-b0.5/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "proposal-k4-a0.85-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k4/a0.85-b0.5/proposal-k4-a0.85-b0.5/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "proposal-k4-a0.85-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40000001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0-b0/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0-b0",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0-b0/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0-b0",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.05-b0.05/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.05-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.05-b0.05/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.05-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.1-b0.1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.1-b0.1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.1-b0.1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.1-b0.1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.15-b0.15/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.15-b0.15",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.15-b0.15/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.15-b0.15",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.2-b0.2/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.2-b0.2",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.2-b0.2/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.2-b0.2",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.25-b0.25/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.25-b0.25",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.25-b0.25/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.25-b0.25",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.3-b0.3/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.3-b0.3",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.3-b0.3/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.3-b0.3",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.35-b0.35/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.35-b0.35",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.35-b0.35/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.35-b0.35",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.4-b0.4/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.4-b0.4",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.4-b0.4/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.4-b0.4",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.45-b0.45/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.45-b0.45",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.45-b0.45/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.45-b0.45",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.5-b0.5/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.5-b0.5/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.55-b0.55/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.55-b0.55",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.55-b0.55/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.55-b0.55",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.6-b0.6/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.6-b0.6",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.6-b0.6/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.6-b0.6",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.65-b0.65/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.65-b0.65",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.65-b0.65/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.65-b0.65",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.7-b0.7/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.7-b0.7",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.7-b0.7/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.7-b0.7",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.75-b0.75/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.75-b0.75",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.75-b0.75/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.75-b0.75",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.8-b0.8/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.8-b0.8",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.8-b0.8/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.8-b0.8",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.85-b0.85/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.85-b0.85",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.85-b0.85/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.85-b0.85",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.9-b0.9/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.9-b0.9",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.9-b0.9/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.9-b0.9",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.95-b0.95/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.95-b0.95",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a0.95-b0.95/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.95-b0.95",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a1-b1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/a1-b1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/proposal-k8-a1-b0.001/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k8-a1-b0.001",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.001/proposal-k8-a1-b0.001/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k8-a1-b0.001",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0-b0/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0-b0",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0-b0/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0-b0",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.05-b0.05/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.05-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.05-b0.05/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.05-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.1-b0.1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.1-b0.1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.1-b0.1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.1-b0.1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.15-b0.15/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.15-b0.15",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.15-b0.15/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.15-b0.15",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.2-b0.2/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.2-b0.2",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.2-b0.2/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.2-b0.2",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.25-b0.25/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.25-b0.25",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.25-b0.25/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.25-b0.25",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.3-b0.3/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.3-b0.3",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.3-b0.3/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.3-b0.3",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.35-b0.35/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.35-b0.35",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.35-b0.35/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.35-b0.35",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.4-b0.4/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.4-b0.4",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.4-b0.4/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.4-b0.4",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.45-b0.45/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.45-b0.45",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.45-b0.45/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.45-b0.45",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.5-b0.5/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.5-b0.5/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.55-b0.55/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.55-b0.55",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.55-b0.55/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.55-b0.55",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.6-b0.6/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.6-b0.6",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.6-b0.6/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.6-b0.6",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.65-b0.65/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.65-b0.65",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.65-b0.65/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.65-b0.65",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.7-b0.7/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.7-b0.7",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.7-b0.7/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.7-b0.7",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.75-b0.75/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.75-b0.75",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.75-b0.75/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.75-b0.75",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.8-b0.8/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.8-b0.8",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.8-b0.8/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.8-b0.8",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.85-b0.85/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.85-b0.85",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.85-b0.85/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.85-b0.85",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.9-b0.9/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.9-b0.9",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.9-b0.9/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.9-b0.9",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.95-b0.95/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.95-b0.95",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a0.95-b0.95/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.95-b0.95",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a1-b1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/a1-b1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/proposal-k8-a1-b0.05/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k8-a1-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a1-b0.05/proposal-k8-a1-b0.05/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k8-a1-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0-b0/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0-b0",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0-b0/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0-b0",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.05-b0.05/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.05-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.05-b0.05/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.05-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.1-b0.1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.1-b0.1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.1-b0.1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.1-b0.1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.15-b0.15/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.15-b0.15",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.15-b0.15/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.15-b0.15",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.2-b0.2/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.2-b0.2",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.2-b0.2/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.2-b0.2",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.25-b0.25/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.25-b0.25",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.25-b0.25/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.25-b0.25",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.3-b0.3/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.3-b0.3",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.3-b0.3/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.3-b0.3",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.35-b0.35/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.35-b0.35",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.35-b0.35/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.35-b0.35",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.4-b0.4/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.4-b0.4",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.4-b0.4/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.4-b0.4",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.45-b0.45/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.45-b0.45",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.45-b0.45/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.45-b0.45",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.5-b0.5/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.5-b0.5/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.55-b0.55/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.55-b0.55",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.55-b0.55/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.55-b0.55",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.6-b0.6/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.6-b0.6",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.6-b0.6/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.6-b0.6",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.65-b0.65/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.65-b0.65",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.65-b0.65/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.65-b0.65",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.7-b0.7/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.7-b0.7",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.7-b0.7/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.7-b0.7",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.75-b0.75/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.75-b0.75",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.75-b0.75/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.75-b0.75",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.8-b0.8/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.8-b0.8",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.8-b0.8/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.8-b0.8",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.85-b0.85/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.85-b0.85",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.85-b0.85/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.85-b0.85",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.9-b0.9/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.9-b0.9",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.9-b0.9/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.9-b0.9",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.95-b0.95/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.95-b0.95",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a0.95-b0.95/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a0.95-b0.95",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a1-b1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/a1-b1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/proposal-k8-a0.02-b1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "proposal-k8-a0.02-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.02-b1/proposal-k8-a0.02-b1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.02-b1",
+      "baseline": "proposal-k8-a0.02-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0-b0/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0-b0",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0-b0/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0-b0",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.05-b0.05/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.05-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.05-b0.05/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.05-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.1-b0.1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.1-b0.1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.1-b0.1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.1-b0.1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.15-b0.15/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.15-b0.15",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.15-b0.15/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.15-b0.15",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.2-b0.2/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.2-b0.2",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.2-b0.2/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.2-b0.2",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.25-b0.25/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.25-b0.25",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.25-b0.25/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.25-b0.25",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.3-b0.3/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.3-b0.3",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.3-b0.3/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.3-b0.3",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.35-b0.35/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.35-b0.35",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.35-b0.35/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.35-b0.35",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.4-b0.4/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.4-b0.4",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.4-b0.4/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.4-b0.4",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.45-b0.45/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.45-b0.45",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.45-b0.45/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.45-b0.45",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.5-b0.5/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.5-b0.5/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.55-b0.55/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.55-b0.55",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.55-b0.55/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.55-b0.55",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.6-b0.6/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.6-b0.6",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.6-b0.6/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.6-b0.6",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.65-b0.65/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.65-b0.65",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.65-b0.65/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.65-b0.65",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.7-b0.7/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.7-b0.7",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.7-b0.7/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.7-b0.7",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.75-b0.75/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.75-b0.75",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.75-b0.75/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.75-b0.75",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.8-b0.8/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.8-b0.8",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.8-b0.8/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.8-b0.8",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.85-b0.85/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.85-b0.85",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.85-b0.85/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.85-b0.85",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.9-b0.9/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.9-b0.9",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.9-b0.9/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.9-b0.9",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.95-b0.95/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.95-b0.95",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a0.95-b0.95/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a0.95-b0.95",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a1-b1/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/a1-b1/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/proposal-k8-a0.85-b0.5/coverage",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "proposal-k8-a0.85-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation/L64/k8/a0.85-b0.5/proposal-k8-a0.85-b0.5/abs_order",
+      "experiment": "confirmation",
+      "L": 64,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a0.85-b0.5",
+      "baseline": "proposal-k8-a0.85-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 40100001,
+        "count": 1024
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.001/a0.5-b0.5/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.001/a0.5-b0.5/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.001/a1-b1/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.001/a1-b1/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.001/proposal-k4-a1-b0.001/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k4-a1-b0.001",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.001/proposal-k4-a1-b0.001/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k4-a1-b0.001",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.05/a0.5-b0.5/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.05/a0.5-b0.5/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.05/a1-b1/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.05/a1-b1/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.05/proposal-k4-a1-b0.05/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k4-a1-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k4/a1-b0.05/proposal-k4-a1-b0.05/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k4-a1-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.001/a0.5-b0.5/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.001/a0.5-b0.5/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.001/a1-b1/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.001/a1-b1/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.001/proposal-k8-a1-b0.001/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k8-a1-b0.001",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.001/proposal-k8-a1-b0.001/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k8-a1-b0.001",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.05/a0.5-b0.5/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.05/a0.5-b0.5/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.05/a1-b1/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.05/a1-b1/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.05/proposal-k8-a1-b0.05/coverage",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k8-a1-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L256/k8/a1-b0.05/proposal-k8-a1-b0.05/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 256,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k8-a1-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 41100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.001/a0.5-b0.5/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.001/a0.5-b0.5/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.001/a1-b1/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.001/a1-b1/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.001/proposal-k4-a1-b0.001/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k4-a1-b0.001",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.001/proposal-k4-a1-b0.001/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k4-a1-b0.001",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.05/a0.5-b0.5/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.05/a0.5-b0.5/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.05/a1-b1/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.05/a1-b1/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.05/proposal-k4-a1-b0.05/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k4-a1-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k4/a1-b0.05/proposal-k4-a1-b0.05/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 4,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k4-a1-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42000001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.001/a0.5-b0.5/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.001/a0.5-b0.5/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.001/a1-b1/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.001/a1-b1/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.001/proposal-k8-a1-b0.001/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k8-a1-b0.001",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.001/proposal-k8-a1-b0.001/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.001",
+      "baseline": "proposal-k8-a1-b0.001",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.05/a0.5-b0.5/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.05/a0.5-b0.5/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a0.5-b0.5",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.05/a1-b1/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.05/a1-b1/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "a1-b1",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.05/proposal-k8-a1-b0.05/coverage",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k8-a1-b0.05",
+      "metric": "coverage",
+      "alternative": "two-sided",
+      "nullDifference": 0,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    },
+    {
+      "id": "confirmation_stability/L512/k8/a1-b0.05/proposal-k8-a1-b0.05/abs_order",
+      "experiment": "confirmation_stability",
+      "L": 512,
+      "k": 8,
+      "boundary": "periodic",
+      "controller": "a1-b0.05",
+      "baseline": "proposal-k8-a1-b0.05",
+      "metric": "abs_order",
+      "alternative": "less",
+      "nullDifference": 0.01,
+      "seedBlock": {
+        "start": 42100001,
+        "count": 128
+      }
+    }
+  ]
+}

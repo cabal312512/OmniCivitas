@@ -1,0 +1,20 @@
+---
+import {rooms,address} from './map.mjs';
+import Maintenance from './tmp.astro';
+import Dock from '../main1/index.astro';
+import HomeImage from './img.astro';
+import Plaque from '../report/badge.astro';
+---
+<div class="wrong-windows" aria-label="错层入口" inert>
+ <section class="wrong-window window-settings"><div class="wrong-title"><b>设置</b><a href="/maze/offices/settings/" aria-label="打开设置">↗</a></div><div class="wrong-settings" aria-hidden="true" inert><span>显示</span><button tabindex="-1">◉</button><span>声音</span><button tabindex="-1">○</button><span>自动</span><button tabindex="-1">◉</button></div><a class="window-link" href="/maze/window/under/">高级</a></section>
+ <section class="wrong-window window-menu"><a href="/lab/">实验室<span>↗</span></a><div class="wrong-title"><b>文件</b><span aria-hidden="true">⌘</span></div><a href="/maze/cache/">缓存<span>01</span></a><a href="/maze/notifications/">通知<span>02</span></a><a href="/maze/table/">表格<span>03</span></a><a href="/maze/display/fold/">显示<span>04</span></a></section>
+ <section class="wrong-window window-table"><div class="wrong-title"><b>任务</b><a href="/maze/approval/queue/" aria-label="打开队列">↗</a></div><div class="wrong-table"><span>名称</span><span>位置</span><span>状态</span>{rooms.slice(3,9).map((room,i)=><><a href={address(room)}>{room.title}</a><span>0{i+1}</span><span><i class="wrong-dot"></i></span></>)}</div></section>
+ <div class="wrong-window window-toast" aria-hidden="true" inert><b>已保存</b><button tabindex="-1">撤销</button><button tabindex="-1">×</button></div>
+ <div class="wrong-window window-ghost" aria-hidden="true" inert><div class="wrong-title">确认<span>×</span></div><div class="ghost-lines"><i></i><i></i></div><button tabindex="-1">继续</button></div>
+ <nav class="wrong-breadcrumb" aria-label="迷宫入口"><a href="/maze/">目录</a><span>/</span><a href="/maze/route/a/b/c/d/e/">下一层</a><span>/</span><a href="/maze/empty/0/">零层</a></nav>
+ <a class="maze-door" href="/maze/" aria-label="进入路由迷宫"><svg viewBox="0 0 24 24"><path d="M3 3h7v6H7v8h10v-5h-5V3h9v18H3z"/></svg><span>目录</span></a>
+ <Maintenance home />
+ <Dock home />
+ <HomeImage />
+ <Plaque />
+</div>

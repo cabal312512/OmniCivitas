@@ -1,0 +1,50 @@
+name: release
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag
+        required: true
+        default: v0.1.0
+permissions:
+  contents: write
+concurrency:
+  group: release-${{ inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.1
+      - name: Validate the published source subset
+        run: node scripts/check-release.mjs
+      - name: Package tracked sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo 'Use a vX.Y.Z tag'; exit 1; }
+          mkdir -p "$RUNNER_TEMP/ocv-release"
+          git archive --format=zip --prefix="OmniCivitas-$RELEASE_TAG/" --output="$RUNNER_TEMP/ocv-release/OmniCivitas-$RELEASE_TAG-source.zip" HEAD
+          cd "$RUNNER_TEMP/ocv-release"
+          sha256sum "OmniCivitas-$RELEASE_TAG-source.zip" > SHA256SUMS.txt
+      - name: Publish release and checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" > /dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" "$RUNNER_TEMP/ocv-release/OmniCivitas-$RELEASE_TAG-source.zip" "$RUNNER_TEMP/ocv-release/SHA256SUMS.txt" --clobber
+          else
+            gh release create "$RELEASE_TAG" "$RUNNER_TEMP/ocv-release/OmniCivitas-$RELEASE_TAG-source.zip" "$RUNNER_TEMP/ocv-release/SHA256SUMS.txt" --verify-tag --title "OmniCivitas $RELEASE_TAG" --notes-file docs/RELEASE-v0.1.0.md
+          fi

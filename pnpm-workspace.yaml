@@ -1,0 +1,11 @@
+packages:
+  - config/apps/*
+  - services/*
+  - pcakage/*
+onlyBuiltDependencies:
+  - esbuild
+  - nx
+  - '@nestjs/core'
+
+  - prisma
+  - "@prisma/engines"

@@ -1,0 +1,15 @@
+---
+import Layout from '../../research/Layout.astro';
+import Accent from '../../research/Accent.astro';
+import Graphic from '../../research/Graphic.astro';
+import {gallery,prepareResearch} from '../../research/data.mjs';
+await prepareResearch();
+const kinds=[...new Set(gallery.map(figure=>figure.kind))];
+---
+<Layout title="Visual research atlas" active="atlas" wide>
+ <section class="page-intro page-intro-visual"><div class="intro-copy"><p class="eyebrow">VISUAL ATLAS / ORIGINAL FIGURES & DERIVED VIEWS</p><h1>A landscape<br/>of evidence.</h1><p>Spatial realizations, parameter fields, control networks and exact laws. Every figure keeps its scientific scope; a convincing image is not a proof.</p></div><Accent kind="atlas"/></section>
+ <section class="research-section"><div class="section-heading"><div><p class="eyebrow">DERIVED FROM THE RETAINED EXACT LAWS</p><h2>Geometry. Classes. Branches.</h2></div><a href="/research/explore/" class="research-text-link">Interact with the data ↗</a></div><div class="lab-grid"><div class="figure-card"><Graphic kind="terminal" id="atlas-law"/><div class="figure-caption"><div><span class="eyebrow">EXACT PERIODIC TERMINAL OCCUPANCY</span><h3>Nine equally likely atoms</h3></div></div></div><div class="figure-card"><Graphic kind="controllers" id="atlas-classes"/><div class="figure-caption"><div><span class="eyebrow">COMPLETE THIRTEEN-CLASS CATALOGUE</span><h3>Properness is physical</h3></div></div></div><div class="figure-card"><Graphic kind="tree" id="atlas-tree"/><div class="figure-caption"><div><span class="eyebrow">RECORDED DEPTH-EIGHT EXCERPT</span><h3>A covering of word space</h3></div></div></div></div></section>
+ <div class="research-filter" aria-label="Filter scientific figures"><button data-atlas-filter="all" aria-pressed="true">All figures</button>{kinds.map(kind=><button data-atlas-filter={kind} aria-pressed="false">{kind}</button>)}</div>
+ <section class="atlas-grid" aria-label="Scientific figure gallery">{gallery.map(figure=><article class="figure-card" id={`figure-${figure.index}`} data-figure-category={figure.kind}><button type="button" data-lightbox-src={figure.src} data-lightbox-title={figure.title} data-lightbox-caption={figure.caption} aria-label={`Enlarge ${figure.title}`}><div class="figure-image"><img src={figure.src} alt={figure.title} loading="lazy"/></div><div class="figure-caption"><div><span class="eyebrow">{figure.kind}</span><h3>{figure.title}</h3><p>{figure.caption}</p></div><span>⤢</span></div></button></article>)}</section>
+ <dialog class="lightbox" data-research-lightbox aria-label="Scientific figure viewer"><header><span data-lightbox-name></span><button data-lightbox-close type="button" aria-label="Close figure">×</button></header><img data-lightbox-image alt=""/><p data-lightbox-description></p><a data-lightbox-download download>Download original figure ↓</a></dialog>
+</Layout>

@@ -1,0 +1,1764 @@
+{
+  "schemaVersion": 1,
+  "protocolSha256": "c4564f462ad464d23235c3d808f8dff92f0032b16bd58eca2a94d47c8a60060c",
+  "directions": [
+    {
+      "index": 0,
+      "boundary": "periodic",
+      "imbalance": "0",
+      "cost": "0",
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic"
+      },
+      "lower": "8/9",
+      "lowerDecimal": 0.8888888888888888,
+      "retained": {
+        "policy": "H-once-V-forever",
+        "metrics": {
+          "coverage": {
+            "numerator": "8",
+            "denominator": "9",
+            "value": 0.888888888888888
+          },
+          "absOrder": {
+            "numerator": "1",
+            "denominator": "2",
+            "value": 0.5
+          },
+          "inverseN": {
+            "numerator": "1",
+            "denominator": "4",
+            "value": 0.25
+          },
+          "attemptsPerParticle": {
+            "numerator": "37",
+            "denominator": "10",
+            "value": 3.7
+          }
+        },
+        "realization": {
+          "initial": [
+            1,
+            0
+          ],
+          "H": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "V": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        "evidenceFile": "../stage4/results/proper-boundary-null.json",
+        "archived": true
+      },
+      "trials": [],
+      "newExactCandidateFile": null
+    },
+    {
+      "index": 1,
+      "boundary": "periodic",
+      "imbalance": "1",
+      "cost": "3/25",
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic"
+      },
+      "lower": "-867935738114600545392665965111/26821837273950122720826665376000",
+      "lowerDecimal": -0.03235929475113012,
+      "retained": {
+        "policy": "support-1",
+        "metrics": {
+          "coverage": {
+            "numerator": "29664956",
+            "denominator": "33559839",
+            "value": 0.88394214286904
+          },
+          "absOrder": {
+            "numerator": "1885819994927819",
+            "denominator": "4941573941866770",
+            "value": 0.381623348575335
+          },
+          "inverseN": {
+            "numerator": "11269619",
+            "denominator": "44746452",
+            "value": 0.251855029757443
+          },
+          "attemptsPerParticle": {
+            "numerator": "7210180341029247428881345099",
+            "denominator": "1618210393601817358722574080",
+            "value": 4.45565074204029
+          }
+        },
+        "realization": {
+          "initial": [
+            "1/1",
+            "0/1"
+          ],
+          "H": [
+            [
+              "0/1",
+              "1/1"
+            ],
+            [
+              "0/1",
+              "0/1"
+            ]
+          ],
+          "V": [
+            [
+              "0/1",
+              "0/1"
+            ],
+            [
+              "77/128",
+              "51/128"
+            ]
+          ]
+        },
+        "evidenceFile": "data/lower-1.json",
+        "evidenceSha256": "b1d6a115fa707a6abc78f8c81a960e262be1119ee5d397ea3789bf51fd59cfcf",
+        "archived": false
+      },
+      "trials": [
+        {
+          "start": 0,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            2,
+            0,
+            158,
+            253,
+            0
+          ],
+          "score": -0.034241943427672616,
+          "metrics": {
+            "coverage": 0.883538447282269,
+            "absOrder": 0.38341589857028724,
+            "inverseN": 0.25200641560248205,
+            "attemptsPerParticle": 4.45303743449712
+          }
+        },
+        {
+          "start": 1,
+          "evaluations": 209,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            0,
+            154,
+            256,
+            2
+          ],
+          "score": -0.03235929475112986,
+          "metrics": {
+            "coverage": 0.8839421428690406,
+            "absOrder": 0.38162334857533586,
+            "inverseN": 0.251855029757443,
+            "attemptsPerParticle": 4.455650742040288
+          }
+        },
+        {
+          "start": 2,
+          "evaluations": 217,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            256,
+            255,
+            0,
+            0,
+            154
+          ],
+          "score": -0.03235929475112975,
+          "metrics": {
+            "coverage": 0.8839421428690406,
+            "absOrder": 0.38162334857533575,
+            "inverseN": 0.251855029757443,
+            "attemptsPerParticle": 4.455650742040288
+          }
+        },
+        {
+          "start": 3,
+          "evaluations": 229,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            256,
+            254,
+            0,
+            0,
+            154
+          ],
+          "score": -0.03235929475112975,
+          "metrics": {
+            "coverage": 0.8839421428690406,
+            "absOrder": 0.38162334857533575,
+            "inverseN": 0.251855029757443,
+            "attemptsPerParticle": 4.455650742040288
+          }
+        },
+        {
+          "start": 4,
+          "evaluations": 230,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            256,
+            255,
+            0,
+            0,
+            154
+          ],
+          "score": -0.03235929475112975,
+          "metrics": {
+            "coverage": 0.8839421428690406,
+            "absOrder": 0.38162334857533575,
+            "inverseN": 0.251855029757443,
+            "attemptsPerParticle": 4.455650742040288
+          }
+        },
+        {
+          "start": 5,
+          "evaluations": 166,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            0,
+            154,
+            256,
+            1
+          ],
+          "score": -0.03235929475112986,
+          "metrics": {
+            "coverage": 0.8839421428690406,
+            "absOrder": 0.38162334857533586,
+            "inverseN": 0.251855029757443,
+            "attemptsPerParticle": 4.455650742040288
+          }
+        },
+        {
+          "start": 6,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            3,
+            253,
+            256,
+            3,
+            3,
+            139
+          ],
+          "score": -0.03547746057676898,
+          "metrics": {
+            "coverage": 0.883679818898049,
+            "absOrder": 0.3837627814966194,
+            "inverseN": 0.25195340124655435,
+            "attemptsPerParticle": 4.461620816484989
+          }
+        },
+        {
+          "start": 7,
+          "evaluations": 172,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            256,
+            249,
+            0,
+            0,
+            154
+          ],
+          "score": -0.03235929475112975,
+          "metrics": {
+            "coverage": 0.8839421428690406,
+            "absOrder": 0.38162334857533575,
+            "inverseN": 0.251855029757443,
+            "attemptsPerParticle": 4.455650742040288
+          }
+        },
+        {
+          "start": 8,
+          "evaluations": 186,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            0,
+            154,
+            256,
+            3
+          ],
+          "score": -0.03235929475112986,
+          "metrics": {
+            "coverage": 0.8839421428690406,
+            "absOrder": 0.38162334857533586,
+            "inverseN": 0.251855029757443,
+            "attemptsPerParticle": 4.455650742040288
+          }
+        },
+        {
+          "start": 9,
+          "evaluations": 238,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            256,
+            253,
+            0,
+            0,
+            154
+          ],
+          "score": -0.03235929475112975,
+          "metrics": {
+            "coverage": 0.8839421428690406,
+            "absOrder": 0.38162334857533575,
+            "inverseN": 0.251855029757443,
+            "attemptsPerParticle": 4.455650742040288
+          }
+        }
+      ],
+      "newExactCandidateFile": "data/lower-1.json"
+    },
+    {
+      "index": 2,
+      "boundary": "periodic",
+      "imbalance": "1/10",
+      "cost": "1/20",
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "periodic"
+      },
+      "lower": "1177/1800",
+      "lowerDecimal": 0.6538888888888889,
+      "retained": {
+        "policy": "H-once-V-forever",
+        "metrics": {
+          "coverage": {
+            "numerator": "8",
+            "denominator": "9",
+            "value": 0.888888888888888
+          },
+          "absOrder": {
+            "numerator": "1",
+            "denominator": "2",
+            "value": 0.5
+          },
+          "inverseN": {
+            "numerator": "1",
+            "denominator": "4",
+            "value": 0.25
+          },
+          "attemptsPerParticle": {
+            "numerator": "37",
+            "denominator": "10",
+            "value": 3.7
+          }
+        },
+        "realization": {
+          "initial": [
+            1,
+            0
+          ],
+          "H": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "V": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        "evidenceFile": "../stage4/results/proper-boundary-null.json",
+        "archived": true
+      },
+      "trials": [
+        {
+          "start": 0,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            2,
+            2,
+            2,
+            168,
+            249,
+            5
+          ],
+          "score": 0.6223798214588351,
+          "metrics": {
+            "coverage": 0.8828541593638393,
+            "absOrder": 0.3862547303481847,
+            "inverseN": 0.2522630235718834,
+            "attemptsPerParticle": 4.436977297403715
+          }
+        },
+        {
+          "start": 1,
+          "evaluations": 181,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            256,
+            254,
+            0,
+            0,
+            166
+          ],
+          "score": 0.623093260211041,
+          "metrics": {
+            "coverage": 0.8834235798397606,
+            "absOrder": 0.38343106379004654,
+            "inverseN": 0.2520494908934229,
+            "attemptsPerParticle": 4.439744264994301
+          }
+        },
+        {
+          "start": 2,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            0,
+            167,
+            255,
+            1
+          ],
+          "score": 0.6230778630798589,
+          "metrics": {
+            "coverage": 0.8833429261744211,
+            "absOrder": 0.3837585804733291,
+            "inverseN": 0.2520797360179192,
+            "attemptsPerParticle": 4.437784100944587
+          }
+        },
+        {
+          "start": 3,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            6,
+            247,
+            244,
+            8,
+            15,
+            137
+          ],
+          "score": 0.6209389018874765,
+          "metrics": {
+            "coverage": 0.8817968109082467,
+            "absOrder": 0.39217242644321193,
+            "inverseN": 0.25265952924273055,
+            "attemptsPerParticle": 4.432813327528979
+          }
+        },
+        {
+          "start": 4,
+          "evaluations": 196,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            0,
+            166,
+            256,
+            1
+          ],
+          "score": 0.623093260211041,
+          "metrics": {
+            "coverage": 0.8834235798397606,
+            "absOrder": 0.38343106379004654,
+            "inverseN": 0.2520494908934229,
+            "attemptsPerParticle": 4.439744264994301
+          }
+        },
+        {
+          "start": 5,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            0,
+            166,
+            256,
+            1
+          ],
+          "score": 0.623093260211041,
+          "metrics": {
+            "coverage": 0.8834235798397606,
+            "absOrder": 0.38343106379004654,
+            "inverseN": 0.2520494908934229,
+            "attemptsPerParticle": 4.439744264994301
+          }
+        },
+        {
+          "start": 6,
+          "evaluations": 179,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            0,
+            166,
+            256,
+            1
+          ],
+          "score": 0.623093260211041,
+          "metrics": {
+            "coverage": 0.8834235798397606,
+            "absOrder": 0.38343106379004654,
+            "inverseN": 0.2520494908934229,
+            "attemptsPerParticle": 4.439744264994301
+          }
+        },
+        {
+          "start": 7,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            256,
+            256,
+            0,
+            0,
+            166
+          ],
+          "score": 0.623093260211041,
+          "metrics": {
+            "coverage": 0.8834235798397606,
+            "absOrder": 0.38343106379004654,
+            "inverseN": 0.2520494908934229,
+            "attemptsPerParticle": 4.439744264994301
+          }
+        },
+        {
+          "start": 8,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            256,
+            255,
+            0,
+            0,
+            164
+          ],
+          "score": 0.6230903681774044,
+          "metrics": {
+            "coverage": 0.8835100030158233,
+            "absOrder": 0.3830983918298048,
+            "inverseN": 0.25201708220239927,
+            "attemptsPerParticle": 4.442195913108769
+          }
+        },
+        {
+          "start": 9,
+          "evaluations": 184,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            256,
+            255,
+            0,
+            0,
+            166
+          ],
+          "score": 0.623093260211041,
+          "metrics": {
+            "coverage": 0.8834235798397606,
+            "absOrder": 0.38343106379004654,
+            "inverseN": 0.2520494908934229,
+            "attemptsPerParticle": 4.439744264994301
+          }
+        }
+      ],
+      "newExactCandidateFile": "data/lower-2.json"
+    },
+    {
+      "index": 3,
+      "boundary": "open",
+      "imbalance": "0",
+      "cost": "0",
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "lower": "2097461/2359968",
+      "lowerDecimal": 0.8887667120910114,
+      "retained": {
+        "policy": "switch-20-1",
+        "metrics": {
+          "coverage": {
+            "numerator": "2097461",
+            "denominator": "2359968",
+            "value": 0.888766712091011
+          },
+          "absOrder": {
+            "numerator": "16551832467",
+            "denominator": "33590211200",
+            "value": 0.492757618237303
+          },
+          "inverseN": {
+            "numerator": "4720801",
+            "denominator": "18879744",
+            "value": 0.250045816299204
+          },
+          "attemptsPerParticle": {
+            "numerator": "7686453980607079",
+            "denominator": "519815236362240",
+            "value": 14.786896271833545
+          }
+        },
+        "realization": {
+          "name": "switch-20-1",
+          "initial": [
+            "1/1",
+            "0/1"
+          ],
+          "H": [
+            [
+              "0/1",
+              "1/1"
+            ],
+            [
+              "0/1",
+              "0/1"
+            ]
+          ],
+          "V": [
+            [
+              "0/1",
+              "0/1"
+            ],
+            [
+              "1/20",
+              "19/20"
+            ]
+          ]
+        },
+        "evidenceFile": "data/temporal-open-switch-20-1.json",
+        "archived": true
+      },
+      "trials": [],
+      "newExactCandidateFile": null
+    },
+    {
+      "index": 4,
+      "boundary": "open",
+      "imbalance": "1",
+      "cost": "3/10",
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "lower": "-499413408494117566506941543695765209547973938427/673816830438792571174699899994576015261197926400",
+      "lowerDecimal": -0.7411708730529888,
+      "retained": {
+        "policy": "support-4",
+        "metrics": {
+          "coverage": {
+            "numerator": "4544638151436095",
+            "denominator": "5186713057763328",
+            "value": 0.876207744832501
+          },
+          "absOrder": {
+            "numerator": "300951806639226927496426267",
+            "denominator": "605464013374263479730438144",
+            "value": 0.497059775628969
+          },
+          "inverseN": {
+            "numerator": "3523582160640193",
+            "denominator": "13831234820702208",
+            "value": 0.254755429021145
+          },
+          "attemptsPerParticle": {
+            "numerator": "3310919698991870412907495346965268107193020109",
+            "denominator": "886601092682621804177236710519178967448944640",
+            "value": 3.734396140855069
+          }
+        },
+        "realization": {
+          "initial": [
+            "1/1",
+            "0/1"
+          ],
+          "H": [
+            [
+              "0/1",
+              "0/1"
+            ],
+            [
+              "31/32",
+              "0/1"
+            ]
+          ],
+          "V": [
+            [
+              "1/32",
+              "31/32"
+            ],
+            [
+              "0/1",
+              "1/32"
+            ]
+          ]
+        },
+        "evidenceFile": "data/lower-4.json",
+        "evidenceSha256": "e7703af8e5a7fb6e463c092eeecc0ecaaf5af3da60b4c40b28ca3b71828b5d04",
+        "archived": false
+      },
+      "trials": [
+        {
+          "start": 0,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            9,
+            249,
+            0,
+            0
+          ],
+          "score": -0.7411716123921683,
+          "metrics": {
+            "coverage": 0.8762071633102412,
+            "absOrder": 0.4970616927548372,
+            "inverseN": 0.2547556470919927,
+            "attemptsPerParticle": 3.734390276491908
+          }
+        },
+        {
+          "start": 1,
+          "evaluations": 162,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            15,
+            256,
+            25,
+            13
+          ],
+          "score": -0.7412157765309855,
+          "metrics": {
+            "coverage": 0.8762587566059016,
+            "absOrder": 0.496901505175095,
+            "inverseN": 0.25473629960612015,
+            "attemptsPerParticle": 3.735243426539307
+          }
+        },
+        {
+          "start": 2,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            7,
+            256,
+            256,
+            0,
+            9,
+            256
+          ],
+          "score": -0.741171612392169,
+          "metrics": {
+            "coverage": 0.8762071633102415,
+            "absOrder": 0.4970616927548374,
+            "inverseN": 0.2547556470919929,
+            "attemptsPerParticle": 3.7343902764919106
+          }
+        },
+        {
+          "start": 3,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            9,
+            249,
+            0,
+            0
+          ],
+          "score": -0.7411716123921683,
+          "metrics": {
+            "coverage": 0.8762071633102412,
+            "absOrder": 0.4970616927548372,
+            "inverseN": 0.2547556470919927,
+            "attemptsPerParticle": 3.734390276491908
+          }
+        },
+        {
+          "start": 4,
+          "evaluations": 189,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            7,
+            247,
+            0,
+            0
+          ],
+          "score": -0.741171612392169,
+          "metrics": {
+            "coverage": 0.8762071633102413,
+            "absOrder": 0.4970616927548374,
+            "inverseN": 0.2547556470919929,
+            "attemptsPerParticle": 3.7343902764919097
+          }
+        },
+        {
+          "start": 5,
+          "evaluations": 198,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            7,
+            247,
+            0,
+            0
+          ],
+          "score": -0.741171612392169,
+          "metrics": {
+            "coverage": 0.8762071633102413,
+            "absOrder": 0.4970616927548374,
+            "inverseN": 0.2547556470919929,
+            "attemptsPerParticle": 3.7343902764919097
+          }
+        },
+        {
+          "start": 6,
+          "evaluations": 176,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            9,
+            249,
+            0,
+            0
+          ],
+          "score": -0.7411716123921683,
+          "metrics": {
+            "coverage": 0.8762071633102412,
+            "absOrder": 0.4970616927548372,
+            "inverseN": 0.2547556470919927,
+            "attemptsPerParticle": 3.734390276491908
+          }
+        },
+        {
+          "start": 7,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            9,
+            256,
+            255,
+            0,
+            7,
+            256
+          ],
+          "score": -0.7411716123921683,
+          "metrics": {
+            "coverage": 0.8762071633102412,
+            "absOrder": 0.4970616927548372,
+            "inverseN": 0.2547556470919928,
+            "attemptsPerParticle": 3.734390276491908
+          }
+        },
+        {
+          "start": 8,
+          "evaluations": 227,
+          "rejected": 0,
+          "coordinates": [
+            7,
+            256,
+            254,
+            0,
+            9,
+            256
+          ],
+          "score": -0.741171612392169,
+          "metrics": {
+            "coverage": 0.8762071633102415,
+            "absOrder": 0.4970616927548374,
+            "inverseN": 0.2547556470919929,
+            "attemptsPerParticle": 3.7343902764919106
+          }
+        },
+        {
+          "start": 9,
+          "evaluations": 222,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            8,
+            248,
+            0,
+            0
+          ],
+          "score": -0.7411708730529889,
+          "metrics": {
+            "coverage": 0.8762077448325019,
+            "absOrder": 0.49705977562896986,
+            "inverseN": 0.25475542902114523,
+            "attemptsPerParticle": 3.7343961408550697
+          }
+        }
+      ],
+      "newExactCandidateFile": "data/lower-4.json"
+    },
+    {
+      "index": 5,
+      "boundary": "open",
+      "imbalance": "5/4",
+      "cost": "2/5",
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "lower": "-5447880663912052205462345621782696792300632686278892422211499972440402339/4398005400211172227345301268777070305077606157786198192833484384286801920",
+      "lowerDecimal": -1.2387162288728588,
+      "retained": {
+        "policy": "support-5",
+        "metrics": {
+          "coverage": {
+            "numerator": "74296027516655409599135",
+            "denominator": "84841561269916993585152",
+            "value": 0.875703209660277
+          },
+          "absOrder": {
+            "numerator": "1257497756358120885375752060629918019155",
+            "denominator": "2521715299762538811272194615328026656768",
+            "value": 0.498667615839319
+          },
+          "inverseN": {
+            "numerator": "57679734458771024866657",
+            "denominator": "226244163386445316227072",
+            "value": 0.254944629710729
+          },
+          "attemptsPerParticle": {
+            "numerator": "728193882358726402912365760254104667528263735180533631663077792273",
+            "denominator": "195346052584852936642988038901136288353054739369518866231801675776",
+            "value": 3.727712296834967
+          }
+        },
+        "realization": {
+          "initial": [
+            "1/1",
+            "0/1"
+          ],
+          "H": [
+            [
+              "11/256",
+              "245/256"
+            ],
+            [
+              "0/1",
+              "11/256"
+            ]
+          ],
+          "V": [
+            [
+              "0/1",
+              "0/1"
+            ],
+            [
+              "245/256",
+              "0/1"
+            ]
+          ]
+        },
+        "evidenceFile": "data/lower-5.json",
+        "evidenceSha256": "44504e7e062afe39e14c8e16ce2e8add08ad10c110040d709ed8f52c801756f1",
+        "archived": false
+      },
+      "trials": [
+        {
+          "start": 0,
+          "evaluations": 219,
+          "rejected": 0,
+          "coordinates": [
+            12,
+            256,
+            256,
+            0,
+            10,
+            256
+          ],
+          "score": -1.2387173369423512,
+          "metrics": {
+            "coverage": 0.875702617603585,
+            "absOrder": 0.498669574773804,
+            "inverseN": 0.25494485173198894,
+            "attemptsPerParticle": 3.7277074651967026
+          }
+        },
+        {
+          "start": 1,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            11,
+            255,
+            256,
+            1,
+            5,
+            256
+          ],
+          "score": -1.2392893682102746,
+          "metrics": {
+            "coverage": 0.8761120439649701,
+            "absOrder": 0.49737461149350165,
+            "inverseN": 0.254791316846461,
+            "attemptsPerParticle": 3.734207869520919
+          }
+        },
+        {
+          "start": 2,
+          "evaluations": 211,
+          "rejected": 0,
+          "coordinates": [
+            14,
+            256,
+            255,
+            0,
+            8,
+            256
+          ],
+          "score": -1.2387262243322987,
+          "metrics": {
+            "coverage": 0.8756978809994711,
+            "absOrder": 0.4986852469213695,
+            "inverseN": 0.2549466279585318,
+            "attemptsPerParticle": 3.7276688667001445
+          }
+        },
+        {
+          "start": 3,
+          "evaluations": 211,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            12,
+            246,
+            0,
+            0
+          ],
+          "score": -1.2387173369423512,
+          "metrics": {
+            "coverage": 0.875702617603585,
+            "absOrder": 0.498669574773804,
+            "inverseN": 0.2549448517319889,
+            "attemptsPerParticle": 3.7277074651967026
+          }
+        },
+        {
+          "start": 4,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            11,
+            256,
+            253,
+            0,
+            11,
+            256
+          ],
+          "score": -1.238716228872859,
+          "metrics": {
+            "coverage": 0.8757032096602777,
+            "absOrder": 0.49866761583931984,
+            "inverseN": 0.2549446297107293,
+            "attemptsPerParticle": 3.727712296834967
+          }
+        },
+        {
+          "start": 5,
+          "evaluations": 154,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            11,
+            245,
+            0,
+            0
+          ],
+          "score": -1.2387162288728595,
+          "metrics": {
+            "coverage": 0.8757032096602775,
+            "absOrder": 0.49866761583931996,
+            "inverseN": 0.25494462971072923,
+            "attemptsPerParticle": 3.727712296834967
+          }
+        },
+        {
+          "start": 6,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            6,
+            240,
+            0,
+            0
+          ],
+          "score": -1.2387441209157752,
+          "metrics": {
+            "coverage": 0.8756884069882233,
+            "absOrder": 0.4987165947977603,
+            "inverseN": 0.2549501807127495,
+            "attemptsPerParticle": 3.727591961016995
+          }
+        },
+        {
+          "start": 7,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            8,
+            255,
+            256,
+            1,
+            14,
+            255
+          ],
+          "score": -1.2393794821926756,
+          "metrics": {
+            "coverage": 0.8756514632813581,
+            "absOrder": 0.49883516056756544,
+            "inverseN": 0.25496403460281974,
+            "attemptsPerParticle": 3.7287174869114423
+          }
+        },
+        {
+          "start": 8,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            8,
+            256,
+            251,
+            0,
+            15,
+            256
+          ],
+          "score": -1.2387360154615807,
+          "metrics": {
+            "coverage": 0.8756113912829151,
+            "absOrder": 0.49896186347699384,
+            "inverseN": 0.2549790616022402,
+            "attemptsPerParticle": 3.7266126934956336
+          }
+        },
+        {
+          "start": 9,
+          "evaluations": 237,
+          "rejected": 0,
+          "coordinates": [
+            10,
+            256,
+            256,
+            0,
+            12,
+            256
+          ],
+          "score": -1.238717336942351,
+          "metrics": {
+            "coverage": 0.8757026176035851,
+            "absOrder": 0.49866957477380414,
+            "inverseN": 0.25494485173198894,
+            "attemptsPerParticle": 3.727707465196702
+          }
+        }
+      ],
+      "newExactCandidateFile": "data/lower-5.json"
+    },
+    {
+      "index": 6,
+      "boundary": "open",
+      "imbalance": "3/2",
+      "cost": "1/2",
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "lower": "-37715102087043203728585820699699390303432070376931530249/21724110275780972944096216434700624172799012234225254400",
+      "lowerDecimal": -1.7360942109141158,
+      "retained": {
+        "policy": "support-6",
+        "metrics": {
+          "coverage": {
+            "numerator": "14553244655104469",
+            "denominator": "16623748426260480",
+            "value": 0.875449043256378
+          },
+          "absOrder": {
+            "numerator": "6119152567661565076068080203",
+            "denominator": "12251035287535386064810147840",
+            "value": 0.499480445859738
+          },
+          "inverseN": {
+            "numerator": "33917758690568833",
+            "denominator": "132989987410083840",
+            "value": 0.255039942112191
+          },
+          "attemptsPerParticle": {
+            "numerator": "389012511672037595531966906369881027769197659272638781",
+            "denominator": "104442837864331600692770271320676077753841404972236800",
+            "value": 3.724645170761773
+          }
+        },
+        "realization": {
+          "initial": [
+            "1/1",
+            "0/1"
+          ],
+          "H": [
+            [
+              "0/1",
+              "0/1"
+            ],
+            [
+              "243/256",
+              "0/1"
+            ]
+          ],
+          "V": [
+            [
+              "3/64",
+              "61/64"
+            ],
+            [
+              "0/1",
+              "13/256"
+            ]
+          ]
+        },
+        "evidenceFile": "data/lower-6.json",
+        "evidenceSha256": "ab7f3f2202b6c75236efa3b5f0127aed27a6d0f8bcbd6422dc16ef8e4a4005f8",
+        "archived": false
+      },
+      "trials": [
+        {
+          "start": 0,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            51,
+            204,
+            250,
+            4,
+            4,
+            251
+          ],
+          "score": -1.7510359717582722,
+          "metrics": {
+            "coverage": 0.8745455923222352,
+            "absOrder": 0.5020117231982576,
+            "inverseN": 0.25537873621248625,
+            "attemptsPerParticle": 3.745127958566242
+          }
+        },
+        {
+          "start": 1,
+          "evaluations": 227,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            11,
+            242,
+            0,
+            0
+          ],
+          "score": -1.7360970506762292,
+          "metrics": {
+            "coverage": 0.8754478484999654,
+            "absOrder": 0.4994844055753067,
+            "inverseN": 0.25504039014584656,
+            "attemptsPerParticle": 3.724636581626469
+          }
+        },
+        {
+          "start": 2,
+          "evaluations": 183,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            11,
+            242,
+            0,
+            0
+          ],
+          "score": -1.7360970506762292,
+          "metrics": {
+            "coverage": 0.8754478484999654,
+            "absOrder": 0.4994844055753067,
+            "inverseN": 0.25504039014584656,
+            "attemptsPerParticle": 3.724636581626469
+          }
+        },
+        {
+          "start": 3,
+          "evaluations": 236,
+          "rejected": 0,
+          "coordinates": [
+            13,
+            256,
+            253,
+            0,
+            12,
+            256
+          ],
+          "score": -1.7360942109141164,
+          "metrics": {
+            "coverage": 0.875449043256379,
+            "absOrder": 0.49948044585973866,
+            "inverseN": 0.25503994211219133,
+            "attemptsPerParticle": 3.7246451707617747
+          }
+        },
+        {
+          "start": 4,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            13,
+            244,
+            1,
+            1
+          ],
+          "score": -1.7361205587954431,
+          "metrics": {
+            "coverage": 0.8754522729419925,
+            "absOrder": 0.49947046871555745,
+            "inverseN": 0.255038730980082,
+            "attemptsPerParticle": 3.724734257328199
+          }
+        },
+        {
+          "start": 5,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            10,
+            241,
+            0,
+            0
+          ],
+          "score": -1.7361027398896447,
+          "metrics": {
+            "coverage": 0.8754454589367906,
+            "absOrder": 0.49949232522772435,
+            "inverseN": 0.25504128623203687,
+            "attemptsPerParticle": 3.7246194219696975
+          }
+        },
+        {
+          "start": 6,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            10,
+            256,
+            256,
+            0,
+            15,
+            256
+          ],
+          "score": -1.736102739889645,
+          "metrics": {
+            "coverage": 0.8754454589367904,
+            "absOrder": 0.4994923252277244,
+            "inverseN": 0.25504128623203687,
+            "attemptsPerParticle": 3.7246194219696975
+          }
+        },
+        {
+          "start": 7,
+          "evaluations": 187,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            12,
+            243,
+            0,
+            0
+          ],
+          "score": -1.736094210914116,
+          "metrics": {
+            "coverage": 0.8754490432563788,
+            "absOrder": 0.4994804458597385,
+            "inverseN": 0.25503994211219133,
+            "attemptsPerParticle": 3.7246451707617743
+          }
+        },
+        {
+          "start": 8,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            44,
+            207,
+            251,
+            5,
+            7,
+            253
+          ],
+          "score": -1.7501573914447284,
+          "metrics": {
+            "coverage": 0.8747360466625991,
+            "absOrder": 0.5014356206009511,
+            "inverseN": 0.2553073158348495,
+            "attemptsPerParticle": 3.7454800144118017
+          }
+        },
+        {
+          "start": 9,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            3,
+            251,
+            256,
+            5,
+            14,
+            254
+          ],
+          "score": -1.7396162598091367,
+          "metrics": {
+            "coverage": 0.8757430676727079,
+            "absOrder": 0.49857381648687166,
+            "inverseN": 0.25492968295605933,
+            "attemptsPerParticle": 3.734997205503074
+          }
+        }
+      ],
+      "newExactCandidateFile": "data/lower-6.json"
+    },
+    {
+      "index": 7,
+      "boundary": "open",
+      "imbalance": "1/10",
+      "cost": "1/20",
+      "parameters": {
+        "L": 3,
+        "k": 2,
+        "boundary": "open"
+      },
+      "lower": "1060474369/1655808000",
+      "lowerDecimal": 0.6404573289898345,
+      "retained": {
+        "policy": "switch-20-20",
+        "metrics": {
+          "coverage": {
+            "numerator": "5897",
+            "denominator": "6720",
+            "value": 0.877529761904761
+          },
+          "absOrder": {
+            "numerator": "48579",
+            "denominator": "98560",
+            "value": 0.492887581168831
+          },
+          "inverseN": {
+            "numerator": "13669",
+            "denominator": "53760",
+            "value": 0.254259672619047
+          },
+          "attemptsPerParticle": {
+            "numerator": "28266701",
+            "denominator": "7526400",
+            "value": 3.755673495960884
+          }
+        },
+        "realization": {
+          "name": "switch-20-20",
+          "initial": [
+            "1/1",
+            "0/1"
+          ],
+          "H": [
+            [
+              "0/1",
+              "1/1"
+            ],
+            [
+              "0/1",
+              "0/1"
+            ]
+          ],
+          "V": [
+            [
+              "0/1",
+              "0/1"
+            ],
+            [
+              "1/1",
+              "0/1"
+            ]
+          ]
+        },
+        "evidenceFile": "data/temporal-open-switch-20-20.json",
+        "archived": true
+      },
+      "trials": [
+        {
+          "start": 0,
+          "evaluations": 204,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            256,
+            256,
+            0,
+            0,
+            256
+          ],
+          "score": 0.6404573289898344,
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.492887581168831,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608855
+          }
+        },
+        {
+          "start": 1,
+          "evaluations": 201,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            0,
+            256,
+            35,
+            15
+          ],
+          "score": 0.6404573289898343,
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.4928875811688311,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608846
+          }
+        },
+        {
+          "start": 2,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            3,
+            242,
+            251,
+            1,
+            10,
+            253
+          ],
+          "score": 0.6396940870091667,
+          "metrics": {
+            "coverage": 0.8770345666214854,
+            "absOrder": 0.4943788716169306,
+            "inverseN": 0.2544453708502674,
+            "attemptsPerParticle": 3.75805184901251
+          }
+        },
+        {
+          "start": 3,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            5,
+            4,
+            252,
+            156,
+            5
+          ],
+          "score": 0.6398082131466984,
+          "metrics": {
+            "coverage": 0.8772758392282934,
+            "absOrder": 0.4935762425422652,
+            "inverseN": 0.254354893622719,
+            "attemptsPerParticle": 3.7622000365473682
+          }
+        },
+        {
+          "start": 4,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            2,
+            3,
+            1,
+            255,
+            19,
+            0
+          ],
+          "score": 0.6401028071399057,
+          "metrics": {
+            "coverage": 0.8775123565785728,
+            "absOrder": 0.4928785872506931,
+            "inverseN": 0.2542661996163598,
+            "attemptsPerParticle": 3.762433814271956
+          }
+        },
+        {
+          "start": 5,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            6,
+            3,
+            1,
+            251,
+            140,
+            7
+          ],
+          "score": 0.6399305445962965,
+          "metrics": {
+            "coverage": 0.8776572782247305,
+            "absOrder": 0.4924174482391281,
+            "inverseN": 0.2542118539990505,
+            "attemptsPerParticle": 3.769699776090422
+          }
+        },
+        {
+          "start": 6,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            3,
+            2,
+            254,
+            57,
+            1
+          ],
+          "score": 0.6400832032296994,
+          "metrics": {
+            "coverage": 0.8773190998929196,
+            "absOrder": 0.4934837809354643,
+            "inverseN": 0.25433867087348444,
+            "attemptsPerParticle": 3.7577503713934757
+          }
+        },
+        {
+          "start": 7,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            0,
+            0,
+            256,
+            256,
+            4
+          ],
+          "score": 0.6404573289898343,
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.4928875811688311,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608846
+          }
+        },
+        {
+          "start": 8,
+          "evaluations": 176,
+          "rejected": 0,
+          "coordinates": [
+            0,
+            256,
+            253,
+            0,
+            0,
+            256
+          ],
+          "score": 0.6404573289898344,
+          "metrics": {
+            "coverage": 0.8775297619047617,
+            "absOrder": 0.492887581168831,
+            "inverseN": 0.2542596726190476,
+            "attemptsPerParticle": 3.7556734959608855
+          }
+        },
+        {
+          "start": 9,
+          "evaluations": 240,
+          "rejected": 0,
+          "coordinates": [
+            6,
+            1,
+            2,
+            255,
+            237,
+            3
+          ],
+          "score": 0.6401938598117188,
+          "metrics": {
+            "coverage": 0.8776635969274149,
+            "absOrder": 0.49242882378570696,
+            "inverseN": 0.25420948448554437,
+            "attemptsPerParticle": 3.7645370947425083
+          }
+        }
+      ],
+      "newExactCandidateFile": "data/lower-7.json"
+    }
+  ],
+  "fullFamilyOptimumClaimed": false,
+  "scope": "Exact feasible lower supports, numeric exploration never certifies optimality"
+}

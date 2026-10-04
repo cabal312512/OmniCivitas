@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUTC": "2026-10-03T19:39:58.801Z",
+  "manifest": "data/raw/rare-excursions.manifest.json",
+  "rawSha256": "0ab6c51ee4dc5aa59a5707e643a40de9475ba1495af86bfa3fab8cead050ad48",
+  "configuration": {
+    "betas": [
+      0,
+      0.000001,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1
+    ],
+    "repetitions": 100000,
+    "baseSeed": 50000001,
+    "seedStride": 200000,
+    "frozenLegalCounts": [
+      0,
+      1
+    ],
+    "anchorDenominator": 2,
+    "initial": "V",
+    "engine": "exact-event"
+  },
+  "purpose": "Fixed-geometry waiting-time diagnostic, not a packing experiment or a selected-candidate confirmation.",
+  "interpretation": "For every positive beta the exact legal-start mean is3 but variance=2/beta+6; at beta0 mean/variance are2. At tiny beta the chance of an excursion is beta/(1+beta), and rare O(1/beta) durations sustain a missing mean contribution. Naive sample-variance t intervals may miss the exact mean when excursions are absent; this is not evidence of a sampler bug or thermodynamic phase.",
+  "audit": {
+    "runs": 700000,
+    "groups": 7,
+    "terminalEventIdentitiesPassed": true,
+    "naivePointwise95Misses": 1,
+    "exactVarianceChebyshevFamilyMisses": 0,
+    "status": "completed-fixed-geometry-diagnostic"
+  },
+  "groups": [
+    {
+      "beta": 0,
+      "initial": "V",
+      "a": 0,
+      "b": 0.5,
+      "n": 100000,
+      "seedStart": 50000001,
+      "seedEnd": 50100000,
+      "exact": {
+        "mean": {
+          "numerator": "2",
+          "denominator": "1",
+          "value": 2
+        },
+        "variance": {
+          "numerator": "2",
+          "denominator": "1",
+          "value": 2
+        },
+        "firstBlockedExcursionProbability": 0,
+        "expectedTotalBlockedHAttempts": 0
+      },
+      "observed": {
+        "n": 100000,
+        "mean": 1.9941699999999898,
+        "sd": 1.4050536476795235,
+        "se": 0.00444316976139505,
+        "ciLow": 1.9854614418840162,
+        "ciHigh": 2.0028785581159636,
+        "min": 1,
+        "max": 19,
+        "error": -0.005830000000010216,
+        "naiveStudentT95ContainsExact": true,
+        "maximum": 19,
+        "quantiles": {
+          "0.5": 1,
+          "0.9": 4,
+          "0.99": 7,
+          "0.999": 10,
+          "0.9999": 13
+        },
+        "blockedHAttempts": {
+          "n": 100000,
+          "mean": 0,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 0,
+          "ciHigh": 0,
+          "min": 0,
+          "max": 0
+        },
+        "excursions": {
+          "count": 0,
+          "n": 100000,
+          "rate": 0,
+          "ciLow": 0,
+          "ciHigh": 0.00003841311258303963,
+          "expectedCount": 0
+        }
+      },
+      "exactVarianceBasedStandardError": 0.00447213595499958,
+      "exactVarianceBasedInterval": {
+        "low": 1.8758484043379975,
+        "high": 2.1124915956619823,
+        "method": "Chebyshev with exact known variance; Bonferroni family confidence>=99% under independent-run model",
+        "perGroupAlpha": 0.0014285714285714286
+      },
+      "exactVarianceIntervalContainsMean": true
+    },
+    {
+      "beta": 0.000001,
+      "initial": "V",
+      "a": 0,
+      "b": 0.5,
+      "n": 100000,
+      "seedStart": 50200001,
+      "seedEnd": 50300000,
+      "exact": {
+        "mean": {
+          "numerator": "3",
+          "denominator": "1",
+          "value": 3
+        },
+        "variance": {
+          "numerator": "2000006",
+          "denominator": "1",
+          "value": 2000006
+        },
+        "firstBlockedExcursionProbability": 9.99999000001e-7,
+        "expectedTotalBlockedHAttempts": 1
+      },
+      "observed": {
+        "n": 100000,
+        "mean": 2.004089999999972,
+        "sd": 1.4247854477203703,
+        "se": 0.004505567191859129,
+        "ciLow": 1.995259143687291,
+        "ciHigh": 2.0129208563126535,
+        "min": 1,
+        "max": 15,
+        "error": -0.9959100000000278,
+        "naiveStudentT95ContainsExact": false,
+        "maximum": 15,
+        "quantiles": {
+          "0.5": 2,
+          "0.9": 4,
+          "0.99": 7,
+          "0.999": 11,
+          "0.9999": 14
+        },
+        "blockedHAttempts": {
+          "n": 100000,
+          "mean": 0,
+          "sd": 0,
+          "se": 0,
+          "ciLow": 0,
+          "ciHigh": 0,
+          "min": 0,
+          "max": 0
+        },
+        "excursions": {
+          "count": 0,
+          "n": 100000,
+          "rate": 0,
+          "ciLow": 0,
+          "ciHigh": 0.00003841311258303963,
+          "expectedCount": 0.0999999000001
+        }
+      },
+      "exactVarianceBasedStandardError": 4.472142663198481,
+      "exactVarianceBasedInterval": {
+        "low": 1,
+        "high": 120.32586314425268,
+        "method": "Chebyshev with exact known variance; Bonferroni family confidence>=99% under independent-run model",
+        "perGroupAlpha": 0.0014285714285714286
+      },
+      "exactVarianceIntervalContainsMean": true
+    },
+    {
+      "beta": 0.0001,
+      "initial": "V",
+      "a": 0,
+      "b": 0.5,
+      "n": 100000,
+      "seedStart": 50400001,
+      "seedEnd": 50500000,
+      "exact": {
+        "mean": {
+          "numerator": "3",
+          "denominator": "1",
+          "value": 3
+        },
+        "variance": {
+          "numerator": "20006",
+          "denominator": "1",
+          "value": 20006
+        },
+        "firstBlockedExcursionProbability": 0.00009999000099990002,
+        "expectedTotalBlockedHAttempts": 1
+      },
+      "observed": {
+        "n": 100000,
+        "mean": 2.854909999999996,
+        "sd": 105.88691949097952,
+        "se": 0.33484384001037226,
+        "ciLow": 2.1986201895493256,
+        "ciHigh": 3.511199810450666,
+        "min": 1,
+        "max": 20922,
+        "error": -0.14509000000000416,
+        "naiveStudentT95ContainsExact": true,
+        "maximum": 20922,
+        "quantiles": {
+          "0.5": 1,
+          "0.9": 4,
+          "0.99": 7,
+          "0.999": 11,
+          "0.9999": 15
+        },
+        "blockedHAttempts": {
+          "n": 100000,
+          "mean": 0.857659999999992,
+          "sd": 105.86814761754978,
+          "se": 0.3347844781343859,
+          "ciLow": 0.2014865380965667,
+          "ciHigh": 1.5138334619034173,
+          "min": 0,
+          "max": 20919
+        },
+        "excursions": {
+          "count": 10,
+          "n": 100000,
+          "rate": 0.0001,
+          "ciLow": 0.000054320734509630915,
+          "ciHigh": 0.00018408469545089215,
+          "expectedCount": 9.99900009999
+        }
+      },
+      "exactVarianceBasedStandardError": 0.4472806725088845,
+      "exactVarianceBasedInterval": {
+        "low": 1,
+        "high": 14.688844257042327,
+        "method": "Chebyshev with exact known variance; Bonferroni family confidence>=99% under independent-run model",
+        "perGroupAlpha": 0.0014285714285714286
+      },
+      "exactVarianceIntervalContainsMean": true
+    },
+    {
+      "beta": 0.001,
+      "initial": "V",
+      "a": 0,
+      "b": 0.5,
+      "n": 100000,
+      "seedStart": 50600001,
+      "seedEnd": 50700000,
+      "exact": {
+        "mean": {
+          "numerator": "3",
+          "denominator": "1",
+          "value": 3
+        },
+        "variance": {
+          "numerator": "2006",
+          "denominator": "1",
+          "value": 2006
+        },
+        "firstBlockedExcursionProbability": 0.0009990009990009992,
+        "expectedTotalBlockedHAttempts": 1
+      },
+      "observed": {
+        "n": 100000,
+        "mean": 3.0277600000000056,
+        "sd": 42.224123177967336,
+        "se": 0.13352440144588396,
+        "ciLow": 2.7660538144756015,
+        "ciHigh": 3.2894661855244096,
+        "min": 1,
+        "max": 4075,
+        "error": 0.027760000000005558,
+        "naiveStudentT95ContainsExact": true,
+        "maximum": 4075,
+        "quantiles": {
+          "0.5": 2,
+          "0.9": 4,
+          "0.99": 7,
+          "0.999": 82,
+          "0.9999": 2334
+        },
+        "blockedHAttempts": {
+          "n": 100000,
+          "mean": 1.0215999999999936,
+          "sd": 42.145858588643804,
+          "se": 0.13327690708348391,
+          "ciLow": 0.7603789003836418,
+          "ciHigh": 1.2828210996163456,
+          "min": 0,
+          "max": 4070
+        },
+        "excursions": {
+          "count": 110,
+          "n": 100000,
+          "rate": 0.0011,
+          "ciLow": 0.0009128266794107122,
+          "ciHigh": 0.001325501924324645,
+          "expectedCount": 99.90009990009992
+        }
+      },
+      "exactVarianceBasedStandardError": 0.14163332941084172,
+      "exactVarianceBasedInterval": {
+        "low": 1,
+        "high": 6.775025669791781,
+        "method": "Chebyshev with exact known variance; Bonferroni family confidence>=99% under independent-run model",
+        "perGroupAlpha": 0.0014285714285714286
+      },
+      "exactVarianceIntervalContainsMean": true
+    },
+    {
+      "beta": 0.01,
+      "initial": "V",
+      "a": 0,
+      "b": 0.5,
+      "n": 100000,
+      "seedStart": 50800001,
+      "seedEnd": 50900000,
+      "exact": {
+        "mean": {
+          "numerator": "3",
+          "denominator": "1",
+          "value": 3
+        },
+        "variance": {
+          "numerator": "206",
+          "denominator": "1",
+          "value": 206
+        },
+        "firstBlockedExcursionProbability": 0.009900990099009901,
+        "expectedTotalBlockedHAttempts": 1
+      },
+      "observed": {
+        "n": 100000,
+        "mean": 2.922799999999976,
+        "sd": 13.303817875921947,
+        "se": 0.04207036606397671,
+        "ciLow": 2.840342599652213,
+        "ciHigh": 3.0052574003477392,
+        "min": 1,
+        "max": 728,
+        "error": -0.07720000000002392,
+        "naiveStudentT95ContainsExact": true,
+        "maximum": 728,
+        "quantiles": {
+          "0.5": 2,
+          "0.9": 4,
+          "0.99": 10,
+          "0.999": 222,
+          "0.9999": 392
+        },
+        "blockedHAttempts": {
+          "n": 100000,
+          "mean": 0.9164299999999936,
+          "sd": 13.096214764713944,
+          "se": 0.04141386738322219,
+          "ciLow": 0.8352593289966921,
+          "ciHigh": 0.9976006710032952,
+          "min": 0,
+          "max": 724
+        },
+        "excursions": {
+          "count": 934,
+          "n": 100000,
+          "rate": 0.00934,
+          "ciLow": 0.008762372531619204,
+          "ciHigh": 0.009955323024020784,
+          "expectedCount": 990.0990099009902
+        }
+      },
+      "exactVarianceBasedStandardError": 0.04538722287164087,
+      "exactVarianceBasedInterval": {
+        "low": 1.7219669558177302,
+        "high": 4.123633044182222,
+        "method": "Chebyshev with exact known variance; Bonferroni family confidence>=99% under independent-run model",
+        "perGroupAlpha": 0.0014285714285714286
+      },
+      "exactVarianceIntervalContainsMean": true
+    },
+    {
+      "beta": 0.1,
+      "initial": "V",
+      "a": 0,
+      "b": 0.5,
+      "n": 100000,
+      "seedStart": 51000001,
+      "seedEnd": 51100000,
+      "exact": {
+        "mean": {
+          "numerator": "3",
+          "denominator": "1",
+          "value": 3
+        },
+        "variance": {
+          "numerator": "26",
+          "denominator": "1",
+          "value": 26
+        },
+        "firstBlockedExcursionProbability": 0.09090909090909091,
+        "expectedTotalBlockedHAttempts": 1
+      },
+      "observed": {
+        "n": 100000,
+        "mean": 3.02786999999998,
+        "sd": 5.164906584411781,
+        "se": 0.016332868708741944,
+        "ciLow": 2.995857778097842,
+        "ciHigh": 3.059882221902118,
+        "min": 1,
+        "max": 112,
+        "error": 0.027869999999980077,
+        "naiveStudentT95ContainsExact": true,
+        "maximum": 112,
+        "quantiles": {
+          "0.5": 2,
+          "0.9": 5,
+          "0.99": 29,
+          "0.999": 52,
+          "0.9999": 73
+        },
+        "blockedHAttempts": {
+          "n": 100000,
+          "mean": 1.0260000000000085,
+          "sd": 4.534870411654175,
+          "se": 0.01434051939453258,
+          "ciLow": 0.9978927582633518,
+          "ciHigh": 1.0541072417366653,
+          "min": 0,
+          "max": 110
+        },
+        "excursions": {
+          "count": 9140,
+          "n": 100000,
+          "rate": 0.0914,
+          "ciLow": 0.08962955360011873,
+          "ciHigh": 0.09320183759548414,
+          "expectedCount": 9090.909090909092
+        }
+      },
+      "exactVarianceBasedStandardError": 0.0161245154965971,
+      "exactVarianceBasedInterval": {
+        "low": 2.601255419845949,
+        "high": 3.454484580154011,
+        "method": "Chebyshev with exact known variance; Bonferroni family confidence>=99% under independent-run model",
+        "perGroupAlpha": 0.0014285714285714286
+      },
+      "exactVarianceIntervalContainsMean": true
+    },
+    {
+      "beta": 1,
+      "initial": "V",
+      "a": 0,
+      "b": 0.5,
+      "n": 100000,
+      "seedStart": 51200001,
+      "seedEnd": 51300000,
+      "exact": {
+        "mean": {
+          "numerator": "3",
+          "denominator": "1",
+          "value": 3
+        },
+        "variance": {
+          "numerator": "8",
+          "denominator": "1",
+          "value": 8
+        },
+        "firstBlockedExcursionProbability": 0.5,
+        "expectedTotalBlockedHAttempts": 1
+      },
+      "observed": {
+        "n": 100000,
+        "mean": 3.0078799999999717,
+        "sd": 2.8423544281786817,
+        "se": 0.008988313910510113,
+        "ciLow": 2.990263015221583,
+        "ciHigh": 3.02549698477836,
+        "min": 1,
+        "max": 35,
+        "error": 0.007879999999971687,
+        "naiveStudentT95ContainsExact": true,
+        "maximum": 35,
+        "quantiles": {
+          "0.5": 3,
+          "0.9": 7,
+          "0.99": 13,
+          "0.999": 21,
+          "0.9999": 27
+        },
+        "blockedHAttempts": {
+          "n": 100000,
+          "mean": 1.0039399999999883,
+          "sd": 1.4211772140893413,
+          "se": 0.004494156955255057,
+          "ciLow": 0.9951315076107942,
+          "ciHigh": 1.0127484923891825,
+          "min": 0,
+          "max": 17
+        },
+        "excursions": {
+          "count": 50015,
+          "n": 100000,
+          "rate": 0.50015,
+          "ciLow": 0.49705107873716864,
+          "ciHigh": 0.5032489097388976,
+          "expectedCount": 50000
+        }
+      },
+      "exactVarianceBasedStandardError": 0.00894427190999916,
+      "exactVarianceBasedInterval": {
+        "low": 2.771236808675987,
+        "high": 3.2445231913239563,
+        "method": "Chebyshev with exact known variance; Bonferroni family confidence>=99% under independent-run model",
+        "perGroupAlpha": 0.0014285714285714286
+      },
+      "exactVarianceIntervalContainsMean": true
+    }
+  ]
+}

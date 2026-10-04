@@ -1,0 +1,36 @@
+---
+const {prominent=false}=Astro.props;
+---
+<div class="forgotten-attachment">
+ <button type="button" data-attachment-toggle data-prominent={prominent?'true':'false'} aria-label={prominent?'春日影':'打开附件'} aria-expanded="false" aria-controls="forgotten-drawer" title={prominent?'春日影':'附件'}>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h11v14H5V8h3zM9 15l3-4 5 6M15 8h.01"/></svg>
+  {prominent&&<span>春日影</span>}
+ </button>
+ <div id="forgotten-drawer" hidden role="group" aria-label="附件">
+  <button type="button" data-attachment-close aria-label="收起附件">×</button>
+  <div class="drawer-images"></div>
+ </div>
+</div>
+<style>
+ .forgotten-attachment{position:relative;margin:12px 0 0;padding:5px;border-top:1px solid #418cff30}
+ .forgotten-attachment>button{width:30px;height:27px;padding:5px;border:1px solid #6e9dc86b;border-radius:5px;background:#eaf5ffad;color:#1555a4;cursor:pointer}
+ svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5}
+ #forgotten-drawer{position:relative;margin:7px 0 0;padding:12px 6px 7px;border:1px solid #5596ce50;background:#f6faffbd;border-radius:5px;backdrop-filter:blur(10px)}
+ #forgotten-drawer[hidden]{display:none}
+ [data-attachment-close]{position:absolute;right:0;top:0;width:21px;height:19px;border:0;background:none;color:#205b94;cursor:pointer}
+ .drawer-images{display:flex;flex-wrap:wrap;gap:7px;align-items:flex-start}
+ .drawer-images :global(img){display:block;width:auto;height:auto;max-width:132px;max-height:164px;object-fit:contain;transform:none!important;rotate:0deg!important;border-radius:2px}
+</style>
+<script>
+ import {playCue} from '../n9/sound.mjs';
+ const trigger=document.querySelector('[data-attachment-toggle]'),drawer=document.querySelector('#forgotten-drawer');
+ if(trigger&&drawer){
+  const paths=['/forgotten-cache/03.avif','/forgotten-cache/04.jpg'];let populated=false;
+  function show(open){
+   if(open&&!populated){const host=drawer.querySelector('.drawer-images');paths.forEach((src,index)=>{const image=new Image();image.alt=`附件${index+1}`;image.decoding='async';image.src=src;host.append(image);});populated=true;}
+   drawer.hidden=!open;trigger.setAttribute('aria-expanded',String(open));trigger.setAttribute('aria-label',trigger.dataset.prominent==='true'?'春日影':open?'收起附件入口':'打开附件');
+  }
+  trigger.addEventListener('click',()=>{const open=drawer.hidden;show(open);if(open)playCue();});
+  drawer.querySelector('[data-attachment-close]').addEventListener('click',()=>{show(false);trigger.focus();});
+ }
+</script>

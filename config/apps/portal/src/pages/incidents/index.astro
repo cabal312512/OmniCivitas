@@ -1,0 +1,7 @@
+---
+import Fragments from '../../q7/1.astro';
+import Identity from '../../aaa/Identity.astro';
+import {accidentCatalogue} from '../../report/list.mjs';
+import '../../report/2.css';
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>事故目录 · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class="incident-page" data-incident="directory"><Fragments/><header class="incident-head"><Identity id="incident-directory" compact/><h1>目录</h1><nav><a href="/functions/">工具</a><a href="/maze/">下一层</a></nav></header><main class="incident-workfloor"><nav class="incident-directory" aria-label="事故目录">{accidentCatalogue.map(room=><a href={room.url}>{room.title}<small> / {room.version}</small></a>)}</nav></main><a class="incident-exit" href="/#systems" aria-label="返回首页" data-incident-exit>↗</a><script>import '../../report/report.js';</script></body></html>

@@ -1,0 +1,62 @@
+{
+  "configuration": {
+    "name": "confirmation",
+    "purpose": "Locked independent holdout: all13 H-first classes and a fixed memoryless bias grid. Primary family specified before generation in docs/confirmation-lock.json.",
+    "sizes": [
+      64
+    ],
+    "lengths": [
+      2,
+      3,
+      4,
+      8
+    ],
+    "boundaries": [
+      "periodic"
+    ],
+    "controllers": [
+      0,
+      33,
+      34,
+      35,
+      37,
+      38,
+      39,
+      41,
+      42,
+      43,
+      45,
+      46,
+      47,
+      "random-0.1",
+      "random-0.2",
+      "random-0.3",
+      "random-0.4",
+      "random-0.5",
+      "random-0.6",
+      "random-0.7",
+      "random-0.8",
+      "random-0.9"
+    ],
+    "repetitions": 512,
+    "seedStart": 200001,
+    "engine": "event"
+  },
+  "startedAt": "2026-10-03T17:17:38.593Z",
+  "finishedAt": "2026-10-03T17:18:01.735Z",
+  "runs": 45056,
+  "raw": "data/raw/confirmation.csv",
+  "sha256": "304447bc153da65d659d0c2b05f8ea2f9187cce928ab9a348ab41440aae43f73",
+  "runtime": {
+    "node": "v24.14.1",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "sourceSha256": {
+    "src/controllers.mjs": "6e31d6452c8bca9e78e651bb91ddfc06b9665bd3b33f59346a55499e0a301ba8",
+    "src/exact.mjs": "0adde531dfee6a04692b04c3208ff528f8bfb01936078b2932371d20dddb10af",
+    "src/lattice.mjs": "dfb22252873f7ee861d24fc35b32f67e47785466b9ee8096c063e4aec041f029",
+    "src/rng.mjs": "a0af386efd47f97c85eda77fbe7ee175af21dc7d828411004486298d5153aecc",
+    "src/simulate.mjs": "3f4ce9e07d8efdfd4c933e6009390cd5a9f27b650d76b98575e8d258426d8f01"
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "phase": 9,
+  "status": "complete-with-validation-limits",
+  "acceptedAt": "2026-10-04T14:52:30.466Z",
+  "nextPhaseAuthorized": false,
+  "previousAcceptance": "docs/phase-8-acceptance.json",
+  "requirementAudit": "docs/phase9-final-audit.json",
+  "requirementTable": "docs/PHASE-9-REQUIREMENTS.md",
+  "portability": "docs/PUBLIC-RELEASE.md",
+  "licenseAudit": "docs/PHASE-9-LICENSES.md",
+  "counts": {
+    "A": 381,
+    "B": 351,
+    "technologies": 146,
+    "categories": 34,
+    "unnumbered": 3,
+    "promptParagraphs": 51,
+    "screenshots": 12,
+    "publicRelease": 12
+  },
+  "dispositions": {
+    "reviewed-with-prior-acceptance": 619,
+    "retained-dormant-with-historical-acceptance": 43,
+    "superseded-by-later-user-instruction": 25,
+    "verified-in-scoped-acceptance": 44,
+    "implemented-not-remotely-run": 1
+  },
+  "technologyRoles": {
+    "active": 104,
+    "dormant-original-role": 11,
+    "dormant-user-selected-version": 31
+  },
+  "tests": {
+    "legacyActualChecks": 50,
+    "maximumActualChecks": 80,
+    "maximumHealthyServices": 24,
+    "nativeLanguageFrameworks": 6,
+    "nativeAssertions": 12,
+    "linuxSingleRun": {
+      "vitest": 299,
+      "node": 6,
+      "jest": 3
+    },
+    "windows": {
+      "initialWorkspace": {
+        "vitest": 295,
+        "node": 6
+      },
+      "cleanFullRun": {
+        "passed": 298,
+        "failedColdImport": 1
+      },
+      "afterTimeoutFix": {
+        "affectedGroup": 17,
+        "node": 6
+      },
+      "singleFullPassingRun": false
+    },
+    "cypress": 2,
+    "productionFocusedBrowser": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "cleanComposeStorageChecks": 13,
+    "scope": "Fresh runs named separately; historical full suites and full natural game ascent were not rerun."
+  },
+  "runtime": {
+    "entrance": "http://127.0.0.1:8080",
+    "services": [
+      {
+        "service": "next",
+        "health": "healthy",
+        "memoryCapMiB": 512,
+        "oomKilled": false
+      },
+      {
+        "service": "gateway",
+        "health": "healthy",
+        "memoryCapMiB": 512,
+        "oomKilled": false
+      },
+      {
+        "service": "portal",
+        "health": "healthy",
+        "memoryCapMiB": 128,
+        "oomKilled": false
+      },
+      {
+        "service": "edge",
+        "health": "healthy",
+        "memoryCapMiB": 64,
+        "oomKilled": false
+      },
+      {
+        "service": "postgres",
+        "health": "healthy",
+        "memoryCapMiB": 384,
+        "oomKilled": false
+      },
+      {
+        "service": "redis",
+        "health": "healthy",
+        "memoryCapMiB": 128,
+        "oomKilled": false
+      }
+    ],
+    "builderRunning": false,
+    "optionalServicesStopped": true,
+    "ownedTemporaryPreviewsStopped": true,
+    "maximumContainerCapsMiB": 7840,
+    "dailyContainerCapsMiB": 1728
+  },
+  "publicRelease": {
+    "status": "completed-with-platform-validation-limits",
+    "standardInstallBuildDevVerified": true,
+    "cleanComposeFreshNamedVolumesVerified": true,
+    "windowsHostVerified": true,
+    "linuxContainerUserspaceVerified": true,
+    "linuxEngineHostVerified": false,
+    "macOSHostVerified": false,
+    "remoteCIRun": false,
+    "publishedToGitHub": false,
+    "sourceSnapshot": "Independent temporary Git repository; main workspace has no Git repository created by this task",
+    "finalTrackedFileScan": "phase9-public-final-source-audit.json",
+    "finalExactCloneComparison": "phase9-final-clone-fidelity.json"
+  },
+  "licenseDelivery": {
+    "originalResources": 20,
+    "emittedInventories": [
+      {
+        "scope": "bundled",
+        "packages": 51,
+        "chunks": 62
+      },
+      {
+        "scope": "worker",
+        "packages": 2,
+        "chunks": 1
+      },
+      {
+        "scope": "next-client",
+        "packages": 11,
+        "chunks": 20
+      },
+      {
+        "scope": "next-server",
+        "packages": 0,
+        "chunks": 0
+      },
+      {
+        "scope": "next-server-chunks",
+        "packages": 12,
+        "chunks": 10
+      }
+    ],
+    "scope": "Original MIT plus required notices for actually distributed code; not clearance of third-party media"
+  },
+  "freeze": {
+    "scientificFiles": 1266,
+    "seals": [
+      {
+        "prefix": "root",
+        "files": 165,
+        "sealSha256": "7d676ec02885ac56e9530b9e524c62659423b75242f412d8e5c47b766ad5c06c"
+      },
+      {
+        "prefix": "stage2",
+        "files": 368,
+        "sealSha256": "32a608f0422bb05733b4a7971a922fcca3a2e9aea3ff681fcaef3e17f3ea43f3"
+      },
+      {
+        "prefix": "stage3",
+        "files": 195,
+        "sealSha256": "cbda2e4a802488e9a23d462e4c3232a2da627dd25ecebb996525dcdc72c68425"
+      },
+      {
+        "prefix": "stage4",
+        "files": 462,
+        "sealSha256": "c26e57b7e2c32450c369749cef2724d8c7d613c5e4000d1e3a65e284fabedb16"
+      },
+      {
+        "prefix": "stage5",
+        "files": 76,
+        "sealSha256": "595066bd405f3e8502dc10b88d5be114cfed9a125bdead5106e388f6b9631f89"
+      }
+    ],
+    "researchUIAndMusic": 23,
+    "unchanged": true,
+    "experimentsRerun": false,
+    "pdfGenerated": false
+  },
+  "limitations": [
+    "Old frontend widgets are retained dormant under later user direction; historical execution is explicitly distinguished from current routes.",
+    "No macOS or separate Linux Engine host available; no remote CI execution or GitHub publication.",
+    "Full natural final tower ascent/Boss win remains unverified under the user-selected brief test scope.",
+    "Two old F: phase2 raw reports were accidentally overwritten by new phase9 runs. Original source/acceptance ledgers are unchanged; phase9-legacy/everything record the fresh runs. Old raw hashes are not represented as recovered.",
+    "The source scanner is pattern-based plus manual configuration review, not a universal proof that arbitrary secrets cannot exist."
+  ],
+  "evidence": [
+    {
+      "file": "phase9-source-baseline.json",
+      "bytes": 661,
+      "sha256": "3558ff0671f8b3ea25757307453058ab388816b43f2df544984aca002a7923e4"
+    },
+    {
+      "file": "phase9-public-source-audit.json",
+      "bytes": 849821,
+      "sha256": "003ea165b9fab6f7c329a6e676bcccc69b0e45d11272459519fafb35b72dbd7e"
+    },
+    {
+      "file": "phase9-language-tests.json",
+      "bytes": 720,
+      "sha256": "17d31b5675ac6e606592fa71f73348d842860a03a40d738004981bda6ae71045"
+    },
+    {
+      "file": "phase9-legacy.json",
+      "bytes": 12307,
+      "sha256": "7bd0036273233d0c557cf054bed8562dd665e712385c2db919da2b7584d8247e"
+    },
+    {
+      "file": "phase9-everything.json",
+      "bytes": 19450,
+      "sha256": "ca351d7ec1a3f550a366e37c7f65f8af394bb9748a92ba4d58995b0714f13ac9"
+    },
+    {
+      "file": "phase9-maximum-resource-snapshot.json",
+      "bytes": 9511,
+      "sha256": "5c80eda5d6d5607c1adde42bdebf774193b20bb9ee059d684e5bada41888c552"
+    },
+    {
+      "file": "phase9-browser.json",
+      "bytes": 6124,
+      "sha256": "782ef2e0a4eaab29fc9430be958cfa3847664c34aa0767d2b7ec25af8f591d46"
+    },
+    {
+      "file": "phase9-cypress.log",
+      "bytes": 5209,
+      "sha256": "5d0ad95302011bc87d84fbfc002c2ea63f43639e1858db33ab848af13c8e6fb2"
+    },
+    {
+      "file": "phase9-clean-windows-install.log",
+      "bytes": 10861,
+      "sha256": "606aa3537a6ea28b2cf70d149322fc0cc140fd3c85746ce2e167465075f02397"
+    },
+    {
+      "file": "phase9-clean-windows-build.log",
+      "bytes": 903,
+      "sha256": "512a07bfb4d43c0f559d7956e35afebe1de183bd1201c38edc81ee102b15be33"
+    },
+    {
+      "file": "phase9-clean-windows-test.log",
+      "bytes": 1575,
+      "sha256": "cf0f90e23c506d55ba78561d66d45566dfd2fccb3e1394375965315b4b56ab4d"
+    },
+    {
+      "file": "phase9-clean-windows-test-calculation.log",
+      "bytes": 211,
+      "sha256": "7b237839338fa07845935cd4d48e1be33927b76a77f5cb16908d0a8e87a13e0a"
+    },
+    {
+      "file": "phase9-clean-windows-node-tests.log",
+      "bytes": 669,
+      "sha256": "54f7c263f4e6bd3acb28e1289e974c226bc16705b728da0232b2f4747707948b"
+    },
+    {
+      "file": "phase9-clean-windows-build-next.log",
+      "bytes": 1888,
+      "sha256": "2c89e8d357e16f6c6fa9221aaed81066042bb4217635990ce13d445d615e4b7f"
+    },
+    {
+      "file": "phase9-clean-dev-runtime-verification.json",
+      "bytes": 747,
+      "sha256": "afc4d0ade7149d30f15676154aea70fe9135230c35d49c7f07290df4a4aa368d"
+    },
+    {
+      "file": "phase9-clean-dev-websocket.json",
+      "bytes": 209,
+      "sha256": "5a61d9d6dc1d507bc7af1f4d4a7ae6864f18634b55c15f236fa080b546422cf7"
+    },
+    {
+      "file": "phase9-clean-linux-build.log",
+      "bytes": 20469,
+      "sha256": "65bbe3f3253e5d6e3864f7dacfe34aac1e3ab3843dd014b489993fe793643b42"
+    },
+    {
+      "file": "phase9-clean-linux-runtime.json",
+      "bytes": 747,
+      "sha256": "3db281a76e9bb3b97eda4c4dea7d31c472659e4ea3218003546b6a7d50d35944"
+    },
+    {
+      "file": "phase9-clean-linux-stopped.json",
+      "bytes": 7706,
+      "sha256": "59b5bfe6bc2f8123c291f52b157fb32a5d424662471b7ccf027d77e5f3f61697"
+    },
+    {
+      "file": "phase9-clean-compose.json",
+      "bytes": 509,
+      "sha256": "36d0f19ceb17947e490733e6d3af1e9e36d9632f702a5a08d1a2972eab6b8058"
+    },
+    {
+      "file": "phase9-clean-compose-core-storage-verification.json",
+      "bytes": 2363,
+      "sha256": "e2643211db71340b930f727f93a845344a34d464c389d87278d6fa20942a44af"
+    },
+    {
+      "file": "phase9-clean-compose-runtime-verification.json",
+      "bytes": 769,
+      "sha256": "1fe6f4afc11211fea253d66091b96d56674b551c3dd04e42bdf7866db8b9dc6e"
+    },
+    {
+      "file": "phase9-final-runtime-verification.json",
+      "bytes": 769,
+      "sha256": "654219923e143863214929dc0b7fa3ec80b30f467cec678dd65e81afcfb0ff7d"
+    },
+    {
+      "file": "phase9-release-runtime.json",
+      "bytes": 2650,
+      "sha256": "e34351e35b02300747971427d25bdda32cfbe07b1c814e3d86eb1575ded7171f"
+    }
+  ],
+  "evidenceRoot": "Local runtime reports selected by OCV_DEPS_ROOT; raw proofs are not copied as runtime data into the public repository"
+}

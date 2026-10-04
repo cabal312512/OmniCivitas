@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "date": "2026-10-04",
+  "authorizedBy": "User: make the three new accents larger and more interactive",
+  "scope": "Research header maintenance only",
+  "desktop": {
+    "canvasHeight": 445,
+    "widerRightColumn": true,
+    "closerCamera": true
+  },
+  "controls": [
+    "Pointer-captured drag rotation",
+    "Wheel zoom 0.70–1.55",
+    "Raycast hover and click",
+    "Double-click / Escape reset",
+    "Arrow-key rotation, +/- zoom, Enter activation"
+  ],
+  "perScene": {
+    "explore": "24-light bounded bursts, selected core enlargement and fast pulse toggle",
+    "atlas": "Pointer scanning plane, surface highlight and separated-layer toggle",
+    "library": "Fanned plates, pulled-forward selection and actual paper-reader link"
+  },
+  "verification": {
+    "hostBuild": {
+      "passed": true,
+      "pages": 216
+    },
+    "linuxPortalBuild": "passed",
+    "nativeInteraction": {
+      "finalAffectedCasePassed": 1,
+      "otherChecksPassedOnSameApplicationCandidate": 4,
+      "singleFullPassingRun": false,
+      "reason": "Initial automated drag sampled the header during route transition; test-only synchronization now awaits Astro page-load and stable hover."
+    },
+    "visualInspection": [
+      "explore",
+      "atlas",
+      "library"
+    ],
+    "deployment": {
+      "status": "passed",
+      "routes": [
+        "/research/explore/",
+        "/research/atlas/",
+        "/research/library/"
+      ],
+      "libraryDocumentLink": "/research/read/manuscript/",
+      "nativeKeyboardInteraction": true,
+      "reset": true,
+      "canvasHeight": 445,
+      "contextLost": false,
+      "pageErrors": [],
+      "services": [
+        {
+          "service": "edge",
+          "health": "healthy"
+        },
+        {
+          "service": "gateway",
+          "health": "healthy"
+        },
+        {
+          "service": "next",
+          "health": "healthy"
+        },
+        {
+          "service": "portal",
+          "health": "healthy"
+        },
+        {
+          "service": "postgres",
+          "health": "healthy"
+        },
+        {
+          "service": "redis",
+          "health": "healthy"
+        }
+      ],
+      "builderStopped": true
+    },
+    "ledgersUnchanged": true,
+    "researchFilesEdited": false
+  },
+  "evidence": {
+    "test": "runtime/reports/research-site/browser.json",
+    "build": "runtime/reports/research-site-large-accents-docker.log",
+    "deployment": "runtime/reports/research-site/large-accent-deployment.json"
+  },
+  "limits": {
+    "newDependencies": 0,
+    "researchRecomputed": false,
+    "newPdf": false,
+    "phase9Authorized": false
+  }
+}

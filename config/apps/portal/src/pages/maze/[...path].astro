@@ -1,0 +1,59 @@
+---
+import Fragments from '../../q7/1.astro';
+import Identity from '../../aaa/Identity.astro';
+import Diagram from '../../aaa/Diagram.astro';
+import VueWindow from '../../ui/饭票.vue';
+import SvelteWindow from '../../ui/停机表.svelte';
+import SolidWindow from '../../ui/main.tsx';
+import {rooms,address,linksFor} from '../../aaa/map.mjs';
+import '../../aaa/迷宫.css';
+import Maintenance from '../../aaa/tmp.astro';
+import '../../aaa/临时修一下.css';
+import OpticalBench from '../../aaa/lens.astro';
+import ForgottenAttachment from '../../aaa/cache.astro';
+import Laowu from '../../aaa/laowu.astro';
+import MediaShortcuts from '../../n9/shortcuts.astro';
+import Panel from '../../z/Panel.astro';
+import MediaFrame from '../../p2/Frame.astro';
+export function getStaticPaths(){return rooms.map((room,index)=>({params:{path:room.path||undefined},props:{room,index}}));}
+const {room,index}=Astro.props;
+const links=linksFor(index);
+const repeated=Array.from({length:room.layout==='long'?22:room.layout==='horizontal'?12:7},(_,i)=>rooms[(index+i*3+1)%rooms.length]);
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#f8fbfd"/><title>{room.title} · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head>
+<body class={`maze-page layout-${room.layout}`} data-room={index}><Fragments/>
+ <OpticalBench />
+ {room.path==='empty'&&<Laowu/>}
+ {room.path===''&&<MediaShortcuts/>}
+ {room.path==='display'&&<MediaFrame kind="voice"/>}
+ {room.path==='notifications/unread'&&<MediaFrame kind="gif"/>}
+ <div class="maze-background" aria-hidden="true"><div class="maze-halo"><Diagram variant={index%6} id={`room-${index}`}/></div><div class="maze-chrome">{Array.from({length:10},(_,i)=><i style={`--level:${i}`} />)}</div><div class="maze-background-grid"></div><span class="maze-bignum">{String(index).padStart(2,'0')}</span></div>
+ <header class="maze-header"><a href="/#systems" aria-label="返回主页"><Identity id={`maze-${index}`} compact/></a><span>OCV</span><a href="/maze/" aria-label="迷宫目录">▦</a></header>
+ <div class="maze-scroller"><main class="maze-floor">
+  <nav class="maze-crumb" aria-label="错位路径">{links.map((item,i)=><><a href={address(item)}>{item.title}</a>{i<2&&<span>/</span>}</>)}</nav>
+  <h1>{room.title}</h1>
+  <section class="maze-panel feature-panel" data-draggable>
+   <div class="maze-title"><span>{room.title}</span><button data-drag aria-label="移动功能窗口" title="移动">↔</button><button data-front aria-label="功能窗口置顶">置顶</button><button data-fold aria-label="折叠功能窗口">−</button></div>
+   <div class="maze-panel-body">
+    {room.feature==='vue'&&<VueWindow client:load/>}
+    {room.feature==='svelte'&&<SvelteWindow client:load/>}
+    {room.feature==='solid'&&<SolidWindow client:load/>}
+    {room.feature==='vault'&&<div id="browser-cabinet" data-receipt-id="pending" style="--warehouse-label:43"><svg id="receipt-svg" class="receipt-metadata" aria-hidden="true"><title>浏览器档案</title></svg><ocv-cache></ocv-cache></div>}
+    {room.feature==='lit'&&<ocv-notices></ocv-notices>}
+    {room.feature==='table'&&<div class="route-table-wrap"><table class="route-table"><thead><tr><th><button data-sort="0">名称 ↕</button></th><th><button data-sort="1">层级 ↕</button></th><th>入口</th></tr></thead><tbody>{rooms.slice(index,index+7).concat(rooms.slice(0,Math.max(0,index+7-rooms.length))).map(item=><tr><td>{item.title}</td><td>{item.path.split('/').filter(Boolean).length}</td><td><a href={address(item)}>打开 ↗</a></td></tr>)}</tbody></table><output class="table-note" aria-live="polite"></output></div>}
+    {room.path==='cache/l1/l2'&&<ForgottenAttachment/>}
+   </div>
+  </section>
+  <section class="maze-panel route-panel" data-draggable><div class="maze-title"><span>导航</span><button data-drag aria-label="移动导航窗口">↔</button><button data-fold aria-label="折叠导航窗口">−</button></div><nav class="maze-panel-body room-links">{links.map((item,i)=><a href={address(item)}><span>0{i+1}</span><b>{item.title}</b><i>↗</i></a>)}{['cache','table','route/a/b/c/d/e'].includes(room.path)&&<a href="/research/"><span>04</span><b>研究</b><i>↗</i></a>}</nav></section>
+  <section class="maze-panel floating-panel" aria-hidden="true" inert><div class="maze-title">确认<span>×</span></div><Diagram variant={(index+2)%6} id={`floating-${index}`}/><div class="fake-actions"><button tabindex="-1">取消</button><button tabindex="-1">确定</button></div></section>
+  <div class="maze-toast" aria-hidden="true" inert>已保存<button tabindex="-1">撤销</button></div>
+  <aside class="maze-sidebar"><span>更多</span>{repeated.map((item,i)=><a href={address(item)} style={`--row:${i}`}><b>{String(i+1).padStart(2,'0')}</b><span>{item.title}</span><i>↗</i></a>)}</aside>
+  <footer class="maze-footer"><a href={address(rooms[(index+rooms.length-1)%rooms.length])}>上一层</a><span>—</span><a href={address(rooms[(index+1)%rooms.length])}>下一层</a></footer>
+  <Maintenance room={index}/>
+  <Panel index={index}/>
+  {['atlas','unpainted'].includes(room.layout)&&<section class="maze-atlas" aria-label="所有迷宫页面">{rooms.map((item,i)=><a href={address(item)}><span>{String(i).padStart(2,'0')}</span><b>{item.title}</b><small>{item.path||'/'}</small><i>↗</i></a>)}</section>}
+ </main></div>
+ <a class="maze-exit" href="/#systems" aria-label="退出迷宫返回主页" title="返回主页">↖</a>
+ <a class="maze-index" href="/maze/" aria-label="打开完整迷宫目录">▦</a>
+ <script>import '../../aaa/迷宫.js';import '../../aaa/b.js';</script>
+</body></html>

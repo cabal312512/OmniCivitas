@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-10-03T17:32:58.168Z",
+  "analysisSha256": "f30f288639bc65dc410c43739abeae216f750f4bf6ba77fdb1f2cc0020b03a7d",
+  "inputs": [
+    {
+      "file": "data/raw/interventions/rescue.csv",
+      "sha256": "5f08647c913525d0c52511a1531c78efd0427ac487ba70c05706068956edd8c9",
+      "records": 768
+    },
+    {
+      "file": "data/raw/dynamics/summary.json",
+      "sha256": "ccd9f939737dd911008282f13f43ba9c04cb162540a7d56eadca4ee6f17340b5",
+      "records": 192
+    }
+  ],
+  "duplicateKeys": 0,
+  "status": "complete",
+  "confirmationFamilyChanged": false,
+  "inference": "Post-primary exploratory extensions; no new formal test or selected winner",
+  "summaries": {
+    "rescue": {
+      "rows": 768,
+      "groups": 3
+    },
+    "dynamics": {
+      "rows": 192,
+      "groups": 12
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "name": "@omnicivitas/portal",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ../../../scripts/phase8-build.mjs && node ../../../scripts/copy-angular.mjs && node ../../../scripts/prepare-research.mjs && astro build",
+    "dev": "astro dev --host 127.0.0.1 --port 4321"
+  },
+  "dependencies": {
+    "@astrojs/solid-js": "7.0.2",
+    "@astrojs/svelte": "9.0.1",
+    "@astrojs/vue": "7.0.3",
+    "@tailwindcss/vite": "4.3.3",
+    "@vue/devtools-api": "8.2.1",
+    "alpinejs": "3.17.4",
+    "astro": "7.3.5",
+    "axios": "1.20.0",
+    "cropperjs": "1.6.2",
+    "date-fns": "4.4.0",
+    "dayjs": "1.11.23",
+    "dompurify": "3.4.16",
+    "element-plus": "2.14.7",
+    "fast-json-patch": "3.1.1",
+    "gsap": "3.15.0",
+    "htmx.org": "2.0.11",
+    "i18next": "26.4.2",
+    "joi": "18.2.9",
+    "jquery": "4.0.0",
+    "jsqr": "1.4.0",
+    "less": "4.9.1",
+    "lit": "3.3.3",
+    "lodash": "4.18.1",
+    "luxon": "3.7.2",
+    "marked": "18.0.14",
+    "mathjs": "15.2.0",
+    "moment": "2.31.0",
+    "nanoid": "6.0.1",
+    "papaparse": "5.7.0",
+    "pdf-lib": "1.17.1",
+    "pinia": "4.0.3",
+    "qrcode": "1.5.4",
+    "ramda": "0.32.0",
+    "sass": "1.105.1",
+    "solid-js": "1.9.15",
+    "sql.js": "1.14.2",
+    "svelte": "5.57.1",
+    "tailwindcss": "4.3.3",
+    "three": "0.186.1",
+    "uuid": "14.0.2",
+    "validator": "13.15.35",
+    "vee-validate": "4.15.1",
+    "vue": "3.5.43",
+    "vue-i18n": "11.4.12",
+    "yup": "1.7.1",
+    "zod": "4.6.5"
+  },
+  "nx": {
+    "name": "portal",
+    "targets": {
+      "build": {
+        "outputs": [
+          "{projectRoot}/dist"
+        ],
+        "inputs": [
+          "default",
+          "^default",
+          "{workspaceRoot}/pnpm-lock.yaml",
+          "{workspaceRoot}/pinia/**/*",
+          "{workspaceRoot}/pcakage/build2/**/*",
+          "{workspaceRoot}/scripts/phase8-build.mjs",
+          "{workspaceRoot}/scripts/copy-angular.mjs",
+          "{workspaceRoot}/research/finite-memory-rsa/**/*",
+          "{workspaceRoot}/scripts/prepare-research.mjs",
+          "{workspaceRoot}/scripts/research-publication.mjs",
+          "{workspaceRoot}/config/research-publication.json",
+          "{workspaceRoot}/scripts/bundle-license-notices.mjs",
+          "{workspaceRoot}/pinia/**/*",
+          "{workspaceRoot}/pcakage/build2/**/*",
+          "{workspaceRoot}/scripts/phase8-build.mjs",
+          "{workspaceRoot}/scripts/copy-angular.mjs"
+        ]
+      },
+      "dev": {
+        "cache": false
+      }
+    },
+    "implicitDependencies": [
+      "angular-receipt"
+    ]
+  }
+}

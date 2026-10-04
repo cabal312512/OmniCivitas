@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 2,
+  "createdAtUtc": "2026-10-03T19:31:15.156Z",
+  "rows": 3072,
+  "groups": 30,
+  "inputs": [
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\large_size.csv",
+      "sha256": "c2770a8da1a2055a014217d002265b0f4217fec3932c08393a1fec0add22d699",
+      "rows": 3072,
+      "experiments": [
+        "large_size"
+      ]
+    }
+  ],
+  "analysisSourceSha256": "beead557285a15f33a382d46d5e2a139c5d85d33572a697faa6cd6aa90528d20",
+  "stage1NumericsSha256": "b97040d661e77d8169918881fd5d0f4073c7f2cc8bd506de049be2b6e2b2bafb",
+  "histogramInputs": [
+    {
+      "file": "E:\\OmniCivitas\\research\\finite-memory-rsa\\stage2\\data\\raw\\large_size.runs.jsonl",
+      "sha256": "8ec461590f85e2f39dc8495c5c94b9dd87e7839f2f8257796f68257ad3989097",
+      "rows": 3072
+    }
+  ],
+  "lockSha256": null,
+  "confirmation": {
+    "status": "not-requested",
+    "errors": []
+  },
+  "errors": [],
+  "limitations": [
+    "Independent lattice runs only; no trial pseudoreplication.",
+    "Conditional kinetic expectations are not actual waiting samples.",
+    "Signed cancellation is not within-run isotropy.",
+    "Exploratory finite-grid sample frontier does not prove continuum dominance.",
+    "No extrapolated thermodynamic limit or phase transition is generated.",
+    "Matched accepted lag1 is not proposal correlation."
+  ]
+}

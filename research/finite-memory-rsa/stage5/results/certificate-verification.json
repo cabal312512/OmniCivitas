@@ -1,0 +1,1043 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "checked": [
+    {
+      "file": "data/word-certificate-1.json",
+      "sha256": "08f6cb68f170a0a2d83afe2c8720d16d3ad2fb3b996f8a32530eb65d3e48de59",
+      "status": "passed",
+      "prefixBounds": 40001,
+      "tailInequalities": 10672,
+      "method": "Independent raw-anchor propagation, exact rational suffix supersolution inequalities, complete prefix partition; no word-bound engine call."
+    },
+    {
+      "file": "data/word-certificate-2.json",
+      "sha256": "55d6bcc37b0eccd94809b3ec75914cf944a8e4eec077029daf502abe20e10776",
+      "status": "passed",
+      "prefixBounds": 40001,
+      "tailInequalities": 12992,
+      "method": "Independent raw-anchor propagation, exact rational suffix supersolution inequalities, complete prefix partition; no word-bound engine call."
+    },
+    {
+      "file": "data/word-certificate-4.json",
+      "sha256": "e6b35ab2ff23038910b049757b237977aa5738bb16d645a4eca0dcd2ebf3cecc",
+      "status": "passed",
+      "prefixBounds": 40001,
+      "tailInequalities": 2754,
+      "method": "Independent raw-anchor propagation, exact rational suffix supersolution inequalities, complete prefix partition; no word-bound engine call."
+    },
+    {
+      "file": "data/word-certificate-5.json",
+      "sha256": "001f615d7e79664024feb6bb831339da937b354d9b9d9838fa0b26191a5fe2f2",
+      "status": "passed",
+      "prefixBounds": 40001,
+      "tailInequalities": 2754,
+      "method": "Independent raw-anchor propagation, exact rational suffix supersolution inequalities, complete prefix partition; no word-bound engine call."
+    },
+    {
+      "file": "data/word-certificate-6.json",
+      "sha256": "20531797977f681ffeac2fdaba6e89c533f4df36a9844024cfab821a4709fe5d",
+      "status": "passed",
+      "prefixBounds": 40001,
+      "tailInequalities": 2754,
+      "method": "Independent raw-anchor propagation, exact rational suffix supersolution inequalities, complete prefix partition; no word-bound engine call."
+    },
+    {
+      "file": "data/word-certificate-7.json",
+      "sha256": "3e1568507ff0cde8aaa8549f57918c1ebe3fb073f9d231f0d5d0737db26f755f",
+      "status": "passed",
+      "prefixBounds": 40001,
+      "tailInequalities": 3240,
+      "method": "Independent raw-anchor propagation, exact rational suffix supersolution inequalities, complete prefix partition; no word-bound engine call."
+    },
+    {
+      "file": "data/parameter-certificate-1.json",
+      "sha256": "daf182597dabdbec75f772f4afe8c84e03445f7fcb6209fef4d7ace90a21a0a0",
+      "status": "passed",
+      "partitionBoxes": 2999,
+      "leaves": 1500,
+      "replayedLeafBounds": 1500,
+      "method": "Full dyadic simplex partition and every retained/pruned leaf bound replay. Bellman engine shared; independent raw geometry and LP-dual tests supplement it."
+    },
+    {
+      "file": "data/parameter-certificate-2.json",
+      "sha256": "da88e21c3fc320ab9c34a7a68c7d198239172183136231476f02af2b15a0577f",
+      "status": "passed",
+      "partitionBoxes": 2999,
+      "leaves": 1500,
+      "replayedLeafBounds": 1500,
+      "method": "Full dyadic simplex partition and every retained/pruned leaf bound replay. Bellman engine shared; independent raw geometry and LP-dual tests supplement it."
+    },
+    {
+      "file": "data/parameter-certificate-4.json",
+      "sha256": "82510e1bfac2239f6a793d0362db87e0f7f4c216e7e74220144bd1694f65065d",
+      "status": "passed",
+      "partitionBoxes": 2999,
+      "leaves": 1500,
+      "replayedLeafBounds": 1500,
+      "method": "Full dyadic simplex partition and every retained/pruned leaf bound replay. Bellman engine shared; independent raw geometry and LP-dual tests supplement it."
+    },
+    {
+      "file": "data/parameter-certificate-5.json",
+      "sha256": "457799056fb851c7a0f35d021430fb815edb8a958400a8c89922b46a91f83ff8",
+      "status": "passed",
+      "partitionBoxes": 2999,
+      "leaves": 1500,
+      "replayedLeafBounds": 1500,
+      "method": "Full dyadic simplex partition and every retained/pruned leaf bound replay. Bellman engine shared; independent raw geometry and LP-dual tests supplement it."
+    },
+    {
+      "file": "data/parameter-certificate-6.json",
+      "sha256": "5d50d3112fed972996134c88edcb60beb6b5fba5620917dd91b17f6688180bc8",
+      "status": "passed",
+      "partitionBoxes": 2999,
+      "leaves": 1500,
+      "replayedLeafBounds": 1500,
+      "method": "Full dyadic simplex partition and every retained/pruned leaf bound replay. Bellman engine shared; independent raw geometry and LP-dual tests supplement it."
+    },
+    {
+      "file": "data/parameter-certificate-7.json",
+      "sha256": "5e68a6318842affa08e8a4e7ae0fe0d6108129460e336c00fd84a1e987d400f6",
+      "status": "passed",
+      "partitionBoxes": 2999,
+      "leaves": 1500,
+      "replayedLeafBounds": 1500,
+      "method": "Full dyadic simplex partition and every retained/pruned leaf bound replay. Bellman engine shared; independent raw geometry and LP-dual tests supplement it."
+    }
+  ],
+  "lowerChecks": [
+    {
+      "file": "data/lower-1.json",
+      "sha256": "b1d6a115fa707a6abc78f8c81a960e262be1119ee5d397ea3789bf51fd59cfcf",
+      "status": "passed",
+      "reachableProductStates": 493,
+      "exactScalarEquations": 1972,
+      "almostSureGeometricAbsorption": true,
+      "method": "Raw anchor enumeration, rational one-step residuals, reverse reachability to jam; no matrix inverse and no floating comparison."
+    },
+    {
+      "file": "data/lower-2.json",
+      "sha256": "83f9e3e5fa49004933bfee6f723be83e5804c86f5be66d0128794ea434d53198",
+      "status": "passed",
+      "reachableProductStates": 493,
+      "exactScalarEquations": 1972,
+      "almostSureGeometricAbsorption": true,
+      "method": "Raw anchor enumeration, rational one-step residuals, reverse reachability to jam; no matrix inverse and no floating comparison."
+    },
+    {
+      "file": "data/lower-4.json",
+      "sha256": "e7703af8e5a7fb6e463c092eeecc0ecaaf5af3da60b4c40b28ca3b71828b5d04",
+      "status": "passed",
+      "reachableProductStates": 179,
+      "exactScalarEquations": 716,
+      "almostSureGeometricAbsorption": true,
+      "method": "Raw anchor enumeration, rational one-step residuals, reverse reachability to jam; no matrix inverse and no floating comparison."
+    },
+    {
+      "file": "data/lower-5.json",
+      "sha256": "44504e7e062afe39e14c8e16ce2e8add08ad10c110040d709ed8f52c801756f1",
+      "status": "passed",
+      "reachableProductStates": 179,
+      "exactScalarEquations": 716,
+      "almostSureGeometricAbsorption": true,
+      "method": "Raw anchor enumeration, rational one-step residuals, reverse reachability to jam; no matrix inverse and no floating comparison."
+    },
+    {
+      "file": "data/lower-6.json",
+      "sha256": "ab7f3f2202b6c75236efa3b5f0127aed27a6d0f8bcbd6422dc16ef8e4a4005f8",
+      "status": "passed",
+      "reachableProductStates": 179,
+      "exactScalarEquations": 716,
+      "almostSureGeometricAbsorption": true,
+      "method": "Raw anchor enumeration, rational one-step residuals, reverse reachability to jam; no matrix inverse and no floating comparison."
+    },
+    {
+      "file": "data/lower-7.json",
+      "sha256": "3c55f760a8e4135c0348d966a19d2e9a28e57a3121eb5533ac0f85ed4ce87203",
+      "status": "passed",
+      "reachableProductStates": 177,
+      "exactScalarEquations": 708,
+      "almostSureGeometricAbsorption": true,
+      "method": "Raw anchor enumeration, rational one-step residuals, reverse reachability to jam; no matrix inverse and no floating comparison."
+    }
+  ],
+  "supports": [
+    {
+      "index": 0,
+      "boundary": "periodic",
+      "mu": "0",
+      "nu": "0",
+      "lower": {
+        "numerator": "8",
+        "denominator": "9",
+        "value": 0.888888888888888
+      },
+      "upper": {
+        "numerator": "8",
+        "denominator": "9",
+        "value": 0.888888888888888
+      },
+      "width": {
+        "numerator": "0",
+        "denominator": "1",
+        "value": 0
+      },
+      "feedback": [
+        {
+          "controller": "feedback-4-00005",
+          "reward": {
+            "numerator": "2320",
+            "denominator": "2691",
+            "value": 0.862133036046079
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-8",
+              "denominator": "299",
+              "value": -0.026755852842809
+            },
+            "upper": {
+              "numerator": "-8",
+              "denominator": "299",
+              "value": -0.026755852842809
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00006",
+          "reward": {
+            "numerator": "2320",
+            "denominator": "2691",
+            "value": 0.862133036046079
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-8",
+              "denominator": "299",
+              "value": -0.026755852842809
+            },
+            "upper": {
+              "numerator": "-8",
+              "denominator": "299",
+              "value": -0.026755852842809
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00009",
+          "reward": {
+            "numerator": "21304",
+            "denominator": "24219",
+            "value": 0.87963995210372
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-224",
+              "denominator": "24219",
+              "value": -0.009248936785168
+            },
+            "upper": {
+              "numerator": "-224",
+              "denominator": "24219",
+              "value": -0.009248936785168
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00010",
+          "reward": {
+            "numerator": "21304",
+            "denominator": "24219",
+            "value": 0.87963995210372
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-224",
+              "denominator": "24219",
+              "value": -0.009248936785168
+            },
+            "upper": {
+              "numerator": "-224",
+              "denominator": "24219",
+              "value": -0.009248936785168
+            }
+          },
+          "strictCrossing": false
+        }
+      ],
+      "lowerKind": "Supremum lower from proper approximating family; finite attainment not asserted on open",
+      "status": "certified-equality"
+    },
+    {
+      "index": 1,
+      "boundary": "periodic",
+      "mu": "1",
+      "nu": "3/25",
+      "lower": {
+        "numerator": "-867935738114600545392665965111",
+        "denominator": "26821837273950122720826665376000",
+        "value": -0.03235929475113
+      },
+      "upper": {
+        "numerator": "5528208604443",
+        "denominator": "70368744177664",
+        "value": 0.078560569313069
+      },
+      "width": {
+        "numerator": "817782263761169339147965031103944548730659",
+        "denominator": "7372730490255972468552772215977954770944000",
+        "value": 0.110919864064199
+      },
+      "feedback": [
+        {
+          "controller": "feedback-4-00005",
+          "reward": {
+            "numerator": "-18452760439",
+            "denominator": "109426824000",
+            "value": -0.168631051916484
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-29741123260896556651039",
+              "denominator": "120316065378597863424000",
+              "value": -0.247191621229553
+            },
+            "upper": {
+              "numerator": "-1005433601035862101787526552970217",
+              "denominator": "7378150997318199758044999111630080",
+              "value": -0.136271757165354
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00006",
+          "reward": {
+            "numerator": "-91376669",
+            "denominator": "547134120",
+            "value": -0.167009633762193
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-1181841624329553677047",
+              "denominator": "4812642615143914536960",
+              "value": -0.245570203075262
+            },
+            "upper": {
+              "numerator": "-24836763326592763421511076686294053",
+              "denominator": "184453774932954993951124977790752000",
+              "value": -0.134650339011063
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00009",
+          "reward": {
+            "numerator": "-1324072687",
+            "denominator": "24621035400",
+            "value": -0.053778107438974
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-28660443991588859768171",
+              "denominator": "216568917681476154163200",
+              "value": -0.132338676752043
+            },
+            "upper": {
+              "numerator": "-146325216846474382870940150853119",
+              "denominator": "6831621293813147924115739918176000",
+              "value": -0.021418812687844
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00010",
+          "reward": {
+            "numerator": "-52648162621",
+            "denominator": "984841416000",
+            "value": -0.053458518057489
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-142956154325691081237271",
+              "denominator": "1082844588407380770816000",
+              "value": -0.132019087370559
+            },
+            "upper": {
+              "numerator": "-28828380644529325728239051262079",
+              "denominator": "1366324258762629584823147983635200",
+              "value": -0.021099223306359
+            }
+          },
+          "strictCrossing": false
+        }
+      ],
+      "lowerKind": "Exact feasible <=2-state realization",
+      "status": "certified-feedback-support-negative; temporal support interval unresolved"
+    },
+    {
+      "index": 2,
+      "boundary": "periodic",
+      "mu": "1/10",
+      "nu": "1/20",
+      "lower": {
+        "numerator": "1177",
+        "denominator": "1800",
+        "value": 0.653888888888888
+      },
+      "upper": {
+        "numerator": "92453280657757",
+        "denominator": "140737488355328",
+        "value": 0.65692006968559
+      },
+      "width": {
+        "numerator": "95985173717693",
+        "denominator": "31665934879948800",
+        "value": 0.003031180796701
+      },
+      "feedback": [
+        {
+          "controller": "feedback-4-00005",
+          "reward": {
+            "numerator": "51580291747",
+            "denominator": "87541459200",
+            "value": 0.589209869453489
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-3258649951169336473189",
+              "denominator": "48126426151439145369600",
+              "value": -0.0677102002321
+            },
+            "upper": {
+              "numerator": "-629121749",
+              "denominator": "9726828800",
+              "value": -0.064679019435399
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00006",
+          "reward": {
+            "numerator": "1288638361",
+            "denominator": "2188536480",
+            "value": 0.588812831212208
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-655551596553535310561",
+              "denominator": "9625285230287829073920",
+              "value": -0.068107238473382
+            },
+            "upper": {
+              "numerator": "-79122959",
+              "denominator": "1215853600",
+              "value": -0.06507605767668
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00009",
+          "reward": {
+            "numerator": "2439028643",
+            "denominator": "3939365664",
+            "value": 0.619142484103247
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-654516065774978356117",
+              "denominator": "17325513414518092333056",
+              "value": -0.037777585582342
+            },
+            "upper": {
+              "numerator": "-3421969849",
+              "denominator": "98484141600",
+              "value": -0.034746404785641
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00010",
+          "reward": {
+            "numerator": "488623426273",
+            "denominator": "787873132800",
+            "value": 0.620180338599052
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-15913367594640020220301",
+              "denominator": "433137835362952308326400",
+              "value": -0.036739731086537
+            },
+            "upper": {
+              "numerator": "-26558061119",
+              "denominator": "787873132800",
+              "value": -0.033708550289836
+            }
+          },
+          "strictCrossing": false
+        }
+      ],
+      "lowerKind": "Exact feasible <=2-state realization",
+      "status": "certified-feedback-support-negative; temporal support interval unresolved"
+    },
+    {
+      "index": 3,
+      "boundary": "open",
+      "mu": "0",
+      "nu": "0",
+      "lower": {
+        "numerator": "8",
+        "denominator": "9",
+        "value": 0.888888888888888
+      },
+      "upper": {
+        "numerator": "8",
+        "denominator": "9",
+        "value": 0.888888888888888
+      },
+      "width": {
+        "numerator": "0",
+        "denominator": "1",
+        "value": 0
+      },
+      "feedback": [
+        {
+          "controller": "feedback-4-00005",
+          "reward": {
+            "numerator": "8651",
+            "denominator": "10080",
+            "value": 0.858234126984126
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-103",
+              "denominator": "3360",
+              "value": -0.030654761904761
+            },
+            "upper": {
+              "numerator": "-103",
+              "denominator": "3360",
+              "value": -0.030654761904761
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00006",
+          "reward": {
+            "numerator": "8651",
+            "denominator": "10080",
+            "value": 0.858234126984126
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-103",
+              "denominator": "3360",
+              "value": -0.030654761904761
+            },
+            "upper": {
+              "numerator": "-103",
+              "denominator": "3360",
+              "value": -0.030654761904761
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00009",
+          "reward": {
+            "numerator": "5897",
+            "denominator": "6720",
+            "value": 0.877529761904761
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-229",
+              "denominator": "20160",
+              "value": -0.011359126984126
+            },
+            "upper": {
+              "numerator": "-229",
+              "denominator": "20160",
+              "value": -0.011359126984126
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00010",
+          "reward": {
+            "numerator": "5897",
+            "denominator": "6720",
+            "value": 0.877529761904761
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-229",
+              "denominator": "20160",
+              "value": -0.011359126984126
+            },
+            "upper": {
+              "numerator": "-229",
+              "denominator": "20160",
+              "value": -0.011359126984126
+            }
+          },
+          "strictCrossing": false
+        }
+      ],
+      "lowerKind": "Supremum lower from proper approximating family; finite attainment not asserted on open",
+      "status": "certified-equality"
+    },
+    {
+      "index": 4,
+      "boundary": "open",
+      "mu": "1",
+      "nu": "3/10",
+      "lower": {
+        "numerator": "-499413408494117566506941543695765209547973938427",
+        "denominator": "673816830438792571174699899994576015261197926400",
+        "value": -0.741170873052988
+      },
+      "upper": {
+        "numerator": "-175929514311563",
+        "denominator": "281474976710656",
+        "value": -0.625027191999418
+      },
+      "width": {
+        "numerator": "21007642565553184952677245935371520417060312873559847637",
+        "denominator": "180876328139311963932693023318198410183302624479438438400",
+        "value": 0.11614368105357
+      },
+      "feedback": [
+        {
+          "controller": "feedback-4-00005",
+          "reward": {
+            "numerator": "-941877779",
+            "denominator": "1241856000",
+            "value": -0.758443635171871
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-22771437003617684563",
+              "denominator": "170679389002924032000",
+              "value": -0.133416443172453
+            },
+            "upper": {
+              "numerator": "-58193389119345067816563937809879604529343516953",
+              "denominator": "3369084152193962855873499499972880076305989632000",
+              "value": -0.017272762118883
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00006",
+          "reward": {
+            "numerator": "-953957119",
+            "denominator": "1241856000",
+            "value": -0.768170479508091
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-24431608851850153043",
+              "denominator": "170679389002924032000",
+              "value": -0.143143287508672
+            },
+            "upper": {
+              "numerator": "-90963946223359239575179266358441119890968369433",
+              "denominator": "3369084152193962855873499499972880076305989632000",
+              "value": -0.026999606455102
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00009",
+          "reward": {
+            "numerator": "-614354333",
+            "denominator": "827904000",
+            "value": -0.742059868052334
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-6658355214029625713",
+              "denominator": "56893129667641344000",
+              "value": -0.117032676052916
+            },
+            "upper": {
+              "numerator": "-2995098963675725736467342496446758488817890329",
+              "denominator": "3369084152193962855873499499972880076305989632000",
+              "value": -0.000888994999345
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00010",
+          "reward": {
+            "numerator": "-608475173",
+            "denominator": "827904000",
+            "value": -0.734958609935451
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-6254342415182403953",
+              "denominator": "56893129667641344000",
+              "value": -0.109931417936033
+            },
+            "upper": {
+              "numerator": "20929637218553927295450903242504324764089598951",
+              "denominator": "3369084152193962855873499499972880076305989632000",
+              "value": 0.006212263117537
+            }
+          },
+          "strictCrossing": false
+        }
+      ],
+      "lowerKind": "Exact feasible <=2-state realization",
+      "status": "certified-unresolved-interval"
+    },
+    {
+      "index": 5,
+      "boundary": "open",
+      "mu": "5/4",
+      "nu": "2/5",
+      "lower": {
+        "numerator": "-5447880663912052205462345621782696792300632686278892422211499972440402339",
+        "denominator": "4398005400211172227345301268777070305077606157786198192833484384286801920",
+        "value": -1.238716228872858
+      },
+      "upper": {
+        "numerator": "-304663487911779",
+        "denominator": "281474976710656",
+        "value": -1.082382140935248
+      },
+      "width": {
+        "numerator": "90119623538992744310118972804499993421284509099645162609818684833781791277623",
+        "denominator": "576455363816478766182603327901148159027131994313352569531070465217239701258240",
+        "value": 0.15633408793761
+      },
+      "feedback": [
+        {
+          "controller": "feedback-4-00005",
+          "reward": {
+            "numerator": "-24284873",
+            "denominator": "19404000",
+            "value": -1.251539527932385
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-28871679458002468459",
+              "denominator": "170679389002924032000",
+              "value": -0.169157386997136
+            },
+            "upper": {
+              "numerator": "-1409923462807964501412613396617410215779535200603169069777794468478938901",
+              "denominator": "109950135005279305683632531719426757626940153944654954820837109607170048000",
+              "value": -0.012823299059526
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00006",
+          "reward": {
+            "numerator": "-392628923",
+            "denominator": "310464000",
+            "value": -1.264652014404246
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-31109710637328891499",
+              "denominator": "170679389002924032000",
+              "value": -0.182269873468998
+            },
+            "upper": {
+              "numerator": "-2851643120644031858237598815750897370796478080942798822672368188913053461",
+              "denominator": "109950135005279305683632531719426757626940153944654954820837109607170048000",
+              "value": -0.025935785531387
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00009",
+          "reward": {
+            "numerator": "-42804331",
+            "denominator": "34496000",
+            "value": -1.24084911294063
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-3005227328780238803",
+              "denominator": "18964376555880448000",
+              "value": -0.158466972005382
+            },
+            "upper": {
+              "numerator": "-234510891202119838290274404596021278996267335083764553164417917323276053",
+              "denominator": "109950135005279305683632531719426757626940153944654954820837109607170048000",
+              "value": -0.002132884067771
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00010",
+          "reward": {
+            "numerator": "-42472811",
+            "denominator": "34496000",
+            "value": -1.231238723330241
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-2822972281360089043",
+              "denominator": "18964376555880448000",
+              "value": -0.148856582394992
+            },
+            "upper": {
+              "numerator": "822152743913551411136843432707560547548352326202529817841029629550825707",
+              "denominator": "109950135005279305683632531719426757626940153944654954820837109607170048000",
+              "value": 0.007477505542617
+            }
+          },
+          "strictCrossing": false
+        }
+      ],
+      "lowerKind": "Exact feasible <=2-state realization",
+      "status": "certified-unresolved-interval"
+    },
+    {
+      "index": 6,
+      "boundary": "open",
+      "mu": "3/2",
+      "nu": "1/2",
+      "lower": {
+        "numerator": "-37715102087043203728585820699699390303432070376931530249",
+        "denominator": "21724110275780972944096216434700624172799012234225254400",
+        "value": -1.736094210914115
+      },
+      "upper": {
+        "numerator": "-108282150531193",
+        "denominator": "70368744177664",
+        "value": -1.538781909448417
+      },
+      "width": {
+        "numerator": "143828864745747007421328717505692879504732581040093361188662093",
+        "denominator": "728940181009193903546516295815444534163740705680479371447500800",
+        "value": 0.197312301465698
+      },
+      "feedback": [
+        {
+          "controller": "feedback-4-00005",
+          "reward": {
+            "numerator": "-433317193",
+            "denominator": "248371200",
+            "value": -1.744635420692898
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-1756747576165729949",
+              "denominator": "8533969450146201600",
+              "value": -0.205853511244481
+            },
+            "upper": {
+              "numerator": "-100011548703216399807690619001226243431917310121981945613",
+              "denominator": "11709295438645944416867860658303636429138667594247412121600",
+              "value": -0.008541209778782
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00006",
+          "reward": {
+            "numerator": "-145804951",
+            "denominator": "82790400",
+            "value": -1.761133549300401
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-632514033895582943",
+              "denominator": "2844656483382067200",
+              "value": -0.222351639851984
+            },
+            "upper": {
+              "numerator": "-293193010753252557781009417256033881556725470867848820493",
+              "denominator": "11709295438645944416867860658303636429138667594247412121600",
+              "value": -0.025039338386286
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00009",
+          "reward": {
+            "numerator": "-288050711",
+            "denominator": "165580800",
+            "value": -1.739638357828927
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-571367598114712799",
+              "denominator": "2844656483382067200",
+              "value": -0.200856448380509
+            },
+            "upper": {
+              "numerator": "-41499463303489677332211381225960479049535727531441211661",
+              "denominator": "11709295438645944416867860658303636429138667594247412121600",
+              "value": -0.003544146914811
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00010",
+          "reward": {
+            "numerator": "-286043951",
+            "denominator": "165580800",
+            "value": -1.72751883672503
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-536891723831028959",
+              "denominator": "2844656483382067200",
+              "value": -0.188736927276613
+            },
+            "upper": {
+              "numerator": "100411589876934233036585895116812387373010319965804463859",
+              "denominator": "11709295438645944416867860658303636429138667594247412121600",
+              "value": 0.008575374189084
+            }
+          },
+          "strictCrossing": false
+        }
+      ],
+      "lowerKind": "Exact feasible <=2-state realization",
+      "status": "certified-unresolved-interval"
+    },
+    {
+      "index": 7,
+      "boundary": "open",
+      "mu": "1/10",
+      "nu": "1/20",
+      "lower": {
+        "numerator": "1060474369",
+        "denominator": "1655808000",
+        "value": 0.640457328989834
+      },
+      "upper": {
+        "numerator": "23315441714737",
+        "denominator": "35184372088832",
+        "value": 0.662664709657775
+      },
+      "width": {
+        "numerator": "157930923489979901",
+        "denominator": "7111641208455168000",
+        "value": 0.022207380667941
+      },
+      "feedback": [
+        {
+          "controller": "feedback-4-00005",
+          "reward": {
+            "numerator": "1553376047",
+            "denominator": "2483712000",
+            "value": 0.625425188991316
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-794502329264130551",
+              "denominator": "21334923625365504000",
+              "value": -0.037239520666459
+            },
+            "upper": {
+              "numerator": "-74671013",
+              "denominator": "4967424000",
+              "value": -0.015032139998518
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00006",
+          "reward": {
+            "numerator": "1549064747",
+            "denominator": "2483712000",
+            "value": 0.623689359716424
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-831536114270620151",
+              "denominator": "21334923625365504000",
+              "value": -0.038975349941351
+            },
+            "upper": {
+              "numerator": "-83293613",
+              "denominator": "4967424000",
+              "value": -0.01676796927341
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00009",
+          "reward": {
+            "numerator": "1060474369",
+            "denominator": "1655808000",
+            "value": 0.640457328989834
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-157930923489979901",
+              "denominator": "7111641208455168000",
+              "value": -0.022207380667941
+            },
+            "upper": {
+              "numerator": "0",
+              "denominator": "1",
+              "value": 0
+            }
+          },
+          "strictCrossing": false
+        },
+        {
+          "controller": "feedback-4-00010",
+          "reward": {
+            "numerator": "1062622249",
+            "denominator": "1655808000",
+            "value": 0.641754508372951
+          },
+          "feedbackMinusTemporalSupport": {
+            "lower": {
+              "numerator": "-148705849134247421",
+              "denominator": "7111641208455168000",
+              "value": -0.020910201284824
+            },
+            "upper": {
+              "numerator": "2557",
+              "denominator": "1971200",
+              "value": 0.001297179383116
+            }
+          },
+          "strictCrossing": false
+        }
+      ],
+      "lowerKind": "Exact feasible <=2-state realization",
+      "status": "certified-unresolved-interval"
+    }
+  ],
+  "prefixBoundsChecked": 240006,
+  "parameterLeafBoundsReplayed": 9000,
+  "lowerBellmanScalarEquations": 6800,
+  "strictSupportSeparationFound": false,
+  "scope": "Periodic all-nonnegative-direction negative theorem is separate from support intervals. Open order/cost frontier and arbitrary stochastic feedback remain unresolved."
+}

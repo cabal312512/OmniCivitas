@@ -1,0 +1,10 @@
+{
+  "checkedAtUtc": "2026-10-03T19:51:38.673Z",
+  "lockedSource": "b158b2bdf12f4e198526b8967bfa0b2ce825088f7613eba8b60e23e43c770a52",
+  "descriptiveSource": "47fe48e4561234a7f55e3299bea582b8d6604215c7d729b18b429261148061ae",
+  "primaryTests": 400,
+  "primaryTestsExactlyEqual": true,
+  "jointBenefitGatesExactlyEqual": true,
+  "primaryScientificArraySha256": "d6128c221d3e3fb7f2d5ad4c347c148b252f0f8b143d4c85f5ce9dc638fdde2c",
+  "additionalOutputs": "Matching residuals are descriptive only and use no added p value or retuning"
+}

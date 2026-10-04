@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-10-03T17:41:00.780Z",
+  "rows": 226816,
+  "groups": 764,
+  "lockedFamily": 36,
+  "auditStatus": "complete",
+  "errors": [],
+  "lock": {
+    "sealedAt": "2026-10-03T17:17:38.407Z",
+    "sha256": "0ccbb6edbf1a7b8b86ff982924e49e1addce14a060aaba3eae44acf4d1814cd8",
+    "originalAnalysisSha256": "be4edbe74d0c1fd1541bba44265512ec3fef4ce635a0e7fb58e683a76b793c52"
+  },
+  "sourceSha256": {
+    "analysis/summarize.mjs": "b97040d661e77d8169918881fd5d0f4073c7f2cc8bd506de049be2b6e2b2bafb",
+    "analysis/extensions.mjs": "f30f288639bc65dc410c43739abeae216f750f4bf6ba77fdb1f2cc0020b03a7d",
+    "analysis/figures.py": "5ce8070b935f26c92062f45a85b7009c3e1531bc171f631e8be76c5bfc4434c7",
+    "docs/STATISTICAL_PROTOCOL.md": "ac971bbfcb783c19b715dd24c79e6e97ad34b3097ab4c80fd4ee45915a42b96e",
+    "tests/statistics.test.mjs": "7b65ccb926b72ca32bfbb0cd77d9b31a59132d60bb3671100d558d457d3bdf8c"
+  },
+  "executionAmendments": [
+    {
+      "reason": "Large131072row read exceeded V8 argument limit",
+      "change": "push spread to plain for loop",
+      "methodChanged": false
+    },
+    {
+      "reason": "Small finite Student-t tails rounded to zero through subtraction",
+      "change": "Equivalent direct regularized-beta two-sided tail",
+      "methodChanged": false
+    }
+  ],
+  "necessaryUnitChecks": {
+    "numericalPrimary": {
+      "passed": 9,
+      "failed": 0,
+      "command": "node --test tests/statistics.test.mjs",
+      "scope": "Run immediately after tail fix, before two extension tests were added"
+    },
+    "extensions": {
+      "passed": 2,
+      "failed": 0,
+      "command": "node --test --test-name-pattern exploratory tests/statistics.test.mjs",
+      "scope": "Only newly added information/rescue cases; no simulation repeated"
+    }
+  },
+  "independentReadOnlyReview": {
+    "scope": "Original5rawsets224768rows,760groups,96 small-system CI checks and all36 tests",
+    "substantiveExactCiMisses": 0,
+    "strictWilsonFloatingEndpointArtifacts": 4,
+    "largestAbsoluteExactZ": 1.8698015,
+    "additionalRRSA2048Excluded": true
+  },
+  "extensions": {
+    "rescue": {
+      "rows": 768,
+      "groups": 3
+    },
+    "dynamics": {
+      "rows": 192,
+      "groups": 12
+    }
+  },
+  "primaryFamilyChangedByExtensions": false,
+  "primaryConclusion": "No locked isotropic improvement observed: controller41 is isotropic at k2 without significant coverage benefit; k8 benefits are anisotropic. Not a proof of impossibility for all memory controllers.",
+  "tests": {
+    "rejected": 18,
+    "positiveCoverageRejections": 5,
+    "isotropyRejections": 1
+  },
+  "processedSha256": {
+    "summary.json": "d83ba3eb72a400df9e3e5bc3fae7cba456253b9af15d263e7d864bdd72aac1f1",
+    "summary.csv": "b11c736b8ef091fc644985b1699c77e1fc17308ecd5532c8c1a7b0786d05f5f1",
+    "comparisons.json": "509fc4d16fa4a4d77e11b3c358bd10982804ccb893f16b29eaffb5e1c989d5c7",
+    "comparisons.csv": "6c59b072699b648962b4ec73f14f8ae44f32caa1e9ad0209aecb20d567bcab46",
+    "pareto.csv": "d9a268e69eec52d991c88ede833fac8c1bc4b774d4c4fa37a41996146dc66f9e",
+    "audit.json": "34015bfca9e05eb1dbd31f0f42b9f885689532a92cfddca37cf35a435986a4ba",
+    "rescue-summary.json": "32bf233c3fc2cdb4e1ea503df8bb2806e2acbd0d69f3f50b2cf35dcfd4a67ff9",
+    "rescue-summary.csv": "f67d6d998c92e220af85a29121bea6b6064d46b5df83ccbcfe8bf3940563e979",
+    "dynamics-summary.json": "42ce99fb398094a212e04ce8b9f010d1391b81f53154087fd476dc05e24db045",
+    "dynamics-summary.csv": "0b7e147916de978713b7d60fb438bfbb67bb7a567ebfdadbc6a47867930221ee",
+    "extensions-audit.json": "9c249d1ff8121c4008bf953280e5813ac1dae35ccab652482f3067f7b7d789ff"
+  },
+  "figures": [
+    {
+      "name": "atlas-coverage",
+      "files": {
+        "pdf": "9f9e26003c1137c5a073bb72636e5db33b56e1105511e49cc0558b1565abdf46",
+        "png": "466115c8f770a488969f94de664d1bb908efd9785bda5bd96432d5669997951f",
+        "svg": "a0c634e2bc43c7b0a2c659c57b5ff5542dee3937a3ffa5978fefe715c65dc93c"
+      }
+    },
+    {
+      "name": "atlas-deadlock",
+      "files": {
+        "pdf": "ad3be5fc10838f0c3392b8307b3897a38090dd7c23c6385cbe25e38979046fff",
+        "png": "6b952f824e76e9bb026f586784c24f436b80661da021ad366b1d4c489aa8658d",
+        "svg": "bba85bef63e6d2fd8caeccb6e6483775324d4f1f20025ed489e391f95a351d1f"
+      }
+    },
+    {
+      "name": "atlas-absolute-order",
+      "files": {
+        "pdf": "ee321af7371af1a527b1fc4b33d628012749dda315a363b15a2be3d1448ff147",
+        "png": "5bfab078d4b5fff14f38bd8059530131d1c2473c12f92dc5c6f21339fa20e845",
+        "svg": "1408dbaa095a970b095495e7491043cb4d260fa308690cd11bfdf575a691dac6"
+      }
+    },
+    {
+      "name": "coverage-order-tradeoff",
+      "files": {
+        "pdf": "a6084e515544772a989c56e4c16c31e41533b5754aa1a0cf58d421242374d3ba",
+        "png": "40920111342c07db156fa721745ac0c1be506731302484e1fb6cba6c3eff827c",
+        "svg": "4ab365a69c86d04d45ee61c2313b8dce71d058dfe417884bda647ef1377b656f"
+      }
+    },
+    {
+      "name": "signed-order-cancellation",
+      "files": {
+        "pdf": "eacb343ed97abc3784806fa3719bec9b749b6b01cd30650ead80d20de14a42b1",
+        "png": "dace888e21098c5ca59abf43d419639d3373a6527b9336010ce93d56ea8d01d6",
+        "svg": "3a288d7aed2ee526c123c7f9c10d58d0a812799b4d74f7cdf10b003ae611ad76"
+      }
+    },
+    {
+      "name": "finite-size",
+      "files": {
+        "pdf": "1430dba21f1bad4da5247a17207b9121f4c4606a3cc6472b81fcb6657d530483",
+        "png": "97ef254d084468524b3873fa4650579b6bac30a6c25e1ddae896f7785eedd6da",
+        "svg": "39e0265c47e910ea01df0a1673ccad56d93db7841a308a2929d7b4f43380c66c"
+      }
+    },
+    {
+      "name": "holdout-coverage-order",
+      "files": {
+        "pdf": "3184080738e162c871d2fd873d73923d3083213f29af22c152555e0aeaf2d4ef",
+        "png": "0fa78b3e80253381d8660b1d7cd7c131df684a9d0aea7a37fcf94d4d17276141",
+        "svg": "7fb7b5b4fca20343db0a425dee8dec618b4fcaf58427ecf5c403c46e5ceb4af6"
+      }
+    },
+    {
+      "name": "holdout-effects-35-periodic",
+      "files": {
+        "pdf": "7466966b9407da42a1f5b2d7b455d42baa07add074e36f46aff4364393b850ae",
+        "png": "25a51db9fd70a46be0e2dae5a6632fb6cdc1407d4ce0551b72066119bf60fd1d",
+        "svg": "53917e3c6a1109ff55b77cc20f64425d25b086c2a0fcd045a8c42094ded573a4"
+      }
+    },
+    {
+      "name": "holdout-effects-random-0.5-periodic",
+      "files": {
+        "pdf": "ebfc271f3be75553dc9ca8cefd6a8a2a537235fa13c951277403cb9acda6492e",
+        "png": "0761ba3e7f8f17e89c51dbf8a4fdd9cac027e46a44906e80d09a11c2ea90ca43",
+        "svg": "bfa74ee44f800cc92606445e7f643fd0b33b9628f4a98377b7a5dda37f5cb218"
+      }
+    },
+    {
+      "name": "outcome-conditioned-switching",
+      "files": {
+        "pdf": "12897c974d886f18050b8b196546f3c305e1c00949fdac4ee0c69e1cb1f74065",
+        "png": "a6785475b44650af20d6cfa88a9122d981da1e004b3c9afb9a0b24963b4116cb",
+        "svg": "57d610a4d873da2e73d5ca4604356fc99a144543741c2d79531c56a16cb0ea30"
+      }
+    },
+    {
+      "name": "external-rescue",
+      "files": {
+        "pdf": "c0a030ba27efb5e27806689cda1b2b88f2c6745360014712c7be612165b0c3a5",
+        "png": "01bb485c1068822a972021d4b470ffda774ac46a59700535acaac36f83a897d3",
+        "svg": "f9d7bb23c1ce8b5f7918e2634d62c2059399d609e543a54d8c44ef973437bd08"
+      }
+    },
+    {
+      "name": "rrsa-reference",
+      "files": {
+        "pdf": "ade3c9eb052185d027c8ab3c6759502f20db076544bfe2c729f537f3675d9de0",
+        "png": "09d8eabcfeab40aa285f417724a0f2ca9ae1b8f53d72816b6dd45cca7d001185",
+        "svg": "44814bc745a86dee1f849ac2fa1b7be6f4dce2f8e8d4868f7624adc61abdcf47"
+      }
+    },
+    {
+      "name": "snapshots-k4",
+      "files": {
+        "pdf": "bbfd5a3d68258413661ec56b2b035a232b16086e962b87e4b9e290dff6119ba0",
+        "png": "a603b1511e724df23e187f172dc819e45cd3f9e5842cf7f36078a73371d1af8f",
+        "svg": "f177f1a82d3711acb5266d9b7ee803313379bd405f282f705967ba0bc1e44222"
+      }
+    }
+  ],
+  "figureGroups": 13,
+  "visualQA": "Opened atlas coverage, exploratory tradeoff, finite-size, fair-coin effect forest, outcome-conditioned switching, k4 snapshots and RRSA reference. No claim that every panel was separately visually inspected."
+}

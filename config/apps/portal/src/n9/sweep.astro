@@ -1,0 +1,17 @@
+---
+import './n9.css';
+---
+<button type="button" class="n9-action" data-sweep>扫除霉运</button>
+<section class="n9-window sweep-window" data-n9-window hidden aria-label="扫除霉运">
+ <header class="n9-handle" data-n9-handle tabindex="0" aria-label="移动扫除霉运窗口"><span>扫除霉运</span><button type="button" data-n9-close aria-label="关闭扫除霉运">×</button></header>
+ <div data-sweep-picture></div>
+</section>
+<script>
+ import './windows.mjs';
+ const windowNode=document.querySelector('.sweep-window'),host=document.querySelector('[data-sweep-picture]'),reduce=matchMedia('(prefers-reduced-motion:reduce)');
+ document.body.append(windowNode);
+ let image,still;
+ function render(){if(!image?.complete||!image.naturalWidth)return;if(reduce.matches){still??=document.createElement('canvas');still.width=image.naturalWidth;still.height=image.naturalHeight;still.setAttribute('role','img');still.setAttribute('aria-label','扫除霉运');still.getContext('2d').drawImage(image,0,0);host.replaceChildren(still);}else host.replaceChildren(image);}
+ document.querySelectorAll('[data-sweep]').forEach(button=>button.addEventListener('click',()=>{windowNode.hidden=false;windowNode.dataset.opened='true';if(!image){image=new Image();image.alt='扫除一切霉运中';image.addEventListener('load',render);image.src='/forgotten-cache/sweep.gif';}render();}));
+ reduce.addEventListener('change',render);
+</script>

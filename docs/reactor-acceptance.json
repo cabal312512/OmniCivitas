@@ -1,0 +1,689 @@
+{
+  "acceptedAt": "2026-10-02T13:17:52.650Z",
+  "revision": "reactor-additive-homepage",
+  "phase": 3,
+  "nextPhaseAuthorized": false,
+  "browserStats": {
+    "startTime": "2026-10-02T13:09:10.448Z",
+    "duration": 96388.602,
+    "expected": 20,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "retestStats": null,
+  "currentPassedChecks": [
+    {
+      "title": "Every maze URL is real, directory reaches all 27 pages and home has overlapping cumulative windows",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Original Vue, Svelte and Solid functions really hydrate inside the new materials and windows can be raised",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Existing IndexedDB/Cache/SVG/hash sources survive reload and Worker plus JSON export remain correct",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Lit notifications and real table sorting work, decorative confirmations do not capture essential actions",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Horizontal and unusually long rooms are intentional, keyboard movement and fixed exit survive reduced motion",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Every maze URL is real, directory reaches all 27 pages and home has overlapping cumulative windows",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Original Vue, Svelte and Solid functions really hydrate inside the new materials and windows can be raised",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Existing IndexedDB/Cache/SVG/hash sources survive reload and Worker plus JSON export remain correct",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Lit notifications and real table sorting work, decorative confirmations do not capture essential actions",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Horizontal and unusually long rooms are intentional, keyboard movement and fixed exit survive reduced motion",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Quiet cover keeps the previous field mounted and the new layer reveals real PBR and bloom after entry",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Existing controls command both old and new geometry, pointer moves the new camera and gallery stays usable",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "ScrollTrigger actually expands the assembly; hidden pages stop frames and return still works",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Reduced motion stays still with both layers present and icon navigation remains operable",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "GPU unavailable uses both fallbacks without blocking entry, status or old route redirects",
+      "project": "desktop",
+      "status": "passed"
+    },
+    {
+      "title": "Quiet cover keeps the previous field mounted and the new layer reveals real PBR and bloom after entry",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Existing controls command both old and new geometry, pointer moves the new camera and gallery stays usable",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "ScrollTrigger actually expands the assembly; hidden pages stop frames and return still works",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "Reduced motion stays still with both layers present and icon navigation remains operable",
+      "project": "mobile",
+      "status": "passed"
+    },
+    {
+      "title": "GPU unavailable uses both fallbacks without blocking entry, status or old route redirects",
+      "project": "mobile",
+      "status": "passed"
+    }
+  ],
+  "uniquePassed": 20,
+  "maze": {
+    "routes": [
+      "/maze/",
+      "/maze/offices/settings/",
+      "/maze/offices/settings/backup/",
+      "/maze/cache/",
+      "/maze/cache/l1/",
+      "/maze/cache/l1/l2/",
+      "/maze/approval/",
+      "/maze/approval/queue/",
+      "/maze/approval/queue/0/",
+      "/maze/display/",
+      "/maze/display/fold/",
+      "/maze/display/fold/back/",
+      "/maze/notifications/",
+      "/maze/notifications/unread/",
+      "/maze/notifications/unread/all/",
+      "/maze/table/",
+      "/maze/table/header/body/",
+      "/maze/table/header/body/footer/",
+      "/maze/empty/",
+      "/maze/empty/0/",
+      "/maze/aside/",
+      "/maze/aside/left/right/",
+      "/maze/window/",
+      "/maze/window/under/",
+      "/maze/route/",
+      "/maze/route/a/b/c/d/e/",
+      "/maze/route/a/b/c/d/e/start/"
+    ],
+    "routeCount": 27,
+    "layoutCount": 21,
+    "HTTPProofs": [
+      [
+        {
+          "url": "/maze/",
+          "layout": "atlas",
+          "status": 200
+        },
+        {
+          "url": "/maze/offices/settings/",
+          "layout": "overlap",
+          "status": 200
+        },
+        {
+          "url": "/maze/offices/settings/backup/",
+          "layout": "reversed",
+          "status": 200
+        },
+        {
+          "url": "/maze/cache/",
+          "layout": "drawer",
+          "status": 200
+        },
+        {
+          "url": "/maze/cache/l1/",
+          "layout": "horizontal",
+          "status": 200
+        },
+        {
+          "url": "/maze/cache/l1/l2/",
+          "layout": "narrow",
+          "status": 200
+        },
+        {
+          "url": "/maze/approval/",
+          "layout": "oversized",
+          "status": 200
+        },
+        {
+          "url": "/maze/approval/queue/",
+          "layout": "stairs",
+          "status": 200
+        },
+        {
+          "url": "/maze/approval/queue/0/",
+          "layout": "footer-first",
+          "status": 200
+        },
+        {
+          "url": "/maze/display/",
+          "layout": "offset",
+          "status": 200
+        },
+        {
+          "url": "/maze/display/fold/",
+          "layout": "sideways",
+          "status": 200
+        },
+        {
+          "url": "/maze/display/fold/back/",
+          "layout": "postage",
+          "status": 200
+        },
+        {
+          "url": "/maze/notifications/",
+          "layout": "double-modal",
+          "status": 200
+        },
+        {
+          "url": "/maze/notifications/unread/",
+          "layout": "blackout",
+          "status": 200
+        },
+        {
+          "url": "/maze/notifications/unread/all/",
+          "layout": "wrong-grid",
+          "status": 200
+        },
+        {
+          "url": "/maze/table/",
+          "layout": "table-over",
+          "status": 200
+        },
+        {
+          "url": "/maze/table/header/body/",
+          "layout": "header-side",
+          "status": 200
+        },
+        {
+          "url": "/maze/table/header/body/footer/",
+          "layout": "footer-first",
+          "status": 200
+        },
+        {
+          "url": "/maze/empty/",
+          "layout": "empty",
+          "status": 200
+        },
+        {
+          "url": "/maze/empty/0/",
+          "layout": "unpainted",
+          "status": 200
+        },
+        {
+          "url": "/maze/aside/",
+          "layout": "long",
+          "status": 200
+        },
+        {
+          "url": "/maze/aside/left/right/",
+          "layout": "horizontal",
+          "status": 200
+        },
+        {
+          "url": "/maze/window/",
+          "layout": "double-modal",
+          "status": 200
+        },
+        {
+          "url": "/maze/window/under/",
+          "layout": "under",
+          "status": 200
+        },
+        {
+          "url": "/maze/route/",
+          "layout": "atlas",
+          "status": 200
+        },
+        {
+          "url": "/maze/route/a/b/c/d/e/",
+          "layout": "stairs",
+          "status": 200
+        },
+        {
+          "url": "/maze/route/a/b/c/d/e/start/",
+          "layout": "postage",
+          "status": 200
+        }
+      ],
+      [
+        {
+          "url": "/maze/",
+          "layout": "atlas",
+          "status": 200
+        },
+        {
+          "url": "/maze/offices/settings/",
+          "layout": "overlap",
+          "status": 200
+        },
+        {
+          "url": "/maze/offices/settings/backup/",
+          "layout": "reversed",
+          "status": 200
+        },
+        {
+          "url": "/maze/cache/",
+          "layout": "drawer",
+          "status": 200
+        },
+        {
+          "url": "/maze/cache/l1/",
+          "layout": "horizontal",
+          "status": 200
+        },
+        {
+          "url": "/maze/cache/l1/l2/",
+          "layout": "narrow",
+          "status": 200
+        },
+        {
+          "url": "/maze/approval/",
+          "layout": "oversized",
+          "status": 200
+        },
+        {
+          "url": "/maze/approval/queue/",
+          "layout": "stairs",
+          "status": 200
+        },
+        {
+          "url": "/maze/approval/queue/0/",
+          "layout": "footer-first",
+          "status": 200
+        },
+        {
+          "url": "/maze/display/",
+          "layout": "offset",
+          "status": 200
+        },
+        {
+          "url": "/maze/display/fold/",
+          "layout": "sideways",
+          "status": 200
+        },
+        {
+          "url": "/maze/display/fold/back/",
+          "layout": "postage",
+          "status": 200
+        },
+        {
+          "url": "/maze/notifications/",
+          "layout": "double-modal",
+          "status": 200
+        },
+        {
+          "url": "/maze/notifications/unread/",
+          "layout": "blackout",
+          "status": 200
+        },
+        {
+          "url": "/maze/notifications/unread/all/",
+          "layout": "wrong-grid",
+          "status": 200
+        },
+        {
+          "url": "/maze/table/",
+          "layout": "table-over",
+          "status": 200
+        },
+        {
+          "url": "/maze/table/header/body/",
+          "layout": "header-side",
+          "status": 200
+        },
+        {
+          "url": "/maze/table/header/body/footer/",
+          "layout": "footer-first",
+          "status": 200
+        },
+        {
+          "url": "/maze/empty/",
+          "layout": "empty",
+          "status": 200
+        },
+        {
+          "url": "/maze/empty/0/",
+          "layout": "unpainted",
+          "status": 200
+        },
+        {
+          "url": "/maze/aside/",
+          "layout": "long",
+          "status": 200
+        },
+        {
+          "url": "/maze/aside/left/right/",
+          "layout": "horizontal",
+          "status": 200
+        },
+        {
+          "url": "/maze/window/",
+          "layout": "double-modal",
+          "status": 200
+        },
+        {
+          "url": "/maze/window/under/",
+          "layout": "under",
+          "status": 200
+        },
+        {
+          "url": "/maze/route/",
+          "layout": "atlas",
+          "status": 200
+        },
+        {
+          "url": "/maze/route/a/b/c/d/e/",
+          "layout": "stairs",
+          "status": 200
+        },
+        {
+          "url": "/maze/route/a/b/c/d/e/start/",
+          "layout": "postage",
+          "status": 200
+        }
+      ]
+    ],
+    "features": [
+      "original Vue Pinia form",
+      "original Svelte store",
+      "original Solid signal",
+      "Lit notifications",
+      "existing IndexedDB/CSV/Cache/SVG/CSS/hash sources",
+      "existing Worker",
+      "byte-checked JSON download",
+      "real table sorting",
+      "drag/front/fold windows"
+    ]
+  },
+  "renderers": [
+    {
+      "name": "desktop",
+      "current": {
+        "renderer": "three-webgl2",
+        "three": "186",
+        "gsap": "3.15.0",
+        "frames": 3,
+        "mode": 1,
+        "cover": false,
+        "bloom": true,
+        "suspended": false,
+        "reduced": false,
+        "instances": 144,
+        "drawCalls": 102,
+        "triangles": 68295,
+        "explosion": 0,
+        "quality": 1,
+        "pointer": {
+          "x": 0,
+          "y": -0.007134952031398105
+        },
+        "gpuError": 0,
+        "elapsed": 0.7663320000000001,
+        "materials": [
+          "physical-metal",
+          "physical-transmission",
+          "hdr-emission",
+          "particle-shader"
+        ],
+        "pixelSize": [
+          1440,
+          1000
+        ],
+        "cameraZ": 9.8,
+        "dive": 0
+      },
+      "previous": {
+        "renderer": "webgl",
+        "frames": 33,
+        "pointCount": 11000,
+        "lineSegments": 44700,
+        "activeGeometry": 1,
+        "scroll": 980,
+        "reduced": false,
+        "suspended": false,
+        "cover": false,
+        "activePointCount": 11000,
+        "activeLineSegments": 44700,
+        "morph": 0.7285906382547817,
+        "pointer": {
+          "x": 0,
+          "y": -0.009077727832994294
+        }
+      },
+      "canvas": [
+        1440,
+        1000
+      ],
+      "overflow": 0,
+      "sample": {
+        "milliseconds": 1388,
+        "frames": 5,
+        "observedFPS": 3.6,
+        "quality": 1,
+        "note": "Observed headless rendering, not a hardware frame-rate guarantee."
+      }
+    },
+    {
+      "name": "mobile",
+      "current": {
+        "renderer": "three-webgl2",
+        "three": "186",
+        "gsap": "3.15.0",
+        "frames": 8,
+        "mode": 1,
+        "cover": false,
+        "bloom": true,
+        "suspended": false,
+        "reduced": false,
+        "instances": 84,
+        "drawCalls": 100,
+        "triangles": 43815,
+        "explosion": 0,
+        "quality": 1,
+        "pointer": {
+          "x": 0,
+          "y": 0.046577877095067347
+        },
+        "gpuError": 0,
+        "elapsed": 1.2317000000000002,
+        "materials": [
+          "physical-metal",
+          "physical-transmission",
+          "hdr-emission",
+          "particle-shader"
+        ],
+        "pixelSize": [
+          503,
+          1024
+        ],
+        "cameraZ": 12.2,
+        "dive": 0
+      },
+      "previous": {
+        "renderer": "webgl",
+        "frames": 32,
+        "pointCount": 5500,
+        "lineSegments": 15080,
+        "activeGeometry": 1,
+        "scroll": 769,
+        "reduced": false,
+        "suspended": false,
+        "cover": false,
+        "activePointCount": 5500,
+        "activeLineSegments": 15080,
+        "morph": 0.9649149628247777,
+        "pointer": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "canvas": [
+        503,
+        1024
+      ],
+      "overflow": 0,
+      "sample": {
+        "milliseconds": 1153,
+        "frames": 10,
+        "observedFPS": 8.7,
+        "quality": 1,
+        "note": "Observed headless rendering, not a hardware frame-rate guarantee."
+      }
+    }
+  ],
+  "dependencies": {
+    "three": {
+      "version": "0.186.1",
+      "localDependencyLocation": "F:\\OCVdeps\\pnpm\\virtual-store\\omnicivitas\\three@0.186.1\\node_modules\\three"
+    },
+    "gsap": {
+      "version": "3.15.0",
+      "localDependencyLocation": "F:\\OCVdeps\\pnpm\\virtual-store\\omnicivitas\\gsap@3.15.0\\node_modules\\gsap"
+    }
+  },
+  "core": [
+    {
+      "service": "edge",
+      "health": "healthy",
+      "limitMiB": 64,
+      "image": "sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94"
+    },
+    {
+      "service": "gateway",
+      "health": "healthy",
+      "limitMiB": 512,
+      "image": "sha256:08562b2af6d5245c7e4ebc2fd31fa7aee62a44ef80e20331faba650b575e1c0b"
+    },
+    {
+      "service": "next",
+      "health": "healthy",
+      "limitMiB": 512,
+      "image": "sha256:2d18bf4ec5bdb253ae8a060507b9a845e0f150a959b9a14ef2985d8672fcb84b"
+    },
+    {
+      "service": "portal",
+      "health": "healthy",
+      "limitMiB": 128,
+      "image": "sha256:136c1bb9eecb41523e61a50bb6b60b7f29aa560578e08602f712f8b5341097ca"
+    },
+    {
+      "service": "postgres",
+      "health": "healthy",
+      "limitMiB": 384,
+      "image": "sha256:ef257d85f76e48da1c64832459b59fcaba1a4dac97bf5d7450c77753542eee94"
+    },
+    {
+      "service": "redis",
+      "health": "healthy",
+      "limitMiB": 128,
+      "image": "sha256:02419de7eddf55aa5bcf49efb74e88fa8d931b4d77c07eff8a6b2144472b6952"
+    }
+  ],
+  "totalCapsMiB": 1728,
+  "builderStopped": true,
+  "builderCapMiB": 3072,
+  "memory": {
+    "sampledAt": "2026-10-02T13:17:52.1800465Z",
+    "group": "reactor-maze-delivery",
+    "totalWorkingSetMiB": 3806.4,
+    "processes": [
+      {
+        "name": "com.docker.backend",
+        "id": 6028,
+        "workingSetMiB": 224.1
+      },
+      {
+        "name": "com.docker.backend",
+        "id": 21520,
+        "workingSetMiB": 46
+      },
+      {
+        "name": "com.docker.build",
+        "id": 23840,
+        "workingSetMiB": 39.3
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 2276,
+        "workingSetMiB": 5.7
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 3956,
+        "workingSetMiB": 65.6
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 11788,
+        "workingSetMiB": 26.3
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 13080,
+        "workingSetMiB": 101.4
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 23924,
+        "workingSetMiB": 132.6
+      },
+      {
+        "name": "docker-agent",
+        "id": 23856,
+        "workingSetMiB": 44.7
+      },
+      {
+        "name": "vmmemWSL",
+        "id": 11784,
+        "workingSetMiB": 3120.7
+      }
+    ],
+    "note": "Observed Windows working sets; file cache included, shared pages can be counted twice, not a long-term peak guarantee."
+  },
+  "previousOpticalUI": "Still mounted and rendered in the current page; new layer composited above it",
+  "earlierMemeUI": "Retained dormant, not republished",
+  "references": "docs/EFFECT-SOURCES.md",
+  "report": "docs/REACTOR-REVISION.md",
+  "handoff": "docs/HANDOFF.md",
+  "publicReleaseAudit": "Pending independent phase 9 audit"
+}

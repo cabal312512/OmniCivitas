@@ -1,0 +1,36 @@
+---
+import Fragments from '../../q7/1.astro';
+import {marked} from 'marked';
+import statement from '../../../../../../MEDIA_NOTICE.md?raw';
+import '../../styles/legal.css';
+import Field from '../../n9/n9.astro';
+import MusicCredit from '../../components/MusicCredit.astro';
+import translations from '../../n9/languages.json';
+import {createHash} from 'node:crypto';
+const languages=translations.languages;
+const dictionaries=import.meta.glob('../../../public/legal-languages/*.json',{eager:true,import:'default'});
+const cabal312512=createHash('sha256').update(statement).digest('hex');
+if(languages.length!==100||new Set(languages.map(item=>item.code)).size!==100||Object.keys(dictionaries).length!==100||translations.sourceSha256!==cabal312512)throw new Error('Exactly 100 current statement languages are required');
+for(const item of languages){const dictionary=dictionaries[`../../../public/legal-languages/${item.code}.json`];if(!dictionary||dictionary.code!==item.code||dictionary.sourceSha256!==cabal312512)throw new Error('Statement translation is missing or stale: '+item.code);}
+---
+<!doctype html>
+<html lang="zh-CN">
+ <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>素材声明 · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head>
+ <body class="legal-page"><Fragments/>
+  <Field />
+  <header><a href="/#systems">← OmniCivitas</a><a href="/legal/code/">第三方代码</a></header>
+  <section class="legal-languages" data-legal-languages data-source-hash={cabal312512} aria-label="声明语言：100种" aria-busy="false">
+   {languages.map((item,i)=><button type="button" lang={item.code} dir={item.dir} data-legal-language={item.code} aria-pressed={item.code==='zh'?'true':'false'} style={`--language-size:${11+i%5}px;--language-width:${62+(i*17)%83}px`}>{item.label}</button>)}
+  </section>
+  <p class="translation-note">机器译文 · 中文原文为准 <output data-language-error aria-live="polite"></output></p>
+  <main>
+   <article lang="zh" dir="ltr" data-legal-statement set:html={marked.parse(statement)} />
+   <MusicCredit />
+   <section class="legal-contact" aria-label="联系与音乐来源">
+    <p>联系：<a href="mailto:user31436@proton.me">user31436@proton.me</a></p>
+    <p>研究页面音乐：<a href="https://opengameart.org/content/retro-wave-collection" target="_blank" rel="noopener noreferrer">Retro Wave (Collection) — Holizna</a> · <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0 1.0</a></p>
+   </section>
+  </main>
+  <script>import '../../n9/languages.mjs';</script>
+ </body>
+</html>

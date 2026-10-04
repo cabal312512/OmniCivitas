@@ -1,0 +1,449 @@
+继续推进现有项目的第二阶段。第一阶段结果和代码都已完成并保留，不要重做，也不要为了得到正结果而修改第一阶段结论。
+
+第二阶段的目标不是“补一个显著结果”，而是顺着第一阶段暴露出的真正问题继续研究：
+
+1. outcome-dependent feedback 是否真的能产生超越普通 temporal correlation 的 packing benefit？
+2. policy 41 的 coverage advantage 与 anisotropy 在大系统极限下分别会怎样？
+3. stochastic finite-state controller 在什么条件下会产生或避免 controller-induced deadlock？
+
+你有研究自主权。下面是优先方向，不是死板 checklist。若实验出现更重要的现象，可以调整路线，但必须保持研究核心：**极少量历史反馈如何影响不可逆随机堆积。**
+
+---
+
+## 1. 先研究 stochastic one-bit feedback
+
+不要直接跳到 2-bit 百万策略。
+
+定义一个最简单的随机反馈控制器：
+
+\[
+\alpha=P(\text{flip orientation}\mid success)
+\]
+
+\[
+\beta=P(\text{flip orientation}\mid failure)
+\]
+
+其中：
+
+\[
+(\alpha,\beta)\in[0,1]^2
+\]
+
+初始 H/V 公平随机，candidate position 仍均匀随机。控制器仍然不能看到 lattice、coverage、位置、合法 placement 数等任何空间信息，只能知道成功或失败。
+
+这个二维 family 包含第一阶段的重要特殊情况：
+
+- \((0,1)\)：policy 41 型；
+- \((1,0)\)：success 后 flip、failure 后保持的高 deadlock 类型；
+- \((1,1)\)：严格 alternation；
+- \((0.5,0.5)\)：fair i.i.d.-like orientation；
+- \((0,0)\)：保持初始方向。
+
+尤其注意：
+
+\[
+\alpha=\beta
+\]
+
+时，orientation transition 与 success/failure 无关，因此这是天然的 **outcome-independent temporal null family**。
+
+真正有意义的问题不是：
+
+“某个 feedback point 是否超过 fair random？”
+
+而是：
+
+> **在相似 temporal persistence / anisotropy 条件下，outcome dependence 本身是否带来额外收益？**
+
+---
+
+## 2. 建立完整的 \((\alpha,\beta)\) landscape
+
+先做粗网格探索，例如步长 0.05，再针对有趣区域局部加密。
+
+至少测：
+
+- terminal coverage；
+- run-wise \(|S|\)；
+- deadlock / geometric-jam probability；
+- orientation run length / switching statistics；
+- attempts or failures per accepted rod。
+
+优先画：
+
+- coverage heatmap；
+- anisotropy heatmap；
+- kinetic-cost heatmap；
+- coverage–anisotropy Pareto frontier。
+
+特别关注：
+
+\[
+\alpha\approx0,\quad \beta\approx1
+\]
+
+附近。
+
+一个很自然但未经证明的假设是：
+
+policy 41 的思想可能是有用的——失败时换方向，成功时倾向继续——但 \(\alpha=0\) 太 persistent。
+
+因此重点检查：
+
+> **小而非零的 \(\alpha\)，是否可以保留 failure-responsive advantage，同时显著减少 anisotropy？**
+
+例如可以重点探索：
+
+\[
+\alpha\in[0,0.3],\qquad
+\beta\in[0.6,1]
+\]
+
+但不要只搜这一块。
+
+如果数据否定这个假设，接受结果。
+
+---
+
+## 3. 比较 feedback frontier 和 temporal-null frontier
+
+不要继续把 \(|S|<0.1\) 当成唯一判断标准。
+
+把完整 trade-off 留下来。
+
+核心比较应是：
+
+> 是否存在 \(\alpha\neq\beta\) 的 feedback controller，在相同或更低 anisotropy 下，coverage 高于所有合理的 outcome-independent temporal controllers？
+
+至少与：
+
+\[
+\alpha=\beta
+\]
+
+整条 null line 比较。
+
+如果出现强 candidate，再考虑构造 persistence-matched null，例如匹配：
+
+- switch rate；
+- lag-1 orientation correlation；
+- run-length distribution。
+
+这样才能区分：
+
+**真正的 outcome feedback benefit**
+
+和
+
+**单纯 temporal persistence benefit**。
+
+---
+
+## 4. 单独追 policy 41 的大系统极限
+
+这是第二阶段必须解决的问题。
+
+第一阶段数据显示 policy 41 的 \(|S|\) 随 \(L\) 增大明显下降，但目前不足以判断：
+
+\[
+\lim_{L\to\infty}|S|=0
+\]
+
+还是收敛到非零值。
+
+同时也不知道：
+
+\[
+\Delta\theta(L)
+\]
+
+最终趋近 0、正常数，还是发生反转。
+
+优先研究：
+
+\[
+k=4,8
+\]
+
+必要时扩展到：
+
+\[
+k=6,12,16
+\]
+
+系统大小尽量推进到：
+
+\[
+L=128,256,512,1024,2048
+\]
+
+如果性能允许再更大。
+
+不要只看 mean \(|S|\)。
+
+保存并分析：
+
+- signed \(S\) distribution；
+- \(E|S|\)；
+- \(E[S^2]\)；
+- \(E[S^4]\)；
+- quantiles；
+- 是否出现对称双峰。
+
+尤其区分：
+
+### 情形 A
+\(P(S)\) 收缩到 0：支持宏观 isotropy。
+
+### 情形 B
+形成 \(\pm S^\*\) 双峰：ensemble 平均为 0，但 individual realization 仍然 symmetry-broken。
+
+### 情形 C
+有限尺寸 crossover 太慢，目前无法判断。
+
+不要强行宣布 phase transition。
+
+同时对 coverage difference 做 finite-size analysis，判断：
+
+\[
+\Delta\theta(L)\to0
+\]
+
+还是：
+
+\[
+\Delta\theta(L)\to\Delta_\infty>0
+\]
+
+如果真的出现：
+
+\[
+|S|\to0
+\]
+
+同时：
+
+\[
+\Delta\theta\to\text{positive constant}
+\]
+
+这将是第二阶段最重要的结果之一，必须用独立大规模实验确认。
+
+---
+
+## 5. 推广 controller-induced deadlock 理论
+
+第一阶段已经有 deterministic failure-cycle certificate。
+
+现在尝试把它推广到 stochastic finite-state controllers。
+
+把“连续失败时的 controller dynamics”表示成有限 Markov chain / support graph。
+
+研究：
+
+> 一个 controller 在什么条件下能够保证，只要某个 orientation 仍存在合法 placement，它最终就会以正概率并 almost surely 尝试到它？
+
+尝试得到：
+
+- sufficient condition；
+- necessary condition；
+- 最好是 necessary-and-sufficient liveness criterion。
+
+重点检查 recurrent class / bottom SCC 的 action support。
+
+一个可能的方向是：
+
+> 每个 reachable recurrent failure class 是否都必须持续支持所有可能需要的 orientations？
+
+不要预设这个命题正确，正式证明或找反例。
+
+---
+
+## 6. 对 \((\alpha,\beta)\) family 尽量得到解析结果
+
+特别研究：
+
+当 failure 后有非零 flip probability 时，controller-induced deadlock 是否会 almost surely 消失。
+
+例如若：
+
+\[
+\beta>0
+\]
+
+且当前方向已经没有任何 legal placement，但另一方向仍然存在 legal placement，那么是否可以证明 controller 最终 almost surely 切换并恢复 deposition？
+
+如果成立，再研究：
+
+\[
+\beta\to0
+\]
+
+时 expected waiting time 是否发散。
+
+这可能形成一个很漂亮的结论：
+
+> **任意小的 stochastic exploration 可以消除严格 deadlock，但代价是可能非常大的 kinetic waiting time。**
+
+如果不成立，找出准确条件。
+
+因此要把：
+
+- terminal performance；
+- liveness；
+- kinetic cost
+
+分开研究。
+
+---
+
+## 7. Exact small-system analysis 尽量继续保留
+
+如果现有 exact solver 容易扩展，优先支持 rational：
+
+\[
+\alpha,\beta\in\{0,\tfrac12,1,\ldots\}
+\]
+
+的小系统精确计算。
+
+用于验证：
+
+- terminal coverage；
+- deadlock probability；
+- orientation statistics；
+- Monte Carlo correctness。
+
+不要让 Stage II 退化成纯参数扫描。
+
+---
+
+## 8. Exploration 与 confirmation 必须分开
+
+二维网格可以自由探索。
+
+但如果找到“最佳”或特别有趣的 controller：
+
+先冻结：
+
+- candidate；
+- baseline；
+- \(L,k\)；
+- primary outcome；
+- statistical test；
+- multiplicity correction；
+- new seed block。
+
+然后才运行独立 confirmation。
+
+不要在 exploratory grid 上挑最高点后直接报告 naive p-value。
+
+主要报告：
+
+- effect size；
+- confidence interval；
+- finite-size stability；
+- mechanism。
+
+显著性只是辅助。
+
+---
+
+## 9. 什么时候才进入 2-bit
+
+不要立即暴力跑 1,048,576 个 2-bit controllers。
+
+只有以下情况之一出现时才进入：
+
+### A
+整个 stochastic one-bit family 都无法突破 constrained temporal-null frontier。
+
+则研究：
+
+> **Is one bit fundamentally insufficient?**
+
+### B
+one-bit 找到了明确有效机制。
+
+则研究：
+
+> **Does additional memory enlarge the Pareto frontier?**
+
+### C
+liveness theory 表明某种理想行为至少需要更多内部状态。
+
+如果进入 2-bit，应先做：
+
+- unreachable-state reduction；
+- automaton minimization；
+- state relabel symmetry；
+- H/V symmetry；
+- liveness filtering；
+- small-system screening。
+
+不要纯暴力到底。
+
+---
+
+## 10. 主动追意外现象
+
+特别关注：
+
+- non-monotonicity；
+- bimodal \(S\) distribution；
+- spontaneous orientation selection；
+- sharp crossover；
+- oscillatory switching；
+- rare deadlock；
+- metastability；
+- anomalous run-length distribution；
+- stochastic feedback 比 deterministic feedback 更优；
+- 很小 noise/exploration 导致巨大行为变化。
+
+但任何“相变”“临界点”“thermodynamic advantage”都必须经过 finite-size 验证以后再使用这些词。
+
+---
+
+## 11. 第二阶段成功不等于必须出现正结果
+
+以下任何结果都可以成为有价值的结论：
+
+1. 找到真正低 anisotropy、无 deadlock、且超过 temporal-null frontier 的 feedback controller；
+2. policy 41 在无限尺寸下趋于 isotropic，同时保持 coverage advantage；
+3. policy 41 的优势随尺寸消失，从而解释第一阶段有限尺寸现象；
+4. stochastic one-bit family 整体无法突破 temporal null；
+5. 得到一般 stochastic liveness theorem；
+6. 证明任意小 exploration 消除 deadlock，但 kinetic cost 发散；
+7. 发现新的结构或动力学 regime；
+8. 得到强 negative result，并能解释为什么 one-bit feedback 不够。
+
+不要为了正结果改变问题。
+
+---
+
+## 12. 最终目标
+
+第二阶段最终应该回答三个问题：
+
+### Q1
+Outcome-dependent feedback 是否真的比 outcome-independent temporal correlation 更有控制价值？
+
+### Q2
+第一阶段观察到的 coverage 和 anisotropy，在大系统极限下究竟留下什么？
+
+### Q3
+有限状态 controller 需要满足什么结构，才能避免自己制造 absorbing state？
+
+请直接继续实际研究，不要只回复计划。
+
+优先完成：
+
+1. stochastic \((\alpha,\beta)\) controller；
+2. coarse landscape；
+3. policy 41 large-\(L\) scaling；
+4. stochastic liveness theory；
+
+然后根据真实结果决定后续路线。
+
+如果发现比这些更有价值的现象，可以主动转向，但保持科学问题简单、证据严格、结论克制，并让数据决定研究故事。

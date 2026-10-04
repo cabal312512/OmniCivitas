@@ -1,0 +1,4 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';
+const ui='config/apps/portal/src/report/index.astro',code='config/apps/portal/src/report/report.js';
+let s=fs.readFileSync(ui,'utf8');assert.ok(s.includes('id="old-finish"'));s=s.replace('<button id="old-finish">','<nav><button id="old-previous">上一步</button><output id="old-step">1</output><button id="old-next">下一步</button></nav><button id="old-finish">');fs.writeFileSync(ui,s);
+s=fs.readFileSync(code,'utf8');s=s.replace("if(floor==='old')click('#old-finish',()=>text('#old-result','成功：旧版已完成'));", "if(floor==='old'){let step=1;click('#old-previous',()=>text('#old-step',step=Math.max(1,step-1)));click('#old-next',()=>text('#old-step',step=Math.min(3,step+1)));click('#old-finish',()=>text('#old-result','成功：旧版已完成'));}");fs.writeFileSync(code,s);

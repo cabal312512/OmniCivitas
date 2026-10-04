@@ -1,0 +1,66 @@
+{
+  "verifiedAtUTC": "2026-10-04T04:19:47.087Z",
+  "mainTerminalRuns": 284040,
+  "records": [
+    {
+      "name": "coarse",
+      "runs": 209928,
+      "groups": 17494,
+      "planSha256": "73ddfc20ece409f1b54218f0f8724efc907c2ba46a7dc928b5f1d256c85502de",
+      "rawSha256": "6b9ea6ff994460da185a7728db4019372526c772c0852df446c57f1080dade7c",
+      "missingOptionalFields": [
+        "iid-reference:final_state",
+        "iid-reference:orientation_exchange"
+      ],
+      "status": "Every run checked against locked/planned seeds, conservation, geometry, objective definitions and raw seal"
+    },
+    {
+      "name": "middle",
+      "runs": 38784,
+      "groups": 606,
+      "planSha256": "142b040f2d068d46ae832bd3b34dc9f02597840c93128b87351b7357ed3f13a5",
+      "rawSha256": "ea0e31458b8632494e47b91c5a3c81cdf84d621c10db1d11e62fd1750d43ba9e",
+      "missingOptionalFields": [
+        "iid-reference:final_state",
+        "iid-reference:orientation_exchange"
+      ],
+      "status": "Every run checked against locked/planned seeds, conservation, geometry, objective definitions and raw seal"
+    },
+    {
+      "name": "confirmation",
+      "runs": 35328,
+      "groups": 46,
+      "planSha256": "0cf01b37344db6d4bc5a2e03c4b8f56851a732e669e8144baef4fd2a1687b266",
+      "rawSha256": "38286fca3dee2c4dc01918350ced214f9f3390236497b3c0d48c5ddbbfa8731d",
+      "missingOptionalFields": [
+        "iid-reference:final_state",
+        "iid-reference:orientation_exchange"
+      ],
+      "status": "Every run checked against locked/planned seeds, conservation, geometry, objective definitions and raw seal"
+    }
+  ],
+  "preservation": {
+    "verifiedAtUTC": "2026-10-04T04:19:47.892Z",
+    "groups": [
+      {
+        "name": "Stage I",
+        "files": 165,
+        "manifestSha256": "7d676ec02885ac56e9530b9e524c62659423b75242f412d8e5c47b766ad5c06c",
+        "failures": []
+      },
+      {
+        "name": "Stage II",
+        "files": 368,
+        "manifestSha256": "32a608f0422bb05733b4a7971a922fcca3a2e9aea3ff681fcaef3e17f3ea43f3",
+        "failures": []
+      },
+      {
+        "name": "Website frozen9",
+        "files": 52,
+        "manifestSha256": "1875d64d492124257579e5d262e4f11edfcf6e625a37d75f7f37c40445820032",
+        "failures": []
+      }
+    ]
+  },
+  "note": "Blank optional IID orientation-failure/state fields are unavailable in the read-only wrapper; no blank count is treated as a measured zero. All objectives use available accepted/attempt counts."
+}

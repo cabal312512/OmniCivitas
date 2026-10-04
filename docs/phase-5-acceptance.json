@@ -1,0 +1,5437 @@
+{
+  "phase": 5,
+  "status": "complete",
+  "revision": "phase-5-tools",
+  "acceptedAt": "2026-10-02T17:14:42.127Z",
+  "nextPhaseAuthorized": false,
+  "previousAcceptance": "docs/interaction-acceptance.json",
+  "requirementCount": 35,
+  "requirements": [
+    {
+      "id": "B026",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 450,
+      "text": "Base64 编解码。认真实现，使用浏览器原生 API。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/发错货的文本部/发票抬头没填.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-base64.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-base64.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors native Base64 handles Unicode, BOM, newlines and input above apply limits",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors Base64 rejects malformed alphabet/padding, noncanonical bits, bad UTF-8 and lone surrogates"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "base64",
+        "url": "/functions/base64/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors native Base64 handles Unicode, BOM, newlines and input above apply limits",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors Base64 rejects malformed alphabet/padding, noncanonical bits, bad UTF-8 and lone surrogates",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B026 base64 actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B026 base64 actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B027",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 451,
+      "text": "JSON 格式化和校验。认真实现，JSON.parse()＋格式化即可。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/发错货的文本部/发票抬头没填.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-json.json",
+        "runtime/reports/phase5-final/phase5-desktop-routes.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-json.json",
+        "runtime/reports/phase5-final/phase5-mobile-routes.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors JSON parser validates actual syntax and exports parse-equivalent JSON",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors JSON rejects nonfinite and unsafe integer values instead of exporting null or altered digits"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "json",
+        "url": "/functions/json/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors JSON parser validates actual syntax and exports parse-equivalent JSON",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors JSON rejects nonfinite and unsafe integer values instead of exporting null or altered digits",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B027 json actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B027 json actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "routes"
+        ],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B028",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 452,
+      "text": "XML 格式化。不自己写完整 XML formatter；用现成轻量包，如果不想增加实现量，可以只做缩进演示，对格式不正确的 XML 返回“文明无法理解该结构”。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/发错货的文本部/发票抬头没填.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-xml.json",
+        "runtime/reports/phase5-final/phase5-desktop-xml-markdown.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-xml.json",
+        "runtime/reports/phase5-final/phase5-mobile-xml-markdown.json"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "xml",
+        "url": "/functions/xml/",
+        "unitChecks": [],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B028 xml actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B028 xml actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "xml-markdown"
+        ],
+        "note": "This browser-native operation is verified in real desktop/mobile browsers, not falsely attributed to DOM-less unit tests."
+      }
+    },
+    {
+      "id": "B029",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 453,
+      "text": "正则表达式测试器。认真实现基础版本，只支持 JavaScript RegExp。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js",
+        "apps/portal/src/客服转网管_没移交/正则先去隔壁.mjs",
+        "apps/portal/src/客服转网管_没移交/工位隔离.worker.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-regex.json",
+        "runtime/reports/phase5-final/phase5-desktop-regex-isolation.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-regex.json",
+        "runtime/reports/phase5-final/phase5-mobile-regex-isolation.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: JavaScript RegExp returns exact matches, offsets, groups and indices",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: empty Unicode matches progress by code point and oversized work is rejected",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: regex caller cancels and terminates its Worker instead of executing on the UI thread"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "regex",
+        "url": "/functions/regex/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "JavaScript RegExp returns exact matches, offsets, groups and indices",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "empty Unicode matches progress by code point and oversized work is rejected",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "regex caller cancels and terminates its Worker instead of executing on the UI thread",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B029 regex actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B029 regex actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "regex-isolation"
+        ],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B030",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 454,
+      "text": "UUID 生成器。直接调用 crypto.randomUUID()，但代码旁边依然可以保留 uuid、Nano ID 等无谓依赖。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-uuid.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-uuid.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: descriptor UUID calls native randomUUID and validates output quantity"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "uuid",
+        "url": "/functions/uuid/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "descriptor UUID calls native randomUUID and validates output quantity",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B030 uuid actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B030 uuid actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B031",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 455,
+      "text": "随机数生成器。认真实现。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-random.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-random.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: uniform integer sampling rejects modulo bias and supports the entire safe-integer range"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "random",
+        "url": "/functions/random/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "uniform integer sampling rejects modulo bias and supports the entire safe-integer range",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B031 random actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B031 random actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B032",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 456,
+      "text": "哈希计算工具。只支持 SHA-256，直接调用 Web Crypto API。不实现一大堆算法。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-hash.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-hash.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: SHA-256 hashes exact UTF-8 bytes, empty text, Unicode and local small files"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "hash",
+        "url": "/functions/hash/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "SHA-256 hashes exact UTF-8 bytes, empty text, Unicode and local small files",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B032 hash actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B032 hash actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B033",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 457,
+      "text": "时间戳转换工具。认真实现。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/运费其实是计算器/报价单_final2.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-timestamp.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-timestamp.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: timestamp zero, pre-epoch, fractional seconds and explicit precision",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: ISO parsing verifies actual calendar and does not inherit host timezone"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "timestamp",
+        "url": "/functions/timestamp/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "timestamp zero, pre-epoch, fractional seconds and explicit precision",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "ISO parsing verifies actual calendar and does not inherit host timezone",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B033 timestamp actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B033 timestamp actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B034",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 458,
+      "text": "时区转换工具可以简化成几个固定常见时区，不制作全球城市数据库。使用 Intl.DateTimeFormat()。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/运费其实是计算器/报价单_final2.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-time-zone.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-time-zone.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: fixed IANA zones use actual Intl DST transitions, including repeated hour"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "time-zone",
+        "url": "/functions/time-zone/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "fixed IANA zones use actual Intl DST transitions, including repeated hour",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B034 time-zone actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B034 time-zone actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B035",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 459,
+      "text": "单位换算工具只支持长度、重量、温度、面积几个基础分类，不做上百种单位。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/运费其实是计算器/报价单_final2.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-convert.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-convert.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: bounded unit categories calculate actual ratios and affine temperature"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "convert",
+        "url": "/functions/convert/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "bounded unit categories calculate actual ratios and affine temperature",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B035 convert actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B035 convert actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B036",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 460,
+      "text": "简单计算器认真实现。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/运费其实是计算器/报价单_final2.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-calculator.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-calculator.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: Math.js basic expression precedence, negatives and remainder",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: expression surface rejects side effects, property access and allocation syntax"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "calculator",
+        "url": "/functions/calculator/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "Math.js basic expression precedence, negatives and remainder",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "expression surface rejects side effects, property access and allocation syntax",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B036 calculator actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B036 calculator actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B037",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 461,
+      "text": "科学计算器直接使用 Math.js，不自己写表达式解析器。界面可以有一大堆按钮，但实际支持常用函数即可。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/运费其实是计算器/报价单_final2.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-scientific.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-scientific.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: Math.js scientific functions use radians and scalar domains",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: expression surface rejects side effects, property access and allocation syntax"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "scientific",
+        "url": "/functions/scientific/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "Math.js scientific functions use radians and scalar domains",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "expression surface rejects side effects, property access and allocation syntax",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B037 scientific actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B037 scientific actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B038",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 462,
+      "text": "矩阵计算器可以降级，只支持 2×2 和 3×3 的加减、行列式，或者直接调用 Math.js。不要做任意维度完整矩阵系统。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/运费其实是计算器/报价单_final2.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-matrix.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-matrix.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: 2×2/3×3 matrix operations, determinant and exported TSV are actual",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: matrix limits reject ragged/nonsquare/nonfinite or mismatched data"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "matrix",
+        "url": "/functions/matrix/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "2×2/3×3 matrix operations, determinant and exported TSV are actual",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "matrix limits reject ragged/nonsquare/nonfinite or mismatched data",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B038 matrix actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B038 matrix actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B039",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 463,
+      "text": "进制转换器。认真实现二、八、十、十六进制即可。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/运费其实是计算器/报价单_final2.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-radix.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-radix.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: BigInt conversion preserves integers beyond Number precision and signs",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: base validators reject digits, decimals, prefixes and excess lengths"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "radix",
+        "url": "/functions/radix/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "BigInt conversion preserves integers beyond Number precision and signs",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "base validators reject digits, decimals, prefixes and excess lengths",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B039 radix actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B039 radix actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B040",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 464,
+      "text": "文本字数统计。认真实现。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/发错货的文本部/发票抬头没填.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-text.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-text.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors Unicode counts distinguish graphemes, code points, bytes and CRLF line boundaries"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "text",
+        "url": "/functions/text/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors Unicode counts distinguish graphemes, code points, bytes and CRLF line boundaries",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B040 text actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B040 text actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B041",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 465,
+      "text": "文本去重。按行去重即可。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/发错货的文本部/发票抬头没填.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-text-dedupe.json",
+        "runtime/reports/phase5-final/phase5-desktop-copy-export-privacy.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-text-dedupe.json",
+        "runtime/reports/phase5-final/phase5-mobile-copy-export-privacy.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors line dedupe preserves the first exact value, whitespace, casing and final blank row"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "text-dedupe",
+        "url": "/functions/text-dedupe/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors line dedupe preserves the first exact value, whitespace, casing and final blank row",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B041 text-dedupe actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B041 text-dedupe actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "copy-export-privacy"
+        ],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B042",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 466,
+      "text": "文本排序。按行字典序、长度两种即可。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/发错货的文本部/发票抬头没填.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-text-sort.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-text-sort.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors line sorts are deterministic and code-point length counts emoji once"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "text-sort",
+        "url": "/functions/text-sort/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors line sorts are deterministic and code-point length counts emoji once",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B042 text-sort actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B042 text-sort actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B043",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 467,
+      "text": "大小写转换。认真实现。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/发错货的文本部/发票抬头没填.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-text-case.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-text-case.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors case conversion uses Unicode casing without rewriting punctuation"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "text-case",
+        "url": "/functions/text-case/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors case conversion uses Unicode casing without rewriting punctuation",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B043 text-case actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B043 text-case actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B044",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 468,
+      "text": "Markdown 预览器直接调用现成 Markdown 包，不自己造 parser。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/发错货的文本部/发票抬头没填.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-markdown.json",
+        "runtime/reports/phase5-final/phase5-desktop-xml-markdown.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-markdown.json",
+        "runtime/reports/phase5-final/phase5-mobile-xml-markdown.json"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "markdown",
+        "url": "/functions/markdown/",
+        "unitChecks": [],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B044 markdown actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B044 markdown actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "xml-markdown"
+        ],
+        "note": "This browser-native operation is verified in real desktop/mobile browsers, not falsely attributed to DOM-less unit tests."
+      }
+    },
+    {
+      "id": "B045",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 469,
+      "text": "CSV 查看器只做简单 CSV 文件读取和表格展示。复杂引号、换行边界交给现成 CSV parser。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/发错货的文本部/发票抬头没填.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-csv.json",
+        "runtime/reports/phase5-final/phase5-desktop-csv.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-csv.json",
+        "runtime/reports/phase5-final/phase5-mobile-csv.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors PapaParse preserves BOM, quoted comma/newline/quote, empty cell and formula as data",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors CSV optional file takes precedence, honors cancellation and refuses malformed/oversized input",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors CSV files reject broken UTF-8 instead of silently replacing bytes, while preserving valid BOM/Unicode",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors CSV rejects row/column overflows instead of silently exporting a preview"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "csv",
+        "url": "/functions/csv/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors PapaParse preserves BOM, quoted comma/newline/quote, empty cell and formula as data",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors CSV optional file takes precedence, honors cancellation and refuses malformed/oversized input",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors CSV files reject broken UTF-8 instead of silently replacing bytes, while preserving valid BOM/Unicode",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors CSV rejects row/column overflows instead of silently exporting a preview",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B045 csv actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B045 csv actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "csv"
+        ],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B046",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 470,
+      "text": "颜色格式转换只实现 HEX、RGB、HSL 常见情况，或者用小库完成。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/运费其实是计算器/报价单_final2.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-color.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-color.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: HEX/RGB/HSL colors cover common formats, gray and hue wrapping",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: RGB → HSL → RGB round trips real channels across color cube",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: color input rejects channel overflow, unsupported alpha and malformed CSS"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "color",
+        "url": "/functions/color/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "HEX/RGB/HSL colors cover common formats, gray and hue wrapping",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "RGB → HSL → RGB round trips real channels across color cube",
+            "status": "passed"
+          },
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "color input rejects channel overflow, unsupported alpha and malformed CSS",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B046 color actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B046 color actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B047",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 471,
+      "text": "随机密码生成器，这里只是随机字符串生成器，不涉及真实账户系统。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-password.json",
+        "runtime/reports/phase5-final/phase5-desktop-copy-export-privacy.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-password.json",
+        "runtime/reports/phase5-final/phase5-mobile-copy-export-privacy.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: random strings enforce selected categories and bounded sizes without account state"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "password",
+        "url": "/functions/password/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "random strings enforce selected categories and bounded sizes without account state",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B047 password actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B047 password actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "copy-export-privacy"
+        ],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B048",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 472,
+      "text": "文件校验和计算只支持较小文件和 SHA-256，使用浏览器 Web Crypto；大文件直接提示“大型文件请等待下一代文明”。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-file-checksum.json",
+        "runtime/reports/phase5-final/phase5-desktop-checksum.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-file-checksum.json",
+        "runtime/reports/phase5-final/phase5-mobile-checksum.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: SHA-256 hashes exact UTF-8 bytes, empty text, Unicode and local small files"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "file-checksum",
+        "url": "/functions/file-checksum/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "SHA-256 hashes exact UTF-8 bytes, empty text, Unicode and local small files",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B048 file-checksum actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B048 file-checksum actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "checksum"
+        ],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B059",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 483,
+      "text": "ASCII 艺术生成器。简单版本就行，可以做文字字符画，不需要图片转超复杂 ASCII。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/发错货的文本部/发票抬头没填.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-ascii.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-ascii.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors ASCII lettering draws actual small glyphs with configurable ASCII ink"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "ascii",
+        "url": "/functions/ascii/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors ASCII lettering draws actual small glyphs with configurable ASCII ink",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B059 ascii actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B059 ascii actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B060",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 484,
+      "text": "摩斯电码转换器。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/发错货的文本部/发票抬头没填.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-morse.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-morse.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-text.test.mjs :: phase 5 text/data tools: real conversions and bounded errors Morse implements known international code, punctuation, word breaks and honest errors"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "morse",
+        "url": "/functions/morse/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-text.test.mjs",
+            "title": "phase 5 text/data tools: real conversions and bounded errors Morse implements known international code, punctuation, word breaks and honest errors",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B060 morse actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B060 morse actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B061",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 485,
+      "text": "罗马数字转换器。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/运费其实是计算器/报价单_final2.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-roman.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-roman.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: Roman conversion is canonical and exhaustive for supported integers"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "roman",
+        "url": "/functions/roman/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "Roman conversion is canonical and exhaustive for supported integers",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B061 roman actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B061 roman actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B062",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 486,
+      "text": "Unix 权限计算器。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/运费其实是计算器/报价单_final2.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-permissions.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-permissions.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-calculation.test.mjs :: Unix permission bits, setuid/setgid/sticky and exhaustive mode round trip"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "permissions",
+        "url": "/functions/permissions/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-calculation.test.mjs",
+            "title": "Unix permission bits, setuid/setgid/sticky and exhaustive mode round trip",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B062 permissions actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B062 permissions actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B063",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 487,
+      "text": "HTTP 状态码查询。直接内置一个 JSON 对照表。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js",
+        "apps/portal/src/客服转网管_没移交/状态码没联网.json"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-http-status.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-http-status.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: common HTTP/MIME tables return registered labels and common extension mappings"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "http-status",
+        "url": "/functions/http-status/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "common HTTP/MIME tables return registered labels and common extension mappings",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B063 http-status actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B063 http-status actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B064",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 488,
+      "text": "MIME 类型查询。只内置几十种常见类型，不引入完整庞大数据库也可以。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js",
+        "apps/portal/src/客服转网管_没移交/文件后缀不是鉴定书.json"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-mime.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-mime.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: common HTTP/MIME tables return registered labels and common extension mappings"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "mime",
+        "url": "/functions/mime/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "common HTTP/MIME tables return registered labels and common extension mappings",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B064 mime actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B064 mime actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B065",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 489,
+      "text": "键盘按键检测器。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-keyboard.json",
+        "runtime/reports/phase5-final/phase5-desktop-live-and-ping.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-keyboard.json",
+        "runtime/reports/phase5-final/phase5-mobile-live-and-ping.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: live detector helpers report actual event and viewport fields"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "keyboard",
+        "url": "/functions/keyboard/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "live detector helpers report actual event and viewport fields",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B065 keyboard actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B065 keyboard actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "live-and-ping"
+        ],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B066",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 490,
+      "text": "屏幕尺寸检测器。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-screen.json",
+        "runtime/reports/phase5-final/phase5-desktop-live-and-ping.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-screen.json",
+        "runtime/reports/phase5-final/phase5-mobile-live-and-ping.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: live detector helpers report actual event and viewport fields"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "screen",
+        "url": "/functions/screen/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "live detector helpers report actual event and viewport fields",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B066 screen actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B066 screen actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "live-and-ping"
+        ],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B067",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 491,
+      "text": "User-Agent 查看器。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-user-agent.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-user-agent.json"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "user-agent",
+        "url": "/functions/user-agent/",
+        "unitChecks": [],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B067 user-agent actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B067 user-agent actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "This browser-native operation is verified in real desktop/mobile browsers, not falsely attributed to DOM-less unit tests."
+      }
+    },
+    {
+      "id": "B068",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 492,
+      "text": "浏览器能力检查器，一本正经告诉用户“您的设备支持按钮”。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-capabilities.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-capabilities.json"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "capabilities",
+        "url": "/functions/capabilities/",
+        "unitChecks": [],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B068 capabilities actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B068 capabilities actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [],
+        "note": "This browser-native operation is verified in real desktop/mobile browsers, not falsely attributed to DOM-less unit tests."
+      }
+    },
+    {
+      "id": "B069",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 493,
+      "text": "鼠标坐标查看器。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-pointer.json",
+        "runtime/reports/phase5-final/phase5-desktop-live-and-ping.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-pointer.json",
+        "runtime/reports/phase5-final/phase5-mobile-live-and-ping.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: live detector helpers report actual event and viewport fields"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "pointer",
+        "url": "/functions/pointer/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "live detector helpers report actual event and viewport fields",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B069 pointer actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B069 pointer actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "live-and-ping"
+        ],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    },
+    {
+      "id": "B070",
+      "source": "PROJECT_SPEC.txt",
+      "sourceLine": 494,
+      "text": "网络请求耗时测试器。只请求本站自己的一个静态/轻量 ping 接口，不做真正网络测速。",
+      "phase": 5,
+      "status": "verified",
+      "implementation": [
+        "apps/portal/src/客服转网管_没移交/工单状态404.mjs",
+        "apps/portal/src/工具不在货架上/退货窗口.astro",
+        "apps/portal/src/工具不在货架上/收据别寄给服务器.js",
+        "apps/portal/public/tool-ping.json"
+      ],
+      "verification": [
+        "runtime/reports/phase5-final/phase5-desktop-default-ping.json",
+        "runtime/reports/phase5-final/phase5-desktop-live-and-ping.json",
+        "runtime/reports/phase5-final/phase5-mobile-default-ping.json",
+        "runtime/reports/phase5-final/phase5-mobile-live-and-ping.json",
+        "runtime/reports/phase5-unit.json :: tests/phase5-development.test.mjs :: ping only requests the fixed same-origin static resource and propagates cancellation"
+      ],
+      "notes": "",
+      "crossPhaseConstraint": false,
+      "currentPhase5": {
+        "tool": "ping",
+        "url": "/functions/ping/",
+        "unitChecks": [
+          {
+            "file": "tests/phase5-development.test.mjs",
+            "title": "ping only requests the fixed same-origin static resource and propagates cancellation",
+            "status": "passed"
+          }
+        ],
+        "browserChecks": [
+          {
+            "title": "Phase 5 B070 ping actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "desktop",
+            "status": "passed"
+          },
+          {
+            "title": "Phase 5 B070 ping actual form computes its known default",
+            "file": "phase5.spec.mjs",
+            "project": "mobile",
+            "status": "passed"
+          }
+        ],
+        "edgeProofs": [
+          "live-and-ping"
+        ],
+        "note": "Algorithm unit tests and real desktop/mobile form operation both passed."
+      }
+    }
+  ],
+  "browser": {
+    "report": "runtime/reports/phase5-final/phase5-playwright.json",
+    "stats": {
+      "startTime": "2026-10-02T16:59:38.165Z",
+      "duration": 840461.658,
+      "expected": 134,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "count": 134,
+    "phase5Count": 84,
+    "baselineRegressionCount": 50,
+    "checks": [
+      {
+        "title": "Original windows really move, twitch, close and restore without losing functional island state",
+        "file": "interaction.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Teleport evasion uses a genuine 5–30 limit and the next activation closes it; reset permits another round",
+        "file": "interaction.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Continuous evasion keeps varying speed and direction, pauses only for background/reduced motion and resumes after restore",
+        "file": "interaction.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Optical gestures actually turn Three objects, emit a GPU wave, ray-pick geometry and command the light renderer",
+        "file": "interaction.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Exactly two upright small original memes are hidden behind the deep-route button and fetched only on activation",
+        "file": "interaction.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "老吴 opens the original animated GIF large and centered, has no dismiss control and expires after 12 seconds without renewal",
+        "file": "interaction.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Window controls differ and selected panes move and shiver by themselves while the cover stays quiet",
+        "file": "interaction.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "The supplied home meme is in a new small upright frame after entry, with native dragging and closing",
+        "file": "interaction.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Original windows really move, twitch, close and restore without losing functional island state",
+        "file": "interaction.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Teleport evasion uses a genuine 5–30 limit and the next activation closes it; reset permits another round",
+        "file": "interaction.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Continuous evasion keeps varying speed and direction, pauses only for background/reduced motion and resumes after restore",
+        "file": "interaction.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Optical gestures actually turn Three objects, emit a GPU wave, ray-pick geometry and command the light renderer",
+        "file": "interaction.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Exactly two upright small original memes are hidden behind the deep-route button and fetched only on activation",
+        "file": "interaction.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "老吴 opens the original animated GIF large and centered, has no dismiss control and expires after 12 seconds without renewal",
+        "file": "interaction.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Window controls differ and selected panes move and shiver by themselves while the cover stays quiet",
+        "file": "interaction.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "The supplied home meme is in a new small upright frame after entry, with native dragging and closing",
+        "file": "interaction.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Every maze URL is real, directory reaches all 27 pages and home has overlapping cumulative windows",
+        "file": "maze.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Original Vue, Svelte and Solid functions really hydrate inside the new materials and windows can be raised",
+        "file": "maze.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Existing IndexedDB/Cache/SVG/hash sources survive reload and Worker plus JSON export remain correct",
+        "file": "maze.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Lit notifications and real table sorting work, decorative confirmations do not capture essential actions",
+        "file": "maze.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Horizontal and unusually long rooms are intentional, keyboard movement and fixed exit survive reduced motion",
+        "file": "maze.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Every maze URL is real, directory reaches all 27 pages and home has overlapping cumulative windows",
+        "file": "maze.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Original Vue, Svelte and Solid functions really hydrate inside the new materials and windows can be raised",
+        "file": "maze.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Existing IndexedDB/Cache/SVG/hash sources survive reload and Worker plus JSON export remain correct",
+        "file": "maze.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Lit notifications and real table sorting work, decorative confirmations do not capture essential actions",
+        "file": "maze.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Horizontal and unusually long rooms are intentional, keyboard movement and fixed exit survive reduced motion",
+        "file": "maze.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "file": "phase4.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "file": "phase4.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification",
+        "file": "phase4.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "file": "phase4.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Classic home keeps its layers while entries vary, recommendations use name length and overflow stays local",
+        "file": "phase4.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Feature search has real links, odd explanation first, permanent advice, no microphone request and safe query restoration",
+        "file": "phase4.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Three portals are distinct real pages; light version actually transfers the most JS and all its framework islands work",
+        "file": "phase4.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Swapped normal identity pages generate stable fictional occupation, discard originals and never transmit or persist them",
+        "file": "phase4.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Manually retyping the generated pair completes entry, persists only fictional identity, refresh/back and logout work",
+        "file": "phase4.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Temporary card and helpers are absent; inline occupation and manual entry work despite fake verification",
+        "file": "phase4.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Identity works with storage unavailable and reduced motion; disabled JS cannot submit input through native forms",
+        "file": "phase4.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Classic home keeps its layers while entries vary, recommendations use name length and overflow stays local",
+        "file": "phase4.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Feature search has real links, odd explanation first, permanent advice, no microphone request and safe query restoration",
+        "file": "phase4.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Three portals are distinct real pages; light version actually transfers the most JS and all its framework islands work",
+        "file": "phase4.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B026 base64 actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B027 json actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B028 xml actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B040 text actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B041 text-dedupe actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B042 text-sort actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B043 text-case actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B044 markdown actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B045 csv actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B059 ascii actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B060 morse actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B033 timestamp actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B034 time-zone actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B035 convert actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B036 calculator actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B037 scientific actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B038 matrix actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B039 radix actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B046 color actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B061 roman actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B062 permissions actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B029 regex actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B030 uuid actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B031 random actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B032 hash actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B047 password actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B048 file-checksum actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B063 http-status actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B064 mime actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B065 keyboard actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B066 screen actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B067 user-agent actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B068 capabilities actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B069 pointer actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B070 ping actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 all 35 routes and directory exist; portal search opens active JSON instead of a placeholder",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 local file checksum hashes exact bytes, refuses large files before reading and never uploads data",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 CSV uploaded quotes/newlines remain exact cells and real export parses back losslessly",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 XML preserves mixed content and CDATA; Markdown strips executable and remote content",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 catastrophic RegExp times out in a Worker, UI responds, cancel stops work and a valid run recovers",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 live keyboard, pointer and viewport use genuine browser events; ping is one fixed same-origin request",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 copy and download use canonical Unicode text; inputs and generated strings stay out of storage and requests",
+        "file": "phase5.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B026 base64 actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B027 json actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B028 xml actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B040 text actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B041 text-dedupe actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B042 text-sort actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B043 text-case actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B044 markdown actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B045 csv actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B059 ascii actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B060 morse actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B033 timestamp actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B034 time-zone actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B035 convert actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B036 calculator actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B037 scientific actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B038 matrix actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B039 radix actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B046 color actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B061 roman actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B062 permissions actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B029 regex actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B030 uuid actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B031 random actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B032 hash actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B047 password actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B048 file-checksum actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B063 http-status actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B064 mime actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B065 keyboard actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B066 screen actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B067 user-agent actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B068 capabilities actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B069 pointer actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 B070 ping actual form computes its known default",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 all 35 routes and directory exist; portal search opens active JSON instead of a placeholder",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 local file checksum hashes exact bytes, refuses large files before reading and never uploads data",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 CSV uploaded quotes/newlines remain exact cells and real export parses back losslessly",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 XML preserves mixed content and CDATA; Markdown strips executable and remote content",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 catastrophic RegExp times out in a Worker, UI responds, cancel stops work and a valid run recovers",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 live keyboard, pointer and viewport use genuine browser events; ping is one fixed same-origin request",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Phase 5 copy and download use canonical Unicode text; inputs and generated strings stay out of storage and requests",
+        "file": "phase5.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Quiet cover keeps the previous field mounted and the new layer reveals real PBR and bloom after entry",
+        "file": "reactor.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Existing controls command both old and new geometry, pointer moves the new camera and gallery stays usable",
+        "file": "reactor.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "ScrollTrigger actually expands the assembly; hidden pages stop frames and return still works",
+        "file": "reactor.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Reduced motion stays still with both layers present and icon navigation remains operable",
+        "file": "reactor.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "GPU unavailable uses both fallbacks without blocking entry, status or old route redirects",
+        "file": "reactor.spec.mjs",
+        "project": "desktop",
+        "status": "passed"
+      },
+      {
+        "title": "Quiet cover keeps the previous field mounted and the new layer reveals real PBR and bloom after entry",
+        "file": "reactor.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Existing controls command both old and new geometry, pointer moves the new camera and gallery stays usable",
+        "file": "reactor.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "ScrollTrigger actually expands the assembly; hidden pages stop frames and return still works",
+        "file": "reactor.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "Reduced motion stays still with both layers present and icon navigation remains operable",
+        "file": "reactor.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      },
+      {
+        "title": "GPU unavailable uses both fallbacks without blocking entry, status or old route redirects",
+        "file": "reactor.spec.mjs",
+        "project": "mobile",
+        "status": "passed"
+      }
+    ],
+    "proofs": {
+      "desktop": {
+        "defaults": {
+          "base64": {
+            "id": "base64",
+            "requirements": [
+              "B026"
+            ],
+            "diagnostic": {
+              "id": "base64",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "base64",
+              "resultLength": 32
+            },
+            "outputLength": 32,
+            "output": "T21uaUNpdml0YXMg5paH5piOIPCfp6o=",
+            "errors": []
+          },
+          "json": {
+            "id": "json",
+            "requirements": [
+              "B027"
+            ],
+            "diagnostic": {
+              "id": "json",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "json",
+              "resultLength": 27
+            },
+            "outputLength": 27,
+            "output": "{\n  \"文明\": true,\n  \"版本\": 5\n}",
+            "errors": []
+          },
+          "xml": {
+            "id": "xml",
+            "requirements": [
+              "B028"
+            ],
+            "diagnostic": {
+              "id": "xml",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "xml",
+              "resultLength": 67
+            },
+            "outputLength": 67,
+            "output": "<root>\n  <item>文明</item>\n  <item><![CDATA[ x < y ]]></item>\n</root>",
+            "errors": []
+          },
+          "text": {
+            "id": "text",
+            "requirements": [
+              "B040"
+            ],
+            "diagnostic": {
+              "id": "text",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "text",
+              "resultLength": 55
+            },
+            "outputLength": 55,
+            "output": "Unicode 码点\t20\n可见字素（含空白）\t14\n非空白码点\t18\n词\t4\n行\t2\nUTF-8 字节\t50",
+            "errors": []
+          },
+          "text-dedupe": {
+            "id": "text-dedupe",
+            "requirements": [
+              "B041"
+            ],
+            "diagnostic": {
+              "id": "text-dedupe",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "text-dedupe",
+              "resultLength": 10
+            },
+            "outputLength": 10,
+            "output": "alpha\nbeta",
+            "errors": []
+          },
+          "text-sort": {
+            "id": "text-sort",
+            "requirements": [
+              "B042"
+            ],
+            "diagnostic": {
+              "id": "text-sort",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "text-sort",
+              "resultLength": 12
+            },
+            "outputLength": 12,
+            "output": "a\nbeta\ngamma",
+            "errors": []
+          },
+          "text-case": {
+            "id": "text-case",
+            "requirements": [
+              "B043"
+            ],
+            "diagnostic": {
+              "id": "text-case",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "text-case",
+              "resultLength": 17
+            },
+            "outputLength": 17,
+            "output": "HELLO OMNICIVITAS",
+            "errors": []
+          },
+          "markdown": {
+            "id": "markdown",
+            "requirements": [
+              "B044"
+            ],
+            "diagnostic": {
+              "id": "markdown",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "markdown",
+              "resultLength": 41
+            },
+            "outputLength": 41,
+            "output": "# OmniCivitas\n\n**文明** / `const phase = 5`",
+            "errors": []
+          },
+          "csv": {
+            "id": "csv",
+            "requirements": [
+              "B045"
+            ],
+            "diagnostic": {
+              "id": "csv",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "csv",
+              "resultLength": 22
+            },
+            "outputLength": 21,
+            "output": "name,note\n文明,\"逗号,在这里\"",
+            "errors": [],
+            "displayNormalization": {
+              "canonicalFixture": "name,note\r\n文明,\"逗号,在这里\"",
+              "displayedFixture": "name,note\n文明,\"逗号,在这里\"",
+              "canonicalLength": 22,
+              "displayedLength": 21,
+              "rows": [
+                [
+                  "name",
+                  "note"
+                ],
+                [
+                  "文明",
+                  "逗号,在这里"
+                ]
+              ],
+              "scope": "Independent default fixture; this is not a default-download capture. Actual CSV download bytes are checked separately in the csv edge proof."
+            }
+          },
+          "ascii": {
+            "id": "ascii",
+            "requirements": [
+              "B059"
+            ],
+            "diagnostic": {
+              "id": "ascii",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "ascii",
+              "resultLength": 119
+            },
+            "outputLength": 119,
+            "output": " ###  #   # #   # #####\n#   # ## ## ##  #   #  \n#   # # # # # # #   #  \n#   # #   # #  ##   #  \n ###  #   # #   # #####",
+            "errors": []
+          },
+          "morse": {
+            "id": "morse",
+            "requirements": [
+              "B060"
+            ],
+            "diagnostic": {
+              "id": "morse",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "morse",
+              "resultLength": 65
+            },
+            "outputLength": 65,
+            "output": "... --- ... / -.-. .. ...- .. .-.. .. --.. .- - .. --- -. / .....",
+            "errors": []
+          },
+          "timestamp": {
+            "id": "timestamp",
+            "requirements": [
+              "B033"
+            ],
+            "diagnostic": {
+              "id": "timestamp",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "timestamp",
+              "resultLength": 24
+            },
+            "outputLength": 24,
+            "output": "1970-01-01T00:00:00.000Z",
+            "errors": []
+          },
+          "time-zone": {
+            "id": "time-zone",
+            "requirements": [
+              "B034"
+            ],
+            "diagnostic": {
+              "id": "time-zone",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "time-zone",
+              "resultLength": 49
+            },
+            "outputLength": 49,
+            "output": "2024-03-10 15:00:00.000 GMT+08:00 [Asia/Shanghai]",
+            "errors": []
+          },
+          "convert": {
+            "id": "convert",
+            "requirements": [
+              "B035"
+            ],
+            "diagnostic": {
+              "id": "convert",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "convert",
+              "resultLength": 3
+            },
+            "outputLength": 3,
+            "output": "100",
+            "errors": []
+          },
+          "calculator": {
+            "id": "calculator",
+            "requirements": [
+              "B036"
+            ],
+            "diagnostic": {
+              "id": "calculator",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "calculator",
+              "resultLength": 1
+            },
+            "outputLength": 1,
+            "output": "4",
+            "errors": []
+          },
+          "scientific": {
+            "id": "scientific",
+            "requirements": [
+              "B037"
+            ],
+            "diagnostic": {
+              "id": "scientific",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "scientific",
+              "resultLength": 1
+            },
+            "outputLength": 1,
+            "output": "1",
+            "errors": []
+          },
+          "matrix": {
+            "id": "matrix",
+            "requirements": [
+              "B038"
+            ],
+            "diagnostic": {
+              "id": "matrix",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "matrix",
+              "resultLength": 7
+            },
+            "outputLength": 7,
+            "output": "5\t5\n5\t5",
+            "errors": []
+          },
+          "radix": {
+            "id": "radix",
+            "requirements": [
+              "B039"
+            ],
+            "diagnostic": {
+              "id": "radix",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "radix",
+              "resultLength": 14
+            },
+            "outputLength": 14,
+            "output": "20000000000001",
+            "errors": []
+          },
+          "color": {
+            "id": "color",
+            "requirements": [
+              "B046"
+            ],
+            "diagnostic": {
+              "id": "color",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "color",
+              "resultLength": 50
+            },
+            "outputLength": 50,
+            "output": "#0060FF\nrgb(0, 96, 255)\nhsl(217.411765, 100%, 50%)",
+            "errors": []
+          },
+          "roman": {
+            "id": "roman",
+            "requirements": [
+              "B061"
+            ],
+            "diagnostic": {
+              "id": "roman",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "roman",
+              "resultLength": 7
+            },
+            "outputLength": 7,
+            "output": "MCMXCIV",
+            "errors": []
+          },
+          "permissions": {
+            "id": "permissions",
+            "requirements": [
+              "B062"
+            ],
+            "diagnostic": {
+              "id": "permissions",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "permissions",
+              "resultLength": 9
+            },
+            "outputLength": 9,
+            "output": "rwxr-xr-x",
+            "errors": []
+          },
+          "regex": {
+            "id": "regex",
+            "requirements": [
+              "B029"
+            ],
+            "diagnostic": {
+              "id": "regex",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "regex",
+              "resultLength": 629
+            },
+            "outputLength": 629,
+            "output": "{\n  \"source\": \"(?<word>\\\\w+)\",\n  \"flags\": \"g\",\n  \"matches\": [\n    {\n      \"index\": 0,\n      \"value\": \"one\",\n      \"groups\": [\n        \"one\"\n      ],\n      \"namedGroups\": {\n        \"word\": \"one\"\n      }\n    },\n    {\n      \"index\": 4,\n      \"value\": \"two\",\n      \"groups\": [\n        \"two\"\n      ],\n      \"namedGroups\": {\n        \"word\": \"two\"\n      }\n    },\n    {\n      \"index\": 8,\n      \"value\": \"42\",\n      \"groups\": [\n        \"42\"\n      ],\n      \"namedGroups\": {\n        \"word\": \"42\"\n      }\n    }\n  ],\n  \"truncated\": false,\n  \"limits\": {\n    \"text\": 100000,\n    \"pattern\": 2048,\n    \"matches\": 1000,\n    \"output\": 1048576\n  }\n}",
+            "errors": []
+          },
+          "uuid": {
+            "id": "uuid",
+            "requirements": [
+              "B030"
+            ],
+            "diagnostic": {
+              "id": "uuid",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "uuid",
+              "resultLength": 36
+            },
+            "outputLength": 36,
+            "output": "43d8d41b-4ebd-4345-8c27-c9778fe998b6",
+            "errors": []
+          },
+          "random": {
+            "id": "random",
+            "requirements": [
+              "B031"
+            ],
+            "diagnostic": {
+              "id": "random",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "random",
+              "resultLength": 27
+            },
+            "outputLength": 27,
+            "output": "83\n74\n84\n8\n41\n18\n84\n81\n9\n39",
+            "errors": []
+          },
+          "hash": {
+            "id": "hash",
+            "requirements": [
+              "B032"
+            ],
+            "diagnostic": {
+              "id": "hash",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "hash",
+              "resultLength": 64
+            },
+            "outputLength": 64,
+            "output": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+            "errors": []
+          },
+          "password": {
+            "id": "password",
+            "requirements": [
+              "B047"
+            ],
+            "diagnostic": {
+              "id": "password",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "password",
+              "resultLength": 24
+            },
+            "outputLength": 24,
+            "errors": []
+          },
+          "file-checksum": {
+            "id": "file-checksum",
+            "requirements": [
+              "B048"
+            ],
+            "diagnostic": {
+              "id": "file-checksum",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "file-checksum",
+              "resultLength": 64
+            },
+            "outputLength": 64,
+            "output": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+            "errors": []
+          },
+          "http-status": {
+            "id": "http-status",
+            "requirements": [
+              "B063"
+            ],
+            "diagnostic": {
+              "id": "http-status",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "http-status",
+              "resultLength": 20
+            },
+            "outputLength": 20,
+            "output": "状态码\t名称\n404\tNot Found",
+            "errors": []
+          },
+          "mime": {
+            "id": "mime",
+            "requirements": [
+              "B064"
+            ],
+            "diagnostic": {
+              "id": "mime",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "mime",
+              "resultLength": 38
+            },
+            "outputLength": 38,
+            "output": "后缀\tMIME\navif\timage/avif\n按后缀查询，不鉴定文件内容。",
+            "errors": []
+          },
+          "keyboard": {
+            "id": "keyboard",
+            "requirements": [
+              "B065"
+            ],
+            "diagnostic": {
+              "id": "keyboard",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "keyboard",
+              "resultLength": 6
+            },
+            "outputLength": 6,
+            "output": "按一下键盘。",
+            "errors": []
+          },
+          "screen": {
+            "id": "screen",
+            "requirements": [
+              "B066"
+            ],
+            "diagnostic": {
+              "id": "screen",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "screen",
+              "resultLength": 159
+            },
+            "outputLength": 159,
+            "output": "screen\t1440 × 1000 CSS px\navailable\t1440 × 1000 CSS px\nlayout viewport\t1440 × 1000 CSS px\ndevicePixelRatio\t1\nvisual viewport\t1440 × 1000; scale 1\ncolorDepth\t24",
+            "errors": []
+          },
+          "user-agent": {
+            "id": "user-agent",
+            "requirements": [
+              "B067"
+            ],
+            "diagnostic": {
+              "id": "user-agent",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "user-agent",
+              "resultLength": 115
+            },
+            "outputLength": 115,
+            "output": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Safari/537.36",
+            "errors": []
+          },
+          "capabilities": {
+            "id": "capabilities",
+            "requirements": [
+              "B068"
+            ],
+            "diagnostic": {
+              "id": "capabilities",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "capabilities",
+              "resultLength": 194
+            },
+            "outputLength": 194,
+            "output": "您的设备支持按钮\n按钮\t支持\nWeb Crypto SHA-256\t支持\ncrypto.randomUUID\t支持\nWorker\t支持\nWebGL\t支持\nIndexedDB\t支持\nCache Storage\t支持\nClipboard API\t支持\nPointer Events\t支持\nResizeObserver\t支持\nCSS backdrop-filter\t支持\nCSS grid\t支持",
+            "errors": []
+          },
+          "pointer": {
+            "id": "pointer",
+            "requirements": [
+              "B069"
+            ],
+            "diagnostic": {
+              "id": "pointer",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "pointer",
+              "resultLength": 7
+            },
+            "outputLength": 7,
+            "output": "移动一下指针。",
+            "errors": []
+          },
+          "ping": {
+            "id": "ping",
+            "requirements": [
+              "B070"
+            ],
+            "diagnostic": {
+              "id": "ping",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "ping",
+              "resultLength": 75
+            },
+            "outputLength": 75,
+            "output": "请求\t/tool-ping.json\nHTTP\t200\n响应耗时\t43.50 ms\n范围\t本站单次请求；包含浏览器、服务端与网络等待，不能当作网络速度",
+            "errors": []
+          }
+        },
+        "edges": {
+          "routes": {
+            "routes": [
+              {
+                "id": "base64",
+                "status": 200
+              },
+              {
+                "id": "json",
+                "status": 200
+              },
+              {
+                "id": "xml",
+                "status": 200
+              },
+              {
+                "id": "text",
+                "status": 200
+              },
+              {
+                "id": "text-dedupe",
+                "status": 200
+              },
+              {
+                "id": "text-sort",
+                "status": 200
+              },
+              {
+                "id": "text-case",
+                "status": 200
+              },
+              {
+                "id": "markdown",
+                "status": 200
+              },
+              {
+                "id": "csv",
+                "status": 200
+              },
+              {
+                "id": "ascii",
+                "status": 200
+              },
+              {
+                "id": "morse",
+                "status": 200
+              },
+              {
+                "id": "timestamp",
+                "status": 200
+              },
+              {
+                "id": "time-zone",
+                "status": 200
+              },
+              {
+                "id": "convert",
+                "status": 200
+              },
+              {
+                "id": "calculator",
+                "status": 200
+              },
+              {
+                "id": "scientific",
+                "status": 200
+              },
+              {
+                "id": "matrix",
+                "status": 200
+              },
+              {
+                "id": "radix",
+                "status": 200
+              },
+              {
+                "id": "color",
+                "status": 200
+              },
+              {
+                "id": "roman",
+                "status": 200
+              },
+              {
+                "id": "permissions",
+                "status": 200
+              },
+              {
+                "id": "regex",
+                "status": 200
+              },
+              {
+                "id": "uuid",
+                "status": 200
+              },
+              {
+                "id": "random",
+                "status": 200
+              },
+              {
+                "id": "hash",
+                "status": 200
+              },
+              {
+                "id": "password",
+                "status": 200
+              },
+              {
+                "id": "file-checksum",
+                "status": 200
+              },
+              {
+                "id": "http-status",
+                "status": 200
+              },
+              {
+                "id": "mime",
+                "status": 200
+              },
+              {
+                "id": "keyboard",
+                "status": 200
+              },
+              {
+                "id": "screen",
+                "status": 200
+              },
+              {
+                "id": "user-agent",
+                "status": 200
+              },
+              {
+                "id": "capabilities",
+                "status": 200
+              },
+              {
+                "id": "pointer",
+                "status": 200
+              },
+              {
+                "id": "ping",
+                "status": 200
+              }
+            ],
+            "directory": true,
+            "searchJson": true
+          },
+          "checksum": {
+            "unicodeHash": "25feb68e8651a1e87d13b2a93c080d75e40174800e19388820c27be17009cd66",
+            "largeFileRejected": true,
+            "requests": [
+              {
+                "url": "http://127.0.0.1:8080/functions/file-checksum/",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/%E6%B2%A1%E9%94%81%E4%BD%8F%E7%9A%84%E5%85%89%E5%AD%A6%E5%8F%B0.CHgxZ9mv.css",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/%E4%B8%B4%E6%97%B6%E4%BF%AE%E4%B8%80%E4%B8%8B.Co5wCJRi.css",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/%E6%9F%9C%E5%8F%B0%E5%AE%BD%E5%BA%A6%E6%B2%A1%E9%87%8F%E8%BF%87.eztTz2TT.css",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/_______.astro_astro_type_script_index_0_lang.XtWhytLM.js",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/____.astro_astro_type_script_index_0_lang.eJHZnBfb.js",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/______.D5neOkWq.js",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/rolldown-runtime.hePW80VL.js",
+                "method": "GET",
+                "body": null
+              }
+            ]
+          },
+          "csv": {
+            "cells": [
+              [
+                "name",
+                "note"
+              ],
+              [
+                "文明",
+                "一行,逗号\n第二行"
+              ],
+              [
+                "a\"b",
+                "=1+1"
+              ]
+            ],
+            "canonical": "name,note\r\n文明,\"一行,逗号\n第二行\"\r\n\"a\"\"b\",=1+1",
+            "displayedCanonical": "name,note\n文明,\"一行,逗号\n第二行\"\n\"a\"\"b\",=1+1",
+            "filename": "ocv-csv.csv",
+            "roundTrip": true
+          },
+          "xml-markdown": {
+            "xmlEquivalent": true,
+            "cdata": true,
+            "dtdRejected": true,
+            "executableTags": 0,
+            "externalRequests": []
+          },
+          "regex-isolation": {
+            "timeoutMs": 2059,
+            "responsiveDuringWorker": true,
+            "cancelled": true,
+            "valid": {
+              "source": "(?<word>[a-z]+)",
+              "flags": "g",
+              "matches": [
+                {
+                  "index": 0,
+                  "value": "one",
+                  "groups": [
+                    "one"
+                  ],
+                  "namedGroups": {
+                    "word": "one"
+                  }
+                },
+                {
+                  "index": 7,
+                  "value": "two",
+                  "groups": [
+                    "two"
+                  ],
+                  "namedGroups": {
+                    "word": "two"
+                  }
+                }
+              ],
+              "truncated": false,
+              "limits": {
+                "text": 100000,
+                "pattern": 2048,
+                "matches": 1000,
+                "output": 1048576
+              }
+            }
+          },
+          "live-and-ping": {
+            "key": "key\tq\ncode\tKeyQ\ntype\tkeyup\nlocation\t0\nrepeat\tfalse\nCtrl / Alt / Shift / Meta\tfalse / false / false / false\nisComposing\tfalse",
+            "pointer": "clientX / clientY\t123 / 234\npageX / pageY\t123 / 234\nscreenX / screenY\t123 / 234\npointerType\tmouse\nbuttons\t0",
+            "viewport": "1024 × 768 CSS px",
+            "pingRequests": [
+              {
+                "url": "http://127.0.0.1:8080/tool-ping.json",
+                "method": "GET"
+              }
+            ],
+            "ping": "请求\t/tool-ping.json\nHTTP\t200\n响应耗时\t13.60 ms\n范围\t本站单次请求；包含浏览器、服务端与网络等待，不能当作网络速度"
+          },
+          "copy-export-privacy": {
+            "canonical": "NeverPersistCanary_本地🧪\nalpha",
+            "copied": true,
+            "downloaded": true,
+            "filename": "ocv-text-dedupe.txt",
+            "noInputStorage": true,
+            "noRandomStringStorage": true,
+            "requestCount": 25
+          }
+        }
+      },
+      "mobile": {
+        "defaults": {
+          "base64": {
+            "id": "base64",
+            "requirements": [
+              "B026"
+            ],
+            "diagnostic": {
+              "id": "base64",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "base64",
+              "resultLength": 32
+            },
+            "outputLength": 32,
+            "output": "T21uaUNpdml0YXMg5paH5piOIPCfp6o=",
+            "errors": []
+          },
+          "json": {
+            "id": "json",
+            "requirements": [
+              "B027"
+            ],
+            "diagnostic": {
+              "id": "json",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "json",
+              "resultLength": 27
+            },
+            "outputLength": 27,
+            "output": "{\n  \"文明\": true,\n  \"版本\": 5\n}",
+            "errors": []
+          },
+          "xml": {
+            "id": "xml",
+            "requirements": [
+              "B028"
+            ],
+            "diagnostic": {
+              "id": "xml",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "xml",
+              "resultLength": 67
+            },
+            "outputLength": 67,
+            "output": "<root>\n  <item>文明</item>\n  <item><![CDATA[ x < y ]]></item>\n</root>",
+            "errors": []
+          },
+          "text": {
+            "id": "text",
+            "requirements": [
+              "B040"
+            ],
+            "diagnostic": {
+              "id": "text",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "text",
+              "resultLength": 55
+            },
+            "outputLength": 55,
+            "output": "Unicode 码点\t20\n可见字素（含空白）\t14\n非空白码点\t18\n词\t4\n行\t2\nUTF-8 字节\t50",
+            "errors": []
+          },
+          "text-dedupe": {
+            "id": "text-dedupe",
+            "requirements": [
+              "B041"
+            ],
+            "diagnostic": {
+              "id": "text-dedupe",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "text-dedupe",
+              "resultLength": 10
+            },
+            "outputLength": 10,
+            "output": "alpha\nbeta",
+            "errors": []
+          },
+          "text-sort": {
+            "id": "text-sort",
+            "requirements": [
+              "B042"
+            ],
+            "diagnostic": {
+              "id": "text-sort",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "text-sort",
+              "resultLength": 12
+            },
+            "outputLength": 12,
+            "output": "a\nbeta\ngamma",
+            "errors": []
+          },
+          "text-case": {
+            "id": "text-case",
+            "requirements": [
+              "B043"
+            ],
+            "diagnostic": {
+              "id": "text-case",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "text-case",
+              "resultLength": 17
+            },
+            "outputLength": 17,
+            "output": "HELLO OMNICIVITAS",
+            "errors": []
+          },
+          "markdown": {
+            "id": "markdown",
+            "requirements": [
+              "B044"
+            ],
+            "diagnostic": {
+              "id": "markdown",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "markdown",
+              "resultLength": 41
+            },
+            "outputLength": 41,
+            "output": "# OmniCivitas\n\n**文明** / `const phase = 5`",
+            "errors": []
+          },
+          "csv": {
+            "id": "csv",
+            "requirements": [
+              "B045"
+            ],
+            "diagnostic": {
+              "id": "csv",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "csv",
+              "resultLength": 22
+            },
+            "outputLength": 21,
+            "output": "name,note\n文明,\"逗号,在这里\"",
+            "errors": [],
+            "displayNormalization": {
+              "canonicalFixture": "name,note\r\n文明,\"逗号,在这里\"",
+              "displayedFixture": "name,note\n文明,\"逗号,在这里\"",
+              "canonicalLength": 22,
+              "displayedLength": 21,
+              "rows": [
+                [
+                  "name",
+                  "note"
+                ],
+                [
+                  "文明",
+                  "逗号,在这里"
+                ]
+              ],
+              "scope": "Independent default fixture; this is not a default-download capture. Actual CSV download bytes are checked separately in the csv edge proof."
+            }
+          },
+          "ascii": {
+            "id": "ascii",
+            "requirements": [
+              "B059"
+            ],
+            "diagnostic": {
+              "id": "ascii",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "ascii",
+              "resultLength": 119
+            },
+            "outputLength": 119,
+            "output": " ###  #   # #   # #####\n#   # ## ## ##  #   #  \n#   # # # # # # #   #  \n#   # #   # #  ##   #  \n ###  #   # #   # #####",
+            "errors": []
+          },
+          "morse": {
+            "id": "morse",
+            "requirements": [
+              "B060"
+            ],
+            "diagnostic": {
+              "id": "morse",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "morse",
+              "resultLength": 65
+            },
+            "outputLength": 65,
+            "output": "... --- ... / -.-. .. ...- .. .-.. .. --.. .- - .. --- -. / .....",
+            "errors": []
+          },
+          "timestamp": {
+            "id": "timestamp",
+            "requirements": [
+              "B033"
+            ],
+            "diagnostic": {
+              "id": "timestamp",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "timestamp",
+              "resultLength": 24
+            },
+            "outputLength": 24,
+            "output": "1970-01-01T00:00:00.000Z",
+            "errors": []
+          },
+          "time-zone": {
+            "id": "time-zone",
+            "requirements": [
+              "B034"
+            ],
+            "diagnostic": {
+              "id": "time-zone",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "time-zone",
+              "resultLength": 49
+            },
+            "outputLength": 49,
+            "output": "2024-03-10 15:00:00.000 GMT+08:00 [Asia/Shanghai]",
+            "errors": []
+          },
+          "convert": {
+            "id": "convert",
+            "requirements": [
+              "B035"
+            ],
+            "diagnostic": {
+              "id": "convert",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "convert",
+              "resultLength": 3
+            },
+            "outputLength": 3,
+            "output": "100",
+            "errors": []
+          },
+          "calculator": {
+            "id": "calculator",
+            "requirements": [
+              "B036"
+            ],
+            "diagnostic": {
+              "id": "calculator",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "calculator",
+              "resultLength": 1
+            },
+            "outputLength": 1,
+            "output": "4",
+            "errors": []
+          },
+          "scientific": {
+            "id": "scientific",
+            "requirements": [
+              "B037"
+            ],
+            "diagnostic": {
+              "id": "scientific",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "scientific",
+              "resultLength": 1
+            },
+            "outputLength": 1,
+            "output": "1",
+            "errors": []
+          },
+          "matrix": {
+            "id": "matrix",
+            "requirements": [
+              "B038"
+            ],
+            "diagnostic": {
+              "id": "matrix",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "matrix",
+              "resultLength": 7
+            },
+            "outputLength": 7,
+            "output": "5\t5\n5\t5",
+            "errors": []
+          },
+          "radix": {
+            "id": "radix",
+            "requirements": [
+              "B039"
+            ],
+            "diagnostic": {
+              "id": "radix",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "radix",
+              "resultLength": 14
+            },
+            "outputLength": 14,
+            "output": "20000000000001",
+            "errors": []
+          },
+          "color": {
+            "id": "color",
+            "requirements": [
+              "B046"
+            ],
+            "diagnostic": {
+              "id": "color",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "color",
+              "resultLength": 50
+            },
+            "outputLength": 50,
+            "output": "#0060FF\nrgb(0, 96, 255)\nhsl(217.411765, 100%, 50%)",
+            "errors": []
+          },
+          "roman": {
+            "id": "roman",
+            "requirements": [
+              "B061"
+            ],
+            "diagnostic": {
+              "id": "roman",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "roman",
+              "resultLength": 7
+            },
+            "outputLength": 7,
+            "output": "MCMXCIV",
+            "errors": []
+          },
+          "permissions": {
+            "id": "permissions",
+            "requirements": [
+              "B062"
+            ],
+            "diagnostic": {
+              "id": "permissions",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "permissions",
+              "resultLength": 9
+            },
+            "outputLength": 9,
+            "output": "rwxr-xr-x",
+            "errors": []
+          },
+          "regex": {
+            "id": "regex",
+            "requirements": [
+              "B029"
+            ],
+            "diagnostic": {
+              "id": "regex",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "regex",
+              "resultLength": 629
+            },
+            "outputLength": 629,
+            "output": "{\n  \"source\": \"(?<word>\\\\w+)\",\n  \"flags\": \"g\",\n  \"matches\": [\n    {\n      \"index\": 0,\n      \"value\": \"one\",\n      \"groups\": [\n        \"one\"\n      ],\n      \"namedGroups\": {\n        \"word\": \"one\"\n      }\n    },\n    {\n      \"index\": 4,\n      \"value\": \"two\",\n      \"groups\": [\n        \"two\"\n      ],\n      \"namedGroups\": {\n        \"word\": \"two\"\n      }\n    },\n    {\n      \"index\": 8,\n      \"value\": \"42\",\n      \"groups\": [\n        \"42\"\n      ],\n      \"namedGroups\": {\n        \"word\": \"42\"\n      }\n    }\n  ],\n  \"truncated\": false,\n  \"limits\": {\n    \"text\": 100000,\n    \"pattern\": 2048,\n    \"matches\": 1000,\n    \"output\": 1048576\n  }\n}",
+            "errors": []
+          },
+          "uuid": {
+            "id": "uuid",
+            "requirements": [
+              "B030"
+            ],
+            "diagnostic": {
+              "id": "uuid",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "uuid",
+              "resultLength": 36
+            },
+            "outputLength": 36,
+            "output": "6c4a23b9-86c5-4daf-acf8-4a4554cae53e",
+            "errors": []
+          },
+          "random": {
+            "id": "random",
+            "requirements": [
+              "B031"
+            ],
+            "diagnostic": {
+              "id": "random",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "random",
+              "resultLength": 27
+            },
+            "outputLength": 27,
+            "output": "40\n95\n44\n85\n5\n58\n66\n75\n77\n1",
+            "errors": []
+          },
+          "hash": {
+            "id": "hash",
+            "requirements": [
+              "B032"
+            ],
+            "diagnostic": {
+              "id": "hash",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "hash",
+              "resultLength": 64
+            },
+            "outputLength": 64,
+            "output": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+            "errors": []
+          },
+          "password": {
+            "id": "password",
+            "requirements": [
+              "B047"
+            ],
+            "diagnostic": {
+              "id": "password",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "password",
+              "resultLength": 24
+            },
+            "outputLength": 24,
+            "errors": []
+          },
+          "file-checksum": {
+            "id": "file-checksum",
+            "requirements": [
+              "B048"
+            ],
+            "diagnostic": {
+              "id": "file-checksum",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "file-checksum",
+              "resultLength": 64
+            },
+            "outputLength": 64,
+            "output": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+            "errors": []
+          },
+          "http-status": {
+            "id": "http-status",
+            "requirements": [
+              "B063"
+            ],
+            "diagnostic": {
+              "id": "http-status",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "http-status",
+              "resultLength": 20
+            },
+            "outputLength": 20,
+            "output": "状态码\t名称\n404\tNot Found",
+            "errors": []
+          },
+          "mime": {
+            "id": "mime",
+            "requirements": [
+              "B064"
+            ],
+            "diagnostic": {
+              "id": "mime",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "mime",
+              "resultLength": 38
+            },
+            "outputLength": 38,
+            "output": "后缀\tMIME\navif\timage/avif\n按后缀查询，不鉴定文件内容。",
+            "errors": []
+          },
+          "keyboard": {
+            "id": "keyboard",
+            "requirements": [
+              "B065"
+            ],
+            "diagnostic": {
+              "id": "keyboard",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "keyboard",
+              "resultLength": 129
+            },
+            "outputLength": 129,
+            "output": "key\tEnter\ncode\tEnter\ntype\tkeyup\nlocation\t0\nrepeat\tfalse\nCtrl / Alt / Shift / Meta\tfalse / false / false / false\nisComposing\tfalse",
+            "errors": []
+          },
+          "screen": {
+            "id": "screen",
+            "requirements": [
+              "B066"
+            ],
+            "diagnostic": {
+              "id": "screen",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "screen",
+              "resultLength": 155
+            },
+            "outputLength": 155,
+            "output": "screen\t412 × 839 CSS px\navailable\t412 × 839 CSS px\nlayout viewport\t412 × 839 CSS px\ndevicePixelRatio\t2.625\nvisual viewport\t412 × 839; scale 1\ncolorDepth\t24",
+            "errors": []
+          },
+          "user-agent": {
+            "id": "user-agent",
+            "requirements": [
+              "B067"
+            ],
+            "diagnostic": {
+              "id": "user-agent",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "user-agent",
+              "resultLength": 121
+            },
+            "outputLength": 121,
+            "output": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.12 Mobile Safari/537.36",
+            "errors": []
+          },
+          "capabilities": {
+            "id": "capabilities",
+            "requirements": [
+              "B068"
+            ],
+            "diagnostic": {
+              "id": "capabilities",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "capabilities",
+              "resultLength": 194
+            },
+            "outputLength": 194,
+            "output": "您的设备支持按钮\n按钮\t支持\nWeb Crypto SHA-256\t支持\ncrypto.randomUUID\t支持\nWorker\t支持\nWebGL\t支持\nIndexedDB\t支持\nCache Storage\t支持\nClipboard API\t支持\nPointer Events\t支持\nResizeObserver\t支持\nCSS backdrop-filter\t支持\nCSS grid\t支持",
+            "errors": []
+          },
+          "pointer": {
+            "id": "pointer",
+            "requirements": [
+              "B069"
+            ],
+            "diagnostic": {
+              "id": "pointer",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "pointer",
+              "resultLength": 7
+            },
+            "outputLength": 7,
+            "output": "移动一下指针。",
+            "errors": []
+          },
+          "ping": {
+            "id": "ping",
+            "requirements": [
+              "B070"
+            ],
+            "diagnostic": {
+              "id": "ping",
+              "runs": 1,
+              "successes": 1,
+              "busy": false,
+              "cancelled": 0,
+              "lastTool": "ping",
+              "resultLength": 75
+            },
+            "outputLength": 75,
+            "output": "请求\t/tool-ping.json\nHTTP\t200\n响应耗时\t26.20 ms\n范围\t本站单次请求；包含浏览器、服务端与网络等待，不能当作网络速度",
+            "errors": []
+          }
+        },
+        "edges": {
+          "routes": {
+            "routes": [
+              {
+                "id": "base64",
+                "status": 200
+              },
+              {
+                "id": "json",
+                "status": 200
+              },
+              {
+                "id": "xml",
+                "status": 200
+              },
+              {
+                "id": "text",
+                "status": 200
+              },
+              {
+                "id": "text-dedupe",
+                "status": 200
+              },
+              {
+                "id": "text-sort",
+                "status": 200
+              },
+              {
+                "id": "text-case",
+                "status": 200
+              },
+              {
+                "id": "markdown",
+                "status": 200
+              },
+              {
+                "id": "csv",
+                "status": 200
+              },
+              {
+                "id": "ascii",
+                "status": 200
+              },
+              {
+                "id": "morse",
+                "status": 200
+              },
+              {
+                "id": "timestamp",
+                "status": 200
+              },
+              {
+                "id": "time-zone",
+                "status": 200
+              },
+              {
+                "id": "convert",
+                "status": 200
+              },
+              {
+                "id": "calculator",
+                "status": 200
+              },
+              {
+                "id": "scientific",
+                "status": 200
+              },
+              {
+                "id": "matrix",
+                "status": 200
+              },
+              {
+                "id": "radix",
+                "status": 200
+              },
+              {
+                "id": "color",
+                "status": 200
+              },
+              {
+                "id": "roman",
+                "status": 200
+              },
+              {
+                "id": "permissions",
+                "status": 200
+              },
+              {
+                "id": "regex",
+                "status": 200
+              },
+              {
+                "id": "uuid",
+                "status": 200
+              },
+              {
+                "id": "random",
+                "status": 200
+              },
+              {
+                "id": "hash",
+                "status": 200
+              },
+              {
+                "id": "password",
+                "status": 200
+              },
+              {
+                "id": "file-checksum",
+                "status": 200
+              },
+              {
+                "id": "http-status",
+                "status": 200
+              },
+              {
+                "id": "mime",
+                "status": 200
+              },
+              {
+                "id": "keyboard",
+                "status": 200
+              },
+              {
+                "id": "screen",
+                "status": 200
+              },
+              {
+                "id": "user-agent",
+                "status": 200
+              },
+              {
+                "id": "capabilities",
+                "status": 200
+              },
+              {
+                "id": "pointer",
+                "status": 200
+              },
+              {
+                "id": "ping",
+                "status": 200
+              }
+            ],
+            "directory": true,
+            "searchJson": true
+          },
+          "checksum": {
+            "unicodeHash": "25feb68e8651a1e87d13b2a93c080d75e40174800e19388820c27be17009cd66",
+            "largeFileRejected": true,
+            "requests": [
+              {
+                "url": "http://127.0.0.1:8080/functions/file-checksum/",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/%E6%B2%A1%E9%94%81%E4%BD%8F%E7%9A%84%E5%85%89%E5%AD%A6%E5%8F%B0.CHgxZ9mv.css",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/%E4%B8%B4%E6%97%B6%E4%BF%AE%E4%B8%80%E4%B8%8B.Co5wCJRi.css",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/%E6%9F%9C%E5%8F%B0%E5%AE%BD%E5%BA%A6%E6%B2%A1%E9%87%8F%E8%BF%87.eztTz2TT.css",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/_______.astro_astro_type_script_index_0_lang.XtWhytLM.js",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/____.astro_astro_type_script_index_0_lang.eJHZnBfb.js",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/______.D5neOkWq.js",
+                "method": "GET",
+                "body": null
+              },
+              {
+                "url": "http://127.0.0.1:8080/_astro/rolldown-runtime.hePW80VL.js",
+                "method": "GET",
+                "body": null
+              }
+            ]
+          },
+          "csv": {
+            "cells": [
+              [
+                "name",
+                "note"
+              ],
+              [
+                "文明",
+                "一行,逗号\n第二行"
+              ],
+              [
+                "a\"b",
+                "=1+1"
+              ]
+            ],
+            "canonical": "name,note\r\n文明,\"一行,逗号\n第二行\"\r\n\"a\"\"b\",=1+1",
+            "displayedCanonical": "name,note\n文明,\"一行,逗号\n第二行\"\n\"a\"\"b\",=1+1",
+            "filename": "ocv-csv.csv",
+            "roundTrip": true
+          },
+          "xml-markdown": {
+            "xmlEquivalent": true,
+            "cdata": true,
+            "dtdRejected": true,
+            "executableTags": 0,
+            "externalRequests": []
+          },
+          "regex-isolation": {
+            "timeoutMs": 2047,
+            "responsiveDuringWorker": true,
+            "cancelled": true,
+            "valid": {
+              "source": "(?<word>[a-z]+)",
+              "flags": "g",
+              "matches": [
+                {
+                  "index": 0,
+                  "value": "one",
+                  "groups": [
+                    "one"
+                  ],
+                  "namedGroups": {
+                    "word": "one"
+                  }
+                },
+                {
+                  "index": 7,
+                  "value": "two",
+                  "groups": [
+                    "two"
+                  ],
+                  "namedGroups": {
+                    "word": "two"
+                  }
+                }
+              ],
+              "truncated": false,
+              "limits": {
+                "text": 100000,
+                "pattern": 2048,
+                "matches": 1000,
+                "output": 1048576
+              }
+            }
+          },
+          "live-and-ping": {
+            "key": "key\tq\ncode\tKeyQ\ntype\tkeydown\nlocation\t0\nrepeat\tfalse\nCtrl / Alt / Shift / Meta\tfalse / false / false / false\nisComposing\tfalse",
+            "pointer": "clientX / clientY\t123 / 234\npageX / pageY\t123 / 234\nscreenX / screenY\t123 / 234\npointerType\tmouse\nbuttons\t0",
+            "viewport": "1024 × 768 CSS px",
+            "pingRequests": [
+              {
+                "url": "http://127.0.0.1:8080/tool-ping.json",
+                "method": "GET"
+              }
+            ],
+            "ping": "请求\t/tool-ping.json\nHTTP\t200\n响应耗时\t27.30 ms\n范围\t本站单次请求；包含浏览器、服务端与网络等待，不能当作网络速度"
+          },
+          "copy-export-privacy": {
+            "canonical": "NeverPersistCanary_本地🧪\nalpha",
+            "copied": true,
+            "downloaded": true,
+            "filename": "ocv-text-dedupe.txt",
+            "noInputStorage": true,
+            "noRandomStringStorage": true,
+            "requestCount": 25
+          }
+        }
+      }
+    }
+  },
+  "unit": {
+    "report": "runtime/reports/phase5-unit.json",
+    "count": 43,
+    "checks": [
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "all ten descriptors execute real defaults with string output",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "timestamp zero, pre-epoch, fractional seconds and explicit precision",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "ISO parsing verifies actual calendar and does not inherit host timezone",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "fixed IANA zones use actual Intl DST transitions, including repeated hour",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "bounded unit categories calculate actual ratios and affine temperature",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "Math.js basic expression precedence, negatives and remainder",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "Math.js scientific functions use radians and scalar domains",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "expression surface rejects side effects, property access and allocation syntax",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "2×2/3×3 matrix operations, determinant and exported TSV are actual",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "matrix limits reject ragged/nonsquare/nonfinite or mismatched data",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "BigInt conversion preserves integers beyond Number precision and signs",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "base validators reject digits, decimals, prefixes and excess lengths",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "HEX/RGB/HSL colors cover common formats, gray and hue wrapping",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "RGB → HSL → RGB round trips real channels across color cube",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "color input rejects channel overflow, unsupported alpha and malformed CSS",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "Roman conversion is canonical and exhaustive for supported integers",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-calculation.test.mjs",
+        "title": "Unix permission bits, setuid/setgid/sticky and exhaustive mode round trip",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-development.test.mjs",
+        "title": "JavaScript RegExp returns exact matches, offsets, groups and indices",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-development.test.mjs",
+        "title": "empty Unicode matches progress by code point and oversized work is rejected",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-development.test.mjs",
+        "title": "regex caller cancels and terminates its Worker instead of executing on the UI thread",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-development.test.mjs",
+        "title": "uniform integer sampling rejects modulo bias and supports the entire safe-integer range",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-development.test.mjs",
+        "title": "random strings enforce selected categories and bounded sizes without account state",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-development.test.mjs",
+        "title": "SHA-256 hashes exact UTF-8 bytes, empty text, Unicode and local small files",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-development.test.mjs",
+        "title": "common HTTP/MIME tables return registered labels and common extension mappings",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-development.test.mjs",
+        "title": "live detector helpers report actual event and viewport fields",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-development.test.mjs",
+        "title": "ping only requests the fixed same-origin static resource and propagates cancellation",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-development.test.mjs",
+        "title": "descriptor UUID calls native randomUUID and validates output quantity",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors catalogue has all eleven original requirement mappings and unique IDs",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors native Base64 handles Unicode, BOM, newlines and input above apply limits",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors Base64 rejects malformed alphabet/padding, noncanonical bits, bad UTF-8 and lone surrogates",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors JSON parser validates actual syntax and exports parse-equivalent JSON",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors JSON rejects nonfinite and unsafe integer values instead of exporting null or altered digits",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors Unicode counts distinguish graphemes, code points, bytes and CRLF line boundaries",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors line dedupe preserves the first exact value, whitespace, casing and final blank row",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors line sorts are deterministic and code-point length counts emoji once",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors case conversion uses Unicode casing without rewriting punctuation",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors PapaParse preserves BOM, quoted comma/newline/quote, empty cell and formula as data",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors CSV optional file takes precedence, honors cancellation and refuses malformed/oversized input",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors CSV files reject broken UTF-8 instead of silently replacing bytes, while preserving valid BOM/Unicode",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors CSV rejects row/column overflows instead of silently exporting a preview",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors Morse implements known international code, punctuation, word breaks and honest errors",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors ASCII lettering draws actual small glyphs with configurable ASCII ink",
+        "status": "passed"
+      },
+      {
+        "file": "tests/phase5-text.test.mjs",
+        "title": "phase 5 text/data tools: real conversions and bounded errors all input paths bound UTF-8 bytes rather than only UTF-16 length",
+        "status": "passed"
+      }
+    ],
+    "startTime": 1790959778801
+  },
+  "HTTP": [
+    {
+      "url": "/",
+      "status": 200,
+      "sha256": "25168f2a4b63d4736c38cab4fca17a9ef9f16fe9041dc9560fa64e1c973b93f7"
+    },
+    {
+      "url": "/functions/",
+      "status": 200,
+      "sha256": "1911a8636fc51c23f42211a3160cf54d1cc9893103bf03ddb434072184588871"
+    },
+    {
+      "url": "/maze/",
+      "status": 200,
+      "sha256": "94cb71ebc64c172f7b47ce249c643e22e259aea87ec5b7e960a8f41ff9286c39"
+    },
+    {
+      "url": "/maze/offices/settings/",
+      "status": 200,
+      "sha256": "b652821d44f751ad0192f80d6481f7b11b0f16a65d5bb688b786e04679133ef8"
+    },
+    {
+      "url": "/maze/offices/settings/backup/",
+      "status": 200,
+      "sha256": "e6605ff101a056d9ebf32d6807fb03f9ec9a454f0dd309e321f6f36d8976e770"
+    },
+    {
+      "url": "/maze/cache/",
+      "status": 200,
+      "sha256": "7b5963c3993949676bb1bb29cc5d7d2279fca080f96b1bbe2809ad5a300ba642"
+    },
+    {
+      "url": "/maze/cache/l1/",
+      "status": 200,
+      "sha256": "67eb9b186a07786e98bbb0a0384a9c7a23767f928799376f0f49b766a5e2e333"
+    },
+    {
+      "url": "/maze/cache/l1/l2/",
+      "status": 200,
+      "sha256": "affae620095dca4386d4edc9240f86950b561540be37307390accd06e0ff2a4d"
+    },
+    {
+      "url": "/maze/approval/",
+      "status": 200,
+      "sha256": "9dddba5dd02a4d8a8aafcf03591d2ac8b5568dac037e5d0cb86ace4328365614"
+    },
+    {
+      "url": "/maze/approval/queue/",
+      "status": 200,
+      "sha256": "093b03197cfdb3b77391f430856ddff7779533443cf2d148bd9111671606a5c2"
+    },
+    {
+      "url": "/maze/approval/queue/0/",
+      "status": 200,
+      "sha256": "6ff6f8809c4b027a34adc647404f1a43e55071f1a025aab7fa291d6797fac5fe"
+    },
+    {
+      "url": "/maze/display/",
+      "status": 200,
+      "sha256": "7fb964cd60b0d1ba87ec19197cc458ef25e5898ec2109e8829e66d65b8f7829b"
+    },
+    {
+      "url": "/maze/display/fold/",
+      "status": 200,
+      "sha256": "8fcd2c42ff0c59173e0e7e9b73c638a78a2293147087e68c7b6b0a38039b09a8"
+    },
+    {
+      "url": "/maze/display/fold/back/",
+      "status": 200,
+      "sha256": "259b1e80d0ebd2dbff5b7c71fc1e656a70f19c1cd659725378b0d263e181d068"
+    },
+    {
+      "url": "/maze/notifications/",
+      "status": 200,
+      "sha256": "2864c655c08d8e7a0bb249a107b95b80cb44be2e87b78fe19d08d4038b028568"
+    },
+    {
+      "url": "/maze/notifications/unread/",
+      "status": 200,
+      "sha256": "8579fc73f6d959c111bd64ca075a92016c1599e7b4ec53abfdf6b202a2c41736"
+    },
+    {
+      "url": "/maze/notifications/unread/all/",
+      "status": 200,
+      "sha256": "f4637b39350e24408979e5d6700a6892fec0bcacd28f4e47bcf8c0991960ba17"
+    },
+    {
+      "url": "/maze/table/",
+      "status": 200,
+      "sha256": "16e7d6d77f9679eedb9fa6910b6ad463d88d68c682e00c0a44bf4605adf440c6"
+    },
+    {
+      "url": "/maze/table/header/body/",
+      "status": 200,
+      "sha256": "50b2285b6971fc3b053ddb3cbe6af240cbfb8f31bfd1f06bba9b0febd7474554"
+    },
+    {
+      "url": "/maze/table/header/body/footer/",
+      "status": 200,
+      "sha256": "e93d5e0dcfb4b9d9982d9adc5e9f52f00fb1d8f8455f60e2f6b3c54722f224cd"
+    },
+    {
+      "url": "/maze/empty/",
+      "status": 200,
+      "sha256": "70a8ed3fdb105929b98641c7cc11e30d4859a0017425fb5ecfcd52dc93b64ca8"
+    },
+    {
+      "url": "/maze/empty/0/",
+      "status": 200,
+      "sha256": "ebbae731dd44e2c14b49c1c4d080ea88f24d72b7ef3102f5337066e587af9d7f"
+    },
+    {
+      "url": "/maze/aside/",
+      "status": 200,
+      "sha256": "1c1a8cd27e870a258dd38be6543066d065a75c924c7a390ed80f604853ddd3ee"
+    },
+    {
+      "url": "/maze/aside/left/right/",
+      "status": 200,
+      "sha256": "eff551c41565ba63ad576e00670ee0de9586503ef6e0d4ce18bbc3321b9cc7ba"
+    },
+    {
+      "url": "/maze/window/",
+      "status": 200,
+      "sha256": "ef91f8ce3c551ff121b6548924b6b669cbd3c01962b1c5f3b3068edb9348d43d"
+    },
+    {
+      "url": "/maze/window/under/",
+      "status": 200,
+      "sha256": "2370f0086c05acbbd1e1e12265fc0aa593a75b0e49a240a45031514774db2017"
+    },
+    {
+      "url": "/maze/route/",
+      "status": 200,
+      "sha256": "c154929a7e5c5080926a1af00f19e67bfeaaaccd95ad9703505c41ef6e427db8"
+    },
+    {
+      "url": "/maze/route/a/b/c/d/e/",
+      "status": 200,
+      "sha256": "5d78b23be023e541abfaabe1f696f524062c898f00393118ec4fc87da6a19654"
+    },
+    {
+      "url": "/maze/route/a/b/c/d/e/start/",
+      "status": 200,
+      "sha256": "4d6f01e7675b5bf35120db86963ddcf8eddc7ecfd6ccf3152324b2f39f6d2d59"
+    },
+    {
+      "url": "/status",
+      "status": 200,
+      "sha256": "d0f5967a99d980911bae7c71e4c776d6be6909a5d6ad6f8bd5ef8183626cb372"
+    },
+    {
+      "url": "/portals/unified/",
+      "status": 200,
+      "sha256": "b71a83e0bb0a86d36a0a55aa68d34b518a5f040297bf1706fb7bd361ed60ce59"
+    },
+    {
+      "url": "/portals/light/",
+      "status": 200,
+      "sha256": "5fb88f2704c7710ba880065b3964ba639eb20ee5aa3decf7a28c13a1a7746c86"
+    },
+    {
+      "url": "/functions/image-compress/",
+      "status": 200,
+      "sha256": "e24f88e8063be164998da93e912011936188ad6bd8a37e0fdd77352c2059845e"
+    },
+    {
+      "url": "/functions/clock/",
+      "status": 200,
+      "sha256": "27e47a749c350f0ce95c81ab4d04530db23c204c00c3db2f6e88c641ac48abdd"
+    },
+    {
+      "url": "/functions/games/",
+      "status": 200,
+      "sha256": "f70b6904d64ed5f07e4b4543624d64c29679130168182dca00fd63301d3aece9"
+    },
+    {
+      "url": "/functions/base64/",
+      "status": 200,
+      "sha256": "c390ffd6cfa51cbb2070247df201d752f992f0a3d223c01fc3559eea4310cda6"
+    },
+    {
+      "url": "/functions/json/",
+      "status": 200,
+      "sha256": "2b88177f09cfa96a144b0bd9556a8ce7a2bd3debf45f26f8889e27529f04b7b7"
+    },
+    {
+      "url": "/functions/xml/",
+      "status": 200,
+      "sha256": "ce5bdd1ba2911d8752d40c33e398155d6eb2690b7dfad7f4b576dc5bd911bcb1"
+    },
+    {
+      "url": "/functions/text/",
+      "status": 200,
+      "sha256": "d80663c2f094fe6d05ae411e16fcf04a74ecdd447853566f8e778a8bbd91fe9b"
+    },
+    {
+      "url": "/functions/text-dedupe/",
+      "status": 200,
+      "sha256": "6cb4ea96a56e4b15eb5df9bdfeea70d79e854af677141a9effe31690ca54463e"
+    },
+    {
+      "url": "/functions/text-sort/",
+      "status": 200,
+      "sha256": "0edafc411938b0e1506ae76ae12a112472c8e47bfc77cd0335831e0a60a18d27"
+    },
+    {
+      "url": "/functions/text-case/",
+      "status": 200,
+      "sha256": "80596c9a5b6536f5b0d347ba849264c5b5c41166b9fafb843e627160b148cd64"
+    },
+    {
+      "url": "/functions/markdown/",
+      "status": 200,
+      "sha256": "927e312d41424dbe1e2fedd84f4e41df085ba2363f39ec239236b5aa6c95389c"
+    },
+    {
+      "url": "/functions/csv/",
+      "status": 200,
+      "sha256": "8c1315376c79a661cc307d082805e18017727ad754e55782070ea5f0b9482d8b"
+    },
+    {
+      "url": "/functions/ascii/",
+      "status": 200,
+      "sha256": "9a9ebb68fea3da0e1c11b2d269c980970a6b5ab670abdd9ea02ad48dc59c4696"
+    },
+    {
+      "url": "/functions/morse/",
+      "status": 200,
+      "sha256": "0b189c38d1fb1d28db9b5b9b917565e0a7781b56864dd4e0254e183541ed62e6"
+    },
+    {
+      "url": "/functions/timestamp/",
+      "status": 200,
+      "sha256": "b632746a830993e2a3973f6ed4637235f8eed03f6e4549a100cf7360d841cff2"
+    },
+    {
+      "url": "/functions/time-zone/",
+      "status": 200,
+      "sha256": "d3adea3581794c824447a6748b38e8a9f64efde2ef6b33d678a2a7f83432cacb"
+    },
+    {
+      "url": "/functions/convert/",
+      "status": 200,
+      "sha256": "d3464941d6a58fd913c016912d6741ae64e713f25c994d12565306ed858ad92d"
+    },
+    {
+      "url": "/functions/calculator/",
+      "status": 200,
+      "sha256": "eef3b0566ebe09f0df3160a495e8bbfb583e6bb65a346749db264875b615664b"
+    },
+    {
+      "url": "/functions/scientific/",
+      "status": 200,
+      "sha256": "4d33aee50d0c59bb85ac4c1e65c8c175f2f6d01c33b02424c4506f8e44e4f548"
+    },
+    {
+      "url": "/functions/matrix/",
+      "status": 200,
+      "sha256": "9402ef2fa54a0d0ee942bb6321626fba9742bc052d9dd2ac9d5f08f1300b8276"
+    },
+    {
+      "url": "/functions/radix/",
+      "status": 200,
+      "sha256": "d5bd66ad1146fda2e6eae00e5fa8cddd104607396667417bd1899df1504d1210"
+    },
+    {
+      "url": "/functions/color/",
+      "status": 200,
+      "sha256": "169e2d65f58f9c427a5d6272b42bf94b44c36c38755fdbb512e41b901e48753f"
+    },
+    {
+      "url": "/functions/roman/",
+      "status": 200,
+      "sha256": "3297d4cb74afbe1ec60d8a7bf05af7ed84b072e7dd1e28ee53f3c69a073fee06"
+    },
+    {
+      "url": "/functions/permissions/",
+      "status": 200,
+      "sha256": "cfa7c38193bff2723182f28ee83bb95f6b1334d0125d67922ad5e0ca89db700c"
+    },
+    {
+      "url": "/functions/regex/",
+      "status": 200,
+      "sha256": "1a574a891db4d5b0813a5c2f41e95d5592d7988e3fc4fa266ffe7e648f3f25d8"
+    },
+    {
+      "url": "/functions/uuid/",
+      "status": 200,
+      "sha256": "1055d2604a4b08c94f71eed1cb38e9a6a49d9bbf0cb75f884c6c575cf0adf3bd"
+    },
+    {
+      "url": "/functions/random/",
+      "status": 200,
+      "sha256": "ed691ee68dfa501290ad6dfbcb40d76ae11f25975db869d8314c62ca23d838c5"
+    },
+    {
+      "url": "/functions/hash/",
+      "status": 200,
+      "sha256": "fce3ab42734001733a0ef137e968e460181992e4225acfd0af256776c5d6a14f"
+    },
+    {
+      "url": "/functions/password/",
+      "status": 200,
+      "sha256": "22f40650f25cbd22d28068cdbc39e433705954ed59e875095754fe2c283b5e56"
+    },
+    {
+      "url": "/functions/file-checksum/",
+      "status": 200,
+      "sha256": "0166b15825fea3179fa24116cc535e5bfd997cf31eeb61b7cebea07024e62075"
+    },
+    {
+      "url": "/functions/http-status/",
+      "status": 200,
+      "sha256": "bd095204ab284b5209af0b0dabc60a2c55aedc14a92440d31c0aa3f26258104b"
+    },
+    {
+      "url": "/functions/mime/",
+      "status": 200,
+      "sha256": "7ee52f6f2ac07ccea40df4273f31c3d11e3187fbb814856bb7a800d8bc5ec4a1"
+    },
+    {
+      "url": "/functions/keyboard/",
+      "status": 200,
+      "sha256": "e1eedee1c87f36815b630fd7040f1739d69ddc937300244a36488741cde7c0f5"
+    },
+    {
+      "url": "/functions/screen/",
+      "status": 200,
+      "sha256": "7d197e64adabd6c82ef8e039eb26c1c544120b0b8d729e23a26933139f1cebf4"
+    },
+    {
+      "url": "/functions/user-agent/",
+      "status": 200,
+      "sha256": "fdaa5a606b6661ba8e8465159913f9ec3d988849e75719a46130d5df07adb6df"
+    },
+    {
+      "url": "/functions/capabilities/",
+      "status": 200,
+      "sha256": "fc0f6e64c70905fa854bbe4cf54f0f436459212c6e4abf7bda450469952a752e"
+    },
+    {
+      "url": "/functions/pointer/",
+      "status": 200,
+      "sha256": "b6411489ffc8aed055fe4fe66d3f0f874e28e8148d31ad5455c52a09047ee6e1"
+    },
+    {
+      "url": "/functions/ping/",
+      "status": 200,
+      "sha256": "5d97000e065e4722528c87867367e077deb4f5c58e54a58460858d8ca1b54c3e"
+    },
+    {
+      "url": "/identity/login/",
+      "status": 200,
+      "sha256": "f1de19a59f94877d485075a12058c97e3ba17c16220cb900ea852af480a3c2c3"
+    },
+    {
+      "url": "/identity/register/",
+      "status": 200,
+      "sha256": "0fa5d82149daaf7be1a4045acf9a5d4310d264c4a272854451861ca0afcaac52"
+    }
+  ],
+  "backendRoutes": [
+    {
+      "route": "/api/auth/login",
+      "method": "GET",
+      "status": 404
+    },
+    {
+      "route": "/api/auth/login",
+      "method": "POST",
+      "status": 404
+    },
+    {
+      "route": "/api/auth/register",
+      "method": "GET",
+      "status": 404
+    },
+    {
+      "route": "/api/auth/register",
+      "method": "POST",
+      "status": 404
+    },
+    {
+      "route": "/api/login",
+      "method": "GET",
+      "status": 404
+    },
+    {
+      "route": "/api/login",
+      "method": "POST",
+      "status": 404
+    },
+    {
+      "route": "/api/register",
+      "method": "GET",
+      "status": 404
+    },
+    {
+      "route": "/api/register",
+      "method": "POST",
+      "status": 404
+    }
+  ],
+  "emptyAccountCounts": "0|0|0",
+  "core": [
+    {
+      "service": "edge",
+      "health": "healthy",
+      "running": true,
+      "limitMiB": 64,
+      "swapLimitMiB": 64,
+      "cpus": 0.5,
+      "pidsLimit": 64,
+      "logConfig": {
+        "Type": "json-file",
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        }
+      },
+      "image": "sha256:0985e772fb9f729e6fa0980da05fca5d9c468e870eed43071545afa9d2e27d94"
+    },
+    {
+      "service": "gateway",
+      "health": "healthy",
+      "running": true,
+      "limitMiB": 512,
+      "swapLimitMiB": 512,
+      "cpus": 1,
+      "pidsLimit": 128,
+      "logConfig": {
+        "Type": "json-file",
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        }
+      },
+      "image": "sha256:5ac0156bc398d5c61f04aaf58eadaffbf2d02724b2def563c5e223f973052bb7"
+    },
+    {
+      "service": "next",
+      "health": "healthy",
+      "running": true,
+      "limitMiB": 512,
+      "swapLimitMiB": 512,
+      "cpus": 1,
+      "pidsLimit": 128,
+      "logConfig": {
+        "Type": "json-file",
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        }
+      },
+      "image": "sha256:2d18bf4ec5bdb253ae8a060507b9a845e0f150a959b9a14ef2985d8672fcb84b"
+    },
+    {
+      "service": "portal",
+      "health": "healthy",
+      "running": true,
+      "limitMiB": 128,
+      "swapLimitMiB": 128,
+      "cpus": 0.5,
+      "pidsLimit": 64,
+      "logConfig": {
+        "Type": "json-file",
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        }
+      },
+      "image": "sha256:70a142ab457aaea3ebf4cdc2d760157c0e7a8234aa4dcb859e3578a8369e9bbc"
+    },
+    {
+      "service": "postgres",
+      "health": "healthy",
+      "running": true,
+      "limitMiB": 384,
+      "swapLimitMiB": 384,
+      "cpus": 1,
+      "pidsLimit": 128,
+      "logConfig": {
+        "Type": "json-file",
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        }
+      },
+      "image": "sha256:ef257d85f76e48da1c64832459b59fcaba1a4dac97bf5d7450c77753542eee94"
+    },
+    {
+      "service": "redis",
+      "health": "healthy",
+      "running": true,
+      "limitMiB": 128,
+      "swapLimitMiB": 128,
+      "cpus": 0.5,
+      "pidsLimit": 64,
+      "logConfig": {
+        "Type": "json-file",
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        }
+      },
+      "image": "sha256:02419de7eddf55aa5bcf49efb74e88fa8d931b4d77c07eff8a6b2144472b6952"
+    }
+  ],
+  "totalCapsMiB": 1728,
+  "builderStopped": true,
+  "builderCapMiB": 3072,
+  "storage": {
+    "verifiedAt": "2026-10-02T17:14:41.2099078Z",
+    "engineId": "f9326114-3701-42c3-8270-a18da9d2d146",
+    "dockerRootDir": "/var/lib/docker",
+    "settingsPath": "F:\\OCVdeps\\docker-desktop\\appdata\\Roaming\\Docker\\settings-store.json",
+    "installSettingsPath": "C:\\ProgramData\\DockerDesktop\\install-settings.json",
+    "registeredWslBasePath": "\\\\?\\F:\\OCVdeps\\docker-data\\main",
+    "dataFolder": "F:\\OCVdeps\\docker-data",
+    "disks": [
+      "F:\\OCVdeps\\docker-data\\disk\\docker_data.vhdx",
+      "F:\\OCVdeps\\docker-data\\main\\ext4.vhdx"
+    ],
+    "wslConfig": "C:\\Users\\Lenovo\\.wslconfig",
+    "actualVmMemoryBytes": 9375125504,
+    "imagesBeforeVerification": 85,
+    "pullPermitted": true
+  },
+  "memory": {
+    "sampledAt": "2026-10-02T17:14:40.0549277Z",
+    "group": "phase5-final",
+    "totalWorkingSetMiB": 3637.1000000000004,
+    "processes": [
+      {
+        "name": "com.docker.backend",
+        "id": 6028,
+        "workingSetMiB": 233.4
+      },
+      {
+        "name": "com.docker.backend",
+        "id": 21520,
+        "workingSetMiB": 45.2
+      },
+      {
+        "name": "com.docker.build",
+        "id": 23840,
+        "workingSetMiB": 35.5
+      },
+      {
+        "name": "docker",
+        "id": 22580,
+        "workingSetMiB": 24.6
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 2276,
+        "workingSetMiB": 5.8
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 3956,
+        "workingSetMiB": 65.5
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 11788,
+        "workingSetMiB": 26.1
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 13080,
+        "workingSetMiB": 101.7
+      },
+      {
+        "name": "Docker Desktop",
+        "id": 23924,
+        "workingSetMiB": 139.2
+      },
+      {
+        "name": "docker-agent",
+        "id": 23856,
+        "workingSetMiB": 44.8
+      },
+      {
+        "name": "vmmemWSL",
+        "id": 11784,
+        "workingSetMiB": 2915.3
+      }
+    ],
+    "note": "Observed Windows working sets; file cache included, shared pages can be counted twice, not a long-term peak guarantee."
+  },
+  "sourceHashes": {
+    "apps/portal/public/tool-ping.json": "bbf9bb8f085672497969b0c5a27e97cace0e564d92941277efc532e67ee76dd7",
+    "apps/portal/src/pages/functions/[slug].astro": "062998d9bcef09e9b89b27f5d1b60cc10f8ec53dd6d71d613bfdaf4aab153fca",
+    "apps/portal/src/pages/functions/index.astro": "c80342dd1f944fe88f2d35e7706b507840189e0f178aa116a1495776bc58dff2",
+    "apps/portal/src/pages/index.astro": "406ae33f26397b4000098d999e34e64d9be2200199caa83286ca79f4dadfe2d6",
+    "apps/portal/src/发错货的文本部/发票抬头没填.mjs": "55bf1e0e258af1655b129d073feec295859a5b760971165d6ce0cfac1c7a760f",
+    "apps/portal/src/客服转网管_没移交/工位隔离.worker.js": "729c5e88643106496aa2a8a823756b6f85e3d43f4a25506697e08735732867b9",
+    "apps/portal/src/客服转网管_没移交/工单状态404.mjs": "1b94941edaa6b3edf02184acb40f21f545ea34b3e3f12fd274e868fba6999bcc",
+    "apps/portal/src/客服转网管_没移交/文件后缀不是鉴定书.json": "21a583d104e915eddccbc9e69493a4fada2188a588e04cf1a79a9ccdc4b9161f",
+    "apps/portal/src/客服转网管_没移交/正则先去隔壁.mjs": "708a5a1252b48e10e2cef2c28e2e2e1772d18f84e0f67add7ad33911c7678e6d",
+    "apps/portal/src/客服转网管_没移交/状态码没联网.json": "dafdc827a6b5df6977016dd346e4085b56d327c6929120330c245ae00935b277",
+    "apps/portal/src/工具不在货架上/收据别寄给服务器.js": "700ec5d7f6ee58bc69e3af5ef2e54d2a9d1d7e37da7674322d96a5fa38a34b65",
+    "apps/portal/src/工具不在货架上/柜台宽度没量过.css": "619118d235a1594d528c8c3cd616231e2f4ea4a716a68873ac170cd3341fce4c",
+    "apps/portal/src/工具不在货架上/目录又印错了.mjs": "e0d0155deabfa70764a7740111fdb685cf769d0a96a436291c0b9ae4a76e6217",
+    "apps/portal/src/工具不在货架上/这个柜台还没开.astro": "cf85e4762dab3c086e8616bd96d4ec644d616ea1f9f330506bd37211e87acbe2",
+    "apps/portal/src/工具不在货架上/退货窗口.astro": "6bca46ec236eeae7bc7ab65d8baf5b8a69fab4958685d330c8deebec4a430e98",
+    "apps/portal/src/没有开门的大厅/功能去向.mjs": "97118b1061879517cd1d02b468ddc24049a7ac2a9d0d98cea70849c929d4983c",
+    "apps/portal/src/没有开门的大厅/门户贴上去.astro": "4182881ff7875dbe9738e9f73cd59b49d4b7f52012ed61943742b2fa573e5a07",
+    "apps/portal/src/运费其实是计算器/报价单_final2.mjs": "61ca73222d4b713e5662ac960839b49d6632ac8d658e4650ef3a0cb61310ef00"
+  },
+  "dependencies": [
+    {
+      "name": "marked",
+      "version": "18.0.14",
+      "license": "MIT",
+      "actualLocalLocation": "F:\\OCVdeps\\pnpm\\virtual-store\\omnicivitas\\marked@18.0.14\\node_modules\\marked",
+      "verifiedUsage": [
+        "B044",
+        "safe browser Markdown preview"
+      ],
+      "notice": "THIRD_PARTY_NOTICES.txt"
+    },
+    {
+      "name": "dompurify",
+      "version": "3.4.16",
+      "license": "(MPL-2.0 OR Apache-2.0)",
+      "actualLocalLocation": "F:\\OCVdeps\\pnpm\\virtual-store\\omnicivitas\\dompurify@3.4.16\\node_modules\\dompurify",
+      "verifiedUsage": [
+        "B044",
+        "safe browser Markdown preview"
+      ],
+      "notice": "THIRD_PARTY_NOTICES.txt"
+    },
+    {
+      "name": "papaparse",
+      "version": "5.7.0",
+      "license": "MIT",
+      "actualLocalLocation": "F:\\OCVdeps\\pnpm\\virtual-store\\omnicivitas\\papaparse@5.7.0\\node_modules\\papaparse",
+      "verifiedUsage": [
+        "B045",
+        "quoted CSV browser round trip"
+      ],
+      "notice": "THIRD_PARTY_NOTICES.txt"
+    }
+  ],
+  "licenseHTTP": [
+    {
+      "file": "apps/portal/public/third-party-notices.txt",
+      "url": "/third-party-notices.txt",
+      "status": 200,
+      "bytes": 3768,
+      "sha256": "2fce52c8ef577958181865431ddc790049e9edc745921833219b9155d761abd1",
+      "source": "THIRD_PARTY_NOTICES.txt"
+    },
+    {
+      "file": "apps/portal/public/licenses/marked-18.0.14-LICENSE.txt",
+      "url": "/licenses/marked-18.0.14-LICENSE.txt",
+      "status": 200,
+      "bytes": 2942,
+      "sha256": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c",
+      "source": "docs/PHASE-5-SOURCES.md"
+    },
+    {
+      "file": "apps/portal/public/licenses/dompurify-3.4.16-LICENSE-APACHE-2.0.txt",
+      "url": "/licenses/dompurify-3.4.16-LICENSE-APACHE-2.0.txt",
+      "status": 200,
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "source": "docs/PHASE-5-SOURCES.md"
+    },
+    {
+      "file": "apps/portal/public/licenses/dompurify-3.4.16-LICENSE-MPL-2.0.txt",
+      "url": "/licenses/dompurify-3.4.16-LICENSE-MPL-2.0.txt",
+      "status": 200,
+      "bytes": 16726,
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "source": "docs/PHASE-5-SOURCES.md"
+    },
+    {
+      "file": "apps/portal/public/licenses/papaparse-5.7.0-LICENSE.txt",
+      "url": "/licenses/papaparse-5.7.0-LICENSE.txt",
+      "status": 200,
+      "bytes": 1079,
+      "sha256": "99aa68e4b42758b09828a46515f70369e5463458ab7a990189f641af2b8d9b4e",
+      "source": "docs/PHASE-5-SOURCES.md"
+    },
+    {
+      "file": "apps/portal/public/licenses/mathjs-15.2.0-LICENSE.txt",
+      "url": "/licenses/mathjs-15.2.0-LICENSE.txt",
+      "status": 200,
+      "bytes": 10172,
+      "sha256": "3b0f65a9308588e12b619b2f05c788b4a5f41220006ce563b826b0feb489fd26",
+      "source": "docs/PHASE-5-SOURCES.md"
+    },
+    {
+      "file": "apps/portal/public/licenses/mathjs-15.2.0-NOTICE.txt",
+      "url": "/licenses/mathjs-15.2.0-NOTICE.txt",
+      "status": 200,
+      "bytes": 629,
+      "sha256": "40e0c8aac7a769ef524e089b8ef75f81325ab7deca50def443b9b20d425e65b5",
+      "source": "docs/PHASE-5-SOURCES.md"
+    }
+  ],
+  "licenseSources": {
+    "file": "docs/PHASE-5-SOURCES.md",
+    "sha256": "8aabb94b201377a67bf62a2463aa11ef20dc879f336fef99d64d45e6454439f2",
+    "documentedLicenses": [
+      {
+        "name": "marked-18.0.14-LICENSE.txt",
+        "bytes": 2942,
+        "sha256": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c"
+      },
+      {
+        "name": "dompurify-3.4.16-LICENSE-APACHE-2.0.txt",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "name": "dompurify-3.4.16-LICENSE-MPL-2.0.txt",
+        "bytes": 16726,
+        "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+      },
+      {
+        "name": "papaparse-5.7.0-LICENSE.txt",
+        "bytes": 1079,
+        "sha256": "99aa68e4b42758b09828a46515f70369e5463458ab7a990189f641af2b8d9b4e"
+      },
+      {
+        "name": "mathjs-15.2.0-LICENSE.txt",
+        "bytes": 10172,
+        "sha256": "3b0f65a9308588e12b619b2f05c788b4a5f41220006ce563b826b0feb489fd26"
+      },
+      {
+        "name": "mathjs-15.2.0-NOTICE.txt",
+        "bytes": 629,
+        "sha256": "40e0c8aac7a769ef524e089b8ef75f81325ab7deca50def443b9b20d425e65b5"
+      }
+    ]
+  },
+  "sourceIntegrity": {
+    "check": "PASS: all 732 IDs, source text/line mappings, 34 categories and original file hashes are intact.",
+    "numbered": 732,
+    "originalTechnologies": 146,
+    "originalCategories": 34,
+    "sourceHash": "e45a5752bc4dbce9a7738e6b2dfd629f7777c3d6fbc22531f69557e04e7fe958",
+    "promptSourceHash": "8610a35a3c81070349378267d05bdf8e8b7fc466dec7a564b80f8e061a8fc522"
+  },
+  "guarantees": {
+    "algorithms": "35 actual forms and known outputs in both desktop/mobile browsers; meaningful algorithms also have 43 fresh unit checks.",
+    "localInput": "Browser proofs observe input/random-string absence from storage/diagnostics and GET-only traffic; there is no form upload.",
+    "export": "Actual clipboard Unicode text agrees after platform newline normalization (Windows may return LF as CRLF). Downloaded Blob UTF-8 bytes remain exactly canonical; CSV CRLF bytes match the known fixture and parse back without altered cells or formula strings.",
+    "worker": "Pathological JavaScript RegExp runs in a disposable Worker, times out after its 1.5-second deadline, cancels and recovers while the main UI remains responsive.",
+    "libraries": "Real Math.js scientific/matrix computations, marked + DOMPurify browser preview, and PapaParse quoted CSV parsing; installing a package alone is not evidence.",
+    "licenses": "The deployed attribution declaration and all six documented original license files return HTTP 200 with byte-for-byte and SHA-256 equality to local sources; package installation is not used as proof of publication.",
+    "bounds": "Text/CSV input 2 MiB, output 4 MiB, CSV 5,000 rows/256 columns, local checksum files 8 MiB; XML DTD/external entities rejected; scalar AST and matrix sizes bounded."
+  },
+  "limitations": [
+    "Only phase 5 is accepted. Phase 6 is not authorized; its remaining placeholder routes are still explicitly unopened.",
+    "These are browser-local tools. XML and Markdown previews require JavaScript and browser DOM APIs; no SSR tool execution is claimed.",
+    "Only six core services run. Optional language/database/messaging/monitoring services and complete-stack end-to-end testing were not rerun.",
+    "The old phase 4 21-check dormant backend probe is historical. This run freshly verifies account API 404 and real empty PostgreSQL tables only.",
+    "Intentional overlap and mobile clipping remain. Actual keyboard/focus/raise controls complete tools; passing browser tests is not a promise of tidy mobile layout.",
+    "Math.js uses finite JavaScript numbers for scalar calculations; the BigInt radix tool preserves arbitrary integer precision within its digit limit.",
+    "The working-set measurement is one sample after tests, includes shared/file-cache pages, and is not a long-term peak or FPS guarantee.",
+    "The public release portability audit, clean clone, cross-platform installation, and supplied-image redistribution licenses remain phase 9 work."
+  ]
+}

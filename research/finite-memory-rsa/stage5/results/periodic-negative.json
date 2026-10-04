@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "parameters": {
+    "L": 3,
+    "k": 2,
+    "boundary": "periodic"
+  },
+  "rows": [
+    {
+      "feedback": "feedback-4-00005",
+      "feedbackMetrics": {
+        "coverage": {
+          "numerator": "2320",
+          "denominator": "2691",
+          "value": 0.8621330360460795
+        },
+        "absOrder": {
+          "numerator": "115601",
+          "denominator": "233818",
+          "value": 0.4944059054478269
+        },
+        "attemptsPerParticle": {
+          "numerator": "127869221",
+          "denominator": "28608320",
+          "value": 4.469651520956141
+        }
+      },
+      "components": [
+        {
+          "policy": "switch-20-20",
+          "weight": "1/1",
+          "states": 2,
+          "metrics": {
+            "coverage": {
+              "numerator": "21304",
+              "denominator": "24219",
+              "value": 0.87963995210372
+            },
+            "absOrder": {
+              "numerator": "853441",
+              "denominator": "2104362",
+              "value": 0.405558074133632
+            },
+            "inverseN": {
+              "numerator": "8185",
+              "denominator": "32292",
+              "value": 0.253468351294438
+            },
+            "attemptsPerParticle": {
+              "numerator": "84944179",
+              "denominator": "19310616",
+              "value": 4.398833211742183
+            }
+          }
+        }
+      ],
+      "dominatingHullVector": {
+        "coverage": {
+          "numerator": "21304",
+          "denominator": "24219",
+          "value": 0.87963995210372
+        },
+        "absOrder": {
+          "numerator": "853441",
+          "denominator": "2104362",
+          "value": 0.405558074133632
+        },
+        "attemptsPerParticle": {
+          "numerator": "84944179",
+          "denominator": "19310616",
+          "value": 4.398833211742183
+        }
+      },
+      "coordinateSlacks": {
+        "coverageGain": {
+          "numerator": "424",
+          "denominator": "24219",
+          "value": 0.01750691605764
+        },
+        "orderReduction": {
+          "numerator": "93484",
+          "denominator": "1052181",
+          "value": 0.088847831314194
+        },
+        "costReduction": {
+          "numerator": "54701807",
+          "denominator": "772424640",
+          "value": 0.070818309213957
+        }
+      }
+    },
+    {
+      "feedback": "feedback-4-00006",
+      "feedbackMetrics": {
+        "coverage": {
+          "numerator": "2320",
+          "denominator": "2691",
+          "value": 0.8621330360460795
+        },
+        "absOrder": {
+          "numerator": "114809",
+          "denominator": "233818",
+          "value": 0.49101865553550195
+        },
+        "attemptsPerParticle": {
+          "numerator": "3207255",
+          "denominator": "715208",
+          "value": 4.484366785606425
+        }
+      },
+      "components": [
+        {
+          "policy": "switch-20-20",
+          "weight": "1/1",
+          "states": 2,
+          "metrics": {
+            "coverage": {
+              "numerator": "21304",
+              "denominator": "24219",
+              "value": 0.87963995210372
+            },
+            "absOrder": {
+              "numerator": "853441",
+              "denominator": "2104362",
+              "value": 0.405558074133632
+            },
+            "inverseN": {
+              "numerator": "8185",
+              "denominator": "32292",
+              "value": 0.253468351294438
+            },
+            "attemptsPerParticle": {
+              "numerator": "84944179",
+              "denominator": "19310616",
+              "value": 4.398833211742183
+            }
+          }
+        }
+      ],
+      "dominatingHullVector": {
+        "coverage": {
+          "numerator": "21304",
+          "denominator": "24219",
+          "value": 0.87963995210372
+        },
+        "absOrder": {
+          "numerator": "853441",
+          "denominator": "2104362",
+          "value": 0.405558074133632
+        },
+        "attemptsPerParticle": {
+          "numerator": "84944179",
+          "denominator": "19310616",
+          "value": 4.398833211742183
+        }
+      },
+      "coordinateSlacks": {
+        "coverageGain": {
+          "numerator": "424",
+          "denominator": "24219",
+          "value": 0.01750691605764
+        },
+        "orderReduction": {
+          "numerator": "89920",
+          "denominator": "1052181",
+          "value": 0.085460581401869
+        },
+        "costReduction": {
+          "numerator": "825853",
+          "denominator": "9655308",
+          "value": 0.085533573864241
+        }
+      }
+    },
+    {
+      "feedback": "feedback-4-00009",
+      "feedbackMetrics": {
+        "coverage": {
+          "numerator": "21304",
+          "denominator": "24219",
+          "value": 0.8796399521037203
+        },
+        "absOrder": {
+          "numerator": "853441",
+          "denominator": "2104362",
+          "value": 0.40555807413363293
+        },
+        "attemptsPerParticle": {
+          "numerator": "84944179",
+          "denominator": "19310616",
+          "value": 4.398833211742184
+        }
+      },
+      "components": [
+        {
+          "policy": "switch-20-20",
+          "weight": "1/1",
+          "states": 2,
+          "metrics": {
+            "coverage": {
+              "numerator": "21304",
+              "denominator": "24219",
+              "value": 0.87963995210372
+            },
+            "absOrder": {
+              "numerator": "853441",
+              "denominator": "2104362",
+              "value": 0.405558074133632
+            },
+            "inverseN": {
+              "numerator": "8185",
+              "denominator": "32292",
+              "value": 0.253468351294438
+            },
+            "attemptsPerParticle": {
+              "numerator": "84944179",
+              "denominator": "19310616",
+              "value": 4.398833211742183
+            }
+          }
+        }
+      ],
+      "dominatingHullVector": {
+        "coverage": {
+          "numerator": "21304",
+          "denominator": "24219",
+          "value": 0.87963995210372
+        },
+        "absOrder": {
+          "numerator": "853441",
+          "denominator": "2104362",
+          "value": 0.405558074133632
+        },
+        "attemptsPerParticle": {
+          "numerator": "84944179",
+          "denominator": "19310616",
+          "value": 4.398833211742183
+        }
+      },
+      "coordinateSlacks": {
+        "coverageGain": {
+          "numerator": "0",
+          "denominator": "1",
+          "value": 0
+        },
+        "orderReduction": {
+          "numerator": "0",
+          "denominator": "1",
+          "value": 0
+        },
+        "costReduction": {
+          "numerator": "0",
+          "denominator": "1",
+          "value": 0
+        }
+      }
+    },
+    {
+      "feedback": "feedback-4-00010",
+      "feedbackMetrics": {
+        "coverage": {
+          "numerator": "21304",
+          "denominator": "24219",
+          "value": 0.8796399521037203
+        },
+        "absOrder": {
+          "numerator": "859453",
+          "denominator": "2104362",
+          "value": 0.40841499703948275
+        },
+        "attemptsPerParticle": {
+          "numerator": "3377320357",
+          "denominator": "772424640",
+          "value": 4.372362276014395
+        }
+      },
+      "components": [
+        {
+          "policy": "switch-20-14",
+          "weight": "9/10",
+          "states": 2,
+          "metrics": {
+            "coverage": {
+              "numerator": "802856",
+              "denominator": "909387",
+              "value": 0.88285405443447
+            },
+            "absOrder": {
+              "numerator": "11505230203",
+              "denominator": "29814353838",
+              "value": 0.385895675134034
+            },
+            "inverseN": {
+              "numerator": "305873",
+              "denominator": "1212516",
+              "value": 0.252263062920406
+            },
+            "attemptsPerParticle": {
+              "numerator": "3723184272175786717",
+              "denominator": "841307954916947760",
+              "value": 4.425471375155762
+            }
+          }
+        },
+        {
+          "policy": "H-once-V-forever",
+          "weight": "1/10",
+          "states": 2,
+          "metrics": {
+            "coverage": {
+              "numerator": "8",
+              "denominator": "9",
+              "value": 0.888888888888888
+            },
+            "absOrder": {
+              "numerator": "1",
+              "denominator": "2",
+              "value": 0.5
+            },
+            "inverseN": {
+              "numerator": "1",
+              "denominator": "4",
+              "value": 0.25
+            },
+            "attemptsPerParticle": {
+              "numerator": "37",
+              "denominator": "10",
+              "value": 3.7
+            }
+          }
+        }
+      ],
+      "dominatingHullVector": {
+        "coverage": {
+          "numerator": "446336",
+          "denominator": "505215",
+          "value": 0.883457537879912
+        },
+        "absOrder": {
+          "numerator": "6580791597",
+          "denominator": "16563529910",
+          "value": 0.39730610762063
+        },
+        "attemptsPerParticle": {
+          "numerator": "813811064061661937",
+          "denominator": "186957323314877280",
+          "value": 4.352924237640185
+        }
+      },
+      "coordinateSlacks": {
+        "coverageGain": {
+          "numerator": "5190136",
+          "denominator": "1359533565",
+          "value": 0.003817585776192
+        },
+        "orderReduction": {
+          "numerator": "96801926273279",
+          "denominator": "8713915732116855",
+          "value": 0.011108889418851
+        },
+        "costReduction": {
+          "numerator": "5848032782749165024711",
+          "denominator": "300855089910120186767040",
+          "value": 0.019438038374209
+        }
+      }
+    },
+    {
+      "feedback": [
+        "feedback-4-00004",
+        "feedback-4-00012"
+      ],
+      "components": [
+        {
+          "policy": "H-once-V-forever",
+          "weight": "1/1",
+          "states": 2,
+          "metrics": {
+            "coverage": {
+              "numerator": "8",
+              "denominator": "9",
+              "value": 0.888888888888888
+            },
+            "absOrder": {
+              "numerator": "1",
+              "denominator": "2",
+              "value": 0.5
+            },
+            "inverseN": {
+              "numerator": "1",
+              "denominator": "4",
+              "value": 0.25
+            },
+            "attemptsPerParticle": {
+              "numerator": "37",
+              "denominator": "10",
+              "value": 3.7
+            }
+          }
+        }
+      ],
+      "meaning": "Same complete physical process by forced-first-success and fixed trace encoding."
+    }
+  ],
+  "sources": [
+    {
+      "file": "../stage4/results/capability-search.json",
+      "sha256": "b2477aaabff6aff6fade41d86d5a2b4e7a7efe8ad3ebf52504c9f3e86a81c6f0"
+    },
+    {
+      "file": "../stage4/results/proper-boundary-null.json",
+      "sha256": "fc9c5bab5939b94e0c7ce3e14d84ee100ae903a5549c2f6b821c537f43240ca8"
+    }
+  ],
+  "theorem": "For every mu,nu>=0, the maximum J over all fixed-proper deterministic one-bit feedback physical classes is <= the supremum over complete fixed-proper <=2-state stochastic temporal controllers. All feedback points lie in the monotone dominated closure of the temporal convex hull.",
+  "proof": "Each feedback vector is weakly dominated by an explicit convex combination of proper <=2-state temporal vectors. For linear nonnegative scalarization, its reward is <= the combination average <= one constituent reward <= full temporal support. The mixture itself is not required to use only two states.",
+  "limits": "Not equality of nonconvex attainable sets, not exact raw point inclusion, not arbitrary stochastic feedback, not universal-liveness scope, not larger lattices. First-V label counterparts have identical three objectives by transposition."
+}

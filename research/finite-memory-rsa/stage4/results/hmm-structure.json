@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "computedAtUTC": "2026-10-04T06:26:55.705Z",
+  "fullFamilyDegreesOfFreedom": [
+    {
+      "states": 1,
+      "parameters": 1
+    },
+    {
+      "states": 2,
+      "parameters": 7
+    },
+    {
+      "states": 3,
+      "parameters": 17
+    },
+    {
+      "states": 4,
+      "parameters": 31
+    }
+  ],
+  "examples": [
+    {
+      "name": "edge-2",
+      "hankelRank": 2,
+      "declaredStates": 2,
+      "reachableLinearDimension": 2,
+      "observableLinearDimension": 2,
+      "minimumPositiveStatesAtLeast": 2,
+      "minimumPositiveStatesExactly": 2,
+      "caveat": "Hankel rank is a linear-realization lower bound; if rank<n it need not be an achievable positive-HMM state count."
+    },
+    {
+      "name": "edge-3",
+      "hankelRank": 3,
+      "declaredStates": 3,
+      "reachableLinearDimension": 3,
+      "observableLinearDimension": 3,
+      "minimumPositiveStatesAtLeast": 3,
+      "minimumPositiveStatesExactly": 3,
+      "caveat": "Hankel rank is a linear-realization lower bound; if rank<n it need not be an achievable positive-HMM state count."
+    },
+    {
+      "name": "edge-4",
+      "hankelRank": 4,
+      "declaredStates": 4,
+      "reachableLinearDimension": 4,
+      "observableLinearDimension": 4,
+      "minimumPositiveStatesAtLeast": 4,
+      "minimumPositiveStatesExactly": 4,
+      "caveat": "Hankel rank is a linear-realization lower bound; if rank<n it need not be an achievable positive-HMM state count."
+    },
+    {
+      "name": "IID-fair",
+      "hankelRank": 1,
+      "declaredStates": 1,
+      "reachableLinearDimension": 1,
+      "observableLinearDimension": 1,
+      "minimumPositiveStatesAtLeast": 1,
+      "minimumPositiveStatesExactly": 1,
+      "caveat": "Hankel rank is a linear-realization lower bound; if rank<n it need not be an achievable positive-HMM state count."
+    }
+  ],
+  "nonPermutationEquivalence": {
+    "base": {
+      "initial": [
+        "1/2",
+        "1/2"
+      ],
+      "H": [
+        [
+          "3/10",
+          "1/10"
+        ],
+        [
+          "1/10",
+          "1/10"
+        ]
+      ],
+      "V": [
+        [
+          "1/10",
+          "1/2"
+        ],
+        [
+          "1/5",
+          "3/5"
+        ]
+      ]
+    },
+    "transformed": {
+      "initial": [
+        "1/2",
+        "1/2"
+      ],
+      "H": [
+        [
+          "121/400",
+          "49/400"
+        ],
+        [
+          "31/400",
+          "39/400"
+        ]
+      ],
+      "V": [
+        [
+          "51/400",
+          "179/400"
+        ],
+        [
+          "101/400",
+          "229/400"
+        ]
+      ]
+    },
+    "similarity": [
+      [
+        "9/10",
+        "1/10"
+      ],
+      [
+        "1/10",
+        "9/10"
+      ]
+    ],
+    "equivalence": {
+      "equivalent": true,
+      "rank": 2,
+      "proof": "Exact reachable row-span annihilates the all-ones column"
+    },
+    "rank": {
+      "hankelRank": 2,
+      "declaredStates": 2,
+      "reachableLinearDimension": 2,
+      "observableLinearDimension": 2,
+      "minimumPositiveStatesAtLeast": 2,
+      "minimumPositiveStatesExactly": 2,
+      "caveat": "Hankel rank is a linear-realization lower bound; if rank<n it need not be an achievable positive-HMM state count."
+    }
+  },
+  "universalOperationalEquivalence": "For fixed k and all sufficiently large valid square geometries, any finite orientation word can be paired with a positive-probability all-success anchor history. Its process-trace probability is the orientation-word probability times M^(-length). Thus universal RSA operational equivalence of temporal HMMs is exactly their planned-word law equivalence.",
+  "fullPositiveMinimalitySolved": false
+}

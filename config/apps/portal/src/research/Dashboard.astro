@@ -1,0 +1,33 @@
+---
+import Graphic from './Graphic.astro';
+import {newLaws,support,gallery} from './data.mjs';
+import {terminalAtoms,probabilityTiles} from './demo-model.mjs';
+const keys=[...new Set(newLaws.flatMap(row=>row.law.map(atom=>atom.key)))].sort((a,b)=>Number(a.split(':')[0])-Number(b.split(':')[0])||a.localeCompare(b));
+const maps=newLaws.map(row=>new Map(row.law.map(atom=>[atom.key,atom.probability.value])));
+const fraction=value=>{const [a,b]=value.split('/').map(Number);return a/b;};
+const tiles=probabilityTiles(terminalAtoms(newLaws[0].law),840,246);
+const rawNetwork=gallery[3];
+---
+<section class="research-section instrument-section" id="instruments">
+ <div class="section-heading"><div><p class="eyebrow">EXACT LAWS / LIVE ARCHIVE</p><h2>The evidence field.</h2></div><a class="research-text-link" href="/research/explore/">Explore ↗</a></div>
+ <div class="instrument-grid">
+  <a class="instrument-panel instrument-wide" href="/research/explore/#terminal"><header><h3>Terminal-law fingerprints</h3><span>6 LAWS / L3 · K2</span></header>
+   <svg viewBox="0 0 880 255" role="img" aria-label="Exact terminal probabilities of six retained temporal controllers; colour uses a square-root scale">
+    {newLaws.map((row,i)=><g><text x="12" y={36+i*33} fill="#8ca4b7" font-size="10" font-family="monospace">{row.policy.replace('support-','T')}{row.parameters.boundary==='open'?' / O':' / P'}</text>{keys.map((key,j)=>{const p=maps[i].get(key)??0;return <rect x={101+j*754/keys.length} y={18+i*33} width={754/keys.length-2} height="28" fill={p?`hsl(${180-Math.sqrt(p)*210} 68% ${15+Math.sqrt(p)*95}%)`:'#101b28'}><title>{row.policy} / {key}: {p.toPrecision(7)}</title></rect>;})}</g>)}
+    <text x="101" y="237" fill="#6f899b" font-size="9" font-family="monospace">OCCUPANCY MASK + H COUNT →</text><text x="855" y="237" text-anchor="end" fill="#6f899b" font-size="9" font-family="monospace">COLOUR / √PROBABILITY · O = OPEN · P = PERIODIC</text>
+   </svg><footer><span>{keys.length} distinct terminal keys</span><span>Inspect exact fractions ↗</span></footer>
+  </a>
+  <a class="instrument-panel" href="/research/explore/#kernel"><header><h3>Joint kernels</h3><span>H / V</span></header><div class="kernel-fingerprints">{newLaws.map(row=><div><span>{row.policy.replace('support-','T')}</span>{['H','V'].map(action=><div class={`kernel-mini action-${action.toLowerCase()}`} aria-label={`${row.policy} K_${action}`}>{row.realization[action].flat().map(p=><i style={`--probability:${fraction(p)}`} title={p}>{p==='0/1'?'·':p==='1/1'?'1':p}</i>)}</div>)}</div>)}</div><footer><span>Fixed initial state / 2 states</span><span>↗</span></footer></a>
+  <a class="instrument-panel" href="/research/read/theorems/"><header><h3>Properness topology</h3><span>13 CLASSES</span></header><Graphic kind="controllers" id="dash-proper"/><footer><span>Fixed-periodic deterministic scope</span><span>↗</span></footer></a>
+  <a class="instrument-panel" href="/research/explore/#prefix"><header><h3>Word partition</h3><span>DEPTH 8 EXCERPT</span></header><Graphic kind="tree" id="dash-tree"/><footer><span>Full certificate: 40,001 nodes</span><span>↗</span></footer></a>
+  <a class="instrument-panel" href="/research/atlas/"><header><h3>Capability projection</h3><span>EXACT FEASIBLE</span></header><Graphic kind="capability" id="dash-cloud"/><footer><span>Colour: cost / incomplete frontier</span><span>↗</span></footer></a>
+  <a class="instrument-panel instrument-wide" href="/research/explore/#terminal"><header><h3>Probability-space tessellation</h3><span>T1 / PERIODIC</span></header>
+   <svg viewBox="0 0 880 285" role="img" aria-label="33 exact terminal atoms; tile area is proportional to probability">
+    {tiles.map(tile=><g><rect x={tile.x+20} y={tile.y+15} width={tile.w} height={tile.h} fill={`hsl(${tile.N===4?169:270} 38% ${18+tile.p*72}%)`} stroke="#86c8c940" stroke-width="1"><title>mask {tile.mask}; N={tile.N}; H={tile.key.split(':')[1]}; p={tile.p}</title></rect>{tile.w>37&&tile.h>36&&Array.from({length:9},(_,j)=>{const cell=Math.min((tile.w-8)/3,(tile.h-8)/3,12),x=tile.x+20+(tile.w-3*cell)/2,y=tile.y+15+(tile.h-3*cell)/2;return <rect x={x+j%3*cell} y={y+Math.floor(j/3)*cell} width={cell-1.5} height={cell-1.5} fill={(tile.mask>>j)&1?'#b4ead8':'#143140'}/>;})}</g>)}
+    <text x="20" y="278" fill="#6f899b" font-size="9" font-family="monospace">AREA = PROBABILITY / CELL COLOUR = OCCUPANCY</text>
+   </svg><footer><span>33 atoms / exact rational law</span><span>Hover & select in the lab ↗</span></footer>
+  </a>
+  <a class="instrument-panel" href="/research/read/certification/"><header><h3>Certified enclosure</h3><span>8 DIRECTIONS</span></header><div class="enclosure-table">{support.supports.map(row=><div><span>{row.boundary==='periodic'?'P':'O'} / {row.index}</span><code>{row.lower.value.toFixed(5)}</code><i>→</i><code>{row.upper.value.toFixed(5)}</code><b class:list={{closed:row.width.value===0}} title={row.width.value===0?'Certified equality':'Interval remains unresolved'}>{row.width.value===0?'=':'⋯'}</b></div>)}</div><footer><span>Only 2 density directions closed</span><span>↗</span></footer></a>
+ </div>
+ <div class="verification-rail"><span><i></i>SEALED SCIENTIFIC RECORD</span><span>6,800 exact Bellman checks</span><span>9,000 parameter leaves replayed</span><a href="/research/library/#downloads">1,271 retained files ↗</a></div>
+</section>

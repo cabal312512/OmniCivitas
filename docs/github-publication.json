@@ -1,0 +1,28 @@
+{
+  "status": "prepared-awaiting-git-authentication",
+  "repository": "https://github.com/cabal312512/OmniCivitas",
+  "releaseTag": "v0.1.0",
+  "releaseMechanism": "GitHub Actions: .github/workflows/release.yml",
+  "license": "MIT",
+  "copyright": "2026 cabal312512",
+  "paperPdfPublished": false,
+  "publicationPolicy": "config/research-publication.json",
+  "originalScientificSealsRewritten": false,
+  "researchExperimentsRerun": false,
+  "newPdfGenerated": false,
+  "sourceAudit": {
+    "files": 2142,
+    "secrets": 0,
+    "forbiddenRuntimeFiles": 0,
+    "over100MiB": 0,
+    "unclassifiedMachinePaths": 0
+  },
+  "publicationAssets": {
+    "includedSealedArtifacts": 1265,
+    "originalSeals": 5,
+    "downloads": 4
+  },
+  "freshPublicCloneBuild": "pending",
+  "uploaded": false,
+  "releasePublished": false
+}

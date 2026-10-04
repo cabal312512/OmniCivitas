@@ -1,0 +1,145 @@
+{
+  "revision": "author-mark-1",
+  "name": "cabal312512",
+  "scope": "Internal identifiers and intentionally unused declarations; no labels, routes, wire keys, stored data names or frozen research changed",
+  "backup": "F:\\OCVdeps\\runtime\\backups\\author-mark-1791126975141",
+  "changes": [
+    {
+      "file": "config/apps/portal/src/js/db.mjs",
+      "kind": "internal-identifier-rename",
+      "beforeSha256": "319db6b434148964880dffa0e588240e026131dbd44cba42d8d496fb62d5281c",
+      "afterSha256": "298094ded43ce8d3095f34172239715d9e61cbfc5a4074d761c89be267d6a405"
+    },
+    {
+      "file": "services/gateway/src/runtime-store.ts",
+      "kind": "internal-identifier-rename",
+      "beforeSha256": "47b279535aae37bc95ee89c3724cdb31b8e2c950c88ab2dc6c02187c3a12f839",
+      "afterSha256": "592c17353a205ae7a6bdb895615ac7f88c1c77585af871520d5566bd7aeb88ff"
+    },
+    {
+      "file": "services/archive/src/api/guards.mjs",
+      "kind": "internal-identifier-rename",
+      "beforeSha256": "5c07a0e96cff73ce745b462a9e6aa4d65e44b1fde1c037bdc868e018c71ca982",
+      "afterSha256": "ae23f44b93405c5d952804d50a7f589575f1042c7df1d12825ca02cae96c3f1b"
+    },
+    {
+      "file": "scripts/copy-angular.mjs",
+      "kind": "internal-identifier-rename",
+      "beforeSha256": "116195572beb8634f4b652e1868859a60959b6f8e9e3aa34b063c91fb3409f60",
+      "afterSha256": "11ef3d8398f9c79dbd44d8156044e832f9050517228e5d8384bd16cf77f8ab02"
+    },
+    {
+      "file": "scripts/runtime-policy.mjs",
+      "kind": "internal-identifier-rename",
+      "beforeSha256": "cac6f936a2e8a3aa7ffc529c9e052eec29c917337b753eaed6f4ecd079efeaeb",
+      "afterSha256": "98ceb30881b918bf4939ec2aab8fb4b002e970c4866984f47212568226a75ef3"
+    },
+    {
+      "file": "config/apps/portal/astro.config.mjs",
+      "kind": "internal-identifier-rename",
+      "beforeSha256": "7ed941f83e43a127ab722855e9e67e3970236b62254aefdf1bcc9a1fdff250b4",
+      "afterSha256": "8cbe4e66812405e14802ccbe18141c1a4eb6799714231d428dba285e88e99a7c"
+    },
+    {
+      "file": "config/apps/portal/src/pages/legal/index.astro",
+      "kind": "internal-identifier-rename",
+      "beforeSha256": "85be967a0e83f8bec13dcf510612ed580098f00677f05025e0e58e4003b4d302",
+      "afterSha256": "667d1fbe7a6f945d2082d24b88ef745062920a9b63a09995c666b665b6ce0608"
+    },
+    {
+      "file": "config/apps/portal/src/tool/work.mjs",
+      "kind": "unexported-unused-function",
+      "beforeSha256": "d37e17ae44795ba286cf51c6fdd94f5c08bf7357724b4680ea824ce04b867aa5",
+      "afterSha256": "b82723282db2ca09ce8de0901b68d5edce1466c9d8b0f39b6d73250ac07e7458"
+    },
+    {
+      "file": "config/apps/portal/src/img/size.mjs",
+      "kind": "unexported-unused-function",
+      "beforeSha256": "44021ad6f9ae4b1f42bfdec30c6a9be04e5edf4f716349a65c9514412238ef6e",
+      "afterSha256": "0c65cd6f3450059362789874708090e8dacc44e4f0efd6d6d604de53b0919cba"
+    },
+    {
+      "file": "config/apps/portal/src/img/img.mjs",
+      "kind": "unexported-unused-function",
+      "beforeSha256": "119139c34e11c0251f636b9ac0409f07b9725a5ab33f21a7ac79f3e914b1ffba",
+      "afterSha256": "57adea59bb822b02816bf8f70f9fdd223d7d122e660fe096e285b5f69b909e5a"
+    },
+    {
+      "file": "config/apps/portal/src/time/model.mjs",
+      "kind": "unexported-unused-function",
+      "beforeSha256": "1ec25424e49493c94f143457a7035750070d3d1019d7dd5282ac0f788264b98b",
+      "afterSha256": "b9223c9aa5147cd2dc2584269ebd79b08940fba50a93990e58d9637499998fec"
+    },
+    {
+      "file": "config/apps/portal/src/main1/identity.mjs",
+      "kind": "unexported-unused-function",
+      "beforeSha256": "3b22804b9569c234c09f82e3487ae017d2d9b1aff14ef8f61f4bb0b9ee672dab",
+      "afterSha256": "12e1c511d376d7365aa671302cc7b68f1c01a875e3b9eeb0a8e9e4924fc689a0"
+    },
+    {
+      "file": "config/apps/portal/src/main1/catalogue.mjs",
+      "kind": "unexported-unused-function",
+      "beforeSha256": "d35d7e043425aa6ecb587f2fa2261599f14478052754828ac6dea6716cb0ee70",
+      "afterSha256": "3e31ea15f5cbb93b619bb45edf7de5c43f86ec802a93b67280c78166564662a4"
+    },
+    {
+      "file": "services/archive/src/api/main.mjs",
+      "kind": "unexported-unused-function",
+      "beforeSha256": "63547bd9880760d2c5863b113aa51090bef1e19b63b4dc7eb5856ef2c77232e9",
+      "afterSha256": "e6b256a0fc3ea8d9fbc0e4b3532a04fa2461a927d08cee745f64559c9f7cc097"
+    },
+    {
+      "file": "scripts/phase8-build.mjs",
+      "kind": "unexported-unused-function",
+      "beforeSha256": "6ceab501be66bc8e7e5dfe89a7448fc80750787db42cc8d8797e985a132a42eb",
+      "afterSha256": "7f89f9652ba99df9d553f4c44ea8c379715e1e011dbdd163c11fb807be4b2df1"
+    },
+    {
+      "file": "services/gateway/src/main.ts",
+      "kind": "unexported-unused-function",
+      "beforeSha256": "f0cdf52a117cdea7ad182f14340e4de3ed3c8627f842ef04ca7f5dcead4d6131",
+      "afterSha256": "5a8f704e3d137574c108af3f0c414968522fe77d6028918d2f6c4876bd307993"
+    },
+    {
+      "file": "services/fastapi/main.py",
+      "kind": "unused-function",
+      "beforeSha256": "09fbbe6e3a18415ddbdcc54b7d6dca0790e5dde57759ff6110152a66b549d9a2",
+      "afterSha256": "9ea0f132428a02e9cfcfd49e5ef962140084411023fc6e67a6ca1c26871776b0"
+    },
+    {
+      "file": "services/fiber/main.go",
+      "kind": "unused-function",
+      "beforeSha256": "d22e4e6655b0e69b5e7f9d0b6bfb8ffa7d8f021c31bd6047c3b8e85af7ac41ed",
+      "afterSha256": "6d17488e4d9e29ea43d520a083ede611a33c0a1c430e1daca915b789d627da2e"
+    },
+    {
+      "file": "services/sinatra/main.rb",
+      "kind": "unused-function",
+      "beforeSha256": "408ed57516f3484ec9045c2f093855c7127702b34b852282d0232c86753bb4bd",
+      "afterSha256": "ac23b95564671b757cd56f1b555d20def152f038f9fd9829b2c883f605198b52"
+    },
+    {
+      "file": "services/laravel/SchoolStudent.php",
+      "kind": "private-unused-function",
+      "beforeSha256": "a36ddbaec472a90617b3a917ee6ac8fbfa97a8c285255aec32010aa84b4e5730",
+      "afterSha256": "ac0dfa6542332662d3cc43fa1b419a12397bfd831c6d6f03e4868fb1d49ee621"
+    },
+    {
+      "file": "services/spring/src/main/java/ocv/tmp/backup/Municipal.java",
+      "kind": "private-unused-function",
+      "beforeSha256": "4a62e70ac87a0a37ac89d3d2ad330680399a17b390ca909be2958db24a471d42",
+      "afterSha256": "2ca2495479aabb3f5797765a819ac533614af1c4129c84e2a56058ffb06974d8"
+    },
+    {
+      "file": "services/dotnet/Program.cs",
+      "kind": "unused-local-function",
+      "beforeSha256": "5e6f932238a0db4e072cecb1fb12e7531ec665f1fc885a693023bba627362b2d",
+      "afterSha256": "064fe6d10253d66101fe7acf65844edfa041fd9c7d0afbdde3211dc03f1d806e"
+    }
+  ],
+  "statementPageChanges": [
+    "config/apps/portal/src/pages/legal/index.astro",
+    "config/apps/portal/src/styles/legal.css"
+  ],
+  "buildContextFix": ".dockerignore now retains public/memes assets already referenced by existing pages"
+}

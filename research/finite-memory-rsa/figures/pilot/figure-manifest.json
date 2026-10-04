@@ -1,0 +1,47 @@
+{
+  "source": "processed summaries only; no simulation or controller selection",
+  "inputAuditStatus": "sealed-awaiting-confirmation",
+  "inputAuditErrors": [],
+  "figures": [
+    {
+      "name": "atlas-coverage",
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "description": "All 64 numerical controller IDs. Missing cells remain blank. Exploratory point estimates; see summary.csv for uncertainty."
+    },
+    {
+      "name": "atlas-deadlock",
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "description": "All 64 numerical controller IDs. Missing cells remain blank. Exploratory point estimates; see summary.csv for uncertainty."
+    },
+    {
+      "name": "atlas-absolute-order",
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "description": "All 64 numerical controller IDs. Missing cells remain blank. Exploratory point estimates; see summary.csv for uncertainty."
+    },
+    {
+      "name": "coverage-order-tradeoff",
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "description": "Exploratory terminal coverage versus mean absolute order. Dotted line is the prespecified isotropy threshold, not a significance decision."
+    },
+    {
+      "name": "signed-order-cancellation",
+      "formats": [
+        "pdf",
+        "png"
+      ],
+      "description": "Points near signed order zero but absolute order large are not isotropic. No averaging over controller IDs is performed."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+import Alpine from 'alpinejs';
+import htmx from 'htmx.org';
+import $ from 'jquery';
+import {LitElement,html,css} from 'lit';
+import i18next from 'i18next';
+import translation from '../locales/zh-CN/采购通知.json';
+import Joi from 'joi';import * as yup from 'yup';import {z} from 'zod';import validator from 'validator';
+import _ from 'lodash';import {pipe,trim,toUpper} from 'ramda';import {add} from 'mathjs';
+import {nanoid} from 'nanoid';import {v4 as packageUuid} from 'uuid';
+import moment from 'moment';import dayjs from 'dayjs';import {format} from 'date-fns';import {DateTime} from 'luxon';
+import {cabinet,reassembleObject,prefixFromOneCSV,deterministicBody,WorkerManagerFactory} from './db.mjs';
+class StampToApproveStamp extends LitElement{static properties={count:{type:Number}};static styles=css`:host{display:block;width:130px;background:#bc261f;color:#fff1c4;border:5px double #ffe185;padding:9px;transform:rotate(-8deg);font-family:serif}button{border:0;background:#fddd73;color:#321411;padding:8px;width:100%;cursor:pointer}`;constructor(){super();this.count=0;}render(){return html`<strong>戳的戳</strong><p>${this.count} 次</p><button @click=${()=>this.count++}>盖章</button>`;}}
+if(!customElements.get('stamp-of-stamp'))customElements.define('stamp-of-stamp',StampToApproveStamp);
+window.Alpine=Alpine;Alpine.start();htmx.config.timeout=4000;htmx.config.allowEval=false;htmx.config.allowScriptTags=false;htmx.config.historyCacheSize=0;
+const state=window.__ocvFront={saved:false,channelReceived:0,handIfCount:0};
+const $one=s=>document.querySelector(s);const display=(selector,value)=>{const el=$one(selector);if(el)el.textContent=typeof value==='string'?value:JSON.stringify(value,null,2);};
+await i18next.init({lng:'zh-CN',fallbackLng:'zh-CN',resources:{'zh-CN':{translation}},initAsync:false});display('#translated-note',i18next.t('closed'));
+const shortUuid=crypto.randomUUID();document.querySelector('#browser-cabinet').dataset.receiptId=shortUuid;
+document.cookie='ocv_pebble=43; SameSite=Lax; Path=/'+(location.protocol==='https:'?'; Secure':'');
+const persistedBadge=sessionStorage.getItem('ocv_plastic_delegate');
+const badge=persistedBadge?.length<=40?persistedBadge:'塑料锅代表';sessionStorage.setItem('ocv_plastic_delegate',badge);display('#session-badge',badge);
+function checkTwentyThreeTimes(v){
+ const failures=[];
+ if(typeof v!=='string')return ['文字'];
+ if(v.length===0)failures.push('空');
+ if(v.length>200)failures.push('长');
+ if(v.trim().length===0)failures.push('空白');
+ if(v.includes('\0'))failures.push('零');
+ if(v.includes('\u202e'))failures.push('方向');
+ if(v.includes('\u202d'))failures.push('方向');
+ if(v.includes('\u2066'))failures.push('方向');
+ if(v.includes('\u2067'))failures.push('方向');
+ if(v.includes('\u2068'))failures.push('方向');
+ if(v.includes('\u2069'))failures.push('方向');
+ if(v.includes('\u0001'))failures.push('控制');
+ if(v.includes('\u0002'))failures.push('控制');
+ if(v.includes('\u0003'))failures.push('控制');
+ if(v.includes('\u0004'))failures.push('控制');
+ if(v.includes('\u0005'))failures.push('控制');
+ if(v.includes('\u0006'))failures.push('控制');
+ if(v.includes('\u0007'))failures.push('控制');
+ if(v.includes('\u0008'))failures.push('控制');
+ if(v.includes('\u000b'))failures.push('控制');
+ if(v.includes('\u000c'))failures.push('控制');
+ if(v.includes('\u001b'))failures.push('控制');
+ if(v.includes('\u007f'))failures.push('控制');
+ state.handIfCount=23;return failures;
+}
+async function refreshCabinet(){const record=await reassembleObject();state.object=record;display('#object-output',record);$one('#cabinet-body').value=record.body;state.saved=true;display('#storage-note','抽屉已打开');return record;}
+const errorTo=e=>display('#storage-note','没存上：'+e.message);
+await refreshCabinet().catch(errorTo);
+$one('#cabinet-form').addEventListener('submit',async e=>{e.preventDefault();const button=$one('#cabinet-save');button.disabled=true;try{const value=$one('#cabinet-body').value;const checked=Joi.string().trim().min(1).max(200).validate(value);await yup.string().required().max(200).validate(value);z.string().trim().min(1).max(200).parse(value);if(checked.error||validator.isEmpty(value,{ignore_whitespace:true})||checkTwentyThreeTimes(value).length)throw Error('请写 1—200 个普通字符');state.validation={joi:true,yup:true,zod:true,validator:true,manualIfCount:state.handIfCount};await cabinet('put',value);await refreshCabinet();}catch(e){errorTo(e);}finally{button.disabled=false;}});
+$one('#cabinet-rebuild').addEventListener('click',async()=>{try{await cabinet('clear');for(const key of ['ocv_irrelevant_local','ocv_plastic_delegate','ocv_goods_delivery','ocv_redis_second_cache']){localStorage.removeItem(key);sessionStorage.removeItem(key);}if('caches'in window)await caches.delete('ocv-irrelevant-prefix-v1');const url=new URL(location.href);url.hash='warehouse=待盖章';history.replaceState(null,'',url);$one('#browser-cabinet').style.setProperty('--warehouse-label','43');await cabinet('put',deterministicBody);sessionStorage.setItem('ocv_plastic_delegate','塑料锅代表');display('#session-badge','塑料锅代表');await refreshCabinet();}catch(e){errorTo(e);}});
+$one('#cabinet-label').addEventListener('click',async()=>{const element=$one('#browser-cabinet');const code=Number(getComputedStyle(element).getPropertyValue('--warehouse-label'));element.style.setProperty('--warehouse-label',code===43?'44':'43');await refreshCabinet().catch(errorTo);});
+$one('#cabinet-status').addEventListener('click',async()=>{const url=new URL(location.href);url.hash=new URLSearchParams({warehouse:state.object?.statusAlias==='已归档'?'待盖章':'已归档'}).toString();history.replaceState(null,'',url);await refreshCabinet().catch(errorTo);});
+$one('#local-value').value=localStorage.getItem('ocv_irrelevant_local')||'42';$one('#local-save').addEventListener('click',()=>{localStorage.setItem('ocv_irrelevant_local',$one('#local-value').value.slice(0,32));display('#local-output',localStorage.getItem('ocv_irrelevant_local'));});
+$one('#migration-export').addEventListener('click',async()=>{try{const record=await reassembleObject();const blob=new Blob([JSON.stringify({version:1,record},null,2)],{type:'application/json'});const href=URL.createObjectURL(blob);const a=document.createElement('a');a.href=href;a.download='browser-migration.json';a.click();setTimeout(()=>URL.revokeObjectURL(href),1000);}catch(e){errorTo(e);}});
+$one('#worker-add').addEventListener('click',async()=>{try{const workerAnswer=await WorkerManagerFactory.create().add();const mathAnswer=add(2,2);const normalized=pipe(trim,toUpper)('  ocv ');const ids={native:crypto.randomUUID(),package:packageUuid(),short:nanoid()};state.utilities={workerAnswer,mathAnswer,normalized,empty:_.isEmpty([]),ids};display('#worker-output',state.utilities);}catch(e){display('#worker-output',e.message);}});
+let channel;
+function openTelephone(){channel='BroadcastChannel'in window?new BroadcastChannel('ocv-two-pieces-of-rice'):null;if(channel)channel.onmessage=e=>{if(e.data?.v!==1||e.data.type!=='RICE'||!Number.isInteger(e.data.count)||e.data.count<0||e.data.count>99)return;state.channelReceived++;display('#channel-output','隔壁标签：'+e.data.count);};}
+openTelephone();
+$one('#channel-send').addEventListener('click',()=>{const count=Math.min((state.channelSent||0)+1,99);state.channelSent=count;channel?.postMessage({v:1,type:'RICE',count});display('#channel-output','已广播：'+count);});
+$one('#horizontal-scale').addEventListener('click',()=>window.open('/?expanded=1','_blank','noopener'));
+function jqueryDecorates(){const nodes=$('[data-jquery-display]');nodes.addClass('ocv-jquery-painted').attr('title','保洁队临时改字').text('保洁经过：这句只管显示');$('#jquery-extra').show();state.jqueryDecorated=nodes.length;}
+document.addEventListener('click',e=>{if(e.target?.closest('#jquery-paint'))jqueryDecorates();});
+$('#jquery-hide').on('click',()=>$('#jquery-extra').hide());
+$('#jquery-ajax').on('click',()=>{$('#jquery-ajax').prop('disabled',true);$.ajax({url:'/api/ping.php',dataType:'json',timeout:4000}).done(value=>display('#jquery-output',value)).fail(()=>display('#jquery-output','没收到；重试')).always(()=>$('#jquery-ajax').prop('disabled',false));});
+document.body.addEventListener('htmx:afterRequest',e=>{state.htmx={successful:e.detail.successful};if(!e.detail.successful)display('#htmx-output','碎片没来；可以重试');});
+const instant='2026-10-01T19:14:00.000Z';const oldClock=moment.parseZone(instant).utcOffset(480).format('YYYY/MM/DD HH:mm');
+const dates={native:new Date(instant).toISOString(),moment:oldClock,dayjs:dayjs(instant).toISOString(),dateFns:format(new Date(instant),'yyyy-MM-dd'),luxon:DateTime.fromISO(instant).setZone('Asia/Shanghai').toFormat('yyyy/MM/dd HH:mm')};state.dates=dates;display('#date-output',dates);$one('#date-to-next').href='/borrowed?oldClock='+encodeURIComponent(oldClock)+'&role=锅代表';
+window.addEventListener('pagehide',()=>{channel?.close();channel=null;});window.addEventListener('pageshow',e=>{if(e.persisted&&!channel)openTelephone();});

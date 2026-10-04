@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "preLockExperiments": [
+    "experiments/landscape.json",
+    "experiments/refinement.json",
+    "experiments/refinement_success_flip.json",
+    "experiments/large_size.json",
+    "experiments/exact_validation_event.json",
+    "experiments/exact_validation_direct.json"
+  ],
+  "pilotExperiments": ["landscape", "refinement", "refinement_success_flip"],
+  "familySpec": "experiments/confirmation-spec.json",
+  "writeLock": "experiments/reproduction.lock.json",
+  "postLockExperiments": [
+    "experiments/confirmation.json",
+    "experiments/confirmation_stability.json"
+  ],
+  "analysisExperiments": [
+    "landscape",
+    "refinement",
+    "refinement_success_flip",
+    "large_size",
+    "confirmation",
+    "confirmation_stability"
+  ],
+  "matchMetric": "accepted_lag1",
+  "notes": "Regenerate a new lock after reproduced pilot but before reproduced holdout. The archived lock remains unchanged. New timestamps/runtime fields do not increase sample size. The fixed-geometry rare-event diagnostic is separately reproducible from its own script; it is not an RSA terminal run."
+}

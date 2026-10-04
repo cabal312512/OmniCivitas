@@ -1,0 +1,42 @@
+{
+  "source": "Four individual assets supplied by the user during the phase 4 interaction revision; original byte copies, not the dormant meme collection.",
+  "publicRedistributionLicense": "Not determined. Include in the phase 9 release license audit; local runtime evidence is not a redistribution grant.",
+  "assets": [
+    {
+      "file": "config/apps/portal/public/forgotten-cache/03.avif",
+      "sourceName": "c (3).avif",
+      "sha256": "203528bdad8433cfae591b738c3735911d9e2f64ed62ecac8e39f5dcf9b494d1",
+      "bytes": 28424,
+      "route": "/maze/cache/l1/l2/",
+      "activation": "Attachment button; initially no image node or image request",
+      "display": "Upright, maximum 132 x 164 CSS pixels"
+    },
+    {
+      "file": "config/apps/portal/public/forgotten-cache/04.jpg",
+      "sourceName": "codex-clipboard-9727fb70-d585-4d77-94f8-be58ba01735c.jpg",
+      "sha256": "2a20947007080740983e6d20981984b3b428d8d63065a6f1cbc31690bb04293f",
+      "bytes": 34801,
+      "route": "/maze/cache/l1/l2/",
+      "activation": "Same attachment button",
+      "display": "Upright, maximum 132 x 164 CSS pixels"
+    },
+    {
+      "file": "config/apps/portal/public/forgotten-cache/laowu.gif",
+      "sourceName": "codex-clipboard-a1441e4c-2344-47c3-8add-5e55dd43a989.gif",
+      "sha256": "07a15512be22e86c9315a310cc91c1605aacdd4ce3b3689dd31b99fce36f6c89",
+      "bytes": 2583659,
+      "route": "/maze/empty/",
+      "activation": "Prominent 老吴 button; initially no image request",
+      "display": "Centered large GIF for 12 seconds, no dismiss control; clicks while active do not extend expiry; OS reduced motion displays one canvas frame"
+    },
+    {
+      "file": "config/apps/portal/public/forgotten-cache/home-04.avif",
+      "sourceName": "c (4).avif",
+      "sha256": "a742ff427a19e9e6f2975de0e398dc2075a40cde916a964824c70ed6a94e32cb",
+      "bytes": 8973,
+      "route": "/",
+      "activation": "Directly visible in a new frame after the quiet logo cover",
+      "display": "Upright, 120 CSS pixels wide, at most 132 tall; native title drag and close; recover restores it"
+    }
+  ]
+}

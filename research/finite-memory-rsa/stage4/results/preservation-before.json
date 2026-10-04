@@ -1,0 +1,34 @@
+{
+  "verifiedAtUTC": "2026-10-04T05:42:52.156Z",
+  "groups": [
+    {
+      "name": "Stage I",
+      "files": 165,
+      "manifestSha256": "7d676ec02885ac56e9530b9e524c62659423b75242f412d8e5c47b766ad5c06c",
+      "failures": []
+    },
+    {
+      "name": "Stage II",
+      "files": 368,
+      "manifestSha256": "32a608f0422bb05733b4a7971a922fcca3a2e9aea3ff681fcaef3e17f3ea43f3",
+      "failures": []
+    },
+    {
+      "name": "Stage III",
+      "files": 195,
+      "manifestSha256": "cbda2e4a802488e9a23d462e4c3232a2da627dd25ecebb996525dcdc72c68425",
+      "failures": []
+    },
+    {
+      "name": "Website frozen9",
+      "files": 52,
+      "manifestSha256": "1875d64d492124257579e5d262e4f11edfcf6e625a37d75f7f37c40445820032",
+      "failures": []
+    }
+  ],
+  "ledgers": {
+    "docs/requirements.json": "29e14b4438d6aad2e25f7b9851ecc5851d5b62dc8d2101e1f9318399fe40db26",
+    "docs/screenshot-requirements.json": "083dbf6c880d702264614db23f56190e57e4b4c06253efac068f3c792c1eec1f",
+    "docs/public-release-requirements.json": "a19dabf6aa84d997bc61a04ef2a8652134192109c08ff38ecffd18c8705730c2"
+  }
+}

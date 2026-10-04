@@ -1,0 +1,12 @@
+---
+import {MEDAL_SVG} from './medal.mjs';
+import './medal.css';
+---
+<section class="aero-victory" data-aero-victory role="dialog" aria-modal="true" aria-labelledby="aero-victory-title" tabindex="-1" hidden>
+ <div class="aero-victory-card">
+  <button type="button" class="aero-medal-close" data-victory-close aria-label="关闭通关提示">×</button>
+  <h1 id="aero-victory-title">通关</h1>
+  <div class="aero-medal-art" set:html={MEDAL_SVG}></div>
+  <button type="button" class="aero-medal-download" data-victory-download>下载勋章</button>
+ </div>
+</section>

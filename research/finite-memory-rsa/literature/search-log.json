@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "searchDate": "2026-10-04",
+  "timezone": "Asia/Shanghai",
+  "engine": "Available web search; publisher/arXiv/institutional source follow-up; Crossref API",
+  "queryCount": 38,
+  "queries": [
+    "random sequential adsorption partially oriented k-mers square lattice jamming coverage dimers trimers anisotropy",
+    "random sequential adsorption temporal memory feedback successful failed adsorption finite state controller",
+    "random sequential adsorption lattice dimers jamming coverage 0.9069 trimer 0.8470",
+    "\"random sequential adsorption\" \"memory\"",
+    "\"random sequential adsorption\" \"feedback\"",
+    "\"random sequential adsorption\" \"temporal correlations\"",
+    "\"random sequential adsorption\" \"success\" \"orientation\" feedback",
+    "\"random sequential adsorption\" \"finite-state\"",
+    "\"random sequential adsorption\" \"history-dependent\"",
+    "\"PhysRevE.85.029902\" erratum Lebovka",
+    "\"029902\" \"Lebovka\" \"Erratum\"",
+    "\"random sequential adsorption\" \"success/failure\"",
+    "\"random sequential adsorption\" \"feedback-controlled\"",
+    "\"random sequential adsorption\" \"correlated\" \"orientation\"",
+    "\"random sequential adsorption\" \"adaptive\" orientation",
+    "\"feedback\" \"adsorption\" \"finite-state\"",
+    "\"correlated sequential adsorption\" Thompson Glandt 1992",
+    "\"Adsorption of line segments on a square\" Bonnier 1994",
+    "\"Traces of the arrival history\" Ziff DOI",
+    "\"random sequential adsorption\" \"0.906823\"",
+    "\"Extended series expansions for random sequential adsorption\" Gan Wang arxiv",
+    "\"Traces of the arrival history in the jammed state\" Ziff 1994",
+    "\"0.906823\" adsorption Gan Wang",
+    "\"Random sequential adsorption\" \"temporal\" \"controller\"",
+    "\"Traces of the arrival history in the jammed state of random sequential adsorption\" \"10.\"",
+    "\"The origin and characterization of conformational heterogeneity\" \"10.\"",
+    "\"Traces of the arrival history\" site:deepblue.lib.umich.edu",
+    "\"Traces of the arrival history\" site:iopscience.iop.org",
+    "\"The origin and characterization\" site:groups.mrl.illinois.edu",
+    "\"Model of correlated sequential adsorption of colloidal particles\" DOI",
+    "\"random sequential adsorption\" \"finite-memory\"",
+    "\"random sequential adsorption\" \"internal-state\"",
+    "\"feedback jamming\" adsorption",
+    "\"adsorption\" \"deterministic\" \"one-bit\"",
+    "\"Scaling behavior near jamming in random sequential adsorption\" arxiv",
+    "\"Scaling behaviour near jamming\" Purves Reeve Wattis Mao PDF",
+    "\"random sequential adsorption\" \"success/failure-only\"",
+    "\"finite-memory\" \"stochastic packing\""
+  ],
+  "references": [
+    {
+      "key": "evans1993review",
+      "doi": "10.1103/RevModPhys.65.1281",
+      "access": "official abstract and registry metadata",
+      "url": "https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.65.1281",
+      "metadataRegistry": "https://api.crossref.org/works/10.1103%2FRevModPhys.65.1281"
+    },
+    {
+      "key": "lebovka2011oriented",
+      "doi": "10.1103/PhysRevE.84.061603",
+      "access": "full text: sections II-III and Table I; PDF cross-check",
+      "url": "https://arxiv.org/html/1109.3271",
+      "metadataRegistry": "https://api.crossref.org/works/10.1103%2FPhysRevE.84.061603"
+    },
+    {
+      "key": "lebovka2012note",
+      "doi": "10.1103/PhysRevE.85.029902",
+      "access": "metadata only; correction full text unavailable",
+      "url": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.85.029902",
+      "metadataRegistry": "https://api.crossref.org/works/10.1103%2FPhysRevE.85.029902"
+    },
+    {
+      "key": "bonnier1994segments",
+      "doi": "10.1103/PhysRevE.49.305",
+      "access": "full text: model and Table I",
+      "url": "https://arxiv.org/pdf/cond-mat/9307043",
+      "metadataRegistry": "https://api.crossref.org/works/10.1103%2FPhysRevE.49.305"
+    },
+    {
+      "key": "gan1998series",
+      "doi": "10.1063/1.475687",
+      "access": "full text: sections II and IV",
+      "url": "https://arxiv.org/pdf/cond-mat/9710340",
+      "metadataRegistry": "https://api.crossref.org/works/10.1063%2F1.475687"
+    },
+    {
+      "key": "thompson1992correlated",
+      "doi": "10.1103/PhysRevA.46.4639",
+      "access": "official abstract and registry metadata",
+      "url": "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.46.4639",
+      "metadataRegistry": "https://api.crossref.org/works/10.1103%2FPhysRevA.46.4639"
+    },
+    {
+      "key": "pastorsatorras2001correlated",
+      "doi": "10.1103/PhysRevE.64.016103",
+      "access": "full text: model; official metadata",
+      "url": "https://arxiv.org/pdf/cond-mat/0105018",
+      "metadataRegistry": "https://api.crossref.org/works/10.1103%2FPhysRevE.64.016103"
+    },
+    {
+      "key": "douglas1997adaptive",
+      "doi": "10.1088/0953-8984/9/37/005",
+      "access": "author-group full text: ARSA model passage",
+      "url": "https://groups.mrl.illinois.edu/granick/Publications/PDF%20files/1997/Granick%20group%20-%2092%20-%20conformational%20heterogeneity.pdf",
+      "metadataRegistry": "https://api.crossref.org/works/10.1088%2F0953-8984%2F9%2F37%2F005"
+    },
+    {
+      "key": "ziff1994history",
+      "doi": "10.1088/0305-4470/27/18/003",
+      "access": "original paper author-uploaded reproduction; Crossref metadata; publisher blocked",
+      "url": "https://doi.org/10.1088/0305-4470/27/18/003",
+      "metadataRegistry": "https://api.crossref.org/works/10.1088%2F0305-4470%2F27%2F18%2F003"
+    },
+    {
+      "key": "purvis2015availability",
+      "doi": "10.1103/PhysRevE.91.022118",
+      "access": "official abstract and institutional manuscript: definitions and discussion",
+      "url": "https://nottingham-repository.worktribe.com/OutputFile/744921",
+      "metadataRegistry": "https://api.crossref.org/works/10.1103%2FPhysRevE.91.022118"
+    },
+    {
+      "key": "slutskii2018large",
+      "doi": "10.1103/PhysRevE.98.062130",
+      "access": "arXiv full text: abstract and algorithm sections",
+      "url": "https://arxiv.org/pdf/1810.06800",
+      "metadataRegistry": "https://api.crossref.org/works/10.1103%2FPhysRevE.98.062130"
+    },
+    {
+      "key": "koza2025percolation",
+      "doi": "10.1103/PhysRevE.111.034112",
+      "access": "official abstract and registry metadata; proofs not inspected",
+      "url": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.111.034112",
+      "metadataRegistry": "https://api.crossref.org/works/10.1103%2FPhysRevE.111.034112"
+    }
+  ],
+  "scope": "Targeted review, not an exhaustive systematic review or proof of novelty",
+  "closestFinding": "RRSA already retains orientation after failed trials and redraws it after success; the deterministic two-state enumeration has a distinct scope.",
+  "limitations": [
+    "No exhaustive citation-network crawl or Scopus/Web of Science search",
+    "Some publisher full texts unavailable",
+    "2012 Publisher's Note full text not retrieved",
+    "IOP page for Ziff 1994 blocked; original paper reproduction and metadata inspected",
+    "Generated summaries and secondary encyclopedias excluded as scientific evidence"
+  ],
+  "independentNumericalCheck": {
+    "method": "Composite Simpson integration after x=exp(-u), node standard library",
+    "panelCounts": [
+      65536,
+      131072
+    ],
+    "maxResolutionDifference": 7e-15,
+    "rigorousErrorBound": false,
+    "alignedCoverage": {
+      "k2": 0.8646647167633873,
+      "k3": 0.82365296317734,
+      "k4": 0.80389347991537,
+      "k8": 0.77518483321087
+    },
+    "sourceDiscrepancy": "Lebovka Table I prints k2=0.864665717, inconsistent with 1-exp(-2). Correction content not inferred."
+  }
+}

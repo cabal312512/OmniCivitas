@@ -1,0 +1,12 @@
+---
+import Layout from '../../../research/Layout.astro';
+import {Code} from 'astro:components';
+import {codes,prepareResearch,readCode} from '../../../research/data.mjs';
+export async function getStaticPaths(){await prepareResearch();return codes.map(code=>({params:{module:code.slug},props:{code}}));}
+const {code}=Astro.props;
+const source=readCode(code);
+---
+<Layout title={code.title} active="library">
+ <header class="reader-intro"><div class="research-breadcrumb"><a href="/research/">Research</a><span>/</span><a href="/research/library/">Source</a></div><p class="eyebrow">FROZEN SOURCE / COMPLETE MODULE</p><h1>{code.title}</h1><p>{code.description}</p><div class="reader-actions"><a class="research-button" href={`/research/files/${code.file}`} download>Download original source ↓</a><button class="research-button" data-copy-target="research-source" type="button">Copy source ↗</button></div></header>
+ <div class="source-grid"><nav class="source-menu" aria-label="Source modules">{codes.map(item=><a href={`/research/code/${item.slug}/`} aria-current={item.slug===code.slug?'page':undefined}>{item.title}</a>)}</nav><div><div class="source-code"><div class="code-window-bar"><span>{code.file}</span><span>{source.split('\n').length} lines / JavaScript</span></div><Code id="research-source" code={source} lang="javascript" theme="github-dark"/></div><p class="source-provenance">Read-only publication of the retained source. Server-side modules are shown as code; they are not executed by this reader.</p><p class="reader-limits">Some certificate verifiers deliberately use independent raw geometry; others share a Bellman engine. Read the <a href="/research/read/review/">final review</a> for the actual independence limits.</p></div></div>
+</Layout>

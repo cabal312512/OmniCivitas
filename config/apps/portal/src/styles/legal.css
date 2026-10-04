@@ -1,0 +1,22 @@
+.legal-page{margin:0;background:radial-gradient(ellipse at 80% 0,#dcefff,transparent 60%),#f6faff;color:#18375a;font:15px/1.85 system-ui,sans-serif;min-height:100vh}
+.legal-page header,.legal-page main{max-width:880px;margin:0 auto;padding:24px}
+.legal-page header{display:flex;justify-content:space-between;gap:24px;border-bottom:1px solid #1a64be26}
+.legal-page main{padding-bottom:80px}
+.legal-page a{color:#1157be;text-underline-offset:3px}
+.legal-page h1{font-size:30px;font-weight:550;line-height:1.4;margin:24px 0}
+.legal-page h2{font-size:19px;font-weight:550;margin:30px 0 8px}
+.legal-page p{margin:12px 0}
+.legal-page pre{font:12px/1.75 monospace;white-space:pre-wrap;overflow-wrap:anywhere;padding:18px;border:1px solid #1a64be26;background:#fff9;border-radius:8px}
+.legal-page summary{cursor:pointer;color:#1157be}
+.legal-page li{overflow-wrap:anywhere}
+.legal-languages{position:relative;z-index:9;margin:18px 28px 0;padding:14px 0 22px;display:flex;flex-wrap:wrap;align-items:center;gap:3px 2px;max-width:1280px;border-bottom:1px solid #0754e740}
+.legal-languages button{position:relative;box-sizing:border-box;min-width:var(--language-width);max-width:190px;padding:7px 9px;border:1px solid #4989d778;border-radius:3px;background:#edf8ffb8;color:#0649a8;font:var(--language-size)/1.35 system-ui,sans-serif;cursor:pointer;backdrop-filter:blur(8px);overflow-wrap:anywhere}
+.legal-languages button:nth-child(4n){margin-left:-11px;margin-top:10px;background:#c9e8ffbd;z-index:2}
+.legal-languages button:nth-child(7n){margin-top:-9px;padding-bottom:15px;border-bottom:3px solid #0966fc}
+.legal-languages button:nth-child(11n){width:180px;border-radius:19px 3px 3px 3px;background:#083e9de6;color:#d9faff}
+.legal-languages button:nth-child(13n){margin-right:17px;margin-left:7px}
+.legal-languages button[aria-pressed=true]{box-shadow:0 0 24px #00c7ff99;border-color:#0874ea;background:#0055e3;color:white;z-index:4}
+.legal-languages button:focus-visible{outline:2px solid #00bce5;outline-offset:2px;z-index:5}
+.legal-page .translation-note{position:relative;z-index:9;margin:9px 30px;font:11px/1.6 system-ui;color:#3f6591}
+.translation-note output{color:#a72c43;margin-left:15px}
+.legal-contact{position:relative;z-index:9;margin-top:24px;padding:12px 0;border-top:1px solid #1a64be26;font-size:12px}

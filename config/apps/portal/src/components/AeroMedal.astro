@@ -1,0 +1,17 @@
+---
+import {MEDAL_SVG} from '../3d/medal.mjs';
+import '../3d/medal.css';
+---
+<section class="aero-medal-home" data-aero-medal-home aria-label="游戏纪念勋章" inert>
+ <button type="button" class="aero-medal-trigger" data-aero-medal-open aria-haspopup="dialog" aria-controls="aero-medal-dialog">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8 14-2 8 6-3 6 3-2-8m-7-6 3-3 3 3-3 4Z"/></svg>纪念勋章
+ </button>
+</section>
+<dialog class="aero-medal-dialog" id="aero-medal-dialog" data-aero-medal-dialog aria-labelledby="aero-medal-heading">
+ <button type="button" class="aero-medal-close" data-aero-medal-close aria-label="关闭勋章">×</button>
+ <h2 id="aero-medal-heading">纪念勋章</h2>
+ <p class="aero-medal-empty" data-aero-medal-empty>尚未获得</p>
+ <div class="aero-medal-art" data-aero-medal-art hidden set:html={MEDAL_SVG}></div>
+ <button type="button" class="aero-medal-download" data-aero-medal-download hidden>下载勋章</button>
+</dialog>
+<script>import '../3d/medal-home.mjs';</script>

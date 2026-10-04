@@ -1,0 +1,1165 @@
+{
+  "schemaVersion": 1,
+  "revision": "aero-1",
+  "phase": 8,
+  "status": "complete",
+  "finishedAt": "2026-10-03T11:25:51.808Z",
+  "scope": "User-authorized additive 3D game maintenance and latest stamina/sprint/meadow-artifact/city-NPC steering",
+  "nextPhaseAuthorized": false,
+  "route": "/functions/3d-world/",
+  "fileMap": "docs/3D-GAME.md",
+  "features": {
+    "tools": 111,
+    "groups": 13,
+    "games": 11,
+    "worldSizeM": 12000,
+    "areaKm2": 144,
+    "buildings": 243,
+    "cityDistricts": 5,
+    "cityRecords": [
+      {
+        "id": "city",
+        "x": -850,
+        "z": -1350,
+        "style": "glass",
+        "buildings": 64
+      },
+      {
+        "id": "north-city",
+        "x": 3400,
+        "z": -3700,
+        "style": "office",
+        "buildings": 36
+      },
+      {
+        "id": "white-plaza",
+        "x": -3800,
+        "z": -400,
+        "style": "plaza",
+        "buildings": 12
+      },
+      {
+        "id": "arcade",
+        "x": 0,
+        "z": 3700,
+        "style": "arcade",
+        "buildings": 16
+      },
+      {
+        "id": "spires",
+        "x": 4100,
+        "z": -1200,
+        "style": "spires",
+        "buildings": 49
+      }
+    ],
+    "trees": 0,
+    "restStations": 8,
+    "nearChunksMax": 25,
+    "scenery": {
+      "benches": 26,
+      "busStops": 8,
+      "pathLamps": 100,
+      "longFences": 6,
+      "glassWells": 8,
+      "reflectingPools": 2,
+      "amphitheatres": 1,
+      "colonnades": 2,
+      "poolWalls": 2,
+      "playgrounds": 1,
+      "sportsCourts": 1,
+      "pedestrianBridges": 2,
+      "reedClumps": 20,
+      "canalSteps": 1,
+      "steppingStones": 6,
+      "lowWalls": 5
+    },
+    "enemyCount": 91,
+    "enemyKinds": 5,
+    "cityNPCCount": 40,
+    "cityNPCKinds": 5,
+    "npcPerDistrict": 8,
+    "meadowArtifacts": [
+      {
+        "id": "m01",
+        "type": "segmented-ellipsoid",
+        "kind": "segmented-ellipsoid",
+        "x": -480,
+        "y": 9.133029058470532,
+        "z": -550,
+        "position": {
+          "x": -480,
+          "y": 9.133029058470532,
+          "z": -550
+        },
+        "baseY": 1.1330290584705316,
+        "placement": "half-buried",
+        "size": 140.40000000000003,
+        "height": 104,
+        "scale": 160,
+        "bounds": {
+          "minX": -550.2,
+          "maxX": -409.8,
+          "minY": -42.866970941529466,
+          "maxY": 61.133029058470534,
+          "minZ": -581,
+          "maxZ": -519
+        },
+        "grounded": true,
+        "floating": false,
+        "meshCount": 11,
+        "collisionFootprints": 11,
+        "landmarkId": "m01"
+      },
+      {
+        "id": "m02",
+        "type": "mirror-slab",
+        "kind": "mirror-slab",
+        "x": 480,
+        "y": 110.80674769309117,
+        "z": -520,
+        "position": {
+          "x": 480,
+          "y": 110.80674769309117,
+          "z": -520
+        },
+        "baseY": 15.806747693091163,
+        "placement": "low-floating",
+        "size": 151.03361925490032,
+        "height": 151.03361925490032,
+        "scale": 156,
+        "bounds": {
+          "minX": 431.8304809595499,
+          "maxX": 528.1695190404502,
+          "minY": 35.28993806564101,
+          "maxY": 186.32355732054134,
+          "minZ": -542.7658196284447,
+          "maxZ": -497.2341803715554
+        },
+        "grounded": false,
+        "floating": true,
+        "meshCount": 4,
+        "collisionFootprints": 0,
+        "landmarkId": "m02"
+      },
+      {
+        "id": "m03",
+        "type": "hollow-cuboid",
+        "kind": "hollow-cuboid",
+        "x": -470,
+        "y": 0.9602098367677436,
+        "z": -160,
+        "position": {
+          "x": -470,
+          "y": 0.9602098367677436,
+          "z": -160
+        },
+        "baseY": 0.9602098367677436,
+        "placement": "ground",
+        "size": 114.20000000000005,
+        "height": 112.1,
+        "scale": 124,
+        "bounds": {
+          "minX": -527.1,
+          "maxX": -412.9,
+          "minY": 0.9602098367677456,
+          "maxY": 113.06020983676774,
+          "minZ": -204.1,
+          "maxZ": -115.9
+        },
+        "grounded": true,
+        "floating": false,
+        "meshCount": 15,
+        "collisionFootprints": 4,
+        "landmarkId": null
+      },
+      {
+        "id": "m04",
+        "type": "broken-arch",
+        "kind": "broken-arch",
+        "x": 580,
+        "y": 21.848210599369207,
+        "z": -220,
+        "position": {
+          "x": 580,
+          "y": 21.848210599369207,
+          "z": -220
+        },
+        "baseY": 21.848210599369207,
+        "placement": "ground",
+        "size": 213.89730005283775,
+        "height": 127.79261697053366,
+        "scale": 194,
+        "bounds": {
+          "minX": 477.9766006433314,
+          "maxX": 691.8739006961691,
+          "minY": 9.389247541345036,
+          "maxY": 137.1818645118787,
+          "minZ": -250.13475265359912,
+          "maxZ": -196.93754676340353
+        },
+        "grounded": true,
+        "floating": false,
+        "meshCount": 4,
+        "collisionFootprints": 1,
+        "landmarkId": null
+      },
+      {
+        "id": "m05",
+        "type": "glass-double-helix",
+        "kind": "glass-double-helix",
+        "x": 950,
+        "y": 163.1148715962843,
+        "z": 700,
+        "position": {
+          "x": 950,
+          "y": 163.1148715962843,
+          "z": 700
+        },
+        "baseY": 76.1148715962843,
+        "placement": "low-floating",
+        "size": 143.17035675048828,
+        "height": 143.17035675048828,
+        "scale": 164,
+        "bounds": {
+          "minX": 924.30149269104,
+          "maxX": 975.6913719177246,
+          "minY": 91.52848396200696,
+          "maxY": 234.69884071249524,
+          "minZ": 674.3014488220215,
+          "maxZ": 725.6955642700195
+        },
+        "grounded": false,
+        "floating": true,
+        "meshCount": 18,
+        "collisionFootprints": 0,
+        "landmarkId": null
+      },
+      {
+        "id": "m06",
+        "type": "tilted-disk",
+        "kind": "tilted-disk",
+        "x": 1800,
+        "y": 19.361405558918104,
+        "z": -600,
+        "position": {
+          "x": 1800,
+          "y": 19.361405558918104,
+          "z": -600
+        },
+        "baseY": 16.361405558918104,
+        "placement": "half-buried",
+        "size": 278.85621060981066,
+        "height": 136.49728027537452,
+        "scale": 190,
+        "bounds": {
+          "minX": 1660.5718946950947,
+          "maxX": 1939.4281053049053,
+          "minY": -48.88723457876915,
+          "maxY": 87.61004569660537,
+          "minZ": -739.4281053049052,
+          "maxZ": -460.5718946950948
+        },
+        "grounded": true,
+        "floating": false,
+        "meshCount": 5,
+        "collisionFootprints": 1,
+        "landmarkId": null
+      },
+      {
+        "id": "m07",
+        "type": "orbital-halo",
+        "kind": "orbital-halo",
+        "x": 50,
+        "y": 716.0573887927737,
+        "z": -3400,
+        "position": {
+          "x": 50,
+          "y": 716.0573887927737,
+          "z": -3400
+        },
+        "baseY": 16.057388792773782,
+        "placement": "high-sky",
+        "size": 544.3099737167358,
+        "height": 543.3032967316246,
+        "scale": 530,
+        "bounds": {
+          "minX": -222.15498685836792,
+          "maxX": 322.1549868583679,
+          "minY": 410.092866020821,
+          "maxY": 953.3961627524457,
+          "minZ": -3618.6202709674885,
+          "maxZ": -3181.3797290325115
+        },
+        "grounded": false,
+        "floating": true,
+        "meshCount": 5,
+        "collisionFootprints": 0,
+        "landmarkId": "m07"
+      },
+      {
+        "id": "m08",
+        "type": "levitating-stairs",
+        "kind": "levitating-stairs",
+        "x": -2500,
+        "y": 72.72140708835421,
+        "z": 900,
+        "position": {
+          "x": -2500,
+          "y": 72.72140708835421,
+          "z": 900
+        },
+        "baseY": 37.72140708835421,
+        "placement": "low-floating",
+        "size": 202.18822230281648,
+        "height": 109.93199920654295,
+        "scale": 220,
+        "bounds": {
+          "minX": -2600.85,
+          "maxX": -2398.6617776971834,
+          "minY": 62.28940788181124,
+          "maxY": 172.2214070883542,
+          "minZ": 868.6944284656039,
+          "maxZ": 937.1483042572503
+        },
+        "grounded": false,
+        "floating": true,
+        "meshCount": 26,
+        "collisionFootprints": 0,
+        "landmarkId": null
+      },
+      {
+        "id": "m09",
+        "type": "pearl-columns",
+        "kind": "pearl-columns",
+        "x": -4300,
+        "y": 3.267149912901342,
+        "z": -2100,
+        "position": {
+          "x": -4300,
+          "y": 3.267149912901342,
+          "z": -2100
+        },
+        "baseY": 3.267149912901342,
+        "placement": "ground",
+        "size": 180,
+        "height": 155.2557938893144,
+        "scale": 216,
+        "bounds": {
+          "minX": -4390,
+          "maxX": -4210,
+          "minY": 3.2671499129013384,
+          "maxY": 158.52294380221574,
+          "minZ": -2128.424939845284,
+          "maxZ": -2072.2698360244403
+        },
+        "grounded": true,
+        "floating": false,
+        "meshCount": 14,
+        "collisionFootprints": 7,
+        "landmarkId": "m09"
+      },
+      {
+        "id": "m10",
+        "type": "fragmented-icosahedron",
+        "kind": "fragmented-icosahedron",
+        "x": 2500,
+        "y": 766.1804503447405,
+        "z": -4900,
+        "position": {
+          "x": 2500,
+          "y": 766.1804503447405,
+          "z": -4900
+        },
+        "baseY": 6.180450344740523,
+        "placement": "high-sky",
+        "size": 276.2206106140047,
+        "height": 238.445486391675,
+        "scale": 310,
+        "bounds": {
+          "minX": 2363.567756464414,
+          "maxX": 2625.2888588825513,
+          "minY": 644.7953790312829,
+          "maxY": 883.2408654229579,
+          "minZ": -5034.856631033548,
+          "maxZ": -4758.6360204195435
+        },
+        "grounded": false,
+        "floating": true,
+        "meshCount": 12,
+        "collisionFootprints": 0,
+        "landmarkId": null
+      },
+      {
+        "id": "m11",
+        "type": "artifact-chain",
+        "kind": "artifact-chain",
+        "x": -4200,
+        "y": 651.1874711669867,
+        "z": 2200,
+        "position": {
+          "x": -4200,
+          "y": 651.1874711669867,
+          "z": 2200
+        },
+        "baseY": 1.1874711669867188,
+        "placement": "high-sky",
+        "size": 482.3966200386694,
+        "height": 140.57030823405626,
+        "scale": 470,
+        "bounds": {
+          "minX": -4441.198310019335,
+          "maxX": -3958.8016899806653,
+          "minY": 614.215472952265,
+          "maxY": 754.7857811863213,
+          "minZ": 2153.042405896709,
+          "maxZ": 2246.957594103291
+        },
+        "grounded": false,
+        "floating": true,
+        "meshCount": 9,
+        "collisionFootprints": 0,
+        "landmarkId": null
+      },
+      {
+        "id": "m12",
+        "type": "folded-structure",
+        "kind": "folded-structure",
+        "x": 3500,
+        "y": 88.97459019767865,
+        "z": 3900,
+        "position": {
+          "x": 3500,
+          "y": 88.97459019767865,
+          "z": 3900
+        },
+        "baseY": 48.97459019767865,
+        "placement": "ground",
+        "size": 270.1495081180956,
+        "height": 57.842185293486494,
+        "scale": 286,
+        "bounds": {
+          "minX": 3364.925245940952,
+          "maxX": 3635.074754059048,
+          "minY": 48.97459019767865,
+          "maxY": 106.81677549116515,
+          "minZ": 3810.6521873025813,
+          "maxZ": 3989.3478126974187
+        },
+        "grounded": true,
+        "floating": false,
+        "meshCount": 12,
+        "collisionFootprints": 12,
+        "landmarkId": "m12"
+      },
+      {
+        "id": "m13",
+        "type": "sunken-lens",
+        "kind": "sunken-lens",
+        "x": -850,
+        "y": -1.5185244987484863,
+        "z": 4100,
+        "position": {
+          "x": -850,
+          "y": -1.5185244987484863,
+          "z": 4100
+        },
+        "baseY": 5.481475501251514,
+        "placement": "half-buried",
+        "size": 255.6259567645543,
+        "height": 141.52468231586303,
+        "scale": 226,
+        "bounds": {
+          "minX": -976.6579361060915,
+          "maxX": -723.3420638939085,
+          "minY": -72.28086565668,
+          "maxY": 69.24381665918303,
+          "minZ": 3972.1870216177226,
+          "maxZ": 4227.812978382277
+        },
+        "grounded": true,
+        "floating": false,
+        "meshCount": 4,
+        "collisionFootprints": 3,
+        "landmarkId": null
+      },
+      {
+        "id": "m14",
+        "type": "offset-rings",
+        "kind": "offset-rings",
+        "x": 4500,
+        "y": 133.3389374953652,
+        "z": 800,
+        "position": {
+          "x": 4500,
+          "y": 133.3389374953652,
+          "z": 800
+        },
+        "baseY": 7.338937495365198,
+        "placement": "low-floating",
+        "size": 228.89251414256142,
+        "height": 228.89251414256142,
+        "scale": 242,
+        "bounds": {
+          "minX": 4366.8583297045425,
+          "maxX": 4590.0131315012,
+          "minY": 15.904920778091764,
+          "maxY": 244.7974349206532,
+          "minZ": 716.0292963045019,
+          "maxZ": 919.9707036954981
+        },
+        "grounded": false,
+        "floating": true,
+        "meshCount": 6,
+        "collisionFootprints": 0,
+        "landmarkId": null
+      },
+      {
+        "id": "m15",
+        "type": "submerged-ribs",
+        "kind": "submerged-ribs",
+        "x": -4900,
+        "y": -14.392294065474267,
+        "z": 4600,
+        "position": {
+          "x": -4900,
+          "y": -14.392294065474267,
+          "z": 4600
+        },
+        "baseY": 16.607705934525733,
+        "placement": "half-buried",
+        "size": 214.92270207714773,
+        "height": 138.9790888201682,
+        "scale": 254,
+        "bounds": {
+          "minX": -4991.099772757447,
+          "maxX": -4776.177070680299,
+          "minY": -31.892294065474267,
+          "maxY": 107.08679475469393,
+          "minZ": 4503.5,
+          "maxZ": 4696.5
+        },
+        "grounded": true,
+        "floating": false,
+        "meshCount": 18,
+        "collisionFootprints": 9,
+        "landmarkId": "m15"
+      },
+      {
+        "id": "m16",
+        "type": "celestial-lattice",
+        "kind": "celestial-lattice",
+        "x": 4600,
+        "y": 784.5983314924036,
+        "z": 4500,
+        "position": {
+          "x": 4600,
+          "y": 784.5983314924036,
+          "z": 4500
+        },
+        "baseY": 104.59833149240364,
+        "placement": "high-sky",
+        "size": 555.5639454794291,
+        "height": 514.348023201306,
+        "scale": 420,
+        "bounds": {
+          "minX": 4323.301666086793,
+          "maxX": 4876.698333913207,
+          "minY": 527.4243198917507,
+          "maxY": 1041.7723430930566,
+          "minZ": 4222.218027260285,
+          "maxZ": 4777.781972739715
+        },
+        "grounded": false,
+        "floating": true,
+        "meshCount": 10,
+        "collisionFootprints": 0,
+        "landmarkId": null
+      }
+    ],
+    "meadowArtifactCount": 16,
+    "meadowArtifactMeshes": 173,
+    "meadowPlacements": {
+      "ground": 4,
+      "low-floating": 4,
+      "half-buried": 4,
+      "high-sky": 4
+    },
+    "portals": 22,
+    "defaultViewport": {
+      "width": 960,
+      "height": 600,
+      "fullscreen": false
+    },
+    "eyeHeight": 2.2,
+    "sprintModelMPerSecond": 58,
+    "nativeSprintMPerSecond": 52.399803616725514,
+    "staminaBar": false,
+    "staminaConsumption": false
+  },
+  "validation": {
+    "unit": {
+      "passed": 248,
+      "total": 248,
+      "files": 16,
+      "defaultTimeoutUnchanged": true,
+      "log": "runtime/reports/3d-expanded2-unit.log"
+    },
+    "build": {
+      "pages": 186,
+      "log": "runtime/reports/3d-expanded2-build.log"
+    },
+    "deployment": {
+      "guardedSingleTarget": "portal",
+      "dockerDiskConfirmedBeforeBuild": true,
+      "builderCapMiB": 3072,
+      "log": "runtime/reports/3d-expanded2-docker.log",
+      "at": "2026-10-03T11:05:08.899Z",
+      "routes": [
+        {
+          "url": "/functions/3d-world/",
+          "status": 200
+        },
+        {
+          "url": "/functions/games/",
+          "status": 200
+        },
+        {
+          "url": "/functions/",
+          "status": 200
+        },
+        {
+          "url": "/search/?q=3D%E6%B8%B8%E6%88%8F",
+          "status": 200
+        },
+        {
+          "url": "/legal/",
+          "status": 200
+        },
+        {
+          "url": "/legal/code/",
+          "status": 200
+        },
+        {
+          "url": "/media/",
+          "status": 200
+        }
+      ],
+      "chunks": [
+        {
+          "url": "/_astro/1.astro_astro_type_script_index_0_lang.CQE3HusC.js",
+          "status": 200,
+          "bytes": 103326,
+          "sha256": "0edeba1ee18c70f75be5deef6e2b840bcb75748eccc9ed339edcbdb41057474e"
+        }
+      ],
+      "licenseResources": [
+        {
+          "url": "/third-party-notices.txt",
+          "status": 200,
+          "sha256": "6d7c2543e2418136918d8117d29a1dcfaa0d03bf7b7725f706dd4b419e357d7f"
+        },
+        {
+          "url": "/licenses/cropperjs-1.6.2-LICENSE.txt",
+          "status": 200,
+          "sha256": "eb917650781dcf06a60b97cba9b05bf583931ec2d311d8a5548a8dca90a57e0f"
+        },
+        {
+          "url": "/licenses/dompurify-3.4.16-LICENSE-APACHE-2.0.txt",
+          "status": 200,
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "url": "/licenses/dompurify-3.4.16-LICENSE-MPL-2.0.txt",
+          "status": 200,
+          "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+        },
+        {
+          "url": "/licenses/fast-json-patch-3.1.1.txt",
+          "status": 200,
+          "sha256": "26593d78926902a82eb9bc7e40d1811fc381055f23516b92fe48ca8399bf02df"
+        },
+        {
+          "url": "/licenses/jsqr-1.4.0-LICENSE.txt",
+          "status": 200,
+          "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+        },
+        {
+          "url": "/licenses/marked-18.0.14-LICENSE.txt",
+          "status": 200,
+          "sha256": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c"
+        },
+        {
+          "url": "/licenses/mathjs-15.2.0-LICENSE.txt",
+          "status": 200,
+          "sha256": "3b0f65a9308588e12b619b2f05c788b4a5f41220006ce563b826b0feb489fd26"
+        },
+        {
+          "url": "/licenses/mathjs-15.2.0-NOTICE.txt",
+          "status": 200,
+          "sha256": "40e0c8aac7a769ef524e089b8ef75f81325ab7deca50def443b9b20d425e65b5"
+        },
+        {
+          "url": "/licenses/papaparse-5.7.0-LICENSE.txt",
+          "status": 200,
+          "sha256": "99aa68e4b42758b09828a46515f70369e5463458ab7a990189f641af2b8d9b4e"
+        },
+        {
+          "url": "/licenses/pdf-lib-1.17.1-LICENSE.txt",
+          "status": 200,
+          "sha256": "f2c9fc00fdb66eb99ac156ba52d734af66d8d309f65753ae809ad34ee2883bcb"
+        },
+        {
+          "url": "/licenses/phase8--babel-core-8.0.6.txt",
+          "status": 200,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "url": "/licenses/phase8--babel-preset-env-8.0.6.txt",
+          "status": 200,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "url": "/licenses/phase8-eslint-10.11.0.txt",
+          "status": 200,
+          "sha256": "3b6be04f862a077a4b97929dbf247299360824d9365f8603c263769303ace18c"
+        },
+        {
+          "url": "/licenses/phase8-gulp-5.0.1.txt",
+          "status": 200,
+          "sha256": "c92a35b5616e596f7a362bf37e85eec21cb22aaade182048525cfe3ea79f820a"
+        },
+        {
+          "url": "/licenses/phase8-prettier-3.9.9.txt",
+          "status": 200,
+          "sha256": "b0f2417199889f1c0d28ec4e0244eacf1a15de5819d61f641dd7d8f45153ac9c"
+        },
+        {
+          "url": "/licenses/phase8-stylelint-17.16.0.txt",
+          "status": 200,
+          "sha256": "75d7a49cb407946d65586e81b72265fbf5c87d5e4a7e03f9dcb4034ae3aba725"
+        },
+        {
+          "url": "/licenses/phase8-webpack-5.111.1.txt",
+          "status": 200,
+          "sha256": "9068a8782d2fb4c6e432cfa25334efa56f722822180570802bf86e71b6003b1e"
+        },
+        {
+          "url": "/licenses/qrcode-1.5.4-LICENSE.txt",
+          "status": 200,
+          "sha256": "8df47c6ad9ac2c41eb9b2a72def9908959da0ede8dadd56c7b249c1bdb0c5ce6"
+        },
+        {
+          "url": "/licenses/sql.js-1.14.2.txt",
+          "status": 200,
+          "sha256": "60a3f6e4d7b29b4321359e683b36cf198d24f58e24582070f56e6fa89d5ee2be"
+        }
+      ],
+      "htmlSha256": "d2fbeb363a181fa1d93196ae87dc9b6558adb96ce089a7209844c31e764a7917",
+      "core": [
+        {
+          "service": "edge",
+          "health": "healthy",
+          "capMiB": 64
+        },
+        {
+          "service": "gateway",
+          "health": "healthy",
+          "capMiB": 512
+        },
+        {
+          "service": "next",
+          "health": "healthy",
+          "capMiB": 512
+        },
+        {
+          "service": "portal",
+          "health": "healthy",
+          "capMiB": 128
+        },
+        {
+          "service": "postgres",
+          "health": "healthy",
+          "capMiB": 384
+        },
+        {
+          "service": "redis",
+          "health": "healthy",
+          "capMiB": 128
+        }
+      ],
+      "totalCapsMiB": 1728,
+      "builderStopped": true
+    },
+    "browser": {
+      "stats": {
+        "startTime": "2026-10-03T11:08:13.434Z",
+        "duration": 196018.223,
+        "expected": 16,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "report": "runtime/reports/3d-expanded-final2/3d-playwright.json",
+      "retries": 0,
+      "gpu": {
+        "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A78B) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (Intel)",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "attributes": {
+          "alpha": true,
+          "antialias": true,
+          "depth": true,
+          "desynchronized": false,
+          "failIfMajorPerformanceCaveat": false,
+          "powerPreference": "high-performance",
+          "premultipliedAlpha": true,
+          "preserveDrawingBuffer": false,
+          "stencil": false,
+          "xrCompatible": false
+        }
+      },
+      "method": "Real Chromium hardware WebGL with native keyboard/pointer/fire/fullscreen/navigation; only read-only game snapshot",
+      "proofFiles": [
+        "3d-initial-world.json",
+        "3d-lifecycle-hooks.json",
+        "3d-native-checkpoint-reload.json",
+        "3d-native-city-NPC.json",
+        "3d-native-controls.json",
+        "3d-native-disposal.json",
+        "3d-native-enemy-healing.json",
+        "3d-native-five-cities.json",
+        "3d-native-fullscreen-sound.json",
+        "3d-native-GPU.json",
+        "3d-native-house-collision.json",
+        "3d-native-meadow-artifacts.json",
+        "3d-native-pointer.json",
+        "3d-native-portal-streaming.json",
+        "3d-native-shoot-collect.json",
+        "3d-playwright.json",
+        "3d-refused-checkpoint-storage.json"
+      ]
+    },
+    "supplementalVisual": {
+      "stats": {
+        "startTime": "2026-10-03T11:16:44.169Z",
+        "duration": 63478.956999999995,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "runtime/reports/3d-final2-visual-inspection/3d-playwright.json",
+      "images": [
+        "runtime/reports/3d-final2-visual-inspection/3d-city-NPC-wounded.png",
+        "runtime/reports/3d-final2-visual-inspection/3d-meadow-artifact-overview.png"
+      ],
+      "method": "Real native movement and aiming; backward sprint >135m for overview; no application edit or injected camera/hit"
+    },
+    "latestMemorySample": {
+      "sampledAt": "2026-10-03T11:22:33.9860837Z",
+      "scope": "One observed Docker/WSL process working-set sample; not a long-term peak or browser-memory measurement",
+      "processes": [
+        {
+          "name": "com.docker.backend",
+          "id": 2404,
+          "workingSetMiB": 47.5
+        },
+        {
+          "name": "com.docker.backend",
+          "id": 11204,
+          "workingSetMiB": 221.2
+        },
+        {
+          "name": "com.docker.build",
+          "id": 6108,
+          "workingSetMiB": 29.2
+        },
+        {
+          "name": "Docker Desktop",
+          "id": 11628,
+          "workingSetMiB": 44.3
+        },
+        {
+          "name": "Docker Desktop",
+          "id": 11756,
+          "workingSetMiB": 102
+        },
+        {
+          "name": "Docker Desktop",
+          "id": 20948,
+          "workingSetMiB": 108.5
+        },
+        {
+          "name": "Docker Desktop",
+          "id": 21356,
+          "workingSetMiB": 6.1
+        },
+        {
+          "name": "Docker Desktop",
+          "id": 22876,
+          "workingSetMiB": 21.8
+        },
+        {
+          "name": "vmmemWSL",
+          "id": 28248,
+          "workingSetMiB": 2309.2
+        }
+      ],
+      "totalMiB": 2889.8
+    },
+    "ledger": {
+      "counts": {
+        "A": 381,
+        "B": 351,
+        "numbered": 732
+      },
+      "technicalRows": 146,
+      "categories": 34,
+      "screenshotRows": 12,
+      "unnumbered": 3,
+      "promptParagraphs": 51,
+      "log": "runtime/reports/3d-expanded2-ledger.log",
+      "originalRowsAndHashesPreserved": true,
+      "all732IndependentFinalReleaseAudit": false
+    }
+  },
+  "requirements": [
+    {
+      "id": "G01",
+      "request": "游戏分类新增3D游戏，目录及万能搜索可找到",
+      "implementation": "entry.mjs + tool/data.mjs + games.astro + catalogue.mjs",
+      "proof": "Final2 browser test 1: real directory/search navigation; 111 tools / 11 games",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G02",
+      "request": "第一人称探险开放世界",
+      "implementation": "main.mjs / model.mjs / terrain.mjs",
+      "proof": "native-controls, native-portal-streaming; 12000m square world",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G03",
+      "request": "没有可见文字、标题或者菜单",
+      "implementation": "1.astro / 1.css",
+      "proof": "Final2 test 2: empty body.innerText and title; no header/menu",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G04",
+      "request": "先打开较小窗口，提供全屏按钮",
+      "implementation": "1.astro / main.mjs ResizeObserver and requestFullscreen",
+      "proof": "native-fullscreen-sound: 960x600 -> 1440x1000 -> restore",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G05",
+      "request": "Frutiger Aero清亮透彻与安静梦核氛围，参考五张图",
+      "implementation": "PBR glass, original textures/clouds/water, 2048 sun shadows, SSAO/bloom",
+      "proof": "native-GPU + initial-world + actual avenue/river/city/artifact screenshots",
+      "scope": "Effects rendered and visually inspected; aesthetics remain subjective, not photorealism or exact reference reproduction"
+    },
+    {
+      "id": "G06",
+      "request": "地图非常大，城市/高楼/山坡/草原/小镇/河流",
+      "implementation": "terrain.mjs / world.mjs; 144km2 / five city styles / three villages / continuous river",
+      "proof": "native-five-cities, native-portal-streaming; constructed world stats",
+      "scope": "Real visits to five cities and river; not exhaustive traversal of every map coordinate"
+    },
+    {
+      "id": "G07",
+      "request": "巨大的不明景观、浮空/半埋/高空、样式不同",
+      "implementation": "world.mjs: 16 types, 173 meshes, four placement classes of four each",
+      "proof": "native-meadow-artifacts + Node constructed bounds/clear arrival check + actual overview screenshot",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G08",
+      "request": "不再种树，增加梦核景物",
+      "implementation": "Tree construction dormant; pools, colonnades, fences, lamps, empty playground, court, benches, bridges",
+      "proof": "initial-world trees=0 and scenery counts; native-five-cities photographs",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G09",
+      "request": "更多差异明显的城市与城市细节",
+      "implementation": "five district city records; 243 buildings including 66 houses",
+      "proof": "native-five-cities: all five actual portal visits and GPU views",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G10",
+      "request": "射击和可玩性",
+      "implementation": "actual Raycaster target hit with finite building/ground occlusion; held fire cooldown",
+      "proof": "native-shoot-collect + native-house-collision",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G11",
+      "request": "更多种类可攻击怪物",
+      "implementation": "91 enemies / five types, differing health/shield/melee/ranged/spread AI; pool of 48 projectiles",
+      "proof": "18 entity unit tests + native enemy attack and healing",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G12",
+      "request": "加入玩家与怪物血量",
+      "implementation": "player health HUD meter; actual enemy/NPC health bars shown on wound",
+      "proof": "native-enemy-healing, native-city-NPC; snapshot health and real meter attributes",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G13",
+      "request": "加入回血地点",
+      "implementation": "eight rest areas with continuous healing/protection",
+      "proof": "native-enemy-healing: actual attack -> health loss -> native walk -> heal to 100",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G14",
+      "request": "加入存档点",
+      "implementation": "save.mjs known-station whitelist; Q/icon only active within rest area; reload/R/death recovery",
+      "proof": "native-checkpoint-reload; refused-checkpoint-storage; 20 model/save tests",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G15",
+      "request": "视角抬高",
+      "implementation": "EYE_HEIGHT=2.2",
+      "proof": "native-controls eyeHeight and grounded camera position",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G16",
+      "request": "去掉体力条",
+      "implementation": "No stamina DOM/CSS/regen/consumption; legacy save energy field retained at 1 during movement",
+      "proof": "Final2 tests 2/3; .aero-energy count zero; native sprint energy=1",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G17",
+      "request": "加快疾跑速度",
+      "implementation": "58m/s; movement split <=0.24m; no exhaustion",
+      "proof": "20 movement tests + native-controls and native-house-collision; observed sprint 52.40m/s",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G18",
+      "request": "城市加入更多无害、可摧毁、四处移动且外观不同NPC",
+      "implementation": "40 independent NPCs / five types; eight per city; wandering, wall avoidance, 2-4HP, death/drop/respawn",
+      "proof": "native-city-NPC: actual wandering, partial HP, shooting destruction, walk collection, zero attacks/damage; 18 entity tests",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G19",
+      "request": "简单音效",
+      "implementation": "original native Web Audio synth, wind/birds/steps/water/shots/hits/portals/damage; gesture unlock",
+      "proof": "native-shoot-collect source starts/ends, native-fullscreen-sound gain zero; no downloaded audio",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G20",
+      "request": "地图可探索、可以往返退出",
+      "implementation": "22 chained gates, six new artifact entries appended after existing destinations; fixed exit",
+      "proof": "native-portal-streaming, native-five-cities, native-meadow-artifacts, native-disposal",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G21",
+      "request": "正常游戏功能真实工作并限制失控资源",
+      "implementation": "single RAF, 25 streamed near chunks, pooled shots/projectiles, owned disposal, hidden pause",
+      "proof": "native portal tile dispose and actual normal pagehide disposal; synthetic lifecycle hooks separately identified",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G22",
+      "request": "不把本机路径变成应用硬依赖",
+      "implementation": "Game sources use project imports, native Web APIs and relative routes; tools/temp/reports stay in configured local dependency root",
+      "proof": "source hash/file map and guarded deployment; full portability audit still reserved for phase 9",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G23",
+      "request": "原技术栈与历史要求不能删除",
+      "implementation": "Original 732 text/mappings/hash and 146 technologies / 34 categories / 12 screenshot rows retained",
+      "proof": "3d-expanded2-ledger.log; ledgers not re-sealed; no new package needed",
+      "scope": "Implemented and checked within the stated evidence scope"
+    },
+    {
+      "id": "G24",
+      "request": "本轮只做已授权阶段并完成后停止",
+      "implementation": "Phase 8 additive maintenance; no phase 9/public release/push",
+      "proof": "phase-state.game3D and current handoff markers",
+      "scope": "Implemented and checked within the stated evidence scope"
+    }
+  ],
+  "sourceFrozenAt": "2026-10-03T11:03:00.753Z",
+  "sourceHashes": {
+    "config/apps/portal/src/3d/1.astro": "eb33b180589c0a111e7d4bba058bbddec052efc08902ef1f69c593d13e0e4a03",
+    "config/apps/portal/src/3d/1.css": "bbc3230d9835985f65ea72b554e76a4b9adb49f76f15306dc204fc2a5a010bf0",
+    "config/apps/portal/src/3d/audio.mjs": "6317673eb650d626179c9cac797a0db0873761eb0d8466d33837f280090e4cb2",
+    "config/apps/portal/src/3d/entities.mjs": "4baf62f11a3c0462b18e5fc0738b0b213659c0dda915835d3330b063e3cb50e6",
+    "config/apps/portal/src/3d/entry.mjs": "47c5a03884404c688505b1bf4f4becd451c788d1dc5a76230ac3e8db34261d35",
+    "config/apps/portal/src/3d/main.mjs": "34d0b618fbc3a40f9e973674f1be5f169c6271246bfbd1e29d2820e89ee6916c",
+    "config/apps/portal/src/3d/model.mjs": "9ed42ade8508e9c391c4e003f51941b211f91da3653fc2669e5f6d1123a91888",
+    "config/apps/portal/src/3d/save.mjs": "99a2307222fde936c89c61d29351f460151d8b13da834b8e2cb3529df24a973e",
+    "config/apps/portal/src/3d/terrain.mjs": "249a204e3dbdbf025cc1e6212c77f3bd4dc9991ac7e7f5d2d98f804a277d19d0",
+    "config/apps/portal/src/3d/world.mjs": "36754d319bae7489edaaf7d67bc79253db6ec23f5e4f41bc8642cb7aa6a583dd",
+    "config/apps/portal/src/tool/data.mjs": "af83b54c82ee01296fab25fb8af93d125d6363e47cc9702e24f66826d2f1c27c",
+    "config/apps/portal/src/pages/functions/[slug].astro": "a5f9272d60cf666658fa198b9fc508f3f2254bb6036564dd87f1887b33560361",
+    "config/apps/portal/src/pages/functions/games.astro": "0907789d03c340df23ec6eb8a96926ebba57d1d6b0d775e80a800434e03d00ee",
+    "config/apps/portal/src/main1/catalogue.mjs": "a3f35f53e990d6f53ada755f0eddb4e37bcdeffe7bfec15c343cc669cd71ea26",
+    "tests/3d-model.test.mjs": "bc7125d1529a988e6a72b92ecd684c24dcb9ab23e838243ef48f4eadc450531c",
+    "tests/3d-entities.test.mjs": "234eecfbf793c3d2a3f6aa5a50e9960e4f2db15c27f9cdde834c46c5c7516ddd",
+    "tests/browser/3d-game.spec.mjs": "23f11ff8239cc9d37047cb9820e658ee1efae7d465d92587d2e491136deeaa72",
+    "playwright.3d.config.mjs": "55d4cafbbba9faf70a070849208339ad8235329b47e759644479f33c4c39d377",
+    "scripts/inspect-3d-runtime.mjs": "edce29a1d8bb17839497bfe98053791997fb2cc7bc8d2713f6069286e5f2120e"
+  },
+  "sourceAndLicense": {
+    "newPackages": 0,
+    "mediaOrCodeCopiedFromReferences": false,
+    "original": "All new procedural geometry, textures, shaders and synth sounds are project-authored; Three.js/postprocessing already installed and original notices retained",
+    "references": [
+      "https://holly95.artstation.com/projects/5Wzmmg",
+      "https://dreamyrobot.artstation.com/projects/o0AAOk"
+    ],
+    "licenseResourcesUnchanged": 20
+  },
+  "historicalRuns": [
+    {
+      "scope": "first preview",
+      "result": "6/10; render-info/Esc/test-observer issues corrected",
+      "evidence": "runtime/reports/3d-first/"
+    },
+    {
+      "scope": "software SwiftShader",
+      "result": "Interrupted after two passes and timeout failures; not accepted",
+      "evidence": "runtime/reports/3d-final/"
+    },
+    {
+      "scope": "first hardware run",
+      "result": "9/10, page-unload test observer transport lost; fixed observer transport, application disposal checked natively",
+      "evidence": "runtime/reports/3d-hardware-final/"
+    },
+    {
+      "scope": "earlier expanded unit cold imports",
+      "result": "228/230; two old 5000ms timeout failures preserved; later fresh 242/242 and current fresh 248/248 passed with unchanged timeouts",
+      "evidence": "runtime/reports/3d-expanded-unit.log"
+    },
+    {
+      "scope": "earlier expanded deployment",
+      "result": "Fresh 14/14 and 242 units passed BEFORE current sprint/NPC/artifacts; not current final proof",
+      "evidence": "runtime/reports/3d-expanded-final/"
+    }
+  ],
+  "limits": [
+    "Synthetic visibility/persisted events verify hooks only, not actual BFCache or OS suspension",
+    "Storage rejection uses an explicitly injected SecurityError to check failure handling, not a real browser privacy-policy deployment",
+    "Point Docker/WSL memory sample excludes browser and is not a sustained or peak benchmark",
+    "No entire legacy-site browser regression, mobile device QA, cross-platform installation, exhaustive map traversal or long-term GPU/memory benchmark in this scope",
+    "Style is procedural/stylized and visually checked; no claim of photorealism",
+    "Public release portability and full license/fresh-clone audits remain phase 9, not authorized here"
+  ]
+}

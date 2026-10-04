@@ -1,0 +1,14 @@
+---
+import './n9.css';
+const {variant='legal'}=Astro.props;
+const labels=['频谱','λ','GPU','轨道','波形',''];
+---
+<div class="n9-field" aria-hidden="true"><canvas data-n9-gpu></canvas><div class="n9-pointer-glass"></div><div class="n9-reticle"></div><div class="n9-reticle n9-reticle-second"></div><div class="n9-scanline"></div><div class="n9-tape">{Array.from({length:18},(_,i)=><span>{i%2?'01 / 10 / 0011':'λ　Δ　Σ　∂　ω'}</span>)}</div></div>
+<div class={`n9-pane-field n9-${variant}`}>
+ {labels.map((label,i)=><section class={`n9-window n9-pane-${i}`} data-n9-window aria-label={label||'空框'}>
+  <header class="n9-handle" data-n9-handle tabindex="0" aria-label={`移动${label||'空框'}窗口`}><span>{label}</span><button type="button" data-n9-close aria-label={`关闭${label||'空框'}窗口`}>×</button></header>
+  {i===0?<div class="n9-frequency">{Array.from({length:48},(_,n)=><i style={`--h:${14+(n*29)%83}%;--d:${n%7*.17}s`}/>)}</div>:i===1?<svg class="n9-lines" viewBox="0 0 320 190" aria-hidden="true">{Array.from({length:19},(_,n)=><path style={`--d:${n*.06}s`} d={`M-40 ${8+n*10} C100 ${120-n*8},200 ${-85+n*12},380 ${30+n*12}`}/>)}</svg>:i===2?<div class="n9-cellgrid">{Array.from({length:70},(_,n)=><i style={`--d:${n*.031}s;--h:${n%3?'#1658ff':'#13ddde'}`}/>)}</div>:i===3?<svg class="n9-orbit" viewBox="0 0 260 180" aria-hidden="true"><circle cx="130" cy="90" r="66"/><ellipse cx="130" cy="90" rx="115" ry="38"/><ellipse cx="130" cy="90" rx="28" ry="82"/><path d="M0 90h260M130 0v180"/><circle cx="130" cy="90" r="8"/>{Array.from({length:24},(_,n)=><path d={`M${130+70*Math.cos(n*Math.PI/12)} ${90+70*Math.sin(n*Math.PI/12)}l3 2`}/>)}</svg>:i===4?<canvas class="n9-wave" data-n9-wave width="500" height="190"/>:<div class="n9-incomplete"></div>}
+ </section>)}
+</div>
+<button class="n9-restore" type="button" data-n9-reset aria-label="恢复特效窗口">↺</button>
+<script>import './windows.mjs';import './n9.mjs';</script>

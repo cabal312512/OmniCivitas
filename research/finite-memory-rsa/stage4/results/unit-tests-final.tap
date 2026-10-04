@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: universal minimum formula equals independent minimum over the complete frozen catalogue
+ok 1 - universal minimum formula equals independent minimum over the complete frozen catalogue
+  ---
+  duration_ms: 167.5919
+  type: 'test'
+  ...
+# Subtest: initial failure branch is deleted only when it is not revisited after success
+ok 2 - initial failure branch is deleted only when it is not revisited after success
+  ---
+  duration_ms: 0.2436
+  type: 'test'
+  ...
+# Subtest: a nonreusable forced initial action requires one additional stationary state
+ok 3 - a nonreusable forced initial action requires one additional stationary state
+  ---
+  duration_ms: 0.1049
+  type: 'test'
+  ...
+# Subtest: Stage III structurally3-state example is universally exactly2-state operational
+ok 4 - Stage III structurally3-state example is universally exactly2-state operational
+  ---
+  duration_ms: 0.163
+  type: 'test'
+  ...
+# Subtest: geometry activation has a two-state realization at L2 and distinguishes every <=2-state controller at L3
+ok 5 - geometry activation has a two-state realization at L2 and distinguishes every <=2-state controller at L3
+  ---
+  duration_ms: 2.5522
+  type: 'test'
+  ...
+# Subtest: constructive finite distinguishing witnesses exist for all distinct live one-bit laws
+ok 6 - constructive finite distinguishing witnesses exist for all distinct live one-bit laws
+  ---
+  duration_ms: 1.2477
+  type: 'test'
+  ...
+# Subtest: edge-emitting family includes action/next-state correlations missing from factorized HMMs
+ok 7 - edge-emitting family includes action/next-state correlations missing from factorized HMMs
+  ---
+  duration_ms: 0.6546
+  type: 'test'
+  ...
+# Subtest: rational row-span equivalence accepts a redundant IID realization and supplies a real witness for inequality
+ok 8 - rational row-span equivalence accepts a redundant IID realization and supplies a real witness for inequality
+  ---
+  duration_ms: 0.5346
+  type: 'test'
+  ...
+# Subtest: unreachable closed hidden states do not invalidate exact proper absorption
+ok 9 - unreachable closed hidden states do not invalidate exact proper absorption
+  ---
+  duration_ms: 39.9219
+  type: 'test'
+  ...
+# Subtest: the independent general stochastic solver matches the frozen deterministic alternation point
+ok 10 - the independent general stochastic solver matches the frozen deterministic alternation point
+  ---
+  duration_ms: 9.3287
+  type: 'test'
+  ...
+# Subtest: the periodic density optimum is proper while the same open-boundary temporal schedule is not
+ok 11 - the periodic density optimum is proper while the same open-boundary temporal schedule is not
+  ---
+  duration_ms: 7.476
+  type: 'test'
+  ...
+# Subtest: Bellman residual validation rejects a changed exact metric
+ok 12 - Bellman residual validation rejects a changed exact metric
+  ---
+  duration_ms: 0.9652
+  type: 'test'
+  ...
+# Subtest: three/four-state edge HMMs have independently verifiable rational absorption and reward laws
+ok 13 - three/four-state edge HMMs have independently verifiable rational absorption and reward laws
+  ---
+  duration_ms: 3.1313
+  type: 'test'
+  ...
+# Subtest: raw anchor-tree enumeration independently reproduces a finite-prefix upper value
+ok 14 - raw anchor-tree enumeration independently reproduces a finite-prefix upper value
+  ---
+  duration_ms: 7.4266
+  type: 'test'
+  ...
+# Subtest: finite-prefix certificates enumerate every prefix and tighten the cruder global relaxation
+ok 15 - finite-prefix certificates enumerate every prefix and tighten the cruder global relaxation
+  ---
+  duration_ms: 16.2187
+  type: 'test'
+  ...
+# Subtest: certificate construction refuses unsafe path counts and invalid dual multipliers
+ok 16 - certificate construction refuses unsafe path counts and invalid dual multipliers
+  ---
+  duration_ms: 1.6284
+  type: 'test'
+  ...
+# Subtest: higher-moment forest valuation yields geometric factorial constants
+ok 17 - higher-moment forest valuation yields geometric factorial constants
+  ---
+  duration_ms: 1.5414
+  type: 'test'
+  ...
+# Subtest: rare-entry graphs capture moment thresholds and critical leading-constant addition
+ok 18 - rare-entry graphs capture moment thresholds and critical leading-constant addition
+  ---
+  duration_ms: 3.8248
+  type: 'test'
+  ...
+# Subtest: rational kernels and support pruning have graph certificates without determinants
+ok 19 - rational kernels and support pruning have graph certificates without determinants
+  ---
+  duration_ms: 0.7886
+  type: 'test'
+  ...
+# Subtest: unknown-entry splitting uses sampled survival weights and terminal marks only
+ok 20 - unknown-entry splitting uses sampled survival weights and terminal marks only
+  ---
+  duration_ms: 0.3004
+  type: 'test'
+  ...
+# Subtest: particle extinction contributes zero and does not invent a conditional dwell
+ok 21 - particle extinction contributes zero and does not invent a conditional dwell
+  ---
+  duration_ms: 0.0773
+  type: 'test'
+  ...
+# Subtest: independent exact binomial enumeration verifies unknown-entry product unbiasedness and variance
+ok 22 - independent exact binomial enumeration verifies unknown-entry product unbiasedness and variance
+  ---
+  duration_ms: 0.1808
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 493.1824

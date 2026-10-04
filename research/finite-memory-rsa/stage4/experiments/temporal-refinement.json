@@ -1,0 +1,11 @@
+{
+  "scope": "Exploratory feasibility search in the complete two-state edge-emitting parameterization, targeted at the frozen one-bit tradeoff point; no optimizer optimum is a theorem",
+  "parameterization": "Two four-entry stochastic rows, each three stick-breaking coordinates; one initial-mixture coordinate. Seven coordinates cover the full two-state edge-emitting family, including its boundary.",
+  "gridResolution": 1000,
+  "startsPerBoundary": 16,
+  "perStartEvaluationCap": 600,
+  "steps": [250,100,50,20,10,5,1],
+  "startGeneratorSeed": 4100401,
+  "objective": "Minimize E[A/N] under coverage>=the exact feedback coverage and E|S|<=the exact feedback imbalance. A fixed penalty is only a numerical search aid; rational feasibility decides any claim.",
+  "verification": "Retain exact rational law and Bellman residual certificate for any feasible improvement. No Monte Carlo packing runs or p-values. Store unsuccessful searches too."
+}

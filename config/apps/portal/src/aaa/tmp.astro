@@ -1,0 +1,29 @@
+---
+import {rooms,address} from './map.mjs';
+const {room=0,home=false}=Astro.props;
+const entries=rooms.slice(1,18);
+---
+<div class={`maintenance-fragments ${home?'fragments-home':'fragments-room'}`} data-fragment-set={room}>
+ <section class="left-column_old" aria-label="旧目录">
+  <div class="column-heading">目录 <span>▾</span></div>
+  <div class="column-body">
+   <div class="link-group"><span class="group-heading">常用</span>{entries.slice(0,8).map((item,i)=><a href={address(item)}><span class="file-icon" aria-hidden="true">▫</span>{item.title}<small>{String(i+1).padStart(2,'0')}</small></a>)}</div>
+   <div class="link-group second-group"><span class="group-heading">最近</span>{entries.slice(8).map(item=><a href={address(item)}><span class="file-icon" aria-hidden="true">▫</span>{item.title}</a>)}</div>
+   <aside class="column-right"><span>位置</span>{entries.slice(0,12).map(item=><a href={address(item)}>{item.path.replaceAll('/',' / ')}</a>)}</aside>
+  </div>
+  <div class="column-footer">17 <a href="/maze/">全部</a></div>
+ </section>
+ <section class="panel_v2" aria-hidden="true" inert>
+  <div class="panel-heading"><span></span><span>−　□　×</span></div>
+  <div class="panel-body"><div class="unfinished-cell"></div><div class="unfinished-cell"></div><div class="empty-tabs"><i></i><i></i><i></i></div></div>
+  <div class="unfinished-input"></div><div class="bare-border"></div>
+ </section>
+ <section class="result-container" aria-label="文件列表">
+  <div class="result-heading">文件 <span>1–8</span></div>
+  <div class="result-toolbar"><a href="/maze/cache/">打开</a><a href="/maze/table/">列表</a><a href="/maze/offices/settings/backup/">副本</a></div>
+  <div class="result-columns"><span>名称</span><span>位置</span><span>修改</span></div>
+  <div class="result-body">{entries.slice(0,8).map((item,i)=><a href={address(item)}><span>{item.title}</span><span>{item.path}</span><time>10-0{(i%3)+1}</time></a>)}</div>
+  <div class="result-bottom" aria-hidden="true" inert><span>8 项</span><div class="stuck-progress"><i></i></div><span>…</span></div>
+ </section>
+ <div class="panel-new" aria-hidden="true" inert><div></div><span>▾</span><i></i></div>
+</div>

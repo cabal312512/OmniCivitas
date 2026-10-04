@@ -1,0 +1,712 @@
+{
+  "schemaVersion": 1,
+  "revision": "aero-capital-1",
+  "phase": 8,
+  "status": "complete",
+  "finishedAt": "2026-10-03T15:58:30.029Z",
+  "nextPhaseAuthorized": false,
+  "authorization": "User requested additive large-world game/media work, whole-map monsters, tower-top fix and brief approximate validation; user confirmed stopping concurrent GPU tests removes lag and cancelled further performance investigation.",
+  "scope": "Phase 8 additive maintenance only; completion records requested implementation and explicitly limited verification, not a full native 38-case run or public release audit.",
+  "entry": "/functions/3d-world/",
+  "fileMap": "docs/3D-CAPITAL.md",
+  "localEvidence": {
+    "root": "runtime/reports/ under the locally configured dependency directory; evidence/cache is not a public runtime requirement",
+    "frozen": "3d-capital-source-frozen9.json",
+    "runtime": "3d-capital-runtime8.json",
+    "build": "3d-capital-build-final8.log",
+    "deploy": "3d-capital-deploy-final8.log"
+  },
+  "features": [
+    {
+      "name": "Large pale connected cities and scattered houses",
+      "implementation": "Nine distinct cities;937 buildings including48 additional scattered houses;15 pale roads totaling53.01km;72 harmless moving destructible NPCs;original locations retained.",
+      "evidence": [
+        "3d-capital-relocated/world-and-tower.json",
+        "3d-capital-brief8/3d-initial-world.json"
+      ],
+      "level": "Source, real Node geometry/road ray checks, brief native game rendering"
+    },
+    {
+      "name": "Remote capital and nonwhite buildings",
+      "implementation": "Capital center(-4300,-4500),about6.36km fromspawn;194 monumental buildings use blue-gray/teal/steel-blue palette while the central tower remains purewhite.",
+      "evidence": [
+        "3d-capital-relocated/world-and-tower.json",
+        "config/apps/portal/src/3d/city-data.mjs",
+        "config/apps/portal/src/3d/world.mjs"
+      ],
+      "level": "Source and actual world model"
+    },
+    {
+      "name": "Tower path and top fall repair",
+      "implementation": "2400m truncatedcone,12 circles22.54km;highest platformY2455;same Float32 triangle surface for rendering/ground,continuous lastlanding,3.2m top/landing guards;recovery restricted to illegal tower-core positions.",
+      "evidence": [
+        "3d-tower-summit-fix/unit.json",
+        "3d-tower-summit-fix/physics.json"
+      ],
+      "level": "19/19 rule/geometry units plus full real stepPlayer simulation;final native ascent not completed"
+    },
+    {
+      "name": "Summit boss, savepoints and medal",
+      "implementation": "92m boss36HP/three phases;four tower healing/save stations;victory popup and original OCV medalSVG download;homepage only shows medal onbuttonclick;whitelisted local award record.",
+      "evidence": [
+        "3d-tower-summit-fix/unit.json",
+        "3d-capital-unit-final7.log",
+        "config/apps/portal/src/3d/medal.mjs",
+        "config/apps/portal/src/3d/medal-home.mjs"
+      ],
+      "level": "Source and unchanged rule/storage/download units;final native win and earned Blob download not claimed"
+    },
+    {
+      "name": "Whole-map monsters and tower density",
+      "implementation": "2500 cells240m/4slots=10000 grid slots plus152 named regional slots and288 tower slots24/turn=10440;infinite same-slot20–36s respawn;regioncaps;64nearAI,256visible,96projectiles;lazy spatial candidates;far instances remain shootable.",
+      "evidence": [
+        "encounters-grid-unit.json",
+        "encounters-grid-unit.log",
+        "3d-capital-brief8/encounters-native-pools.json",
+        "3d-capital-brief8/encounters-native-grid.png"
+      ],
+      "level": "9/9 behavioral/real Three instance-ray units and brief native pool/turn checks;not long all-region combat balance testing"
+    },
+    {
+      "name": "Game controls and Alt cursor",
+      "implementation": "Windowed960x600/default,fullscreenbutton,no stamina,sprint58m/s;holding eitherAlt releasescursor and pausesview/motion,lastrelease restorescontrol withfallback.",
+      "evidence": [
+        "3d-capital-brief8/3d-native-controls.json",
+        "tests/browser/3d-alt.spec.mjs",
+        "3d-capital-final3-browser.log"
+      ],
+      "level": "Current brief native movement;Alt historical original native checks/application unchanged,not rerun now"
+    },
+    {
+      "name": "Seven BGM tracks and author credit",
+      "implementation": "SevenoriginalOGG files loopinorder,oneAudio,defaultvolume0.32,off/on,0–1slider andglobalmute;hidden/pause/victory suspend;authorcreditEfilheim appearsoutsidegame.",
+      "evidence": [
+        "3d-capital-brief8/3d-music-native-controls.json",
+        "3d-capital-runtime8.json",
+        "config/apps/portal/src/components/MusicCredit.astro"
+      ],
+      "level": "Current native unlock/volume/toggle/mute and exact14media HTTPbytes;seven fulltracks not listenedthrough",
+      "source": "https://efilheim.itch.io/anamnesis",
+      "license": "CC0 for these seven tracks only;does not cover other media"
+    },
+    {
+      "name": "Separated shortcuts and two new picture frames",
+      "implementation": "Spring/老吴/media3entrypositions separated;JPG on/maze/display/ clicksrandomoneof5MP3 once,GIF on/maze/notifications/unread/;smallupright draggableclosableframes andcleanup.",
+      "evidence": [
+        "3d-capital-brief8-media/media-p2-separate-routes.json",
+        "3d-capital-runtime8.json",
+        "config/apps/portal/src/p2/p2.mjs"
+      ],
+      "level": "Current1/1native routes/dimensions/identitymatrix/imagebytes;drag/close/audio behavior source plus prior model/browser scope,not fully rerun"
+    }
+  ],
+  "verification": {
+    "sourceFiles": 52,
+    "originalAssets": 14,
+    "currentSourceHashes": {
+      "config/apps/portal/src/3d/1.astro": "036de49ea8d884b7bfa9ea1525695e79d026cc554eb44d0fba522a383e8f2bda",
+      "config/apps/portal/src/3d/1.css": "c81e1c6a48af2ec7f4688d599818cad7d00c0dcf6658793b6a4236b9c3744724",
+      "config/apps/portal/src/3d/audio.mjs": "6317673eb650d626179c9cac797a0db0873761eb0d8466d33837f280090e4cb2",
+      "config/apps/portal/src/3d/boss.mjs": "bb22d7ffa05082be448ea390eb50b80c8e6df2a3c36e8b20f5ef84bcfeb517cc",
+      "config/apps/portal/src/3d/city-data.mjs": "135f30ee15f65a9e2254bad2b940b26fbafcabc08bc69684d12d3c898d7301e0",
+      "config/apps/portal/src/3d/entities.mjs": "2c056bfbdacc90ba9c07f861b740fd7907f13a8a0a049e7700d45ed86bcda59a",
+      "config/apps/portal/src/3d/entry.mjs": "47c5a03884404c688505b1bf4f4becd451c788d1dc5a76230ac3e8db34261d35",
+      "config/apps/portal/src/3d/main.mjs": "38fac8fedd1871942e459231419a1a69429491a2613a09ce93dd5a9e8715c3bb",
+      "config/apps/portal/src/3d/medal-home.mjs": "14855e60cc451197f32dde577e80adbcfc83cddfa883ad8f3a562932f888dbd7",
+      "config/apps/portal/src/3d/medal.css": "f707634b20c3db94d58f952d2791d00e3e33c59cf9a585fc18a06b696fac94fa",
+      "config/apps/portal/src/3d/medal.mjs": "d9aa232a31f888a2fef91d2bafe3e61647d0850f35f0903ca8a9c4bbb4078df0",
+      "config/apps/portal/src/3d/model.mjs": "9c6d6d7ae90df718879021a578a8b58f835c14454c5a3ff15e98601a8f01c3a6",
+      "config/apps/portal/src/3d/roads.mjs": "2c773a937c6868a4f8fbc78458825ed55a8fb3f5a375992472c88fb5f32f3c0c",
+      "config/apps/portal/src/3d/save.mjs": "99a2307222fde936c89c61d29351f460151d8b13da834b8e2cb3529df24a973e",
+      "config/apps/portal/src/3d/terrain.mjs": "f43bc3f61b99ca85d5873ae2b66da852ec843b50ec92fbebcc6333c004075d7e",
+      "config/apps/portal/src/3d/tower.mjs": "59439e9efaa961e04872ca3503fa3b476c892cbb261375c949e99b45c2d7dcae",
+      "config/apps/portal/src/3d/Victory.astro": "37fbef27bd2a430d0934e54f80d13433d90d263a55916719d4811686b792c410",
+      "config/apps/portal/src/3d/world.mjs": "c1999fd2430b188b69fe682d6407c00cc5c98dd48a5e14fb5f4515aa91b8e313",
+      "config/apps/portal/src/components/AeroMedal.astro": "2ac11c134a9ec75047be03086a19b8b9a77ddcc12e171430cb8651a59d996671",
+      "config/apps/portal/src/pages/index.astro": "b3ac6df7bf17f8e16b1e74ec0cc8e380fec5b137a52beb096761939bfc1b5632",
+      "config/apps/portal/src/n9/shortcuts.astro": "3dfae58e9b51a952c34339bc0e6f7fc5c5461f4cfa92cb6862e22d70dbe92b05",
+      "config/apps/portal/src/n9/n9.css": "7674cc91af8710ff54a54aee16ee8c1ce03437428d1acbda28d304006edb631a",
+      "tests/3d-model.test.mjs": "bc7125d1529a988e6a72b92ecd684c24dcb9ab23e838243ef48f4eadc450531c",
+      "tests/3d-capital-npc.test.mjs": "d5abdee3817188f21c9ef90a86146f89a4009d696a531a545e18099b94ad4802",
+      "tests/3d-tower-boss.test.mjs": "628b8119b1b4bc2ba4baaa7dadc88f9c9e49742245ea3e7160fbce0e4be7436e",
+      "tests/3d-medal.test.mjs": "13f4293db91d1373d7a711b0eed220dff1f2d8c38bdd3beaf76c6f4db9f108b2",
+      "tests/browser/3d-game.spec.mjs": "027b7e94693b799dc1d108db7f50a0c5fab37b82be33a0c9771b341620fa35f3",
+      "tests/browser/3d-capital.spec.mjs": "9c3c7a108d033fb3dcb04efd2dac18a6fcbc86b7203d0643c2a123c285c757de",
+      "tests/browser/3d-medal.spec.mjs": "7fa9b8535b84dcc7f098f2dc5c77055c35f81370d534661b8ff680b7a3298ae4",
+      "tests/browser/media-spacing.spec.mjs": "7ea2a0a3605da01fe4059ceb0399363beb927229492da596168911ebd03a4105",
+      "playwright.3d.config.mjs": "5f8336c5e8b734aa6d9aebdf75ae14c1e5a2d6b8e9763e99df2f194054aacd99",
+      "tests/browser/3d-alt.spec.mjs": "fb594300a53e834182a48b50f0a1729ba34128ca86d1886391efb00add4e3f92",
+      "config/apps/portal/src/p2/Frame.astro": "037e2f7f3e14f328dc4015687c2363c487f1142600acd2fa581ef9a7bf6fcd37",
+      "config/apps/portal/src/p2/p2.css": "1a1a70de78eb19680acfe554eab4062ee8486cdb49fafb40827cb675dd2adc2e",
+      "config/apps/portal/src/p2/p2.mjs": "07b71f770d1d4e7f78e282d622d2b694584e8b9455d421fefe776afdcb941932",
+      "config/apps/portal/src/pages/maze/[...path].astro": "7048c06920159089ba9d401b706a0fb57952b45eac3e70544afa6aa5e32b3055",
+      "tests/browser/media-frames.spec.mjs": "bb57b39bf042a08ca79fa5c20db48c9fd11dfd2c0cb59293a89464526017fab4",
+      "playwright.media-frames.config.mjs": "453ea4654fbc3e67f308163830569b3650dac5d87e4e28492cdb3e042451b600",
+      "playwright.aero.config.mjs": "4af7a316b49606f1a2efdb00e0aa12da59877fb6b19470e82deabdfef461e583",
+      "scripts/profile-3d-runtime.mjs": "46a5986f742400e03596f63d897aac36f9deabecafd486055ce75ce29e26f5ea",
+      "config/apps/portal/src/3d/music.mjs": "c2a067b0b276aacd69d91a16b114833d1c0461385d4218437f62106479c61148",
+      "config/apps/portal/src/components/MusicCredit.astro": "d787fe3a5781fd261d0f59afa70afe98657d2e3342ddacc9782191aa63723f17",
+      "config/apps/portal/src/pages/functions/games.astro": "fe66906f1896cffbcf86dd39fb4cef704ad5151ce28db6763aade4398e75ced5",
+      "config/apps/portal/src/pages/legal/index.astro": "5556b1f6aabf674041fc47cafa2bba14ea56dbf2850325f721ced711591f5a93",
+      "tests/3d-music.test.mjs": "a284c386a8bb6c058eeaf45e630d66e3cc0a617ef74ad03be676c9c5dca93e27",
+      "tests/browser/3d-music.spec.mjs": "14f0eba49c1b323832c3cde23a5ebd8558360e4f88a89378d7de4dd1012573a3",
+      "playwright.3d-music.config.mjs": "32938f293492fb74bf664ed26241b912a398164163332178d49ea349506d8b95",
+      "config/apps/portal/src/3d/encounters.mjs": "387e1a97faaf24597505aa90e8900300ae28e244f64169cbe5cddf6c542c1449",
+      "tests/3d-encounters.test.mjs": "99c5ebfc8d822fda4b88d66d24cde63c47ca72cf25375635086c1e29ddcdffda",
+      "tests/browser/3d-encounters.spec.mjs": "384a9d17a1143cef71d1c1e531f854adb867ceefb0700180a9abd47faed45889",
+      "scripts/serve-static-proof.mjs": "d295b4cc8e1e5f2dd8ec4afae93884c042b85b285fdaa9e997a1d04fade6d116",
+      "scripts/inspect-3d-runtime.mjs": "93618fa70766b7cb6cf0e389afad6c645fc5adbdec87f1ee431bc8c4c8509586"
+    },
+    "currentOriginalAssets": [
+      {
+        "file": "config/apps/portal/public/forgotten-cache/p2/7.jpg",
+        "url": "/forgotten-cache/p2/7.jpg",
+        "bytes": 2536,
+        "sha256": "7d429899bc9288d093c45d3f3f1154ce61d35dcc0166e2907bf1e5bcfad641fa",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/forgotten-cache/p2/8.gif",
+        "url": "/forgotten-cache/p2/8.gif",
+        "bytes": 826473,
+        "sha256": "c004a723ec892d9e0fc38b97472eefcbbd8bf673e693bd82a9ab9b1bea8aee0d",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/forgotten-cache/p2/a0.mp3",
+        "url": "/forgotten-cache/p2/a0.mp3",
+        "bytes": 395214,
+        "sha256": "3f1636d573623fdf27b3c677b816a3f985c56087f65c1d87fbdff583493537bb",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/forgotten-cache/p2/a1.mp3",
+        "url": "/forgotten-cache/p2/a1.mp3",
+        "bytes": 686978,
+        "sha256": "a41baeba2a36e60c4208a21329aef3635681732692de8fe4ad7d9d531727f6ce",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/forgotten-cache/p2/a2.mp3",
+        "url": "/forgotten-cache/p2/a2.mp3",
+        "bytes": 531042,
+        "sha256": "15e9fe0dcd02a43ac6c9caa0f92e79e7b927c769609d40a4e82f9074e4b2397f",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/forgotten-cache/p2/a3.mp3",
+        "url": "/forgotten-cache/p2/a3.mp3",
+        "bytes": 336826,
+        "sha256": "e94b95ece98e4ce3d52e203c8eb52462a00a25343b1fdd54d6e681f86e460f9f",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/forgotten-cache/p2/a4.mp3",
+        "url": "/forgotten-cache/p2/a4.mp3",
+        "bytes": 328886,
+        "sha256": "e1d079122e0c77a23e038cae3eb84e3b213ff914ed95476e05f01797a23ad5d4",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/aero-music/1.ogg",
+        "url": "/aero-music/1.ogg",
+        "title": "memory of a dream",
+        "bytes": 10185331,
+        "sha256": "fc1764cfe65bf2bcb179523d591ed914b05d679285eea8fe1083d1b4876d0451",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/aero-music/2.ogg",
+        "url": "/aero-music/2.ogg",
+        "title": "ever and never",
+        "bytes": 10741430,
+        "sha256": "4965ace7b58202d8afdd099abe9e2e0174f5fb6a07ab16337c48e7608d465b43",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/aero-music/3.ogg",
+        "url": "/aero-music/3.ogg",
+        "title": "drifting stardust",
+        "bytes": 9681296,
+        "sha256": "f64da79c01159f72e8ab941288a7116108a69323bc30be575310ccaa86395253",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/aero-music/4.ogg",
+        "url": "/aero-music/4.ogg",
+        "title": "between the waves",
+        "bytes": 9014138,
+        "sha256": "f9a2b48010eaf1ef76777d04f0991de5ae8af827d2afd3756d3e35eac52f82f2",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/aero-music/5.ogg",
+        "url": "/aero-music/5.ogg",
+        "title": "like wild horses on the hills",
+        "bytes": 12828677,
+        "sha256": "3533cb9cf4c7b57c20a7ef385d39ad8658831847fcc14da7af897f6ceee96c5e",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/aero-music/6.ogg",
+        "url": "/aero-music/6.ogg",
+        "title": "closer",
+        "bytes": 10994599,
+        "sha256": "f8f6b5870c7302ea79b76d1f1f97a2ad6a5fe2364cb61e7072d597f678c457e2",
+        "originalBytesPreserved": true
+      },
+      {
+        "file": "config/apps/portal/public/aero-music/7.ogg",
+        "url": "/aero-music/7.ogg",
+        "title": "in the end, only sorrow",
+        "bytes": 9069985,
+        "sha256": "4c2b8d2cc450238bc2f289f180eb1e88f2d6878c21bf2a3dcec5f0375464009a",
+        "originalBytesPreserved": true
+      }
+    ],
+    "deployment": {
+      "pages": 186,
+      "httpRoutes": [
+        {
+          "url": "/functions/3d-world/",
+          "status": 200
+        },
+        {
+          "url": "/functions/games/",
+          "status": 200
+        },
+        {
+          "url": "/functions/",
+          "status": 200
+        },
+        {
+          "url": "/search/?q=3D%E6%B8%B8%E6%88%8F",
+          "status": 200
+        },
+        {
+          "url": "/legal/",
+          "status": 200
+        },
+        {
+          "url": "/legal/code/",
+          "status": 200
+        },
+        {
+          "url": "/media/",
+          "status": 200
+        },
+        {
+          "url": "/maze/display/",
+          "status": 200
+        },
+        {
+          "url": "/maze/notifications/unread/",
+          "status": 200
+        }
+      ],
+      "gameScript": [
+        {
+          "url": "/_astro/1.astro_astro_type_script_index_0_lang.DphRvjfE.js",
+          "status": 200,
+          "bytes": 158296,
+          "sha256": "789e096850d486f5d5bc6ceaebd7fbcef480286a558fa83b41fdd2bdfee93a3f"
+        }
+      ],
+      "mediaOriginalBytes": [
+        {
+          "url": "/forgotten-cache/p2/7.jpg",
+          "status": 200,
+          "bytes": 2536,
+          "sha256": "7d429899bc9288d093c45d3f3f1154ce61d35dcc0166e2907bf1e5bcfad641fa"
+        },
+        {
+          "url": "/forgotten-cache/p2/8.gif",
+          "status": 200,
+          "bytes": 826473,
+          "sha256": "c004a723ec892d9e0fc38b97472eefcbbd8bf673e693bd82a9ab9b1bea8aee0d"
+        },
+        {
+          "url": "/forgotten-cache/p2/a0.mp3",
+          "status": 200,
+          "bytes": 395214,
+          "sha256": "3f1636d573623fdf27b3c677b816a3f985c56087f65c1d87fbdff583493537bb"
+        },
+        {
+          "url": "/forgotten-cache/p2/a1.mp3",
+          "status": 200,
+          "bytes": 686978,
+          "sha256": "a41baeba2a36e60c4208a21329aef3635681732692de8fe4ad7d9d531727f6ce"
+        },
+        {
+          "url": "/forgotten-cache/p2/a2.mp3",
+          "status": 200,
+          "bytes": 531042,
+          "sha256": "15e9fe0dcd02a43ac6c9caa0f92e79e7b927c769609d40a4e82f9074e4b2397f"
+        },
+        {
+          "url": "/forgotten-cache/p2/a3.mp3",
+          "status": 200,
+          "bytes": 336826,
+          "sha256": "e94b95ece98e4ce3d52e203c8eb52462a00a25343b1fdd54d6e681f86e460f9f"
+        },
+        {
+          "url": "/forgotten-cache/p2/a4.mp3",
+          "status": 200,
+          "bytes": 328886,
+          "sha256": "e1d079122e0c77a23e038cae3eb84e3b213ff914ed95476e05f01797a23ad5d4"
+        },
+        {
+          "url": "/aero-music/1.ogg",
+          "status": 200,
+          "bytes": 10185331,
+          "sha256": "fc1764cfe65bf2bcb179523d591ed914b05d679285eea8fe1083d1b4876d0451"
+        },
+        {
+          "url": "/aero-music/2.ogg",
+          "status": 200,
+          "bytes": 10741430,
+          "sha256": "4965ace7b58202d8afdd099abe9e2e0174f5fb6a07ab16337c48e7608d465b43"
+        },
+        {
+          "url": "/aero-music/3.ogg",
+          "status": 200,
+          "bytes": 9681296,
+          "sha256": "f64da79c01159f72e8ab941288a7116108a69323bc30be575310ccaa86395253"
+        },
+        {
+          "url": "/aero-music/4.ogg",
+          "status": 200,
+          "bytes": 9014138,
+          "sha256": "f9a2b48010eaf1ef76777d04f0991de5ae8af827d2afd3756d3e35eac52f82f2"
+        },
+        {
+          "url": "/aero-music/5.ogg",
+          "status": 200,
+          "bytes": 12828677,
+          "sha256": "3533cb9cf4c7b57c20a7ef385d39ad8658831847fcc14da7af897f6ceee96c5e"
+        },
+        {
+          "url": "/aero-music/6.ogg",
+          "status": 200,
+          "bytes": 10994599,
+          "sha256": "f8f6b5870c7302ea79b76d1f1f97a2ad6a5fe2364cb61e7072d597f678c457e2"
+        },
+        {
+          "url": "/aero-music/7.ogg",
+          "status": 200,
+          "bytes": 9069985,
+          "sha256": "4c2b8d2cc450238bc2f289f180eb1e88f2d6878c21bf2a3dcec5f0375464009a"
+        }
+      ],
+      "licenseOriginalBytes": [
+        {
+          "url": "/third-party-notices.txt",
+          "status": 200,
+          "sha256": "6d7c2543e2418136918d8117d29a1dcfaa0d03bf7b7725f706dd4b419e357d7f"
+        },
+        {
+          "url": "/licenses/cropperjs-1.6.2-LICENSE.txt",
+          "status": 200,
+          "sha256": "eb917650781dcf06a60b97cba9b05bf583931ec2d311d8a5548a8dca90a57e0f"
+        },
+        {
+          "url": "/licenses/dompurify-3.4.16-LICENSE-APACHE-2.0.txt",
+          "status": 200,
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "url": "/licenses/dompurify-3.4.16-LICENSE-MPL-2.0.txt",
+          "status": 200,
+          "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+        },
+        {
+          "url": "/licenses/fast-json-patch-3.1.1.txt",
+          "status": 200,
+          "sha256": "26593d78926902a82eb9bc7e40d1811fc381055f23516b92fe48ca8399bf02df"
+        },
+        {
+          "url": "/licenses/jsqr-1.4.0-LICENSE.txt",
+          "status": 200,
+          "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+        },
+        {
+          "url": "/licenses/marked-18.0.14-LICENSE.txt",
+          "status": 200,
+          "sha256": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c"
+        },
+        {
+          "url": "/licenses/mathjs-15.2.0-LICENSE.txt",
+          "status": 200,
+          "sha256": "3b0f65a9308588e12b619b2f05c788b4a5f41220006ce563b826b0feb489fd26"
+        },
+        {
+          "url": "/licenses/mathjs-15.2.0-NOTICE.txt",
+          "status": 200,
+          "sha256": "40e0c8aac7a769ef524e089b8ef75f81325ab7deca50def443b9b20d425e65b5"
+        },
+        {
+          "url": "/licenses/papaparse-5.7.0-LICENSE.txt",
+          "status": 200,
+          "sha256": "99aa68e4b42758b09828a46515f70369e5463458ab7a990189f641af2b8d9b4e"
+        },
+        {
+          "url": "/licenses/pdf-lib-1.17.1-LICENSE.txt",
+          "status": 200,
+          "sha256": "f2c9fc00fdb66eb99ac156ba52d734af66d8d309f65753ae809ad34ee2883bcb"
+        },
+        {
+          "url": "/licenses/phase8--babel-core-8.0.6.txt",
+          "status": 200,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "url": "/licenses/phase8--babel-preset-env-8.0.6.txt",
+          "status": 200,
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "url": "/licenses/phase8-eslint-10.11.0.txt",
+          "status": 200,
+          "sha256": "3b6be04f862a077a4b97929dbf247299360824d9365f8603c263769303ace18c"
+        },
+        {
+          "url": "/licenses/phase8-gulp-5.0.1.txt",
+          "status": 200,
+          "sha256": "c92a35b5616e596f7a362bf37e85eec21cb22aaade182048525cfe3ea79f820a"
+        },
+        {
+          "url": "/licenses/phase8-prettier-3.9.9.txt",
+          "status": 200,
+          "sha256": "b0f2417199889f1c0d28ec4e0244eacf1a15de5819d61f641dd7d8f45153ac9c"
+        },
+        {
+          "url": "/licenses/phase8-stylelint-17.16.0.txt",
+          "status": 200,
+          "sha256": "75d7a49cb407946d65586e81b72265fbf5c87d5e4a7e03f9dcb4034ae3aba725"
+        },
+        {
+          "url": "/licenses/phase8-webpack-5.111.1.txt",
+          "status": 200,
+          "sha256": "9068a8782d2fb4c6e432cfa25334efa56f722822180570802bf86e71b6003b1e"
+        },
+        {
+          "url": "/licenses/qrcode-1.5.4-LICENSE.txt",
+          "status": 200,
+          "sha256": "8df47c6ad9ac2c41eb9b2a72def9908959da0ede8dadd56c7b249c1bdb0c5ce6"
+        },
+        {
+          "url": "/licenses/sql.js-1.14.2.txt",
+          "status": 200,
+          "sha256": "60a3f6e4d7b29b4321359e683b36cf198d24f58e24582070f56e6fa89d5ee2be"
+        }
+      ],
+      "core": [
+        {
+          "service": "edge",
+          "health": "healthy",
+          "capMiB": 64
+        },
+        {
+          "service": "gateway",
+          "health": "healthy",
+          "capMiB": 512
+        },
+        {
+          "service": "next",
+          "health": "healthy",
+          "capMiB": 512
+        },
+        {
+          "service": "portal",
+          "health": "healthy",
+          "capMiB": 128
+        },
+        {
+          "service": "postgres",
+          "health": "healthy",
+          "capMiB": 384
+        },
+        {
+          "service": "redis",
+          "health": "healthy",
+          "capMiB": 128
+        }
+      ],
+      "totalCapsMiB": 1728,
+      "builderStopped": true,
+      "storageGuard": "Actual Docker storage confirmed under local F dependency disk before guarded serial portal build;no optional groups started"
+    },
+    "units": {
+      "currentTargeted": {
+        "passed": 9,
+        "failed": 0,
+        "evidence": "encounters-grid-unit.json",
+        "capture": "Exact printed Vitest result transcribed from the original exec output; no rerun and no JSON reporter claim."
+      },
+      "unchangedTower": {
+        "passed": 19,
+        "failed": 0,
+        "evidence": "3d-tower-summit-fix/unit.json"
+      },
+      "previousFullBaseline": {
+        "passed": 294,
+        "files": 21,
+        "version": "frozen7 before latest global grid density",
+        "evidence": "3d-capital-unit-final7.log",
+        "currentFullSuiteRerun": false
+      }
+    },
+    "briefBrowser": {
+      "initial": {
+        "stats": {
+          "startTime": "2026-10-03T15:50:06.356Z",
+          "duration": 23664.801,
+          "expected": 4,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "cases": [
+          {
+            "title": "Native world uses fixed encounter actors, capped active regions and fixed instanced resources",
+            "file": "3d-encounters.spec.mjs",
+            "status": "passed"
+          },
+          {
+            "title": "Text-free first-person page renders actual terrain, settlements, water and a bounded twelve-kilometre world",
+            "file": "3d-game.spec.mjs",
+            "status": "passed"
+          },
+          {
+            "title": "Native walking, arrow look, sprint, jump and recovery change the actual first-person simulation",
+            "file": "3d-game.spec.mjs",
+            "status": "passed"
+          },
+          {
+            "title": "Native gameplay starts one soundtrack and its native volume toggle and global mute controls work independently",
+            "file": "3d-music.spec.mjs",
+            "status": "passed"
+          },
+          {
+            "title": "Both new small media windows belong to separate real maze routes and preserve original image bytes",
+            "file": "media-frames.spec.mjs",
+            "status": "failed"
+          }
+        ],
+        "evidence": "3d-capital-brief8/3d-playwright.json"
+      },
+      "affectedOnly": {
+        "stats": {
+          "startTime": "2026-10-03T15:52:35.129Z",
+          "duration": 2549.438,
+          "expected": 1,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "cases": [
+          {
+            "title": "Both new small media windows belong to separate real maze routes and preserve original image bytes",
+            "file": "media-frames.spec.mjs",
+            "status": "passed"
+          }
+        ],
+        "evidence": "3d-capital-brief8-media/3d-playwright.json"
+      },
+      "testOnlyChange": "media-frames.spec.mjs now checks actual DOMMatrix identity and zero rotation rather than exact CSS serialization strings;no application change",
+      "isSingleFullPassingRun": false
+    },
+    "actualEnemyObservation": {
+      "totalActors": 10440,
+      "activeCount": 30,
+      "visibleCount": 256,
+      "regionCount": 2529,
+      "resolvedActors": 840,
+      "spatialCells": 2500,
+      "geometryCount": 10,
+      "materialCount": 13,
+      "meshCount": 38,
+      "renderInstances": 256,
+      "nearInstances": 30,
+      "farInstances": 226,
+      "visualCapacity": 256,
+      "farMeshes": 1,
+      "coverage": {
+        "cellSize": 240,
+        "grid": 2500,
+        "slotsPerCell": 4,
+        "towerSlotsPerTurn": 24
+      }
+    },
+    "towerPhysicalProof": {
+      "ascent": {
+        "frames": 3887,
+        "distance": 22544.600000000326,
+        "maxFrameRise": 1.6773216829469675,
+        "completedTurns": 12.001425092311155,
+        "foot": {
+          "x": -4165.799381290264,
+          "y": 2455,
+          "z": -4499.998806312382
+        },
+        "recoveries": 0
+      },
+      "guard": {
+        "apexHeight": 1.9500000000002728,
+        "maximumRadius": 143.79676059480516,
+        "minimumFootY": 2455,
+        "landedFootY": 2455,
+        "recoveries": 0
+      },
+      "triangles": {
+        "hits": 63,
+        "maxTriangleError": 4.547473508864641e-13
+      }
+    },
+    "preservedLedgers": {
+      "numbered": {
+        "A": 381,
+        "B": 351,
+        "numbered": 732
+      },
+      "technical": 146,
+      "categories": 34,
+      "screenshot": 12,
+      "sourceLedgerCheck": "3d-capital-ledger-final7.log",
+      "ledgerModifiedThisIteration": false,
+      "rawRequirementTextPreserved": true
+    }
+  },
+  "history": {
+    "fullNative38": {
+      "status": "interrupted",
+      "lastGenuineAscentPercent": 73.4826,
+      "completedTurns": 8.8179,
+      "evidence": "3d-capital-final3/interrupted.json",
+      "countsAsComplete": false
+    },
+    "old26": {
+      "passed": 25,
+      "failed": 1,
+      "reason": "Native ascent driver turn error;historical report kept,not combined into acceptance"
+    },
+    "firstGridUnit": {
+      "passed": 8,
+      "failed": 1,
+      "reason": "Complete combinedtower simulation finished after51.476s and exceeded15s testcase timeout;userrequested briefvalidation so sampled low/middle/high actualpathsegments instead",
+      "evidence": "encounters-grid-unit-full-route-timeout.log"
+    }
+  },
+  "limitations": [
+    "Final native fulltowerascent/Bosswin/earnedmedaldownload notcompleted;source and real Node physics/rules recorded separately.",
+    "No new performancebenchmark or FPS promise;userreported smooth game aftertestGPUstopped andcancelled furtherinvestigation.",
+    "No wholeoldsite browserregression,seventrack fullplaythrough,longcombatbalance,mobilephysicaldevicecheck,cleanclone,allstack/publicportability/licenseaudit inthismaintenance.",
+    "Synthetic visibility/storage rejection evidence only verifies thoseexplicitbranches;original unknownmedia notreclassified asCC0."
+  ],
+  "stop": {
+    "maintenanceComplete": true,
+    "phase9Authorized": false,
+    "ownedBrowserTestsFinished": true,
+    "next": "Wait for user direction;public release audit remains phase9 pending."
+  }
+}

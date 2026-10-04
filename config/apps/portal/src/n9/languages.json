@@ -1,0 +1,505 @@
+{
+  "sourceSha256": "75495c1fbd05efaca52f7625b4892e7e87fccfdbc07c138a39e18f1cd2150f56",
+  "languages": [
+    {
+      "code": "zh",
+      "label": "中文",
+      "dir": "ltr"
+    },
+    {
+      "code": "en",
+      "label": "English",
+      "dir": "ltr"
+    },
+    {
+      "code": "ja",
+      "label": "日本語",
+      "dir": "ltr"
+    },
+    {
+      "code": "ko",
+      "label": "한국어",
+      "dir": "ltr"
+    },
+    {
+      "code": "fr",
+      "label": "Français",
+      "dir": "ltr"
+    },
+    {
+      "code": "de",
+      "label": "Deutsch",
+      "dir": "ltr"
+    },
+    {
+      "code": "es",
+      "label": "Español",
+      "dir": "ltr"
+    },
+    {
+      "code": "it",
+      "label": "Italiano",
+      "dir": "ltr"
+    },
+    {
+      "code": "pt",
+      "label": "Português",
+      "dir": "ltr"
+    },
+    {
+      "code": "ru",
+      "label": "Русский",
+      "dir": "ltr"
+    },
+    {
+      "code": "ar",
+      "label": "العربية",
+      "dir": "rtl"
+    },
+    {
+      "code": "hi",
+      "label": "हिन्दी",
+      "dir": "ltr"
+    },
+    {
+      "code": "bn",
+      "label": "বাংলা",
+      "dir": "ltr"
+    },
+    {
+      "code": "ur",
+      "label": "اردو",
+      "dir": "rtl"
+    },
+    {
+      "code": "fa",
+      "label": "فارسی",
+      "dir": "rtl"
+    },
+    {
+      "code": "tr",
+      "label": "Türkçe",
+      "dir": "ltr"
+    },
+    {
+      "code": "vi",
+      "label": "Tiếng Việt",
+      "dir": "ltr"
+    },
+    {
+      "code": "th",
+      "label": "ไทย",
+      "dir": "ltr"
+    },
+    {
+      "code": "id",
+      "label": "Bahasa Indonesia",
+      "dir": "ltr"
+    },
+    {
+      "code": "ms",
+      "label": "Bahasa Melayu",
+      "dir": "ltr"
+    },
+    {
+      "code": "nl",
+      "label": "Nederlands",
+      "dir": "ltr"
+    },
+    {
+      "code": "sv",
+      "label": "Svenska",
+      "dir": "ltr"
+    },
+    {
+      "code": "da",
+      "label": "Dansk",
+      "dir": "ltr"
+    },
+    {
+      "code": "no",
+      "label": "Norsk",
+      "dir": "ltr"
+    },
+    {
+      "code": "fi",
+      "label": "Suomi",
+      "dir": "ltr"
+    },
+    {
+      "code": "is",
+      "label": "Íslenska",
+      "dir": "ltr"
+    },
+    {
+      "code": "el",
+      "label": "Ελληνικά",
+      "dir": "ltr"
+    },
+    {
+      "code": "pl",
+      "label": "Polski",
+      "dir": "ltr"
+    },
+    {
+      "code": "cs",
+      "label": "Čeština",
+      "dir": "ltr"
+    },
+    {
+      "code": "sk",
+      "label": "Slovenčina",
+      "dir": "ltr"
+    },
+    {
+      "code": "sl",
+      "label": "Slovenščina",
+      "dir": "ltr"
+    },
+    {
+      "code": "hr",
+      "label": "Hrvatski",
+      "dir": "ltr"
+    },
+    {
+      "code": "sr",
+      "label": "Српски",
+      "dir": "ltr"
+    },
+    {
+      "code": "bs",
+      "label": "Bosanski",
+      "dir": "ltr"
+    },
+    {
+      "code": "bg",
+      "label": "Български",
+      "dir": "ltr"
+    },
+    {
+      "code": "ro",
+      "label": "Română",
+      "dir": "ltr"
+    },
+    {
+      "code": "hu",
+      "label": "Magyar",
+      "dir": "ltr"
+    },
+    {
+      "code": "uk",
+      "label": "Українська",
+      "dir": "ltr"
+    },
+    {
+      "code": "be",
+      "label": "Беларуская",
+      "dir": "ltr"
+    },
+    {
+      "code": "lt",
+      "label": "Lietuvių",
+      "dir": "ltr"
+    },
+    {
+      "code": "lv",
+      "label": "Latviešu",
+      "dir": "ltr"
+    },
+    {
+      "code": "et",
+      "label": "Eesti",
+      "dir": "ltr"
+    },
+    {
+      "code": "ga",
+      "label": "Gaeilge",
+      "dir": "ltr"
+    },
+    {
+      "code": "cy",
+      "label": "Cymraeg",
+      "dir": "ltr"
+    },
+    {
+      "code": "gd",
+      "label": "Gàidhlig",
+      "dir": "ltr"
+    },
+    {
+      "code": "mt",
+      "label": "Malti",
+      "dir": "ltr"
+    },
+    {
+      "code": "lb",
+      "label": "Lëtzebuergesch",
+      "dir": "ltr"
+    },
+    {
+      "code": "eu",
+      "label": "Euskara",
+      "dir": "ltr"
+    },
+    {
+      "code": "ca",
+      "label": "Català",
+      "dir": "ltr"
+    },
+    {
+      "code": "gl",
+      "label": "Galego",
+      "dir": "ltr"
+    },
+    {
+      "code": "af",
+      "label": "Afrikaans",
+      "dir": "ltr"
+    },
+    {
+      "code": "sw",
+      "label": "Kiswahili",
+      "dir": "ltr"
+    },
+    {
+      "code": "zu",
+      "label": "isiZulu",
+      "dir": "ltr"
+    },
+    {
+      "code": "xh",
+      "label": "isiXhosa",
+      "dir": "ltr"
+    },
+    {
+      "code": "he",
+      "label": "עברית",
+      "dir": "rtl"
+    },
+    {
+      "code": "ny",
+      "label": "Chichewa",
+      "dir": "ltr"
+    },
+    {
+      "code": "ha",
+      "label": "Hausa",
+      "dir": "ltr"
+    },
+    {
+      "code": "ig",
+      "label": "Igbo",
+      "dir": "ltr"
+    },
+    {
+      "code": "yo",
+      "label": "Yorùbá",
+      "dir": "ltr"
+    },
+    {
+      "code": "so",
+      "label": "Soomaali",
+      "dir": "ltr"
+    },
+    {
+      "code": "am",
+      "label": "አማርኛ",
+      "dir": "ltr"
+    },
+    {
+      "code": "om",
+      "label": "Afaan Oromoo",
+      "dir": "ltr"
+    },
+    {
+      "code": "ti",
+      "label": "ትግርኛ",
+      "dir": "ltr"
+    },
+    {
+      "code": "rw",
+      "label": "Kinyarwanda",
+      "dir": "ltr"
+    },
+    {
+      "code": "mg",
+      "label": "Malagasy",
+      "dir": "ltr"
+    },
+    {
+      "code": "sn",
+      "label": "ChiShona",
+      "dir": "ltr"
+    },
+    {
+      "code": "ht",
+      "label": "Kreyòl ayisyen",
+      "dir": "ltr"
+    },
+    {
+      "code": "ceb",
+      "label": "Cebuano",
+      "dir": "ltr"
+    },
+    {
+      "code": "tl",
+      "label": "Tagalog",
+      "dir": "ltr"
+    },
+    {
+      "code": "jv",
+      "label": "Basa Jawa",
+      "dir": "ltr"
+    },
+    {
+      "code": "su",
+      "label": "Basa Sunda",
+      "dir": "ltr"
+    },
+    {
+      "code": "mi",
+      "label": "Te reo Māori",
+      "dir": "ltr"
+    },
+    {
+      "code": "sm",
+      "label": "Gagana Samoa",
+      "dir": "ltr"
+    },
+    {
+      "code": "haw",
+      "label": "ʻŌlelo Hawaiʻi",
+      "dir": "ltr"
+    },
+    {
+      "code": "hmn",
+      "label": "Hmoob",
+      "dir": "ltr"
+    },
+    {
+      "code": "la",
+      "label": "Latina",
+      "dir": "ltr"
+    },
+    {
+      "code": "eo",
+      "label": "Esperanto",
+      "dir": "ltr"
+    },
+    {
+      "code": "hy",
+      "label": "Հայերեն",
+      "dir": "ltr"
+    },
+    {
+      "code": "ka",
+      "label": "ქართული",
+      "dir": "ltr"
+    },
+    {
+      "code": "az",
+      "label": "Azərbaycanca",
+      "dir": "ltr"
+    },
+    {
+      "code": "kk",
+      "label": "Қазақша",
+      "dir": "ltr"
+    },
+    {
+      "code": "ky",
+      "label": "Кыргызча",
+      "dir": "ltr"
+    },
+    {
+      "code": "uz",
+      "label": "Oʻzbekcha",
+      "dir": "ltr"
+    },
+    {
+      "code": "tg",
+      "label": "Тоҷикӣ",
+      "dir": "ltr"
+    },
+    {
+      "code": "tk",
+      "label": "Türkmençe",
+      "dir": "ltr"
+    },
+    {
+      "code": "mn",
+      "label": "Монгол",
+      "dir": "ltr"
+    },
+    {
+      "code": "ne",
+      "label": "नेपाली",
+      "dir": "ltr"
+    },
+    {
+      "code": "si",
+      "label": "සිංහල",
+      "dir": "ltr"
+    },
+    {
+      "code": "ta",
+      "label": "தமிழ்",
+      "dir": "ltr"
+    },
+    {
+      "code": "te",
+      "label": "తెలుగు",
+      "dir": "ltr"
+    },
+    {
+      "code": "kn",
+      "label": "ಕನ್ನಡ",
+      "dir": "ltr"
+    },
+    {
+      "code": "ml",
+      "label": "മലയാളം",
+      "dir": "ltr"
+    },
+    {
+      "code": "mr",
+      "label": "मराठी",
+      "dir": "ltr"
+    },
+    {
+      "code": "gu",
+      "label": "ગુજરાતી",
+      "dir": "ltr"
+    },
+    {
+      "code": "pa",
+      "label": "ਪੰਜਾਬੀ",
+      "dir": "ltr"
+    },
+    {
+      "code": "or",
+      "label": "ଓଡ଼ିଆ",
+      "dir": "ltr"
+    },
+    {
+      "code": "as",
+      "label": "অসমীয়া",
+      "dir": "ltr"
+    },
+    {
+      "code": "km",
+      "label": "ខ្មែរ",
+      "dir": "ltr"
+    },
+    {
+      "code": "lo",
+      "label": "ລາວ",
+      "dir": "ltr"
+    },
+    {
+      "code": "my",
+      "label": "မြန်မာ",
+      "dir": "ltr"
+    }
+  ]
+}

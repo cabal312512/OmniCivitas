@@ -1,0 +1,6 @@
+{
+ "name":"open_boundary",
+ "purpose":"Boundary sensitivity with uniform wholly-contained anchors; independent seeds, descriptive uncertainty.",
+ "sizes":[32,64,128],"lengths":[2,4,8],"boundaries":["open"],
+ "controllers":[0,35,38,41,"random-0.5"],"repetitions":128,"seedStart":600001,"engine":"event"
+}

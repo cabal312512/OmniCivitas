@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "scope": "Public source and website downloads; frozen scientific manifests are preserved verbatim.",
+  "omissions": [
+    {
+      "file": "paper/paper.pdf",
+      "bytes": 903594,
+      "sha256": "2078ec31d90b99bc8cdb1b2d0eae9bd6c5e6281ff1e7df21279e7cee4872359b",
+      "reason": "Compiled paper PDF excluded from GitHub and release downloads at the author request; manuscript source remains."
+    }
+  ]
+}

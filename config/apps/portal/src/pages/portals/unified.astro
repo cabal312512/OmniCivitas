@@ -1,0 +1,16 @@
+---
+import Fragments from '../../q7/1.astro';
+import Dock from '../../main1/index.astro';
+import Identity from '../../aaa/Identity.astro';
+import Diagram from '../../aaa/Diagram.astro';
+import {catalogue} from '../../main1/catalogue.mjs';
+import '../../main1/main.css';
+import OpticalBench from '../../aaa/lens.astro';
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>新版统一门户 · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class="portal-page unified-portal"><Fragments/>
+<header class="portal-page-header"><Identity id="unified" compact/><h1>新版统一门户</h1><a href="/#systems">返回经典版</a></header>
+<OpticalBench />
+<main class="unified-floor"><div class="portal-diagram" aria-hidden="true"><Diagram variant={4} id="portal-wave"/></div><Dock/>
+<div class="portal-directory"><span>目录</span>{catalogue.filter(r=>r.available).map(r=><a href={r.url}>{r.title}</a>)}</div></main>
+<a href="/#systems" class="portal-fixed-exit" aria-label="返回经典主页">↖</a><script>import '../../main1/index.js';</script>
+</body></html>
