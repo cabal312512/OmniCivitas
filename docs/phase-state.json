@@ -179,5 +179,12 @@
     "finishedAt": "2026-10-04T15:36:01.066Z",
     "acceptance": "docs/author-mark-acceptance.json",
     "nextPhaseAuthorized": false
+  },
+  "githubPublication": {
+    "status": "complete",
+    "release": "v0.1.2",
+    "acceptance": "docs/github-publication.json",
+    "finishedAt": "2026-10-04T16:48:52.685Z",
+    "nextPhaseAuthorized": false
   }
 }

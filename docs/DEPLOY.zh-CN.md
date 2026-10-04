@@ -139,7 +139,7 @@ pnpm civilization:legacy
 node scripts/test-languages.mjs java python php go dotnet ruby
 ```
 
-helper 依次使用 768 MiB 测试容器，SDK 按需下载。公开移植性审计已执行 Windows 干净 clone、Linux 容器用户空间及新卷六服务 Compose 验证；独立 macOS / Linux Engine 宿主未验证。Actions 配置三系统检查，配置存在不等于 CI 已通过。[完整审计与限制](PUBLIC-RELEASE.md)保留具体证据。
+helper 依次使用 768 MiB 测试容器，SDK 按需下载。公开移植性审计已执行 Windows 干净 clone、Linux 容器用户空间及新卷六服务 Compose 验证；独立 macOS Docker / Linux Engine 宿主完整部署未验证。远程 Actions 已在 Windows、Linux、macOS 各通过安装、账本核对、五目标构建、299 项 Vitest、6 项 Node 和 3 项 Jest；Linux 浏览器任务两项 Cypress 通过。[完整审计与限制](PUBLIC-RELEASE.md)保留具体证据。
 
 本机 `ocv.ps1` / `scripts/Enter-OcvEnvironment.ps1` 仅用于原开发环境的工具、缓存和 Docker 存储位置，其他电脑使用标准入口。不要提交 node_modules、工具、缓存、构建输出、真实配置、token、证书、数据库数据、Docker volumes 或 WSL 磁盘。小型第三方包也通过 package.json / pnpm-lock.yaml 安装。
 

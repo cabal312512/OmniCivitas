@@ -1,5 +1,7 @@
 # Public release portability audit
 
+Publication update — 5 October 2026: [GitHub repository](https://github.com/cabal312512/OmniCivitas) and [v0.1.2 release](https://github.com/cabal312512/OmniCivitas/releases/tag/v0.1.2) are now published. Deployment is English by default, with a Chinese alternative. Twelve author-only inputs/handoffs remain intact locally and are excluded from the current public index; the paper PDF remains excluded. The original scientific seals and ledgers are unchanged. Remote Windows/Linux/macOS workspace checks and Linux Cypress passed; release packaging also passed. See github-publication.json for exact runs, downloaded ZIP verification and retained historical limits. The audit below is its earlier dated snapshot.
+
 2026-10-04 · Phase 9 · Completed within the recorded platform scope.
 
 Standard public entry points are independent of the original Windows drive layout. A fresh Windows clone and a fresh Linux container environment actually installed, built and started the application. A separate Compose project with new named volumes verified the default six-service deployment and real PostgreSQL/Redis persistence. No GitHub repository was published by this audit.

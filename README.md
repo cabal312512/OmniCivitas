@@ -225,7 +225,7 @@ pnpm civilization:legacy
 node scripts/test-languages.mjs java python php go dotnet ruby
 ```
 
-The helper uses one 768 MiB test container at a time and downloads SDKs only when selected. Earlier audits exercised a clean Windows clone, Linux container userspace and isolated six-service deployment with new volumes. Remote Actions has also built on Windows, Linux and macOS; current test results are recorded in [publication status](docs/github-publication.json). Independent Linux Engine/macOS Docker host deployments remain unverified. [The portability audit](docs/PUBLIC-RELEASE.md) preserves earlier evidence and its scope.
+The helper uses one 768 MiB test container at a time and downloads SDKs only when selected. Earlier audits exercised a clean Windows clone, Linux container userspace and isolated six-service deployment with new volumes. Remote Actions passed installation, ledger checks, all five build targets, 299 Vitest tests, six Node tests and three Jest tests on each of Windows, Linux and macOS. The Linux browser job passed two Cypress cases. Evidence is recorded in [publication status](docs/github-publication.json). Independent Linux Engine/macOS Docker host deployments remain unverified. [The portability audit](docs/PUBLIC-RELEASE.md) preserves earlier evidence and its scope.
 
 `ocv.ps1` and `scripts/Enter-OcvEnvironment.ps1` are optional helpers for the original machine. Other users run standard commands. Dependencies, tools, caches, build output, real environment files, tokens, certificates, runtime databases, Docker volumes and WSL disks do not belong in Git. Small third-party packages also install from package.json / pnpm-lock.yaml.
 
