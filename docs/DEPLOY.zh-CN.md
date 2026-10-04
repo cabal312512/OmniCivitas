@@ -15,7 +15,7 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-打开 **http://127.0.0.1:8080**，研究界面位于 **/research/**。首次启动顺序准备 Angular、网关与科研下载包，再启动开发服务；大体积原始记录需要处理时间。Ctrl+C 停止。没有数据库 URL 时，开发入口明确使用有容量限制的内存存储，重启后不保留该数据。需要 PostgreSQL/Redis 持久化时使用 Docker 核心模式。
+打开 **http://127.0.0.1:8080** 首次启动顺序准备 Angular、网关与科研下载包，再启动开发服务；大体积原始记录需要处理时间。Ctrl+C 停止。没有数据库 URL 时，开发入口明确使用有容量限制的内存存储，重启后不保留该数据。需要 PostgreSQL/Redis 持久化时使用 Docker 核心模式。
 
 ```sh
 pnpm build
