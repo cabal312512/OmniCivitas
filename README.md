@@ -78,14 +78,8 @@ node scripts/reproduce.mjs --profile quick --output ../rsa-check
 The output directory must not already exist. Manuscript sources, scientific figures, data and original seals are published. **Compiled paper PDFs are excluded**, including from regenerated website download bundles. The original seal still lists the omitted PDF; [the publication policy](config/research-publication.json) declares its path, original hash and size. This is a documented subset of the sealed archive, not a new scientific seal. Author-only research briefs are also excluded from the public subset and retained locally. Figure PDFs remain available. No new experiments or PDFs were generated for this release.
 
 With these distinctions, the next step in relating the operational trace hierarchy to the full joint capability region would be to
-
-## Deployment
-
-[中文部署说明](docs/DEPLOY.zh-CN.md)
-
 The web interface uses Astro, Next.js, Angular and NestJS. Ordinary development, builds and primary features work without the entire infrastructure stack. Docker starts only core by default.
 
-### Local development
 
 Install **Node.js 24.14.1**, **pnpm 10.34.6** and Git:
 
@@ -96,7 +90,7 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open **http://127.0.0.1:8080**, or **/research/** for the research interface. Initial startup prepares Angular, the gateway and research downloads sequentially. The large research archive takes time to process. Stop with Ctrl+C.
+Open **http://127.0.0.1:8080** Initial startup prepares Angular, the gateway and research downloads sequentially. The large research archive takes time to process. Stop with Ctrl+C.
 
 Without a database URL, development uses bounded in-memory storage; records do not survive a restart. Docker core uses real PostgreSQL/Redis persistence. Identity screens use local demonstration state; no account API is mounted. Do not enter real passwords.
 
@@ -229,10 +223,7 @@ The helper uses one 768 MiB test container at a time and downloads SDKs only whe
 
 `ocv.ps1` and `scripts/Enter-OcvEnvironment.ps1` are optional helpers for the original machine. Other users run standard commands. Dependencies, tools, caches, build output, real environment files, tokens, certificates, runtime databases, Docker volumes and WSL disks do not belong in Git. Small third-party packages also install from package.json / pnpm-lock.yaml.
 
-### License and contact
+[中文部署说明](docs/DEPLOY.zh-CN.md)
 
-Original code: **MIT — Copyright (c) 2026 cabal312512**; see [LICENSE](LICENSE). Third-party code, fonts, music and other assets retain their own terms. MIT does not relicense them. Required notices: [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt), [EFFECT-SOURCES.md](docs/EFFECT-SOURCES.md), generated `/licenses/bundled-notices.txt`.
 
-Media: [MEDIA_NOTICE.md](MEDIA_NOTICE.md) / `/legal/`. Research music: **Holizna — Retro Wave Collection**, [OpenGameArt](https://opengameart.org/content/retro-wave-collection), CC0. Existing author/source credits remain. Contact: **user31436@proton.me**.
-
-Author-only prompts and handoffs stay locally and are excluded from the current public source and new releases. [Source-publication policy](config/source-publication.json) declares them. Scientific sources/results and original seals remain; the scientific publication subset declares its exclusions separately.
+Original code: **MIT — Copyright (c) 2026 cabal312512**; see [LICENSE](LICENSE).
