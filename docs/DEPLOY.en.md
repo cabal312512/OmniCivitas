@@ -148,6 +148,14 @@ The helper uses one 768 MiB test container at a time and downloads SDKs only whe
 
 `ocv.ps1` and `scripts/Enter-OcvEnvironment.ps1` are optional helpers for the original machine. Other users run standard commands. Dependencies, tools, caches, build output, real environment files, tokens, certificates, runtime databases, Docker volumes and WSL disks do not belong in Git. Small third-party packages also install from package.json / pnpm-lock.yaml.
 
+## Background receipts
+
+Background receipts use the existing core PostgreSQL/Redis and gateway named volume; no optional profile is required. Gateway startup applies the new migration automatically. Keep existing volumes during upgrades. `OCV_AFTER_RUN_LIMIT=128`, `OCV_AFTER_TABLE_LIMIT=6` and `OCV_AFTER_TABLE_EVERY=5` control retention and bounded table rotation. The observer transmits result digests/size metadata, never raw tool inputs or output text, and does not change the existing output/export. In database-free host development it quietly backs off. See [background route/storage details](AFTER-ROUTES.md) and run `node scripts/verify-after.mjs` against a running core when checking this feature.
+
+## On-demand branches
+
+For optional on-demand language/database/message branches, start core, then run `pnpm civilization:after` in a separate terminal (Node 24 + trusted Docker CLI access required). Services are queued and run in bounded batches, then containers started by the dispatcher stop; named volumes persist. Existing tool results remain available immediately. Default job admission budget is 6144 MiB, constrained by Docker memory minus 1536 MiB reserve; smaller hosts can lower `OCV_RUNNER_BUDGET_MIB` and may skip heavy branches. An 8 GiB-or-larger host is recommended for the complete catalogue/cold builds. The dispatcher creates a private worker key in ignored `.env`; never publish it. Request graceful stop with `pnpm civilization:after --stop`. `node scripts/after-runner.mjs` is the pnpm-free equivalent. See [branch catalogue, ownership, retention and operational details](AFTER-ROUTES.md#optional-on-demand-dispatcher). This host process is optional; the public default remains core.
+
 ## License and contact
 
 Original code: **MIT — Copyright (c) 2026 cabal312512**; see [LICENSE](../LICENSE). Third-party code, fonts, music and other assets retain their own terms. MIT does not relicense them. Required notices: [THIRD_PARTY_NOTICES.txt](../THIRD_PARTY_NOTICES.txt), [EFFECT-SOURCES.md](EFFECT-SOURCES.md), generated `/licenses/bundled-notices.txt`.

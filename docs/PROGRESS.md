@@ -1,5 +1,7 @@
 # 第九阶段审计完成并停止（验证范围见报告）
 
+2026-10-05 最新授权维护已完成：普通工具结果之后新增真实代码表/文件执行、Redis共享计数、十四步骤、三处碎片恢复及最多六张轮换表；宿主调度器十二条分支真实覆盖十八个可选服务，一批一批启动、用后停掉自己启动的容器。五项核心专项、两项任务专项、独立真实数据库的留存/租约/过期检查及真实浏览器进度框/拖动/关闭/Go完成/原结果不变通过。初次全分支只有监控读取超时，单独放宽内部读取到20秒后通过；不伪称首次全通过。空闲六健康core、上限1728MiB；任务批次上限合计最高3968MiB；builder停。本机宿主调度器运行，其他部署按需开启。1266科研源/成果、五封存、12原AI输入和三账本hash全核对未变，科研界面未改。地图AFTER-ROUTES.md，独立验收after-acceptance.json；新版VPS包为dist/vps/OmniCivitas-VPS-2026-10-05-backend.zip。不扩展科研、不重新编号阶段、不自动推送GitHub；其他历史快照保留。
+
 2026-10-04 GitHub publication preparation: user explicitly authorized cabal312512/OmniCivitas and a release. README now leads with the frozen research, contains a real homepage screenshot among scientific figures, then switches to deployment. MIT copyright is cabal312512. Compiled paper PDF stays physically in the original research folder but is excluded from Git/Docker/public downloads; the original five seals are preserved. config/research-publication.json is a declared publication subset, not a new scientific seal. A build-only adapter in research/data.mjs validates retained artifacts and declared omissions; research UI/styles/demos/music and scientific sources/results remain unchanged. Tag-driven GitHub Actions release workflow packages tracked sources and checksums. Source upload is confirmed. v0.1.0 will be published by the configured GitHub Actions workflow; live state is recorded in docs/github-publication.json. Prior no-publish handoff entries are historical.
 
 

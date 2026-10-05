@@ -18,6 +18,7 @@
     "civilization:doctor": "node scripts/doctor.mjs",
     "civilization:docker": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Start-OcvDocker.ps1",
     "civilization:core": "node scripts/compose-control.mjs core",
+    "civilization:after": "node scripts/after-runner.mjs",
     "civilization:maximum": "node scripts/compose-control.mjs maximum",
     "civilization:stop": "node scripts/compose-control.mjs stop",
     "civilization:status": "node scripts/compose-control.mjs status",

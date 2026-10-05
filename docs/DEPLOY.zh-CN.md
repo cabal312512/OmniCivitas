@@ -1,6 +1,6 @@
 # 部署（中文）
 
-[Default English deployment guide](../README.md#deployment)。
+[Default English deployment guide](DEPLOY.en.md)。
 
 回到仓库根目录。Web 界面使用 Astro、Next.js、Angular 和 NestJS；Docker 默认仅运行核心服务。常规开发、构建和主要功能不需要启动全部基础设施。
 
@@ -142,6 +142,14 @@ node scripts/test-languages.mjs java python php go dotnet ruby
 helper 依次使用 768 MiB 测试容器，SDK 按需下载。公开移植性审计已执行 Windows 干净 clone、Linux 容器用户空间及新卷六服务 Compose 验证；独立 macOS Docker / Linux Engine 宿主完整部署未验证。远程 Actions 已在 Windows、Linux、macOS 各通过安装、账本核对、五目标构建、299 项 Vitest、6 项 Node 和 3 项 Jest；Linux 浏览器任务两项 Cypress 通过。[完整审计与限制](PUBLIC-RELEASE.md)保留具体证据。
 
 本机 `ocv.ps1` / `scripts/Enter-OcvEnvironment.ps1` 仅用于原开发环境的工具、缓存和 Docker 存储位置，其他电脑使用标准入口。不要提交 node_modules、工具、缓存、构建输出、真实配置、token、证书、数据库数据、Docker volumes 或 WSL 磁盘。小型第三方包也通过 package.json / pnpm-lock.yaml 安装。
+
+### 后台留存
+
+普通页面新增的后台收据使用现有 core PostgreSQL、Redis 和网关 named volume，不需要启动可选服务。容器启动时会自动执行新增迁移；升级保留原数据库卷。`OCV_AFTER_RUN_LIMIT=128`、`OCV_AFTER_TABLE_LIMIT=6`、`OCV_AFTER_TABLE_EVERY=5` 控制收据留存和临时表轮换。只发送结果摘要和长度等元数据，不发送工具输入、输出正文或文件，也不改变现有输出和导出。没有数据库的本地开发会静默退避，工具仍可用。详情见 [后台链路](AFTER-ROUTES.md)；真实 core 启动后可执行 `node scripts/verify-after.mjs` 简要验收。
+
+### 按需分支
+
+按需语言/数据库/消息分支：先启动 core，再在另一终端执行 `pnpm civilization:after`，需要 Node 24 和可信宿主 Docker CLI 权限。任务排队分批运行，只关闭调度器自己启动的容器，named volumes 保留；已有工具结果立即显示。默认容器上限预算为 6144 MiB，并受 Docker 总内存减 1536 MiB 余量约束。较小机器可降低 `OCV_RUNNER_BUDGET_MIB`，部分重型分支会记录失败，不影响原工具；完整分支和冷构建建议至少 8 GiB Docker 宿主。脚本会在忽略的 `.env` 中保存私密调度密钥，不能发布。`pnpm civilization:after --stop` 请求正常停止；没有 pnpm 也可直接执行 `node scripts/after-runner.mjs`。详见 [分支与操作说明](AFTER-ROUTES.md#optional-on-demand-dispatcher)。其他部署默认仍只有 core。
 
 ### 许可与联系
 

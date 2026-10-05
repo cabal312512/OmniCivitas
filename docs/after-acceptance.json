@@ -1,0 +1,411 @@
+{
+  "revision": "after-1",
+  "status": "complete",
+  "acceptedAt": "2026-10-04T19:26:45.557Z",
+  "scope": "User-authorized maintenance after phase 9; frozen research not extended",
+  "map": "docs/AFTER-ROUTES.md",
+  "dependenciesAdded": 0,
+  "defaultCoreServices": 6,
+  "coreMemoryCapsMiB": 1728,
+  "maximumObservedBatchCapsMiB": 3968,
+  "budgetMiB": 6144,
+  "optionalServiceRoles": 18,
+  "branches": [
+    {
+      "family": "relay",
+      "id": "e63f6cf2-2655-40a8-b6bb-6b197c39af73",
+      "steps": [
+        {
+          "service": "Spring Boot",
+          "stamp": {
+            "dateKind": "ISO8601 interpreted UTC",
+            "displayRequestId": "baebe84e-04b3-40bb-8416-f5a267b1d03f",
+            "service": "Spring Boot",
+            "rootTraceId": "e59cd880-55ca-4f25-9101-e9bec10fba78",
+            "storedTime": "2026-10-01T19:14:00Z",
+            "ok": 1,
+            "jpaRow": 34
+          },
+          "nextAvailable": false,
+          "continuedInNextBatch": true
+        },
+        {
+          "service": "FastAPI",
+          "stamp": {
+            "service": "FastAPI",
+            "displayRequestId": "0eb21c33-ca77-4408-82a2-b5c3e39805b2",
+            "rootTraceId": "e59cd880-55ca-4f25-9101-e9bec10fba78",
+            "storedTime": "1790882040",
+            "dateKind": "Unix seconds",
+            "ok": "Y"
+          },
+          "nextAvailable": false,
+          "continuedInNextBatch": true
+        },
+        {
+          "service": "Laravel",
+          "stamp": {
+            "service": "Laravel",
+            "rootTraceId": "e59cd880-55ca-4f25-9101-e9bec10fba78",
+            "displayRequestId": "1bb5cc62-ae02-4a45-851a-534221fb6cf9",
+            "storedTime": "1790882040000",
+            "dateKind": "Unix milliseconds",
+            "ok": "yes",
+            "eloquentRow": 22
+          },
+          "nextAvailable": true,
+          "continuedInNextBatch": false
+        }
+      ]
+    },
+    {
+      "family": "grpc",
+      "id": "4cfa2aa9-3096-420c-8442-403286554d2c",
+      "steps": [
+        {
+          "sqliteFile": "redis.sqlite",
+          "unixSeconds": 1790882040,
+          "protocol": "gRPC",
+          "rootTraceId": "ffb6825f-e882-4b60-8c6f-7c5de4c2e519",
+          "displayRequestId": "148c4008-3457-41e5-a21e-78429e97139d",
+          "hop": {
+            "dateKind": "ISO8601 interpreted UTC",
+            "displayRequestId": "108bb66f-6a93-472a-bd59-152c75771fea",
+            "service": "Spring Boot",
+            "rootTraceId": "ffb6825f-e882-4b60-8c6f-7c5de4c2e519",
+            "storedTime": "2026-10-01T19:14:00Z",
+            "ok": 1,
+            "jpaRow": 35
+          },
+          "canContinue": true
+        }
+      ]
+    },
+    {
+      "family": "analysis",
+      "id": "28d95ca2-a0bf-459a-98ea-6cf3ad829f39",
+      "steps": [
+        {
+          "canContinue": true,
+          "total": 6,
+          "csvRows": 3,
+          "meetsPolicy": true,
+          "displayName": "饭已经凉了",
+          "municipality": "星期八盖章所",
+          "json": {
+            "product_name": "饭已经凉了",
+            "supplier_id": "无关分析分类",
+            "revision": 1
+          },
+          "yaml": {
+            "warehouse": "星期八盖章所",
+            "minimum_rice": 6
+          },
+          "sources": [
+            "CSV",
+            "JSON",
+            "YAML",
+            "DuckDB"
+          ]
+        }
+      ]
+    },
+    {
+      "family": "go",
+      "id": "c0841a20-9fac-4f71-882c-e8a00b6d0960",
+      "steps": [
+        {
+          "canContinue": true,
+          "ok": 1,
+          "service": "Go Fiber",
+          "tax": 1
+        }
+      ]
+    },
+    {
+      "family": "soap",
+      "id": "8ffe9b4b-100e-4f45-883b-8b643ba041a1",
+      "steps": [
+        {
+          "protocol": "SOAP",
+          "tax": 0,
+          "bytes": 314
+        }
+      ]
+    },
+    {
+      "family": "ruby",
+      "id": "b8dfa5c2-fe3d-4986-9edf-c7a7258be4f2",
+      "steps": [
+        {
+          "outer": "Y",
+          "inner": {
+            "service": "Ruby Sinatra",
+            "displayRequestId": "38717393-989c-479a-b52a-456bcfd365e4",
+            "year": 1998
+          }
+        }
+      ]
+    },
+    {
+      "family": "object",
+      "id": "25bb5c52-abfe-456d-bd9b-b970e57f6b95",
+      "steps": [
+        {
+          "graph": {
+            "data": {
+              "pebble": {
+                "department": "上古兼容碎石管理处",
+                "weight": 1
+              }
+            },
+            "canContinue": true
+          },
+          "object": {
+            "canContinue": true,
+            "source": "MinIO",
+            "bucket": "warehouse-pebble",
+            "object": "school-student.txt",
+            "contents": "锅已经过了十四个窗口，饭还是凉的。\n"
+          }
+        }
+      ]
+    },
+    {
+      "family": "mongo",
+      "id": "2a7d8d98-868e-4c72-b5a5-eeda7196d366",
+      "steps": [
+        {
+          "stored": "ccced3bfcf3cca8c1181a503971143f78382427902b74a9eb5e718a545270f44",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "family": "search",
+      "id": "9593c53a-c408-405d-894d-5ba872d11c41",
+      "steps": [
+        {
+          "digest": "ccced3bfcf3cca8c1181a503971143f78382427902b74a9eb5e718a545270f44",
+          "found": true
+        }
+      ]
+    },
+    {
+      "family": "messages",
+      "id": "00273094-75e9-4e53-a3e3-6974d451c62d",
+      "steps": [
+        {
+          "root": "1ad0611e-fad8-41ec-accf-6766a8e505d3",
+          "source": "Kafka payload",
+          "mongoose": true,
+          "redis": true
+        }
+      ]
+    },
+    {
+      "family": "next",
+      "id": "571d8e6c-7a9b-40e9-9e9f-cf5d4251a22b",
+      "steps": [
+        {
+          "nextApiRoute": true,
+          "prismaRow": 35,
+          "root": "71ed4fc4-5653-4815-b461-8ccfc8b24e16"
+        }
+      ]
+    },
+    {
+      "family": "monitor",
+      "id": "adeeaf91-f7ea-4b95-ae49-bc2ba3e55566",
+      "steps": [
+        {
+          "traceExport": true,
+          "traceId": "2b7b1deca9ce241d2db8355ea29a6e4d",
+          "metric": [
+            1791141229.082,
+            "28"
+          ],
+          "panels": 48
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "coreFocusedTests": {
+      "passed": 5,
+      "total": 5
+    },
+    "jobFocusedTests": {
+      "passed": 2,
+      "total": 2
+    },
+    "realCoreHttp": {
+      "checkedAt": "2026-10-04T18:40:35.228Z",
+      "base": "http://127.0.0.1:8080",
+      "receipts": 20,
+      "storage": "postgresql",
+      "redis": true,
+      "storedProgramExecution": true,
+      "threePartReconstruction": true,
+      "idempotency": true,
+      "invalidCredentialsRejected": true,
+      "wrongTicketRejected": true,
+      "corruptFrontendFragmentRejected": true,
+      "createdTables": [
+        "p6_0",
+        "p6_1",
+        "p11_0",
+        "p11_1",
+        "p16_0",
+        "p16_1",
+        "p21_0",
+        "p21_1"
+      ],
+      "configuredLimits": {
+        "runs": 128,
+        "tables": 6,
+        "every": 5,
+        "features": 128
+      }
+    },
+    "isolatedRetentionProbe": {
+      "passed": true,
+      "realPostgres": true,
+      "receiptCap": 4,
+      "stampCount": 56,
+      "tableCap": 2,
+      "fragmentFiles": 4,
+      "featureCap": 128,
+      "restartRecovery": true,
+      "modifiedSourceRejected": true
+    },
+    "isolatedJobsProbe": {
+      "passed": true,
+      "realPostgres": true,
+      "pendingCap": 4,
+      "terminalCap": 32,
+      "capabilityValidation": true,
+      "leaseMutualExclusion": true,
+      "expiredLeaseRecovery": true,
+      "expiredJobRecovery": true,
+      "testDatabaseRemoved": true
+    },
+    "browser": {
+      "passed": true,
+      "state": {
+        "completed": 4,
+        "reassembled": 1,
+        "dropped": 0,
+        "last": {
+          "id": "bb09184d-a9d4-4443-bb97-01382f2e3594",
+          "clicks": 29,
+          "createdTables": [],
+          "stamps": 14
+        },
+        "backend": "postgresql+redis",
+        "jobs": [
+          {
+            "id": "fce7668c-0e51-4ee8-8d8d-cbc8ec76ac2e",
+            "state": "done",
+            "family": "go",
+            "phase": 1
+          }
+        ]
+      },
+      "realBrowser": true,
+      "toolOutputUnchanged": true,
+      "jobProgressShown": true,
+      "dragWithPointerCapture": true,
+      "closeButtonWorks": true,
+      "goCompleted": true,
+      "researchExcluded": true,
+      "invalidPrivateKeyStatus": 404,
+      "errors": []
+    },
+    "http": [
+      {
+        "route": "/",
+        "status": 200
+      },
+      {
+        "route": "/research/",
+        "status": 200
+      },
+      {
+        "route": "/functions/calculator/",
+        "status": 200
+      },
+      {
+        "route": "/api/identity/register",
+        "status": 404
+      },
+      {
+        "route": "/api/identity/login",
+        "status": 404
+      }
+    ],
+    "database": {
+      "receipts": 29,
+      "steps": 406,
+      "tables": 6,
+      "jobs": 14,
+      "pendingJobs": 0,
+      "workerLeased": true
+    },
+    "gatewaySourceImageBuild": "passed",
+    "portalSourceImageBuild": {
+      "passed": true,
+      "pages": 216
+    },
+    "newMigrationsApplied": [
+      "20261005010000_a1",
+      "20261005020000_a2"
+    ],
+    "optionalContainersIdle": 0,
+    "builderRunning": false
+  },
+  "preserved": {
+    "scientificFiles": 1266,
+    "scientificSeals": [
+      {
+        "file": "results/research-manifest.json",
+        "sha256": "7d676ec02885ac56e9530b9e524c62659423b75242f412d8e5c47b766ad5c06c"
+      },
+      {
+        "file": "stage2/results/research-manifest.json",
+        "sha256": "32a608f0422bb05733b4a7971a922fcca3a2e9aea3ff681fcaef3e17f3ea43f3"
+      },
+      {
+        "file": "stage3/results/research-manifest.json",
+        "sha256": "cbda2e4a802488e9a23d462e4c3232a2da627dd25ecebb996525dcdc72c68425"
+      },
+      {
+        "file": "stage4/results/research-manifest.json",
+        "sha256": "c26e57b7e2c32450c369749cef2724d8c7d613c5e4000d1e3a65e284fabedb16"
+      },
+      {
+        "file": "stage5/results/research-manifest.json",
+        "sha256": "595066bd405f3e8502dc10b88d5be114cfed9a125bdead5106e388f6b9631f89"
+      }
+    ],
+    "researchUiSourceUnchanged": true,
+    "originalAuthorInputs": 12,
+    "originalLedgers": 3,
+    "numberedRequirements": 732
+  },
+  "operations": {
+    "hostDispatcher": "running, opt-in on other deployments",
+    "start": "pnpm civilization:after",
+    "stop": "pnpm civilization:after --stop",
+    "persistentPrivateConfig": "ignored .env",
+    "githubUpdated": false,
+    "newVpsBundle": "dist/vps/OmniCivitas-VPS-2026-10-05-backend.zip"
+  },
+  "limitations": [
+    "Initial full tour: 11 completed branches and one monitoring read timeout; only monitoring was rerun with a 20-second internal read limit and passed. Original initial report retained.",
+    "First browser fixture submitted inside the documented 800 ms admission gap and was not accepted; spacing the fixture correctly passed. No existing calculator/output behavior was changed.",
+    "Recorded memory values are enforced container cap sums, not measured Windows/WSL total memory.",
+    "All optional images were already available locally; cold optional-image installation code was reviewed, not exercised on a fresh Docker host. Core image builds used a real bounded builder and fresh F-storage checks.",
+    "No new full website/game/research regression, independent Linux/macOS Docker host test, remote VPS deployment or GitHub push."
+  ]
+}

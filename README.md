@@ -127,6 +127,8 @@ The builder has a 3 GiB cap and stops after compilation. Stopping services prese
 
 ### Optional profiles
 
+For queued, on-demand backend work, run `pnpm civilization:after` alongside core; `pnpm civilization:after --stop` requests a graceful stop. It starts bounded service batches and preserves named volumes. This optional trusted host process requires Node 24 and Docker CLI access; see [dispatch and storage details](docs/AFTER-ROUTES.md) before enabling it on another machine.
+
 All 24 services remain in [compose.yaml](compose.yaml). Core needs no profile. Select optional groups when needed.
 
 | Profile | Additional services | Container memory caps including core |

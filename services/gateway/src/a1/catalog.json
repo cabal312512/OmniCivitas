@@ -1,0 +1,17 @@
+{
+  "families": [
+    {"id":"relay","title":"JPA / SQLAlchemy / Eloquent","steps":[["spring"],["fastapi"],["mysql","laravel"]]},
+    {"id":"grpc","title":"gRPC","steps":[["spring","fastapi"]]},
+    {"id":"analysis","title":"DuckDB","steps":[["fastapi"]]},
+    {"id":"go","title":"Fiber","steps":[["fiber"]]},
+    {"id":"soap","title":"SOAP","steps":[["dotnet"]]},
+    {"id":"ruby","title":"Sinatra","steps":[["sinatra"]]},
+    {"id":"object","title":"GraphQL / S3","steps":[["hono","minio"]]},
+    {"id":"mongo","title":"MongoDB","steps":[["mongo"]]},
+    {"id":"search","title":"Elasticsearch","steps":[["elasticsearch"]]},
+    {"id":"messages","title":"AMQP / Kafka / Mongoose","steps":[["rabbitmq","kafka","mongo","message-bridge","message-consumer"]]},
+    {"id":"monitor","title":"OTel / Prometheus / Grafana","steps":[["otel","prometheus","grafana"]]},
+    {"id":"next","title":"Next / Prisma / TypeORM","steps":[[]]}
+  ],
+  "features": {"json":"relay","csv":"analysis","calculator":"go","xml":"soap","regex":"ruby","base64":"messages","uuid":"next","sqlite":"mongo","markdown":"object","hash":"search","pipeline":"monitor","json-patch":"grpc"}
+}

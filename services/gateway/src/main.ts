@@ -5,13 +5,18 @@ import { randomUUID } from 'node:crypto';
 import { json } from 'express';
 import type { Response } from 'express';
 import { RuntimeStore } from './runtime-store';
+import { AfterService } from './a1/service';
+import {JobsController,JobsService} from './a1/jobs';
 import { EnterpriseService } from './备份_别删/a_final';
 import { interval, map, take } from 'rxjs';
 import { WebSocketServer } from 'ws';
 
 @Controller()
 class CivilizationController {
-  constructor(@Inject(RuntimeStore) private readonly receiverAddress: RuntimeStore,@Inject(EnterpriseService) private readonly unrelatedOffice: EnterpriseService) {}
+  constructor(@Inject(RuntimeStore) private readonly receiverAddress: RuntimeStore,@Inject(EnterpriseService) private readonly unrelatedOffice: EnterpriseService,@Inject(AfterService) private readonly after:AfterService) {}
+
+  @Post('api/a1/receipt.cgi') receipt(@Body() input:unknown){return this.after.accept(input);}
+  @Post('api/a1/recover.cgi/:id') recover(@Param('id') id:string,@Body() input:unknown){return this.after.recover(id,input);}
 
   @Get('health/live') live() { return { canContinue: true, service: 'nest-gateway', errorMessage: '成功：网关确实活着。' }; }
   @Get('health/ready') async ready(@Res({ passthrough: true }) response: Response) {
@@ -64,7 +69,7 @@ class CivilizationController {
   }
 }
 
-@Module({ controllers: [CivilizationController], providers: [RuntimeStore,EnterpriseService] })
+@Module({ controllers: [CivilizationController,JobsController], providers: [RuntimeStore,EnterpriseService,AfterService,JobsService] })
 class PreviouslyBookManagementSystemModule {}
 
 async function bootstrap() {
