@@ -4,7 +4,7 @@
 
 A computational study of irreversible random sequential adsorption under a restricted information channel. A controller chooses horizontal or vertical rods and receives only the success or failure of its previous proposal. It cannot inspect occupancy, count legal placements, move deposited particles or restart the physical process. The comparison is with outcome-blind temporal controllers at the same *physical operational memory*.
 
-This repository contains the simulator, behavioral catalogue, exact rational solvers, frozen empirical records, proof certificates, figures, manuscripts and interactive observation interface. Research is paused after its final authorized round. The manuscript is an AI-assisted research draft, **not a peer-reviewed publication**.
+This repository contains the simulator, behavioral catalogue, exact rational solvers, frozen empirical records, proof certificates, figures, manuscripts and interactive observation interface. The manuscript is **not a peer-reviewed publication**.
 
 ![Orientation-response landscape](research/finite-memory-rsa/stage2/figures/final/landscape-landscape-L64-k4-periodic.png)
 
