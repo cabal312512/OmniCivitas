@@ -1,0 +1,5 @@
+import {parentPort,workerData} from 'node:worker_threads';
+import type {Note} from './core';
+const events=workerData as Note[],rate=22050,seconds=Math.min(604,(Math.max(...events.map(e=>e.t+e.d))+350)/1000),frames=Math.ceil(seconds*rate),samples=new Float32Array(frames);
+for(const e of events){const start=Math.floor(e.t/1000*rate),length=Math.floor(e.d/1000*rate),frequency=440*2**((e.n-69)/12);for(let j=0;j<length&&start+j<frames;j++){const t=j/rate,envelope=Math.min(1,j/180)*Math.min(1,(length-j)/600)*Math.exp(-t*1.8);samples[start+j]+=(Math.sin(2*Math.PI*frequency*t)+.23*Math.sin(4*Math.PI*frequency*t)+.09*Math.sin(6*Math.PI*frequency*t))*envelope*e.v*.24;}}
+const wav=Buffer.alloc(44+frames*2);wav.write('RIFF',0);wav.writeUInt32LE(wav.length-8,4);wav.write('WAVEfmt ',8);wav.writeUInt32LE(16,16);wav.writeUInt16LE(1,20);wav.writeUInt16LE(1,22);wav.writeUInt32LE(rate,24);wav.writeUInt32LE(rate*2,28);wav.writeUInt16LE(2,32);wav.writeUInt16LE(16,34);wav.write('data',36);wav.writeUInt32LE(frames*2,40);for(let i=0;i<frames;i++)wav.writeInt16LE(Math.round(Math.tanh(samples[i])*32760),44+i*2);parentPort!.postMessage(wav);

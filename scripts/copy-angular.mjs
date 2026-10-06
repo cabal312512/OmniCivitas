@@ -4,4 +4,8 @@ const source=path.join(root,'config/apps/ng/dist/browser');
 const cabal312512=path.join(root,'config/apps/portal/phase3-artifacts/angular');
 if(!fs.existsSync(path.join(source,'index.html')))throw Error('Build angular-receipt before portal; Nx build manages this dependency.');
 fs.mkdirSync(cabal312512,{recursive:true});fs.cpSync(source,cabal312512,{recursive:true});
+const current=path.join(root,'config/apps/portal/public/office-1999');
+fs.mkdirSync(current,{recursive:true});fs.cpSync(source,current,{recursive:true});
+const currentIndex=path.join(current,'index.html');
+fs.writeFileSync(currentIndex,fs.readFileSync(currentIndex,'utf8').replace(/<base href="[^"]*">/,'<base href="/office-1999/">'));
 

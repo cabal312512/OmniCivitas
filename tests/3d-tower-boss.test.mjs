@@ -2,9 +2,9 @@ import { afterEach, expect, test } from 'vitest';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import path from 'node:path';
-import { TOWER_SPEC, pathPoint, surfaceAt, landingSurfaceAt, blocked, createTower } from '../config/apps/portal/src/3d/tower.mjs';
-import { CAPITAL } from '../config/apps/portal/src/3d/city-data.mjs';
-import { BOSS_SPEC, createBossState, createBoss } from '../config/apps/portal/src/3d/boss.mjs';
+import { TOWER_SPEC, pathPoint, surfaceAt, landingSurfaceAt, blocked, createTower } from '../config/apps/portal/src/p2/z2.mjs';
+import { CAPITAL } from '../pcakage/build2/c0.mjs';
+import { BOSS_SPEC, createBossState, createBoss } from '../config/apps/portal/src/p2/f8.mjs';
 import { stepPlayer } from '../config/apps/portal/src/3d/model.mjs';
 const requirePortal = createRequire(new URL('../config/apps/portal/package.json', import.meta.url));
 const THREE = await import(pathToFileURL(path.join(path.dirname(requirePortal.resolve('three')), 'three.module.js')).href);
@@ -394,25 +394,25 @@ test('boss: visitors below the crown and beyond the arena cannot activate or hur
 test('boss: weak points and actual bounded firing rhythm complete all three phases exactly once', () => {
   const model = createBossState(), visitor = summit(); model.update(visitor, 0, .05);
   const phases = new Set([model.state.phase]);
-  for (let index = 0; index < 18; index++) {
+  for (let index = 0; index < Math.ceil(BOSS_SPEC.hp/3); index++) {
     expect(model.hit('weak', 1 + index * .22)).toBe(true);
     phases.add(model.state.phase);
   }
   expect([...phases].sort()).toEqual([1, 2, 3]);
-  expect(model.state).toMatchObject({ hp: 0, defeated: true, completions: 1, weakHits: 18, shotsTaken: 18, active: false });
+  expect(model.state).toMatchObject({ hp: 0, defeated: true, completions: 1, weakHits: Math.ceil(BOSS_SPEC.hp/3), shotsTaken: Math.ceil(BOSS_SPEC.hp/3), active: false });
   expect(model.hit('weak', 99)).toBe(false); tick(model, visitor, 20);
   expect(model.state.completions).toBe(1); expect(model.state.projectiles).toEqual([]);
   expect(model.state.pulses).toEqual([]);
 });
 
-test('boss: body takes 36 shots, cooldown rejects simultaneous multi-hit and arena retreat resets living fight', () => {
+test('boss: body damage, cooldown rejects simultaneous multi-hit and arena retreat resets living fight', () => {
   const model = createBossState(), visitor = summit(); model.update(visitor, 0, .05);
   expect(model.hit('body', 1)).toBe(true); expect(model.hit('body', 1.01)).toBe(false);
-  expect(model.state.hp).toBe(35);
+  expect(model.state.hp).toBe(BOSS_SPEC.hp-1);
   tick(model, { ...visitor, y: 55 }, 1);
-  expect(model.state).toMatchObject({ hp: 36, phase: 1, active: false, resets: 1 });
+  expect(model.state).toMatchObject({ hp: BOSS_SPEC.hp, phase: 1, active: false, resets: 1 });
   model.update(visitor, 2, .05);
-  for (let index = 0; index < 36; index++) expect(model.hit('body', 3 + index * .22)).toBe(true);
+  for (let index = 0; index < BOSS_SPEC.hp; index++) expect(model.hit('body', 3 + index * .22)).toBe(true);
   expect(model.state.defeated).toBe(true); expect(model.state.completions).toBe(1);
 });
 
@@ -441,8 +441,8 @@ test('boss: projectile and pulse pools remain bounded across long combat and dea
     model.update({ ...visitor, x: BOSS_SPEC.x + 130 * Math.cos(index * .035),
       z: BOSS_SPEC.z + 130 * Math.sin(index * .035) }, index * .05, .05);
     maximum = Math.max(maximum, model.state.projectiles.length);
-    expect(model.state.projectiles.length).toBeLessThanOrEqual(24);
-    expect(model.state.pulses.length).toBeLessThanOrEqual(3);
+    expect(model.state.projectiles.length).toBeLessThanOrEqual(BOSS_SPEC.projectileCap);
+    expect(model.state.pulses.length).toBeLessThanOrEqual(BOSS_SPEC.pulseCap);
   }
   expect(maximum).toBeGreaterThan(0);
   model.update({ ...visitor, health: 0 }, 130, .05);
@@ -453,8 +453,8 @@ test('boss: real different target parts, persistent defeated state and idempoten
   const scene = new THREE.Scene(), boss = createBoss(scene); fixtures.push(boss);
   const visitor = summit(); boss.update(visitor, 0, .05);
   const weak = boss.targets().find(item => item.userData.bossPart === 'weak');
-  expect(weak).toBeTruthy(); expect(boss.snapshot()).toMatchObject({ projectilePool: 24, pulsePool: 3, maxHp: 36 });
-  for (let index = 0; index < 18; index++) expect(boss.hit(weak, 1 + index * .22)).toBe(true);
+  expect(weak).toBeTruthy(); expect(boss.snapshot()).toMatchObject({ projectilePool: BOSS_SPEC.projectileCap, pulsePool: BOSS_SPEC.pulseCap, maxHp: BOSS_SPEC.hp });
+  for (let index = 0; index < Math.ceil(BOSS_SPEC.hp/3); index++) expect(boss.hit(weak, 1 + index * .22)).toBe(true);
   boss.update(visitor, 10, .05);
   expect(boss.targets()).toEqual([]); expect(boss.snapshot().defeated).toBe(true);
   const geometry = new Set(), material = new Set();
@@ -493,7 +493,7 @@ test('boss: projectile scratch vectors preserve combat and the defeat getter can
     expect(actual[key]).toEqual(expected[key]);
   }
   const target = boss.targets().find(mesh => mesh.userData.bossPart === 'body');
-  for (let index = 0; index < 36; index++) expect(boss.hit(target, 20 + index * .22)).toBe(true);
+  for (let index = 0; index < BOSS_SPEC.hp; index++) expect(boss.hit(target, 20 + index * .22)).toBe(true);
   expect(boss.isDefeated).toBe(true); expect(Reflect.set(boss, 'isDefeated', false)).toBe(false);
   expect(boss.snapshot()).toMatchObject({ defeated: true, hp: 0, completions: 1 });
 });

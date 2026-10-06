@@ -1,13 +1,22 @@
 ---
-import './1.css';
+import '../styles/6.css';
 import Victory from './Victory.astro';
 ---
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#69bfff"/><meta http-equiv="Content-Security-Policy" content="object-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self' blob:"/><title></title><link rel="icon" href="/favicon.svg"/></head>
-<body class="aero-game"><main class="aero-window" id="aero-window"><canvas id="world" tabindex="0" aria-label="第一人称游戏画面"></canvas>
+<body class="aero-game"><section class="aero-shell"><nav class="aero-outside" aria-label="游戏选项"><button type="button" data-help aria-label="快捷键教程">? 教程</button><button type="button" data-reset-progress>重置所有进度</button></nav><main class="aero-window" id="aero-window"><canvas id="world" tabindex="0" aria-label="第一人称游戏画面"></canvas>
  <div class="aero-vignette" aria-hidden="true"></div><div class="aero-flash" aria-hidden="true"></div><div class="aero-iris" aria-hidden="true"></div>
  <div class="aero-reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
  <div class="aero-health" role="meter" aria-label="生命值" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><i></i></div>
  <div class="aero-orbs" aria-hidden="true">{Array.from({length:8},()=> <i></i>)}</div>
+ <div class="aero-npc-talk" data-npc-talk aria-live="polite"></div>
+ <span class="aero-flight" data-flight data-state="locked" aria-label="击败八城守卫解锁飞行"><svg viewBox="0 0 32 24" aria-hidden="true"><path d="m16 18-3-8L2 3l4 12 10 5 10-5 4-12-11 7Zm0 0V7"/></svg></span>
+ <aside class="aero-award-notifications" data-award-notifications role="status" aria-live="polite" aria-atomic="false"></aside>
+
+ <dialog class="aero-help-dialog" data-game-help aria-labelledby="game-help-title">
+  <header><strong id="game-help-title">快捷键</strong><button type="button" data-help-close aria-label="关闭教程">×</button></header>
+  <dl><dt>W A S D</dt><dd>移动</dd><dt>鼠标 / 方向键</dt><dd>观察；未锁定时按住右键拖动</dd><dt>Shift</dt><dd>疾跑</dd><dt>Space / Shift + Space</dt><dd>跳跃 / 移动中疾跑高跳</dd><dt>Space × 2</dt><dd>击败八座城市的守卫后，切换飞行 / 悬停</dd><dt>飞行：Space / Shift / Ctrl或双击W</dt><dd>上升 / 下降 / 加速；WASD水平移动，下降落地停止飞行</dd><dt>鼠标左键</dt><dd>射击；发光处是弱点</dd><dt>Alt（按住）</dt><dd>显示鼠标，松开恢复原操作</dd><dt>E</dt><dd>穿过附近光环</dd><dt>Q</dt><dd>在存档点保存</dd><dt>R</dt><dd>返回存档点</dd><dt>F</dt><dd>全屏 / 窗口</dd><dt>H / F1</dt><dd>打开教程</dd><dt>Esc</dt><dd>关闭教程 / 释放鼠标 / 退出全屏</dd></dl>
+  <footer>存档点附近自动回血。浅绿色灯笼实体也可以治疗。</footer>
+ </dialog>
  <a class="aero-exit aero-icon" href="/functions/games/" aria-label="退出游戏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5 6 12l7 7M6 12h15"/></svg></a>
  <button class="aero-full aero-icon" type="button" data-fullscreen aria-label="切换全屏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3H3v6M15 3h6v6M3 15v6h6m6 0h6v-6"/></svg></button>
  <button class="aero-mute aero-icon" type="button" data-mute aria-label="静音" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9Zm13-2q7 5 0 10M16 10q3 2 0 4"/><path class="mute-slash" d="m3 3 18 18"/></svg></button>
@@ -19,5 +28,5 @@ import Victory from './Victory.astro';
  <button class="aero-fire aero-icon" type="button" data-fire aria-label="发射"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 1v5m0 12v5M1 12h5m12 0h5"/></svg></button>
  <div class="aero-touch" aria-hidden="true"><button data-walk="forward" tabindex="-1"><svg viewBox="0 0 24 24"><path d="m5 15 7-7 7 7"/></svg></button><button data-walk="left" tabindex="-1"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button><button data-walk="back" tabindex="-1"><svg viewBox="0 0 24 24"><path d="m5 8 7 7 7-7"/></svg></button><button data-walk="right" tabindex="-1"><svg viewBox="0 0 24 24"><path d="m8 5 7 7-7 7"/></svg></button></div>
  <Victory />
- </main><script>import './main.mjs';</script>
+ </main></section><script>import '../styles/n4.mjs';</script>
 </body></html>

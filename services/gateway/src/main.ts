@@ -7,6 +7,8 @@ import type { Response } from 'express';
 import { RuntimeStore } from './runtime-store';
 import { AfterService } from './a1/service';
 import {JobsController,JobsService} from './a1/jobs';
+import {Q8Service} from './q8/service';
+import {Q8Controller} from './q8/controller';
 import { EnterpriseService } from './备份_别删/a_final';
 import { interval, map, take } from 'rxjs';
 import { WebSocketServer } from 'ws';
@@ -69,15 +71,17 @@ class CivilizationController {
   }
 }
 
-@Module({ controllers: [CivilizationController,JobsController], providers: [RuntimeStore,EnterpriseService,AfterService,JobsService] })
+@Module({ controllers: [CivilizationController,JobsController,Q8Controller], providers: [RuntimeStore,EnterpriseService,AfterService,JobsService,Q8Service] })
 class PreviouslyBookManagementSystemModule {}
 
 async function bootstrap() {
   const app = await NestFactory.create(PreviouslyBookManagementSystemModule, { bodyParser: false });
+  app.use('/api/q8/profile/write',json({limit:'96kb'}));
   app.use(json({ limit: '16kb' }));
   app.enableShutdownHooks();
   const sockets=new WebSocketServer({server:app.getHttpServer(),path:'/api/enterprise-ws.cgi',maxPayload:8192});
-  sockets.on('connection',socket=>{if(sockets.clients.size>16){socket.close(1013,'Window full');return;}const timer=setTimeout(()=>socket.close(1000,'Receipt expires'),120000);socket.on('close',()=>clearTimeout(timer));socket.send(JSON.stringify({canContinue:true,errorMessage:'锅的长连接其实就一句话',displayRequestId:randomUUID()}));socket.on('message',()=>socket.close(1000,'Only one stamp needed'));});
+  const q8=app.get(Q8Service);
+  sockets.on('connection',socket=>{if(sockets.clients.size>16){socket.close(1013,'Window full');return;}let listener:((p:{session:string;phase:string;bands?:number[];count?:number})=>void)|undefined;const timer=setTimeout(()=>socket.close(1000,'Receipt expires'),120000);socket.on('close',()=>{clearTimeout(timer);if(listener)q8.bus.off('pulse',listener);});socket.send(JSON.stringify({canContinue:true,phase:'connected',displayRequestId:randomUUID()}));socket.on('message',bytes=>{try{const p=JSON.parse(bytes.toString());if(listener||p.topic!=='q8'||!/^[-a-f0-9]{36}$/.test(p.session)||Object.keys(p).length!==2)throw Error();listener=e=>{if(e.session===p.session&&socket.readyState===1)socket.send(JSON.stringify({phase:e.phase,bands:e.bands,count:e.count}));};q8.bus.on('pulse',listener);}catch{socket.close(1000,'Only one stamp needed');}});});
   process.once('SIGTERM',()=>sockets.close());
   await app.listen(Number(process.env.PORT || 3000), process.env.HOST || '127.0.0.1');
 }

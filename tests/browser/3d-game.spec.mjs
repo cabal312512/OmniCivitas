@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {reports} from './report-location.mjs';
 import {tools} from '../../config/apps/portal/src/tool/data.mjs';
-import {SAVE_KEY} from '../../config/apps/portal/src/3d/save.mjs';
+import {SAVE_KEY} from '../../pcakage/build2/v8.mjs';
 
 const route='/functions/3d-world/';
 const snapshot=page=>page.evaluate(()=>window.__ocv3D?.snapshot());

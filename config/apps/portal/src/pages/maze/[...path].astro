@@ -15,6 +15,8 @@ import Laowu from '../../aaa/laowu.astro';
 import MediaShortcuts from '../../n9/shortcuts.astro';
 import Panel from '../../z/Panel.astro';
 import MediaFrame from '../../p2/Frame.astro';
+import SiteNav from '../../q9/Nav.astro';
+import Resident from '../../q9/Resident.astro';
 export function getStaticPaths(){return rooms.map((room,index)=>({params:{path:room.path||undefined},props:{room,index}}));}
 const {room,index}=Astro.props;
 const links=linksFor(index);
@@ -23,12 +25,14 @@ const repeated=Array.from({length:room.layout==='long'?22:room.layout==='horizon
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#f8fbfd"/><title>{room.title} · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head>
 <body class={`maze-page layout-${room.layout}`} data-room={index}><Fragments/>
  <OpticalBench />
+ {room.path==='aside'&&<Resident/>}
  {room.path==='empty'&&<Laowu/>}
  {room.path===''&&<MediaShortcuts/>}
  {room.path==='display'&&<MediaFrame kind="voice"/>}
  {room.path==='notifications/unread'&&<MediaFrame kind="gif"/>}
+ {room.path==='offices/settings'&&<MediaFrame kind="still"/>}
  <div class="maze-background" aria-hidden="true"><div class="maze-halo"><Diagram variant={index%6} id={`room-${index}`}/></div><div class="maze-chrome">{Array.from({length:10},(_,i)=><i style={`--level:${i}`} />)}</div><div class="maze-background-grid"></div><span class="maze-bignum">{String(index).padStart(2,'0')}</span></div>
- <header class="maze-header"><a href="/#systems" aria-label="返回主页"><Identity id={`maze-${index}`} compact/></a><span>OCV</span><a href="/maze/" aria-label="迷宫目录">▦</a></header>
+ <header class="maze-header"><a href="/#systems" aria-label="返回主页"><Identity id={`maze-${index}`} compact/></a><span>OCV</span><SiteNav/><a href="/maze/" aria-label="迷宫目录">▦</a></header>
  <div class="maze-scroller"><main class="maze-floor">
   <nav class="maze-crumb" aria-label="错位路径">{links.map((item,i)=><><a href={address(item)}>{item.title}</a>{i<2&&<span>/</span>}</>)}</nav>
   <h1>{room.title}</h1>
@@ -44,7 +48,7 @@ const repeated=Array.from({length:room.layout==='long'?22:room.layout==='horizon
     {room.path==='cache/l1/l2'&&<ForgottenAttachment/>}
    </div>
   </section>
-  <section class="maze-panel route-panel" data-draggable><div class="maze-title"><span>导航</span><button data-drag aria-label="移动导航窗口">↔</button><button data-fold aria-label="折叠导航窗口">−</button></div><nav class="maze-panel-body room-links">{links.map((item,i)=><a href={address(item)}><span>0{i+1}</span><b>{item.title}</b><i>↗</i></a>)}{['cache','table','route/a/b/c/d/e'].includes(room.path)&&<a href="/research/"><span>04</span><b>研究</b><i>↗</i></a>}</nav></section>
+  <section class="maze-panel route-panel" data-draggable><div class="maze-title"><span>导航</span><button data-drag aria-label="移动导航窗口">↔</button><button data-fold aria-label="折叠导航窗口">−</button></div><nav class="maze-panel-body room-links">{["cache","display","table"].includes(room.path)&&<a href="/functions/music-studio/"><span>♫</span><b>音乐创作</b><i>↗</i></a>}{links.map((item,i)=><a href={address(item)}><span>0{i+1}</span><b>{item.title}</b><i>↗</i></a>)}{['cache','table','route/a/b/c/d/e'].includes(room.path)&&<a href="/research/"><span>04</span><b>研究</b><i>↗</i></a>}</nav></section>
   <section class="maze-panel floating-panel" aria-hidden="true" inert><div class="maze-title">确认<span>×</span></div><Diagram variant={(index+2)%6} id={`floating-${index}`}/><div class="fake-actions"><button tabindex="-1">取消</button><button tabindex="-1">确定</button></div></section>
   <div class="maze-toast" aria-hidden="true" inert>已保存<button tabindex="-1">撤销</button></div>
   <aside class="maze-sidebar"><span>更多</span>{repeated.map((item,i)=><a href={address(item)} style={`--row:${i}`}><b>{String(i+1).padStart(2,'0')}</b><span>{item.title}</span><i>↗</i></a>)}</aside>

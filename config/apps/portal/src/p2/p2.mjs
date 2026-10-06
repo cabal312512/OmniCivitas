@@ -1,7 +1,7 @@
 const frame=document.querySelector('[data-p2-frame]');
 if(frame){
  const lifetime=new AbortController(),on=(target,type,callback)=>target?.addEventListener(type,callback,{signal:lifetime.signal});
- const voice=frame.dataset.p2Frame==='7',audio=voice?new Audio():null;
+ const voice=frame.dataset.p2Frame==='7',audio=(voice||frame.dataset.p2Frame==='9')?new Audio():null;
  const state={kind:frame.dataset.p2Frame,requests:0,index:null,playing:false,failed:false,closed:false,disposed:false,x:0,y:0};
  let serial=0,drag=null;
  if(audio){audio.preload='none';audio.loop=false;audio.volume=.8;}
@@ -9,8 +9,8 @@ if(frame){
  function stop(release=false){serial++;if(audio){audio.pause();if(release){audio.removeAttribute('src');audio.load();}}state.playing=false;paint();}
  function play(){
   if(!audio||state.closed||state.disposed)return;
-  const job=++serial,index=crypto.getRandomValues(new Uint32Array(1))[0]%5;
-  audio.pause();audio.src=`/forgotten-cache/p2/a${index}.mp3`;audio.loop=false;audio.currentTime=0;
+  const job=++serial,index=voice?crypto.getRandomValues(new Uint32Array(1))[0]%5:null;
+  audio.pause();audio.src=voice?`/forgotten-cache/p2/a${index}.mp3`:'/forgotten-cache/p2/9.mp3';audio.loop=false;audio.currentTime=0;
   state.index=index;state.requests++;state.failed=false;state.playing=false;paint();
   audio.play().then(()=>{if(job!==serial)return;state.playing=true;paint();}).catch(error=>{if(job!==serial||error.name==='AbortError')return;state.failed=true;state.playing=false;paint();});
  }

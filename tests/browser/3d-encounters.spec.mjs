@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
 import { reports } from './report-location.mjs';
-import { ENCOUNTER_ROLES } from '../../config/apps/portal/src/3d/encounters.mjs';
-import { WORLD_SIZE } from '../../config/apps/portal/src/3d/terrain.mjs';
+import { ENCOUNTER_ROLES } from '../../config/apps/portal/src/q7/9m.mjs';
+import { WORLD_SIZE } from '../../pinia/j7.mjs';
 
 const route = '/functions/3d-world/';
 const snapshot = page => page.evaluate(() => window.__ocv3D?.snapshot());

@@ -1,5 +1,7 @@
 # Background receipt processing
 
+The signal task family starts its publisher and consumer in the same bounded batch. Recorded audio can be analyzed through the backend. Use `--drain` for finite queue processing.
+
 2026-10-05 maintenance, authorized after the nine completed website phases. This does not start a tenth phase or extend the frozen research project.
 
 Existing interfaces, result rendering and exports remain unchanged. Ordinary pages now have a noncritical background observer, plus a small draggable/closable progress box only when an optional job is queued. It sends only anonymous event metadata: feature identifier, random per-page session/event IDs, result SHA-256, byte count and character count. Input/output text, files, passwords, accounts, query strings and IP addresses are not sent by this observer. Research/identity pages and the 3D game are excluded.

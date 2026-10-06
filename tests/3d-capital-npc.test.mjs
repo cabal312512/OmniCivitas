@@ -2,7 +2,7 @@ import {test,expect} from 'vitest';
 import {createRequire} from 'node:module';
 import {pathToFileURL} from 'node:url';
 import path from 'node:path';
-import {createEntities} from '../config/apps/portal/src/3d/entities.mjs';
+import {createEntities} from '../config/apps/portal/src/q7/e8.mjs';
 const require=createRequire(new URL('../config/apps/portal/package.json',import.meta.url));
 const THREE=await import(pathToFileURL(path.join(path.dirname(require.resolve('three')),'three.module.js')).href);
 

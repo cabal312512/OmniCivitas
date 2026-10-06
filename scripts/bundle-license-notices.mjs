@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
+import {createRequire} from 'node:module';
 
 // Collect licenses from modules actually emitted to the browser, not installed tools.
 export function bundleLicenseNotices(priorNotices,scope='bundled'){
@@ -28,6 +29,8 @@ export function bundleLicenseNotices(priorNotices,scope='bundled'){
       if(owners.has(key))return owners.get(key);
       const names=fs.readdirSync(root).filter(name=>/^(licen[sc]e|copying|notice)(\.|$)/i.test(name)&&fs.statSync(path.join(root,name)).isFile());
       const texts=names.map(name=>({name,text:fs.readFileSync(path.join(root,name),'utf8')}));
+      const recovered={'tiny-case@1.0.3':'tiny-case-1.0.3','is-mobile@5.0.0':'is-mobile-5.0.0','formik@2.4.9':'formik-2.4.9','https-proxy-agent@5.0.1':'https-proxy-agent-5.0.1','agent-base@6.0.2':'agent-base-6.0.2'};
+      if(!texts.length&&recovered[key])texts.push({name:key==='tiny-case@1.0.3'?'Original author/MIT declaration plus standard MIT permission terms (package omits a separate license file)':'Official upstream license; npm package omits the file (sources: docs/licenses/q8-sources.json)',text:fs.readFileSync(new URL('../docs/licenses/'+recovered[key]+'.txt',import.meta.url),'utf8')});
       if(!texts.length&&metadata.name==='alpinejs'&&metadata.version==='3.17.4')texts.push({name:'LICENSE.md (official v3.17.4 tag)',text:fs.readFileSync(new URL('../docs/licenses/alpinejs-3.17.4-LICENSE.md',import.meta.url),'utf8')});
       if(!texts.length&&metadata.name==='piccolore'&&metadata.version==='0.1.3')texts.push({name:'Upstream picocolors ISC notice; piccolore package declares ISC and identifies itself as a fork',text:'piccolore 0.1.3: https://github.com/delucis/piccolore\nThe npm archive and fork repository omit a separate LICENSE file. The installed package declares ISC, and its README identifies picocolors as its upstream. Preserve the upstream notice below; this is not represented as a license file retrieved from the fork.\n\n'+fs.readFileSync(new URL('../docs/licenses/piccolore-upstream-picocolors-ISC.txt',import.meta.url),'utf8')});
       if(!texts.length&&metadata.name==='gsap'){
@@ -74,10 +77,28 @@ export class WebpackLicenseNotices {
     compiler.hooks.thisCompilation.tap('OcvLicenseNotices',compilation=>{
       compilation.hooks.processAssets.tap({name:'OcvLicenseNotices',stage:compiler.webpack.Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE},()=>{
         const chunks={};
-        function visit(module,ids){if(module.resource)ids[module.resource]={};for(const child of module.modules||[])visit(child,ids);}
+        const styles=[...compilation.fileDependencies].filter(file=>/[\\/]node_modules[\\/]/.test(file)&&/\.css$/.test(file));
+        function visit(module,ids){
+          const resource=module.resource||module.nameForCondition?.();
+          if(resource){
+            ids[resource]={};const physical=resource.split('?')[0];
+            if(/\.(?:tsx?|jsx?)$/.test(physical)&&fs.existsSync(physical)&&!/[\\/]node_modules[\\/]/.test(physical)){
+              const text=fs.readFileSync(physical,'utf8');
+              for(const match of text.matchAll(/import\s+['"]([^'"]+\.css)['"]/g)){
+                const stylesheet=path.resolve(path.dirname(physical),match[1]);
+                if(!fs.existsSync(stylesheet))continue;
+                for(const css of fs.readFileSync(stylesheet,'utf8').matchAll(/@import\s+['"]([^'"]+)['"]/g)){
+                  if(/^(?:https?:|data:)/.test(css[1]))continue;
+                  try{ids[createRequire(stylesheet).resolve(css[1])]={};}catch(error){if(!css[1].startsWith('.'))throw error;}
+                }
+              }
+            }
+          }
+          for(const child of module.modules||[])visit(child,ids);
+        }
         for(const chunk of compilation.chunks){
           const modules={};for(const module of compilation.chunkGraph.getChunkModulesIterable(chunk))visit(module,modules);
-          for(const file of chunk.files)if(file.endsWith('.js')){const asset=compilation.getAsset(file);if(asset)chunks[file]={type:'chunk',fileName:file,modules,code:String(asset.source.source())};}
+          for(const file of chunk.files)if(file.endsWith('.js')||file.endsWith('.css')){const asset=compilation.getAsset(file);if(asset){const emitted={...modules};if([...compilation.assetsInfo.keys()].some(name=>name.endsWith('.css')))for(const source of styles)emitted[source]={};chunks[file]={type:'chunk',fileName:file,modules:emitted,code:String(asset.source.source())};}}
         }
         const plugin=bundleLicenseNotices('','next');
         plugin.generateBundle.call({error(message){throw Error(message)},emitFile(asset){compilation.emitAsset(asset.fileName,new compiler.webpack.sources.RawSource(asset.source))}},{},chunks);

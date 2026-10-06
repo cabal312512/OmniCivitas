@@ -1,7 +1,7 @@
 import {test,expect} from 'vitest';
 import {BODY_RADIUS,createPlayer,stepPlayer,raySphere,createCycle} from '../config/apps/portal/src/3d/model.mjs';
-import {WORLD_SIZE,WATER_LEVEL,SPAWN,LANDMARKS,heightAt,riverAt,riverCenter,randomFor} from '../config/apps/portal/src/3d/terrain.mjs';
-import {SAVE_KEY,createCheckpointStore} from '../config/apps/portal/src/3d/save.mjs';
+import {WORLD_SIZE,WATER_LEVEL,SPAWN,LANDMARKS,heightAt,riverAt,riverCenter,randomFor} from '../pinia/j7.mjs';
+import {SAVE_KEY,createCheckpointStore} from '../pcakage/build2/v8.mjs';
 
 const flat=()=>0,open=()=>false;
 const advance=(player,input,dt=.1,ground=flat,blocked=open)=>stepPlayer(player,input,dt,ground,blocked);

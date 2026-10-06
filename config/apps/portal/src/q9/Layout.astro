@@ -1,0 +1,26 @@
+---
+import Fragments from '../q7/1.astro';
+import Identity from '../aaa/Identity.astro';
+import Diagram from '../aaa/Diagram.astro';
+import OpticalBench from '../aaa/lens.astro';
+import SiteNav from './Nav.astro';
+import Scene from './Scene.astro';
+import '../aaa/迷宫.css';
+import '../aaa/临时修一下.css';
+import './desk.css';
+import './profile.css';
+const {title,kind}=Astro.props;
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta http-equiv="Content-Security-Policy" content="form-action 'none'; object-src 'none'; base-uri 'self'"/><title>{title} · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class={`maze-page q9-page q9-${kind}`}><Fragments/><OpticalBench/>
+ <div class="maze-background"><div class="maze-background-grid"></div><div class="q9-underlay"><Diagram id={`q9-${kind}`} variant={kind==='desk'?4:2}/></div></div>
+ <header class="maze-header"><a href="/#systems"><Identity compact id={`q9-${kind}`}/></a><span>OCV</span><SiteNav/><a href="/functions/">▦</a></header>
+ <main class="q9-root" data-desk-page={kind}><Scene mode={kind}/><slot/></main>
+ <section class="q9-loose q9-loose-a" data-desk-window><header data-desk-handle>default <button data-desk-close aria-label="关闭">×</button></header><div class="q9-missing-input"></div><div class="q9-empty-controls"><i></i><i></i><i></i></div><a href="/functions/pipeline/">↗</a></section>
+ <section class="q9-loose q9-loose-b" data-desk-window><header data-desk-handle>목록 <button data-desk-close aria-label="关闭">×</button></header><pre>01　00 ff
+　├　▒▒　　
+　└　0 / _</pre><a href="/maze/cache/">打开</a></section>
+ <div class="q9-fixed-remnant" aria-hidden="true"><div>名称　　　状态</div><span></span><span></span><span>Ð¿Ð¾Ð»ÑŒ</span><i></i></div>
+ <aside class="q9-picker" hidden><header>添加 <button data-picker-close aria-label="关闭添加列表">×</button></header><input data-picker-search type="search" maxlength="80" placeholder="搜索站内功能" aria-label="搜索站内功能"/><div data-picker-list></div></aside>
+ <a class="maze-exit" href="/#systems">↖</a><a class="maze-index" href="/functions/">▦</a>
+ <script>import './desk.mjs';</script>
+</body></html>

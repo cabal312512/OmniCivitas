@@ -3,7 +3,7 @@ const safePath=!/^\/(research|identity)(\/|$)/.test(location.pathname)&&document
 const state={completed:0,reassembled:0,dropped:0,last:null,backend:'not-checked',jobs:[]};
 const watching=new Set();
 const lifetime=new AbortController();
-let database,session,queue=[],busy=false,timer=0,backoff=0,lastQueued=0,paused=false;
+let database,session,queue=[],busy=false,timer=0,backoff=0,lastQueued=0,paused=false,mediaPending=false;
 if(safePath)window.__ocvAfter=state;
 
 const random=()=>crypto.randomUUID();
@@ -36,8 +36,8 @@ async function save(record){
 async function read(id){
  const db=await open();return new Promise((resolve,reject)=>{const tx=db.transaction(storeName),r=tx.objectStore(storeName).get(id);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(Error('Local fragment unavailable'));});
 }
-async function request(url,body){
- const response=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),credentials:'omit',signal:AbortSignal.any([lifetime.signal,AbortSignal.timeout(6500)])});
+async function request(url,body,signal){
+ const response=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),credentials:'omit',signal:AbortSignal.any([lifetime.signal,AbortSignal.timeout(6500),...(signal?[signal]:[])])});
  if(!response.ok)throw Error(`Background HTTP ${response.status}`);
  return response.json();
 }
@@ -69,23 +69,46 @@ async function pump(){
  timer=0;if(busy||paused||!queue.length||Date.now()<backoff)return;
  const item=queue.shift();busy=true;
  try{
+  item.signal?.throwIfAborted();
   session||=random();
   const p={eventId:random(),session,kind:item.kind,feature:item.feature,digest:await digest(item.bytes),bytes:item.bytes.length,units:item.units};
-  const receipt=await request('/api/a1/receipt.cgi',p);
+  const receipt=await request('/api/a1/receipt.cgi',p,item.signal);
   if(receipt.storage!=='postgresql'||!receipt.redis||!receipt.frontendPiece)throw Error('Background receipt was not persisted');
   const fragment=Uint8Array.from(atob(receipt.frontendPiece),c=>c.charCodeAt(0));
   if(await digest(fragment)!==receipt.frontendSha)throw Error('Receipt fragment mismatch');
   await save(receipt);state.completed++;state.backend='postgresql+redis';state.last={id:receipt.id,clicks:receipt.clicks,createdTables:receipt.createdTables,stamps:receipt.stamps};
   void watch(receipt.job,receipt.ticket);
   // Read back the actual browser fragment; the other two pieces never live here.
-  if(item.kind==='export'||state.completed%3===0){
+  if(item.forceRecover||item.kind==='export'||state.completed%3===0){
    const stored=await read(receipt.id);
-   const merged=await request(`/api/a1/recover.cgi/${receipt.id}`,{ticket:stored.ticket,frontendPiece:stored.frontendPiece});
+   const merged=await request(`/api/a1/recover.cgi/${receipt.id}`,{ticket:stored.ticket,frontendPiece:stored.frontendPiece},item.signal);
    if(!merged.reassembled||merged.packageSha!==stored.packageSha)throw Error('Receipt reconstruction failed');
    state.reassembled++;
   }
- }catch{state.dropped++;state.backend='unavailable-or-busy';backoff=Date.now()+60000;queue=[];}
+  item.resolve?.({id:receipt.id,storage:receipt.storage,stamps:receipt.stamps});
+ }catch(error){
+  item.reject?.(error);
+  if(!item.signal?.aborted){state.dropped++;state.backend='unavailable-or-busy';backoff=Date.now()+60000;discard(error);}
+ }
  finally{busy=false;if(queue.length&&!paused)timer=setTimeout(pump,1200);}
+}
+function discard(error){for(const item of queue.splice(0))item.reject?.(error);}
+// Media cues use the same bounded stores, but require all three fragments back.
+export function runMediaReceipt(feature,signal){
+ if(!safePath||paused||mediaPending||Date.now()<backoff||queue.length>=3||!globalThis.crypto?.subtle||!globalThis.indexedDB)return Promise.reject(Error('Media receipt unavailable'));
+ if(!/^[a-z0-9][a-z0-9_-]{0,63}$/.test(feature))return Promise.reject(Error('Invalid media identifier'));
+ const cancelled=AbortSignal.any([lifetime.signal,AbortSignal.timeout(20000),...(signal?[signal]:[])]);
+ if(cancelled.aborted)return Promise.reject(cancelled.reason);
+ mediaPending=true;
+ return new Promise((resolve,reject)=>{
+  let settled=false;
+  const finish=(callback,value)=>{if(settled)return;settled=true;mediaPending=false;cancelled.removeEventListener('abort',abort);callback(value);};
+  const item={kind:'window',feature,bytes:new TextEncoder().encode(feature),units:feature.length,forceRecover:true,signal:cancelled,resolve:value=>finish(resolve,value),reject:error=>finish(reject,error)};
+  const abort=()=>{queue=queue.filter(entry=>entry!==item);item.reject(cancelled.reason);};
+  cancelled.addEventListener('abort',abort,{once:true});
+  queue.unshift(item);
+  if(!busy&&!timer)timer=setTimeout(pump,20);
+ });
 }
 function enqueue(kind,feature,text=''){
  if(!safePath||paused||document.hidden||Date.now()<backoff||Date.now()-lastQueued<800||queue.length>=3)return;
@@ -102,7 +125,7 @@ if(safePath&&globalThis.crypto?.subtle&&globalThis.indexedDB){
   else if(node?.closest('[data-n3-close],[data-n3-pulse],[data-n3-add]'))enqueue('window','pane-'+(node.closest('[data-n3-kind]')?.dataset.n3Kind||'0'));
  },{signal:lifetime.signal,capture:true});
  const page=()=>enqueue('route','page-'+location.pathname.replace(/[^a-z0-9]+/gi,'-').toLowerCase().slice(0,45).replace(/-+$/,'')||'page-home');
- window.addEventListener('pagehide',event=>{paused=true;clearTimeout(timer);timer=0;queue=[];if(!event.persisted){lifetime.abort();database?.then(db=>db.close()).catch(()=>{});}},{signal:lifetime.signal});
+ window.addEventListener('pagehide',event=>{paused=true;clearTimeout(timer);timer=0;discard(Error('Page left'));if(!event.persisted){lifetime.abort();database?.then(db=>db.close()).catch(()=>{});}},{signal:lifetime.signal});
  window.addEventListener('pageshow',event=>{paused=false;if(event.persisted)page();},{signal:lifetime.signal});
  page();
 }

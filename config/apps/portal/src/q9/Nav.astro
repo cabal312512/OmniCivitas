@@ -1,0 +1,6 @@
+---
+import Contact from './Contact.astro';
+---
+<nav class="q9-nav" aria-label="站内导航"><a href="/workspace/">工作台</a><a href="/favorites/">收藏夹</a><a href="/profile/">个人主页</a><button data-desk-star aria-label="收藏当前页面">☆</button><Contact/></nav>
+<style>.q9-nav{display:flex;gap:12px;align-items:center;font:11px Arial;letter-spacing:0}.q9-nav a{color:#164dff!important;white-space:nowrap;text-decoration:none}.q9-nav button{border:0;background:none;color:#164dff;padding:1px;cursor:pointer}</style>
+<script>import './s1.mjs';import './track.mjs';import './star.mjs';</script>

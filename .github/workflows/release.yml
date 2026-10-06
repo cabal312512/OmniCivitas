@@ -7,7 +7,7 @@ on:
       tag:
         description: Existing release tag
         required: true
-        default: v0.1.0
+        default: v0.1.3
 permissions:
   contents: write
 concurrency:
@@ -46,5 +46,7 @@ jobs:
           if gh release view "$RELEASE_TAG" > /dev/null 2>&1; then
             gh release upload "$RELEASE_TAG" "$RUNNER_TEMP/ocv-release/OmniCivitas-$RELEASE_TAG-source.zip" "$RUNNER_TEMP/ocv-release/SHA256SUMS.txt" --clobber
           else
-            gh release create "$RELEASE_TAG" "$RUNNER_TEMP/ocv-release/OmniCivitas-$RELEASE_TAG-source.zip" "$RUNNER_TEMP/ocv-release/SHA256SUMS.txt" --verify-tag --title "OmniCivitas $RELEASE_TAG" --notes-file docs/RELEASE-v0.1.0.md
+            notes_file="docs/RELEASE-$RELEASE_TAG.md"
+            if [[ ! -f "$notes_file" ]]; then notes_file="docs/RELEASE-v0.1.0.md"; fi
+            gh release create "$RELEASE_TAG" "$RUNNER_TEMP/ocv-release/OmniCivitas-$RELEASE_TAG-source.zip" "$RUNNER_TEMP/ocv-release/SHA256SUMS.txt" --verify-tag --title "OmniCivitas $RELEASE_TAG" --notes-file "$notes_file"
           fi

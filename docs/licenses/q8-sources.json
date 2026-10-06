@@ -1,0 +1,9 @@
+{
+  "scope": "Newly emitted browser modules; recovered missing npm license files plus one checked CSS license. Existing bundled-package collection remains authoritative.",
+  "bootstrap-5.3.8": {"url":"https://github.com/twbs/bootstrap/blob/v5.3.8/LICENSE","kind":"Original npm package LICENSE; compiled stylesheet import is included in emitted chunk notices"},
+  "formik-2.4.9": {"url":"https://raw.githubusercontent.com/jaredpalmer/formik/main/LICENSE","kind":"official upstream Apache-2.0 license, current repository"},
+  "is-mobile-5.0.0": {"url":"https://raw.githubusercontent.com/juliangruber/is-mobile/master/LICENSE","kind":"official upstream MIT license, current repository"},
+  "https-proxy-agent-5.0.1": {"url":"https://raw.githubusercontent.com/TooTallNate/proxy-agents/main/packages/https-proxy-agent/LICENSE","kind":"official upstream MIT license, relocated repository; Nathan Rajlich 2013 notice"},
+  "agent-base-6.0.2": {"url":"https://raw.githubusercontent.com/TooTallNate/proxy-agents/main/packages/agent-base/LICENSE","kind":"official upstream MIT license, relocated repository"},
+  "tiny-case-1.0.3": {"url":"https://github.com/jquense/tiny-case","kind":"repository/npm archive omit a separate file; author and MIT declaration retained with standard MIT permission terms; no invented copyright year"}
+}

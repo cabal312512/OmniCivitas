@@ -1,0 +1,15 @@
+---
+import Layout from '../q9/Layout.astro';
+import '../q8/panel.less';
+---
+<Layout title="工作台" kind="desk">
+ <aside class="q9-spine"><h1>工作台</h1><a href="/favorites/">收藏夹 <b data-desk-total>0</b></a><button data-picker="pin">固定页面 ＋</button><a href="/functions/">工具</a><a href="/media/">影音</a><a href="/research/">研究 ↗</a><div class="q9-spine-empty"><i></i><i></i></div><small>local / OCV</small></aside>
+ <section class="q9-pin-shelf"><header>固定 <button data-picker="pin">＋</button></header><div data-desk-pins></div><div class="q9-shelf-rail"></div></section>
+ <section class="q9-recent"><header><h2>最近打开</h2><button data-recent-clear>清空</button></header><table><thead><tr><th>页面</th><th>时间</th><th>位置</th><th></th></tr></thead><tbody data-desk-recent></tbody></table><a class="q9-bottom-link" href="/maze/">目录 ↗</a></section>
+ <section class="q9-notebook" data-desk-window><header data-desk-handle>便笺 <button data-desk-close aria-label="关闭便笺">×</button></header><textarea data-desk-note maxlength="1200" aria-label="便笺" spellcheck="false"></textarea><footer><button data-note-save>保存</button><span data-note-length>0 / 1200</span></footer></section>
+ <section class="q9-inbox" data-desk-window><header data-desk-handle>收件箱 <button data-desk-close aria-label="关闭收件箱">×</button></header><div><span>文件</span><a href="/functions/file-manifest/">manifest</a><span>0</span></div><div><span>接続</span><output data-desk-storage>本地</output><span>−</span></div><div><span>项目</span><a href="/functions/music-studio/">音乐创作 ↗</a><span>1</span></div><div class="q9-inbox-gap"></div></section>
+ <section class="q9-calendar"><header>本周</header><div>{Array.from({length:35},(_,i)=><span class={i%9===0?'marked':''}>{i<3||i>32?'':i-2}</span>)}</div><i></i></section>
+ <section class="echo-annex q9-signature"><div class="echo-timezones"><span data-zone="utc"></span><span data-zone="tokyo"></span><span data-zone="local"></span></div><button id="echo-annex-open">签收 ↗</button><div><iframe id="echo-angular" title="签收" hidden></iframe><output id="echo-annex-result"></output></div></section>
+ <output class="q9-status" data-desk-status role="status"></output>
+ <script>import '../q8/annex.mjs';</script>
+</Layout>

@@ -1,11 +1,12 @@
 ---
 import {recommend} from './catalogue.mjs';
+import Contact from '../q9/Contact.astro';
 const {home=false}=Astro.props;
 ---
 <div class={`portal-dock ${home?'dock-home':'dock-page'}`}>
  <nav class="portal-nav-bar" aria-label="门户导航">
   <a href="/portals/unified/">全部功能</a><a href="/portals/unified/">建议使用新版</a><a href="/portals/light/">轻量版</a>
-  <a href="/identity/register/">注册</a><a href="/identity/login/">登录</a><span class="fiction-badge" data-fiction-badge></span><button class="fiction-out" data-fiction-out hidden>退出</button>
+  <a href="/workspace/">工作台</a><a href="/favorites/">收藏夹</a><a href="/profile/">个人主页</a><a href="/identity/register/">注册</a><a href="/identity/login/">登录</a><span class="fiction-badge" data-fiction-badge></span><button class="fiction-out" data-fiction-out hidden>退出</button><Contact/>
  </nav>
  <section class="search-everywhere" aria-label="万能搜索">
   <div class="search-line"><label for="portal-search">万能搜索</label><input id="portal-search" type="search" maxlength="80" autocomplete="off" placeholder="搜索"/><button data-search aria-label="搜索功能">↗</button><button data-voice aria-label="语音搜索">♩</button></div>
@@ -22,3 +23,5 @@ const {home=false}=Astro.props;
  <a class="portal-app-entry" href="/maze/notifications/">通知 <span>2</span></a>
  <div class="portal-spill"><a href="/maze/table/">表格 ↗</a><a href="/functions/">工具</a><a href="/status">系统公告</a><a href="/legal/">素材声明</a><span>04</span></div>
 </div>
+
+<script>import '../q9/s1.mjs';</script>

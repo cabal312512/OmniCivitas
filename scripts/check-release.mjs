@@ -2,12 +2,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {publicationEntries} from './research-publication.mjs';
+import {isAuthorOnlyDocument} from './publication-policy.mjs';
 
 const tracked=spawnSync('git',['ls-files','-z'],{encoding:'utf8',maxBuffer:16*1024*1024});
 if(tracked.status!==0)throw Error('Git index is required for release validation');
 const files=tracked.stdout.split('\0').filter(Boolean);
 const sourcePolicy=JSON.parse(fs.readFileSync('config/source-publication.json','utf8'));
 for(const row of sourcePolicy.omissions)if(files.includes(row.file))throw Error('Author-only input is tracked: '+row.file);
+for(const file of files)if(isAuthorOnlyDocument(file,sourcePolicy))throw Error('Internal document is tracked: '+file);
 const forbidden=files.filter(file=>/(?:^|\/)(?:node_modules|dist|\.next|\.astro|\.cache|\.nx)(?:\/|$)|(?:^|\/)\.env(?:\.|$)|(?:^|\/)paper\/[^/]+\.pdf$|\.(?:vhdx|sqlite3?|db|pem|key|pfx|p12|crt|cer)$/i.test(file)&&!file.endsWith('.env.example'));
 if(forbidden.length)throw Error('Private/generated files in release: '+forbidden.join(', '));
 const root=path.resolve('research/finite-memory-rsa'),entries=[];

@@ -37,6 +37,48 @@
       "bytes": 10925,
       "sha256": "6ebe9558b827c4c8cfd432bd95855212af21281a00050067262c0249e2f9d378",
       "reason": "Author-only AI brief retained locally; excluded from published source and downloads at user request."
+    },
+    {
+      "file": "docs/REQUIREMENTS_COVERAGE.md",
+      "bytes": 11926,
+      "sha256": "d5324df0f4947b1a62007105001d29177fcee72ce2548a119f1d30c85c5fe278",
+      "reason": "Internal execution or brief-coverage document retained locally; omitted from public source and downloads. Original scientific seal is unchanged."
+    },
+    {
+      "file": "stage2/docs/EXECUTION_PLAN.md",
+      "bytes": 2553,
+      "sha256": "eff7d1b4ba9c76aaeb069fc41a4fa132dd1c8bbac4bc56c7fc698044d38cb145",
+      "reason": "Internal execution or brief-coverage document retained locally; omitted from public source and downloads. Original scientific seal is unchanged."
+    },
+    {
+      "file": "stage2/docs/REQUIREMENTS_COVERAGE.md",
+      "bytes": 3435,
+      "sha256": "e131667b95c2649f4060892e92bed1be09f3cf124ed1617403e864fb74ac2ac5",
+      "reason": "Internal execution or brief-coverage document retained locally; omitted from public source and downloads. Original scientific seal is unchanged."
+    },
+    {
+      "file": "stage3/docs/REQUIREMENTS_COVERAGE.md",
+      "bytes": 4149,
+      "sha256": "eeb14146c79f8d9e5339d754df7b64a6e51a85e5f9b9f52d21da7f3e77697230",
+      "reason": "Internal execution or brief-coverage document retained locally; omitted from public source and downloads. Original scientific seal is unchanged."
+    },
+    {
+      "file": "stage4/docs/REQUIREMENTS_COVERAGE.md",
+      "bytes": 4538,
+      "sha256": "19f6bfb4fa70b55ce18c1eb15d75978763c84f32d3fae6855e981b9c860c43d5",
+      "reason": "Internal execution or brief-coverage document retained locally; omitted from public source and downloads. Original scientific seal is unchanged."
+    },
+    {
+      "file": "stage5/PROJECT_STATUS.md",
+      "bytes": 1383,
+      "sha256": "72113c3f94f3957dac9e06a5c1fb6c58d22bed58397722e56f8024482e3cb040",
+      "reason": "Internal execution or brief-coverage document retained locally; omitted from public source and downloads. Original scientific seal is unchanged."
+    },
+    {
+      "file": "stage5/docs/REQUIREMENTS_COVERAGE.md",
+      "bytes": 3501,
+      "sha256": "4321e21d98093825dc9bcf832250b3764490328b7be3755422c71bd247340353",
+      "reason": "Internal execution or brief-coverage document retained locally; omitted from public source and downloads. Original scientific seal is unchanged."
     }
   ]
 }

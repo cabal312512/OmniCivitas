@@ -1,5 +1,5 @@
 import {test,expect} from 'vitest';
-import {createMusic,MUSIC_TRACKS} from '../config/apps/portal/src/3d/music.mjs';
+import {createMusic,MUSIC_TRACKS} from '../config/apps/portal/src/p2/u6.mjs';
 
 class FakeAudio extends EventTarget{
  constructor(){super();this.paused=true;this.ended=false;this.currentTime=0;this.duration=180;this.volume=1;this.muted=false;this.playCalls=0;this.pauseCalls=0;this.loadCalls=0;this._src='';}

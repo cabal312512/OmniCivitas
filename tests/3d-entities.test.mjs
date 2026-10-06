@@ -1,5 +1,5 @@
 import { afterEach, expect, test } from 'vitest';
-import { createEntities } from '../config/apps/portal/src/3d/entities.mjs';
+import { createEntities } from '../config/apps/portal/src/q7/e8.mjs';
 
 // Actual Three.js graphs and geometry, with deterministic simulation inputs.
 // These are behavior tests, not WebGL rendering or native-control evidence.

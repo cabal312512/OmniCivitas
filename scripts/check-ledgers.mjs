@@ -3,12 +3,24 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const ledger = JSON.parse(await readFile(path.join(root, 'docs/requirements.json'), 'utf8'));
 const publication = JSON.parse(await readFile(path.join(root, 'config/source-publication.json'), 'utf8'));
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
+let availableLedgers = 0;
 for (const [file, hash] of Object.entries(publication.ledgers)) {
-  if (digest(await readFile(path.join(root, file))) !== hash) throw new Error('Frozen ledger changed: '+file);
+  try {
+    if (digest(await readFile(path.join(root, file))) !== hash) throw new Error('Frozen ledger changed: '+file);
+    availableLedgers++;
+  } catch (error) {
+    const omission = publication.omissions.find(row => row.file === file);
+    if (error.code !== 'ENOENT' || omission?.sha256 !== hash) throw error;
+  }
 }
+if (availableLedgers === 0) {
+  console.log('SKIPPED: author-only requirement ledgers are excluded from this public clone. Their declared hashes are retained; requirement coverage cannot be verified here.');
+  process.exit(0);
+}
+if (availableLedgers !== Object.keys(publication.ledgers).length) throw new Error('Partial local requirement ledger snapshot.');
+const ledger = JSON.parse(await readFile(path.join(root, 'docs/requirements.json'), 'utf8'));
 async function authorInput(file, expectedHash) {
   const omission = publication.omissions.find(row => row.file === file);
   if (!omission || omission.sha256 !== expectedHash) throw new Error('Missing original input declaration: '+file);

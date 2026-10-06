@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
 import {reports} from './report-location.mjs';
-import {MEDAL_KEY,TROPHY_ID} from '../../config/apps/portal/src/3d/medal.mjs';
+import {MEDAL_KEY,TROPHY_ID} from '../../pinia/p9.mjs';
 
 const state=page=>page.evaluate(()=>window.__ocvAeroMedal?.snapshot());
 const proof=(name,value)=>fs.writeFileSync(path.join(reports,`3d-medal-${name}.json`),JSON.stringify(value,null,2));

@@ -1,6 +1,6 @@
 import {test,expect,vi} from 'vitest';
 import {readFileSync} from 'node:fs';
-import {MEDAL_KEY,TROPHY_ID,MEDAL_FILENAME,MEDAL_SVG,createMedalStore,createMedalBlob,downloadMedal} from '../config/apps/portal/src/3d/medal.mjs';
+import {MEDAL_KEY,TROPHY_ID,MEDAL_FILENAME,MEDAL_SVG,createMedalStore,createMedalBlob,downloadMedal} from '../pinia/p9.mjs';
 
 const earnedAt=1791014400000;
 const progress=()=>({version:1,trophyId:TROPHY_ID,earnedAt});

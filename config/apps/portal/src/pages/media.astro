@@ -10,6 +10,7 @@ import '../n9/n9.css';
  <main><section class="n9-window media-video" data-n9-window aria-label="视频"><header class="n9-handle" data-n9-handle tabindex="0" aria-label="移动视频窗口"><button type="button" data-video-play aria-label="播放视频">▶</button><button type="button" data-n9-close aria-label="关闭视频窗口">×</button></header><video controls playsinline preload="none" src="/forgotten-cache/clip.mp4"></video><output data-video-error aria-live="polite"></output></section><section class="media-actions"><a href="/functions/sweep/">开发 / 扫除霉运 ↗</a><p><a href="/maze/">目录 ↗</a></p><output data-sound-status aria-live="polite"></output></section></main>
  <a class="media-exit" href="/#systems" aria-label="返回主页">↖</a>
  <script>
+  import '../n9/video.mjs';
   const video=document.querySelector('.media-video video'),button=document.querySelector('[data-video-play]'),error=document.querySelector('[data-video-error]');
   button.addEventListener('click',()=>{error.textContent='';if(video.paused)video.play().catch(()=>{error.textContent='视频未能播放';});else video.pause();});
   const update=()=>{button.textContent=video.paused?'▶':'Ⅱ';button.setAttribute('aria-label',video.paused?'播放视频':'暂停视频');};

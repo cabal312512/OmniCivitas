@@ -11,7 +11,8 @@
     {"id":"search","title":"Elasticsearch","steps":[["elasticsearch"]]},
     {"id":"messages","title":"AMQP / Kafka / Mongoose","steps":[["rabbitmq","kafka","mongo","message-bridge","message-consumer"]]},
     {"id":"monitor","title":"OTel / Prometheus / Grafana","steps":[["otel","prometheus","grafana"]]},
-    {"id":"next","title":"Next / Prisma / TypeORM","steps":[[]]}
+    {"id":"next","title":"Next / Prisma / TypeORM","steps":[[]]},
+    {"id":"signal","title":"Redis / JPA / Mongoose","steps":[["spring","kafka","mongo","message-consumer"]]}
   ],
   "features": {"json":"relay","csv":"analysis","calculator":"go","xml":"soap","regex":"ruby","base64":"messages","uuid":"next","sqlite":"mongo","markdown":"object","hash":"search","pipeline":"monitor","json-patch":"grpc"}
 }

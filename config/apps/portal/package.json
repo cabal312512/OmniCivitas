@@ -78,7 +78,8 @@
           "{workspaceRoot}/pinia/**/*",
           "{workspaceRoot}/pcakage/build2/**/*",
           "{workspaceRoot}/scripts/phase8-build.mjs",
-          "{workspaceRoot}/scripts/copy-angular.mjs"
+          "{workspaceRoot}/scripts/copy-angular.mjs",
+          "{workspaceRoot}/historical/station/src/rooms.rs"
         ]
       },
       "dev": {

@@ -1,0 +1,7 @@
+---
+import {slots} from './slots.mjs';
+import './hunt.css';
+const slot=slots.find(s=>s.route===Astro.url.pathname);
+---
+{slot&&<button class="q8-creature" data-q8-creature data-id={slot.id} data-pitch={slot.pitch} data-say={slot.say} style={`--q8-x:${slot.x}vw;--q8-y:${slot.y}vh;--q8-color:hsl(${195+slot.id*2} 90% 64%)`} aria-label="捉迷藏的小东西"><svg viewBox="0 0 80 90" aria-hidden="true"><defs><linearGradient id={`q8-skin-${slot.id}`} x2=".8" y2="1"><stop stop-color="#f4fdff"/><stop offset="1" stop-color="#6aacdf"/></linearGradient></defs><path d="M19 66 Q6 31 27 27 L23 9 L41 20 L57 5 L62 31 Q80 60 58 74 Q39 81 19 66" fill={`url(#q8-skin-${slot.id})`} stroke="currentColor"/><path d="M20 70L13 81M57 73L64 82" stroke="currentColor" stroke-width="4"/><ellipse cx="32" cy="45" rx="4" ry="6" fill="#123469"/><ellipse cx="53" cy="42" rx="4" ry="6" fill="#123469"/><path d="M37 56q5 6 10-1" fill="none" stroke="#224467"/></svg><span>{slot.say}</span></button>}
+<script>import './hunt.mjs';</script>

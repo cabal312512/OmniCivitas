@@ -65,3 +65,26 @@ historical/front_old/HANDOFF-pre-luminous.md
 research/**/docs/initial-brief.txt
 research/**/docs/user-brief.txt
 research/**/docs/USER_BRIEF*.txt
+config/apps/portal/public/office-1999/
+**/.ocv-runtime/
+historical/station/target/
+
+# Public documentation is explicit; local plans and acceptance records stay local.
+**/CLAUDE.md
+**/HANDOFF.md
+**/HANDOFF-*.md
+docs/*
+!docs/DEPLOY.en.md
+!docs/DEPLOY.zh-CN.md
+!docs/AFTER-ROUTES.md
+!docs/RELEASE-v0.1.0.md
+!docs/RELEASE-v0.1.3.md
+!docs/EFFECT-SOURCES.md
+!docs/CODE-LICENSE-POLICY.md
+!docs/licenses/
+!docs/assets/
+docs/assets/*
+!docs/assets/observation-console.png
+research/**/docs/EXECUTION_PLAN.md
+research/**/docs/REQUIREMENTS_COVERAGE.md
+research/**/PROJECT_STATUS.md

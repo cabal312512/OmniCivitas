@@ -1,0 +1,5 @@
+---
+import {MEDAL_SVG} from '../../../../../pinia/p9.mjs';
+---
+<section class="q9-awards"><button data-awards-open>荣誉勋章 / 成就 <span data-awards-count>0</span></button><div class="q9-awards-drawer" data-awards-drawer hidden><header>成就 <button data-awards-close aria-label="关闭成就列表">×</button></header><div data-awards-list></div><section data-medal-art hidden set:html={MEDAL_SVG}></section><button data-medal-download hidden>下载勋章 ↓</button><a href="/incidents/achievements/">授勋处 ↗</a></div></section>
+<script>import './awards.mjs';</script>

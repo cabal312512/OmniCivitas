@@ -21,6 +21,20 @@
 **/*.sqlite3
 **/*.db
 **/.cache
+**/.ocv-runtime
+historical/station/target
+
+**/CLAUDE.md
+**/HANDOFF.md
+**/HANDOFF-*.md
+docs
+!docs
+docs/*
+!docs/licenses
+!docs/licenses/**
+research/**/docs/EXECUTION_PLAN.md
+research/**/docs/REQUIREMENTS_COVERAGE.md
+research/**/PROJECT_STATUS.md
 compose.local.yaml
 compose.local.yml
 docs/assets
@@ -28,6 +42,7 @@ docs/REQUIREMENTS.md
 docs/requirements.json
 
 config/apps/portal/public/ng
+config/apps/portal/public/office-1999
 config/apps/portal/public/legacy-assets
 **/*.log
 !research/**/*.log
@@ -40,6 +55,10 @@ config/apps/portal/public/wallpaper-pot.svg
 config/apps/portal/phase3-artifacts
 .codex-remote-attachments
 historical
+!historical
+historical/*
+!historical/station
+!historical/station/**
 config/apps/portal/public/research/files
 config/apps/portal/public/research/downloads
 config/apps/portal/public/research/asset-manifest.json
@@ -52,3 +71,4 @@ docs/HANDOFF.md
 research/**/docs/initial-brief.txt
 research/**/docs/user-brief.txt
 research/**/docs/USER_BRIEF*.txt
+historical/station/target

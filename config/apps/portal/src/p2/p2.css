@@ -2,6 +2,8 @@
 .p2-frame[hidden]{display:none!important}
 .p2-frame-7{left:35px;top:121px}
 .p2-frame-8{right:37px;bottom:113px}
+.p2-frame-9{right:73px;top:168px;width:142px}
+.p2-frame-9 .p2-image-button,.p2-frame-9 .p2-image-button img{width:124px}
 .p2-header{display:flex;height:27px;border-bottom:1px solid #79afd74c;background:#e9f8ff6d}
 .p2-frame .p2-handle{flex:1;min-width:0;display:flex;align-items:center;padding:0 11px;border:0;background:none;color:#2d75a0;cursor:grab;touch-action:none}
 .p2-frame .p2-handle:active{cursor:grabbing}

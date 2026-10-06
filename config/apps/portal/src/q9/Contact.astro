@@ -1,0 +1,38 @@
+<span class="ocv-contact" data-author-contact>
+ <button class="ocv-contact-trigger" type="button" data-author-open aria-haspopup="dialog" aria-expanded="false">联系作者</button>
+ <dialog class="ocv-contact-box" aria-label="联系作者">
+  <header><span>联系作者</span><button type="button" data-author-close aria-label="关闭联系作者">×</button></header>
+  <div class="ocv-contact-body">
+   <img src="/forgotten-cache/author.jpg" width="82" height="82" alt="作者头像" loading="lazy"/>
+   <div><strong>cabal312512</strong><a href="https://x.com/cabal312512_" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://github.com/cabal312512" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+  </div>
+  <a class="ocv-contact-email" href="mailto:user31436@proton.me">user31436@proton.me</a>
+ </dialog>
+</span>
+<style>
+ .ocv-contact{display:inline-flex;align-items:center;flex-shrink:0;letter-spacing:0}
+ .ocv-contact>.ocv-contact-trigger{font:11px Arial,sans-serif!important;color:#164dff!important;border:1px solid #9cb6e2!important;padding:5px 9px!important;background:#f5f9ff!important;cursor:pointer;white-space:nowrap;pointer-events:auto}
+ .ocv-contact>.ocv-contact-trigger:hover{background:#e6efff!important;border-color:#164dff!important}
+ .ocv-contact>.ocv-contact-trigger:focus-visible{outline:2px solid #164dff;outline-offset:3px}
+ .ocv-contact>.ocv-contact-box{position:fixed;inset:76px 26px auto auto;margin:0;width:286px;max-width:calc(100vw - 36px);box-sizing:border-box;padding:0;border:1px solid #94afe0;background:#f8fbff;color:#182e51;box-shadow:0 18px 60px #17366340;font:12px Arial,sans-serif;letter-spacing:0;pointer-events:auto}
+ .ocv-contact-box::backdrop{background:#10234318;backdrop-filter:blur(2px)}
+ .ocv-contact-box>header{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-bottom:1px solid #cad8ef;background:linear-gradient(#fff,#eaf2ff);font:12px Arial,sans-serif;color:#263e60}
+ .ocv-contact-box>header>button{border:0!important;background:none!important;color:#244b84!important;padding:0 3px!important;font:18px Arial!important;cursor:pointer}
+ .ocv-contact-body{display:flex;gap:14px;padding:17px 16px 12px;align-items:center}
+ .ocv-contact-body img{display:block;width:82px;height:82px;object-fit:cover;border:1px solid #bbcdea}
+ .ocv-contact-body>div{display:flex;flex-direction:column;gap:9px}
+ .ocv-contact-body strong{font:600 13px Arial;color:#1b2b45}
+ .ocv-contact-box a{font:12px Arial!important;color:#164dff!important;text-decoration:none!important;white-space:nowrap}
+ .ocv-contact-box a:hover{text-decoration:underline!important}
+ .ocv-contact-box>.ocv-contact-email{display:block;margin:0 16px 16px;border-top:1px solid #dde6f4;padding-top:12px}
+ @media(prefers-reduced-motion:no-preference){.ocv-contact-box[open]{animation:contact-in .16s ease-out}@keyframes contact-in{from{opacity:0;translate:0 -6px}to{opacity:1;translate:0 0}}}
+</style>
+<script>
+ for(const root of document.querySelectorAll<HTMLElement>('[data-author-contact]')){
+  const open=root.querySelector<HTMLButtonElement>('[data-author-open]')!,box=root.querySelector<HTMLDialogElement>('dialog')!;
+  open.addEventListener('click',()=>{if(!box.open){box.showModal();open.setAttribute('aria-expanded','true');}});
+  root.querySelector('[data-author-close]')!.addEventListener('click',()=>box.close());
+  box.addEventListener('close',()=>open.setAttribute('aria-expanded','false'));
+  box.addEventListener('click',event=>{if(event.target!==box)return;const r=box.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)box.close();});
+ }
+</script>

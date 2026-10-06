@@ -1,0 +1,6 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'tailwindcss' source(none);
+@source './Studio.tsx';
+body:has([data-studio-mode]){margin:0;background:#05060c;color:#eaf1ff;min-width:960px}
+[data-studio-mode] .btn{border-radius:0;font:12px monospace;padding:12px 20px;border-width:1px}
+[data-studio-mode] button:focus-visible,[data-studio-mode] textarea:focus-visible{outline:2px solid #b8ff44;outline-offset:3px}

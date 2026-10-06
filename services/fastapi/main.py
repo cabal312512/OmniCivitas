@@ -60,6 +60,30 @@ def pointless_analysis():
   db.execute("SET memory_limit='32MB'");db.execute('SET threads=1');db.execute("SET max_temp_directory_size='64MB'")
   db.execute('CREATE TABLE IF NOT EXISTS school_student(name VARCHAR, delivery_count INTEGER)');db.execute('DELETE FROM school_student');db.executemany('INSERT INTO school_student VALUES (?,?)',[(r['name'],int(r['delivery_count'])) for r in rows]);total=db.execute('SELECT sum(delivery_count) FROM school_student').fetchone()[0]
  return {'canContinue':True,'total':total,'csvRows':len(rows),'meetsPolicy':total>=int(rule['minimum_rice']),'displayName':description['product_name'],'municipality':rule['warehouse'],'json':description,'yaml':rule,'sources':['CSV','JSON','YAML','DuckDB']}
+class MusicNote(BaseModel):
+ n:int=Field(ge=48,le=96)
+ t:int=Field(ge=0,le=600000)
+ d:int=Field(ge=40,le=4000)
+ v:float=Field(ge=.05,le=1)
+class MusicTake(BaseModel):
+ root:str=Field(pattern=r'^[0-9a-f-]{36}$')
+ notes:list[MusicNote]=Field(min_length=1,max_length=256)
+@app.post('/api/music.php')
+def music_analysis(take:MusicTake):
+ with analysis_lock, duckdb.connect(str(DATA/'warehouse.duckdb')) as db:
+  db.execute("SET memory_limit='32MB'");db.execute('SET threads=1');db.execute("SET max_temp_directory_size='64MB'")
+  db.execute('CREATE TEMP TABLE key_marks(n INTEGER,t INTEGER,d INTEGER,v DOUBLE)')
+  db.executemany('INSERT INTO key_marks VALUES (?,?,?,?)',[(e.n,e.t,e.d,e.v) for e in take.notes])
+  stats=db.execute('SELECT count(*),min(n),max(n),max(t+d),sum(d) FROM key_marks').fetchone()
+  bins=[0]*12
+  for pitch,duration in db.execute('SELECT n%12,sum(d) FROM key_marks GROUP BY n%12').fetchall(): bins[pitch]=duration
+  gaps=db.execute('SELECT coalesce(avg(gap),0) FROM (SELECT t-lag(t) OVER(ORDER BY t,n) AS gap FROM key_marks)').fetchone()[0]
+  result={'notes':stats[0],'range':[stats[1],stats[2]],'duration':stats[3],'hold':stats[4],'histogram':bins,'averageGap':round(gaps,2)}
+  with engines['redis.sqlite'].begin() as sqlite:
+   sqlite.execute(text('CREATE TABLE IF NOT EXISTS piano_analysis(id TEXT PRIMARY KEY,summary TEXT)'))
+   sqlite.execute(text('INSERT OR REPLACE INTO piano_analysis VALUES(:i,:s)'),{'i':take.root,'s':json.dumps(result)})
+   sqlite.execute(text('DELETE FROM piano_analysis WHERE rowid NOT IN(SELECT rowid FROM piano_analysis ORDER BY rowid DESC LIMIT 128)'))
+  return {'canContinue':True,**result,'sources':['PostgreSQL','DuckDB','SQLAlchemy','redis.sqlite']}
 @app.on_event('shutdown')
 def shutdown():server.stop(1)
 

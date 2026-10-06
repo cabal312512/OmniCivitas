@@ -1,0 +1,5 @@
+---
+const {mode}=Astro.props;
+---
+<div class={`q9-scene q9-scene-${mode}`} data-q9-scene={mode}><canvas aria-label="可互动的三维场景" tabindex="0"></canvas><div class="q9-scene-corner"></div></div>
+<script>import './scene.mjs';</script>

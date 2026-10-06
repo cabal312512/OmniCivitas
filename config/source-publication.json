@@ -62,11 +62,39 @@
       "file": "research/finite-memory-rsa/stage5/docs/USER_BRIEF.zh.txt",
       "bytes": 10925,
       "sha256": "6ebe9558b827c4c8cfd432bd95855212af21281a00050067262c0249e2f9d378"
+    },
+    {
+      "file": "docs/requirements.json",
+      "bytes": 1029596,
+      "sha256": "29e14b4438d6aad2e25f7b9851ecc5851d5b62dc8d2101e1f9318399fe40db26",
+      "reason": "Internal requirement ledger retained locally; excluded from public sources and releases at author request."
+    },
+    {
+      "file": "docs/screenshot-requirements.json",
+      "bytes": 27832,
+      "sha256": "083dbf6c880d702264614db23f56190e57e4b4c06253efac068f3c792c1eec1f",
+      "reason": "Internal requirement ledger retained locally; excluded from public sources and releases at author request."
+    },
+    {
+      "file": "docs/public-release-requirements.json",
+      "bytes": 4543,
+      "sha256": "a19dabf6aa84d997bc61a04ef2a8652134192109c08ff38ecffd18c8705730c2",
+      "reason": "Internal requirement ledger retained locally; excluded from public sources and releases at author request."
     }
   ],
   "ledgers": {
     "docs/requirements.json": "29e14b4438d6aad2e25f7b9851ecc5851d5b62dc8d2101e1f9318399fe40db26",
     "docs/screenshot-requirements.json": "083dbf6c880d702264614db23f56190e57e4b4c06253efac068f3c792c1eec1f",
     "docs/public-release-requirements.json": "a19dabf6aa84d997bc61a04ef2a8652134192109c08ff38ecffd18c8705730c2"
-  }
+  },
+  "publicDocuments": [
+    "docs/DEPLOY.en.md",
+    "docs/DEPLOY.zh-CN.md",
+    "docs/AFTER-ROUTES.md",
+    "docs/RELEASE-v0.1.0.md",
+    "docs/EFFECT-SOURCES.md",
+    "docs/CODE-LICENSE-POLICY.md",
+    "docs/assets/observation-console.png",
+    "docs/RELEASE-v0.1.3.md"
+  ]
 }

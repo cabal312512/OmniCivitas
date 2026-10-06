@@ -79,6 +79,7 @@ services:
       NODE_OPTIONS: --max-old-space-size=256
       OCV_OTEL_URL: http://otel:4318/v1/traces
       OCV_LOG_DIR: /ocv-data
+      OCV_HUNT_SOURCE: ${OCV_HUNT_SOURCE:-/workspace/historical/station/src/rooms.rs}
       OCV_AFTER_RUN_LIMIT: ${OCV_AFTER_RUN_LIMIT:-128}
       OCV_AFTER_TABLE_LIMIT: ${OCV_AFTER_TABLE_LIMIT:-6}
       OCV_AFTER_TABLE_EVERY: ${OCV_AFTER_TABLE_EVERY:-5}

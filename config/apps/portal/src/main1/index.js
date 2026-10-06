@@ -8,6 +8,7 @@ function search(){clearTimeout(searchTimer);if(!input||!results)return;const q=i
  const url=new URL(location.href);q?url.searchParams.set('q',q):url.searchParams.delete('q');history.replaceState(null,'',url);
  const found=q?searchFeatures(q):recommend();
  if(found.some(r=>r.id==='image-compress'))results.append(link({title:'关于图片压缩功能搜索结果的说明',url:'/functions/image-compress/#search-notice',available:true},'search-explainer'));
+ if(q&&found.length)document.dispatchEvent(new CustomEvent('ocv:site-action',{detail:{kind:'search'}}));
  for(const item of found)results.append(link(item));
  if(!found.length){const empty=document.createElement('p');empty.className='search-empty';empty.textContent='没有结果';results.append(empty);}
  const advice=document.createElement('p');advice.className='search-advice';advice.textContent='您可能不需要搜索这个';results.append(advice);

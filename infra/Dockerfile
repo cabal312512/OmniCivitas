@@ -22,10 +22,12 @@ COPY scripts/bundle-license-notices.mjs ./scripts/bundle-license-notices.mjs
 COPY docs/licenses/alpinejs-3.17.4-LICENSE.md ./docs/licenses/alpinejs-3.17.4-LICENSE.md
 COPY docs/licenses/piccolore-upstream-picocolors-ISC.txt ./docs/licenses/piccolore-upstream-picocolors-ISC.txt
 COPY docs/licenses/edge-runtime-MIT.md ./docs/licenses/edge-runtime-MIT.md
+COPY docs/licenses/q8-sources.json docs/licenses/tiny-case-1.0.3.txt docs/licenses/is-mobile-5.0.0.txt docs/licenses/formik-2.4.9.txt docs/licenses/agent-base-6.0.2.txt docs/licenses/https-proxy-agent-5.0.1.txt ./docs/licenses/
 COPY pcakage/build2 ./pcakage/build2
 COPY services/gateway ./services/gateway
 COPY services/archive ./services/archive
 COPY pcakage/comon ./pcakage/comon
+COPY historical/station ./historical/station
 FROM build AS gateway-build
 RUN pnpm --filter @omnicivitas/gateway build
 
@@ -48,6 +50,7 @@ ENV NODE_ENV=production HOST=0.0.0.0 PORT=3000 NODE_OPTIONS=--max-old-space-size
 COPY --from=gateway-build /ocv-deps /ocv-deps
 COPY --from=gateway-build /workspace/node_modules ./node_modules
 COPY --from=gateway-build /workspace/services/gateway ./services/gateway
+COPY --from=gateway-build /workspace/historical/station ./historical/station
 RUN mkdir -p /ocv-data && chown node:node /ocv-data
 USER node
 CMD ["sh", "-c", "cd services/gateway && /ocv-deps/tools/bin/pnpm exec prisma migrate deploy && node dist/main.js"]

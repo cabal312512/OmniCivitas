@@ -1,0 +1,10 @@
+@ice: #9cbce9;
+@ink: #315b94;
+.echo-annex {
+  position:relative; margin:55px -5vw 0 35%; border-top:1px solid fade(@ink,25%);
+  display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:start;
+  >button{background:fade(@ice,40%);font:11px monospace;padding:13px;margin-top:22px;}
+  iframe{width:420px;height:194px;border:1px solid fade(@ink,38%);background:#eff7ff;margin:15px 0 -25px;}
+  output{font:10px monospace;color:@ink;}
+}
+.echo-timezones{display:flex;position:absolute;right:0;top:4px;gap:24px;font:9px monospace;letter-spacing:1px;color:fade(@ink,80%);}

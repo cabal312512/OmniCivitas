@@ -109,6 +109,16 @@ const httpCode=`const u=process.argv[1],body=JSON.parse(process.argv[2]);fetch(u
 async function inside(url,body=null,timeout=10000){const r=JSON.parse(await cc(['exec','-T','gateway','node','-e',httpCode,url,JSON.stringify(body),String(timeout)]));if(r.status<200||r.status>=300)throw Error(`Internal service HTTP ${r.status}`);try{return JSON.parse(r.text);}catch{return r.text;}}
 async function work(job,phase){
  const label=`${job.feature}:${job.digest.slice(0,16)}`,dto={label,rootTraceId:job.run_id,isoTime:'2026-10-01T19:14:00.000Z',ornament:{digest:job.digest}};
+ if(job.family==='signal'){
+  const sent=await inside('http://spring:8081/api/approved.php',dto);
+  if(!sent.hop?.jpaRow)throw Error('Signal JPA stamp missing');
+  for(let i=0;i<20;i++){
+   const reply=await inside('http://message-consumer:3100/api/replica/'+job.run_id);
+   if(reply.logs?.some(entry=>entry.data?.label===label&&entry.data?.service==='Spring'))return {published:true,redisPubSub:true,mongoLog:true,root:job.run_id,jpaRow:sent.hop.jpaRow};
+   await sleep(400);
+  }
+  throw Error('Redis publication was not stored by the real subscriber');
+ }
  if(job.family==='relay'){
   const urls=['http://spring:8081/api/approved.php','http://fastapi:8000/api/rubber.cgi','http://laravel:8001/api/nodeService'];
   const r=await inside(urls[phase],dto);if(!r.hop||r.hop.rootTraceId!==job.run_id)throw Error('Relay stamp missing');
@@ -116,7 +126,14 @@ async function work(job,phase){
   return {service:r.hop.service,stamp:r.hop,nextAvailable:r.canContinue===true,continuedInNextBatch:phase<2};
  }
  if(job.family==='grpc'){const r=await inside('http://spring:8081/api/grpc.do',dto);if(!r.canContinue||r.protocol!=='gRPC')throw Error('gRPC stamp failed');return r;}
- if(job.family==='analysis'){const r=await inside('http://fastapi:8000/api/analysis.php');if(!r.canContinue||!r.sources?.includes('DuckDB'))throw Error('Analysis failed');return r;}
+ if(job.family==='analysis'){
+  if(job.feature==='music-studio'){
+   const code="const {Pool}=require('pg');const p=new Pool({connectionString:process.env.DATABASE_URL,max:1,connectionTimeoutMillis:1500,statement_timeout:2000});p.query('SELECT events FROM ocv_q8.scores WHERE id=$1',[process.argv[1]]).then(r=>{if(!r.rows.length)throw Error('Score expired');console.log(JSON.stringify(r.rows[0].events))}).catch(e=>{console.error(e.message);process.exitCode=1}).finally(()=>p.end());";
+   const notes=JSON.parse(await cc(['exec','-T','-w','/workspace/services/gateway','gateway','node','-e',code,job.run_id]));
+   const r=await inside('http://fastapi:8000/api/music.php',{root:job.run_id,notes});if(!r.canContinue||r.notes!==notes.length||!r.sources?.includes('DuckDB'))throw Error('Music analysis failed');return r;
+  }
+  const r=await inside('http://fastapi:8000/api/analysis.php');if(!r.canContinue||!r.sources?.includes('DuckDB'))throw Error('Analysis failed');return r;
+ }
  if(job.family==='go'){const r=await inside('http://fiber:8002/api/button.cgi');if(!r.canContinue||r.service!=='Go Fiber')throw Error('Fiber failed');return r;}
  if(job.family==='soap'){const xml=await inside('http://dotnet:8003/api/AirTaxService.asmx');if(typeof xml!=='string'||!xml.includes('GetPotatoTaxResponse'))throw Error('SOAP envelope missing');return {protocol:'SOAP',tax:Number(xml.match(/<tax>(\d+)<\/tax>/)?.[1]),bytes:Buffer.byteLength(xml)};}
  if(job.family==='ruby'){const r=await inside('http://sinatra:8004/api/old.cgi');const nested=JSON.parse(r.jsonInsideJson);if(nested.service!=='Ruby Sinatra')throw Error('Nested Ruby JSON missing');return {outer:r.ok,inner:nested};}
@@ -156,12 +173,12 @@ async function perform(job){
    try{await warm(family.steps[phase]);await control('progress',{job:job.id,state:'running',phase,result:{steps:results}});results.push(await work(job,phase));}
    finally{await cleanup();}
   }
-  await control('complete',{job:job.id,state:'done',phase:family.steps.length,result:{steps:results}});report.completed.push({family:job.family,id:job.id,steps:results});report.completed=report.completed.slice(-64);await log(`Completed ${job.family}`);
+  await control('complete',{job:job.id,state:'done',phase:family.steps.length,result:{steps:results}});report.completed.push({family:job.family,id:job.id,feature:job.feature,runId:job.run_id,steps:results});report.completed=report.completed.slice(-64);await log(`Completed ${job.family}`);
  }catch(error){report.failed.push({family:job.family,id:job.id,error:error.message});report.failed=report.failed.slice(-64);await control('complete',{job:job.id,state:'failed',phase:results.length,result:{reason:error.message.slice(0,300),steps:results}}).catch(()=>{});await log(`Failed ${job.family}: ${error.message.slice(0,240)}`);}
  finally{current=null;await cleanup();await writeFile(path.join(stateRoot,'latest-report.json'),JSON.stringify(report,null,2),{mode:0o600});}
 }
 for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>{stopping=true;for(const child of children)child.kill();});
-let timer;
+let timer,heartbeatFailures=0,claimFailures=0;
 try{
  await storageGuard();config=JSON.parse(await cc(['config','--format','json'],{quiet:true}));
  const running=await snapshot();if([...core].some(n=>!running.some(c=>c.Config.Labels['com.docker.compose.service']===n&&c.State.Running)))throw Error('Start the six core services before the host dispatcher');
@@ -171,7 +188,7 @@ try{
  // A successfully acquired database lease permits recovery of only our recorded container IDs.
  try{const previous=JSON.parse(await readFile(path.join(stateRoot,'owned.json'),'utf8'));for(const id of previous.containers||[])if(/^[a-f0-9]{64}$/.test(id))owned.add(id);}catch{}
  await cleanup();
- timer=setInterval(async()=>{if(heartbeatBusy)return;heartbeatBusy=true;try{await control('heartbeat',current?{job:current.id}:{});}catch{stopping=true;}finally{heartbeatBusy=false;}},15000);
+ timer=setInterval(async()=>{if(heartbeatBusy)return;heartbeatBusy=true;try{await control('heartbeat',current?{job:current.id}:{});heartbeatFailures=0;}catch(error){heartbeatFailures++;if(heartbeatFailures>=3||error.message.includes('409'))stopping=true;}finally{heartbeatBusy=false;}},15000);
  const selection=process.argv.find(x=>x.startsWith('--tour='));
  const tour=selection?selection.slice(7).split(','):process.argv.includes('--tour')?catalog.families.map(f=>f.id):null;
  if(tour?.some(id=>!catalog.families.some(f=>f.id===id)))throw Error('Unknown demonstration family');
@@ -180,7 +197,10 @@ try{
   try{await access(stopFile);stopping=true;}catch{}
   if(stopping)break;
   if(tour?.length)await control('seed',{family:tour[0]});
-  const {job}=await control('claim');if(job){await perform(job);if(tour?.[0]===job.family)tour.shift();}else if(tour)break;else await sleep(1200);
+  let job;
+  try{({job}=await control('claim'));claimFailures=0;}
+  catch(error){if(tour||++claimFailures>=5||error.message.includes('409'))throw error;await log('Loopback temporarily unavailable; bounded retry '+claimFailures);await sleep(4000);continue;}
+  if(job){await perform(job);if(tour?.[0]===job.family)tour.shift();}else if(tour||process.argv.includes('--drain'))break;else await sleep(1200);
   if(tour&&!tour.length)break;
  }
 }finally{clearInterval(timer);if(leased){await cleanup();await control('release').catch(()=>{});await writeFile(path.join(stateRoot,'latest-report.json'),JSON.stringify(report,null,2),{mode:0o600});}}

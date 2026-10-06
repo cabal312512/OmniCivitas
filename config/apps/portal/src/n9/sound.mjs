@@ -12,7 +12,7 @@ function start(audio,channel,src){
  audio.play().then(()=>{if(job===serial[channel])mark(channel,true);}).catch(error=>{if(job!==serial[channel]||error.name==='AbortError')return;mark(channel,false);message('音频未能播放');});
 }
 export function playCue(){start(cue,'cue','/forgotten-cache/audio/spring.mp3');}
-export function playRandomMusic(){const value=crypto.getRandomValues(new Uint32Array(1))[0]%4;state.music.index=value;start(music,'music',`/forgotten-cache/audio/${value}.mp3`);}
+export function playRandomMusic(){const value=crypto.getRandomValues(new Uint32Array(1))[0]%5;state.music.index=value;start(music,'music',`/forgotten-cache/audio/${value}.mp3`);}
 for(const [name,audio] of [['cue',cue],['music',music]]){
  audio.addEventListener('ended',()=>mark(name,false));
  audio.addEventListener('error',()=>{mark(name,false);message('音频未能播放');});

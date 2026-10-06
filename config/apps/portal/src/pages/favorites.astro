@@ -1,0 +1,13 @@
+---
+import Layout from '../q9/Layout.astro';
+import Resident from '../q9/Resident.astro';
+import Awards from '../q9/Awards.astro';
+---
+<Layout title="收藏夹" kind="saved">
+ <Resident/><Awards/>
+ <div class="q9-collection-top"><h1>收藏夹 <small data-desk-total>0</small></h1><input data-favorite-filter type="search" maxlength="80" aria-label="筛选收藏" placeholder="筛选"/><button data-picker="favorite">添加 ＋</button><button data-favorite-export>导出</button><label>导入<input data-favorite-import type="file" accept="application/json,.json"/></label><a href="/workspace/">工作台 ↗</a></div>
+ <nav class="q9-folder-tabs"><button data-folder-view="all">全部</button><button data-folder-view="default">未分类</button><button data-folder-view="tools">工具</button><button data-folder-view="pages">页面</button><small data-desk-storage>本地</small></nav>
+ <div class="q9-board-scroll"><section class="q9-collection-board"><div class="q9-collection-column" data-folder-column="default"><header>未分类 <span>▾</span></header><div data-favorite-list="default"></div></div><div class="q9-collection-column" data-folder-column="tools"><header>工具 <span>▦</span></header><div data-favorite-list="tools"></div></div><div class="q9-collection-column" data-folder-column="pages"><header>页面 <span>↗</span></header><div data-favorite-list="pages"></div></div></section></div>
+ <aside class="q9-preview" data-desk-window><header data-desk-handle>属性 <button data-desk-close aria-label="关闭属性">×</button></header><dl><dt>名称</dt><dd data-preview-title>—</dd><dt>位置</dt><dd data-preview-url>—</dd><dt>类型</dt><dd data-preview-group>—</dd></dl><div class="q9-preview-grid"></div><a data-preview-open hidden>打开 ↗</a></aside>
+ <div class="q9-footer-shelf"><span>60</span><div></div><a href="/maze/table/">一覧</a><i></i></div><output class="q9-status" data-desk-status role="status"></output>
+</Layout>

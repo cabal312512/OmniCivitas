@@ -2,13 +2,14 @@
 import './p2.css';
 const {kind='voice'}=Astro.props;
 const voice=kind==='voice';
+const still=kind==='still',id=voice?'7':still?'9':'8';
 ---
-<section class:list={['p2-frame',voice?'p2-frame-7':'p2-frame-8']} data-p2-frame={voice?'7':'8'} aria-label={voice?'images (7)':'图片 8'}>
+<section class:list={['p2-frame',`p2-frame-${id}`]} data-p2-frame={id} aria-label={voice?'images (7)':`图片 ${id}`}>
  <header class="p2-header">
   <button type="button" class="p2-handle" data-p2-handle aria-label="移动图片窗口"><svg viewBox="0 0 24 16" aria-hidden="true"><path d="M3 5h18M3 10h18"/></svg></button>
   <button type="button" class="p2-close" data-p2-close aria-label="关闭图片窗口">×</button>
  </header>
- {voice?<button type="button" class="p2-image-button" data-p2-play aria-label="播放 images (7) 语音"><img src="/forgotten-cache/p2/7.jpg" width="165" height="165" alt="images (7)" decoding="async"/></button>:<img class="p2-image" src="/forgotten-cache/p2/8.gif" width="229" height="239" alt="图片 8" decoding="async"/>}
+ {voice?<button type="button" class="p2-image-button" data-p2-play aria-label="播放 images (7) 语音"><img src="/forgotten-cache/p2/7.jpg" width="165" height="165" alt="images (7)" decoding="async"/></button>:still?<button type="button" class="p2-image-button" data-p2-play aria-label="播放音效"><img src="/forgotten-cache/p2/9.jpg" width="335" height="600" alt="图片 9" decoding="async"/></button>:<img class="p2-image" src="/forgotten-cache/p2/8.gif" width="229" height="239" alt="图片 8" decoding="async"/>}
  <output class="p2-playback" data-p2-status aria-live="polite"></output>
 </section>
 <script>import './p2.mjs';</script>
