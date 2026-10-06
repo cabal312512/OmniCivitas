@@ -1,7 +1,7 @@
 import {test,expect} from 'vitest';
 import {createRequire} from 'node:module';
 import {randomUUID} from 'node:crypto';
-import {mkdtemp,mkdir,readdir,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,readdir,rm,symlink,unlink} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 const require=createRequire(import.meta.url);
@@ -30,4 +30,19 @@ test('database-approved programs really execute from a generated file without le
   await expect(executeProgram(folder,randomUUID(),'a',source,sha(source),input())).rejects.toThrow(/approved-source/);
   expect(await readdir(folder)).toEqual([]);
  }finally{const resolved=path.resolve(folder);if(!resolved.startsWith(path.resolve(root)+path.sep))throw Error('Unsafe test cleanup path');await rm(resolved,{recursive:true,force:true});}
+},10000);
+
+test('generated program permissions work through a directory alias and retain cleanup',async()=>{
+ const root=process.env.OCV_DEPS_ROOT||os.tmpdir();await mkdir(path.join(root,'tmp'),{recursive:true});
+ const folder=await mkdtemp(path.join(root,'tmp/after-alias-'));
+ const target=path.join(folder,'actual'),alias=path.join(folder,'alias');
+ try{
+  await mkdir(target);await symlink(target,alias,process.platform==='win32'?'junction':'dir');
+  const source=programs.a,result=await executeProgram(alias,randomUUID(),'a',source,sha(source),input());
+  expect(result.feature).toBe('json');expect(await readdir(target)).toEqual([]);
+ }finally{
+  await unlink(alias).catch(error=>{if(error.code!=='ENOENT')throw error;});
+  const resolved=path.resolve(folder);if(!resolved.startsWith(path.resolve(root)+path.sep))throw Error('Unsafe test cleanup path');
+  await rm(resolved,{recursive:true,force:true});
+ }
 },10000);

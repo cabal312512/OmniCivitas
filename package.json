@@ -11,7 +11,7 @@
     "ledger:sync": "node scripts/generate-ledgers.mjs",
     "ledger:check": "node scripts/check-ledgers.mjs",
     "build": "nx run-many -t build --parallel=1",
-    "test": "vitest run --maxWorkers=1 && node --test tests/research-display.test.mjs",
+    "test": "vitest run --maxWorkers=1 && node --test tests/research-display.test.mjs tests/q8.test.mjs tests/profile-boundary.test.mjs",
     "test:e2e": "playwright test",
     "civilization:dev": "node scripts/local-runtime.mjs dev",
     "civilization:serve": "node scripts/local-runtime.mjs serve",

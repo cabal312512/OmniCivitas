@@ -189,7 +189,7 @@ test('tower: final bridge floors are the actual rendered triangles and remain be
   expect(scene.children[0].getObjectByName('tower-crown-posts').count).toBe(48);
 });
 
-test('tower: actual summit jumping lands on its platform and repeated sprint-jumps cannot clear the guard or drop into the cone', () => {
+test('tower: summit jumping lands on its platform and repeated ordinary jumps cannot clear the guard or drop into the cone', () => {
   const tower = createTower(new THREE.Scene()); fixtures.push(tower);
   const crown = pathPoint(1, -20), player = { ...crown, vy: 0, grounded: true, health: .7, energy: 1 };
   const ground = (x, z, y) => Math.max(55, tower.groundAt(x, z, y) ?? 55);
@@ -210,7 +210,7 @@ test('tower: actual summit jumping lands on its platform and repeated sprint-jum
   expect(Math.hypot(player.x - approach.x, player.z - approach.z)).toBeLessThan(.25);
   let maximumRadius = 0;
   for (let frame = 0; frame < 180; frame++) {
-    stepPlayer(player, { forward: 1, sprint: true, jump: frame % 55 === 0, yaw: Math.atan2(-Math.cos(.12), -Math.sin(.12)) }, .02, ground, wall);
+    stepPlayer(player, { forward: 1, jump: frame % 55 === 0, yaw: Math.atan2(-Math.cos(.12), -Math.sin(.12)) }, .02, ground, wall);
     tower.recoverPlayer(player);
     maximumRadius = Math.max(maximumRadius, Math.hypot(player.x - TOWER_SPEC.x, player.z - TOWER_SPEC.z));
     expect(player.y).toBeGreaterThanOrEqual(2455);

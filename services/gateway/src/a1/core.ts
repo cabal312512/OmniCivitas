@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
 import {spawn} from 'node:child_process';
-import {writeFile,unlink} from 'node:fs/promises';
+import {writeFile,unlink,realpath} from 'node:fs/promises';
 import path from 'node:path';
 
 export const sha=(value:string|Buffer)=>createHash('sha256').update(value).digest('hex');
@@ -40,12 +40,15 @@ export function decodePiece(piece:unknown){
 export async function executeProgram(folder:string,id:string,name:string,source:string,hash:string,input:AfterInput){
   verifyProgram(name,source,hash);
   if(!uuid.test(id))throw Error('Invalid generated filename');
-  const file=path.join(folder,`${id}.mjs`);
+  // Permission grants and module loading must use the same canonical path,
+  // including macOS /var -> /private/var and Windows directory junctions.
+  const directory=await realpath(folder);
+  const file=path.join(directory,`${id}.mjs`);
   await writeFile(file,source,{flag:'wx',mode:0o600});
   try {
     return await new Promise<unknown>((resolve,reject)=>{
       const child=spawn(process.execPath,['--permission',`--allow-fs-read=${file}`,'--max-old-space-size=32',file],{
-        cwd:folder,env:process.platform==='win32'?{SystemRoot:process.env.SystemRoot||'',NODE_NO_WARNINGS:'1'}:{NODE_NO_WARNINGS:'1'},
+        cwd:directory,env:process.platform==='win32'?{SystemRoot:process.env.SystemRoot||'',NODE_NO_WARNINGS:'1'}:{NODE_NO_WARNINGS:'1'},
         windowsHide:true,stdio:['pipe','pipe','pipe']
       });
       let out='',err='',settled=false;
