@@ -75,7 +75,7 @@ cd research/finite-memory-rsa
 node scripts/reproduce.mjs --profile quick --output ../rsa-check
 ```
 
-The output directory must not already exist. Manuscript sources, scientific figures, data and original seals are published. **Compiled paper PDFs are excluded**, including from regenerated website download bundles. The original seal still lists the omitted PDF; [the publication policy](config/research-publication.json) declares its path, original hash and size. This is a documented subset of the sealed archive, not a new scientific seal. Author-only research briefs are also excluded from the public subset and retained locally. Figure PDFs remain available. No new experiments or PDFs were generated for this release.
+The output directory must not already exist. Manuscript sources, scientific figures, data and original seals are publis sealed archive, not a new scientifi lic subset and retained locally. 
 
 With these distinctions, the next step in relating the operational trace hierarchy to the full joint capability region would be to
 The web interface uses Astro, Next.js, Angular and NestJS. Ordinary development, builds and primary features work without the entire infrastructure stack. Docker starts only core by default.
