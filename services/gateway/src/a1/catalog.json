@@ -1,18 +1,292 @@
 {
   "families": [
-    {"id":"relay","title":"JPA / SQLAlchemy / Eloquent","steps":[["spring"],["fastapi"],["mysql","laravel"]]},
-    {"id":"grpc","title":"gRPC","steps":[["spring","fastapi"]]},
-    {"id":"analysis","title":"DuckDB","steps":[["fastapi"]]},
-    {"id":"go","title":"Fiber","steps":[["fiber"]]},
-    {"id":"soap","title":"SOAP","steps":[["dotnet"]]},
-    {"id":"ruby","title":"Sinatra","steps":[["sinatra"]]},
-    {"id":"object","title":"GraphQL / S3","steps":[["hono","minio"]]},
-    {"id":"mongo","title":"MongoDB","steps":[["mongo"]]},
-    {"id":"search","title":"Elasticsearch","steps":[["elasticsearch"]]},
-    {"id":"messages","title":"AMQP / Kafka / Mongoose","steps":[["rabbitmq","kafka","mongo","message-bridge","message-consumer"]]},
-    {"id":"monitor","title":"OTel / Prometheus / Grafana","steps":[["otel","prometheus","grafana"]]},
-    {"id":"next","title":"Next / Prisma / TypeORM","steps":[[]]},
-    {"id":"signal","title":"Redis / JPA / Mongoose","steps":[["spring","kafka","mongo","message-consumer"]]}
+    {
+      "id": "relay",
+      "title": "JPA / SQLAlchemy / Eloquent",
+      "steps": [
+        [
+          "spring"
+        ],
+        [
+          "fastapi"
+        ],
+        [
+          "mysql",
+          "laravel"
+        ]
+      ]
+    },
+    {
+      "id": "grpc",
+      "title": "gRPC",
+      "steps": [
+        [
+          "spring",
+          "fastapi"
+        ]
+      ]
+    },
+    {
+      "id": "analysis",
+      "title": "DuckDB",
+      "steps": [
+        [
+          "fastapi"
+        ]
+      ]
+    },
+    {
+      "id": "go",
+      "title": "Fiber",
+      "steps": [
+        [
+          "fiber"
+        ]
+      ]
+    },
+    {
+      "id": "soap",
+      "title": "SOAP",
+      "steps": [
+        [
+          "dotnet"
+        ]
+      ]
+    },
+    {
+      "id": "ruby",
+      "title": "Sinatra",
+      "steps": [
+        [
+          "sinatra"
+        ]
+      ]
+    },
+    {
+      "id": "object",
+      "title": "GraphQL / S3",
+      "steps": [
+        [
+          "hono",
+          "minio"
+        ]
+      ]
+    },
+    {
+      "id": "mongo",
+      "title": "MongoDB",
+      "steps": [
+        [
+          "mongo"
+        ]
+      ]
+    },
+    {
+      "id": "search",
+      "title": "Elasticsearch",
+      "steps": [
+        [
+          "elasticsearch"
+        ]
+      ]
+    },
+    {
+      "id": "messages",
+      "title": "AMQP / Kafka / Mongoose",
+      "steps": [
+        [
+          "rabbitmq",
+          "kafka",
+          "mongo",
+          "message-bridge",
+          "message-consumer"
+        ]
+      ]
+    },
+    {
+      "id": "monitor",
+      "title": "OTel / Prometheus / Grafana",
+      "steps": [
+        [
+          "otel",
+          "prometheus",
+          "grafana"
+        ]
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Next / Prisma / TypeORM",
+      "steps": [
+        []
+      ]
+    },
+    {
+      "id": "signal",
+      "title": "Redis / JPA / Mongoose",
+      "steps": [
+        [
+          "spring",
+          "kafka",
+          "mongo",
+          "message-consumer"
+        ]
+      ]
+    },
+    {
+      "id": "circuits",
+      "title": "Signals laboratory",
+      "steps": [
+        [
+          "spring",
+          "fiber"
+        ],
+        [
+          "signals-native"
+        ],
+        [
+          "fastapi"
+        ],
+        [
+          "fiber"
+        ],
+        [
+          "fastapi"
+        ],
+        [
+          "sinatra",
+          "dotnet"
+        ],
+        [
+          "minio"
+        ],
+        [
+          "mysql",
+          "laravel",
+          "sinatra"
+        ]
+      ]
+    },
+    {
+      "id": "mechanical",
+      "title": "Mechanical workshop",
+      "steps": [
+        [
+          "dotnet"
+        ],
+        [
+          "mechanics-native"
+        ],
+        [
+          "dotnet"
+        ],
+        [
+          "fiber"
+        ],
+        [
+          "fastapi"
+        ],
+        [
+          "sinatra",
+          "dotnet"
+        ],
+        [
+          "minio"
+        ],
+        [
+          "mysql",
+          "laravel",
+          "sinatra"
+        ]
+      ]
+    },
+    {
+      "id": "music-report",
+      "title": "Shared music report",
+      "steps": [
+        [],
+        [],
+        [],
+        [
+          "fiber"
+        ],
+        [
+          "fastapi"
+        ],
+        [
+          "sinatra",
+          "dotnet"
+        ],
+        [
+          "minio"
+        ],
+        [
+          "mysql",
+          "laravel",
+          "sinatra"
+        ]
+      ]
+    },
+    {
+      "id": "shared",
+      "title": "Project exchange",
+      "steps": [
+        [],
+        [
+          "fiber",
+          "minio"
+        ]
+      ]
+    },
+    {
+      "id": "site-music",
+      "title": "Audio render",
+      "steps": [
+        [
+          "site-audio"
+        ]
+      ]
+    },
+    {
+      "id": "site-projection",
+      "title": "Site projection",
+      "steps": [
+        [
+          "site-projection"
+        ]
+      ]
+    },
+    {
+      "id": "site-certificate",
+      "title": "Tool certificate",
+      "steps": [
+        [
+          "site-certificate"
+        ]
+      ]
+    },
+    {
+      "id": "site-index",
+      "title": "Site index",
+      "steps": [
+        [
+          "site-index"
+        ]
+      ]
+    }
   ],
-  "features": {"json":"relay","csv":"analysis","calculator":"go","xml":"soap","regex":"ruby","base64":"messages","uuid":"next","sqlite":"mongo","markdown":"object","hash":"search","pipeline":"monitor","json-patch":"grpc"}
+  "features": {
+    "json": "relay",
+    "csv": "analysis",
+    "calculator": "go",
+    "xml": "soap",
+    "regex": "ruby",
+    "base64": "messages",
+    "uuid": "next",
+    "sqlite": "mongo",
+    "markdown": "object",
+    "hash": "search",
+    "pipeline": "monitor",
+    "json-patch": "grpc"
+  }
 }

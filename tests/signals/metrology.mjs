@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
+const require=createRequire(path.join(root,'config/apps/ng/package.json')),{transpileModule,ModuleKind,ScriptTarget}=require('typescript');
+const scratch=fs.mkdtempSync(path.join(os.tmpdir(),'ocv-metrology-'));
+try{
+ const source=fs.readFileSync(path.join(root,'config/apps/ng/config2/metrology.ts'),'utf8');
+ const output=path.join(scratch,'metrology.mjs');fs.writeFileSync(output,transpileModule(source,{compilerOptions:{module:ModuleKind.ES2022,target:ScriptTarget.ES2022}}).outputText);
+ const {circuitMeasurements,measurementCSV}=await import(pathToFileURL(output));
+ const project=kind=>({name:'Metrology fixture',analysis:{kind}});
+ const result=rows=>({ok:true,engine:'known-fixture',version:'1',diagnostics:[],nodes:['0','in','out'],rows});
+ const get=(report,id)=>report.metrics.find(item=>item.id===id).value;
+ const near=(actual,expected,tolerance=1e-9)=>assert.ok(Math.abs(actual-expected)<=tolerance,`${actual} ≉ ${expected}`);
+ const ramp=circuitMeasurements(result([{t:0,values:{out:0},branches:{}},{t:1,values:{out:2},branches:{}},{t:3,values:{out:2},branches:{}}]),project('transient'),'out','in');
+ near(get(ramp,'mean'),5/3);near(get(ramp,'rms'),Math.sqrt(28/9));
+ const rc=duration=>result(Array.from({length:1001},(_,index)=>{const t=duration*index/1000;return {t,values:{out:5*(1-Math.exp(-t/.001))},branches:{}}}));
+ const settled=circuitMeasurements(rc(.01),project('transient'),'out','in');
+ near(get(settled,'transition'),Math.log(9)*.001,1e-6);near(get(settled,'settling'),Math.log(50)*.001,3e-6);
+ const incomplete=circuitMeasurements(rc(.0001),project('transient'),'out','in');assert.equal(get(incomplete,'transition'),null);assert.equal(get(incomplete,'settling'),null);
+ const dc=circuitMeasurements(result([{values:{'0':0,in:5,out:2.5},branches:{V1:-.0025,R1:.0025}}]),project('dc'),'out','in');
+ near(dc.nodes.find(item=>item.id==='out').value,2.5);near(dc.branches.find(item=>item.id==='V1').value,-.0025);
+ const ac=result(Array.from({length:601},(_,index)=>{const frequencyHz=10**(-2+index*5/600),x=2*Math.PI*frequencyHz*.001;return {frequencyHz,values:{in:{re:0,im:2,magnitude:2,phaseDeg:90},out:{re:2*x/(1+x*x),im:2/(1+x*x),magnitude:2/Math.sqrt(1+x*x),phaseDeg:90-Math.atan(x)*180/Math.PI}},branches:{}}}));
+ const transfer=circuitMeasurements(ac,project('ac'),'out','in');near(get(transfer,'minus-three-crossing'),159.15,.5);near(transfer.gain[0].phaseDeg,-Math.atan(2*Math.PI*.01*.001)*180/Math.PI,1e-10);
+ const noReference=circuitMeasurements(result([{frequencyHz:10,values:{in:0,out:1},branches:{}}]),project('ac'),'out','in');assert.equal(get(noReference,'baseline-gain'),null);assert.equal(get(noReference,'minus-three-crossing'),null);
+ assert.ok(measurementCSV(dc).includes('"branch","V1","-0.0025","A"'));
+ console.log(JSON.stringify({ok:true,nonuniformTime:{mean:get(ramp,'mean'),rms:get(ramp,'rms')},settledRC:{riseS:get(settled,'transition'),settlingS:get(settled,'settling')},incompleteUnavailable:true,signedDCBranch:true,complexAC:{crossingHz:get(transfer,'minus-three-crossing'),initialPhaseDeg:transfer.gain[0].phaseDeg},zeroReferenceUnavailable:true}));
+}finally{if(path.dirname(path.resolve(scratch))!==path.resolve(os.tmpdir())||!path.basename(scratch).startsWith('ocv-metrology-'))throw Error('Unexpected temporary directory');fs.rmSync(scratch,{recursive:true,force:true});}

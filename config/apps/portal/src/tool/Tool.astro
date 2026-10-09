@@ -15,19 +15,20 @@ import '../game/1.css';
 import '../misc/3.css';
 import './work.css';
 const {tool,index}=Astro.props;
+const inputOnly=tool.ui==='input-only';
 const nearby=[tools[(index+7)%tools.length],tools[(index+1)%tools.length],tools[(index+19)%tools.length]];
 ---
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#f8fbfd"/><meta http-equiv="Content-Security-Policy" content="object-src 'none'; frame-src 'self'; form-action 'none'; base-uri 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self' blob:"/><title>{tool.title} · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head>
-<body class={`maze-page tool-page tool-layout-${index%5} ${tool.ui==='music'?'music-detail':''}`} data-tool={tool.id}><Fragments/>
+<body class={`maze-page tool-page tool-layout-${index%5} ${tool.ui==='music'?'music-detail':''} ${inputOnly?'input-only-detail':''}`} data-tool={tool.id} data-tool-ui={tool.ui}><Fragments/>
  <OpticalBench />
  <div class="maze-background" aria-hidden="true"><div class="maze-halo"><Diagram variant={index%6} id={`tool-${index}`}/></div><div class="maze-background-grid"></div><span class="maze-bignum">{String(index+1).padStart(2,'0')}</span></div>
  <header class="maze-header"><a href="/#systems" aria-label="返回主页"><Identity id={`tool-${tool.id}`} compact/></a><span>OCV</span><SiteNav/><a href="/functions/" aria-label="工具目录">▦</a></header>
  <div class="tool-scroller"><main class="tool-floor">
   <nav class="tool-crumb"><a href="/functions/">工具</a><span>/</span>{nearby.map(other=><a href={toolLink(other)}>{other.title}</a>)}</nav>
-  <section class="maze-panel feature-panel tool-feature">
-   <div class="maze-title"><h1>{tool.title}</h1><button type="button" data-tool-front aria-label="工具窗口置顶">↥</button></div>
+  <section class="maze-panel feature-panel tool-feature" data-input-only={inputOnly?true:undefined}>
+   <div class="maze-title"><h1>{tool.title}</h1>{!inputOnly&&<button type="button" data-tool-front aria-label="工具窗口置顶">↥</button>}</div>
    {tool.notice&&<p class="tool-notice">{tool.notice}</p>}
-   {tool.ui==='music'?<iframe id="music-frame" src="/studio/panel/" title="音乐创作" allow="autoplay"/>:<><div class="work-toolbar"><button type="button" data-work="undo" title="撤销输入" aria-label="撤销输入">↶</button><button type="button" data-work="redo" title="重做输入" aria-label="重做输入">↷</button><button type="button" data-work="save">保存项目</button><label class="work-load">载入项目<input id="work-project" type="file" accept=".json,application/json"/></label><label class="work-load">导入文本<input id="work-text" type="file" accept="text/*,.json,.csv,.xml,.md,.sql"/></label><output id="work-note" role="status"></output></div>
+   {inputOnly?<div class="plain-text-input"><img src="/memes/text-input.jpg" alt="请输入文本" width="272" height="190"/><input type="text" aria-label="输入文本" autocomplete="off" spellcheck="false"/></div>:tool.ui==='music'?<iframe id="music-frame" src="/studio/panel/" title="音乐创作" allow="autoplay"/>:<><div class="work-toolbar"><button type="button" data-work="undo" title="撤销输入" aria-label="撤销输入">↶</button><button type="button" data-work="redo" title="重做输入" aria-label="重做输入">↷</button><button type="button" data-work="save">保存项目</button><label class="work-load">载入项目<input id="work-project" type="file" accept=".json,application/json"/></label><label class="work-load">导入文本<input id="work-text" type="file" accept="text/*,.json,.csv,.xml,.md,.sql"/></label><output id="work-note" role="status"></output></div>
    <form id="tool-form" novalidate>
     <div class="tool-fields">{tool.fields.map(field=><label class={`field-${field.type}`}><span>{field.label}</span>{field.type==='textarea'?<textarea name={field.key} maxlength="1048576" spellcheck="false">{field.default??''}</textarea>:field.type==='select'?<select name={field.key}>{field.options.map(option=><option value={option.value} selected={String(option.value)===String(field.default??field.options[0].value)}>{option.label}</option>)}</select>:field.type==='file'?<input name={field.key} type="file" accept={field.accept} multiple={field.multiple}/>:<input name={field.key} type={field.type==='number'?'number':'text'} step="any" value={field.default??''} spellcheck="false"/>}</label>)}</div>
     <div class="tool-actions"><button id="tool-run" type="submit">运行</button><button type="button" id="tool-example">示例</button><button type="button" id="tool-cancel" hidden>取消</button><output id="tool-status" role="status" aria-live="polite"></output></div>
@@ -36,18 +37,21 @@ const nearby=[tools[(index+7)%tools.length],tools[(index+1)%tools.length],tools[
    {tool.id==='image-compress'&&<details id="search-notice" class="tool-search-note"><summary>关于图片压缩功能搜索结果的说明</summary><p>在浏览器内处理。</p></details>}
    {tool.note&&<small class="tool-notice">{tool.note}</small>}
   </section>
-  <section class="maze-panel tool-result" aria-label="结果">
+  {!inputOnly&&<section class="maze-panel tool-result" aria-label="结果">
    <div class="maze-title"><span>结果</span><span aria-hidden="true">×</span></div>
    {tool.ui==='music'?<output id="music-receipt">0 音符</output>:<><div class="work-result-bar"><label>查找<input id="work-find" type="search" maxlength="128"/></label><button id="work-next" type="button">下一处</button><button id="work-wrap" type="button" aria-pressed="true">换行</button><button id="work-expand" type="button" aria-pressed="false">展开</button><output id="work-metrics"></output></div>
    <div id="tool-preview" hidden></div><div id="tool-table" hidden></div>
    <textarea id="tool-output" aria-label="输出" readonly spellcheck="false"></textarea>
    <div class="tool-result-actions"><button id="tool-copy" type="button" disabled>复制</button><button id="tool-export" type="button" disabled>导出</button><output id="tool-transfer" role="status"></output></div></>}
-  </section>
+   {['matrix','radix','json','csv'].includes(tool.id)&&<div data-tool-certificate class="tool-certificate"><button type="button" data-certificate-run disabled>查看记录</button><output data-certificate-note role="status" aria-live="polite"></output><details hidden><summary data-certificate-summary>核对记录</summary><ul data-certificate-checks></ul><button type="button" data-certificate-download="json" disabled>记录 JSON</button><button type="button" data-certificate-download="csv" disabled>记录 CSV</button></details></div>}
+  </section>}
   <section class="maze-panel route-panel tool-shortcuts"><div class="maze-title"><span>位置</span></div>{tools.filter(other=>other.group===tool.group).map((other,i)=><a href={toolLink(other)}><small>{String(i+1).padStart(2,'0')}</small>{other.title}</a>)}</section>
   <aside class="tool-inline-list"><span>{tool.group}</span>{nearby.map(other=><a href={toolLink(other)}>{other.title}</a>)}</aside>
   <Maintenance room={index+2}/>
  </main></div>
  <a class="maze-exit" href="/#systems" aria-label="退出工具返回主页">↖</a><a class="maze-index" href="/functions/" aria-label="打开全部工具">▦</a>
- <noscript><p class="tool-noscript">此工具需要 JavaScript。</p></noscript>
- <script>if(document.body.dataset.tool==='music-studio'){await import('../q9/music.mjs');}else{await import('./run.js');await import('./work.mjs');}</script>
+ {!inputOnly&&<noscript><p class="tool-noscript">此工具需要 JavaScript。</p></noscript>}
+ <script>if(document.body.dataset.tool==='music-studio'){await import('../q9/music.mjs');}else if(document.body.dataset.toolUi!=='input-only'){await import('./run.js');await import('./work.mjs');if(['matrix','radix','json','csv'].includes(document.body.dataset.tool))await import('../site1/tools.mjs');}</script>
+ <style>.input-only-detail .tool-feature{width:356px}.plain-text-input{display:grid;justify-items:center;gap:15px;padding:20px}.plain-text-input img{display:block;max-width:100%;height:auto}.plain-text-input input{box-sizing:border-box;width:100%;border:1px solid #a3b6d2;background:#f9fcff;color:#142f53;padding:9px;font:14px Arial}.plain-text-input input:focus{outline:1px solid #164dff;outline-offset:2px}</style>
+ <style>.tool-certificate{margin-top:9px;color:#45658a;font:12px Arial}.tool-certificate>output{margin-left:9px}.tool-certificate details{margin-top:7px;max-width:100%;overflow-wrap:anywhere}.tool-certificate ul{margin:8px 0;padding-left:20px}.tool-certificate li{margin:4px 0}.tool-certificate button{margin-right:5px}</style>
 </body></html>

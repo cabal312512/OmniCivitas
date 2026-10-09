@@ -1,5 +1,7 @@
 import {chromium} from '@playwright/test';import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';
-const base=process.env.OCV_BASE_URL||'http://127.0.0.1:8090',checks=[];
+import {verificationConfig} from './verification-config.mjs';
+const {baseUrl:base,reportRoot}=verificationConfig();const checks=[];
+fs.mkdirSync(reportRoot,{recursive:true});
 const check=(name,okay)=>{assert.ok(okay,name);checks.push(name);};
 const browser=await chromium.launch({headless:true}),page=await browser.newPage();
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -19,6 +21,6 @@ try{
  check('Native dev serves actual independently built Angular iframe',await page.frameLocator('iframe[title="审核小窗"]').locator('#angular-booleans').textContent()==='看过：false；就绪：false');
  const response=await page.request.get(base+'/api/auth/login');check('Native dev does not mount account routes',response.status()===404);
  check('Dev Astro/Next hydration has no browser errors',errors.length===0);
- fs.writeFileSync(path.join(process.env.OCV_DEPS_ROOT,'runtime/reports/phase3-dev.json'),JSON.stringify({status:'passed',updatedAt:new Date().toISOString(),base,checks,mode:'Actual Windows standard pnpm dev, optional wrapper supplies local cache paths; no database claim.',browser:await browser.version()},null,2));
+ fs.writeFileSync(path.join(reportRoot,'phase3-dev.json'),JSON.stringify({status:'passed',updatedAt:new Date().toISOString(),base,checks,mode:'Actual standard pnpm dev, optional runtime configuration supplies local cache paths; no database claim.',browser:await browser.version()},null,2));
  console.log('PASS: '+checks.length+' native pnpm dev checks.');
 }finally{await browser.close();}

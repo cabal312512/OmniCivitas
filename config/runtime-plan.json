@@ -5,6 +5,16 @@
     "build": 3072
   },
   "profiles": {
+    "circuits": {
+      "implementedInPhase": 10,
+      "services": [
+        "spring",
+        "fiber",
+        "signals-native",
+        "fastapi"
+      ],
+      "policy": "Optional laboratory workers; the host dispatcher executes preparation, native calculation and independent analysis in separate bounded batches."
+    },
     "core": {
       "implementedInPhase": 3,
       "services": [
@@ -63,9 +73,28 @@
     "everything": {
       "implementedInPhase": 2,
       "policy": "All real configurations remain; over-budget combinations run in batches."
+    },
+    "mechanics": {
+      "implementedInPhase": 11,
+      "services": [
+        "dotnet",
+        "mechanics-native"
+      ],
+      "policy": "Optional workshop workers; the existing host dispatcher runs C# validation, fixed Rust binary and C# review in three separate bounded batches."
+    },
+    "site-services": {
+      "implementedInPhase": 13,
+      "services": [
+        "site-audio",
+        "site-projection",
+        "site-certificate",
+        "site-index"
+      ],
+      "policy": "Existing dispatcher starts only the requested website worker, under the shared lease and enforced memory budget."
     }
   },
   "plannedOptionalLimitsMiB": {
+    "signals-native": 512,
     "mysql": 384,
     "mongo": 512,
     "minio": 192,
@@ -76,15 +105,20 @@
     "message-bridge": 192,
     "message-consumer": 256,
     "spring": 512,
-    "fastapi": 256,
+    "fastapi": 512,
     "laravel": 256,
-    "fiber": 64,
-    "dotnet": 192,
+    "fiber": 128,
+    "dotnet": 256,
     "sinatra": 96,
     "otel": 128,
     "prometheus": 192,
     "grafana": 192,
-    "next": 512
+    "next": 512,
+    "mechanics-native": 512,
+    "site-audio": 256,
+    "site-projection": 256,
+    "site-certificate": 256,
+    "site-index": 384
   },
   "plannedHeapMiB": {
     "elasticsearch": 384,

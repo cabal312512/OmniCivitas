@@ -3,13 +3,18 @@ from datetime import datetime, timezone, timedelta
 from concurrent import futures
 from pathlib import Path
 import grpc, duckdb, httpx, yaml
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from sqlalchemy import create_engine, text
 import rice_pb2, rice_pb2_grpc
+from desk.aaa import analyze as stock_analyze, sweep_plan, sweep_analysis, InvoiceError
+from desk.old import Config as DataConfig
+from desk.backup2 import mount_shared
 
 DATA=Path('/ocv-data'); DATA.mkdir(exist_ok=True)
 engines={name:create_engine(f'sqlite:///{DATA/name}',connect_args={'check_same_thread':False}) for name in ['postgres.sqlite','mysql.sqlite','redis.sqlite']}
+signal_data=DataConfig(engines['redis.sqlite'])
+signal_gate=threading.BoundedSemaphore(1)
 for engine in engines.values():
  with engine.begin() as db: db.execute(text('CREATE TABLE IF NOT EXISTS warehouse_stock (root_id TEXT, product_name TEXT, misplaced_time TEXT, unchecked_decoration TEXT)'))
 def sqlite_stamp(root,label,iso,decoration=None):
@@ -84,8 +89,49 @@ def music_analysis(take:MusicTake):
    sqlite.execute(text('INSERT OR REPLACE INTO piano_analysis VALUES(:i,:s)'),{'i':take.root,'s':json.dumps(result)})
    sqlite.execute(text('DELETE FROM piano_analysis WHERE rowid NOT IN(SELECT rowid FROM piano_analysis ORDER BY rowid DESC LIMIT 128)'))
   return {'canContinue':True,**result,'sources':['PostgreSQL','DuckDB','SQLAlchemy','redis.sqlite']}
+class InvoiceReply(BaseModel):
+ kind:str=Field(pattern=r'^(circuit|communication|network|digital)$')
+ request:dict
+ result:dict
+class ConfigStock(BaseModel):
+ request:dict
+ levels:list[float]=Field(min_length=1,max_length=9)
+class AnalysisStock(BaseModel):
+ cases:list[dict]=Field(min_length=1,max_length=9)
+@app.get('/signals/health')
+def signal_health():
+ return {'ok':True,'engine':'python-ce3','version':'1.1.0','roles':['independent-analytic-reference','KCL/KVL','RC/RL','BPSK/QPSK/BFSK/CRC/statistics','synchronous-DFF/JKFF','discrete-network-events'],'limits':{'envelopeBytes':8388608,'components':128,'nativeRows':262144,'checkedRows':384,'referenceRows':512,'sweepCases':9,'networkNodes':64,'networkLinks':128,'networkFlows':16,'networkEvents':65536},'nativeExecution':False}
+@app.post('/signals/analyze')
+def signal_analysis(value:InvoiceReply):
+ if not signal_gate.acquire(blocking=False):raise HTTPException(status_code=503,detail='The bounded analysis worker is busy')
+ try:
+  report=stock_analyze(value.kind,value.request,value.result)
+  report['audit']=signal_data.delete(report)
+  return report
+ except InvoiceError as error:raise HTTPException(status_code=422,detail=str(error)) from None
+ finally:signal_gate.release()
+@app.get('/signals/audit/{identity}')
+def signal_audit(identity:str):
+ report=signal_data.restore(identity)
+ if report is None:raise HTTPException(status_code=404,detail='Analysis receipt is unavailable or expired')
+ return report
+@app.post('/signals/sweep-plan')
+def signal_plan(value:ConfigStock):
+ try:return sweep_plan(value.request,value.levels)
+ except InvoiceError as error:raise HTTPException(status_code=422,detail=str(error)) from None
+@app.post('/signals/sweep-analysis')
+def signal_sweep(value:AnalysisStock):
+ if not signal_gate.acquire(blocking=False):raise HTTPException(status_code=503,detail='The bounded analysis worker is busy')
+ try:
+  report=sweep_analysis(value.cases)
+  for case in report['cases']:case['audit']=signal_data.delete(case)
+  return report
+ except InvoiceError as error:raise HTTPException(status_code=422,detail=str(error)) from None
+ finally:signal_gate.release()
 @app.on_event('shutdown')
 def shutdown():server.stop(1)
 
 def cabal312512():
  return 43
+
+shared_analysis=mount_shared(app,engines['redis.sqlite'],signal_gate)

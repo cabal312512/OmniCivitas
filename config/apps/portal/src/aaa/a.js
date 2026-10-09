@@ -4,7 +4,7 @@ const on=(el,type,fn,options={})=>el?.addEventListener(type,fn,{...options,signa
 const svgNS='http://www.w3.org/2000/svg';
 const lens=document.querySelector('[data-optical-lens]'),cables=document.querySelector('.loose-cables');
 const wires=[...cables.querySelectorAll('.loose-wire')],sparks=[...cables.querySelectorAll('.loose-spark')];
-const panels=[...document.querySelectorAll('.wrong-window,.maintenance-fragments>section,.panel-new,.optics-panel,.portal-weather,.portal-news,.portal-login-card,.portal-countdown,.portal-tree,.maze-panel,.maze-toast,.light-islands>section,.light-note')];
+const panels=[...document.querySelectorAll('.wrong-window,.maintenance-fragments>section,.panel-new,.optics-panel,.portal-weather,.portal-news,.portal-login-card,.portal-countdown,.portal-tree,.maze-panel,.maze-toast,.light-islands>section,.light-note')].filter(node=>!node.hasAttribute('data-input-only'));
 const records=new Map(),animations=new Set(),sparkAnimations=new Map();
 const state=window.__ocvLoose={windows:panels.length,dragCount:0,jolts:0,autoJolts:0,autoMoving:0,autoShivering:0,runaways:0,closed:0,pulses:0,bitChanges:0,ticks:0,runningFrames:0,runningWindows:0,directionChanges:0,suspended:document.hidden,disposed:false};
 let raf=0,stack=110,drag=null,lensX=0,lensY=0,sparkIndex=0,lensTurns=0,lastTick=performance.now();
@@ -72,7 +72,7 @@ for(const [i,node] of panels.entries()){
   const oldCross=header.querySelector(':scope>span:last-child');if(oldCross?.textContent.includes('×')){oldCross.removeAttribute('aria-hidden');oldCross.setAttribute('role','button');oldCross.tabIndex=0;oldCross.dataset.looseClose='';oldCross.setAttribute('aria-label',`关闭${label}`);on(oldCross,'click',()=>close(node));on(oldCross,'keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();close(node);}});}
  }
  on(shake,'click',event=>{jolt(node);pulse(event.clientX,event.clientY,.3);});on(runner,'click',()=>run(node));on(dismiss,'click',()=>close(node));
- on(node,'pointermove',event=>{const r=node.getBoundingClientRect();node.style.setProperty('--local-x',event.clientX-r.left+'px');node.style.setProperty('--local-y',event.clientY-r.top+'px');},{passive:true});
+ on(node,'pointermove',event=>{const r=node.getBoundingClientRect(),s=Math.max(.01,parseFloat(getComputedStyle(node).scale)||1);node.style.setProperty('--local-x',(event.clientX-r.left)/s+'px');node.style.setProperty('--local-y',(event.clientY-r.top)/s+'px');},{passive:true});
  if(node.matches('.window-ghost'))bindEscape(node,node.querySelector(':scope>button'));
  if(node.matches('.window-toast')){const bs=node.querySelectorAll(':scope>button');on(bs[0],'click',()=>run(node));on(bs[1],'click',()=>close(node));}
  if(node.matches('.floating-panel'))node.querySelectorAll('.fake-actions button').forEach((b,n)=>{if(n)bindEscape(node,b);else on(b,'click',()=>close(node));});

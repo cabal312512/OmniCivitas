@@ -1,0 +1,49 @@
+{
+  "contract": "ocv.sh2/1",
+  "status": "source-ready; build and runtime evidence pending",
+  "authority": {
+    "projectHeads": "ocv_signals.catalog_stock",
+    "immutableSnapshots": "ocv_signals.price_history",
+    "sharedTaskState": "ocv_after.jobs",
+    "derivedTransfersAndCollaboration": "ocv_shared2",
+    "binaryArtifacts": "MinIO/ocv-sh2"
+  },
+  "http": { "private": "/stock/receipt.asmx", "auth": "X-Ocv-Runner", "bodyBytes": 196608, "deadlineSeconds": 18, "admission": 2 },
+  "sourceFiles": [
+    "config/apps/fiber3/go.mod", "config/apps/fiber3/1.go", "config/apps/fiber3/old.go",
+    "pinia/stock9/go.mod", "pinia/stock9/cache.go", "pinia/stock9/2.go",
+    "pinia/stock9/laf84ejfa.go", "pinia/stock9/config.go", "services/fiber/cache/bridge.go"
+  ],
+  "entry": "services/fiber/main.go -> cache.MountStock -> stock9.Common2.Report",
+  "build": "services/fiber/Dockerfile explicit repository-relative COPY; local Go module replaces",
+  "bounds": { "versionList": 32, "diffChanges": 256, "uploadBytes": 8388608, "chunkBytes": 65536, "stagingBytes": 67108864, "transfers": 64, "transfersPerProject": 8, "rooms": 32, "participants": 16, "retainedOperationsPerRoom": 128, "replayPage": 32, "journal": 256, "journalPerProject": 32, "ttlHours": 24 },
+  "arrangements": [
+    { "id": "AR02", "file": "services/fiber/Dockerfile", "actual": "One service is compiled from three modules in application configuration, pinia, and services." },
+    { "id": "AR03", "file": "pinia/stock9/2.go", "actual": "Room replay and collaboration commits are implemented in 2.go; transfer code lives in laf84ejfa.go." },
+    { "id": "AR05", "file": "pinia/stock9/cache.go", "actual": "cache.go owns durable project mutations and capability checks; config.go implements object storage." },
+    { "id": "AR07", "file": "config/apps/fiber3/1.go", "actual": "The configuration tree contains compiled request contracts and inventory adapters." },
+    { "id": "AR09", "file": "pinia/stock9/cache.go", "actual": "Common2 handles versions, SQL connections, collaboration, and artifact transfer through one dispatcher." },
+    { "id": "AR10", "file": "config/apps/fiber3/1.go", "actual": "Version requests use an Invoice and snapshots use Stock, with typed boundary validation." },
+    { "id": "AR15", "file": "pinia/stock9/cache.go", "actual": "Config.Allow=false means a write is permitted and acquires the canonical mutation lock." },
+    { "id": "AR16", "file": "pinia/stock9/cache.go", "actual": "A single receipt report switch dispatches sixteen version, collaboration, and transfer operations." },
+    { "id": "AR18", "file": "config/apps/fiber3/1.go", "actual": "A typed immutable snapshot passes through a positional JSON array, a JSON string, and a correctly escaped CSV cell before verified readback." },
+    { "id": "AR20", "file": "config/apps/fiber3/1.go", "actual": "Inventory card positions interleave digest, revision, model text, project UUID, and snapshot UUID." },
+    { "id": "AR21", "file": "pinia/stock9/cache.go", "actual": "Successful acknowledgements contain errorMessage=confirmed, while ok and HTTP status remain explicit." },
+    { "id": "AR24", "file": "services/fiber/cache/bridge.go", "actual": "A Go/Fiber handler is mounted at an .asmx route." },
+    { "id": "AR25", "file": "pinia/stock9/laf84ejfa.go", "actual": "desk and receipt hold artifact transfer metadata and chunks; postbox contains confirmed collaboration operations." },
+    { "id": "AR28", "file": "pinia/stock9/cache.go", "actual": "Canonical snapshot lookup passes through a CTE then self-joins catalog_stock before capability and revision checks." },
+    { "id": "AR31", "file": "pinia/stock9/cache.go", "actual": "delete appends a rollback revision and preserves the immutable historical snapshot." },
+    { "id": "AR35", "file": "pinia/stock9/2.go", "actual": "InvoiceBuilder performs collaboration resume, replay, conflict handling, and commits." },
+    { "id": "AR39", "file": "pinia/stock9/2.go", "actual": "The postbox returns reverse-order records; bounded reconnect restores and verifies contiguous ascending sequence." },
+    { "id": "AR49", "file": "services/fiber/Dockerfile", "actual": "Explicit copies rebuild the three local modules from their scattered repository locations." },
+    { "id": "AR54", "file": "services/fiber/cache/bridge.go", "actual": "receipt.asmx, Common2.Report, price_history, postbox, and server-confirmed snapshot operations use different naming systems." }
+  ],
+  "limitations": [
+    "No CRDT; whole-snapshot commits use expected head revision and explicit conflicts.",
+    "No arbitrary code execution, user-controlled storage endpoints, real account routes, or account field persistence.",
+    "Snapshots are never updated; rollback always appends to the existing canonical history.",
+    "An unsaved job request references its PostgreSQL submission digest; JSONB formatting is not claimed byte-identical to the original JSON.",
+    "Download verifies the bounded complete MinIO object before returning an individual chunk.",
+    "Transfer expiry cleanup is demand-driven, eight expired sessions per new transfer; parent catalog retention must preserve their locators until cleanup."
+  ]
+}

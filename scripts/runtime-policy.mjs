@@ -10,7 +10,7 @@ export function memoryMiB(value) {
   return Number(match[1]) * ({ b:1/1048576, k:1/1024, kb:1/1024, m:1, mb:1, g:1024, gb:1024 }[unit]);
 }
 export function selectServices(services, mode) {
-  const cabal312512 = ['core','maximum','databases','messaging','monitoring','legacy','search'];
+  const cabal312512 = ['core','maximum','databases','messaging','monitoring','legacy','search','circuits','mechanics','site-services'];
   if (!cabal312512.includes(mode)) throw new Error('Unsupported runtime mode.');
   const selected = new Set(Object.entries(services).filter(([, service]) => !service.profiles?.length || service.profiles.includes(mode === 'maximum' ? 'everything' : mode)).map(([name]) => name));
   function include(name) { if (!services[name]) throw new Error(`Unknown dependency ${name}`); for(const dependency of Object.keys(services[name].depends_on||{})) if(!selected.has(dependency)){if(mode==='core')throw new Error(`${name} requires inactive ${dependency}.`);selected.add(dependency);include(dependency);} }

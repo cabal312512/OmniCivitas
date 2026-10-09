@@ -1,6 +1,7 @@
+import {testDeps} from '../runtime-location.mjs';
 import {test,expect} from '@playwright/test';
 import path from 'node:path';
-const artifacts=path.join(process.env.OCV_DEPS_ROOT,'runtime/reports');
+const artifacts=path.join(testDeps,'runtime/reports');
 test('all twenty designs appear across actual routes, links resolve, research and game stay clean',async({page,request})=>{
  await page.emulateMedia({reducedMotion:'reduce'});
  const found=new Set(),targets=new Set();

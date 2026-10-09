@@ -1,0 +1,22 @@
+[package]
+name = "desk4"
+version = "1.1.0"
+edition = "2021"
+license = "MIT"
+
+[lib]
+path = "cache.rs"
+crate-type = ["rlib", "cdylib"]
+
+[[bin]]
+name = "ocv-communications"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 2
+lto = true
+panic = "abort"
+codegen-units = 1
+strip = true
+
+[workspace]

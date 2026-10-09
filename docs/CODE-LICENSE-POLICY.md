@@ -17,8 +17,8 @@
 | 已记录的第三方代码归属 | `THIRD_PARTY_NOTICES.txt`、`config/apps/portal/public/third-party-notices.txt` |
 | 已保留的许可原文 | `config/apps/portal/public/licenses/`、`docs/licenses/three-MIT.txt` |
 | 特效参考与实际引入 | `docs/EFFECT-SOURCES.md` |
-| 工具实际调用、版本和原许可来源 | `docs/PHASE-5-SOURCES.md`、`docs/PHASE-6-SOURCES.md`、`docs/PHASE-8-SOURCES.md`、`docs/EXPANSION-1.md` |
-| 新增库版本与许可字节 | `docs/expansion-libraries.json` |
+| 实际依赖版本 | `package.json`、`pnpm-lock.yaml` 及各语言项目的依赖清单 |
+| 随代码分发的许可字节与归属清单 | `docs/licenses/`、`config/apps/portal/public/licenses/`；构建生成的 chunk 归属由 `scripts/bundle-license-notices.mjs` 收集 |
 | 网站阅读入口 | `/legal/code/`；声明原文 `/third-party-notices.txt`；许可原文 `/licenses/…` |
 
 Three.js 按 MIT 保留声明；GSAP/ScrollTrigger 使用自己的标准许可证，不改标 MIT。DOMPurify 按已有记录选用 Apache-2.0；mathjs 保留其 LICENSE 和 NOTICE。其他已记录库继续遵守各自许可。现有 Astro 构建在压缩后给 JS chunk 附加归属文本，不借本次媒体声明去掉这些必要信息。

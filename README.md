@@ -129,17 +129,17 @@ The builder has a 3 GiB cap and stops after compilation. Stopping services prese
 
 For queued, on-demand backend work, run `pnpm civilization:after` alongside core; `pnpm civilization:after --stop` requests a graceful stop. It starts bounded service batches and preserves named volumes. This optional trusted host process requires Node 24 and Docker CLI access; see [dispatch and storage details](docs/AFTER-ROUTES.md) before enabling it on another machine.
 
-All 24 services remain in [compose.yaml](compose.yaml). Core needs no profile. Select optional groups when needed.
+All configured services remain in [compose.yaml](compose.yaml). Core needs no profile. Select optional groups when needed.
 
 | Profile | Additional services | Container memory caps including core |
 | --- | --- | ---: |
 | core | Default six services | 1728 MiB |
 | databases | MySQL, MongoDB, MinIO, archive API | 2944 MiB |
-| legacy | Spring, FastAPI, Laravel, Fiber, ASP.NET SOAP, Sinatra, Hono, MySQL | 3616 MiB |
+| legacy | Spring, FastAPI, Laravel, Fiber, ASP.NET SOAP, Sinatra, Hono, MySQL | 4000 MiB |
 | messaging | RabbitMQ, Kafka, MongoDB, message workers | 3968 MiB |
 | search | Elasticsearch | 3008 MiB |
 | monitoring | OpenTelemetry, Prometheus, Grafana | 2240 MiB |
-| maximum / everything | All optional services | 7840 MiB |
+| maximum / everything | All optional services | 10400 MiB |
 
 ```sh
 pnpm civilization:databases
@@ -158,9 +158,9 @@ docker compose --profile legacy up --build -d --wait
 docker compose --profile legacy stop
 ```
 
-Smaller machines should use separate profile sessions and stop optional services before compiling. These are container caps, not total host RAM estimates; Docker, the OS, caches and compilation also consume memory. Maximum defaults to an **8192 MiB** aggregate budget; adjust `OCV_CONTAINER_BUDGET_MIB` on other hardware. Java, Kafka and Elasticsearch use small development heaps. Important services have memory, CPU, PID and log limits.
+Smaller machines should use separate profile sessions and stop optional services before compiling. These are container caps, not total host RAM estimates; Docker, the OS, caches and compilation also consume memory. Maximum defaults to an **8192 MiB** aggregate budget. The expanded full service set has **10400 MiB** of container caps and needs an explicit budget of at least that amount plus sufficient host memory; use smaller batches otherwise. Adjust `OCV_CONTAINER_BUDGET_MIB` for the workload. Java, Kafka and Elasticsearch use small development heaps. Important services have memory, CPU, PID and log limits.
 
-The original machine's 24 GB RAM and daily 9 GiB / optional maximum 11 GiB WSL settings are local optimizations. Public commands do not modify WSL settings or require equivalent hardware.
+Resource budgets are bounded development defaults. Size Docker and per-service limits for the selected workload; public commands never change host WSL memory, swap or disk settings.
 
 ### Configuration and persistence
 
@@ -223,9 +223,11 @@ node scripts/test-languages.mjs java python php go dotnet ruby
 
 The helper uses one 768 MiB test container at a time and downloads SDKs only when selected. Use the repository's Actions checks for the current revision. Independent Linux Engine/macOS Docker host deployments remain unverified. Internal requirement ledgers, handoffs and acceptance records are excluded from published sources; `pnpm ledger:check` reports that limitation in a public clone.
 
-`ocv.ps1` and `scripts/Enter-OcvEnvironment.ps1` are optional helpers for the original machine. Other users run standard commands. Dependencies, tools, caches, build output, real environment files, tokens, certificates, runtime databases, Docker volumes and WSL disks do not belong in Git. Small third-party packages also install from package.json / pnpm-lock.yaml.
+`ocv.ps1` is an optional PowerShell wrapper using configured tools or PATH. Local overrides are optional and ignored by publication; see [portable configuration](docs/PORTABILITY.md). Dependencies, tools, caches, build output, real environment files, tokens, certificates, runtime databases, Docker volumes and WSL disks do not belong in Git. Small third-party packages also install from package.json / pnpm-lock.yaml.
 
-[中文部署说明](docs/DEPLOY.zh-CN.md)
+[Deployment guide (English)](docs/DEPLOY.en.md) · [中文部署说明](docs/DEPLOY.zh-CN.md)
+
+The [signals laboratory](docs/DEPLOY.en.md#signals-laboratory) and [mechanical workshop](docs/DEPLOY.en.md#机械工坊) include their browser runtimes. Their optional native calculations share the existing host dispatcher. [Website workers](docs/SITE-SERVICES.md) provide audio processing, event projections, tool certificates and advanced search; normal deployment starts only core services.
 
 
 Original code: **MIT — Copyright (c) 2026 cabal312512**; see [LICENSE](LICENSE).

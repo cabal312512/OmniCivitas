@@ -1,0 +1,88 @@
+{
+  "schema": "ocv.workshop-project/1",
+  "name": "限件飞越",
+  "world": {
+    "gravityX": 0,
+    "gravityY": -9.81,
+    "stepS": 0.008333333333333333,
+    "durationS": 10,
+    "sampleEvery": 8,
+    "seed": 312512,
+    "bodies": [
+      {
+        "id": "launch",
+        "kind": "track",
+        "mode": "fixed",
+        "x": -4,
+        "y": 0,
+        "width": 3,
+        "height": 0.3,
+        "angle": 0,
+        "friction": 0.75,
+        "restitution": 0.02,
+        "colour": "#9bbfe9"
+      },
+      {
+        "id": "landing",
+        "kind": "track",
+        "mode": "fixed",
+        "x": 4.5,
+        "y": 0,
+        "width": 5,
+        "height": 0.3,
+        "angle": 0,
+        "friction": 0.75,
+        "restitution": 0.02,
+        "colour": "#9bbfe9"
+      },
+      {
+        "id": "end",
+        "kind": "track",
+        "mode": "fixed",
+        "x": 6.9,
+        "y": 1,
+        "width": 0.2,
+        "height": 2,
+        "angle": 0,
+        "friction": 0.75,
+        "restitution": 0.02,
+        "colour": "#9bbfe9"
+      },
+      {
+        "id": "jumper",
+        "kind": "ball",
+        "mode": "dynamic",
+        "x": -3,
+        "y": 1,
+        "radius": 0.3,
+        "mass": 0.6,
+        "vx": 4.5,
+        "vy": 5.5,
+        "friction": 0.9,
+        "restitution": 0.02,
+        "linearDamping": 0,
+        "angularDamping": 0.1,
+        "colour": "#227be8"
+      }
+    ],
+    "joints": [],
+    "motors": [],
+    "controls": []
+  },
+  "appearance": {
+    "depth": 0.35,
+    "material": "alloy",
+    "background": "white",
+    "wireframe": false
+  },
+  "challenge": {
+    "id": "crossing-01",
+    "kind": "crossing",
+    "body": "jumper",
+    "targetX": 4,
+    "targetY": 0.5,
+    "tolerance": 1.6,
+    "minTime": 0.8,
+    "maxParts": 1
+  }
+}

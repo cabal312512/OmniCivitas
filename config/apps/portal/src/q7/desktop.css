@@ -1,0 +1,7 @@
+@media (min-width:1800px) and (min-height:680px) {
+  body[data-wide="true"] :is(.n3-item,.wrong-window,.maintenance-fragments>section,.optics-panel,.portal-weather,.portal-news,.portal-countdown,.portal-tree,.loose-lens,.q9-loose,.home-image-note,.instrument,.wafer) {
+    scale:var(--ocv-window-scale,1);
+    transform-origin:top left;
+  }
+  body[data-wide="true"] .tool-result {z-index:250}
+}

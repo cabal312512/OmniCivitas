@@ -1,10 +1,5 @@
 {
-  "host": {
-    "ramGiB": 24,
-    "defaultWslGiB": 9,
-    "maximumWslGiB": 11,
-    "swapGiB": 2,
-    "swapLocation": "F:\\OCVdeps\\wsl\\swap.vhdx",
-    "virtualProcessors": 6
-  }
+  "depsRoot": ".ocv-runtime",
+  "storageGuard": false,
+  "tools": {}
 }

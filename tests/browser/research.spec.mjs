@@ -1,7 +1,8 @@
+import {testDeps} from '../runtime-location.mjs';
 import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
-const reportRoot=path.join(process.env.OCV_DEPS_ROOT,'runtime/reports/research-site');fs.mkdirSync(reportRoot,{recursive:true});
+const reportRoot=path.join(testDeps,'runtime/reports/research-site');fs.mkdirSync(reportRoot,{recursive:true});
 test('compact headers and fixed-view overview respond to hover and click',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/research/');const canvas=page.locator('[data-research-hero]');await expect(canvas).toHaveAttribute('data-render-mode','webgl');
  const compact=async(selector)=>{const gap=await page.locator(selector).evaluate(el=>el.getBoundingClientRect().top-document.querySelector('.research-header').getBoundingClientRect().bottom);expect(gap).toBeLessThan(40);};

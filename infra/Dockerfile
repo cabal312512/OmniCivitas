@@ -17,6 +17,16 @@ COPY pinia ./pinia
 COPY config/apps/web2 ./config/apps/web2
 COPY config/apps/ng ./config/apps/ng
 COPY scripts/copy-angular.mjs ./scripts/copy-angular.mjs
+COPY scripts/signals-artifacts.mjs ./scripts/signals-artifacts.mjs
+COPY scripts/build-signals-engines.mjs ./scripts/build-signals-engines.mjs
+COPY pcakage/desk4 ./pcakage/desk4
+COPY docs/licenses/signals-runtime ./docs/licenses/signals-runtime
+COPY scripts/workshop-artifacts.mjs scripts/build-workshop-engines.mjs ./scripts/
+COPY scripts/collect-workshop-licenses.mjs ./scripts/
+COPY config/apps/aa1 ./config/apps/aa1
+COPY config/parts ./config/parts
+COPY pcakage/slot7 ./pcakage/slot7
+COPY docs/licenses/workshop-runtime ./docs/licenses/workshop-runtime
 COPY scripts/phase8-build.mjs ./scripts/phase8-build.mjs
 COPY scripts/bundle-license-notices.mjs ./scripts/bundle-license-notices.mjs
 COPY docs/licenses/alpinejs-3.17.4-LICENSE.md ./docs/licenses/alpinejs-3.17.4-LICENSE.md

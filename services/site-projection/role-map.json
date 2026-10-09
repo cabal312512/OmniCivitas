@@ -1,0 +1,175 @@
+{
+  "schema": "ocv.phase13.role-map/1",
+  "system": "WEB2",
+  "status": "runtime-and-consumer-verified-with-limits",
+  "authority": "Existing q8 PostgreSQL progress and favorites; every request supplies their latest snapshot. This service owns no accounts, games or engineering project state.",
+  "entry": "POST /stock.php",
+  "notification": "Phoenix socket /linen, stock:<session> topic, signed session ticket, read-only",
+  "files": {
+    "services/site-projection/mix.exs": "Explicit relative source directories and pinned actual framework dependencies",
+    "services/site-projection/lib/application.ex": "Registry, bounded DynamicSupervisor, PubSub, broker and Endpoint lifecycle",
+    "services/site-projection/lib/invoice_builder.ex": "Fixed broker for anonymous projection actors",
+    "services/site-projection/lib/receipt.ex": "Session GenServer, bounded subscriber monitors, tagged TTL expiry",
+    "services/site-projection/lib/endpoint.ex": "Phoenix Endpoint and bounded JSON HTTP body",
+    "services/site-projection/lib/router.ex": "Actual PHP-suffixed Phoenix route and controller",
+    "services/site-projection/lib/linen_socket.ex": "Signed session-scoped Phoenix Channel notifications",
+    "config/7/1.ex": "Public input schema and strict bounded event/snapshot validation",
+    "pcakage/locker13/cache.ex": "Checkpoint canonical digest, nested JSON-string/CSV envelope, bounded derived-state reader",
+    "pinia/old13/2.ex": "Reordering, duplicate/conflict decisions, derived histories, finite dialogue",
+    "pinia/old13/old.ex": "Six-stage continuation flow from legacy checkpoint to snapshot projection",
+    "services/site-projection/test/": "Twelve actual ExUnit protocol/recovery/OTP/Phoenix checks passed in the guarded serial native batch.",
+    "services/site-projection/THIRD_PARTY_NOTICES.md": "Links original copyright/license texts for sixteen actual resolved Hex packages",
+    "services/site-projection/notices/manifest.json": "Exact package versions, source URLs and verified downloaded archive SHA256; only notice texts delivered in source tree",
+    "services/site-projection/collect-notices.ps1": "Finite original-notice extraction; all downloaded third-party archives stay in external dependency cache"
+  },
+  "ar": [
+    {
+      "id": "AR02",
+      "active": "Mix compiles one application from service, config/7, pcakage/locker13 and pinia/old13."
+    },
+    {
+      "id": "AR03",
+      "active": "Actual validator is 1.ex, projector is 2.ex/old.ex, checkpoint module is cache.ex."
+    },
+    {
+      "id": "AR05",
+      "active": "Filename/class names differ: cache.ex defines Locker.Common/Data; old.ex defines Common2; receipt.ex is a session actor."
+    },
+    {
+      "id": "AR07",
+      "active": "config/7 contains compiled Elixir application input handling; service/config contains real runtime settings."
+    },
+    {
+      "id": "AR13",
+      "active": "Common2.run invokes six finite continuation stages, including checkpoint recovery, positional conversion, event fold, snapshot projection and digest."
+    },
+    {
+      "id": "AR18",
+      "active": "Every checkpoint canonicalizes the derived state JSON, encodes that JSON as a JSON string, quotes it as one CSV cell, then actually decodes both layers during recovery."
+    },
+    {
+      "id": "AR20",
+      "active": "Stage2 uses [version,events,state] while ledger rows use [sequence,uuid,sha256]; outside and domain events use keyed objects."
+    },
+    {
+      "id": "AR21",
+      "active": "Complete processing reports status=complete and errorMessage empty; rejection reports status=rejected and successReason. Consumers use status/HTTP status, never the misleading field name."
+    },
+    {
+      "id": "AR24",
+      "active": "POST /stock.php executes the Phoenix controller rather than PHP."
+    },
+    {
+      "id": "AR39",
+      "active": "Events are internally reversed, then sorted by sequence/id. Replayed identifiers collapse, conflicting identifiers reject atomically; late histories reorder and explicit gaps remain incomplete."
+    },
+    {
+      "id": "AR46",
+      "active": "The extra reverse before stable sequence sort runs on every bounded event batch."
+    },
+    {
+      "id": "AR52",
+      "active": "A versioned CSV/JSON-string checkpoint adapter restores canonical state before the current projection pipeline."
+    },
+    {
+      "id": "AR54",
+      "active": "The fixed role map connects stock.php, InvoiceBuilder, Receipt, Locker and stock:<session> names to one real protocol."
+    }
+  ],
+  "limits": {
+    "http_body_bytes": 196608,
+    "request_events": 128,
+    "checkpoint_csv_bytes": 49152,
+    "checkpoint_json_envelope_bytes": 65536,
+    "retained_ids_and_sequence_span": 256,
+    "favorites": 100,
+    "talk_history": 16,
+    "favorite_history": 16,
+    "achievement_codes": 3,
+    "session_default": 64,
+    "session_hard_limit": 128,
+    "session_ttl_ms_max": 600000,
+    "subscribers_per_session": 4,
+    "actor_queue_soft_limit": 16,
+    "notification_queue_soft_limit": 8,
+    "http_connections": 64
+  },
+  "dependency_security": {
+    "checked_at": "2026-10-09",
+    "live_hex_latest_cowlib": "2.21.0",
+    "cowboy_pin": "2.20.0",
+    "cowlib_pin": "2.21.0",
+    "unresolved_advisories": [
+      "EEF-CVE-2026-43966",
+      "EEF-CVE-2026-43969"
+    ],
+    "published_fixed_release": null,
+    "boundary": "Explicit Cowboy invalid_response_headers=error_terminate; response headers use application constants only; no outbound cookie encoder or client HTTP forwarding exists.",
+    "sources": [
+      "https://hex.pm/api/packages/cowlib",
+      "https://hex.pm/api/packages/cowboy/releases/2.20.0",
+      "https://cna.erlef.org/osv/EEF-CVE-2026-43966.json",
+      "https://cna.erlef.org/osv/EEF-CVE-2026-43969.json"
+    ]
+  },
+  "checkpoint_static_bound": {
+    "status": "native-Elixir-crosscheck-passed",
+    "records": 256,
+    "configuration": "Ten-digit sequence/high/floor/revision/talk counters; sixteen maximal96-byte-id/128-byte-folder receipts; sixteen talks; three achievement codes",
+    "state_json_utf8_bytes": 35550,
+    "csv_utf8_bytes": 38316,
+    "checkpoint_json_utf8_bytes": 42638,
+    "shared_storage_budget_bytes": 65536,
+    "proof": "phase13-projection-tests.log: actual maximum_counter_checkpoint_csv_bytes=38316 and maximum_counter_checkpoint_json_bytes=42638"
+  },
+  "runtime_evidence": {
+    "status": "native-verified-only",
+    "report": "phase13-projection-runtime.json",
+    "testLog": "phase13-projection-tests.log",
+    "reportLocation": "configured external runtime report directory",
+    "imageId": "sha256:7a246a96ea05a7a74d519712d48f2533352bcd147706af4ed4ebe660fdffba88",
+    "tests": {
+      "failures": 0,
+      "count": 12
+    },
+    "http": {
+      "smallerSuppliedAuthorityPreserved": true,
+      "twoSessionLimit": true,
+      "realRestartRecovery": true,
+      "thirdStatus": 429,
+      "reversed": true,
+      "replayDuplicates": 4
+    },
+    "limits": {
+      "nanoCpus": 500000000,
+      "memorySwapBytes": 268435456,
+      "pids": 64,
+      "readOnly": true,
+      "memoryBytes": 268435456
+    },
+    "noticePackages": 16,
+    "noticeRuntimeReadable": true,
+    "postgres": "not exercised by this isolated service batch",
+    "consumer": "Isolated batch did not exercise pages; separate root integrationEvidence now passed"
+  },
+  "frontend_identity": {
+    "ordinary_mutations": "Real successful PG collect/favorite/talk writes automatically schedule closed projection events; no separate submit button.",
+    "fallback": "Actual hunt identity takes precedence. With no hunt identity, a direct-entry favorite operation uses the explicit profile session or existing anonymous desk identity.",
+    "authority": "Identity selection does not synthesize progress or replace PostgreSQL snapshot state."
+  },
+  "integrationEvidence": {
+    "report": "phase13-integration.json",
+    "postgresAuthorityReadback": true,
+    "realOnDemandStopRestart": true,
+    "replayNotDoubleCounted": true,
+    "otherSessionHasIndependentSequence": true,
+    "derivedNicknameFilterDoesNotChangeAuthority": true,
+    "consumerReports": [
+      "phase13-events-ui.json",
+      "phase13-collect-ui.json",
+      "phase13-direct-favorite-ui.json"
+    ],
+    "currentPhase": "13",
+    "limitations": "Finite retained event window; independent hosts and configured high concurrency not exercised."
+  }
+}

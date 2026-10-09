@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {frameAtTime,interpolateFrame} from '../../config/apps/portal/src/workshop/receipt2.mjs';
+const a={t:0,bodies:[{id:'ball',x:0,y:2,angle:3.1,vx:1,vy:-1,omega:.1}]};
+const b={t:2,bodies:[{id:'ball',x:4,y:0,angle:-2.983185307179586,vx:3,vy:-3,omega:.1}]};
+const half=frameAtTime([a,b],1);
+assert.equal(half.t,1);assert.equal(half.bodies[0].x,2);assert.equal(half.bodies[0].y,1);
+assert.equal(half.bodies[0].vx,2);assert.equal(half.bodies[0].vy,-2);
+assert.ok(Math.abs(half.bodies[0].angle-3.2)<1e-12,'Angle unwrap uses recorded angular speed');
+assert.equal(frameAtTime([a,b],-1),null);assert.equal(frameAtTime([a,b],3),null);
+assert.equal(frameAtTime([a,b],NaN),null);assert.equal(frameAtTime([a,{...b,t:0}],0),null);
+assert.equal(frameAtTime(Array(257).fill(a),0),null);
+assert.equal(interpolateFrame(a,b,1,false),a);
+console.log('Stage XIV replay same-time comparisons: 12 assertions passed');

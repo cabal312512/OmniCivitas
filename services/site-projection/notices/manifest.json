@@ -1,0 +1,151 @@
+{
+  "schema": "ocv.web2.notices/1",
+  "source": "Actual Hex resolution in phase13-projection-retry-build.log",
+  "packages": [
+    {
+      "name": "castore",
+      "version": "1.0.21",
+      "archiveSha256": "e42e22723e25dbd46876d056a03f685513d6e98f6b5e555dc551321decd76c5c",
+      "metadata": "https://hex.pm/api/packages/castore/releases/1.0.21",
+      "files": [
+        "castore-1.0.21-README_LICENSE.txt"
+      ]
+    },
+    {
+      "name": "cowboy",
+      "version": "2.20.0",
+      "archiveSha256": "a0be47464a2887f71c061ce90723dc17441c9b81ba9569cd9b596eb0367d1edd",
+      "metadata": "https://hex.pm/api/packages/cowboy/releases/2.20.0",
+      "files": [
+        "cowboy-2.20.0-LICENSE"
+      ]
+    },
+    {
+      "name": "cowboy_telemetry",
+      "version": "0.4.0",
+      "archiveSha256": "7d98bac1ee4565d31b62d59f8823dfd8356a169e7fcbb83831b8a5397404c9de",
+      "metadata": "https://hex.pm/api/packages/cowboy_telemetry/releases/0.4.0",
+      "files": [
+        "cowboy_telemetry-0.4.0-LICENSE"
+      ]
+    },
+    {
+      "name": "cowlib",
+      "version": "2.21.0",
+      "archiveSha256": "0960248773762a5319b3c17285028bc76f54f58ef0f9451367401bdf67b46274",
+      "metadata": "https://hex.pm/api/packages/cowlib/releases/2.21.0",
+      "files": [
+        "cowlib-2.21.0-LICENSE"
+      ]
+    },
+    {
+      "name": "jason",
+      "version": "1.4.4",
+      "archiveSha256": "c5eb0cab91f094599f94d55bc63409236a8ec69a21a67814529e8d5f6cc90b3b",
+      "metadata": "https://hex.pm/api/packages/jason/releases/1.4.4",
+      "files": [
+        "jason-1.4.4-LICENSE"
+      ]
+    },
+    {
+      "name": "mime",
+      "version": "2.0.7",
+      "archiveSha256": "6171188e399ee16023ffc5b76ce445eb6d9672e2e241d2df6050f3c771e80ccd",
+      "metadata": "https://hex.pm/api/packages/mime/releases/2.0.7",
+      "files": [
+        "mime-2.0.7-LICENSE"
+      ]
+    },
+    {
+      "name": "phoenix",
+      "version": "1.7.24",
+      "archiveSha256": "a283a9d91517116166244fdd8ed8b405c142774dc39b4a4047d179cecca9c09f",
+      "metadata": "https://hex.pm/api/packages/phoenix/releases/1.7.24",
+      "files": [
+        "phoenix-1.7.24-LICENSE.md"
+      ]
+    },
+    {
+      "name": "phoenix_pubsub",
+      "version": "2.4.1",
+      "archiveSha256": "352fba7a87bf61395b6e97da66944ad9b1bfe5459e5981039f60d68270bd9700",
+      "metadata": "https://hex.pm/api/packages/phoenix_pubsub/releases/2.4.1",
+      "files": [
+        "phoenix_pubsub-2.4.1-LICENSE.md"
+      ]
+    },
+    {
+      "name": "phoenix_template",
+      "version": "1.1.0",
+      "archiveSha256": "eba70070de79b2c3501ef205a74a69f98ab352f3785aa15da9ed161f9fe0fd5d",
+      "metadata": "https://hex.pm/api/packages/phoenix_template/releases/1.1.0",
+      "files": [
+        "phoenix_template-1.1.0-LICENSE.md"
+      ]
+    },
+    {
+      "name": "plug",
+      "version": "1.20.3",
+      "archiveSha256": "be266aee1b8536ef6409d58cf39a3121319f0ec47cfa1b24024485aa0e76ad76",
+      "metadata": "https://hex.pm/api/packages/plug/releases/1.20.3",
+      "files": [
+        "plug-1.20.3-LICENSE"
+      ]
+    },
+    {
+      "name": "plug_cowboy",
+      "version": "2.8.1",
+      "archiveSha256": "4c200288673d5bc86a0ab7dc6a2a069176a74e5d573ef62740a1c517458a5f26",
+      "metadata": "https://hex.pm/api/packages/plug_cowboy/releases/2.8.1",
+      "files": [
+        "plug_cowboy-2.8.1-LICENSE"
+      ]
+    },
+    {
+      "name": "plug_crypto",
+      "version": "2.2.0",
+      "archiveSha256": "83a95744ab1c75876542b6fab135fcc176280e0f301a111c1f757fddcec95d2c",
+      "metadata": "https://hex.pm/api/packages/plug_crypto/releases/2.2.0",
+      "files": [
+        "plug_crypto-2.2.0-LICENSE"
+      ]
+    },
+    {
+      "name": "ranch",
+      "version": "2.3.0",
+      "archiveSha256": "6168ec49409d982f7cfbd83dd083144f6cbe67caa4036551d2f0a3ad67c9d023",
+      "metadata": "https://hex.pm/api/packages/ranch/releases/2.3.0",
+      "files": [
+        "ranch-2.3.0-LICENSE"
+      ]
+    },
+    {
+      "name": "telemetry",
+      "version": "1.4.2",
+      "archiveSha256": "928f6495066506077862c0d1646609eed891a4326bee3126ba54b60af61febb1",
+      "metadata": "https://hex.pm/api/packages/telemetry/releases/1.4.2",
+      "files": [
+        "telemetry-1.4.2-LICENSE",
+        "telemetry-1.4.2-NOTICE"
+      ]
+    },
+    {
+      "name": "websock",
+      "version": "0.5.3",
+      "archiveSha256": "6105453d7fac22c712ad66fab1d45abdf049868f253cf719b625151460b8b453",
+      "metadata": "https://hex.pm/api/packages/websock/releases/0.5.3",
+      "files": [
+        "websock-0.5.3-LICENSE"
+      ]
+    },
+    {
+      "name": "websock_adapter",
+      "version": "0.5.9",
+      "archiveSha256": "5534d5c9adad3c18a0f58a9371220d75a803bf0b9a3d87e6fe072faaeed76a08",
+      "metadata": "https://hex.pm/api/packages/websock_adapter/releases/0.5.9",
+      "files": [
+        "websock_adapter-0.5.9-LICENSE"
+      ]
+    }
+  ]
+}

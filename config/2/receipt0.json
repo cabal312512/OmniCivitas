@@ -1,0 +1,6 @@
+{
+  "schema": "ocv.shared-publishing-map/0",
+  "active": false,
+  "files": ["services/dotnet/Program.cs", "services/laravel/SchoolStudent.php", "services/sinatra/main.rb"],
+  "reader": "old declaration retained as data; current C# sources are selected by explicit Receipt.csproj links and Docker COPY"
+}

@@ -1,3 +1,4 @@
+import {testDeps} from './runtime-location.mjs';
 import {test,expect} from 'vitest';
 import {createRequire} from 'node:module';
 import {randomUUID} from 'node:crypto';
@@ -19,7 +20,7 @@ test('byte fragments reconstruct Unicode source and logs exactly and reject malf
  expect(()=>decodePiece('AA==\n')).toThrow();expect(()=>splitPackage('x'.repeat(13000),{},{})).toThrow();
 });
 test('database-approved programs really execute from a generated file without leaving files behind',async()=>{
- const root=process.env.OCV_DEPS_ROOT||os.tmpdir();await mkdir(path.join(root,'tmp'),{recursive:true});
+ const root=testDeps;await mkdir(path.join(root,'tmp'),{recursive:true});
  const folder=await mkdtemp(path.join(root,'tmp/after-core-'));
  try{
   for(const [name,source]of Object.entries(programs)){
@@ -33,7 +34,7 @@ test('database-approved programs really execute from a generated file without le
 },10000);
 
 test('generated program permissions work through a directory alias and retain cleanup',async()=>{
- const root=process.env.OCV_DEPS_ROOT||os.tmpdir();await mkdir(path.join(root,'tmp'),{recursive:true});
+ const root=testDeps;await mkdir(path.join(root,'tmp'),{recursive:true});
  const folder=await mkdtemp(path.join(root,'tmp/after-alias-'));
  const target=path.join(folder,'actual'),alias=path.join(folder,'alias');
  try{

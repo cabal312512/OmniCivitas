@@ -54,7 +54,7 @@ body[data-cover=true] .n9-home-controls{visibility:hidden;pointer-events:none}
 .n9-shortcuts .forgotten-attachment{margin:0;border:0;padding:0}
 .n9-shortcuts .n9-shortcut-slot .forgotten-attachment>button,.n9-shortcuts .n9-shortcut-slot .laowu-trigger,.n9-shortcuts .n9-shortcut-slot .n9-shortcut-link{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:8px;position:static;inset:auto;min-width:85px;width:auto;height:43px;padding:10px 14px;margin:0;border:1px solid #4c87e989;border-radius:7px;background:linear-gradient(140deg,#f7fdffeb,#c8e6ffb5);backdrop-filter:blur(18px);box-shadow:0 7px 21px #1768a927,inset 0 1px #fff;color:#0751bc;font:14px/1.2 system-ui;text-decoration:none;white-space:nowrap}
 .n9-shortcuts .n9-shortcut-slot .forgotten-attachment>button:hover,.n9-shortcuts .n9-shortcut-slot .laowu-trigger:hover,.n9-shortcuts .n9-shortcut-slot .n9-shortcut-link:hover{background:#e2f6fff2;border-color:#1c77b9;box-shadow:0 7px 23px #1768a942}
-.n9-shortcuts #forgotten-drawer{box-sizing:border-box;position:absolute;left:0;right:auto;top:48px;width:292px;margin:0}
+.n9-shortcuts #forgotten-drawer{box-sizing:border-box;position:absolute;left:0;right:auto;top:48px;width:158px;margin:0}
 .media-page{margin:0;min-height:170vh;background:radial-gradient(ellipse at 15% 0,#b7ebff99,transparent 60%),#f1f8ff;color:#0c3d83;font:15px system-ui}
 .media-page>header{position:relative;z-index:20000;display:flex;gap:30px;align-items:center;margin:22px 40px}
 .media-page a{color:#084daf}

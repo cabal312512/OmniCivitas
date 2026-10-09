@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "ng build --configuration production"
+    "build": "ng build rice-stamp --configuration production && ng build signals-lab --configuration production"
   },
   "dependencies": {
     "@angular/common": "21.2.25",
@@ -26,7 +26,8 @@
     "targets": {
       "build": {
         "outputs": [
-          "{projectRoot}/dist"
+          "{projectRoot}/dist",
+          "{projectRoot}/dist-signals"
         ],
         "cache": true
       }

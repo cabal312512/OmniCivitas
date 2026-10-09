@@ -10,4 +10,6 @@ RUN composer install --prefer-dist --no-interaction --no-scripts --no-dev && com
 COPY services/laravel/bootstrap.php /app/bootstrap/app.php
 COPY services/laravel/routes.php /app/routes/api.php
 COPY services/laravel/SchoolStudent.php /app/app/Models/SchoolStudent.php
+COPY config/2/7.php /app/office/config/2/7.php
+COPY pcakage/forms2/old.php /app/pcakage/forms2/old.php
 CMD ["php","artisan","serve","--no-reload","--host=0.0.0.0","--port=8001"]

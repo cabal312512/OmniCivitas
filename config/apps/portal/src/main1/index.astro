@@ -12,7 +12,7 @@ const {home=false}=Astro.props;
   <div class="search-line"><label for="portal-search">万能搜索</label><input id="portal-search" type="search" maxlength="80" autocomplete="off" placeholder="搜索"/><button data-search aria-label="搜索功能">↗</button><button data-voice aria-label="语音搜索">♩</button></div>
   <output class="voice-note" aria-live="polite"></output><div class="search-results" aria-live="polite" hidden></div>
  </section>
- <section class="portal-recommend" aria-label="推荐功能"><span>推荐</span>{recommend().map(r=><a href={r.url}>{r.title}</a>)}</section>
+ <section class="portal-recommend" aria-label="推荐功能"><span>推荐</span>{recommend().map(r=><a href={r.url} style={r.id==='signals'?'text-decoration:underline;text-underline-offset:2px':undefined}>{r.title}</a>)}</section>
  <section class="portal-weather" aria-label="天气样式卡片"><span>天气</span><strong>24°</strong><i>◌</i><small>示意</small></section>
  <section class="portal-news" aria-label="站内新闻"><div>站内新闻</div><a href="/maze/cache/">档案已迁移</a><a href="/maze/notifications/">通知</a><span>OCV / 0.0.4</span></section>
  <section class="portal-login-card"><b>账户</b><a href="/identity/login/">登录</a><a href="/identity/register/">注册</a></section>

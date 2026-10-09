@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "events": [{"n": 69, "t": 0, "d": 1000, "v": 1}],
+  "tempo": 120,
+  "sampleRate": 16000,
+  "preset": "sine",
+  "gain": 0.5,
+  "normalize": false,
+  "includeMidi": true
+}

@@ -1,6 +1,7 @@
+import {testDeps} from '../runtime-location.mjs';
 import {test,expect} from '@playwright/test';
 import fs from 'node:fs';import path from 'node:path';
-const reports=process.env.OCV_DEPS_ROOT?path.join(process.env.OCV_DEPS_ROOT,'runtime/reports'):path.resolve('.test-results');
+const reports=path.join(testDeps,'runtime/reports');
 test('All sixteen local originals decode; WebGL renders, controls affect motion, airborne decorations are bounded',async({page},info)=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await expect(page.locator('#storage-note')).toHaveText('抽屉已打开');
  await expect.poll(()=>page.evaluate(()=>window.__ocvScene?.frames||0)).toBeGreaterThan(2);expect(await page.evaluate(()=>window.__ocvScene.renderer)).toBe('webgl');

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "scope": "Author-only AI inputs and handoff files are retained locally and excluded from the public index; no history rewriting.",
+  "scope": "Author-only inputs, machine maintenance and historical acceptance writers stay local. The same exclusions apply to the public index and release validation; no history rewriting.",
   "reason": "User explicitly requested removal from publication while keeping every local file.",
   "omissions": [
     {
@@ -87,6 +87,58 @@
     "docs/screenshot-requirements.json": "083dbf6c880d702264614db23f56190e57e4b4c06253efac068f3c792c1eec1f",
     "docs/public-release-requirements.json": "a19dabf6aa84d997bc61a04ef2a8652134192109c08ff38ecffd18c8705730c2"
   },
+  "localOnlyFiles": [
+    "config/runtime.local.json",
+    "scripts/bootstrap-tools.mjs",
+    "scripts/download-runtime-tools.mjs",
+    "scripts/doctor-local.mjs",
+    "scripts/Install-OcvRuntime.ps1",
+    "scripts/Move-OcvDockerCliPlugins.ps1",
+    "scripts/Request-OcvAdminSetup.ps1",
+    "scripts/Inspect-OcvPhysicalPaths.ps1",
+    "scripts/Snapshot-OcvMemory.ps1",
+    "scripts/Audit-CleanClone.ps1",
+    "scripts/link-dependencies.ps1",
+    "scripts/link-phase3-paths.ps1",
+    "scripts/generate-ledgers.mjs",
+    "scripts/generate-technologies.mjs",
+    "scripts/audit-final.mjs",
+    "scripts/audit-release-runtime.mjs",
+    "scripts/rename-workspace.mjs",
+    "scripts/rebuild-phase3.mjs",
+    "scripts/current-paths.mjs",
+    "scripts/expansion-sources.mjs",
+    "scripts/map-phase8.mjs",
+    "scripts/phase8-source-review.mjs",
+    "scripts/prepare-phase2-compose.mjs",
+    "scripts/prepare-phase8-remnants.mjs",
+    "scripts/phase12-evidence.mjs",
+    "scripts/phase12-preserve.mjs",
+    "scripts/phase12-ui-copy.mjs",
+    "scripts/inventory-copy2.mjs",
+    "scripts/apply-author-mark.mjs",
+    "scripts/verify-name-dev.mjs",
+    "scripts/verify-phase2-workspace.mjs",
+    "scripts/verify-phase3-final.mjs",
+    "scripts/verify-phase3-workspace.mjs",
+    "scripts/verify-visual-revision.mjs",
+    "pinia/receipt2/aux.rs"
+  ],
+  "localOnlyPatterns": [
+    "^scripts/record-",
+    "^scripts/update-",
+    "^scripts/inspect-",
+    "^scripts/begin-phase",
+    "^scripts/finish-",
+    "^scripts/fix-phase8-",
+    "^scripts/patch-phase",
+    "^scripts/render-phase",
+    "^scripts/snapshot-",
+    "^scripts/preserve-",
+    "^scripts/profile-3d-",
+    "^scripts/review-phase8-",
+    "^vps-1g/"
+  ],
   "publicDocuments": [
     "docs/DEPLOY.en.md",
     "docs/DEPLOY.zh-CN.md",
@@ -96,6 +148,8 @@
     "docs/CODE-LICENSE-POLICY.md",
     "docs/assets/observation-console.png",
     "docs/RELEASE-v0.1.3.md",
-    "docs/RELEASE-v0.1.4.md"
+    "docs/RELEASE-v0.1.4.md",
+    "docs/PORTABILITY.md",
+    "docs/SITE-SERVICES.md"
   ]
 }

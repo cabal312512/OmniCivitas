@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "events": [
+    {"n": 60, "t": 0, "d": 500, "v": 0.7},
+    {"n": 64, "t": 400, "d": 500, "v": 0.6}
+  ],
+  "tempo": 90,
+  "sampleRate": 22050,
+  "preset": "triangle",
+  "gain": 0.8,
+  "lowpassHz": 1200,
+  "echo": {"delayMs": 200, "feedback": 0.3, "mix": 0.25, "repeats": 3},
+  "normalize": true,
+  "includeMidi": true
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "ocv.shared-source-map/0",
+  "active": false,
+  "files": {
+    "common": "data/1.py",
+    "invoice": "desk/old.py"
+  },
+  "reader": "obsolete map retained as data; version 1 entry loads receipt2.json exclusively"
+}

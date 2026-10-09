@@ -1,0 +1,22 @@
+export type NetworkKind='router'|'satellite'|'base'|'ue'|'switch'|'host';
+export interface NetworkNode {id:string;type:NetworkKind;x:number;y:number}
+export interface NetworkLink {id:string;a:string;b:string;rateMbps:number;delayMs:number;loss:number;enabled:boolean}
+export interface NetworkFlow {id:string;source:string;target:string;packets:number;bytes:number;startMs:number;intervalMs:number}
+export interface Network {nodes:NetworkNode[];links:NetworkLink[];flows:NetworkFlow[];seed:number;durationMs:number}
+export interface NetworkEvent {tMs:number;kind:'send'|'arrive'|'drop'|'delivered';packet:string|number;flow:string;from:string;to:string;link:string;reason?:string}
+export interface NetworkResult {ok:boolean;engine:string;version:string;diagnostics?:{code:string;message:string}[];events:NetworkEvent[];routes:{flow:string;nodes:string[];links:string[]}[];flows:{id:string;sent:number;delivered:number;dropped:number;pending:number;late:number;avgLatencyMs:number;throughputMbps:number}[];summary:Record<string,unknown>}
+export interface Flight {packet:string|number;link:string;from:string;to:string;start:number;end:number;flow:string;pending:boolean}
+export const NETWORK_KINDS:{type:NetworkKind;label:string;symbol:string}[]=[{type:'router',label:'Router',symbol:'⇄'},{type:'satellite',label:'Satellite',symbol:'✧'},{type:'base',label:'Base station',symbol:'⌁'},{type:'ue',label:'UE',symbol:'▯'},{type:'switch',label:'Switch',symbol:'▥'},{type:'host',label:'Host',symbol:'▣'}];
+export function networkTemplate(name='Satellite'):Network {
+ const nodes:NetworkNode[]=name==='Tree'?[{id:'R0',type:'router',x:560,y:100},{id:'S1',type:'switch',x:310,y:270},{id:'S2',type:'switch',x:820,y:270},{id:'H1',type:'host',x:170,y:430},{id:'H2',type:'host',x:400,y:430},{id:'H3',type:'host',x:730,y:430},{id:'H4',type:'host',x:950,y:430}]:[{id:'SAT1',type:'satellite',x:365,y:100},{id:'SAT2',type:'satellite',x:745,y:85},{id:'R1',type:'router',x:210,y:310},{id:'R2',type:'router',x:535,y:270},{id:'R3',type:'router',x:845,y:305},{id:'BS1',type:'base',x:105,y:460},{id:'BS2',type:'base',x:425,y:430},{id:'BS3',type:'base',x:895,y:470},{id:'UE1',type:'ue',x:70,y:565},{id:'UE2',type:'ue',x:240,y:565},{id:'UE3',type:'ue',x:420,y:565},{id:'SW1',type:'switch',x:655,y:440},{id:'H1',type:'host',x:695,y:560},{id:'H2',type:'host',x:1030,y:560}];
+ let index=0;const add=(a:string,b:string,delayMs:number,rateMbps=20,loss=0):NetworkLink=>({id:`L${++index}`,a,b,delayMs,rateMbps,loss,enabled:true});
+ const links=name==='Tree'?[add('R0','S1',3,100),add('R0','S2',3,100),add('S1','H1',1,100),add('S1','H2',1,100),add('S2','H3',1,100),add('S2','H4',1,100)]:[add('SAT1','SAT2',130,8),add('SAT1','R1',80,8),add('SAT1','R2',85,8),add('SAT2','R3',80,8),add('R1','R2',12,100),add('R2','R3',18,100),add('R1','BS1',4),add('R1','BS2',7),add('R3','BS3',5),add('BS1','UE1',18,4,.01),add('BS1','UE2',20,4,.01),add('BS2','UE3',18,4,.01),add('R2','SW1',2,100),add('SW1','H1',1,100),add('R3','H2',2,100)];
+ if(name==='Satellite'){links.find(link=>link.a==='R2'&&link.b==='R3')!.enabled=false;links.find(link=>link.a==='R1'&&link.b==='R2')!.enabled=false;}
+ const flows:NetworkFlow[]=name==='Tree'?[{id:'F1',source:'H1',target:'H4',packets:30,bytes:1200,startMs:0,intervalMs:80},{id:'F2',source:'H3',target:'H2',packets:24,bytes:900,startMs:100,intervalMs:100}]:[{id:'F1',source:'UE1',target:'H2',packets:32,bytes:1200,startMs:0,intervalMs:80},{id:'F2',source:'UE3',target:'H1',packets:24,bytes:900,startMs:120,intervalMs:100},{id:'F3',source:'H2',target:'UE2',packets:30,bytes:1000,startMs:300,intervalMs:90}];
+ return {nodes,links,flows,seed:42,durationMs:5000};
+}
+export function flightsFrom(result:NetworkResult,network:Network):Flight[]{
+ const arrivals=new Map<string,NetworkEvent[]>();
+ for(const event of result.events)if(event.kind==='arrive'||event.kind==='drop'){const key=`${event.packet}:${event.link}`;const list=arrivals.get(key)||[];list.push(event);arrivals.set(key,list)}
+ return result.events.filter(event=>event.kind==='send').map(event=>{const arrival=arrivals.get(`${event.packet}:${event.link}`)?.find(item=>item.tMs>=event.tMs),link=network.links.find(item=>item.id===event.link),flow=network.flows.find(item=>item.id===event.flow);const modeledEnd=link&&flow?event.tMs+flow.bytes*8/(link.rateMbps*1000)+link.delayMs:Number(result.summary['durationMs'])+1;return {packet:event.packet,link:event.link,from:event.from,to:event.to,start:event.tMs,end:arrival?.tMs??modeledEnd,flow:event.flow,pending:!arrival}});
+}

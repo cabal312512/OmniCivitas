@@ -1,0 +1,1492 @@
+{
+  "schema": "ocv.workshop.artifacts/1",
+  "generatedAt": "2026-10-09T10:53:08.480Z",
+  "runtime": {
+    "mechanics": "ocv-mechanics-1.1.1+rapier-0.22.0.rod-radial-1.control-dag-1.initial-speed-1",
+    "domain": "ME2/1.1.0",
+    "blazor": "8.0.31",
+    "rust": "1.90.0",
+    "rapier": "0.22.0",
+    "model": "2D SI; ideal gear/belt constraints"
+  },
+  "artifacts": [
+    {
+      "file": "bridge.mjs",
+      "bytes": 12848,
+      "sha256": "3b5078ba0c924d960acb7dbc947c4e4d615c90ffd66ebaa3c2ae501009e23570"
+    },
+    {
+      "file": "engine-worker.mjs",
+      "bytes": 1290,
+      "sha256": "b4ef31e70073061bef1a2974aafd0d70059100309a4e6a41b7376ccbe1e4414b"
+    },
+    {
+      "file": "engines/NOTICE.txt",
+      "bytes": 829829,
+      "sha256": "fab76d23c0ab5efc131189bc7d3aee58fec4626ba594ba662b834cc897976fef"
+    },
+    {
+      "file": "engines/mechanics.wasm",
+      "bytes": 899053,
+      "sha256": "0dfc0ebca327b5548108bd54c96940fbe8e7330afbad18b1ffff6bff5f7a906c"
+    },
+    {
+      "file": "examples/basketball.json",
+      "bytes": 7860,
+      "sha256": "06a81957f8c48ae4b917b0172b9a6c3870d3d7bda2d827e9d94da84a07e7e99c"
+    },
+    {
+      "file": "examples/catalogue.json",
+      "bytes": 9435,
+      "sha256": "30773bddca535ed6029c0158fa905c80f08a69a64d3dd8dda056646b208e94e1"
+    },
+    {
+      "file": "examples/compound-lift.json",
+      "bytes": 23570,
+      "sha256": "30c816a3a7a54d8924f6928bbdc37cd9ddcc05524aaa5303744e6b81aebbf0d6"
+    },
+    {
+      "file": "examples/count-interlock.json",
+      "bytes": 4372,
+      "sha256": "dbcf4b33dcf033eed792b7d7445157b32e901c00678e2b4adbaa7f613e4e1479"
+    },
+    {
+      "file": "examples/crank-slider.json",
+      "bytes": 7775,
+      "sha256": "ba5cc1c8b49bd73ea127ee962615e7c536236a13fb56b6a1fbd2331b53c75c38"
+    },
+    {
+      "file": "examples/domino-line.json",
+      "bytes": 10443,
+      "sha256": "4f434a2f95d3e84912ee5ae8c2fe45bc8e1aec3bdfb8b4e09c5cd71c83ac9a53"
+    },
+    {
+      "file": "examples/gearbox.json",
+      "bytes": 7927,
+      "sha256": "c7cb2f6a52ed9f724b2db0549f2d590a0365995ad3774914543288050e3112fd"
+    },
+    {
+      "file": "examples/isolated-conveyor.json",
+      "bytes": 26135,
+      "sha256": "f024cf0977f87e4fad877bc4aac9ffd04bb4152ba215bb5093dd714e42c1ce7e"
+    },
+    {
+      "file": "examples/limited-crossing.json",
+      "bytes": 1856,
+      "sha256": "3c57cce4c9e947d973b03504a833525557ccaec460796b5c55f6042c4bb79aa4"
+    },
+    {
+      "file": "examples/marble-relay.json",
+      "bytes": 6177,
+      "sha256": "6b4b04e8c3d5de607503609456d5d3f25466d188244ebe23c3a2af442abf77d8"
+    },
+    {
+      "file": "examples/parallel-transfer.json",
+      "bytes": 22618,
+      "sha256": "8c0016dd3e44ccf0486ce168122154a22093b66c518c9d4bf2fb81e0bf2b88c4"
+    },
+    {
+      "file": "examples/pendulum-bank.json",
+      "bytes": 9141,
+      "sha256": "29fc011ab230fccfcd02c0e00d70c0363a1ed9fd546993f4b9109042c2779f59"
+    },
+    {
+      "file": "examples/split-logic.json",
+      "bytes": 4619,
+      "sha256": "32c0ce905f0a9122f65f231a9fde2747086c4041323d483abe44b7054526ebc2"
+    },
+    {
+      "file": "examples/switchback-sorter.json",
+      "bytes": 15417,
+      "sha256": "001f7d7e769b27e4e94e71aa23997f6570af87b20be7e6015c0518ccade142e8"
+    },
+    {
+      "file": "examples/timing-belt.json",
+      "bytes": 9797,
+      "sha256": "b66080245f1bfe992e16e3359c5f923be1c9499833c36bcda9e50cdb9f4737b0"
+    },
+    {
+      "file": "examples/tuned-damping.json",
+      "bytes": 7451,
+      "sha256": "6f23b35fc8d3d3d24da6423e2b4bb5c14f9e9e298008ab132e900a8a92dc34ac"
+    },
+    {
+      "file": "scene.mjs",
+      "bytes": 549335,
+      "sha256": "0b30d9b4f295bbc6c59b45d53d7e5479cf1df34b456e02d4945f0b7b68e8c22a"
+    },
+    {
+      "file": "scene.mjs.LICENSE.txt",
+      "bytes": 92,
+      "sha256": "8507dae269ac0851dec99156da9c6c2fa6b1d672dca9c781340ee0a7f69cb74e"
+    },
+    {
+      "file": "ui/_framework/Bench.pdb.gz",
+      "bytes": 63459,
+      "sha256": "44b1bac0732f23b55f76a89328428244aebae30767491b50ba74c815bb07fa87"
+    },
+    {
+      "file": "ui/_framework/Bench.wasm",
+      "bytes": 348949,
+      "sha256": "48e068cda6e7250c715595ce311dd32f192cf45aacbbb3bb27c761c70f770b6f"
+    },
+    {
+      "file": "ui/_framework/Bench.wasm.br",
+      "bytes": 104863,
+      "sha256": "14b384482e80acdd4c5d86cab228af7155ac6eee888b54c9ac098afb056a4e19"
+    },
+    {
+      "file": "ui/_framework/Bench.wasm.gz",
+      "bytes": 131264,
+      "sha256": "8fd81f19eeae9374c93c2bdf8796afd3ae77c274a1f088d2d07e294ff8bd5264"
+    },
+    {
+      "file": "ui/_framework/Microsoft.AspNetCore.Components.Web.wasm",
+      "bytes": 40213,
+      "sha256": "4bb00fae96b2611ef1b1773e775f5386f2d26755f8f8b4bc5bbc633c1af1b8b6"
+    },
+    {
+      "file": "ui/_framework/Microsoft.AspNetCore.Components.Web.wasm.br",
+      "bytes": 13854,
+      "sha256": "c1edac40bbc61e6134bab14e00b2b409a23225a09dc854595e0a2ccd560a7c71"
+    },
+    {
+      "file": "ui/_framework/Microsoft.AspNetCore.Components.Web.wasm.gz",
+      "bytes": 16376,
+      "sha256": "8385779854aacd641ee2405cca30f79fe6fe10db83fcf6116242182240098314"
+    },
+    {
+      "file": "ui/_framework/Microsoft.AspNetCore.Components.WebAssembly.wasm",
+      "bytes": 65813,
+      "sha256": "832b525e7f8182815cc8f8728f9cfb9e5c9ac71a601bbd7b0243d122972431ee"
+    },
+    {
+      "file": "ui/_framework/Microsoft.AspNetCore.Components.WebAssembly.wasm.br",
+      "bytes": 24528,
+      "sha256": "fdab2765e11029d40a0bd8c88bdb606d28ea670c15c32a80f1cbf15ab68ab51a"
+    },
+    {
+      "file": "ui/_framework/Microsoft.AspNetCore.Components.WebAssembly.wasm.gz",
+      "bytes": 27881,
+      "sha256": "8a74f907aa1cc68484f1b810fd2b5fc4df6cb3b9dcef1a43fec7a79c18ca26ee"
+    },
+    {
+      "file": "ui/_framework/Microsoft.AspNetCore.Components.wasm",
+      "bytes": 134933,
+      "sha256": "c48b8c6757e79efa5035e88b368b4d509c69b72d06cf0ce51211aceeba2590e2"
+    },
+    {
+      "file": "ui/_framework/Microsoft.AspNetCore.Components.wasm.br",
+      "bytes": 49420,
+      "sha256": "ba526a2dc9140fb904714c1f89d945a29c4f0daa0f745a8770009bd95c60bf46"
+    },
+    {
+      "file": "ui/_framework/Microsoft.AspNetCore.Components.wasm.gz",
+      "bytes": 56838,
+      "sha256": "6dcf72a7c62e73e606ccc1cb4fa33e7b2ab281645a66e847e136bd43aafe5790"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Configuration.Abstractions.wasm",
+      "bytes": 5397,
+      "sha256": "f3bb27d9362a81d67de6c5e66af8ca133a047cc8079d843d2cebe7317f9a65c2"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Configuration.Abstractions.wasm.br",
+      "bytes": 1861,
+      "sha256": "a94b5524620617833661ab92cb7a6c1a30f42c06ea130117c041ad5e6ccfea29"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Configuration.Abstractions.wasm.gz",
+      "bytes": 2134,
+      "sha256": "318230640ee2806c8e25257f422e65666b37b674478a18e12a9f309b9f0dd0a3"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Configuration.Json.wasm",
+      "bytes": 7957,
+      "sha256": "fd55047e1815a7d142535ad79d23402359ad5ba10ee43a6457fe543560d1fdeb"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Configuration.Json.wasm.br",
+      "bytes": 3066,
+      "sha256": "6a448ae42608b34e29ec6a09ff22561f31570b65f26087451dbc02de80be7593"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Configuration.Json.wasm.gz",
+      "bytes": 3443,
+      "sha256": "06be1353d16044097c580a5872261a9311e13545841c7497adc0ed36549bb20b"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Configuration.wasm",
+      "bytes": 7445,
+      "sha256": "8d8a87519d3b51859cf0f3a4ef185ab3ac50607eedd6aa1373296aa03aa77099"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Configuration.wasm.br",
+      "bytes": 2967,
+      "sha256": "53d29128074210d6434db7c47e469c04eb7cc16b4367a2113293dacac8464d2e"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Configuration.wasm.gz",
+      "bytes": 3297,
+      "sha256": "15b91462cc092e666e61ab78719166973ddfbfa93777d0da6f72f8ba3f7624c6"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.DependencyInjection.Abstractions.wasm",
+      "bytes": 14101,
+      "sha256": "4778aa92cb7a029bff0c6005aee329c6b7c1c0df8d4a37c858ef0251b707f1e2"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.DependencyInjection.Abstractions.wasm.br",
+      "bytes": 5161,
+      "sha256": "7fc167c3c53d345953d275a3ca013fe65af214138d64c83521000945d1856cc3"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.DependencyInjection.Abstractions.wasm.gz",
+      "bytes": 5723,
+      "sha256": "6c374ad7863d9efe22597f6ad8a4dbcf16d4351a0f609ca1dd2f922f0b6104d6"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.DependencyInjection.wasm",
+      "bytes": 40725,
+      "sha256": "4fffaa3c5d11582f1d7db2cd160a137e56be24cd87dde6392f5edaa8e0f0cc57"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.DependencyInjection.wasm.br",
+      "bytes": 17102,
+      "sha256": "baf03655ec54f624a646395f48c0471a813b739e1ed5ad6074725629a49ed6d0"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.DependencyInjection.wasm.gz",
+      "bytes": 19156,
+      "sha256": "6b462fb427a48c77de5df4af7a59ea07ebd0c3b639e48b016d33c5d54d4d04a2"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Logging.Abstractions.wasm",
+      "bytes": 21269,
+      "sha256": "245e4fbf9e965946cab1cb29326debcb4efa8825d45be61de65cdcb57acb994e"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Logging.Abstractions.wasm.br",
+      "bytes": 8773,
+      "sha256": "0b9dba20ce7fbfb07621be8ffceb384d909b94ba61a3ab825b6f3780bb409ae0"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Logging.Abstractions.wasm.gz",
+      "bytes": 9859,
+      "sha256": "23794a8e426ab841378e3a1bbc81444c3d9d31e0750aecd5e4632d703c357f50"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Logging.wasm",
+      "bytes": 16149,
+      "sha256": "81136a0c821337dfcb273e39f5b8228c72753be9797f3b326f2ac5870d08a9ae"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Logging.wasm.br",
+      "bytes": 6881,
+      "sha256": "ad955032d55e427e719a44541697e3caf1e4299f329922d0b51c5a942e2f28cc"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Logging.wasm.gz",
+      "bytes": 7660,
+      "sha256": "acb8df81409df79797b7a2e5d096000f5c12a35e293ed45b6850f00c46011e9d"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Options.wasm",
+      "bytes": 14613,
+      "sha256": "02f4b6c1a3c8451231bde562e9bddfeb30807c970b4a59cb8d39958c0e628dee"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Options.wasm.br",
+      "bytes": 6195,
+      "sha256": "4e66762f5ac6bd843ecac18baa21068efef019959de03dcedd6b20b6ff8f1f59"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Options.wasm.gz",
+      "bytes": 6808,
+      "sha256": "91740ba015ce19bb82dae49e61171bfa21bc0097f06e166f8dad8cfd2666679f"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Primitives.wasm",
+      "bytes": 7445,
+      "sha256": "a29a21e666fd835394b77a1ba70aeb3af99c43ee546d424f70144ca0feb70215"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Primitives.wasm.br",
+      "bytes": 2846,
+      "sha256": "cbd38fa171d4b77ccd0ff1e0571021e8a645bf85572ddc5db4425c6e06df68b6"
+    },
+    {
+      "file": "ui/_framework/Microsoft.Extensions.Primitives.wasm.gz",
+      "bytes": 3214,
+      "sha256": "68a07b03ed65de05431b7ad11cdf219867e844e54f2fe195f3a0b50ffe9e7c86"
+    },
+    {
+      "file": "ui/_framework/Microsoft.JSInterop.WebAssembly.wasm",
+      "bytes": 7957,
+      "sha256": "858720832e682105b4aa7b297154ee4a4fd579054e9d7da1cdb475265bfce806"
+    },
+    {
+      "file": "ui/_framework/Microsoft.JSInterop.WebAssembly.wasm.br",
+      "bytes": 3269,
+      "sha256": "8a22d3275cc0816a95c62f1bad50e33dd56110db943f16089cbdef7356affe66"
+    },
+    {
+      "file": "ui/_framework/Microsoft.JSInterop.WebAssembly.wasm.gz",
+      "bytes": 3692,
+      "sha256": "08b44d1f640dfd4f040f3b910f3096cdef621ddf8e20c345d5835ef399907f09"
+    },
+    {
+      "file": "ui/_framework/Microsoft.JSInterop.wasm",
+      "bytes": 38165,
+      "sha256": "6d390252d26e00207119213239af20e5b5a3256519a18e3c688cf8e7aeedd11c"
+    },
+    {
+      "file": "ui/_framework/Microsoft.JSInterop.wasm.br",
+      "bytes": 15152,
+      "sha256": "b3cd875a6050596419a556376b60831dd3dde8ed572a9d3a42bde550d7b06ac6"
+    },
+    {
+      "file": "ui/_framework/Microsoft.JSInterop.wasm.gz",
+      "bytes": 17166,
+      "sha256": "46289a5c4a076985e3ac657bb3cf6cb7fdf69477651938cd27e54eafef603fdb"
+    },
+    {
+      "file": "ui/_framework/System.Collections.Concurrent.wasm",
+      "bytes": 19221,
+      "sha256": "654aa0f94130f9b9c24fcc38f2706b338bf86ecfdf1d0dddca3a4b6f01226bb2"
+    },
+    {
+      "file": "ui/_framework/System.Collections.Concurrent.wasm.br",
+      "bytes": 7854,
+      "sha256": "af63cb69fcd14cad531612c6a51b49323f95648c3aad2892340339568a9e1468"
+    },
+    {
+      "file": "ui/_framework/System.Collections.Concurrent.wasm.gz",
+      "bytes": 8603,
+      "sha256": "464f0b7520e6eb2ae4a7841451979da54f91d1b4a5c7e93542a8cb66caf2b7fe"
+    },
+    {
+      "file": "ui/_framework/System.Collections.wasm",
+      "bytes": 11541,
+      "sha256": "058872301c9b551468de166d153f7ff43b2d002222a535dd74283b4669c51b1f"
+    },
+    {
+      "file": "ui/_framework/System.Collections.wasm.br",
+      "bytes": 4804,
+      "sha256": "b7bfd3f39aa5c01ca1cf7b41330f35646120c8cf0c088ffb7fe964b0ab6b60c9"
+    },
+    {
+      "file": "ui/_framework/System.Collections.wasm.gz",
+      "bytes": 5272,
+      "sha256": "f334d5e7667e7540a6bcb399a805e194aa6745a3388c9738d7ea033f85b10b3c"
+    },
+    {
+      "file": "ui/_framework/System.ComponentModel.wasm",
+      "bytes": 3861,
+      "sha256": "ad729bd4946ed3874613364781e1ad4911e0b1265ea28e2badb15ce179739f1e"
+    },
+    {
+      "file": "ui/_framework/System.ComponentModel.wasm.br",
+      "bytes": 1330,
+      "sha256": "a7466a1e2394b2713bc0fabbee318f13d3ae3a70d245d39f65f2ff817efe2e98"
+    },
+    {
+      "file": "ui/_framework/System.ComponentModel.wasm.gz",
+      "bytes": 1489,
+      "sha256": "f32e22587a0f68a0dc55c84eb1969c6b24c2e0ced557f09fa829c07cd2ac127c"
+    },
+    {
+      "file": "ui/_framework/System.Console.wasm",
+      "bytes": 13077,
+      "sha256": "8b878076ac662d05893dcc8ffc691a0612bca1e7c152a1a0a395c4906f216d1e"
+    },
+    {
+      "file": "ui/_framework/System.Console.wasm.br",
+      "bytes": 5651,
+      "sha256": "c4e6e0d57bd7ef9069bdbecfc62ebc62988c51922a1860a09458953175c709b2"
+    },
+    {
+      "file": "ui/_framework/System.Console.wasm.gz",
+      "bytes": 6399,
+      "sha256": "1d639302cee578c9b2fabc78399f0e49cdd9f72b7ec595312796cd0eef257c68"
+    },
+    {
+      "file": "ui/_framework/System.Diagnostics.DiagnosticSource.wasm",
+      "bytes": 20245,
+      "sha256": "1be7f2f24091fffcd37694789f21d2027164a9055d3670302f4ebd26b6bef04e"
+    },
+    {
+      "file": "ui/_framework/System.Diagnostics.DiagnosticSource.wasm.br",
+      "bytes": 8318,
+      "sha256": "a11c64447203a43a26b54f35542cc9d3799f352c01c74b6fc3700424dc74d940"
+    },
+    {
+      "file": "ui/_framework/System.Diagnostics.DiagnosticSource.wasm.gz",
+      "bytes": 9345,
+      "sha256": "46df8906c95f80d3d693d2b3605939817c4212ce571d9040268fb22840feee07"
+    },
+    {
+      "file": "ui/_framework/System.Linq.wasm",
+      "bytes": 42773,
+      "sha256": "66d8ac6edb80ac5571ef57fda19c2546457b00ef510b12d4922b2b66256381fc"
+    },
+    {
+      "file": "ui/_framework/System.Linq.wasm.br",
+      "bytes": 16067,
+      "sha256": "bab815fb054626b733df7337a9e9e5f3a4be2fe4e24b05a385b97c4c364344fe"
+    },
+    {
+      "file": "ui/_framework/System.Linq.wasm.gz",
+      "bytes": 18523,
+      "sha256": "d380d45cdaefce97af24c2542a10c84ad9090f051eae9f552c1e64baa175dd42"
+    },
+    {
+      "file": "ui/_framework/System.Memory.wasm",
+      "bytes": 12565,
+      "sha256": "d44a4ea150cf7f032fa6a7048201492c0168f289b78070d20a857ef8c6545c0b"
+    },
+    {
+      "file": "ui/_framework/System.Memory.wasm.br",
+      "bytes": 5433,
+      "sha256": "2a5b5af7b5abb4627037f6263d7176f99a15546c73144e633f946f02e1affece"
+    },
+    {
+      "file": "ui/_framework/System.Memory.wasm.gz",
+      "bytes": 6032,
+      "sha256": "d03da87a629f4057e45ba3723ed95ea4aef5456d0d3f5e75acc99b0a2b45170e"
+    },
+    {
+      "file": "ui/_framework/System.Net.Http.Json.wasm",
+      "bytes": 9493,
+      "sha256": "bd88ba737d0661080ede0a32d70627eff633e455a33b3d55d1d2627529d2f202"
+    },
+    {
+      "file": "ui/_framework/System.Net.Http.Json.wasm.br",
+      "bytes": 3978,
+      "sha256": "9fe92d923a16f700a5cd2644f299e8e578d05636fa0b7421f8c8e57f89c99703"
+    },
+    {
+      "file": "ui/_framework/System.Net.Http.Json.wasm.gz",
+      "bytes": 4406,
+      "sha256": "d6fe91a5f16d64e43831a8de3872041419145068817806eb60e243560f936c00"
+    },
+    {
+      "file": "ui/_framework/System.Net.Http.wasm",
+      "bytes": 134421,
+      "sha256": "cb172009beda79907e781e55d7b4fe1071f818da264a4edd91b8d5e482b5381c"
+    },
+    {
+      "file": "ui/_framework/System.Net.Http.wasm.br",
+      "bytes": 52241,
+      "sha256": "c2a6fe70b8498c6d31c02fae7d60b5fa70af184d9771b1017b0600bfcf59038e"
+    },
+    {
+      "file": "ui/_framework/System.Net.Http.wasm.gz",
+      "bytes": 59664,
+      "sha256": "a73d945d47e8afa6a75466422b86fbec016741e55ca548c08ae24e8592a25fe4"
+    },
+    {
+      "file": "ui/_framework/System.Net.Primitives.wasm",
+      "bytes": 6421,
+      "sha256": "034b820788d56e40f2aada13da1c93711e2aefaf9ad385364cfd24c1be86dd11"
+    },
+    {
+      "file": "ui/_framework/System.Net.Primitives.wasm.br",
+      "bytes": 2477,
+      "sha256": "225ac0adf47481faefc7726e42d0075b1ac73863b95b2c27b9376796ad009cb0"
+    },
+    {
+      "file": "ui/_framework/System.Net.Primitives.wasm.gz",
+      "bytes": 2857,
+      "sha256": "67e8b43bc2f184d0504869e03784b6b2d2342a91112cec1137fc30105a637788"
+    },
+    {
+      "file": "ui/_framework/System.Private.CoreLib.wasm",
+      "bytes": 1440021,
+      "sha256": "0b01bbf8fdeedc824080c0321d807f1d176bf3127723959446f375276f201819"
+    },
+    {
+      "file": "ui/_framework/System.Private.CoreLib.wasm.br",
+      "bytes": 464070,
+      "sha256": "634224ee9c29b9332096dcb92b4f362efb64c5033615214a7288dec16cca35a3"
+    },
+    {
+      "file": "ui/_framework/System.Private.CoreLib.wasm.gz",
+      "bytes": 558278,
+      "sha256": "c98638aed1f675b2c2cfa04186899be55fd8395f2f5b5a958fa6846485c018b4"
+    },
+    {
+      "file": "ui/_framework/System.Private.Uri.wasm",
+      "bytes": 61205,
+      "sha256": "4bce1368dc0ea220ae209ed1b98ffc29a72554dae356fc9f3eea82c4797a3589"
+    },
+    {
+      "file": "ui/_framework/System.Private.Uri.wasm.br",
+      "bytes": 24986,
+      "sha256": "3af99d113041009f1f62f417203ebfd1ef7c17f9543daf396103ca0a3bb56f8e"
+    },
+    {
+      "file": "ui/_framework/System.Private.Uri.wasm.gz",
+      "bytes": 27790,
+      "sha256": "6ca633db1baec73e8d9c3738a3ca8d6c7d3e382a8c18e2cb4736bbf4e4333238"
+    },
+    {
+      "file": "ui/_framework/System.Runtime.InteropServices.JavaScript.wasm",
+      "bytes": 38677,
+      "sha256": "5433e27476aefff531ffff91e96a0580b3d30fcdd4397dc6fe7a586990c8561f"
+    },
+    {
+      "file": "ui/_framework/System.Runtime.InteropServices.JavaScript.wasm.br",
+      "bytes": 14998,
+      "sha256": "6495c8bd5092ecc7f2f103354e9b8759bc7e160b09b3e380579a320af0531597"
+    },
+    {
+      "file": "ui/_framework/System.Runtime.InteropServices.JavaScript.wasm.gz",
+      "bytes": 17192,
+      "sha256": "5381eb06cc32924214ce66e44de0e623ec28a82504d3bffc9382397ff6b23ad3"
+    },
+    {
+      "file": "ui/_framework/System.Runtime.InteropServices.wasm",
+      "bytes": 7957,
+      "sha256": "7b4c10e7e56fba1cb228abfb8ed823664a4aaf014ef0c19772f0383bd7ea6f9a"
+    },
+    {
+      "file": "ui/_framework/System.Runtime.InteropServices.wasm.br",
+      "bytes": 2524,
+      "sha256": "428e2329a7130bc91793bff59a6f8996e0dfdcb38a762482ae198822d0ebf1d0"
+    },
+    {
+      "file": "ui/_framework/System.Runtime.InteropServices.wasm.gz",
+      "bytes": 2955,
+      "sha256": "95efa34fd6c3c8991ec6ad82bb30dfd902a00c0ebe5a4e07348687964ed80f65"
+    },
+    {
+      "file": "ui/_framework/System.Runtime.wasm",
+      "bytes": 7445,
+      "sha256": "150a31759ca91552b924a8c869fb69053a0b4886ec8860b9a5f564ded71061b3"
+    },
+    {
+      "file": "ui/_framework/System.Runtime.wasm.br",
+      "bytes": 2286,
+      "sha256": "9fb88a4d66e0bfa1f6469d6abea5fed013ba68a96b829ae68e0b6368bf7294d3"
+    },
+    {
+      "file": "ui/_framework/System.Runtime.wasm.gz",
+      "bytes": 2638,
+      "sha256": "7e4ee96393335468b47910847d4f90074f0e507e13c2fd891db8cba0aafd169d"
+    },
+    {
+      "file": "ui/_framework/System.Text.Encoding.Extensions.wasm",
+      "bytes": 3861,
+      "sha256": "4ad99996733dc84fd67219bf4dfb4449f23741d2661fe3838e396cdc7f9ab837"
+    },
+    {
+      "file": "ui/_framework/System.Text.Encoding.Extensions.wasm.br",
+      "bytes": 1363,
+      "sha256": "4fda5079cf59e32302920f801deeac9de8f0e81bf76e889ce6c3eb4446c592d5"
+    },
+    {
+      "file": "ui/_framework/System.Text.Encoding.Extensions.wasm.gz",
+      "bytes": 1552,
+      "sha256": "c20eb219ca78b0837ba472d4b7730cc16f942f71e0c65d166122808452e8f684"
+    },
+    {
+      "file": "ui/_framework/System.Text.Encodings.Web.wasm",
+      "bytes": 27925,
+      "sha256": "0cf194b7c3b61683381e3d164677c94046a61f32bb5145729d3f50815ebe1bfb"
+    },
+    {
+      "file": "ui/_framework/System.Text.Encodings.Web.wasm.br",
+      "bytes": 8873,
+      "sha256": "a78ff066998745920f5e5412b3e8fb6a31e7e5c4fe490259e8b740001d5e3a06"
+    },
+    {
+      "file": "ui/_framework/System.Text.Encodings.Web.wasm.gz",
+      "bytes": 9918,
+      "sha256": "74546becdd7ce7266c27a3b64a286e2bcd9c6bb1e20553cbd1b76df62e976438"
+    },
+    {
+      "file": "ui/_framework/System.Text.Json.wasm",
+      "bytes": 339221,
+      "sha256": "12fb96870f5e15f93de168eadea87ab493be4624f0c9bfa56be1b8a29a88238a"
+    },
+    {
+      "file": "ui/_framework/System.Text.Json.wasm.br",
+      "bytes": 114441,
+      "sha256": "22993762b4bd4438dc9e2a96b3e9e94474a55d9e836b2b917782e7ea0166e6e2"
+    },
+    {
+      "file": "ui/_framework/System.Text.Json.wasm.gz",
+      "bytes": 134467,
+      "sha256": "a8cc282e6119be586718793ff4313fdb9e6436d3de940d47ab7ac62bf6b96916"
+    },
+    {
+      "file": "ui/_framework/System.Text.RegularExpressions.wasm",
+      "bytes": 225045,
+      "sha256": "d647ed73efac8124b782061ca7d00e3d5c8e516c5865d14b4dbe87080c9add86"
+    },
+    {
+      "file": "ui/_framework/System.Text.RegularExpressions.wasm.br",
+      "bytes": 88097,
+      "sha256": "7f5536dcac271dbb725418729b7f1500933eee7ffca1eab4931742e82eff2e1c"
+    },
+    {
+      "file": "ui/_framework/System.Text.RegularExpressions.wasm.gz",
+      "bytes": 104121,
+      "sha256": "3fb2384de7da8f7d4f525de1f21f714f31f0a0de24d0eb8ca526b30e3e02d756"
+    },
+    {
+      "file": "ui/_framework/blazor.boot.json",
+      "bytes": 4229,
+      "sha256": "75f2bb67291aa42ceb3c5e87309f03fdd3ae32cd95d6402ef9ae3eddb6bd570c"
+    },
+    {
+      "file": "ui/_framework/blazor.boot.json.br",
+      "bytes": 1909,
+      "sha256": "ad296a044297bb6013242eb809bd12f0c854d9994f640d1e9e3d7a9be34a6b3b"
+    },
+    {
+      "file": "ui/_framework/blazor.boot.json.gz",
+      "bytes": 2062,
+      "sha256": "d42558aa42b4d09e487463b51f7e22e08d36f8112d862608d085282b124d8b37"
+    },
+    {
+      "file": "ui/_framework/blazor.webassembly.js",
+      "bytes": 59998,
+      "sha256": "904cdfea575a95d87ed83a626b66360ad532b241af5b52c81444535abba6948e"
+    },
+    {
+      "file": "ui/_framework/blazor.webassembly.js.br",
+      "bytes": 16801,
+      "sha256": "8b7513ba3dd8e1b9ae286f41ce0531b9a494d31514a981cca87a0191be178c7e"
+    },
+    {
+      "file": "ui/_framework/blazor.webassembly.js.gz",
+      "bytes": 18912,
+      "sha256": "9197123f6af90a3508b4c9a010cda92d2c864ea97d465b2b25fbfae2cac3be43"
+    },
+    {
+      "file": "ui/_framework/dotnet.js",
+      "bytes": 35871,
+      "sha256": "0cf3f38cf7c9a4faff5633e13bdcd9b26f22ab7b2917105b73fbbc1e7437ea05"
+    },
+    {
+      "file": "ui/_framework/dotnet.js.br",
+      "bytes": 10253,
+      "sha256": "4c67690971fc9adfcf033b73eb9c9adfbdfafcf2f6da6b669c55b8d5360aad08"
+    },
+    {
+      "file": "ui/_framework/dotnet.js.gz",
+      "bytes": 11477,
+      "sha256": "8db0108c110bc54ed4124d4988b4c80d3bc5f47a37f8ea6ec814a96f6a840a4c"
+    },
+    {
+      "file": "ui/_framework/dotnet.native.8.0.31.62ha5vgw49.js",
+      "bytes": 160089,
+      "sha256": "f4da17795528e1636b12aae3029ff2dd873c3660dcca6424ccc18e21b2291a2a"
+    },
+    {
+      "file": "ui/_framework/dotnet.native.8.0.31.62ha5vgw49.js.br",
+      "bytes": 31474,
+      "sha256": "e24723068331db5aa8237e728d50cc0a0fadbbc069a6ff7f610544c14164f91c"
+    },
+    {
+      "file": "ui/_framework/dotnet.native.8.0.31.62ha5vgw49.js.gz",
+      "bytes": 36157,
+      "sha256": "29ad99408ffbc4e870703d25b95903d79fb6ab62f2953f43f9da9e60972cbafb"
+    },
+    {
+      "file": "ui/_framework/dotnet.native.wasm",
+      "bytes": 2921027,
+      "sha256": "7fa6fc38cccfc5989c7c1b89402ee96345ebaa77dfbc75fbeaba8b786a4bee82"
+    },
+    {
+      "file": "ui/_framework/dotnet.native.wasm.br",
+      "bytes": 951403,
+      "sha256": "c52a73bb63aac3d15c6d6946cf50913c56dc1308be45c1ea76c0a98646bc6019"
+    },
+    {
+      "file": "ui/_framework/dotnet.native.wasm.gz",
+      "bytes": 1154612,
+      "sha256": "b75d72262aa68057d38ad32481048afb4cf6c8b36a60282710224883f60a00f9"
+    },
+    {
+      "file": "ui/_framework/dotnet.runtime.8.0.31.b5wbc8r2no.js",
+      "bytes": 223202,
+      "sha256": "ab356df3aab418a80335e939f96141cf6854f231b123ce9825e6663465e3fea3"
+    },
+    {
+      "file": "ui/_framework/dotnet.runtime.8.0.31.b5wbc8r2no.js.br",
+      "bytes": 54664,
+      "sha256": "932adf063ba5075c2582321fa5afdf3c1dbf5d78e3e986d0940722bcb189a831"
+    },
+    {
+      "file": "ui/_framework/dotnet.runtime.8.0.31.b5wbc8r2no.js.gz",
+      "bytes": 64972,
+      "sha256": "57ff422b1db1adfe2cf1be7cccf00d7fff072cf0650d8a51d2c03b6f68a71846"
+    },
+    {
+      "file": "ui/_framework/icudt_CJK.dat",
+      "bytes": 956416,
+      "sha256": "4992ed42745cd09930a8769bd155153fb4f7b813d2798cf1cc39e9c4fa549c79"
+    },
+    {
+      "file": "ui/_framework/icudt_CJK.dat.br",
+      "bytes": 248840,
+      "sha256": "a8fcd127bbe9657ce07e7ff344de2c1350c290830e86fd2e86921effa50c623e"
+    },
+    {
+      "file": "ui/_framework/icudt_CJK.dat.gz",
+      "bytes": 333110,
+      "sha256": "5d0bbe088eebaec540176424b2ae9697d8afe8c2e185197cdff6ef8f725f2627"
+    },
+    {
+      "file": "ui/_framework/icudt_EFIGS.dat",
+      "bytes": 550832,
+      "sha256": "f1f22d7ad618f24434c30ea8c704cb893de85e50701caba66de3f6a51178c937"
+    },
+    {
+      "file": "ui/_framework/icudt_EFIGS.dat.br",
+      "bytes": 143983,
+      "sha256": "f02d24fa2b5ee677a3e0bd5b8e2789a7a5ac7fd0d8f369fa7fce6f09e7492bf6"
+    },
+    {
+      "file": "ui/_framework/icudt_EFIGS.dat.gz",
+      "bytes": 196037,
+      "sha256": "c456a4c529964e0ff89df23dc95f297c9fcaa262152bc9d26c692a9521377902"
+    },
+    {
+      "file": "ui/_framework/icudt_no_CJK.dat",
+      "bytes": 1107168,
+      "sha256": "2fbb15ecd1183f7eff42bd853c278fa39709a918135d1c061eec05e50fb435fb"
+    },
+    {
+      "file": "ui/_framework/icudt_no_CJK.dat.br",
+      "bytes": 222250,
+      "sha256": "7eff6642a201babfc94327b17caad5623769c3bcdd696e33578ab1224ce0c652"
+    },
+    {
+      "file": "ui/_framework/icudt_no_CJK.dat.gz",
+      "bytes": 317618,
+      "sha256": "09b746e0bb0b89c9d571408b9dcfdd0394ebe73061c54892f8f5a3ccc162ec0e"
+    },
+    {
+      "file": "ui/bench.css",
+      "bytes": 19913,
+      "sha256": "9d7d9e20110f5b3960fb9699e1373330cb5266f78a5432536004398a404c585c"
+    },
+    {
+      "file": "ui/index.html",
+      "bytes": 649,
+      "sha256": "e1097fb223f8ffc4cca8779131ebf0d40cfed9d08cf7148aef6cedd31682ad7c"
+    }
+  ],
+  "sources": [
+    {
+      "file": "config/apps/aa1/App.razor",
+      "sha256": "723e6eabfba093f93b4855b6aa0e7bfb1f01fd6aa3e9cce9a7426ac5c78e4607"
+    },
+    {
+      "file": "config/apps/aa1/App.razor.cs",
+      "sha256": "3fda00e4c657e993825172bf16cdb6be79fe7bebbea904fabee4689084b130d6"
+    },
+    {
+      "file": "config/apps/aa1/Bench.csproj",
+      "sha256": "6e319690d5b64e053d3b780498676fdcd2abebfd9a57a0db21bad64dd1bceacd"
+    },
+    {
+      "file": "config/apps/aa1/Dockerfile",
+      "sha256": "dab7539e0962c95c8fa3fdd24ca5855db3012840a569913da4ec99bb798e6faf"
+    },
+    {
+      "file": "config/apps/aa1/Invoice14.cs",
+      "sha256": "2abb687b411c2ff8112a1bcdb41c9275dd6f9fb1b905d81820cbecf3223adf33"
+    },
+    {
+      "file": "config/apps/aa1/Probe2.cs",
+      "sha256": "2119c25ba61b2f6313924a5dd5a6e4fa1248b8415afa3dba929f0c63003ef0de"
+    },
+    {
+      "file": "config/apps/aa1/ProbeMath.cs",
+      "sha256": "3e9a2c87f4f493593891f80f338296b2d9e2992ab77ef1df7a6c5ca0463cfde8"
+    },
+    {
+      "file": "config/apps/aa1/Program.cs",
+      "sha256": "882b0dccaa689ca5fc4c37ab203b4f79137519bff1248d1028781b67a1c7b499"
+    },
+    {
+      "file": "config/apps/aa1/ReplayCheck.cs",
+      "sha256": "f8a9187113d1cb003409daf0e16e2d94a7a27240b95b60a911fb6932c109aebe"
+    },
+    {
+      "file": "config/apps/aa1/_Imports.razor",
+      "sha256": "d27e2e9f74742e168a3706b6d1538d7f81dc1aaf670eb7a81256de533ec0c226"
+    },
+    {
+      "file": "config/apps/aa1/wwwroot/bench.css",
+      "sha256": "9d7d9e20110f5b3960fb9699e1373330cb5266f78a5432536004398a404c585c"
+    },
+    {
+      "file": "config/apps/aa1/wwwroot/index.html",
+      "sha256": "e1097fb223f8ffc4cca8779131ebf0d40cfed9d08cf7148aef6cedd31682ad7c"
+    },
+    {
+      "file": "config/parts/1.cs",
+      "sha256": "d6b92912c1516d387b4d287779a574bc2b7896dfd53a191ea5dbef91be148c34"
+    },
+    {
+      "file": "config/parts/examples/basketball.json",
+      "sha256": "06a81957f8c48ae4b917b0172b9a6c3870d3d7bda2d827e9d94da84a07e7e99c"
+    },
+    {
+      "file": "config/parts/examples/catalogue.json",
+      "sha256": "30773bddca535ed6029c0158fa905c80f08a69a64d3dd8dda056646b208e94e1"
+    },
+    {
+      "file": "config/parts/examples/compound-lift.json",
+      "sha256": "30c816a3a7a54d8924f6928bbdc37cd9ddcc05524aaa5303744e6b81aebbf0d6"
+    },
+    {
+      "file": "config/parts/examples/count-interlock.json",
+      "sha256": "dbcf4b33dcf033eed792b7d7445157b32e901c00678e2b4adbaa7f613e4e1479"
+    },
+    {
+      "file": "config/parts/examples/crank-slider.json",
+      "sha256": "ba5cc1c8b49bd73ea127ee962615e7c536236a13fb56b6a1fbd2331b53c75c38"
+    },
+    {
+      "file": "config/parts/examples/domino-line.json",
+      "sha256": "4f434a2f95d3e84912ee5ae8c2fe45bc8e1aec3bdfb8b4e09c5cd71c83ac9a53"
+    },
+    {
+      "file": "config/parts/examples/gearbox.json",
+      "sha256": "c7cb2f6a52ed9f724b2db0549f2d590a0365995ad3774914543288050e3112fd"
+    },
+    {
+      "file": "config/parts/examples/isolated-conveyor.json",
+      "sha256": "f024cf0977f87e4fad877bc4aac9ffd04bb4152ba215bb5093dd714e42c1ce7e"
+    },
+    {
+      "file": "config/parts/examples/limited-crossing.json",
+      "sha256": "3c57cce4c9e947d973b03504a833525557ccaec460796b5c55f6042c4bb79aa4"
+    },
+    {
+      "file": "config/parts/examples/marble-relay.json",
+      "sha256": "6b4b04e8c3d5de607503609456d5d3f25466d188244ebe23c3a2af442abf77d8"
+    },
+    {
+      "file": "config/parts/examples/parallel-transfer.json",
+      "sha256": "8c0016dd3e44ccf0486ce168122154a22093b66c518c9d4bf2fb81e0bf2b88c4"
+    },
+    {
+      "file": "config/parts/examples/pendulum-bank.json",
+      "sha256": "29fc011ab230fccfcd02c0e00d70c0363a1ed9fd546993f4b9109042c2779f59"
+    },
+    {
+      "file": "config/parts/examples/split-logic.json",
+      "sha256": "32c0ce905f0a9122f65f231a9fde2747086c4041323d483abe44b7054526ebc2"
+    },
+    {
+      "file": "config/parts/examples/switchback-sorter.json",
+      "sha256": "001f7d7e769b27e4e94e71aa23997f6570af87b20be7e6015c0518ccade142e8"
+    },
+    {
+      "file": "config/parts/examples/timing-belt.json",
+      "sha256": "b66080245f1bfe992e16e3359c5f923be1c9499833c36bcda9e50cdb9f4737b0"
+    },
+    {
+      "file": "config/parts/examples/tuned-damping.json",
+      "sha256": "6f23b35fc8d3d3d24da6423e2b4bb5c14f9e9e298008ab132e900a8a92dc34ac"
+    },
+    {
+      "file": "pcakage/slot7/1.rs",
+      "sha256": "8b440d1108f75e7059a96efda131ad19c28122ff31ab15a02127279bb2cba949"
+    },
+    {
+      "file": "pcakage/slot7/Cargo.lock",
+      "sha256": "d2a721d41d3b6fb6d89e76c92b121e5f12fcd97f55091a80d757ad82b1f44b6d"
+    },
+    {
+      "file": "pcakage/slot7/Cargo.toml",
+      "sha256": "491ec661f43641227943bdde17d84f8c50a33b1661a5683006ef9a02918dbec7"
+    },
+    {
+      "file": "pcakage/slot7/cache.rs",
+      "sha256": "4e2869b7e9148b6bf8845e63e0e7a012dca1146c89c88f08e066f187ad045d8c"
+    },
+    {
+      "file": "pcakage/slot7/check.rs",
+      "sha256": "bc6604a8521878c6f9a0e52d2299a9898d5d94477937f8c7650a313a80dfdf70"
+    },
+    {
+      "file": "pcakage/slot7/layout.rs",
+      "sha256": "24079206109eaee848a39f2a807e557f777221b368a8ea3087ce2235216a27a2"
+    },
+    {
+      "file": "pinia/folder2/2.rs",
+      "sha256": "0e67873dd684d50e0bfb11e99de8bd69b15da28ee0873aa7359b0c0410f39172"
+    },
+    {
+      "file": "pinia/folder2/Dockerfile",
+      "sha256": "4d8fcbb373e83ca7d6d5552bc4e6d0f50c98f318d3050a93c62e66b7c8069eb3"
+    },
+    {
+      "file": "pinia/folder2/RAPIER-LICENSE.txt",
+      "sha256": "86ae51c591e742d80ce56823d35e2e176b53e38a99bd8499c85dae31ef4fe1f7"
+    },
+    {
+      "file": "pinia/folder2/README.md",
+      "sha256": "c9523d2e429374dfe7ae32d7080b0e26e0b41a75e5d8294a443177a05c1800ee"
+    },
+    {
+      "file": "pinia/folder2/aaa.rs",
+      "sha256": "4c73afff5756c7c5b4dda4af3fa2390c3a5a3f5ec97d8ddca3e42df4e548291e"
+    },
+    {
+      "file": "pinia/folder2/common.rs",
+      "sha256": "2c6ae26fb52483fa9b1ce8ac5c965e0101b002860b5571ce614195cb6a4683f4"
+    },
+    {
+      "file": "pinia/folder2/old.rs",
+      "sha256": "22b37c3767c6ab81d1b4ece903125ca39adef34fb43d30cd8e311e27a3ea200d"
+    },
+    {
+      "file": "config/apps/portal/src/workshop/Library.vue",
+      "sha256": "13fee6c84010f93c2ea22826ca40d0d8fa87682ad486f474777b48c59366396d"
+    },
+    {
+      "file": "config/apps/portal/src/workshop/Replay.svelte",
+      "sha256": "fcb9ddf810a7ac4726061c28d26ee42b6cc93d28e196c5eb3dd111bb8c0769d4"
+    },
+    {
+      "file": "config/apps/portal/src/workshop/bridge.mjs",
+      "sha256": "3b5078ba0c924d960acb7dbc947c4e4d615c90ffd66ebaa3c2ae501009e23570"
+    },
+    {
+      "file": "config/apps/portal/src/workshop/engine-worker.mjs",
+      "sha256": "b4ef31e70073061bef1a2974aafd0d70059100309a4e6a41b7376ccbe1e4414b"
+    },
+    {
+      "file": "config/apps/portal/src/workshop/page.css",
+      "sha256": "50360a4ce6fdfacdcc734e0db0d451eea09fa00d745e0fd6a888dd10beb06d8a"
+    },
+    {
+      "file": "config/apps/portal/src/workshop/receipt2.mjs",
+      "sha256": "763bed4b4000560b2824c94969dba159495d892211bd98d193c44112558c0808"
+    },
+    {
+      "file": "config/apps/portal/src/workshop/scene.mjs",
+      "sha256": "1760713daf225349e429a3708373bde8dad36ded726f7b2802a7ead123350cc8"
+    },
+    {
+      "file": "config/apps/portal/src/workshop/shell.mjs",
+      "sha256": "7200399e44394028b3703c28303f219c162e7e7179808dc8906e680a3fd9fba3"
+    },
+    {
+      "file": "scripts/workshop-artifacts.mjs",
+      "sha256": "7254405d86c1376e31619cba91b31d17881366d470a38238cb2d510564fede4d"
+    },
+    {
+      "file": "scripts/build-workshop-engines.mjs",
+      "sha256": "61bcfed0e903e7759aea8e41138447d6b7a50373dfe937309a711735a76ab174"
+    },
+    {
+      "file": "scripts/collect-workshop-licenses.mjs",
+      "sha256": "85c3cf6f0fdb9087ff63d88b387c11e517a566943c943727a794440e64e404b9"
+    }
+  ],
+  "runtimeLicenses": [
+    {
+      "file": "docs/licenses/workshop-runtime/allocator-api2-0.2.21/LICENSE-APACHE",
+      "sha256": "20fe7b00e904ed690e3b9fd6073784d3fc428141dbd10b81c01fd143d0797f58"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/allocator-api2-0.2.21/LICENSE-MIT",
+      "sha256": "36516aefdc84c5d5a1e7485425913a22dbda69eb1930c5e84d6ae4972b5194b9"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/approx-0.5.1/LICENSE",
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/arrayvec-0.7.8/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/arrayvec-0.7.8/LICENSE-MIT",
+      "sha256": "4da95ec4ecb65b738d470b7d762894ad9c97da93e6cbfb18b570fc2c96f4b871"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/aspnetcore-8.0.31-LICENSE.txt",
+      "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/aspnetcore-8.0.31-THIRD-PARTY-NOTICES.txt",
+      "sha256": "52af3d603b6d069e635f8afd08ec44ec01559255b5f3afd161ae9e6fe7e7aa54"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/autocfg-1.5.1/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/autocfg-1.5.1/LICENSE-MIT",
+      "sha256": "27995d58ad5c1145c1a8cd86244ce844886958a35eb2b78c6b772748669999ac"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/bit-vec-0.7.0/LICENSE-APACHE",
+      "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/bit-vec-0.7.0/LICENSE-MIT",
+      "sha256": "f51ac2c59a222f7476ce507ca879960e2b64ea64bb2786eefdbeb7b0b538d1b7"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/bitflags-2.13.2/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/bitflags-2.13.2/LICENSE-MIT",
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/bytemuck-1.25.2/LICENSE-APACHE",
+      "sha256": "e3ba223bb1423f0aad8c3dfce0fe3148db48926d41e6fbc3afbbf5ff9e1c89cb"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/bytemuck-1.25.2/LICENSE-MIT",
+      "sha256": "9df9ba60a11af705f2e451b53762686e615d86f76b169cf075c3237730dbd7e2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/bytemuck-1.25.2/LICENSE-ZLIB",
+      "sha256": "84b34dd7608f7fb9b17bd588a6bf392bf7de504e2716f024a77d89f1b145a151"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-0.8.5/LICENSE-APACHE",
+      "sha256": "6f712474a3e3be1386d2d0c29449850ea788da64d35cff0fc8799acf741e9ecd"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-0.8.5/LICENSE-MIT",
+      "sha256": "5734ed989dfca1f625b40281ee9f4530f91b2411ec01cb748223e7eb87e201ab"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-channel-0.5.17/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-channel-0.5.17/LICENSE-MIT",
+      "sha256": "5734ed989dfca1f625b40281ee9f4530f91b2411ec01cb748223e7eb87e201ab"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-channel-0.5.17/LICENSE-THIRD-PARTY",
+      "sha256": "b16db96b93b1d7cf7bea533f572091ec6bca3234fbe0a83038be772ff391a44c"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-deque-0.8.8/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-deque-0.8.8/LICENSE-MIT",
+      "sha256": "5734ed989dfca1f625b40281ee9f4530f91b2411ec01cb748223e7eb87e201ab"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-epoch-0.9.21/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-epoch-0.9.21/LICENSE-MIT",
+      "sha256": "5734ed989dfca1f625b40281ee9f4530f91b2411ec01cb748223e7eb87e201ab"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-queue-0.3.14/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-queue-0.3.14/LICENSE-MIT",
+      "sha256": "5734ed989dfca1f625b40281ee9f4530f91b2411ec01cb748223e7eb87e201ab"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-utils-0.8.23/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/crossbeam-utils-0.8.23/LICENSE-MIT",
+      "sha256": "5734ed989dfca1f625b40281ee9f4530f91b2411ec01cb748223e7eb87e201ab"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/dotnet-runtime-8.0.31-LICENSE.txt",
+      "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/dotnet-runtime-8.0.31-THIRD-PARTY-NOTICES.txt",
+      "sha256": "97c1a7b3da6a4c6ad516448719f45114b41a4d4c5aa300a944476e2e4f5da438"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/downcast-rs-1.2.1/LICENSE-APACHE",
+      "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/downcast-rs-1.2.1/LICENSE-MIT",
+      "sha256": "fb252fecf98d9af8f1d9201c5860319a514f5a8a24700dc84fc6ea287a7a4958"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/either-1.19.0/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/either-1.19.0/LICENSE-MIT",
+      "sha256": "7576269ea71f767b99297934c0b2367532690f8c4badc695edf8e04ab6a1e545"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/ena-0.14.4/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/ena-0.14.4/LICENSE-MIT",
+      "sha256": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/equivalent-1.0.2/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/equivalent-1.0.2/LICENSE-MIT",
+      "sha256": "7365cc8878a1d7ce155a58c4ca09c3d7a6be413efa5334a80ea842912b669349"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/foldhash-0.2.0/LICENSE",
+      "sha256": "b1181a40b2a7b25cf66fd01481713bc1005df082c53ef73e851e55071b102744"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/hashbrown-0.16.1/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/hashbrown-0.16.1/LICENSE-MIT",
+      "sha256": "ff8f68cb076caf8cefe7a6430d4ac086ce6af2ca8ce2c4e5a2004d4552ef52a2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/hashbrown-0.17.1/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/hashbrown-0.17.1/LICENSE-MIT",
+      "sha256": "ff8f68cb076caf8cefe7a6430d4ac086ce6af2ca8ce2c4e5a2004d4552ef52a2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/indexmap-2.14.2/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/indexmap-2.14.2/LICENSE-MIT",
+      "sha256": "ecc269ef87fd38a1d98e30bfac9ba964a9dbd9315c3770fed98d4d7cb5882055"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/itoa-1.0.18/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/itoa-1.0.18/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/libm-0.2.16/LICENSE.txt",
+      "sha256": "3823dda7cf046602f4b4e77ec8e227863dc4736037cc85bb33d9f19febe16bb7"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/log-0.4.34/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/log-0.4.34/LICENSE-MIT",
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/manifest.json",
+      "sha256": "2cf08702e736414d2b491bb74a2758d6037ce6432e4cc5eaafc07e61ea6748e9"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/matrixmultiply-0.3.11/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/matrixmultiply-0.3.11/LICENSE-MIT",
+      "sha256": "792d075c7bad6dac258a44e799eb64cbf465e24d9932d27669be08c5ec957e27"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/memchr-2.8.3/COPYING",
+      "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/memchr-2.8.3/LICENSE-MIT",
+      "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/memchr-2.8.3/UNLICENSE",
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/nalgebra-0.33.3/LICENSE",
+      "sha256": "86ae51c591e742d80ce56823d35e2e176b53e38a99bd8499c85dae31ef4fe1f7"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/nalgebra-macros-0.2.2/LICENSE",
+      "sha256": "1e881ecf2862d01e6e5bc2b861e46886d2a6fb01499c0c508a209a7271b13cf2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-bigint-0.4.8/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-bigint-0.4.8/LICENSE-MIT",
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-complex-0.4.6/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-complex-0.4.6/LICENSE-MIT",
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-derive-0.4.2/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-derive-0.4.2/LICENSE-MIT",
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-integer-0.1.47/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-integer-0.1.47/LICENSE-MIT",
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-rational-0.4.2/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-rational-0.4.2/LICENSE-MIT",
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-traits-0.2.19/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/num-traits-0.2.19/LICENSE-MIT",
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/ordered-float-4.6.0/LICENSE-MIT",
+      "sha256": "f7715d38a3fa1b4ac97c5729740752505a39cb92ee83ab5b102aeb5eaa7cdea4"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/parry2d-0.17.6/LICENSE",
+      "sha256": "ceacfa4d7fa67df64ab09a56fe248c50a3bfc9bc00374d69bd74ad763b14b89c"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/paste-1.0.15/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/paste-1.0.15/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/proc-macro2-1.0.107/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/proc-macro2-1.0.107/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/quote-1.0.47/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/quote-1.0.47/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/rapier2d-0.22.0-APACHE.txt",
+      "sha256": "86ae51c591e742d80ce56823d35e2e176b53e38a99bd8499c85dae31ef4fe1f7"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/rapier2d-0.22.0/LICENSE",
+      "sha256": "86ae51c591e742d80ce56823d35e2e176b53e38a99bd8499c85dae31ef4fe1f7"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/rawpointer-0.2.1/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/rawpointer-0.2.1/LICENSE-MIT",
+      "sha256": "7576269ea71f767b99297934c0b2367532690f8c4badc695edf8e04ab6a1e545"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/robust-1.2.0/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/robust-1.2.0/LICENSE-MIT",
+      "sha256": "ddb606a4226673241b8dedb155a25b271178d028a2bf74c90ee47fe495f4d9bc"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/rust-COPYRIGHT.txt",
+      "sha256": "172020dbfd5b53a226dfde77616190a48dcff519b0bc0e6deb91a8450782c4af"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/rust-LICENSE-APACHE.txt",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/rust-LICENSE-MIT.txt",
+      "sha256": "b71bd43a069ca0641a9ecfe585ca7b3c53b5cc1608f8b68321168698e28b5ea1"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/rustc-hash-2.1.3/LICENSE-APACHE",
+      "sha256": "95bd3988beee069fa2848f648dab43cc6e0b2add2ad6bcb17360caf749802bcc"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/rustc-hash-2.1.3/LICENSE-MIT",
+      "sha256": "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/ryu-1.0.23/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/ryu-1.0.23/LICENSE-BOOST",
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/safe_arch-0.7.4/LICENSE-APACHE.md",
+      "sha256": "e3ba223bb1423f0aad8c3dfce0fe3148db48926d41e6fbc3afbbf5ff9e1c89cb"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/safe_arch-0.7.4/LICENSE-MIT.md",
+      "sha256": "e57011537d230b14e790f6666dc00816f7b371ebbd7da8a12491e51086fec278"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/safe_arch-0.7.4/LICENSE-ZLIB.md",
+      "sha256": "c43b9a9b1387ed53d2c49263838261129a010e280e3a174a792242c3e2c98db9"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/serde-1.0.228/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/serde-1.0.228/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/serde_core-1.0.228/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/serde_core-1.0.228/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/serde_derive-1.0.228/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/serde_derive-1.0.228/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/serde_json-1.0.145/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/serde_json-1.0.145/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/simba-0.9.1/LICENSE",
+      "sha256": "ceacfa4d7fa67df64ab09a56fe248c50a3bfc9bc00374d69bd74ad763b14b89c"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/slab-0.4.12/LICENSE",
+      "sha256": "8ce0830173fdac609dfb4ea603fdc002c2f4af0dc9b1a005653f5da9cf534b18"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/smallvec-1.16.2/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/smallvec-1.16.2/LICENSE-MIT",
+      "sha256": "0b28172679e0009b655da42797c03fd163a3379d5cfa67ba1f1655e974a2a1a9"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/spade-2.15.1/LICENSE-APACHE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/spade-2.15.1/LICENSE-MIT",
+      "sha256": "fc1a4c9482e823f450af4c85471ca6e58d1fd0b3bd0998be4547b1be4a5bc4af"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/syn-2.0.119/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/syn-2.0.119/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/thiserror-1.0.69/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/thiserror-1.0.69/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/thiserror-impl-1.0.69/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/thiserror-impl-1.0.69/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/three-0.186.1-MIT.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/typenum-1.20.1/LICENSE",
+      "sha256": "db11fec9946737df39ca3898d9cd8c10ec6f6c3a884a6802b0ad0b81b4e8f23a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/typenum-1.20.1/LICENSE-APACHE",
+      "sha256": "516b24e051bf5630880ebbd55c40a25ce9552ebaf8970a53e8976eb70e522406"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/typenum-1.20.1/LICENSE-MIT",
+      "sha256": "a825bd853ab71619a4923d7b4311221427848070ff44d990da39b0b274c1683f"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/unicode-ident-1.0.26/LICENSE-APACHE",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/unicode-ident-1.0.26/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/unicode-ident-1.0.26/LICENSE-UNICODE",
+      "sha256": "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1"
+    },
+    {
+      "file": "docs/licenses/workshop-runtime/wide-0.7.33/LICENSE-ZLIB.md",
+      "sha256": "c43b9a9b1387ed53d2c49263838261129a010e280e3a174a792242c3e2c98db9"
+    }
+  ]
+}

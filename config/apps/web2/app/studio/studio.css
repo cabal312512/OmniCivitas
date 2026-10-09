@@ -4,3 +4,6 @@
 body:has([data-studio-mode]){margin:0;background:#f7fbff;color:#18345b}
 [data-studio-mode] .btn{border-radius:0;font:11px Arial;padding:5px 7px;border-width:1px}
 [data-studio-mode] button:focus-visible,[data-studio-mode] textarea:focus-visible{outline:2px solid #164dff;outline-offset:2px}
+.take-return{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-top:35px;border:1px solid #acc4e7;padding:6px;background:#fff;font:11px Arial;color:#315782}
+.take-return select,.take-return button{border:1px solid #93b3e0;background:#f4f9ff;color:#164dff;padding:4px;font:11px Arial;border-radius:0}
+.take-return button:disabled{color:#94a2b7;border-color:#c8d1df;background:#edf1f5;cursor:default}.take-return output{min-width:45px}.take-return label{display:flex;align-items:center;gap:3px}.take-return svg{flex-basis:100%;height:68px;border-top:1px solid #d9e6f8;margin-top:3px}

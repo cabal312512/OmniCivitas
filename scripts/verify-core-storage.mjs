@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import os from 'node:os';
 import {composeCall,dockerCall} from './docker-child.mjs';
-const base=process.env.OCV_BASE_URL||'http://127.0.0.1:8080',checks=[];
+import {verificationConfig} from './verification-config.mjs';
+const {baseUrl:base,reportRoot}=verificationConfig();const checks=[];
 const request=(route,options={})=>fetch(base+route,{...options,headers:{Connection:'close',...options.headers},signal:AbortSignal.timeout(8000)});
-const query=sql=>composeCall(['exec','-T','postgres','sh','-c','psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -At -c "$1"','ocv-query',sql]).stdout.trim();
+const query=sql=>composeCall(['exec','-T','postgres','sh','-c','PGPASSWORD="$POSTGRES_PASSWORD" psql -X -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB" -At -c "$1"','ocv-query',sql]).stdout.trim();
 const cache=id=>JSON.parse(composeCall(['exec','-T','redis','redis-cli','--raw','GET','school:sku:'+id]).stdout.trim());
 const check=(name,condition)=>{assert.ok(condition,name);checks.push(name);console.log('PASS '+name);};
 const ready=await request('/health/ready');const state=await ready.json();check('Real required infrastructure is connected',ready.ok&&state.postgres==='connected'&&state.redis==='connected');
@@ -23,4 +23,4 @@ assert.deepEqual(row(),saved.record);assert.deepEqual(cache(id),saved.record);ch
 check('Retention is bounded',Number(query('SELECT count(*) FROM ocv_core.mall_goods'))<=256);
 const ids=composeCall(['ps','-q']).stdout.trim().split(/\s+/).filter(Boolean);const containers=JSON.parse(dockerCall(['inspect',...ids]).stdout);
 for(const item of containers){const config=item.HostConfig;check('Enforced resources/health/log bound: '+item.Config.Labels['com.docker.compose.service'],config.Memory>0&&config.MemorySwap===config.Memory&&config.NanoCpus>0&&config.PidsLimit>0&&config.LogConfig.Config['max-size']==='5m'&&item.State.Health?.Status==='healthy');}
-const reportRoot=path.join(process.env.OCV_DEPS_ROOT||os.tmpdir(),'runtime/reports');await fs.mkdir(reportRoot,{recursive:true});await fs.writeFile(path.join(reportRoot,(process.env.OCV_VERIFY_REPORT_PREFIX||'')+'core-storage-verification.json'),JSON.stringify({status:'passed',updatedAt:new Date().toISOString(),base,checks,id,storage:saved.storage,before,containers:containers.map(item=>({service:item.Config.Labels['com.docker.compose.service'],health:item.State.Health.Status,memory:item.HostConfig.Memory,mounts:item.Mounts.map(mount=>({type:mount.Type,name:mount.Name,destination:mount.Destination}))}))},null,2));
+await fs.mkdir(reportRoot,{recursive:true});await fs.writeFile(path.join(reportRoot,(process.env.OCV_VERIFY_REPORT_PREFIX||'')+'core-storage-verification.json'),JSON.stringify({status:'passed',updatedAt:new Date().toISOString(),base,checks,id,storage:saved.storage,before,containers:containers.map(item=>({service:item.Config.Labels['com.docker.compose.service'],health:item.State.Health.Status,memory:item.HostConfig.Memory,mounts:item.Mounts.map(mount=>({type:mount.Type,name:mount.Name,destination:mount.Destination}))}))},null,2));

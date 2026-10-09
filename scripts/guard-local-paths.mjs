@@ -1,11 +1,11 @@
 import path from 'node:path';
-const root = process.env.OCV_DEPS_ROOT;
+import { resolveRuntimePaths } from './runtime-paths.mjs';
+const root = resolveRuntimePaths().depsRoot;
 if (process.env.OCV_LOCAL_STORAGE_GUARD === '1') {
-  if (!root || (process.platform === 'win32' && path.resolve(root).toLowerCase() !== 'f:\\ocvdeps')) {
-    throw new Error('Dependency environment is missing. On Windows use .\\ocv.ps1; no default C: installation is permitted.');
-  }
+  const canonical = value => process.platform === 'win32' ? path.resolve(value).toLowerCase() : path.resolve(value);
+  const within = value => { const relative = path.relative(canonical(root), canonical(value)); return !relative.startsWith('..'+path.sep) && relative !== '..' && !path.isAbsolute(relative); };
   for (const key of ['OCV_STORE_DIR', 'OCV_VIRTUAL_STORE_DIR', 'npm_config_cache', 'TEMP', 'TMP']) {
     const value = process.env[key];
-    if (!value || (process.platform === 'win32' && !path.resolve(value).toLowerCase().startsWith('f:\\ocvdeps\\'))) throw new Error(`${key} must be inside F:\\OCVdeps.`);
+    if (!value || !within(value)) throw new Error(`${key} must be inside the configured dependency root. Use ocv.ps1 to initialize its cache paths.`);
   }
 }

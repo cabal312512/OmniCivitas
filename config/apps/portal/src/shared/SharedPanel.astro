@@ -1,0 +1,8 @@
+---
+import {panelContents} from './panel-template.mjs';
+import './shared.css';
+interface Props { domain:'signals'|'workshop'|'music'; frame?:string; }
+const {domain,frame=domain==='signals'?'signals-ui':domain==='workshop'?'workshop-ui':'music-frame'}=Astro.props;
+---
+<section class="shared-panel" data-shared-panel data-shared-domain={domain} data-shared-frame={frame} aria-label="工程记录"><div set:html={panelContents(domain)}/></section>
+<script>import {initSharedPanels} from './panel.mjs';initSharedPanels();</script>

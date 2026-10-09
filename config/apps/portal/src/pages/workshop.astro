@@ -1,0 +1,16 @@
+---
+import Identity from '../aaa/Identity.astro';
+import SiteNav from '../q9/Nav.astro';
+import Library from '../workshop/Library.vue';
+import Replay from '../workshop/Replay.svelte';
+import SharedPanel from '../shared/SharedPanel.astro';
+import '../workshop/page.css';
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta http-equiv="Content-Security-Policy" content="object-src 'none'; base-uri 'self'"/><title>机械工坊 · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class="workshop-page">
+ <div class="workshop-backdrop" aria-hidden="true"></div>
+ <header class="workshop-header"><a href="/#systems" class="workshop-logo" aria-label="返回主页"><Identity compact id="workshop-header"/></a><SiteNav/><section class="workshop-search" aria-label="万能搜索"><label for="workshop-search">万能搜索</label><input id="workshop-search" type="search" placeholder="搜索功能" maxlength="80" autocomplete="off"/><button data-workshop-search aria-label="搜索功能">↗</button><div class="workshop-search-results" hidden></div></section><nav class="workshop-links"><a href="/functions/">全部功能</a><a href="/research/">研究</a><a href="/legal/">声明</a></nav></header>
+ <div class="workshop-intro"><h1>机械工坊</h1><nav><button class="workshop-help-toggle" data-workshop-help-toggle aria-label="画布快捷键" aria-expanded="false" aria-controls="workshop-shortcuts">?</button><a href="#workshop-library">零件库 ↘</a><a href="#workshop-replay">回放 ↘</a><a href="/signals/">通信实验 ↗</a></nav></div>
+ <main class="workshop-main"><div class="workshop-notice" role="status" hidden></div><section class="workshop-stage"><div class="workshop-frame-bar"><span>机械工坊 / 二维</span><span>−　□</span></div><iframe id="workshop-ui" src="/workshop/ui/" title="机械工坊编辑与模拟工作台" style="height:1180px" allow="clipboard-write" loading="eager"></iframe></section><div class="workshop-lower"><section id="workshop-library"><Library client:load/></section><section id="workshop-replay"><Replay client:load/></section></div><div class="workshop-incomplete" aria-hidden="true"></div><SharedPanel domain="workshop"/><footer class="workshop-foot"><span>单位 / m · kg · s</span><a href="/workshop/engines/NOTICE.txt">运行许可 ↗</a></footer></main>
+ <aside class="workshop-help" id="workshop-shortcuts" hidden><button data-workshop-help-close aria-label="关闭操作说明">×</button><span>画布操作</span><p><kbd>空格</kbd> 暂停／继续 · <kbd>F</kbd> 显示全部<br/>滚轮缩放 · 中键／右键拖动<br/><kbd>Shift</kbd> 多选 · <kbd>R</kbd> 旋转<br/><kbd>D</kbd> 复制 · 方向键移动</p></aside>
+ <script>import '../workshop/shell.mjs';</script>
+</body></html>

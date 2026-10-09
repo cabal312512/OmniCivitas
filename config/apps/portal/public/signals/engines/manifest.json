@@ -1,0 +1,131 @@
+{
+  "schema": "ocv.signals.artifacts/1",
+  "generatedAt": "2026-10-09T11:46:57.176Z",
+  "engineVersion": "1.1.0",
+  "engineVersions": {
+    "circuit": "1.0.0",
+    "communications": "1.1.0"
+  },
+  "compilers": {
+    "cpp": "Emscripten 4.0.17; -O2 -std=c++20 -fexceptions; modular ES6",
+    "rust": "rustc 1.90.0; wasm32-unknown-unknown; release opt-level=2/lto"
+  },
+  "abi": {
+    "cpp": "Emscripten ccall ocv_run",
+    "rust": "memory/ocv_alloc/ocv_run/ocv_dealloc"
+  },
+  "artifacts": [
+    {
+      "file": "solver.mjs",
+      "bytes": 21965,
+      "sha256": "18b455317c390c07603ff025a279877c9646a29fcdf45b7aa84aeea58a99a1e4"
+    },
+    {
+      "file": "solver.wasm",
+      "bytes": 304526,
+      "sha256": "b3c012adda3e82800329d719b5bf4820644c510a0fcd2f4d31b747271c3b6eae"
+    },
+    {
+      "file": "communications.wasm",
+      "bytes": 295479,
+      "sha256": "c294137a0e7b44f0e1f1c37a7bdc959b76524665fae5f85f4b8fc5e9add3ba8a"
+    },
+    {
+      "file": "NOTICE.txt",
+      "bytes": 74402,
+      "sha256": "f6c29fa81490d5e2baa32946d4280fbce39db9d703c93ab91ac3817351a8ba58"
+    }
+  ],
+  "sources": [
+    {
+      "file": "pinia/receipt2/common.hh",
+      "sha256": "a0dd77b885fdacde7f8756c179b5e400a10c55469f129e85790edb579fc4921e"
+    },
+    {
+      "file": "pinia/receipt2/old.cc",
+      "sha256": "2db1fd446099925f9ed7addd9fa1cb71ff4dfef18a7746e5a8a8e6f79558da1f"
+    },
+    {
+      "file": "pinia/receipt2/1.cpp",
+      "sha256": "830f4b9320770c50c67827595f261abf80f3124b638fb0bb0f33925de3a8abae"
+    },
+    {
+      "file": "pinia/receipt2/aux1.rs",
+      "sha256": "74d235a6db70ef7c57bb6e65ffc11e5f657e3ffeffa5de283f8d8d39f61dffa8"
+    },
+    {
+      "file": "pinia/receipt2/Dockerfile",
+      "sha256": "8c514870f38c07148e57598e517829c472bb51c0e2bc5f2b07f4695405668a33"
+    },
+    {
+      "file": "pcakage/desk4/Cargo.toml",
+      "sha256": "9a27aefdaea1bf772810be83b67974c053b68feacd8d94cf8942ab70ab561493"
+    },
+    {
+      "file": "pcakage/desk4/cache.rs",
+      "sha256": "840f7f686d27da5a62b5e353d27624f438858e2dc2511aa635594ab2a0d9286d"
+    },
+    {
+      "file": "pcakage/desk4/old.rs",
+      "sha256": "027b4ad8af886c1685df210929b0a288291574744564e052d0a761f99f5dbb78"
+    },
+    {
+      "file": "pcakage/desk4/1.rs",
+      "sha256": "f53c98c864adb69105abe1e81c318967e27025f9069aa5e592f1729e4200def8"
+    },
+    {
+      "file": "pcakage/desk4/wave2.rs",
+      "sha256": "862f1b3a431a857e5b37e0b5d91db4cbfbdf19eb311514a9bfb3787fd3878f10"
+    },
+    {
+      "file": "pcakage/desk4/layout.rs",
+      "sha256": "dcbeded5da7814e89a9853470c5c23f029642289069e7d7e8625e99a17fa0a98"
+    },
+    {
+      "file": "pcakage/desk4/src/main.rs",
+      "sha256": "65bf1df3b1835b425c66536108489b97bbabc1685b0f74ec404451fbedec6c4a"
+    },
+    {
+      "file": "scripts/build-signals-engines.mjs",
+      "sha256": "3177d17a3184efebcb1ce9b5ffd64c9353f17fe463bbe3f531cdf88e71857834"
+    },
+    {
+      "file": "scripts/signals-artifacts.mjs",
+      "sha256": "57131297cc8c801a136719a5aa9b6a5b855adaf0d066ba9203d0672639e629d9"
+    }
+  ],
+  "runtimeLicenses": [
+    {
+      "file": "docs/licenses/signals-runtime/emscripten-LICENSE.txt",
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86"
+    },
+    {
+      "file": "docs/licenses/signals-runtime/musl-COPYRIGHT.txt",
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+    },
+    {
+      "file": "docs/licenses/signals-runtime/libcxx-LICENSE.txt",
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+    },
+    {
+      "file": "docs/licenses/signals-runtime/libcxxabi-LICENSE.txt",
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c"
+    },
+    {
+      "file": "docs/licenses/signals-runtime/compiler-rt-LICENSE.txt",
+      "sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d"
+    },
+    {
+      "file": "docs/licenses/signals-runtime/rust-LICENSE-MIT.txt",
+      "sha256": "b71bd43a069ca0641a9ecfe585ca7b3c53b5cc1608f8b68321168698e28b5ea1"
+    },
+    {
+      "file": "docs/licenses/signals-runtime/rust-LICENSE-APACHE.txt",
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "file": "docs/licenses/signals-runtime/rust-COPYRIGHT.txt",
+      "sha256": "172020dbfd5b53a226dfde77616190a48dcff519b0bc0e6deb91a8450782c4af"
+    }
+  ]
+}

@@ -52,17 +52,17 @@ The builder has a 3 GiB cap and stops after compilation. Stopping services prese
 
 ## Optional profiles
 
-All 24 services remain in [compose.yaml](../compose.yaml). Core needs no profile. Select optional groups when needed.
+All configured services remain in [compose.yaml](../compose.yaml). Core needs no profile. Select optional groups when needed.
 
 | Profile | Additional services | Container memory caps including core |
 | --- | --- | ---: |
 | core | Default six services | 1728 MiB |
 | databases | MySQL, MongoDB, MinIO, archive API | 2944 MiB |
-| legacy | Spring, FastAPI, Laravel, Fiber, ASP.NET SOAP, Sinatra, Hono, MySQL | 3616 MiB |
+| legacy | Spring, FastAPI, Laravel, Fiber, ASP.NET SOAP, Sinatra, Hono, MySQL | 4000 MiB |
 | messaging | RabbitMQ, Kafka, MongoDB, message workers | 3968 MiB |
 | search | Elasticsearch | 3008 MiB |
 | monitoring | OpenTelemetry, Prometheus, Grafana | 2240 MiB |
-| maximum / everything | All optional services | 7840 MiB |
+| maximum / everything | All optional services | 10400 MiB |
 
 ```sh
 pnpm civilization:databases
@@ -81,9 +81,9 @@ docker compose --profile legacy up --build -d --wait
 docker compose --profile legacy stop
 ```
 
-Smaller machines should use separate profile sessions and stop optional services before compiling. These are container caps, not total host RAM estimates; Docker, the OS, caches and compilation also consume memory. Maximum defaults to an **8192 MiB** aggregate budget; adjust `OCV_CONTAINER_BUDGET_MIB` on other hardware. Java, Kafka and Elasticsearch use small development heaps. Important services have memory, CPU, PID and log limits.
+Smaller machines should use separate profile sessions and stop optional services before compiling. These are container caps, not total host RAM estimates; Docker, the OS, caches and compilation also consume memory. Maximum defaults to an **8192 MiB** aggregate budget. The expanded full service set has **10400 MiB** of container caps and needs an explicit budget of at least that amount plus sufficient host memory; use smaller batches otherwise. Adjust `OCV_CONTAINER_BUDGET_MIB` for the workload. Java, Kafka and Elasticsearch use small development heaps. Important services have memory, CPU, PID and log limits.
 
-The original machine's 24 GB RAM and daily 9 GiB / optional maximum 11 GiB WSL settings are local optimizations. Public commands do not modify WSL settings or require equivalent hardware.
+Resource budgets are bounded development defaults. Size Docker and per-service limits for the selected workload; public commands never change host WSL memory, swap or disk settings.
 
 ## Configuration and persistence
 
@@ -146,7 +146,7 @@ node scripts/test-languages.mjs java python php go dotnet ruby
 
 The helper uses one 768 MiB test container at a time and downloads SDKs only when selected. Use the repository's Actions checks for the current revision. Independent Linux Engine/macOS Docker host deployments remain unverified. Internal requirement ledgers, handoffs and acceptance records are excluded from published sources; `pnpm ledger:check` reports that limitation in a public clone.
 
-`ocv.ps1` and `scripts/Enter-OcvEnvironment.ps1` are optional helpers for the original machine. Other users run standard commands. Dependencies, tools, caches, build output, real environment files, tokens, certificates, runtime databases, Docker volumes and WSL disks do not belong in Git. Small third-party packages also install from package.json / pnpm-lock.yaml.
+`ocv.ps1` is an optional PowerShell wrapper using configured tools or PATH. Local overrides are optional and ignored by publication; see [portable configuration](PORTABILITY.md). Dependencies, tools, caches, build output, real environment files, tokens, certificates, runtime databases, Docker volumes and WSL disks do not belong in Git. Small third-party packages also install from package.json / pnpm-lock.yaml.
 
 ## Background receipts
 
@@ -156,6 +156,45 @@ Background receipts use the existing core PostgreSQL/Redis and gateway named vol
 
 For optional on-demand language/database/message branches, start core, then run `pnpm civilization:after` in a separate terminal (Node 24 + trusted Docker CLI access required). Services are queued and run in bounded batches, then containers started by the dispatcher stop; named volumes persist. Existing tool results remain available immediately. Default job admission budget is 6144 MiB, constrained by Docker memory minus 1536 MiB reserve; smaller hosts can lower `OCV_RUNNER_BUDGET_MIB` and may skip heavy branches. An 8 GiB-or-larger host is recommended for the complete catalogue/cold builds. The dispatcher creates a private worker key in ignored `.env`; never publish it. Request graceful stop with `pnpm civilization:after --stop`. `node scripts/after-runner.mjs` is the pnpm-free equivalent. See [branch catalogue, ownership, retention and operational details](AFTER-ROUTES.md#optional-on-demand-dispatcher). This host process is optional; the public default remains core.
 
+## Signals laboratory
+
+The numeric Vue filename in the project root controls the shared job tier. The included `128.vue` is the highest tier: at most 128 active jobs, with no queued-job count limit. Rename it to a number from `1.vue` to `128.vue`; `32.vue`, for example, permits 32 active jobs and 2,048 queued jobs. Lower tiers allow `N*64` queued jobs. Keep exactly one such file. Its tank-game component is independent and dormant: neither the website nor the scheduler imports it, and the scheduler reads only the filename. Legacy empty numeric files without an extension remain supported. The gateway reads the root through a private read-only mount; this directory is not a public file server. Gateway and dispatcher notice renames automatically. Lowering the tier lets current jobs finish before further admission. Queued work expires after 24 hours by default (`OCV_AFTER_QUEUE_TTL_SECONDS`). If the marker is absent, `OCV_RUNNER_CONCURRENCY` and `OCV_AFTER_QUEUE_LIMIT` are fallback settings; queue limit `0` disables only the count limit.
+
+This is a job ceiling, not a promise of 128 simultaneous native computations. Optional services are shared, reference counted, and bounded by their actual CPU, memory and process limits. The dispatcher derives native execution slots from those limits and protects large-result reads separately. A stronger host can raise `OCV_RUNNER_BUDGET_MIB`, `OCV_SIGNALS_NATIVE_MEM`/`CPU`/`PIDS` and `OCV_MECHANICS_NATIVE_MEM`/`CPU`/`PIDS`; changing the numeric filename does not allocate more RAM by itself. Default local resource caps remain small.
+
+An optional `OCV_RUNNER_MAX_CONCURRENCY` ceiling can reduce active dispatch independently of the numeric filename. It defaults to 128 and remains subject to actual service resource limits.
+
+Open `/signals/` through the underlined **通信实验** link in the homepage recommendations, global search, or selected maze pages. The Angular workbench includes editable packet-network topologies, circuit schematics and a BPSK/CRC laboratory. Browser calculations use the included, original C++/Rust WebAssembly engines; neither a native compiler nor optional server services are needed for these calculations. Plot and project downloads retain the settings used for their result.
+
+The workbench also inspects individual packet hops, directional link utilization and queue wait, and measures circuit traces from their recorded samples. Optional RF parameters produce a free-space line-of-sight budget through the same Rust engine. For its physical inputs, measurement definitions and exclusions, see [the numerical model documentation](../pinia/receipt2/README.md). The RF result does not change the waveform's configured Eb/N0 until explicitly applied. Network coordinates remain drawing coordinates.
+
+Normal Run/Simulate buttons start browser computation and enqueue a matching background calculation. The browser result remains visible; **查看复核结果** selects the cached native result only when clicked. Circuit transient and AC runs use finer numerical sampling in the background within existing solver limits; DC, packet events and the seeded communication realization retain their original model. Project storage and background runs require core PostgreSQL and the host dispatcher:
+
+```sh
+docker compose up -d --wait
+pnpm civilization:after
+```
+
+Keep the second command running in a terminal on the Docker host. It uses the existing private worker lease and task queue, starts only the current preparation/calculation/analysis batch, and stops containers it started when that batch finishes. Java writes a preparation receipt; Go records a checksum manifest; native C++/Rust computes; Python independently checks the output and persists a bounded audit. PostgreSQL remains the source of truth for projects and jobs. No Docker socket is exposed to the browser or gateway, and browser input cannot choose shell commands.
+
+`pnpm civilization:circuits -- --reuse-images` is an optional manual warm-up of laboratory services, including core; it does not replace the dispatcher. Default Compose startup still selects core only. Limits are configurable, and an over-budget maximum selection is rejected rather than silently increasing RAM. Stop the dispatcher with `node scripts/after-runner.mjs --stop`; this preserves named volumes. A stopped dispatcher leaves new jobs queued; browser calculations remain available. Projects are bounded to 128 inactive heads and eight ordinary revisions per project, with queued and active snapshots protected until their jobs end. Completed-job retention defaults to `max(128, tier * 4)`, or 512 at the highest tier; `OCV_AFTER_TERMINAL_LIMIT` overrides it within 32–10,000 records. Older terminal results expire when this retention bound is reached.
+
+The network model uses seeded loss, shortest-delay routes and independent FIFO link directions with serialization and propagation delay. It is an educational packet model, not a full 5G, satellite PHY or hardware emulator. The circuit engine supports R/C/L, independent sources and ideal switches with DC, AC and backward-Euler transient analysis. Unsupported devices produce diagnostics.
+
+Optional engine rebuild: `pnpm signals:engines` uses bounded Docker builds and publishes the three first-party engine files plus their runtime notices. Ordinary `pnpm build` validates their source/artifact hashes and uses the already included binaries. This optional rebuild needs registry access and more disk space; it is not an installation prerequisite. Linked Wasm runtime licenses are available at `/signals/engines/NOTICE.txt`; the Go PostgreSQL driver notice is retained in `docs/licenses/lib-pq-1.10.9.txt` and its container image.
+
+## 机械工坊
+
+Open `/workshop/` through **机械工坊** in the **Games (游戏)** category, global search, or the maze pages `/maze/table/`, `/maze/offices/settings/` and `/maze/route/a/b/c/d/e/`. This page retains the site's header and uses a C#/Blazor editor, Rust/Rapier 2D simulation, reusable Vue components and Svelte replay. The optional 3D view changes appearance only. Normal Run and parameter experiments compute locally while submitting a matching native job. **查看复核结果** stays disabled until the current job's reviewed result is cached; completion never switches the display automatically. Click the enabled button to display that cache. Initial examples run locally. Browser computation remains available when the dispatcher is stopped.
+
+Saved project revisions and native parameter experiments use the existing PostgreSQL snapshots, private worker lease and bounded dispatcher. For these operations, run core and `pnpm civilization:after` as described above. The mechanical batch starts C# model preparation, the fixed Rust executable, and C# result review separately. Native requests reduce the integration step without going below 1/240 s and retain at most 4,800 steps and 256 frames; exported requests describe the actual numerical settings. Both paths support the same features. The original numerical result is stored and read back from PostgreSQL before review. Leave the dispatcher running on the Docker host. Independent engineering jobs share the queue and services within the selected capacity and resource limits. At a bounded tier, a full queue returns 429 while browser computation continues.
+
+Workshop polling reads once per second for the first 120 attempts, then every 15 seconds, with a seven-day absolute waiting limit. Temporary read failures retry after 15 seconds while the result button stays disabled; cancellation remains available for an unfinished job. Editing, rerunning or leaving the page invalidates the old display request. A reviewed result is cached before the button becomes enabled, and is displayed only on click. Expired or trimmed records show an expiry status. The browser waiting limit does not extend the default 24-hour queue TTL or completed-result retention.
+
+Ordinary `pnpm build` validates the included browser runtime and source hashes. The optional `pnpm workshop:engines` rebuilds the workbench and Rust engine through sequential Docker builds with a 3 GiB builder cap; it needs registry access and free Docker disk space. `docker compose --profile mechanics build dotnet mechanics-native` builds the optional server workers. Numerical limits are documented in [the mechanical model](../pinia/folder2/README.md). Runtime notices are retained at `/workshop/engines/NOTICE.txt` and `docs/licenses/workshop-runtime/`.
+
+This is a bounded planar model with ideal transmissions, not a full CAD, finite-element or 3D rigid-body solver. Rollback appends a revision while preserving retained snapshots. Local modules stay in the current browser unless explicitly exported or saved to the server.
+
 ## License and contact
 
 Original code: **MIT — Copyright (c) 2026 cabal312512**; see [LICENSE](../LICENSE). Third-party code, fonts, music and other assets retain their own terms. MIT does not relicense them. Required notices: [THIRD_PARTY_NOTICES.txt](../THIRD_PARTY_NOTICES.txt), [EFFECT-SOURCES.md](EFFECT-SOURCES.md), generated `/licenses/bundled-notices.txt`.
@@ -163,3 +202,5 @@ Original code: **MIT — Copyright (c) 2026 cabal312512**; see [LICENSE](../LICE
 Media: [MEDIA_NOTICE.md](../MEDIA_NOTICE.md) / `/legal/`. Research music: **Holizna — Retro Wave Collection**, [OpenGameArt](https://opengameart.org/content/retro-wave-collection), CC0. Existing author/source credits remain. Contact: **user31436@proton.me**.
 
 Author-only prompts and handoffs stay locally and are excluded from the current public source and new releases. [Source-publication policy](../config/source-publication.json) declares them. Scientific sources/results and original seals remain; the scientific publication subset declares its exclusions separately.
+
+Optional music/certificate/projection/index workers use the same dispatcher. See [SITE-SERVICES.md](SITE-SERVICES.md) for resource caps, first-use builds and bounded storage.

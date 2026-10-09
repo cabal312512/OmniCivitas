@@ -1,0 +1,7 @@
+{
+  "events": [{"n": 60, "t": 0, "d": 250, "v": 0}],
+  "sampleRate": 8000,
+  "gain": 1,
+  "normalize": true,
+  "includeMidi": true
+}

@@ -1,3 +1,4 @@
+import {testDeps} from '../runtime-location.mjs';
 import { test,expect } from '@playwright/test';
 import path from 'node:path';
 test('real entrance, keyboard submission, safe text and browser history',async({page},testInfo)=>{
@@ -12,7 +13,7 @@ test('real entrance, keyboard submission, safe text and browser history',async({
   await expect(page.locator('#record-output')).toContainText('成功：已保存');
   await expect(page.locator('#record-output')).toContainText(process.env.OCV_EXPECT_DATABASE==='true'?'postgresql':'bounded-memory-demonstration');
   expect(await page.evaluate(()=>window.ocvInjected)).toBeUndefined();
-  await page.screenshot({path:path.join(process.env.OCV_DEPS_ROOT,'runtime/reports',`stage1-${testInfo.project.name}.png`),fullPage:true});
+  await page.screenshot({path:path.join(testDeps,'runtime/reports',`stage1-${testInfo.project.name}.png`),fullPage:true});
   await page.getByRole('link',{name:'真实状态，暂不美化'}).click();
   await expect(page.getByRole('heading',{name:'真实运行状态'})).toBeVisible();
   await expect(page.locator('#status')).toContainText('accountSystem');

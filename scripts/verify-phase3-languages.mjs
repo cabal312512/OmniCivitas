@@ -1,6 +1,7 @@
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';
 import {composeCall} from './docker-child.mjs';
-const root=path.join(process.env.OCV_DEPS_ROOT,'runtime/reports');
+import {verificationConfig} from './verification-config.mjs';
+const {reportRoot:root,baseUrl}=verificationConfig();
 const checks=[],observations={};
 const check=(name,okay)=>{assert.ok(okay,name);checks.push(name);};
 const query=(service,args)=>composeCall(['exec','-T',service,...args]).stdout.trim();
@@ -13,13 +14,13 @@ for(const project of ['desktop','mobile']){
  const records=JSON.parse(query('fastapi',['python','-c',`import sqlite3,json; print(json.dumps({n:sqlite3.connect('/ocv-data/'+n).execute('SELECT product_name,misplaced_time,unchecked_decoration FROM warehouse_stock WHERE root_id=? ORDER BY rowid DESC LIMIT 1',('${id}',)).fetchone() for n in ['postgres.sqlite','mysql.sqlite','redis.sqlite']},ensure_ascii=False))`]));
  check(project+': SAME browser field really reaches three SQLAlchemy SQLite files',Object.values(records).every(row=>row[0]===proof.label&&JSON.parse(row[2]).frontendDateIso===proof.iso));
  check(project+': SQLite UTC/seconds/Shanghai values are actual stored data',records['postgres.sqlite'][1]==='2026-10-01T19:14:00+00:00'&&records['mysql.sqlite'][1]==='1790882040'&&records['redis.sqlite'][1]==='2026/10/02 03:14');
- const jpa=query('postgres',['psql','-U','ocv_demo','-d','civilization','-At','-c',`SELECT product_name,misplaced_iso_time FROM ocv_jpa.warehouse_stock WHERE root_trace_id='${id}' ORDER BY id DESC LIMIT 1`]);
+ const jpa=query('postgres',['sh','-c','PGPASSWORD="$POSTGRES_PASSWORD" psql -X -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB" -At -c "$1"','ocv-query',`SELECT product_name,misplaced_iso_time FROM ocv_jpa.warehouse_stock WHERE root_trace_id='${id}' ORDER BY id DESC LIMIT 1`]);
  check(project+': Hibernate/JPA really persists the same validated label',jpa===proof.label+'|'+proof.iso);
- const mysql=query('mysql',['mysql','--default-character-set=utf8mb4','-uocv_demo','-pocv-fiction-only-not-real','civilization','-Nse',`SELECT product_name,misplaced_unix_ms FROM ocv_eloquent_school_student WHERE root_id='${id}'`]);
+ const mysql=query('mysql',['sh','-c','MYSQL_PWD="$MYSQL_PASSWORD" mysql --default-character-set=utf8mb4 --user="$MYSQL_USER" --database="$MYSQL_DATABASE" -Nse "$1"','ocv-query',`SELECT product_name,misplaced_unix_ms FROM ocv_eloquent_school_student WHERE root_id='${id}'`]);
  check(project+': same browser value continues to real Laravel/MySQL',mysql===proof.label+'\t1790882040000');
  const javaStatus=query('gateway',['node','-e',`fetch('http://spring:8081/api/approved.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({label:'',rootTraceId:'${id}',isoTime:'${proof.iso}'}),signal:AbortSignal.timeout(2500)}).then(r=>console.log(r.status))`]);
  check(project+': Hibernate Validator independently rejects the SAME empty label field',javaStatus==='400');
- const gatewayResponse=await fetch('http://127.0.0.1:8080/next-api/receipt?action=stamp',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({label:''}),signal:AbortSignal.timeout(5000)});
+ const gatewayResponse=await fetch(baseUrl+'/next-api/receipt?action=stamp',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({label:''}),signal:AbortSignal.timeout(5000)});
  check(project+': gateway Zod independently refuses empty label through real Next API',gatewayResponse.status===400);
  observations[project]={rootTraceId:id,label:proof.label,records,jpa,mysql,hops:result.hops};
 }

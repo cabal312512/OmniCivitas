@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "events": [
+    {"n": 60, "t": 0, "d": 800, "v": 0.7},
+    {"n": 64, "t": 40, "d": 800, "v": 0.6},
+    {"n": 67, "t": 80, "d": 800, "v": 0.6}
+  ],
+  "tempo": 140,
+  "sampleRate": 44100,
+  "preset": "bell",
+  "gain": 0.8,
+  "echo": {"delayMs": 120, "feedback": 0.25, "mix": 0.2, "repeats": 3},
+  "normalize": true,
+  "includeMidi": true
+}

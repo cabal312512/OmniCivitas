@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {setTimeout as sleep} from 'node:timers/promises';
+import {verificationConfig} from '../scripts/verification-config.mjs';
+const {baseUrl,reportRoot}=verificationConfig(),report={at:new Date().toISOString(),passed:false,states:[]};let owned;
+async function post(route,body){const r=await fetch(baseUrl+'/api/workshop'+route,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(15000)});const value=await r.json();assert.ok(r.ok,`HTTP ${r.status}: ${String(value.message||value.error||'').slice(0,180)}`);return value;}
+try{
+ const source=JSON.parse(await readFile(path.join('config','parts','examples','split-logic.json'),'utf8')),body=structuredClone(source.world.bodies.find(b=>b.mode==='dynamic'));
+ Object.assign(body,{id:'audit_speed',x:0,y:2,angle:0,vx:10,vy:0,omega:0,linearDamping:50,angularDamping:0});
+ const world={...source.world,gravityX:0,gravityY:0,stepS:1/60,durationS:.1,sampleEvery:1,seed:1,bodies:[body],joints:[],motors:[],controls:[]},project={schema:'ocv.workshop-project/1',name:'Audit initial-speed regression',world},request={schema:'ocv.workshop-run/1',op:'simulate',world};
+ const saved=await post('/projects',{project}),read=await post(`/projects/${saved.id}/read`,{ticket:saved.ticket});assert.deepEqual(read.project,project);owned=await post('/jobs',{request,project:saved.id,projectTicket:saved.ticket});assert.equal(owned.dispatcherConfigured,true);
+ const deadline=Date.now()+180000;let row;while(Date.now()<deadline){row=await post(`/jobs/${owned.id}/read`,{ticket:owned.ticket});if(report.states.at(-1)?.state!==row.state||report.states.at(-1)?.phase!==row.phase)report.states.push({state:row.state,phase:row.phase});if(['done','failed','cancelled'].includes(row.state))break;await sleep(1000);}
+ assert.equal(row.state,'done',String(row.error||row.result?.reason||'Task did not finish'));assert.equal(row.storage,'PostgreSQL');assert.equal(row.result.steps.length,8);assert.equal(row.result.engine.ok,true);assert.match(row.result.engine.version,/1\.1\.1\+/);assert.equal(row.result.engine.summary.maxSpeed,10);assert.equal(row.result.analysis.ok,true);assert.equal(row.result.analysis.nativeSucceeded,true);assert.equal(row.result.analysis.engine,'ME2/1.1.0');
+ Object.assign(report,{passed:true,job:owned.id,storage:row.storage,nativeVersion:row.result.engine.version,maxSpeed:10,steps:row.result.steps.map(s=>({name:s.name??s.phase??s.step??null,nativeExecution:s.nativeExecution??null,resultReadFrom:s.resultReadFrom??null})),reviewer:row.result.analysis.engine,scope:'One actual native eight-step shared pipeline with PG readback and existing C# reviewer; no concurrency/fault-matrix claim.'});owned=undefined;console.log(JSON.stringify({passed:true,steps:8,storage:'PostgreSQL',maxSpeed:10}));
+}catch(error){report.error=error.message;throw error;}finally{if(owned)await post(`/jobs/${owned.id}/cancel`,{ticket:owned.ticket}).catch(()=>{});report.finishedAt=new Date().toISOString();await writeFile(path.join(reportRoot,'audit-five-http.json'),JSON.stringify(report,null,2));}

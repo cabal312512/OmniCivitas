@@ -121,3 +121,9 @@ stylelint 17.16.0: /licenses/phase8-stylelint-17.16.0.txt; original MIT license 
 Expansion 1 local workbench libraries:
 sql.js 1.14.2 — MIT — /licenses/sql.js-1.14.2.txt
 fast-json-patch 3.1.1 — MIT — /licenses/fast-json-patch-3.1.1.txt
+
+Mechanical workbench linked browser runtime:
+Rapier2D 0.22.0 — Apache-2.0 — https://github.com/dimforge/rapier
+.NET / ASP.NET Core browser runtime 8.0.31 — upstream MIT and retained third-party notices — https://github.com/dotnet/runtime and https://github.com/dotnet/aspnetcore
+Three.js 0.186.1 — MIT — existing three-MIT.txt notice retained.
+Full licenses for actual resolved Rust engine packages and the distributed browser runtime are included in docs/licenses/workshop-runtime/ and /workshop/engines/NOTICE.txt. Original editor, domain models, simulation adapters and controllers remain project MIT code. These notices do not relicense third-party portions.

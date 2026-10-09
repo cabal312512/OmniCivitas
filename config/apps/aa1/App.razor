@@ -1,0 +1,180 @@
+@implements IAsyncDisposable
+@inject IJSRuntime Js
+@inject HttpClient Http
+
+<main class="workbench" tabindex="0">
+  <header class="editor-header">
+    <div class="document-name"><span class="doc-icon">◇</span><input aria-label="工程名称" value="@Project.Name" maxlength="80" @onchange="Rename" disabled="@CanvasLocked"/><small>二维 / SI</small></div>
+    <div class="document-actions"><button @onclick="Undo" disabled="@(CanvasLocked || History.Count == 0)">↶ 撤销</button><button @onclick="Redo" disabled="@(CanvasLocked || Future.Count == 0)">↷ 重做</button><span class="action-separator"></span><button @onclick="SaveLocal">本地保存</button><button @onclick="LoadLocal">本地重开</button><button @onclick="ExportProject">工程文件 ↓</button><label class="file-button">导入<input type="file" accept=".json,application/json" disabled="@CanvasLocked" @onchange="ImportProject" id="project-file"/></label><button class="primary" @onclick="SaveServer" disabled="@Busy">保存版本</button></div>
+  </header>
+  <section class="simulation-toolbar">
+    <div class="run-controls"><button class="play-button @RunButtonClass" data-run-state="@RunButtonClass" @onclick="RunWithReview" disabled="@CanvasLocked">@RunButtonText</button><button @onclick="TogglePause" disabled="@(Frames.Count == 0 && !RunningLocal)">@(Playing ? "Ⅱ 暂停" : "▶ 继续")</button><button @onclick="Step" disabled="@(Frames.Count == 0)">▸│ 下一帧</button><button @onclick="ReplayFromStart" disabled="@(Frames.Count == 0)">从头重放</button><button @onclick="Reset">↺ 重置</button><select aria-label="回放速度" @bind="Speed"><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1">1×</option><option value="2">2×</option></select><label><input type="checkbox" @bind="Trace"/> 轨迹</label><label><input type="checkbox" @bind="Snap"/> 吸附 0.25 m</label></div>
+    <div class="simulation-readouts"><span><b>@N(CurrentTime)</b> s</span><span><b>@Project.World.Bodies.Count</b> 个零件</span><span><b>@N(Energy)</b> J 平动动能</span><button @onclick="() => Inspector = !Inspector">属性 @(Inspector ? "▹" : "◃")</button><button @onclick="() => Layers = !Layers">图层</button></div>
+  </section>
+  @if (Project.Challenge is { } objective) { <div class="challenge-callout @(ChallengeStatus=="已达成" ? "complete" : "")" data-challenge-state="@ChallengeStatus"><b>@ChallengeName(objective.Kind) · @ChallengeStatus</b>@if(objective.Kind=="crossing") { <span>@Project.World.Bodies.Count(b=>b.Mode=="dynamic") / @objective.MaxParts 个动态零件</span> }</div> }
+  <section class="drawing-deck @(Inspector ? "with-inspector" : "")">
+    <div class="drawing-column">
+    <div class="drawing-space">
+      <div class="drawing-topline"><span>装配 / @Project.Name</span><fieldset class="selection-tools" disabled="@CanvasLocked"><button @onclick="CopySelected" disabled="@(Selected.Count == 0)">复制</button><button @onclick="GroupSelected" disabled="@(Selected.Count < 2)">分组</button><button @onclick="UngroupSelected" disabled="@(Selected.Count == 0)">取消分组</button><button @onclick="DeleteSelected" disabled="@(Selected.Count == 0)">删除</button><button @onclick="RotateSelected" disabled="@(Selected.Count == 0)">90°</button></fieldset></div>
+      <div class="view-controls"><button aria-label="放大画布" @onclick="()=>ZoomView(.8)">＋</button><button aria-label="缩小画布" @onclick="()=>ZoomView(1.25)">−</button><button @onclick="ResetView">复位视图</button><button @onclick="FitView">显示全部</button><small>@N(1100/ViewWidth*100)%</small></div>
+      <svg id="mechanical-sheet" viewBox="@ViewBox" tabindex="0" data-canvas-lock="@CanvasLocked.ToString().ToLowerInvariant()" aria-label="机械装配画板" @onpointerdown="BeginBox" @onpointermove="MovePointer" @onpointerup="EndPointer" @onpointercancel="EndPointer" @onpointerdown:preventDefault="true" @oncontextmenu:preventDefault="true">
+        <defs><pattern id="minor-grid" width="13.75" height="13.75" patternUnits="userSpaceOnUse"><path d="M13.75 0H0V13.75" fill="none" stroke="#edf3fa" stroke-width=".6"/></pattern><pattern id="major-grid" width="55" height="55" patternUnits="userSpaceOnUse"><rect width="55" height="55" fill="url(#minor-grid)"/><path d="M55 0H0V55" fill="none" stroke="#d8e5f5" stroke-width=".8"/></pattern><linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7fcff"/><stop offset=".35" stop-color="#cce2f7"/><stop offset="1" stop-color="#779cc4"/></linearGradient><radialGradient id="marble"><stop offset="0" stop-color="#e4f7ff"/><stop offset=".6" stop-color="#5ebbea"/><stop offset="1" stop-color="#2262c6"/></radialGradient><marker id="arrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#2763af"/></marker></defs>
+        <rect x="@ViewX" y="@ViewY" width="@ViewWidth" height="@ViewHeight" fill="url(#major-grid)"/>
+        <path d='@($"M{N(ViewX)} 470H{N(ViewX+ViewWidth)}M550 {N(ViewY)}V{N(ViewY+ViewHeight)}")' stroke="#99b7d9" stroke-width="1"/>
+        @foreach (var i in RulerMarks(true)) { <g><text x="@(550 + 55*i + 3)" y="487" class="ruler-label">@i</text></g> }
+        @foreach (var i in RulerMarks(false)) { <g><text x="556" y="@(470-55*i-4)" class="ruler-label">@i</text></g> }
+        <text x="@(ViewX+ViewWidth-30)" y="462" class="axis-label">x / m</text><text x="563" y="@(ViewY+18)" class="axis-label">y / m</text>
+        @if (Trace && Frames.Count > 0) { @foreach (var b in Project.World.Bodies.Where(x => x.Mode == "dynamic")) { <polyline points="@TracePoints(b.Id)" fill="none" stroke="@b.Colour" stroke-opacity=".38" stroke-width="1.8"/> } }
+        @foreach(var target in ChallengeZones) { <g class="target-zone"><circle cx="@SX(target.TargetX)" cy="@SY(target.TargetY)" r="@(target.Tolerance*55)" fill="#c5eaf7" fill-opacity=".35" stroke="#1676af" stroke-dasharray="5 4"/><path d="@CrossPath(target.TargetX,target.TargetY)" stroke="#1676af"/></g> }
+        @foreach (var j in Project.World.Joints) {
+          var a=Pose(j.A); var b=Pose(j.B);
+          <g class="joint" @key="j.Id"><path d="@JointPath(j,a,b)" fill="none" stroke="@(j.Kind is "spring" or "rod" ? "#709dc9" : "#345c8b")" stroke-width="@(j.Kind is "gear" or "belt" ? 3 : 2)" stroke-dasharray="@(j.Kind is "gear" or "belt" ? "6 4" : null)"/><circle cx="@SX(j.AnchorX)" cy="@SY(j.AnchorY)" r="6" fill="#fbfdff" stroke="#2f6095"/><circle cx="@SX(j.AnchorX)" cy="@SY(j.AnchorY)" r="2" fill="#2f6095"/></g>
+        }
+        @foreach (var b in Project.World.Bodies.OrderBy(x => x.Layer)) {
+          var pose=Pose(b.Id); var picked=Selected.Contains(b.Id); var radial=b.Kind is "ball" or "wheel" or "gear" or "pulley";
+          <g @key="b.Id" class="body @(picked ? "picked" : "") @(b.Mode == "fixed" ? "fixed" : "")" data-body="@b.Id" transform='@($"translate({N(SX(pose.X))},{N(SY(pose.Y))}) rotate({N(-pose.Angle*180/Math.PI)})")' @onpointerdown="e=>BeginBody(b,e)" @onpointerdown:stopPropagation="true" @onpointerdown:preventDefault="true">
+            @if (radial) {
+              @if (b.Kind == "gear") { @for (var n=0;n<16;n++) { <rect x="-4" y="@(-b.Radius*55-5)" width="8" height="12" fill="@b.Colour" stroke="#25416d" transform='@($"rotate({N(n*22.5)})")'/> } }
+              <circle r="@(b.Radius*55)" fill="@(b.Kind == "ball" ? "url(#marble)" : "url(#metal)")" stroke="@b.Colour" stroke-width="@(picked ? 3 : 2)"/>
+              @if (b.Kind != "ball") { <circle r="@(b.Radius*40)" fill="#f3f8ff" fill-opacity=".72" stroke="@b.Colour" stroke-width="1"/> @for (var n=0;n<6;n++) { <path d='@($"M0 0L{N(b.Radius*45)} 0")' stroke="@b.Colour" stroke-width="4" transform='@($"rotate({N(n*60)})")'/> } <circle r="8" fill="#eaf4ff" stroke="#1c497d" stroke-width="2"/><circle r="2.5" fill="#356d9b"/> <path d='@($"M0 0L{N(b.Radius*55)} 0")' stroke="#083c83" stroke-width="2"/> }
+              else { <ellipse cx="@(-b.Radius*17)" cy="@(-b.Radius*20)" rx="@(b.Radius*12)" ry="@(b.Radius*8)" fill="white" fill-opacity=".65"/> }
+            } else {
+              <rect x="@(-b.Width*27.5)" y="@(-b.Height*27.5)" width="@(b.Width*55)" height="@(b.Height*55)" rx="@(b.Kind == "link" ? b.Height*25 : 2)" fill="@(b.Mode == "fixed" ? "#deebf8" : b.Colour)" stroke="#315b85" stroke-width="@(picked ? 3 : 1.5)"/>
+              @if (b.Kind == "track") { <path d='@($"M{N(-b.Width*27.5)} {N(-b.Height*17)}L{N(b.Width*27.5)} {N(-b.Height*17)}M{N(-b.Width*27.5)} {N(b.Height*17)}L{N(b.Width*27.5)} {N(b.Height*17)}")' stroke="#91b0ce" stroke-width="1.5"/> @for (var n=0;n<Math.Min(28,(int)(b.Width*3));n++) { <path d='@($"M{N(-b.Width*27.5+n*18)} {N(b.Height*27.5+2)}l-6 6")' stroke="#8a9dae" stroke-width="1"/> } }
+              @if (b.Kind == "link") { <circle cx="@(-b.Width*24)" r="@(b.Height*18)" fill="#eff7ff" stroke="#315b85"/><circle cx="@(b.Width*24)" r="@(b.Height*18)" fill="#eff7ff" stroke="#315b85"/> }
+              @if (b.Kind == "slider") { <path d='@($"M{N(-b.Width*20)} -3H{N(b.Width*20)}M{N(-b.Width*20)} 3H{N(b.Width*20)}")' stroke="#e3f3ff" stroke-width="2"/> }
+            }
+            @if (picked) { var hw=radial ? b.Radius*55+7 : b.Width*27.5+6; var hh=radial ? b.Radius*55+7 : b.Height*27.5+6; <rect class="selection-outline" x="@(-hw)" y="@(-hh)" width="@(2*hw)" height="@(2*hh)" fill="none" stroke="#1b72eb" stroke-dasharray="4 3"/><rect x="@(hw-3)" y="@(hh-3)" width="6" height="6" fill="white" stroke="#1b72eb"/> }
+          </g>
+          @if (Project.World.Motors.Any(m=>m.Body==b.Id)) { <g transform='@($"translate({N(SX(pose.X)-22)},{N(SY(pose.Y)-22)})")'><circle r="7" fill="#1b62d6"/><path d="M-3 -4L1 0L-1 0L3 4" stroke="white" fill="none" stroke-width="1.5"/></g> }
+        }
+        @foreach (var panel in ComputeProbePanels()) {
+          <g class="probe-overlay" data-probe-body="@panel.BodyId" @key='@("probe:"+panel.BodyId)'>
+            @foreach (var vector in panel.Vectors) {
+              <path data-probe-path="@vector.Key" d="@vector.Path" fill="none" stroke="@vector.Colour" stroke-width="@(1.8*panel.Scale)"/>
+              @if (vector.Path.Length > 0) { <g><text class="probe-vector-label" x="@vector.LabelX" y="@vector.LabelY" fill="@vector.Colour" font-size="@(10*panel.Scale)">@vector.Label @vector.Value @vector.Unit</text></g> }
+            }
+            <path d='@($"M{N(panel.CentreX)} {N(panel.CentreY)}L{N(panel.X)} {N(panel.Y+18*panel.Scale)}")' fill="none" stroke="#8caed3" stroke-width="@panel.Scale" stroke-dasharray="@(3*panel.Scale) @(3*panel.Scale)"/>
+            <g transform='@($"translate({N(panel.X)} {N(panel.Y)}) scale({N(panel.Scale)})")'>
+              <foreignObject width="@(panel.Width/panel.Scale)" height="@(panel.Height/panel.Scale)">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="probe-hud">
+                  <div class="probe-heading"><b>@panel.Name</b><small>@N(panel.Time) s</small></div>
+                  <div class="probe-rows">@foreach (var row in panel.Rows) { <div class="probe-row" data-probe-row="@row.Key"><span>@row.Label</span><strong data-probe-value="@row.Key" style="color:@row.Colour">@row.Value</strong><small>@row.Unit</small></div> }</div>
+                </div>
+              </foreignObject>
+            </g>
+          </g>
+        }
+        @if (BoxStart is not null && BoxEnd is not null) { <rect x="@SX(Math.Min(BoxStart[0],BoxEnd[0]))" y="@SY(Math.Max(BoxStart[1],BoxEnd[1]))" width="@(Math.Abs(BoxEnd[0]-BoxStart[0])*55)" height="@(Math.Abs(BoxEnd[1]-BoxStart[1])*55)" fill="#4a97ff" fill-opacity=".1" stroke="#347ad5" stroke-dasharray="4 3"/> }
+        <g class="sheet-scale" transform='@($"translate({N(ViewX+24)},{N(ViewY+ViewHeight-35)})")'><path d="M0 0H110M0 -5V5M55 -5V5M110 -5V5" stroke="#487094"/><text y="18">0</text><text x="50" y="18">1</text><text x="103" y="18">2 m</text></g>
+      </svg>
+      <div class="drawing-footer"><span>@Status</span><span>@(Busy ? "计算中" : Playing ? "回放中" : "就绪") · @(Selected.Count) 个选中 · @DisplayedStep.ToString("0.000000",CultureInfo.InvariantCulture) s / 步</span></div>
+      @if (Layers) { <div class="layer-dock"><b>图层</b><button @onclick="()=>Layers=false">×</button>@foreach(var group in Project.World.Bodies.GroupBy(b=>b.Layer).OrderBy(g=>g.Key)) { <div><span>@group.Key</span><span>@group.Count() 个对象</span><button @onclick="()=>SelectLayer(group.Key)">选中</button></div> }</div> }
+    </div>
+      <fieldset class="edit-shelf" disabled="@CanvasLocked">
+  <section class="asset-tray"><div class="tray-heading"><b>零件</b></div>@foreach(var kind in WorkshopDomain.BodyKinds) { <button class="asset" @onclick="()=>AddBody(kind)"><span class="asset-symbol @kind">@KindSymbol(kind)</span><span>@KindName(kind)</span></button> }<button class="asset" data-preset="flywheel" @onclick='()=>AddPreset("flywheel")'><span class="asset-symbol">◉</span><span>飞轮</span></button><button class="asset" data-preset="counterweight" @onclick='()=>AddPreset("counterweight")'><span class="asset-symbol">▣</span><span>配重</span></button><button class="asset" data-preset="roller" @onclick='()=>AddPreset("roller")'><span class="asset-symbol">⊚</span><span>滚轮</span></button><button class="asset" data-preset="buffer" @onclick='()=>AddPreset("buffer")'><span class="asset-symbol">▰</span><span>缓冲块</span></button><div class="tray-heading template-heading"><b>模板</b></div><button class="template" @onclick='()=>UseTemplate("demo")'>弹珠与转盘</button><button class="template" @onclick='()=>UseTemplate("delivery")'>弹珠交付 ◇</button><button class="template" @onclick='()=>UseTemplate("steady")'>稳定转速 ◇</button><button class="template" @onclick='()=>UseTemplate("linkage")'>弹簧连杆</button><button class="template" data-challenge-template="routing" @onclick='()=>UseTemplate("routing")'>弹珠分流 ◇</button><button class="template" data-challenge-template="crossing" @onclick='()=>UseTemplate("crossing")'>限件跨越 ◇</button><button class="template" data-control-template @onclick='()=>UseTemplate("control-chain")'>计时计数联锁</button></section>
+  <section class="example-library"><div class="panel-heading">装配示例库 <span>@CatalogueStatus</span></div><div class="example-grid">@foreach(var example in Examples) { <button class="example-card @(SelectedExampleId==example.Id ? "active" : "")" data-example-id="@example.Id" @onclick="()=>LoadExample(example)" disabled="@(Busy||LoadingExample)"><strong>@example.Name</strong></button> }</div></section>
+      </fieldset>
+    </div>
+    @if (Inspector) {
+      <aside class="inspector">
+        <div class="panel-heading">属性 <button @onclick="()=>Inspector=false">×</button></div>
+        <fieldset class="inspector-fields" disabled="@CanvasLocked">
+        @if (SelectedBody is { } body) {
+          <div class="inspector-part" data-body-id="@body.Id"><strong>@BodyName(body)</strong><small>@KindName(body.Kind) / @ModeName(body.Mode)</small></div>
+          <label>运动类型<select value="@body.Mode" @onchange='e=>SetBodyText(body,"mode",e)'><option value="dynamic">动态</option><option value="fixed">固定</option></select></label>
+          <div class="property-pair"><label>x / m<input type="number" step=".25" value="@N(body.X)" @onchange='e=>SetBodyNumber(body,"x",e)'/></label><label>y / m<input type="number" step=".25" value="@N(body.Y)" @onchange='e=>SetBodyNumber(body,"y",e)'/></label></div>
+          <label>角度 / °<input type="number" step="5" value="@N(body.Angle*180/Math.PI)" @onchange='e=>SetBodyNumber(body,"angle",e)'/></label>
+          @if (body.Kind is "ball" or "wheel" or "gear" or "pulley") { <label>半径 / m<input type="number" min=".01" max="50" step=".05" value="@N(body.Radius)" @onchange='e=>SetBodyNumber(body,"radius",e)'/></label> }
+          else { <div class="property-pair"><label>宽度 / m<input type="number" step=".1" value="@N(body.Width)" @onchange='e=>SetBodyNumber(body,"width",e)'/></label><label>高度 / m<input type="number" step=".05" value="@N(body.Height)" @onchange='e=>SetBodyNumber(body,"height",e)'/></label></div> }
+          <div class="property-pair"><label>质量 / kg<input type="number" min=".001" step=".1" value="@N(body.Mass)" @onchange='e=>SetBodyNumber(body,"mass",e)'/></label><label>恢复系数<input type="number" min="0" max="1" step=".05" value="@N(body.Restitution)" @onchange='e=>SetBodyNumber(body,"restitution",e)'/></label></div>
+          <div class="property-pair"><label>摩擦系数<input type="number" min="0" max="2" step=".05" value="@N(body.Friction)" @onchange='e=>SetBodyNumber(body,"friction",e)'/></label><label>阻尼<input type="number" min="0" step=".01" value="@N(body.LinearDamping)" @onchange='e=>SetBodyNumber(body,"damping",e)'/></label></div>
+          <div class="property-pair"><label>初始水平速度 / m·s⁻¹<input type="number" min="-100" max="100" step=".25" value="@N(body.Vx)" @onchange='e=>SetBodyNumber(body,"vx",e)'/></label><label>初始垂直速度 / m·s⁻¹<input type="number" min="-100" max="100" step=".25" value="@N(body.Vy)" @onchange='e=>SetBodyNumber(body,"vy",e)'/></label></div>
+          <label>初始角速度 / rad·s⁻¹<input type="number" min="-200" max="200" step=".25" value="@N(body.Omega)" @onchange='e=>SetBodyNumber(body,"omega",e)'/></label>
+          <label>角阻尼<input type="number" min="0" max="100" step=".01" value="@N(body.AngularDamping)" @onchange='e=>SetBodyNumber(body,"angularDamping",e)'/></label>
+          <div class="property-pair"><label>图层<input type="number" min="0" max="32" value="@body.Layer" @onchange='e=>SetBodyNumber(body,"layer",e)'/></label><label>颜色<input type="color" value="@body.Colour" @onchange='e=>SetBodyText(body,"colour",e)'/></label></div>
+          <label>名称<input value="@body.Label" maxlength="64" @onchange='e=>SetBodyText(body,"label",e)'/></label>
+        } else { <p class="empty-hint">选择零件 · ⇧ 多选</p> }
+        </fieldset>
+      </aside>
+    }
+  </section>
+  @if (Inspector) {
+    <fieldset class="settings-deck" disabled="@CanvasLocked">
+      @if (SelectedBody is { } measuredBody) {
+        <details class="probe-picker" open><summary>跟随测量</summary>
+          <div class="probe-options">@foreach (var choice in ProbeChoices(measuredBody)) {
+            <label class="probe-option" title="@choice.Reason"><input type="checkbox" data-probe-key="@choice.Key" checked="@ProbeChecked(measuredBody.Id,choice.Key)" disabled="@ProbeChoiceDisabled(measuredBody,choice.Key)" @onchange="e=>SetProbeMetric(measuredBody.Id,choice.Key,e)"/><span>@choice.Label</span><small>@choice.Unit</small></label>
+          }</div>
+          <div class="probe-actions"><label><input type="checkbox" data-probe-vectors checked="@ProbeVectorsEnabled(measuredBody.Id)" disabled="@(!ComputeProbePanels().Any(p=>p.BodyId==measuredBody.Id))" @onchange="e=>SetProbeVectors(measuredBody.Id,e)"/> 方向箭头</label><button @onclick="()=>ClearProbe(measuredBody.Id)">关闭测量框</button></div>
+        </details>
+      }
+      <details class="solver-settings" open><summary>环境与求解器</summary><div class="solver-fields"><label>水平重力 / m·s⁻²<input type="number" min="-100" max="100" step=".1" value="@N(Project.World.GravityX)" @onchange='e=>SetWorld("gravityX",e)'/></label><label>垂直重力 / m·s⁻²<input type="number" min="-100" max="100" step=".1" value="@N(Project.World.GravityY)" @onchange='e=>SetWorld("gravity",e)'/></label><label>时长 / s<input type="number" min=".05" max="20" step=".5" value="@N(Project.World.DurationS)" @onchange='e=>SetWorld("duration",e)'/></label><label>固定步长 / s<input type="number" min=".00416667" max=".0333333" step=".001" value="@N(Project.World.StepS)" @onchange='e=>SetWorld("step",e)'/></label><label>采样间隔 / 步<input type="number" min="1" max="4800" value="@Project.World.SampleEvery" @onchange='e=>SetWorld("sample",e)'/></label><label>随机种子<input type="number" min="0" max="4294967295" step="1" value="@Project.World.Seed" @onchange='e=>SetWorld("seed",e)'/></label></div></details>
+      <details class="appearance-settings"><summary>三维外观</summary><div class="appearance-fields"><canvas id="mechanical-appearance" width="320" height="230"></canvas><label>厚度 / m<input type="number" min=".01" max="5" step=".1" value="@N(Project.Appearance.Depth)" @onchange="SetDepth"/></label><label>材质<select value="@Project.Appearance.Material" @onchange="SetMaterial"><option value="alloy">金属</option><option value="polymer">塑料</option><option value="glass">玻璃</option></select></label><button @onclick="AppearancePreview">刷新预览</button></div></details>
+    </fieldset>
+  }
+  <section class="engineering-docks">
+    <fieldset class="assembly-tools" disabled="@CanvasLocked"><div class="panel-heading">连接与驱动</div><div class="connection-row"><select aria-label="连接类型" @bind="JointKind">@foreach(var k in WorkshopDomain.JointKinds) { <option value="@k">@JointName(k)</option> }</select><select aria-label="连接零件甲" @bind="JointA"><option value="">零件甲</option>@foreach(var b in Project.World.Bodies) { <option value="@b.Id">@BodyName(b)</option> }</select><span>↔</span><select aria-label="连接零件乙" @bind="JointB"><option value="">零件乙</option>@foreach(var b in Project.World.Bodies) { <option value="@b.Id">@BodyName(b)</option> }</select><button @onclick="AddJoint">添加连接</button><button @onclick="AddMotor" disabled="@(SelectedBody is null)">添加电机</button></div>
+      @foreach(var j in Project.World.Joints) {
+        <details class="constraint-editor" data-joint-id="@j.Id" data-kind="@j.Kind"><summary><b>@JointName(j.Kind)</b><small>@BodyNameById(j.A) → @BodyNameById(j.B)</small></summary><div class="joint-parameters">
+          @if (j.Kind is "spring" or "rod") { <label>自然长度 / m<input type="number" min=".001" max="100" step=".05" value="@N(j.RestLength)" @onchange='e=>SetJointParameter(j,"length",e)'/></label> }
+          @if (j.Kind == "spring") { <label>刚度 / N·m⁻¹<input type="number" min="0" max="10000" step="1" value="@N(j.Stiffness)" @onchange='e=>SetJointParameter(j,"stiffness",e)'/></label><label>阻尼 / N·s·m⁻¹<input type="number" min="0" max="10000" step=".1" value="@N(j.Damping)" @onchange='e=>SetJointParameter(j,"damping",e)'/></label> }
+          @if (j.Kind is "hinge" or "fixed" or "slider") { <label>锚点 x / m<input type="number" min="-100" max="100" step=".25" value="@N(j.AnchorX)" @onchange='e=>SetJointParameter(j,"anchorX",e)'/></label><label>锚点 y / m<input type="number" min="-100" max="100" step=".25" value="@N(j.AnchorY)" @onchange='e=>SetJointParameter(j,"anchorY",e)'/></label> }
+          @if (j.Kind == "slider") { <label>方向 x<input type="number" min="-100" max="100" step=".1" value="@N(j.AxisX)" @onchange='e=>SetJointParameter(j,"axisX",e)'/></label><label>方向 y<input type="number" min="-100" max="100" step=".1" value="@N(j.AxisY)" @onchange='e=>SetJointParameter(j,"axisY",e)'/></label><label>最小位移 / m<input type="number" min="-100" max="100" step=".1" value="@N(j.Min)" @onchange='e=>SetJointParameter(j,"min",e)'/></label><label>最大位移 / m<input type="number" min="-100" max="100" step=".1" value="@N(j.Max)" @onchange='e=>SetJointParameter(j,"max",e)'/></label> }
+          @if (j.Kind is "gear" or "belt") { <label>传动比<input type="number" min="-20" max="20" step=".1" value="@N(j.Ratio)" @onchange='e=>SetJointParameter(j,"ratio",e)'/></label> }
+          <button aria-label="移除连接" @onclick="()=>DeleteJoint(j)">移除连接</button>
+        </div></details>
+      }
+      @foreach(var m in Project.World.Motors) { <div class="motor-row constraint-row" data-motor-id="@m.Id"><span>电机 · @BodyNameById(m.Body)</span><label>目标角速度 / rad·s⁻¹<input type="number" min="-100" max="100" step=".25" value="@N(m.TargetSpeed)" @onchange='e=>SetMotor(m,"speed",e)'/></label><label>最大转矩 / N·m<input type="number" min=".001" max="10000" step="1" value="@N(m.MaxTorque)" @onchange='e=>SetMotor(m,"torque",e)'/></label><button @onclick="()=>ToggleMotor(m)">@(m.Enabled ? "停用" : "启用")</button><button @onclick="()=>ReverseMotor(m)">反转</button><button aria-label="移除电机" @onclick="()=>DeleteMotor(m)">×</button></div> }
+    </fieldset>
+    <div class="timeline-panel"><div class="panel-heading">运行记录 <span>@DisplayEngineVersion</span></div><div class="timeline-controls"><button @onclick="()=>Seek(0)" disabled="@(Frames.Count==0)">│◂</button><label>帧<input aria-label="记录帧" type="number" min="0" max="@(Math.Max(0,Frames.Count-1))" value="@FrameIndex" @onchange="SeekInput"/></label><span>/ @Math.Max(0,Frames.Count-1)</span><button @onclick="()=>Seek(Frames.Count-1)" disabled="@(Frames.Count==0)">▸│</button><button @onclick="ExportCsv" disabled="@(Frames.Count==0)">数据表 ↓</button><button @onclick="ExportReplay" disabled="@(Frames.Count==0)">回放 ↓</button><button @onclick="ExportSvg">图纸 ↓</button></div><svg class="run-strip" viewBox="0 0 620 105"><path d="M35 10V85H605" fill="none" stroke="#c2d5ec"/><polyline points="@SpeedPoints" fill="none" stroke="#3166d4" stroke-width="2"/><line x1="@(35+570*(Frames.Count>1 ? (double)FrameIndex/(Frames.Count-1) : 0))" y1="10" x2="@(35+570*(Frames.Count>1 ? (double)FrameIndex/(Frames.Count-1) : 0))" y2="85" stroke="#259bcc" stroke-dasharray="3 3"/><text x="40" y="100">时间 / s</text><text x="470" y="100">选中零件速度 / m·s⁻¹</text></svg><div class="metrics-row"><span>采样帧 <b>@Frames.Count</b></span><span>事件 <b>@EventCount</b></span><span>挑战 <b>@ChallengeStatus</b></span></div></div>
+  </section>
+  <fieldset class="control-panel" disabled="@CanvasLocked"><div class="panel-heading">传感控制</div>
+    <div class="sensor-form">
+      <label>传感类型<select aria-label="传感类型" @bind="ControlKind"><option value="timer">计时</option><option value="contact">碰撞</option><option value="distance">距离</option><option value="count">计数</option><option value="logic">逻辑</option></select></label>
+      @if(ControlKind=="logic") { <label>输入节点<input aria-label="逻辑输入节点" placeholder="c1,c2" @bind="ControlInputs"/></label><label>运算<select aria-label="逻辑运算" @bind="ControlLogic"><option value="all">且</option><option value="any">或</option><option value="not">非</option></select></label> }
+      <label>观察零件<select aria-label="观察零件" @bind="ControlBody"><option value="">不指定</option>@foreach(var b in Project.World.Bodies) { <option value="@b.Id">@BodyName(b)</option> }</select></label>
+      <label>接触对象<select aria-label="接触对象" @bind="ControlTarget"><option value="">不指定</option>@foreach(var b in Project.World.Bodies) { <option value="@b.Id">@BodyName(b)</option> }</select></label>
+      <label>控制电机<select aria-label="控制电机" @bind="ControlMotor"><option value="">选择电机</option>@foreach(var m in Project.World.Motors) { <option value="@m.Id">@MotorNameById(m.Id)</option> }</select></label>
+      <label>执行动作<select aria-label="执行动作" @bind="ControlAction"><option value="start">启用电机</option><option value="stop">停用电机</option><option value="reverse">反转电机</option><option value="signal">输出信号</option></select></label>
+      <label>@ThresholdName(ControlKind)<input aria-label="触发阈值" type="number" min="0" max="10000" step="@(ControlKind=="count" ? "1" : ".1")" @bind="ControlThreshold"/></label>
+      <label>触发上限<input aria-label="触发上限" type="number" min="1" max="32" step="1" @bind="ControlMaxFirings"/></label>
+      <button @onclick="AddControl" disabled="@(Project.World.Motors.Count==0 && ControlAction!="signal")">添加传感控制</button>
+    </div>
+    @foreach(var c in Project.World.Controls) {
+      <details class="sensor-row" data-control-id="@c.Id"><summary><span class="sensor-kind">@ControlName(c.Kind)</span><code>@c.Id</code><span>@(c.Kind=="logic" ? string.Join(" · ",c.Inputs) : c.Body.Length==0 ? "定时条件" : BodyNameById(c.Body))</span><span class="sensor-arrow">→</span><b>@ControlActionName(c.Action)</b>@if(c.Action!="signal") { <span>@MotorNameById(c.Motor)</span> }<small>最多 @c.MaxFirings 次</small></summary><div class="sensor-fields">
+        <label>节点类型<select value="@c.Kind" @onchange='e=>SetControlText(c,"kind",e)'><option value="timer">计时</option><option value="contact">碰撞</option><option value="distance">距离</option><option value="count">计数</option><option value="logic">逻辑</option></select></label>
+        @if(c.Kind=="logic") { <label>输入节点<input aria-label="逻辑节点输入" value="@string.Join(",",c.Inputs)" @onchange='e=>SetControlText(c,"inputs",e)'/></label><label>运算<select value="@c.Logic" @onchange='e=>SetControlText(c,"logic",e)'><option value="all">且</option><option value="any">或</option><option value="not">非</option></select></label> }
+        <label>观察零件<select value="@c.Body" @onchange='e=>SetControlText(c,"body",e)'><option value="">不指定</option>@foreach(var b in Project.World.Bodies) { <option value="@b.Id">@BodyName(b)</option> }</select></label>
+        <label>接触对象<select value="@c.Target" @onchange='e=>SetControlText(c,"target",e)'><option value="">不指定</option>@foreach(var b in Project.World.Bodies) { <option value="@b.Id">@BodyName(b)</option> }</select></label>
+        <label>控制电机<select value="@c.Motor" @onchange='e=>SetControlText(c,"motor",e)'><option value="">无</option>@foreach(var m in Project.World.Motors) { <option value="@m.Id">@MotorNameById(m.Id)</option> }</select></label>
+        <label>执行动作<select value="@c.Action" @onchange='e=>SetControlText(c,"action",e)'><option value="start">启用电机</option><option value="stop">停用电机</option><option value="reverse">反转电机</option><option value="signal">输出信号</option></select></label>
+        <label>@ThresholdName(c.Kind)<input type="number" min="0" max="10000" step=".1" value="@N(c.Threshold)" @onchange='e=>SetControlNumber(c,"threshold",e)'/></label>
+        <label>触发上限<input type="number" min="1" max="32" step="1" value="@c.MaxFirings" @onchange='e=>SetControlNumber(c,"firings",e)'/></label><button aria-label="移除传感控制" @onclick="()=>DeleteControl(c)">移除</button>
+      </div></details>
+    }
+  </fieldset>
+  @if (Moments.Count > 0) { <details class="event-deck" open><summary>关键事件 · @Moments.Count</summary><div class="event-list">@foreach(var moment in Moments) { <button class="moment-button @moment.Kind" data-time="@moment.T.ToString("R",CultureInfo.InvariantCulture)" data-kind="@moment.Kind" @onclick="()=>SeekMoment(moment)"><b>@N(moment.T) s</b><span>@moment.Title</span></button> }</div></details> }
+  <section class="records-deck"><div class="server-record" data-result-source="@ResultSource" data-review="@(ReviewAvailable ? "ready" : "off")"><div class="panel-heading">工程记录 <span>@DisplayStorage</span></div><div class="record-actions"><button @onclick="LoadServer" disabled="@(ProjectId.Length==0 || Busy)">重开工程</button><button @onclick="ListVersions" disabled="@(ProjectId.Length==0 || Busy)">历史版本</button><button @onclick="BranchServer" disabled="@(ProjectId.Length==0 || Busy)">新建分支</button><button @onclick="RollbackServer" disabled="@(ProjectId.Length==0 || Busy || RollbackRevision<1)">恢复版本</button><input type="number" aria-label="要恢复的版本" min="1" max="@Math.Max(1,Revision)" @bind="RollbackRevision"/></div><div class="record-meta">版本 @Revision <code>@ShortDigest</code></div>@foreach(var v in Versions) { <button class="version-chip" @onclick="()=>RollbackRevision=v.Revision">版本 @v.Revision · @OperationName(v.Operation)</button> }<div class="record-actions"><button class="primary" data-native-result @onclick="ShowReviewResult" disabled="@(Busy || ReviewBusy || !ReviewAvailable)">查看复核结果</button><button data-native-scan @onclick="RunScanWithReview" disabled="@Busy">参数实验</button><button data-native-cancel @onclick="CancelJob" disabled="@(!CanCancelReview)">取消复核</button></div><p class="record-status" role="status">@JobStatus</p>
+      @if (ResultSource == "review" && ReviewAvailable) {
+        <div class="native-checks" aria-label="演算校核">@foreach(var check in NativeChecks) { <span class="@(check.Passed ? "passed" : "failed")">@(check.Passed ? "✓" : "×") @check.Name</span> }</div>
+      }
+        <div class="scan-settings"><label>参数<select aria-label="实验参数" @bind="ScanParameter"><option value="motorSpeed">电机转速</option><option value="gravityY">垂直重力</option><option value="restitution">恢复系数</option></select></label>
+          @if (ScanParameter == "motorSpeed") { <label>电机<select aria-label="实验电机" @bind="ScanTarget">@foreach(var motor in Project.World.Motors) { <option value="@motor.Id">@MotorNameById(motor.Id)</option> }</select></label> }
+          @if (ScanParameter == "restitution") { <label>零件<select aria-label="实验零件" @bind="ScanBodyTarget">@foreach(var part in Project.World.Bodies) { <option value="@part.Id">@BodyName(part)</option> }</select></label> }
+          <label>取值<input aria-label="实验取值" value="@ScanValues" maxlength="120" @onchange="SetScanValues"/></label><label>试验<input aria-label="实验次数" type="number" min="1" max="3" step="1" @bind="ScanTrials"/></label>
+        </div>
+    </div>
+    <div class="material-panel"><div class="panel-heading">材料与连接检查 <span>@DisplayDomainVersion</span></div><table><thead><tr><th>零件</th><th>数量</th><th>质量 / kg</th><th>投影面积 / m²</th></tr></thead><tbody>@foreach(var line in Receipt.Bom) { <tr><td>@KindName(line.Kind) · @ModeName(line.Mode)</td><td>@line.Quantity</td><td>@N(line.MassKg)</td><td>@N(line.AreaM2)</td></tr> }</tbody></table>@foreach(var item in Receipt.Diagnostics.Take(8)) { <div class="diagnostic @item.Severity"><code>@DiagnosticName(item.Code)</code><span>@DiagnosticMessage(item)</span></div> }@if (Receipt.Ok) { <small class="valid-check">装配检查通过 · @Receipt.PlannedSteps 步 · @Receipt.PlannedFrames 个计划采样帧</small> }</div>
+  </section>
+  @if (VisibleExperiment is { } scanEngine && scanEngine.TryGetProperty("scan",out var nativeScan) && nativeScan.TryGetProperty("runs",out var scanRuns) && scanRuns.ValueKind==JsonValueKind.Array) {
+    <section class="scan-panel" data-scan-panel>
+      <div class="panel-heading">参数实验 <span>@ScanHeading(nativeScan) · @ScanSummaryNumber(scanEngine,"runCount") 次</span></div>
+      <div class="scan-summary"><span>已算 @ScanSummaryNumber(scanEngine,"successfulRuns")</span><span>失败 @ScanSummaryNumber(scanEngine,"failedRuns")</span><span>挑战 @ScanSummaryNumber(scanEngine,"challengeCompletions")</span><span>完成比例 @ScanSummaryNumber(scanEngine,"successRate")</span><label>热图<select aria-label="热图指标" @bind="ScanMetric"><option value="maxSpeed">最大速度</option><option value="completionTime">达成时间</option><option value="challenge">挑战结果</option></select></label></div>
+      <div class="scan-results"><table><thead><tr><th>取值</th><th>试验</th><th>结果</th><th>挑战</th><th>最大速度 / m·s⁻¹</th><th>达成 / s</th><th>运行 / s</th></tr></thead><tbody>@foreach(var row in scanRuns.EnumerateArray()) { var summary=row.GetProperty("summary"); <tr data-scan-state="@(ScanComputed(row)?"complete":"partial")"><td>@JsonNumber(row,"value")</td><td>@(row.GetProperty("trial").GetInt32()+1)</td><td>@(ScanComputed(row)?"已完成":"部分结果")<small>@ScanIssue(row)</small></td><td>@(ScanAchieved(row)?"已达成":"未达成")</td><td>@JsonNumber(summary,"maxSpeed")</td><td>@JsonNumber(summary,"completionTime")</td><td>@JsonNumber(summary,"durationS")</td></tr> }</tbody></table>
+      <div class="scan-matrix" style="--scan-trials:@(VisibleExperimentRequest?.Scan?.Trials??1)" aria-label="参数与初始条件试验热图">@foreach(var row in scanRuns.EnumerateArray()) { <div class="scan-cell @(!ScanComputed(row)?"partial":"")" style="background:@ScanColour(scanRuns,row)" title="@ScanIssue(row)"><small>@JsonNumber(row,"value") · @(row.GetProperty("trial").GetInt32()+1)</small><b>@ScanTileValue(row)</b><span>@ScanMetricUnit</span></div> }</div></div>
+      <div class="scan-trajectories"><div class="panel-heading">轨迹叠图 <span>x / m · y / m</span></div><svg viewBox="0 0 520 265" aria-label="参数实验轨迹叠图"><path d="M32 15V235H505" fill="none" stroke="#aac5e8"/>@foreach(var row in scanRuns.EnumerateArray()) { <polyline points="@ScanTrajectory(scanRuns,row)" stroke="@ScanLineColour(row)" stroke-dasharray="@(ScanComputed(row)?"":"5 3")" fill="none" stroke-width="1.6"><title>@JsonNumber(row,"value") · @(row.GetProperty("trial").GetInt32()+1)</title></polyline> }<text x="35" y="257">@N(ScanBounds(scanRuns).Left)</text><text x="470" y="257">@N(ScanBounds(scanRuns).Left+ScanBounds(scanRuns).Width)</text><text x="3" y="25">@N(ScanBounds(scanRuns).Bottom+ScanBounds(scanRuns).Height)</text><text x="3" y="233">@N(ScanBounds(scanRuns).Bottom)</text></svg></div>
+      <button @onclick="ExportServerResult">实验结果 ↓</button>
+    </section>
+  }
+</main>

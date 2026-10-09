@@ -1,0 +1,35 @@
+{
+  "schema": "ocv.shared-publishing-map/1",
+  "version": "1.0.0",
+  "system": "SH4",
+  "components": {
+    "dotnet": {
+      "entry": "services/dotnet/7.cs:SharedInvoiceRoutes.Map",
+      "sources": ["config/2/1.cs", "pcakage/report2/old.cs"],
+      "route": "POST /shared/bundle.asmx",
+      "role": "fixed artifact validation, deterministic ZIP assembly and actual entry readback"
+    },
+    "sinatra": {
+      "entry": "services/sinatra/main.rb:POST /shared/template.cgi",
+      "sources": ["config/2/4.rb", "pinia/templates2/old.rb"],
+      "role": "fixed escaped report templates, old JSON-in-CSV roundtrip and manifest declaration attestation"
+    },
+    "laravel": {
+      "entry": "services/laravel/routes.php:/api/shared/publish.php and /api/shared/read.cgi",
+      "sources": ["config/2/7.php", "pcakage/forms2/old.php"],
+      "role": "private immutable publication catalog in actual MySQL, conflict detection and joined readback"
+    }
+  },
+  "credential": {"environment": "OCV_RUNNER_KEY", "header": "X-Ocv-Runner", "logged": false},
+  "artifactContract": "ocv.shared-artifact/1",
+  "manifestSchema": "ocv.shared-manifest/1",
+  "archive": {"name": "report.zip", "maximumPackedBytes": 3145728, "maximumUnpackedBytes": 8388608, "maximumFiles": 24, "zipDate": "1980-01-01T00:00:00Z", "includesPaperPdf": false},
+  "catalog": {"driver": "mysql", "retention": 64, "tables": ["ocv_tax_coupons2", "ocv_loan_items2"], "view": "ocv_tax_statement2", "immutableJob": true, "objectKey": "shared/{job}/{archiveSha}.zip", "sourceAuthority": "PostgreSQL; this catalog is derived"},
+  "arChoices": {
+    "directoryAndNaming": ["AR02", "AR03", "AR05", "AR07", "AR49"],
+    "abstractionAndControl": ["AR10", "AR11", "AR12"],
+    "protocol": ["AR18", "AR20", "AR21", "AR54"],
+    "dataOrganization": ["AR25", "AR27", "AR44", "AR53"]
+  },
+  "limits": "No public SQL/path/template/code execution; source-only verification does not prove runtime or independent platform portability."
+}

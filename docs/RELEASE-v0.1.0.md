@@ -11,7 +11,7 @@ Public source snapshot: outcome-only lattice adsorption research, exact solvers,
 
 Research is paused; this is an AI-assisted draft, not a peer-reviewed publication. The periodic deterministic-feedback comparison and density supremum are scoped exact results; open-boundary joint capability remains unresolved. No experiments or PDF generation were performed for publication.
 
-Windows clean-clone, Linux container userspace and isolated new-volume core deployment were previously exercised. Independent macOS and Linux Engine hosts are not verified. Cross-platform Actions checks run separately from source packaging; publication does not certify their success. Read README and docs/PUBLIC-RELEASE.md for deployment, resource budgets, configuration and limitations.
+Windows clean-clone, Linux container userspace and isolated new-volume core deployment were previously exercised. Independent macOS and Linux Engine hosts are not verified. Cross-platform Actions checks run separately from source packaging; publication does not certify their success. Read README and docs/DEPLOY.en.md for deployment, resource budgets, configuration and limitations.
 
 Contact: user31436@proton.me.
 

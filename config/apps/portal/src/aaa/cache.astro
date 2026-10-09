@@ -25,7 +25,7 @@ const {prominent=false}=Astro.props;
  import {playCue} from '../n9/sound.mjs';
  const trigger=document.querySelector('[data-attachment-toggle]'),drawer=document.querySelector('#forgotten-drawer');
  if(trigger&&drawer){
-  const paths=['/forgotten-cache/03.avif','/forgotten-cache/04.jpg'];let populated=false;
+  const paths=['/forgotten-cache/04.jpg'];let populated=false;
   function show(open){
    if(open&&!populated){const host=drawer.querySelector('.drawer-images');paths.forEach((src,index)=>{const image=new Image();image.alt=`附件${index+1}`;image.decoding='async';image.src=src;host.append(image);});populated=true;}
    drawer.hidden=!open;trigger.setAttribute('aria-expanded',String(open));trigger.setAttribute('aria-label',trigger.dataset.prominent==='true'?'春日影':open?'收起附件入口':'打开附件');

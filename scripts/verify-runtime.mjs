@@ -1,10 +1,10 @@
 import { writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import os from 'node:os';
 import {mkdir} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import './guard-paths.mjs';
-const base=process.env.OCV_BASE_URL || 'http://127.0.0.1:8080';
+import {verificationConfig} from './verification-config.mjs';
+const {baseUrl:base,reportRoot}=verificationConfig();
 const observations=[];
 async function request(route,options={}) {return fetch(base+route,{...options,signal:AbortSignal.timeout(8000)});}
 const home=await request('/');assert.equal(home.status,200);const homeText=await home.text();assert.match(homeText,/OmniCivitas/);observations.push('Nginx entrance serves built Astro shell.');
@@ -19,7 +19,7 @@ observations.push('Empty/oversized/credential-shaped input rejected; account end
 const statusPage=await request('/status');assert.equal(statusPage.status,200);const missing=await request('/not-a-real-page');assert.equal(missing.status,404);observations.push('Status and missing-page paths behave deterministically.');
 if(process.env.OCV_EXPECT_DATABASE==='true') {assert.equal(state.postgres,'connected');assert.equal(state.redis,'connected');assert.equal(result.storage,'postgresql');observations.push('Real PostgreSQL/Redis health and PostgreSQL write verified.');}
 const report={verifiedAt:new Date().toISOString(),base,state,observations,recordId:result.record.id,databaseVerified:process.env.OCV_EXPECT_DATABASE==='true'};
-const reportRoot=path.join(process.env.OCV_DEPS_ROOT||os.tmpdir(),'runtime/reports');await mkdir(reportRoot,{recursive:true});
+await mkdir(reportRoot,{recursive:true});
 await writeFile(path.join(reportRoot,(process.env.OCV_VERIFY_REPORT_PREFIX||'')+'runtime-verification.json'),JSON.stringify(report,null,2));
 for(const item of observations) console.log(`PASS: ${item}`);
 if(!report.databaseVerified)console.log('NOT VERIFIED: Docker/WSL/PostgreSQL/Redis. Memory fallback is not counted as infrastructure evidence.');

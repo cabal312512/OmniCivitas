@@ -1,0 +1,71 @@
+---
+import './wide.css';
+---
+<div class="w7-layer" data-w7-layer>
+ <section class="w7-item w7-browser" data-w7-pane data-w7-id="0" data-w7-batch="0" data-w7-motion="drift" aria-label="空白页面窗口">
+  <div class="w7-tabs" data-w7-handle tabindex="0" role="button" aria-label="移动页面窗口"><span>new</span><span>　</span><button type="button" data-w7-close aria-label="关闭页面窗口">×</button></div>
+  <div class="w7-address"><i>←</i><i>↻</i><input aria-label="页面路径" value="/" maxlength="128" spellcheck="false"/><a href="/functions/json/" aria-label="打开 JSON 工具">↗</a></div>
+  <div class="w7-browser-body"><div></div><div></div><i></i><i></i><span>00</span></div>
+ </section>
+
+ <section class="w7-item w7-inspector" data-w7-pane data-w7-id="1" data-w7-batch="0" aria-label="属性面板">
+  <div class="w7-inspector-label">properties <button type="button" data-w7-close aria-label="关闭属性面板">×</button></div>
+  <dl><dt>width</dt><dd><input type="number" value="0" min="0" max="9999" aria-label="宽度"/></dd><dt>height</dt><dd>—</dd><dt>visible</dt><dd><input type="checkbox" checked aria-label="显示"/></dd><dt>offset</dt><dd><input aria-label="偏移" value="0, 0" maxlength="32"/></dd></dl>
+  <div class="w7-inspector-gap"></div><div class="w7-inspector-tail"><span>▾</span><span>▾</span><span>▾</span></div>
+ </section>
+
+ <section class="w7-item w7-native" data-w7-pane data-w7-id="2" data-w7-batch="0" aria-label="文本片段">
+  <fieldset><legend>Text</legend><textarea aria-label="本地文本片段" maxlength="2048" spellcheck="false"></textarea><label><input type="checkbox"/>wrap</label><select aria-label="文本格式"><option>UTF-8</option><option>ASCII</option></select><a href="/functions/text/">打开</a></fieldset>
+ </section>
+
+ <section class="w7-item w7-table" data-w7-pane data-w7-id="3" data-w7-batch="0" data-w7-motion="twitch" aria-label="数据片段">
+  <div class="w7-table-grip" data-w7-handle tabindex="0" role="button" aria-label="移动数据片段">⋮⋮</div><button class="w7-edge-close" type="button" data-w7-close aria-label="关闭数据片段">×</button>
+  <table><thead><tr><th>#</th><th>key</th><th></th><th>value</th></tr></thead><tbody><tr><td>0</td><td>local</td><td></td><td>—</td></tr><tr><td>1</td><td></td><td>00</td><td></td></tr><tr><td>2</td><td>output</td><td></td><td>0</td></tr></tbody></table><a href="/functions/csv/">CSV ↗</a><div class="w7-table-rule"></div>
+ </section>
+
+ <section class="w7-item w7-progress" data-w7-pane data-w7-id="4" data-w7-batch="0" data-w7-motion="route" aria-label="进度片段">
+  <div class="w7-progress-caption" data-w7-handle tabindex="0" role="button" aria-label="移动进度片段">0 / 1</div><progress value="2" max="7" aria-label="片段进度"></progress><span>····················</span><div class="w7-progress-track"><i></i></div>
+ </section>
+
+ <section class="w7-item w7-preview" data-w7-pane data-w7-id="5" data-w7-batch="0" aria-label="预览片段">
+  <div class="w7-preview-side"><i></i><i></i><i></i><i></i><a href="/functions/image-crop/" aria-label="打开图片裁剪">▧</a></div><div class="w7-preview-main"><span></span><span></span></div><button type="button" data-w7-close aria-label="关闭预览片段">×</button><div class="w7-preview-tabs">1　 2</div>
+ </section>
+
+ <section class="w7-item w7-options" data-w7-pane data-w7-id="6" data-w7-batch="1" data-w7-motion="step" aria-label="选项片段">
+  <span class="w7-options-caption" data-w7-handle tabindex="0" role="button" aria-label="移动选项片段">Options</span><button class="w7-edge-close" type="button" data-w7-close aria-label="关闭选项片段">×</button><label>step <input type="number" min="0" max="99" value="1" aria-label="步长"/></label><div class="w7-option-slots"><i></i><i></i><i></i></div><select aria-label="选项"><option>default</option><option>local</option></select><a href="/functions/uuid/">生成 ↗</a>
+ </section>
+
+ <section class="w7-item w7-paper" data-w7-pane data-w7-id="7" data-w7-batch="1" data-w7-motion="blink" aria-hidden="true">
+  <div class="w7-paper-scale">0　　1　　2　　3</div><svg viewBox="0 0 240 170" aria-hidden="true"><path d="M4 10H235M4 38H235M4 66H235M4 94H235M4 122H235M4 150H235M18 0V170M76 0V170M134 0V170M192 0V170"/><path class="w7-paper-line" d="M4 127H31V91H85V99H113V43H153V71H193V23H235"/><path d="M33 0V170M0 83H240"/></svg><i></i>
+ </section>
+
+ <section class="w7-item w7-status" data-w7-pane data-w7-id="8" data-w7-batch="2" aria-hidden="true">
+  <span>local</span><meter min="0" max="10" value="4" aria-label="本地状态"></meter><span>00</span><div></div><span>ready</span><i></i><small>0　/　0</small>
+ </section>
+
+ <section class="w7-item w7-grid" data-w7-pane data-w7-id="9" data-w7-batch="2" data-w7-motion="drift" aria-label="网格片段">
+  <div class="w7-grid-ruler" data-w7-handle tabindex="0" role="button" aria-label="移动网格片段">0　　8　　16　　24 <button type="button" data-w7-close aria-label="关闭网格片段">×</button></div><div class="w7-grid-area"><i></i><i></i><i></i></div><a href="/functions/svg-chart/" aria-label="打开 SVG 图表">↗</a><div class="w7-grid-scroll"></div>
+ </section>
+
+ <section class="w7-item w7-terminal" data-w7-pane data-w7-id="10" data-w7-batch="2" data-w7-motion="twitch" aria-hidden="true">
+  <pre>00: 7f 00 00
+01: 00 00 ff
+
+  [ 0 ]
+  [   ]
+     &gt; _</pre><div></div><span>▒▒</span>
+ </section>
+
+ <section class="w7-item w7-rail" data-w7-pane data-w7-id="11" data-w7-batch="3" data-w7-motion="route" aria-label="工具侧栏片段">
+  <a href="/functions/pipeline/" aria-label="打开流程工具">▱</a><i></i><a href="/functions/sqlite/" aria-label="打开数据库工具">▤</a><div><span></span><span></span><span></span></div><a href="/functions/image-crop/" aria-label="打开图片裁剪">▧</a><button type="button" data-w7-close aria-label="关闭工具侧栏">×</button>
+ </section>
+
+ <section class="w7-item w7-file" data-w7-pane data-w7-id="12" data-w7-batch="3" aria-label="文件列表片段">
+  <div class="w7-file-back"></div><div class="w7-file-front"><div class="w7-file-heading" data-w7-handle tabindex="0" role="button" aria-label="移动文件列表">Files</div><ul><li><label><input type="checkbox"/>0.dat</label></li><li><label><input type="checkbox"/>1.dat</label></li><li><span>　</span></li></ul><a href="/functions/file-manifest/">打开 ↗</a><button type="button" data-w7-close aria-label="关闭文件列表">×</button></div>
+ </section>
+
+ <section class="w7-item w7-selection" data-w7-pane data-w7-id="13" data-w7-batch="3" data-w7-motion="blink" aria-hidden="true">
+  <div class="w7-selection-cells"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="w7-selection-scroll"><i></i></div><span>▾</span><div class="w7-selection-stub"></div>
+ </section>
+</div>
+<script>import './wide.mjs';</script>

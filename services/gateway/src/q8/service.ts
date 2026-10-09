@@ -55,7 +55,7 @@ export class Q8Service implements OnModuleDestroy{
     const reloaded=notesFromLua(await readFile(file,'utf8'));if(sha(JSON.stringify(reloaded))!==digest)throw Error('Lua cabinet checksum mismatch');
     const folded=reloaded.map(e=>`${e.n.toString(36)}.${e.d.toString(36)}`).join('/').slice(0,256);
     await c.query('INSERT INTO ocv_q8.postbox(kind,target,folded) VALUES($1,$2,$3)',['score',id,folded]);
-    await c.query('DELETE FROM ocv_q8.scores WHERE id IN(SELECT id FROM ocv_q8.scores ORDER BY created_at DESC,id DESC OFFSET 128)');
+    await c.query("DELETE FROM ocv_q8.scores WHERE id IN(SELECT id FROM ocv_q8.scores ORDER BY created_at DESC,id DESC OFFSET 128) AND NOT EXISTS(SELECT 1 FROM ocv_after.jobs j WHERE j.run_id=ocv_q8.scores.id AND j.state IN('queued','starting','running'))");
     await c.query('DELETE FROM ocv_q8.postbox WHERE seq IN(SELECT seq FROM ocv_q8.postbox ORDER BY seq DESC OFFSET 256)');
     await c.query('COMMIT');committed=true;
     const retained=new Set((await c.query('SELECT id FROM ocv_q8.scores')).rows.map(r=>r.id+'.lua'));
@@ -64,7 +64,9 @@ export class Q8Service implements OnModuleDestroy{
     const sum=Math.max(1,...bands);const normalized=bands.map(n=>Math.round(n/sum*100));
     await this.cache!.set('q8:last:'+parseInt(sha(p.session).slice(0,4),16)%64,JSON.stringify({id,bands:normalized}), 'EX',600);
     this.emit({session:p.session,phase:'redis',bands:normalized});
-    const ticket=randomBytes(32).toString('hex');const job=await this.jobs.enqueue(id,ticket,'music-studio',digest,'analysis').catch(()=>null);
+    if(locked){await c.query('SELECT pg_advisory_unlock(312512,81)');locked=false;}
+    const ticket=randomBytes(32).toString('hex');const job=await this.jobs.enqueue(id,ticket,'music-studio',digest,'music-report').catch(()=>null);
+    if(job)await c.query('UPDATE ocv_shared1.task_books SET owner_bucket=$2 WHERE job_id=$1',[job.id,p.session]);
     this.emit({session:p.session,phase:'ready',bands:normalized,count:events.length});
     return {id,events:reloaded,sha:digest,bands:normalized,storage:'postgresql',file:'lua',redis:true,job,ticket:job?ticket:null,createdAt:new Date().toISOString()};
    }finally{if(!committed){await c.query('ROLLBACK').catch(()=>{});await unlink(path.join(this.folder,id+'.lua')).catch(()=>{});}if(locked)await c.query('SELECT pg_advisory_unlock(312512,81)').catch(()=>{});c.release();}

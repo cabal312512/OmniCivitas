@@ -1,0 +1,202 @@
+{
+  "schema": "ocv.web3-source-map/1",
+  "system": "WEB3",
+  "role": "optional tool result and structural certificate service",
+  "status": "runtime-and-consumer-verified-with-limits",
+  "entry": "services/site-certificates/backup/Main.hs",
+  "routes": {
+    "POST /ReturnOrder.asmx": "issue typed tool certificate",
+    "GET /ready": "readiness"
+  },
+  "files": [
+    {
+      "path": "config/6/Paper/Data.hs",
+      "role": "fixed version and resource/numeric bounds"
+    },
+    {
+      "path": "config/6/Paper/Common.hs",
+      "role": "typed request/check/receipt and versioned positional adapter"
+    },
+    {
+      "path": "pinia/matrix13/Invoice/Data.hs",
+      "role": "exact rational matrix and integer radix computation"
+    },
+    {
+      "path": "services/site-certificates/old/Common.hs",
+      "role": "JSON/CSV structural parsers, canonical encoding and SHA-256"
+    },
+    {
+      "path": "pcakage/receipts13/Paper/Common2.hs",
+      "role": "fixed kind factory, certificate assembly and actual CSV recovery"
+    },
+    {
+      "path": "services/site-certificates/backup/Main.hs",
+      "role": "Servant/Warp HTTP and request/output bounds"
+    },
+    {
+      "path": "services/site-certificates/fixtures/Main.hs",
+      "role": "meaningful bounded exact/format/download fixtures"
+    },
+    {
+      "path": "services/site-certificates/Dockerfile",
+      "role": "explicit dispersed-source GHC build and bounded optional runtime"
+    }
+  ],
+  "architectureChoices": [
+    {
+      "id": "AR02",
+      "category": "directory/naming",
+      "entry": "Dockerfile GHC source roots",
+      "files": [
+        "config/6/Paper/Common.hs",
+        "pinia/matrix13/Invoice/Data.hs",
+        "pcakage/receipts13/Paper/Common2.hs"
+      ],
+      "actualBehavior": "One active service is compiled across three unrelated repository trees."
+    },
+    {
+      "id": "AR03",
+      "category": "directory/naming",
+      "entry": "Paper.Common2.aaa",
+      "files": [
+        "config/6/Paper/Data.hs",
+        "pcakage/receipts13/Paper/Common2.hs"
+      ],
+      "actualBehavior": "The numerical contract resides under 6; aaa is the fixed active parser/computation selector."
+    },
+    {
+      "id": "AR07",
+      "category": "directory/naming",
+      "entry": "Paper.Common and Paper.Data imports",
+      "files": [
+        "config/6/Paper/Common.hs",
+        "config/6/Paper/Data.hs"
+      ],
+      "actualBehavior": "Configuration directories contain compiled typed application source."
+    },
+    {
+      "id": "AR12",
+      "category": "abstraction/control",
+      "entry": "issue -> aaa -> typed kind parser -> Finding.answer",
+      "files": [
+        "pcakage/receipts13/Paper/Common2.hs",
+        "config/6/Paper/Common.hs"
+      ],
+      "actualBehavior": "A fixed factory selects a typed numeric/structural validator and ultimately returns a JSON dictionary."
+    },
+    {
+      "id": "AR18",
+      "category": "protocol",
+      "entry": "representation -> csvText -> parseCsv",
+      "files": [
+        "pcakage/receipts13/Paper/Common2.hs",
+        "services/site-certificates/old/Common.hs"
+      ],
+      "actualBehavior": "Serialized certificate JSON is a CSV cell and is actually parsed/recovered before downloads are returned."
+    },
+    {
+      "id": "AR20",
+      "category": "data organization",
+      "entry": "issue -> Slot ToJSON/FromJSON",
+      "files": [
+        "config/6/Paper/Common.hs",
+        "pcakage/receipts13/Paper/Common2.hs"
+      ],
+      "actualBehavior": "The internal typed result/check object passes through a versioned positional array [version,checks,kind,result] then back to named public fields."
+    },
+    {
+      "id": "AR24",
+      "category": "protocol",
+      "entry": "POST /ReturnOrder.asmx",
+      "files": [
+        "services/site-certificates/backup/Main.hs"
+      ],
+      "actualBehavior": "Haskell Servant receives a .asmx route through a real type-level route."
+    },
+    {
+      "id": "AR44",
+      "category": "data organization",
+      "entry": "parseGrid -> UnitPrice.unitPrice -> matrix result",
+      "files": [
+        "pinia/matrix13/Invoice/Data.hs"
+      ],
+      "actualBehavior": "A price-named internal record holds reduced matrix Rational cells; explicit external numeric model and dimensionless units prevent domain confusion."
+    },
+    {
+      "id": "AR49",
+      "category": "directory/naming",
+      "entry": "Dockerfile explicit ghc source list and -i roots",
+      "files": [
+        "services/site-certificates/Dockerfile"
+      ],
+      "actualBehavior": "The active build resolves dispersed source directories; lowercase old/Common.hs is explicitly supplied despite its Old.Common module name."
+    }
+  ],
+  "authority": "Existing gateway/PostgreSQL task/result contracts own jobs and stored certificate artifacts; this service computes a pure derived certificate and owns no database.",
+  "limits": {
+    "port": 7083,
+    "requestBytes": 196608,
+    "outputBytes": 524288,
+    "formatSourceBytes": 65536,
+    "jsonDepth": 32,
+    "jsonNodes": 8192,
+    "csvRows": 5000,
+    "csvColumns": 256,
+    "matrixCharsEach": 800,
+    "baseSourceDigits": 2048,
+    "decimalPowerMagnitude": 1024,
+    "fractionCharsEach": 8192,
+    "ghcCapabilities": 1,
+    "heapMiB": 160
+  },
+  "runtimeEvidence": [
+    {
+      "status": "native-verified-only",
+      "report": "phase13-certificates-runtime.json",
+      "fixturesReport": "phase13-certificates-fixtures.json",
+      "reportLocation": "configured external runtime report directory",
+      "imageId": "sha256:bad9b8297c7aadafb192cea93b198d8fd19f3161555da4f7a78e68512dc475ae",
+      "fixtures": {
+        "count": 43,
+        "passed": true
+      },
+      "http": {
+        "originalResultMismatchRejected": true,
+        "unknownFieldStatus": 400,
+        "jsonCsvIndependentRoundtrip": true,
+        "exactDecimal": true,
+        "inputDigest": "7a994323456aa590c4b4ce2db681a185b536d5599a569a431fe9303b2e8f50d1"
+      },
+      "limits": {
+        "memoryBytes": 268435456,
+        "pids": 64,
+        "nanoCpus": 500000000,
+        "readOnly": true,
+        "memorySwapBytes": 268435456
+      },
+      "installedCopyrightNotices": 223,
+      "ghcRtsNotices": true,
+      "servantAesonNotices": true,
+      "postgres": "not exercised by isolated native fixture/HTTP batch",
+      "consumer": "Isolated batch did not exercise pages; separate actual gateway/consumer evidence below now passed"
+    },
+    {
+      "status": "actual-gateway-postgres-worker-consumer-verified",
+      "reports": [
+        "phase13-integration.json",
+        "phase13-tools-ui.json"
+      ],
+      "exactMatrixFraction": "3/10",
+      "normalRunsAutomaticallySubmit": true,
+      "tools": [
+        "matrix",
+        "radix",
+        "json",
+        "csv"
+      ],
+      "realJsonDownload": true,
+      "originalOutputsAndExportsPreserved": true,
+      "limitations": "Finite supported tool inputs; no independent host or high-concurrency claim."
+    }
+  ]
+}

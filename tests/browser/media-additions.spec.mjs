@@ -84,11 +84,11 @@ test('Reduced motion renders sweep as a static canvas and the real GPU scene rem
  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/functions/sweep/');await expect.poll(()=>page.evaluate(()=>window.__ocvN9GPU?.mode)).toBe('webgl');
  await keyClick(page.getByRole('button',{name:'扫除霉运',exact:true}));await expect(page.locator('[data-sweep-picture] canvas')).toBeVisible();await expect(page.locator('[data-sweep-picture] img')).toHaveCount(0);
 });
-test('Exactly one hundred distinct languages all switch the complete statement locally; RTL and Chinese restore work',async({page,request})=>{
+test('Exactly one hundred distinct languages all switch the complete statement locally; RTL and Chinese restore work',async({page,request,baseURL})=>{
  test.setTimeout(120000);
  const manifest=JSON.parse(fs.readFileSync('config/apps/portal/src/n9/languages.json','utf8'));
  expect(manifest.languages).toHaveLength(100);expect(new Set(manifest.languages.map(item=>item.code)).size).toBe(100);
- const external=[];page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:8080/'))external.push(r.url());});
+ const entranceOrigin=new URL(baseURL).origin,external=[];page.on('request',r=>{if(new URL(r.url()).origin!==entranceOrigin)external.push(r.url());});
  await page.goto('/legal/');const buttons=page.locator('[data-legal-language]');await expect(buttons).toHaveCount(100);
  const article=page.locator('[data-legal-statement]');
  for(const item of manifest.languages){

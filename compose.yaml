@@ -67,6 +67,9 @@ services:
       target: gateway
     image: omnicivitas/gateway:stage2
     environment:
+      MINIO_ENDPOINT: http://minio:9000
+      MINIO_ACCESS_KEY: ${OCV_MINIO_USER:-ocv-fiction}
+      MINIO_SECRET_KEY: ${OCV_MINIO_PASSWORD:-ocv-file-fiction-only}
       DATABASE_URL: ${OCV_DATABASE_URL:-postgresql://${OCV_PG_USER:-ocv_demo}:${OCV_PG_PASSWORD:-ocv-fiction-only-not-real}@postgres:5432/${OCV_PG_DATABASE:-civilization}}
       REDIS_URL: redis://redis:6379
       OCV_REQUIRE_INFRASTRUCTURE: "true"
@@ -84,6 +87,11 @@ services:
       OCV_AFTER_TABLE_LIMIT: ${OCV_AFTER_TABLE_LIMIT:-6}
       OCV_AFTER_TABLE_EVERY: ${OCV_AFTER_TABLE_EVERY:-5}
       OCV_RUNNER_KEY: ${OCV_RUNNER_KEY:-}
+      OCV_TASK_TIER_ROOT: /ocv-tier
+      OCV_AFTER_QUEUE_LIMIT: ${OCV_AFTER_QUEUE_LIMIT:-0}
+      OCV_RUNNER_CONCURRENCY: ${OCV_RUNNER_CONCURRENCY:-128}
+      OCV_AFTER_QUEUE_TTL_SECONDS: ${OCV_AFTER_QUEUE_TTL_SECONDS:-86400}
+      OCV_AFTER_TERMINAL_LIMIT: ${OCV_AFTER_TERMINAL_LIMIT:-}
     depends_on:
       postgres:
         condition: service_healthy
@@ -105,6 +113,10 @@ services:
     logging: *a1
     volumes:
       - gateway_logs:/ocv-data
+      - type: bind
+        source: .
+        target: /ocv-tier
+        read_only: true
   portal:
     build:
       context: .
@@ -482,6 +494,7 @@ services:
     logging: *a2
   spring:
     profiles:
+      - circuits
       - legacy
       - everything
       - maximum
@@ -490,6 +503,11 @@ services:
       dockerfile: services/spring/Dockerfile
     image: omnicivitas/spring:stage2
     environment:
+      OCV_RUNNER_KEY: ${OCV_RUNNER_KEY:-}
+      OCV_SHARED_AMQP: ${OCV_SHARED_AMQP:-0}
+      OCV_RABBIT_USER: ${OCV_RABBIT_USER:-ocv}
+      OCV_RABBIT_PASSWORD: ${OCV_RABBIT_PASSWORD:-ocv-broker-fiction}
+      OCV_SHARED_RABBIT_HOST: ${OCV_SHARED_RABBIT_HOST:-rabbitmq}
       JAVA_TOOL_OPTIONS: ${OCV_JAVA_TOOL_OPTIONS:--Xms64m -Xmx256m -XX:MaxMetaspaceSize=128m -XX:ActiveProcessorCount=2}
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${OCV_PG_DATABASE:-civilization}
       SPRING_DATASOURCE_USERNAME: ${OCV_PG_USER:-ocv_demo}
@@ -521,6 +539,7 @@ services:
     logging: *a2
   fastapi:
     profiles:
+      - circuits
       - legacy
       - everything
       - maximum
@@ -530,8 +549,10 @@ services:
     image: omnicivitas/fastapi:stage2
     volumes:
       - python_data:/ocv-data
-    mem_limit: ${OCV_FASTAPI_MEM:-256m}
-    memswap_limit: ${OCV_FASTAPI_MEM:-256m}
+    environment:
+      OCV_RUNNER_KEY: ${OCV_RUNNER_KEY:-}
+    mem_limit: ${OCV_FASTAPI_MEM:-512m}
+    memswap_limit: ${OCV_FASTAPI_MEM:-512m}
     cpus: ${OCV_FASTAPI_CPU:-1}
     pids_limit: 128
     healthcheck:
@@ -555,6 +576,7 @@ services:
       dockerfile: services/laravel/Dockerfile
     image: omnicivitas/laravel:stage2
     environment:
+      OCV_RUNNER_KEY: ${OCV_RUNNER_KEY:-}
       APP_ENV: local
       APP_DEBUG: "false"
       APP_KEY: base64:b2N2LXNpbGx5LXRveS1ub3QtcmVhbC1rZXktMDAwMDA=
@@ -587,6 +609,7 @@ services:
     logging: *a2
   fiber:
     profiles:
+      - circuits
       - legacy
       - everything
       - maximum
@@ -595,8 +618,17 @@ services:
       dockerfile: services/fiber/Dockerfile
       target: fiber
     image: omnicivitas/fiber:stage2
-    mem_limit: ${OCV_FIBER_MEM:-64m}
-    memswap_limit: ${OCV_FIBER_MEM:-64m}
+    environment:
+      OCV_RUNNER_KEY: ${OCV_RUNNER_KEY:-}
+      MINIO_ENDPOINT: http://minio:9000
+      MINIO_ACCESS_KEY: ${OCV_MINIO_USER:-ocv-fiction}
+      MINIO_SECRET_KEY: ${OCV_MINIO_PASSWORD:-ocv-file-fiction-only}
+      DATABASE_URL: ${OCV_DATABASE_URL:-postgresql://${OCV_PG_USER:-ocv_demo}:${OCV_PG_PASSWORD:-ocv-fiction-only-not-real}@postgres:5432/${OCV_PG_DATABASE:-civilization}?sslmode=disable}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    mem_limit: ${OCV_FIBER_MEM:-128m}
+    memswap_limit: ${OCV_FIBER_MEM:-128m}
     cpus: ${OCV_FIBER_CPU:-1}
     pids_limit: 128
     healthcheck:
@@ -611,6 +643,7 @@ services:
     logging: *a2
   dotnet:
     profiles:
+      - mechanics
       - legacy
       - everything
       - maximum
@@ -619,11 +652,12 @@ services:
       dockerfile: services/dotnet/Dockerfile
     image: omnicivitas/dotnet:stage2
     environment:
+      OCV_RUNNER_KEY: ${OCV_RUNNER_KEY:-}
       ASPNETCORE_URLS: http://+:8003
-      DOTNET_GCHeapHardLimit: "0x4000000"
+      DOTNET_GCHeapHardLimit: "0x6000000"
       DOTNET_PROCESSOR_COUNT: "2"
-    mem_limit: ${OCV_DOTNET_MEM:-192m}
-    memswap_limit: ${OCV_DOTNET_MEM:-192m}
+    mem_limit: ${OCV_DOTNET_MEM:-256m}
+    memswap_limit: ${OCV_DOTNET_MEM:-256m}
     cpus: ${OCV_DOTNET_CPU:-1}
     pids_limit: 128
     healthcheck:
@@ -648,6 +682,8 @@ services:
       context: .
       dockerfile: services/sinatra/Dockerfile
     image: omnicivitas/sinatra:stage2
+    environment:
+      OCV_RUNNER_KEY: ${OCV_RUNNER_KEY:-}
     mem_limit: ${OCV_SINATRA_MEM:-96m}
     memswap_limit: ${OCV_SINATRA_MEM:-96m}
     cpus: ${OCV_SINATRA_CPU:-1}
@@ -784,7 +820,134 @@ services:
       retries: 12
       start_period: 15s
     logging: *a1
+  signals-native:
+    profiles: [circuits, everything, maximum]
+    build:
+      context: .
+      dockerfile: pinia/receipt2/Dockerfile
+      target: native-runtime
+    image: omnicivitas/signals-native:stage10
+    healthcheck:
+      test: [CMD-SHELL, "test -x /opt/ocv/ocv-circuit && test -x /opt/ocv/ocv-communications"]
+      interval: 5s
+      timeout: 2s
+      retries: 6
+    mem_limit: ${OCV_SIGNALS_NATIVE_MEM:-512m}
+    memswap_limit: ${OCV_SIGNALS_NATIVE_MEM:-512m}
+    cpus: ${OCV_SIGNALS_NATIVE_CPU:-1}
+    pids_limit: ${OCV_SIGNALS_NATIVE_PIDS:-32}
+    read_only: true
+    tmpfs: ["/tmp:size=16m,mode=1777"]
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    logging: *a2
+
+  mechanics-native:
+    profiles: [mechanics, everything, maximum]
+    build:
+      context: .
+      dockerfile: pinia/folder2/Dockerfile
+      target: native-runtime
+    image: omnicivitas/mechanics-native:stage11
+    healthcheck:
+      test: [CMD-SHELL, "test -x /opt/ocv/ocv-mechanics"]
+      interval: 5s
+      timeout: 2s
+      retries: 6
+    mem_limit: ${OCV_MECHANICS_NATIVE_MEM:-512m}
+    memswap_limit: ${OCV_MECHANICS_NATIVE_MEM:-512m}
+    cpus: ${OCV_MECHANICS_NATIVE_CPU:-1}
+    pids_limit: ${OCV_MECHANICS_NATIVE_PIDS:-32}
+    read_only: true
+    tmpfs: ["/tmp:size=16m,mode=1777"]
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    logging: *a2
+
+  site-audio:
+    profiles: [site-services, everything]
+    image: omnicivitas/site-audio:phase13
+    build:
+      context: .
+      dockerfile: services/site-audio/Dockerfile
+      target: native-runtime
+    mem_limit: ${OCV_SITE_AUDIO_MEM:-256m}
+    memswap_limit: ${OCV_SITE_AUDIO_MEM:-256m}
+    cpus: ${OCV_SITE_AUDIO_CPU:-0.5}
+    pids_limit: 32
+    read_only: true
+    tmpfs: ["/tmp:size=16m,mode=1777"]
+    healthcheck:
+      test: [CMD-SHELL, "test -x /opt/site/audio && test -x /opt/site/receipt"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    logging: *a2
+  site-projection:
+    profiles: [site-services, everything]
+    image: omnicivitas/site-projection:phase13
+    build:
+      context: .
+      dockerfile: services/site-projection/Dockerfile
+    mem_limit: ${OCV_SITE_PROJECTION_MEM:-256m}
+    memswap_limit: ${OCV_SITE_PROJECTION_MEM:-256m}
+    cpus: ${OCV_SITE_PROJECTION_CPU:-0.5}
+    pids_limit: 64
+    read_only: true
+    tmpfs: ["/tmp:size=32m,mode=1777"]
+    healthcheck:
+      test: [CMD-SHELL, "wget -q -O /dev/null http://127.0.0.1:4013/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 18
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    logging: *a2
+  site-certificate:
+    profiles: [site-services, everything]
+    image: omnicivitas/site-certificates:phase13
+    build:
+      context: .
+      dockerfile: services/site-certificates/Dockerfile
+    mem_limit: ${OCV_SITE_CERTIFICATE_MEM:-256m}
+    memswap_limit: ${OCV_SITE_CERTIFICATE_MEM:-256m}
+    cpus: ${OCV_SITE_CERTIFICATE_CPU:-0.5}
+    pids_limit: 64
+    read_only: true
+    tmpfs: ["/tmp:size=16m,mode=1777"]
+    healthcheck:
+      test: [CMD-SHELL, "curl --fail --silent http://127.0.0.1:7083/ready >/dev/null"]
+      interval: 5s
+      timeout: 3s
+      retries: 18
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    logging: *a2
+  site-index:
+    profiles: [site-services, everything]
+    image: omnicivitas/site-index:phase13
+    build:
+      context: .
+      dockerfile: services/site-index/Dockerfile
+    mem_limit: ${OCV_SITE_INDEX_MEM:-384m}
+    memswap_limit: ${OCV_SITE_INDEX_MEM:-384m}
+    cpus: ${OCV_SITE_INDEX_CPU:-0.5}
+    pids_limit: 64
+    read_only: true
+    tmpfs: ["/tmp:size=16m,mode=1777"]
+    volumes: ["site_index:/data"]
+    healthcheck:
+      test: [CMD-SHELL, "wget -q -O /dev/null http://127.0.0.1:8093/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 18
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    logging: *a2
 volumes:
+  site_index: null
   postgres_core: null
   redis_core: null
   gateway_logs: null

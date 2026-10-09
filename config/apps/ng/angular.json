@@ -1,1 +1,14 @@
-{"version":1,"cli":{"analytics":false,"cache":{"enabled":true,"path":".angular/cache"}},"projects":{"rice-stamp":{"projectType":"application","root":"","sourceRoot":"src","architect":{"build":{"builder":"@angular/build:application","options":{"browser":"src/main.ts","index":"src/index.html","tsConfig":"tsconfig.json","outputPath":"dist","baseHref":"/ng/","styles":["src/styles.css"]},"configurations":{"production":{"optimization":true,"sourceMap":false,"outputHashing":"all","budgets":[{"type":"initial","maximumWarning":"700kB","maximumError":"1500kB"}]}},"defaultConfiguration":"production"}}}}}
+{
+  "version": 1,
+  "cli": {"analytics": false, "cache": {"enabled": true, "path": ".angular/cache"}},
+  "projects": {
+    "rice-stamp": {
+      "projectType": "application", "root": "", "sourceRoot": "src",
+      "architect": {"build": {"builder": "@angular/build:application", "options": {"browser": "src/main.ts", "index": "src/index.html", "tsConfig": "tsconfig.json", "outputPath": "dist", "baseHref": "/ng/", "styles": ["src/styles.css"]}, "configurations": {"production": {"optimization": true, "sourceMap": false, "outputHashing": "all", "budgets": [{"type": "initial", "maximumWarning": "700kB", "maximumError": "1500kB"}]}}, "defaultConfiguration": "production"}}
+    },
+    "signals-lab": {
+      "projectType": "application", "root": "", "sourceRoot": "config2",
+      "architect": {"build": {"builder": "@angular/build:application", "options": {"browser": "config2/main.ts", "index": "config2/index.html", "tsConfig": "tsconfig-signals.json", "outputPath": "dist-signals", "baseHref": "./", "styles": ["config2/bench.css"], "assets": [{"glob": "**/*", "input": "config2/public", "output": "/"}]}, "configurations": {"production": {"optimization": true, "sourceMap": false, "outputHashing": "all", "budgets": [{"type": "initial", "maximumWarning": "1000kB", "maximumError": "1800kB"}, {"type": "anyComponentStyle", "maximumWarning": "20kB", "maximumError": "40kB"}]}}, "defaultConfiguration": "production"}}
+    }
+  }
+}

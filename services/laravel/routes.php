@@ -19,3 +19,25 @@ Route::post('/nodeService',function(Request $r){
 });
 Route::get('/display/{root}',function(string $root){unrelatedReceiptMigration();$row=SchoolStudent::where('root_id',$root)->first();return ['canContinue'=>$row!==null,'name'=>$row?->product_name,'source'=>'MySQL Eloquent'];});
 Route::get('/search.php',function(Request $r){unrelatedReceiptMigration();$q=mb_substr((string)$r->query('q',''),0,80);$q=str_replace(['\\','%','_'],['\\\\','\\%','\\_'],$q);return ['canContinue'=>true,'protocol'=>'MySQL LIKE','rows'=>SchoolStudent::where('product_name','LIKE','%'.$q.'%')->limit(16)->get(['root_id','product_name'])];});
+
+$sharedPackagedConfig=__DIR__.'/../office/config/2/7.php';
+$sharedSourceRoot=is_file($sharedPackagedConfig)?dirname(__DIR__):dirname(__DIR__,2);
+require_once (is_file($sharedPackagedConfig)?$sharedPackagedConfig:$sharedSourceRoot.'/config/2/7.php');
+require_once $sharedSourceRoot.'/pcakage/forms2/old.php';
+
+function sharedCatalogBody(Request $request): array {
+ if(!\Ocv\Stock2\Config::authorized($request->header('X-Ocv-Runner')))abort(403,'The private catalog requires a worker credential.');
+ $raw=$request->getContent();
+ if(strlen($raw)>\Ocv\Stock2\Config::INPUT_BYTES)abort(413,'The publication envelope exceeds 1 MiB.');
+ $value=json_decode($raw,true,48,JSON_THROW_ON_ERROR);
+ if(!is_array($value)||array_is_list($value))throw new InvalidArgumentException('The catalog envelope must be an object.');
+ return $value;
+}
+function sharedCatalogResult(callable $action){
+ try{return $action();}
+ catch(LogicException|JsonException $error){return response()->json(['ok'=>false,'successReason'=>$error->getMessage()],409);}
+ catch(Throwable $error){if($error instanceof \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface)throw $error;return response()->json(['ok'=>false,'successReason'=>'The bounded MySQL catalog could not be verified.'],503);}
+}
+Route::post('/shared/publish.php',function(Request $r){return sharedCatalogResult(function()use($r){$invoice=\Ocv\Stock2\Config::delete(sharedCatalogBody($r));return (new \Ocv\Stock2\Invoice\Common2(DB::connection()->getPdo()))->delete($invoice);});});
+Route::post('/shared/read.cgi',function(Request $r){return sharedCatalogResult(function()use($r){$job=\Ocv\Stock2\Config::read(sharedCatalogBody($r));$receipt=(new \Ocv\Stock2\Invoice\Common2(DB::connection()->getPdo()))->restore($job);if($receipt===null)abort(404,'The publication is unavailable or expired.');return $receipt;});});
+Route::get('/shared/read.cgi/{job}',function(Request $r,string $job){return sharedCatalogResult(function()use($r,$job){if(!\Ocv\Stock2\Config::authorized($r->header('X-Ocv-Runner')))abort(403,'The private catalog requires a worker credential.');$job=\Ocv\Stock2\Config::uuid($job);$receipt=(new \Ocv\Stock2\Invoice\Common2(DB::connection()->getPdo()))->restore($job);if($receipt===null)abort(404,'The publication is unavailable or expired.');return $receipt;});});

@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);
+const {validateWorkshopRequest,validateWorkshopProject}=require('../../services/gateway/dist/invoice2/stock3.js');
+const {familyFor}=require('../../services/gateway/dist/a1/jobs.js');
+const world={gravityX:0,gravityY:-9.81,stepS:1/120,durationS:.2,sampleEvery:1,seed:1,bodies:[{id:'B1',kind:'ball',mode:'dynamic',x:0,y:20,radius:.3,mass:1,friction:0,restitution:0,linearDamping:0,angularDamping:0}],joints:[],motors:[],controls:[]};
+const project={schema:'ocv.workshop-project/1',name:'Contract reference',world,appearance:{depth:1,material:'alloy',background:'white',wireframe:false}};
+const request={schema:'ocv.workshop-run/1',op:'simulate',world};
+assert.ok(validateWorkshopProject(project).digest.match(/^[a-f0-9]{64}$/));
+assert.equal(validateWorkshopProject({...project,world:{bodies:world.bodies}}).project.world.bodies.length,1,'Native defaults preserved');
+assert.equal(validateWorkshopRequest({...request,world:{...world,stepS:1/240,durationS:20,sampleEvery:1}}).world.durationS,20,'Kernel automatically bounds frames');
+for(const bad of [{...request,password:'x'},{...request,world:{...world,seed:NaN}},{...request,world:{...world,bodies:[{...world.bodies[0],mass:0}]}},{...request,world:{...world,bodies:[...world.bodies,...world.bodies]}},{...request,world:{...world,bodies:Array.from({length:65},(_,i)=>({...world.bodies[0],id:'B'+i}))}},{...request,world:{...world,controls:Array(17).fill({})}},{...request,world:{...world,motors:[{id:'M1',body:'missing'}]}},{...request,op:'scan',scan:{parameter:'restitution',targetId:'B1',values:[2],trials:1}},{...request,op:'scan',scan:{parameter:'gravityY',values:[-9.81],trials:4}}])assert.throws(()=>validateWorkshopRequest(bad));
+const motorWorld={...world,motors:[{id:'M1',body:'B1',targetSpeed:1,maxTorque:1,enabled:true}],controls:[{id:'T1',kind:'timer',body:'',target:'',motor:'M1',action:'stop',threshold:1,maxFirings:1}]};
+assert.equal(validateWorkshopRequest({...request,world:motorWorld}).world.controls.length,1);
+assert.throws(()=>validateWorkshopRequest({...request,world:{...motorWorld,controls:[{...motorWorld.controls[0],kind:'contact'}]}}));
+assert.throws(()=>validateWorkshopRequest({...request,world:{...motorWorld,bodies:[{...world.bodies[0],mode:'fixed'}]}}));
+for(const feature of ['new-tool-1','music-studio','workshop','signals','yaml','binary','potato'])assert.ok(!['mechanical','circuits'].includes(familyFor(feature)),'Generic metadata must not create engineering work');
+console.log(JSON.stringify({passed:true,groups:5,roles:['contract-range','native-defaults','reference-integrity','scan-bounds','generic-family-isolation']}));

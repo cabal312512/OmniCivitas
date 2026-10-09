@@ -1,0 +1,19 @@
+<section class="maze-panel ciallo-panel" data-draggable aria-label="Ciallo 附件">
+ <div class="maze-title"><span>附件</span><button data-drag aria-label="移动 Ciallo 窗口">↔</button><button type="button" data-ciallo-close aria-label="关闭 Ciallo 窗口">×</button></div>
+ <div class="ciallo-image"><img src="/forgotten-cache/03.avif" alt="Ciallo" width="148" height="148" loading="lazy" decoding="async"/></div>
+</section>
+<style>
+ .ciallo-panel{left:7%;top:430px;width:170px;z-index:25}
+ .ciallo-panel[hidden]{display:none}
+ .ciallo-panel .maze-title{height:29px;padding:3px 6px;gap:5px;flex-wrap:nowrap}
+ .ciallo-panel .maze-title span{margin-right:auto}
+ .ciallo-image{padding:8px 10px 10px}
+ .ciallo-image img{display:block;width:148px;height:auto;max-width:100%;border-radius:2px;transform:none!important;rotate:0deg!important}
+ @media(max-width:700px){.ciallo-panel{left:18px;top:158px}}
+</style>
+<script>
+ document.querySelector('[data-ciallo-close]')?.addEventListener('click',event=>{
+  const panel=(event.currentTarget as HTMLElement).closest<HTMLElement>('.ciallo-panel');
+  if(panel)panel.hidden=true;
+ });
+</script>

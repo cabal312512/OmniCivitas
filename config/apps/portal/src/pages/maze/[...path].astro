@@ -11,6 +11,7 @@ import Maintenance from '../../aaa/tmp.astro';
 import '../../aaa/临时修一下.css';
 import OpticalBench from '../../aaa/lens.astro';
 import ForgottenAttachment from '../../aaa/cache.astro';
+import CialloAttachment from '../../aaa/ciallo.astro';
 import Laowu from '../../aaa/laowu.astro';
 import MediaShortcuts from '../../n9/shortcuts.astro';
 import Panel from '../../z/Panel.astro';
@@ -52,6 +53,9 @@ const repeated=Array.from({length:room.layout==='long'?22:room.layout==='horizon
   <section class="maze-panel floating-panel" aria-hidden="true" inert><div class="maze-title">确认<span>×</span></div><Diagram variant={(index+2)%6} id={`floating-${index}`}/><div class="fake-actions"><button tabindex="-1">取消</button><button tabindex="-1">确定</button></div></section>
   <div class="maze-toast" aria-hidden="true" inert>已保存<button tabindex="-1">撤销</button></div>
   <aside class="maze-sidebar"><span>更多</span>{repeated.map((item,i)=><a href={address(item)} style={`--row:${i}`}><b>{String(i+1).padStart(2,'0')}</b><span>{item.title}</span><i>↗</i></a>)}</aside>
+  {['cache','display/fold','offices/settings/backup'].includes(room.path)&&<section class="maze-panel" style="position:absolute;left:56%;top:690px;width:168px;z-index:28"><div class="maze-title">实验</div><a href="/signals/" style="display:block;padding:12px;color:#164dff;text-decoration:underline">通信实验 ↗</a></section>}
+  {['table','offices/settings','route/a/b/c/d/e'].includes(room.path)&&<section class="maze-panel" style="position:absolute;left:63%;top:830px;width:188px;z-index:29"><div class="maze-title">机械工坊</div><a href="/workshop/" style="display:block;padding:12px;color:#164dff;text-decoration:underline">机械工坊 ↗</a></section>}
+  {room.path==='window/under'&&<CialloAttachment/>}
   <footer class="maze-footer"><a href={address(rooms[(index+rooms.length-1)%rooms.length])}>上一层</a><span>—</span><a href={address(rooms[(index+1)%rooms.length])}>下一层</a></footer>
   <Maintenance room={index}/>
   <Panel index={index}/>

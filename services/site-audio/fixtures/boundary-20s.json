@@ -1,0 +1,8 @@
+{
+  "events": [{"n": 69, "t": 0, "d": 20000, "v": 0.1}],
+  "tempo": 31.333333,
+  "sampleRate": 44100,
+  "preset": "sine",
+  "gain": 0.5,
+  "includeMidi": true
+}

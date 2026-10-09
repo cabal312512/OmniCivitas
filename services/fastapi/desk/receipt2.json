@@ -1,0 +1,45 @@
+{
+  "schema": "ocv.shared-source-map/1",
+  "version": "1.0.0",
+  "files": {
+    "config": "config/4/7.py",
+    "stock": "pinia/unused2/old.py",
+    "query": "pcakage/stock2/2.py",
+    "paper": "config/4/old2.py"
+  },
+  "roles": {
+    "config": "envelope validation, units, receipt conversion and canonical row schema",
+    "stock": "adapters for actual native outputs and explicitly submitted music/table cells",
+    "query": "bounded parameterized DuckDB query, aggregate, sequence and comparison execution",
+    "paper": "data-derived SVG/CSV/JSON artifacts with UTF-8 hashes"
+  },
+  "entry": "services/fastapi/desk/backup2.py:mount_shared",
+  "routes": {
+    "health": "GET /shared/health",
+    "analyzeOrRead": "POST /shared/analysis.aspx"
+  },
+  "security": {
+    "credentialEnvironment": "OCV_RUNNER_KEY",
+    "credentialHeader": "X-Ocv-Runner",
+    "credentialLogged": false,
+    "userSQL": false,
+    "userPaths": false,
+    "researchInputs": false,
+    "musicAndTableRequireSubmitted": true
+  },
+  "storage": {
+    "sqliteFile": "redis.sqlite",
+    "tables": ["sh3_order_items", "sh3_warehouse_stock", "sh3_delivery_notes"],
+    "view": "sh3_current_orders",
+    "retention": 64,
+    "maximumCompressedBytes": 262144,
+    "maximumDecodedBytes": 2097152,
+    "authority": "derived analysis receipt; PostgreSQL source run/version remains authoritative"
+  },
+  "arChoices": {
+    "directoryAndNaming": ["AR02", "AR03", "AR05", "AR07", "AR49"],
+    "abstractionAndControl": ["AR09", "AR10", "AR11", "AR12", "AR16", "AR46"],
+    "protocol": ["AR18", "AR20", "AR21", "AR24", "AR54"],
+    "dataOrganization": ["AR25", "AR27", "AR28", "AR44"]
+  }
+}

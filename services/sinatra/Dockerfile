@@ -10,4 +10,6 @@ WORKDIR /app
 COPY --from=build /ocv-deps /ocv-deps
 COPY --from=build /app/Gemfile* ./
 COPY services/sinatra/main.rb ./
+COPY pinia/templates2/old.rb ./pinia/templates2/old.rb
+COPY config/2/4.rb ./config/2/4.rb
 CMD ["bundle","exec","ruby","main.rb"]

@@ -1,0 +1,218 @@
+{
+  "schema": "ocv.workshop-project/1",
+  "name": "双路弹珠分流",
+  "world": {
+    "gravityX": 0,
+    "gravityY": -9.81,
+    "stepS": 0.008333333333333333,
+    "durationS": 10,
+    "sampleEvery": 8,
+    "seed": 312512,
+    "bodies": [
+      {
+        "id": "left-bin",
+        "kind": "track",
+        "mode": "fixed",
+        "x": -4,
+        "y": 0,
+        "width": 3.2,
+        "height": 0.3,
+        "angle": 0,
+        "friction": 0.75,
+        "restitution": 0.02,
+        "colour": "#9bbfe9"
+      },
+      {
+        "id": "right-bin",
+        "kind": "track",
+        "mode": "fixed",
+        "x": 4,
+        "y": 0,
+        "width": 3.2,
+        "height": 0.3,
+        "angle": 0,
+        "friction": 0.75,
+        "restitution": 0.02,
+        "colour": "#9bbfe9"
+      },
+      {
+        "id": "left-end",
+        "kind": "track",
+        "mode": "fixed",
+        "x": -5.55,
+        "y": 1,
+        "width": 0.2,
+        "height": 2,
+        "angle": 0,
+        "friction": 0.75,
+        "restitution": 0.02,
+        "colour": "#9bbfe9"
+      },
+      {
+        "id": "right-end",
+        "kind": "track",
+        "mode": "fixed",
+        "x": 5.55,
+        "y": 1,
+        "width": 0.2,
+        "height": 2,
+        "angle": 0,
+        "friction": 0.75,
+        "restitution": 0.02,
+        "colour": "#9bbfe9"
+      },
+      {
+        "id": "left-ramp",
+        "kind": "track",
+        "mode": "fixed",
+        "x": -1.85,
+        "y": 2.8,
+        "width": 4.4,
+        "height": 0.2,
+        "angle": 0.3,
+        "friction": 0.75,
+        "restitution": 0.02,
+        "colour": "#9bbfe9"
+      },
+      {
+        "id": "right-ramp",
+        "kind": "track",
+        "mode": "fixed",
+        "x": 1.85,
+        "y": 2.8,
+        "width": 4.4,
+        "height": 0.2,
+        "angle": -0.3,
+        "friction": 0.75,
+        "restitution": 0.02,
+        "colour": "#9bbfe9"
+      },
+      {
+        "id": "lamp-base",
+        "kind": "track",
+        "mode": "fixed",
+        "x": 0,
+        "y": 0.5,
+        "width": 0.08,
+        "height": 0.08,
+        "angle": 0,
+        "friction": 0.75,
+        "restitution": 0.02,
+        "colour": "#9bbfe9"
+      },
+      {
+        "id": "small",
+        "kind": "ball",
+        "mode": "dynamic",
+        "x": -0.9,
+        "y": 5,
+        "radius": 0.22,
+        "mass": 0.3,
+        "friction": 0.6,
+        "restitution": 0.03,
+        "colour": "#2484ee"
+      },
+      {
+        "id": "large",
+        "kind": "ball",
+        "mode": "dynamic",
+        "x": 0.9,
+        "y": 5.8,
+        "radius": 0.36,
+        "mass": 0.7,
+        "friction": 0.6,
+        "restitution": 0.03,
+        "colour": "#66b9e5"
+      },
+      {
+        "id": "lamp",
+        "kind": "wheel",
+        "mode": "dynamic",
+        "x": 0,
+        "y": 0.5,
+        "radius": 0.25,
+        "mass": 0.3,
+        "colour": "#3264d0"
+      }
+    ],
+    "joints": [
+      {
+        "id": "lamp-pin",
+        "kind": "hinge",
+        "a": "lamp-base",
+        "b": "lamp",
+        "anchorX": 0,
+        "anchorY": 0.5
+      }
+    ],
+    "motors": [
+      {
+        "id": "indicator",
+        "body": "lamp",
+        "targetSpeed": 3,
+        "maxTorque": 2,
+        "enabled": false
+      }
+    ],
+    "controls": [
+      {
+        "id": "delay",
+        "kind": "timer",
+        "threshold": 1,
+        "action": "signal"
+      },
+      {
+        "id": "received",
+        "kind": "count",
+        "body": "small",
+        "target": "left-bin",
+        "threshold": 1,
+        "action": "signal"
+      },
+      {
+        "id": "interlock",
+        "kind": "logic",
+        "inputs": [
+          "delay",
+          "received"
+        ],
+        "logic": "all",
+        "motor": "indicator",
+        "action": "start"
+      },
+      {
+        "id": "timeout",
+        "kind": "timer",
+        "threshold": 8,
+        "motor": "indicator",
+        "action": "stop"
+      }
+    ]
+  },
+  "appearance": {
+    "depth": 0.35,
+    "material": "alloy",
+    "background": "white",
+    "wireframe": false
+  },
+  "challenge": {
+    "id": "routing-01",
+    "kind": "routing",
+    "body": "small",
+    "minTime": 1,
+    "targets": [
+      {
+        "body": "small",
+        "targetX": -4,
+        "targetY": 0.4,
+        "tolerance": 1.45
+      },
+      {
+        "body": "large",
+        "targetX": 4,
+        "targetY": 0.5,
+        "tolerance": 1.45
+      }
+    ]
+  }
+}

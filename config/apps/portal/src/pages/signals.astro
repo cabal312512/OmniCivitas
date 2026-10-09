@@ -1,0 +1,32 @@
+---
+import Identity from '../aaa/Identity.astro';
+import SiteNav from '../q9/Nav.astro';
+import SharedPanel from '../shared/SharedPanel.astro';
+import '../signals/lab.css';
+const notes=[
+ {id:'n1',title:'接続',text:'节点可拖动。Connect 后依次点两个节点。',class:'note-connect',motion:''},
+ {id:'n2',title:'Traffic',text:'改 Flow 的源、目的端和包数，再点 Simulate。',class:'note-traffic',motion:'track'},
+ {id:'n3',title:'01',text:'选择连线可修改速率、延迟、丢包率。',class:'note-link',motion:'jump'},
+ {id:'n4',title:'再生',text:'▶ / Ⅱ　拖动时间条查看传输事件。',class:'note-play'},
+ {id:'n5',title:'回路',text:'点元件库后点画板。两个圆点之间可以连线。',class:'note-circuit',motion:'spasm'},
+ {id:'n6',title:'記録',text:'保存 / 重开 / 查看复核结果',class:'note-save'}
+];
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta http-equiv="Content-Security-Policy" content="object-src 'none'; base-uri 'self'"/><title>电路与通信实验室 · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head><body class="signals-page">
+ <div class="signals-underlay" aria-hidden="true"><div class="signals-underlay-grid"></div><div class="signals-left-lines"></div><div class="signals-scrap scrap-a"><span>名称　　　类型</span><i></i><i></i><i></i></div><div class="signals-scrap scrap-b"><span>default</span><div></div></div><div class="signals-scrap scrap-c"><span></span><span></span></div></div>
+ <div class="signals-fragments" aria-hidden="true"><div class="signals-fragment fragment-tabs"><i></i><i></i><i></i><div></div></div><div class="signals-fragment fragment-table"><i></i><i></i><i></i><i></i><div></div></div><div class="signals-fragment fragment-field"><i></i><div></div></div></div>
+ <header class="signals-header"><a href="/#systems" class="signals-identity" aria-label="返回主页"><Identity compact id="signals-header"/></a><SiteNav/><nav class="signals-route-nav" aria-label="功能导航"><a href="/functions/">全部功能</a><a href="/maze/table/">目录</a><a href="/research/">研究</a><a href="/legal/">声明</a></nav></header>
+ <section class="signals-search" aria-label="万能搜索"><label for="signals-search">万能搜索</label><input id="signals-search" type="search" placeholder="搜索功能" maxlength="80" autocomplete="off"/><button data-signals-search aria-label="搜索功能">↗</button><div class="signals-search-results" hidden></div></section>
+ <main class="signals-main"><div class="signals-heading"><h1>电路与通信实验室</h1><span>Network / Circuit / Instruments</span><a href="/workspace/">工作台 ↗</a><div class="heading-empty"></div></div><div class="signals-frame-shell"><div class="signals-frame-bar"><span>signals.lab</span><span>−　□　×</span></div><iframe id="signals-ui" src="/signals/ui/" title="电路与通信实验工作台" style="height:3650px" allow="clipboard-write" loading="eager"></iframe></div><SharedPanel domain="signals"/><div class="signals-bottom-remnant" aria-hidden="true"><div></div><span>source　　　status　　　value</span><i></i><i></i><i></i><div></div></div></main>
+ <aside class="signals-notes" aria-label="操作教程">{notes.map(note=><section class={`signals-note ${note.class}`} data-signals-note={note.id} data-signals-motion={note.motion || ''}>
+  <header data-signals-note-handle><span>{note.title}</span><button data-signals-note-close aria-label={`关闭 ${note.title} 教程`}>×</button></header>
+  {note.id==='n1'&&<><div class="note-connect-grid" aria-hidden="true"><i></i><i></i><i></i><b></b></div><p>{note.text}</p><div class="note-connect-footer" aria-hidden="true"><i></i><i></i></div></>}
+  {note.id==='n2'&&<fieldset class="note-raw"><legend>Flow</legend><p>{note.text}</p><table aria-hidden="true"><tbody><tr><td>src</td><td>dst</td></tr><tr><td>0</td><td></td></tr></tbody></table></fieldset>}
+  {note.id==='n3'&&<><div class="note-link-slots" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p>{note.text}</p><span class="note-link-label" aria-hidden="true">Mbps / ms</span></>}
+  {note.id==='n4'&&<><div class="note-play-strip" aria-hidden="true"><i></i><i></i><i></i></div><p>{note.text}</p><div class="note-play-slot" aria-hidden="true"></div></>}
+  {note.id==='n5'&&<><div class="note-circuit-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><span></span></div><p>{note.text}</p></>}
+  {note.id==='n6'&&<><div class="note-save-fields" aria-hidden="true"><i></i><i></i><i></i></div><p>{note.text}</p><div class="note-save-tail" aria-hidden="true"></div></>}
+ </section>)}</aside>
+ <a class="signals-exit" href="/#systems" aria-label="返回主页">↖</a>
+ <script>import '../signals/shell.mjs';</script>
+</body></html>

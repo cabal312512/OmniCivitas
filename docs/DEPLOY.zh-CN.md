@@ -48,17 +48,17 @@ pnpm civilization:stop
 
 ### 按需服务
 
-全部 24 个服务保留在 [compose.yaml](../compose.yaml)。core 无需指定 profile，其余按工作需要选择。
+全部已配置服务保留在 [compose.yaml](../compose.yaml)。core 无需指定 profile，其余按工作需要选择。
 
 | Profile | 额外服务 | 包含 core 的容器内存上限合计 |
 | --- | --- | ---: |
 | core | 默认六服务 | 1728 MiB |
 | databases | MySQL、MongoDB、MinIO、archive API | 2944 MiB |
-| legacy | Spring、FastAPI、Laravel、Fiber、ASP.NET SOAP、Sinatra、Hono、MySQL | 3616 MiB |
+| legacy | Spring、FastAPI、Laravel、Fiber、ASP.NET SOAP、Sinatra、Hono、MySQL | 4000 MiB |
 | messaging | RabbitMQ、Kafka、MongoDB、消息工作进程 | 3968 MiB |
 | search | Elasticsearch | 3008 MiB |
 | monitoring | OpenTelemetry、Prometheus、Grafana | 2240 MiB |
-| maximum / everything | 全部可选服务 | 7840 MiB |
+| maximum / everything | 全部可选服务 | 10400 MiB |
 
 ```sh
 pnpm civilization:databases
@@ -79,7 +79,7 @@ docker compose --profile legacy stop
 
 小内存机器分批使用 profiles，避免全栈运行时同时编译。表中是容器上限，不是主机总内存预测；Docker、系统、缓存和编译还会占用内存。maximum 控制器默认拒绝总容器预算超过 **8192 MiB**；其他硬件可通过 `OCV_CONTAINER_BUDGET_MIB` 调整。Java、Kafka、Elasticsearch 使用小型开发 heap。重要服务设置内存、CPU、PID 与日志限制。
 
-原开发机的 24 GB RAM / WSL 日常 9 GiB、可选最大 11 GiB 设置属于本地优化。公开命令不会修改别人电脑的 WSL 设置，也不要求相同硬件。
+资源预算是有界开发默认值，应按选用的服务和硬件调整。公开命令不会修改宿主 WSL 的内存、swap 或磁盘设置。
 
 ### 配置与持久化
 
@@ -141,7 +141,7 @@ node scripts/test-languages.mjs java python php go dotnet ruby
 
 helper 依次使用 768 MiB 测试容器，SDK 按需下载。当前版本的自动检查见仓库 Actions。独立 macOS Docker / Linux Engine 宿主完整部署未验证。内部需求账本、交接和验收记录不随公开源码发布；公开 clone 中的 `pnpm ledger:check` 会明确报告无法核对内部账本。
 
-本机 `ocv.ps1` / `scripts/Enter-OcvEnvironment.ps1` 仅用于原开发环境的工具、缓存和 Docker 存储位置，其他电脑使用标准入口。不要提交 node_modules、工具、缓存、构建输出、真实配置、token、证书、数据库数据、Docker volumes 或 WSL 磁盘。小型第三方包也通过 package.json / pnpm-lock.yaml 安装。
+`ocv.ps1` 是可选 PowerShell 入口，从配置或 PATH 查找工具，不要求特定盘符。可选配置及发布边界见 [可移植配置](PORTABILITY.md)。不要提交 node_modules、工具、缓存、构建输出、真实配置、token、证书、数据库数据、Docker volumes 或 WSL 磁盘。小型第三方包也通过 package.json / pnpm-lock.yaml 安装。
 
 ### 后台留存
 
@@ -151,6 +151,24 @@ helper 依次使用 768 MiB 测试容器，SDK 按需下载。当前版本的自
 
 按需语言/数据库/消息分支：先启动 core，再在另一终端执行 `pnpm civilization:after`，需要 Node 24 和可信宿主 Docker CLI 权限。任务排队分批运行，只关闭调度器自己启动的容器，named volumes 保留；已有工具结果立即显示。默认容器上限预算为 6144 MiB，并受 Docker 总内存减 1536 MiB 余量约束。较小机器可降低 `OCV_RUNNER_BUDGET_MIB`，部分重型分支会记录失败，不影响原工具；完整分支和冷构建建议至少 8 GiB Docker 宿主。脚本会在忽略的 `.env` 中保存私密调度密钥，不能发布。`pnpm civilization:after --stop` 请求正常停止；没有 pnpm 也可直接执行 `node scripts/after-runner.mjs`。详见 [分支与操作说明](AFTER-ROUTES.md#optional-on-demand-dispatcher)。其他部署默认仍只有 core。
 
+### 机械工坊
+
+根目录的数字Vue文件名控制共享任务档次，默认 `128.vue` 是最高档：最多128个活跃任务，排队数量不限。把它改名为 `1.vue` 到 `128.vue` 即可，例如 `32.vue` 表示32个活跃任务、2048个排队任务；低档排队上限为数字乘64。只保留一个此类文件。其中的坦克大战组件独立、休眠，网站和调度器都不导入它；调度器只读取文件名，兼容旧的无扩展名空数字文件。网关通过私有只读挂载读取文件名，不公开目录内容；网关和调度器会自动发现改名。调低后已有任务继续完成，新任务等待空位。排队默认24小时过期，可用 `OCV_AFTER_QUEUE_TTL_SECONDS` 调整。数字文件优先于环境变量；文件缺失时才使用 `OCV_RUNNER_CONCURRENCY` 和 `OCV_AFTER_QUEUE_LIMIT`，后者为0表示只取消数量上限。
+
+128是任务调度上限，实际原生计算还受各服务CPU、内存和进程数限制。共享服务引用计数防止一个任务关闭另一个任务正在使用的容器，原生执行槽依据实际资源配置计算，大结果读取另设有界限制。强服务器可提高 `OCV_RUNNER_BUDGET_MIB` 和 `OCV_SIGNALS_NATIVE_MEM`／`CPU`／`PIDS`、`OCV_MECHANICS_NATIVE_MEM`／`CPU`／`PIDS`；改数字文件不会自动增加内存分配，本机仍保留原资源上限。
+
+可选的 `OCV_RUNNER_MAX_CONCURRENCY` 可以独立于数字文件降低实际调度并发上限，默认128；实际执行仍受各服务资源限制。
+
+已结束任务默认保留 `max(128, 档次数字×4)` 条，最高档512条；可用 `OCV_AFTER_TERMINAL_LIMIT` 在32–10000条内覆盖。超过留存数量会清理最旧的已结束结果；排队和正在执行的任务不会按这条规则清理。被裁剪或过期的结果会明确提示过期。
+
+从“游戏”分类中的“机械工坊”、全局搜索或三个迷宫页面 `/maze/table/`、`/maze/offices/settings/`、`/maze/route/a/b/c/d/e/` 进入 `/workshop/`。保留网站导航，C#/Blazor负责编辑，Rust/Rapier负责同源二维浏览器与原生模拟，Vue负责可复用组件，Svelte负责记录帧回放。3D只改变外观。普通运行与参数实验同时开始本地计算和后台任务，先显示本地结果；“查看复核结果”保持灰色，直到本次后台结果通过核对并缓存才启用，完成不会自动切换显示。点击已启用的按钮才显示缓存。首入示例只在本地运行；调度器停用时本地计算仍可用。
+
+服务端保存和后台计算需要core和持续运行的 `pnpm civilization:after`。同一调度器分批启动C#准备、固定Rust执行文件、C#核对；真实结果先存PostgreSQL再读回，核对不替换原结果。两端支持相同功能，后台使用更细步长，最小1/240秒、最多4,800步/256帧；导出记录实际请求设置。通信实验也采用并行运行、点击切换，电路瞬态和AC可用更密采样，事件网络/DC/同种子通信不伪称额外精度。独立工程任务在所选档位与资源上限内共享队列和服务；有限队列档位排满时返回429，本地计算继续。版本回退追加新版本。本地零件库默认只保存在当前浏览器。
+
+工坊前120次自动读取每秒一次，之后每15秒一次，绝对等待上限7天。暂时读取失败时每15秒退避重试，复核按钮继续保持灰色，未结束任务仍可取消。编辑、重跑或离开页面会使旧显示请求失效。通过核对的结果缓存后按钮才启用，仍须点击才显示；过期或被裁剪的记录显示过期状态。浏览器的7天等待上限不会延长默认24小时排队期限或已结束结果留存数量。
+
+普通 `pnpm build` 使用并校验已附带的浏览器产物。可选 `pnpm workshop:engines` 顺序重编译，需要联网、足够磁盘和3GiB构建预算；`docker compose --profile mechanics build dotnet mechanics-native` 构建原生服务。数值范围见 `pinia/folder2/README.md`，许可见 `/workshop/engines/NOTICE.txt`。受限二维与理想传动模型不冒称完整CAD、FEA或三维物理。
+
 ### 许可与联系
 
 原创代码采用 **MIT — Copyright (c) 2026 cabal312512**，见 [LICENSE](../LICENSE)。第三方代码、字体、音乐及其他素材保留自身权利与许可，MIT 不重新授权它们。必要代码来源见 [THIRD_PARTY_NOTICES.txt](../THIRD_PARTY_NOTICES.txt)、[EFFECT-SOURCES.md](EFFECT-SOURCES.md) 和构建时生成的 `/licenses/bundled-notices.txt`。
@@ -158,3 +176,7 @@ helper 依次使用 768 MiB 测试容器，SDK 按需下载。当前版本的自
 素材声明：[MEDIA_NOTICE.md](../MEDIA_NOTICE.md) / `/legal/`。研究音乐 **Holizna — Retro Wave Collection**，来源 [OpenGameArt](https://opengameart.org/content/retro-wave-collection)，CC0；其他既有作者与来源保留在声明中。联系：**user31436@proton.me**。
 
 当前版本的自动检查与部署限制见仓库 Actions 及本说明。
+
+完整 maximum 服务组当前容器上限合计 10400 MiB，高于默认 8192 MiB 准入预算。启用全组前须明确调高 `OCV_CONTAINER_BUDGET_MIB` 并预留宿主和构建内存；较小机器使用分组。默认 core 和资源保护规则不变。
+
+音乐处理、工具核对、事件投影和目录索引复用同一个按需调度器；资源限制、首次构建与留存边界见 [SITE-SERVICES.md](SITE-SERVICES.md)。

@@ -1,6 +1,8 @@
 import {test,expect} from 'vitest';
 import {createRequire} from 'node:module';
 import {randomUUID} from 'node:crypto';
+import {readFileSync} from 'node:fs';
+import YAML from 'yaml';
 const require=createRequire(import.meta.url);
 const {JobsService,catalog,familyFor}=require('../services/gateway/dist/a1/jobs.js');
 
@@ -17,7 +19,8 @@ test('private commands and malformed public status requests fail before opening 
 });
 test('catalogue covers every optional service and resolves known and uncommon tool IDs',()=>{
  const optional=new Set(catalog.families.flatMap(f=>f.steps.flat()));
- expect([...optional].sort()).toEqual(['spring','fastapi','mysql','laravel','fiber','dotnet','sinatra','hono','minio','mongo','elasticsearch','rabbitmq','kafka','message-bridge','message-consumer','otel','prometheus','grafana'].sort());
+ const services=YAML.parse(readFileSync(new URL('../compose.yaml',import.meta.url),'utf8')).services;
+ expect([...optional].sort()).toEqual(Object.entries(services).filter(([,service])=>service.profiles?.length).map(([name])=>name).sort());
  expect(familyFor('base64')).toBe('messages');expect(familyFor('json')).toBe('relay');
  expect(catalog.families.map(f=>f.id)).toContain(familyFor('unit-converter'));
 });

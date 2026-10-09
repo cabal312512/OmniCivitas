@@ -15,6 +15,7 @@ const originals=Object.keys(import.meta.glob('../../../public/licenses/*.txt',{q
    <h1>第三方代码</h1>
    <p>相关代码继续适用各自的许可证。</p>
    <p><a href="/third-party-notices.txt">查看声明原文</a></p>
+   <p><a href="/signals/engines/NOTICE.txt">Wasm runtime licenses</a></p>
    <details><summary>版权与许可记录</summary><pre>{notices}</pre></details>
    <h2>许可原文</h2>
    <ul>{originals.map(name=><li><a href={`/licenses/${name}`}>{name}</a></li>)}</ul>

@@ -16,7 +16,9 @@ export const phase5Tools=[...text,...calculation,...development].map(tool=>({...
 export const phase6Tools=[...images,...time,...science,...files].map(tool=>({...tool,phase:6}));
 export const phase7Tools=[...games,...odd,...generators].map(tool=>({...tool,phase:7}));
 export const advancedTools=advanced;
-export const tools=[...phase5Tools,...phase6Tools,...phase7Tools,...advancedTools,...additions,...worlds,...q9];
+const workshop={id:'workshop',title:'机械工坊',group:'游戏',phase:11,href:'/workshop/',fields:[]};
+const textInput={id:'text-input',title:'输入文本',group:'日常',ui:'input-only',universalOnly:true,fields:[]};
+export const tools=[...phase5Tools,...phase6Tools,...phase7Tools,...advancedTools,...additions,...worlds,...q9,workshop,textInput];
 export const toolById=id=>tools.find(tool=>tool.id===id);
 export const groups=['文本','开发','计算','转换','检测','图片','时间','学习','科学','文件','游戏','日常','生成器'];
-export const toolLink=tool=>`/functions/${tool.id}/`;
+export const toolLink=tool=>tool.href||`/functions/${tool.id}/`;

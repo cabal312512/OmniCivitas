@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node ../../../scripts/phase8-build.mjs && node ../../../scripts/copy-angular.mjs && node ../../../scripts/prepare-research.mjs && astro build",
+    "build": "node ../../../scripts/phase8-build.mjs && node ../../../scripts/copy-angular.mjs && node ../../../scripts/signals-artifacts.mjs --check && node ../../../scripts/workshop-artifacts.mjs --check && node ../../../scripts/prepare-research.mjs && astro build",
     "dev": "astro dev --host 127.0.0.1 --port 4321"
   },
   "dependencies": {
@@ -67,6 +67,16 @@
           "^default",
           "{workspaceRoot}/pnpm-lock.yaml",
           "{workspaceRoot}/pinia/**/*",
+          "{workspaceRoot}/pcakage/desk4/**/*",
+          "{workspaceRoot}/scripts/signals-artifacts.mjs",
+          "{workspaceRoot}/scripts/workshop-artifacts.mjs",
+          "{workspaceRoot}/scripts/build-workshop-engines.mjs",
+          "{workspaceRoot}/config/apps/aa1/**/*",
+          "{workspaceRoot}/config/parts/**/*",
+          "{workspaceRoot}/pcakage/slot7/**/*",
+          "{workspaceRoot}/docs/licenses/workshop-runtime/**/*",
+          "{workspaceRoot}/scripts/build-signals-engines.mjs",
+          "{workspaceRoot}/docs/licenses/signals-runtime/**/*",
           "{workspaceRoot}/pcakage/build2/**/*",
           "{workspaceRoot}/scripts/phase8-build.mjs",
           "{workspaceRoot}/scripts/copy-angular.mjs",

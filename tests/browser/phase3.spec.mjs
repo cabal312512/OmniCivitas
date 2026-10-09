@@ -1,5 +1,6 @@
+import {testDeps} from '../runtime-location.mjs';
 import {test,expect} from '@playwright/test';import fs from 'node:fs';import path from 'node:path';
-const reports=process.env.OCV_DEPS_ROOT?path.join(process.env.OCV_DEPS_ROOT,'runtime/reports'):path.resolve('.test-results');
+const reports=path.join(testDeps,'runtime/reports');
 async function home(page){await page.goto('/');await expect(page.locator('#storage-note')).toHaveText('抽屉已打开');}
 test('Vue Pinia vee-validate Element Plus, Svelte Store, Solid, Lit Shadow DOM, Alpine, htmx, jQuery and mixed styles really interact',async({page},info)=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await home(page);

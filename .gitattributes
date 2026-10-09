@@ -2,3 +2,51 @@
 # Disable checkout normalization on every platform; source files work with
 # their existing line endings, without changing frozen artifacts on clone.
 * -text
+
+# Local-only maintenance is also omitted from source archives.
+config/runtime.local.json export-ignore
+scripts/bootstrap-tools.mjs export-ignore
+scripts/download-runtime-tools.mjs export-ignore
+scripts/doctor-local.mjs export-ignore
+scripts/Install-OcvRuntime.ps1 export-ignore
+scripts/Move-OcvDockerCliPlugins.ps1 export-ignore
+scripts/Request-OcvAdminSetup.ps1 export-ignore
+scripts/Inspect-OcvPhysicalPaths.ps1 export-ignore
+scripts/Snapshot-OcvMemory.ps1 export-ignore
+scripts/Audit-CleanClone.ps1 export-ignore
+scripts/link-dependencies.ps1 export-ignore
+scripts/link-phase3-paths.ps1 export-ignore
+scripts/generate-ledgers.mjs export-ignore
+scripts/generate-technologies.mjs export-ignore
+scripts/audit-final.mjs export-ignore
+scripts/audit-release-runtime.mjs export-ignore
+scripts/rename-workspace.mjs export-ignore
+scripts/rebuild-phase3.mjs export-ignore
+scripts/current-paths.mjs export-ignore
+scripts/expansion-sources.mjs export-ignore
+scripts/map-phase8.mjs export-ignore
+scripts/phase8-source-review.mjs export-ignore
+scripts/prepare-phase2-compose.mjs export-ignore
+scripts/prepare-phase8-remnants.mjs export-ignore
+scripts/phase12-evidence.mjs export-ignore
+scripts/phase12-preserve.mjs export-ignore
+scripts/phase12-ui-copy.mjs export-ignore
+scripts/inventory-copy2.mjs export-ignore
+scripts/apply-author-mark.mjs export-ignore
+scripts/verify-name-dev.mjs export-ignore
+scripts/verify-phase2-workspace.mjs export-ignore
+scripts/verify-phase3-final.mjs export-ignore
+scripts/verify-phase3-workspace.mjs export-ignore
+scripts/record-* export-ignore
+scripts/update-* export-ignore
+scripts/inspect-* export-ignore
+scripts/begin-phase* export-ignore
+scripts/finish-* export-ignore
+scripts/fix-phase8-* export-ignore
+scripts/patch-phase* export-ignore
+scripts/render-phase* export-ignore
+scripts/snapshot-* export-ignore
+scripts/preserve-* export-ignore
+scripts/profile-3d-* export-ignore
+scripts/review-phase8-* export-ignore
+vps-1g/** export-ignore

@@ -1,0 +1,36 @@
+(in-package #:printshop/common2)
+
+(defun encode-parcel (o)
+  (let* ((a (order-article o))
+         (words (list 3 (order-version o) (article-copies a) (order-deadline o)
+                      (article-height-mm a) (article-width-mm a) (article-pages a)
+                      (article-colors a) (if (article-duplex a) 0 1))))
+    (make-parcel :schema 3 :words words :digest (checksum-words words))))
+
+(defun decode-parcel (p id paper-id)
+  (unless (and (= (parcel-schema p) 3) (= (length (parcel-words p)) 9)
+               (every #'integerp (parcel-words p))
+               (= (parcel-digest p) (checksum-words (parcel-words p))))
+    (error "Order parcel failed version or checksum boundary"))
+  (destructuring-bind (schema version copies deadline height width pages colors disabled)
+      (parcel-words p)
+    (declare (ignore schema))
+    (require-positive-integer copies 'copies)
+    (require-positive-integer pages 'pages 10000)
+    (require-positive-integer width 'width 2000)
+    (require-positive-integer height 'height 2000)
+    (unless (member disabled '(0 1)) (error "Ambiguous duplex marker"))
+    (make-order :id id :paper-id paper-id :deadline deadline :version version :state :draft
+      :article (make-article :id id :copies copies :pages pages :width-mm width
+                            :height-mm height :colors colors :duplex (zerop disabled) :binding :loose))))
+
+(defun parcel-columns (p)
+  (format nil "~D|~{~D~^;~}|~D" (parcel-schema p) (parcel-words p) (parcel-digest p)))
+
+(defun parcel-roundtrip-description (o)
+  (let* ((p (encode-parcel o))
+         (restored (decode-parcel p (order-id o) (order-paper-id o))))
+    (list :wire (parcel-columns p)
+          :preserved-fields '(:copies :deadline :dimensions :pages :colors :duplex)
+          :lost-fields '(:binding :notes :state)
+          :version (order-version restored))))

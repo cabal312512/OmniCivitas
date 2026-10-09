@@ -3,7 +3,9 @@ import {randomUUID,createHash} from 'node:crypto';
 import {mkdir,writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
-const base=process.env.OCV_BASE_URL||'http://127.0.0.1:8080',session=randomUUID(),receipts=[],tables=[];
+import {verificationConfig} from './verification-config.mjs';
+const {baseUrl:base,reportRoot:output}=verificationConfig();
+const session=randomUUID(),receipts=[],tables=[];
 const digest=value=>createHash('sha256').update(value).digest('hex');
 const post=async(route,payload)=>{const r=await fetch(base+route,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(8000)});return {status:r.status,body:await r.json()};};
 for(let i=0;i<20;i++){
@@ -25,5 +27,5 @@ const altered=last.frontendPiece.replace(/^./,last.frontendPiece[0]==='A'?'B':'A
 const badPart=await post(`/api/a1/recover.cgi/${last.id}`,{ticket:last.ticket,frontendPiece:altered});assert.equal(badPart.status,400);
 assert.ok(tables.length>=6);
 const report={checkedAt:new Date().toISOString(),base,receipts:receipts.length,storage:'postgresql',redis:true,storedProgramExecution:true,threePartReconstruction:true,idempotency:true,invalidCredentialsRejected:true,wrongTicketRejected:true,corruptFrontendFragmentRejected:true,createdTables:tables,configuredLimits:last.limits};
-const output=path.join(process.env.OCV_DEPS_ROOT||os.tmpdir(),'runtime/reports');await mkdir(output,{recursive:true});await writeFile(path.join(output,'after-http-verification.json'),JSON.stringify(report,null,2));
+await mkdir(output,{recursive:true});await writeFile(path.join(output,'after-http-verification.json'),JSON.stringify(report,null,2));
 console.log(JSON.stringify(report,null,2));

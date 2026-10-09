@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 import { Body, Controller, Get, Inject, Module, Post, Res, BadRequestException, ServiceUnavailableException, Param, Query, Sse } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { ExpressAdapter } from '@nestjs/platform-express';
 import { randomUUID } from 'node:crypto';
 import { json } from 'express';
 import type { Response } from 'express';
@@ -9,7 +10,12 @@ import { AfterService } from './a1/service';
 import {JobsController,JobsService} from './a1/jobs';
 import {Q8Service} from './q8/service';
 import {Q8Controller} from './q8/controller';
+import {WindowController,WindowReceipt} from './invoice2/window';
+import {ReturnController,ReturnOrder} from './invoice2/return3';
+import {OldInvoiceController,OldInvoices} from './2/old';
 import { EnterpriseService } from './备份_别删/a_final';
+import {OldWindow} from './w3/1';
+import {ReceiptOfReceipt} from './w3/old';
 import { interval, map, take } from 'rxjs';
 import { WebSocketServer } from 'ws';
 
@@ -71,12 +77,20 @@ class CivilizationController {
   }
 }
 
-@Module({ controllers: [CivilizationController,JobsController,Q8Controller], providers: [RuntimeStore,EnterpriseService,AfterService,JobsService,Q8Service] })
+@Module({ controllers: [CivilizationController,JobsController,Q8Controller,WindowController,ReturnController,OldInvoiceController,ReceiptOfReceipt], providers: [RuntimeStore,EnterpriseService,AfterService,JobsService,Q8Service,WindowReceipt,ReturnOrder,OldInvoices,OldWindow] })
 class PreviouslyBookManagementSystemModule {}
 
 async function bootstrap() {
-  const app = await NestFactory.create(PreviouslyBookManagementSystemModule, { bodyParser: false });
-  app.use('/api/q8/profile/write',json({limit:'96kb'}));
+  const app = await NestFactory.create(PreviouslyBookManagementSystemModule, new ExpressAdapter(), { bodyParser: false });
+  app.use('/api/q8/profile/write',json({limit:'192kb'}));
+  app.use('/api/signals/internal',json({limit:'6mb'}));
+  app.use('/api/signals',json({limit:'96kb'}));
+  app.use('/api/workshop/internal',json({limit:'6mb'}));
+  app.use('/api/workshop',json({limit:'160kb'}));
+  app.use('/api/shared/internal',json({limit:'8mb'}));
+  app.use('/api/shared',json({limit:'192kb'}));
+  app.use('/api/site/internal',json({limit:'8mb'}));
+  app.use('/api/site',json({limit:'192kb'}));
   app.use(json({ limit: '16kb' }));
   app.enableShutdownHooks();
   const sockets=new WebSocketServer({server:app.getHttpServer(),path:'/api/enterprise-ws.cgi',maxPayload:8192});

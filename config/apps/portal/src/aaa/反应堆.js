@@ -8,6 +8,7 @@ import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 import { Pass, FullScreenQuad } from 'three/addons/postprocessing/Pass.js';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { desktopView } from '../q7/view.mjs';
 
 gsap.registerPlugin(ScrollTrigger);
 const canvas = document.querySelector('#reactor-field');
@@ -15,6 +16,7 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)');
 const lifetime = new AbortController();
 const listen = (node, type, fn, options = {}) => node?.addEventListener(type, fn, {...options, signal:lifetime.signal});
 const small = innerWidth < 700;
+let desktop = desktopView(innerWidth, innerHeight);
 const state = window.__ocvReactor = {
   renderer:'pending', three:THREE.REVISION, gsap:gsap.version, frames:0,
   mode:1, cover:true, bloom:false, suspended:false, reduced:reduce.matches,
@@ -180,8 +182,10 @@ function buildScroll() {
 }
 
 function resize() {
+  desktop = desktopView(innerWidth, innerHeight);
+  state.desktopScale = desktop.effectScale;
   if(renderer){
-    const cap=innerWidth<700?1024:1920;
+    const cap=desktop.bufferCap || (innerWidth<700?1024:1920);
     const scale=Math.min(devicePixelRatio,1.7,cap/Math.max(innerWidth,innerHeight));
     const w=Math.max(1,Math.round(innerWidth*scale)),h=Math.max(1,Math.round(innerHeight*scale));
     renderer.setSize(w,h,false);composer.setSize(w,h);baseTarget.setSize(w,h);
@@ -198,7 +202,7 @@ function draw(dt) {
   const t=reduce.matches?0:seconds;
   hand.kick*=reduce.matches?1:Math.exp(-dt*3.8);
   world.rotation.set(-.1+pointer.y*.09+hand.x,.15+pointer.x*.16+hand.y,Math.sin(t*.13)*.07);
-  world.scale.setScalar(state.mode===3?.74:state.mode===2?.9:1);
+  world.scale.setScalar((state.mode===3?.74:state.mode===2?.9:1)*desktop.effectScale);
   const dive=state.mode===2?view.dive:0;
   camera.position.z=(small?12.2:9.8)-dive*(small?3.2:3);
   camera.position.x=pointer.x*.15;camera.position.y=.12+pointer.y*.13;camera.lookAt(origin);camera.rotation.z=dive*.12;
@@ -266,7 +270,7 @@ listen(window,'ocv:optical-turn',e=>turn(e.detail?.dx,e.detail?.dy));
 listen(window,'ocv:optical-impulse',e=>impulse(e.detail));
 listen(window,'ocv:optical-reset',()=>{hand.x=hand.y=hand.kick=0;hand.progress=1;if(wave)wave.visible=false;dirty=true;wake();});
 listen(window,'pointerdown',e=>{
-  if(e.button!==0||e.pointerType!=='mouse'||!renderer||state.cover||e.target.closest('a,button,input,select,textarea,summary,[role=button],[data-loose-window],.loose-lens'))return;
+  if(e.button!==0||e.pointerType!=='mouse'||!renderer||state.cover||e.target.closest('a,button,input,select,textarea,summary,[role=button],[data-loose-window],[data-n3-kind],[data-w7-pane],.loose-lens'))return;
   aim(e.clientX,e.clientY);const hit=raycaster.intersectObjects([core,shell,tiles,...knots],false)[0];if(!hit)return;
   state.picks++;state.pickedInstance=hit.instanceId??null;state.pickedObject=hit.object===tiles?'tile':hit.object===core?'core':hit.object===shell?'glass':'knot';
   grabbed={id:e.pointerId,x:e.clientX,y:e.clientY};impulse({x:e.clientX,y:e.clientY,strength:.7});e.preventDefault();
