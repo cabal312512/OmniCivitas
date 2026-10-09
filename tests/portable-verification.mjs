@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import os from 'node:os';
-import {mkdtemp,writeFile,mkdir} from 'node:fs/promises';
+import {mkdtemp,writeFile,mkdir,realpath,symlink} from 'node:fs/promises';
 import {spawnSync} from 'node:child_process';
 import {verificationConfig} from '../scripts/verification-config.mjs';
 
@@ -42,15 +42,19 @@ test('Ignored preferences and environment overrides use the same report and runn
 test('Docker process helper carries bounded stdin and configured Compose files without starting a daemon',async()=>{
   const configFile=path.join(fixture,'fake-runtime.json');
   await writeFile(configFile,'{}');
+  const physicalDirectory=path.join(fixture,'physical-cwd'),directoryAlias=path.join(fixture,'cwd-alias');
+  await mkdir(physicalDirectory);
+  await symlink(physicalDirectory,directoryAlias,process.platform==='win32'?'junction':'dir');
   const code=`import {dockerCall,composeArguments} from ${JSON.stringify(dockerHelper)};
   const inner="let input='';process.stdin.on('data',data=>input+=data);process.stdin.on('end',()=>console.log(JSON.stringify({input,cwd:process.cwd()})))";
-  const result=dockerCall(['-e',inner],{input:'portable bounded input',timeout:5000,maxBuffer:1024,cwd:${JSON.stringify(fixture)}});
+  const result=dockerCall(['-e',inner],{input:'portable bounded input',timeout:5000,maxBuffer:1024,cwd:${JSON.stringify(directoryAlias)}});
   console.log(JSON.stringify({result:JSON.parse(result.stdout),args:composeArguments(['ps'])}));`;
   const environment={...process.env,OCV_LOCAL_STORAGE_GUARD:'0',OCV_RUNTIME_CONFIG:configFile,OCV_DOCKER_CLI:process.execPath,OCV_COMPOSE_FILES:['compose.yaml','compose.custom.yaml'].join(path.delimiter),COMPOSE_PROJECT_NAME:'portable-fixture'};
   const child=spawnSync(process.execPath,['--max-old-space-size=128','--input-type=module','-e',code],{env:environment,encoding:'utf8',timeout:10000,maxBuffer:8192,windowsHide:true});
   assert.equal(child.status,0,child.stderr);
   const output=JSON.parse(child.stdout);
   assert.equal(output.result.input,'portable bounded input');
-  assert.equal(path.resolve(output.result.cwd),path.resolve(fixture));
+  assert.equal(await realpath(output.result.cwd),await realpath(directoryAlias));
+  assert.equal(await realpath(output.result.cwd),await realpath(physicalDirectory));
   assert.deepEqual(output.args,['compose','-p','portable-fixture','-f','compose.yaml','-f','compose.custom.yaml','--profile','*','ps']);
 });
