@@ -5,6 +5,7 @@ import statement from '../../../../../../MEDIA_NOTICE.md?raw';
 import '../../styles/legal.css';
 import Field from '../../n9/n9.astro';
 import MusicCredit from '../../components/MusicCredit.astro';
+import planetariumCredits from '../../../public/planetarium/credits.json';
 import translations from '../../n9/languages.json';
 import {createHash} from 'node:crypto';
 const languages=translations.languages;
@@ -26,6 +27,7 @@ for(const item of languages){const dictionary=dictionaries[`../../../public/lega
   <main>
    <article lang="zh" dir="ltr" data-legal-statement set:html={marked.parse(statement)} />
    <MusicCredit />
+   <section class="legal-contact" aria-label="天象仪素材与代码来源"><h2>天象仪</h2>{planetariumCredits.credits.map(credit=><p><a href={credit.sourceUrl} target="_blank" rel="noopener noreferrer">{credit.title}</a> — {credit.author} · {credit.license}{credit.noticeUrl&&<> · <a href={credit.noticeUrl}>许可与来源原文</a></>}</p>)}</section>
    <section class="legal-contact" aria-label="联系与音乐来源">
     <p>联系：<a href="mailto:user31436@proton.me">user31436@proton.me</a></p>
     <p>研究页面音乐：<a href="https://opengameart.org/content/retro-wave-collection" target="_blank" rel="noopener noreferrer">Retro Wave (Collection) — Holizna</a> · <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0 1.0</a></p>

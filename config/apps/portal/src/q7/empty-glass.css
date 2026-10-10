@@ -1,0 +1,13 @@
+.empty-glass-layer{position:fixed;inset:0;pointer-events:none;z-index:72;contain:layout style}
+.empty-glass-frame{position:absolute;box-sizing:border-box;width:min(var(--glass-width),calc(100vw - 24px));height:min(var(--glass-height),45dvh);left:clamp(12px,var(--glass-left),max(12px,calc(100vw - min(var(--glass-width),calc(100vw - 24px)) - 12px)));top:clamp(92px,var(--glass-top),max(92px,calc(100dvh - min(var(--glass-height),45dvh) - 20px)));border:1px solid rgba(111,129,146,.43);border-radius:10px;background:transparent;backdrop-filter:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.92),inset 0 1px 0 2px rgba(255,255,255,.42),0 0 0 1px rgba(255,255,255,.42),0 10px 28px -14px rgba(22,50,78,.24),-4px -4px 10px -7px rgba(41,64,83,.55);pointer-events:none}
+.empty-glass-frame::before{content:'';position:absolute;inset:2px;border-radius:8px;border:1px solid transparent;border-top-color:rgba(255,255,255,.68);border-left-color:rgba(255,255,255,.65);border-right-color:rgba(72,107,135,.12);border-bottom-color:rgba(72,107,135,.14);pointer-events:none}
+.empty-glass-chrome{height:38px;display:flex;justify-content:flex-end;align-items:center;padding-right:5px;gap:0;background:transparent;border:0;pointer-events:auto;cursor:grab;touch-action:none;user-select:none}
+.empty-glass-frame[data-glass-dragging] .empty-glass-chrome{cursor:grabbing}
+.empty-glass-chrome:focus-visible{outline:1px solid #749ac0;outline-offset:-4px;border-radius:8px 8px 0 0}
+.empty-glass-chrome>span,.empty-glass-chrome>button{box-sizing:border-box;width:42px;height:36px;display:grid;place-items:center;padding:0;margin:0;background:transparent;border:0;border-radius:0;color:rgba(25,43,61,.88);box-shadow:none}
+.empty-glass-chrome svg{display:block;width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:.85}
+.empty-glass-chrome>button{pointer-events:auto;cursor:pointer;border-radius:0 7px 0 0;touch-action:manipulation}
+.empty-glass-chrome>button:hover{background:rgba(223,239,251,.22);color:#082a57}
+.empty-glass-chrome>button:focus-visible{outline:2px solid #487cbe;outline-offset:-4px}
+@media(max-width:620px){.empty-glass-frame[data-glass-secondary]{display:none}.empty-glass-frame{width:min(var(--glass-width),calc(100vw - 36px));height:min(var(--glass-height),27dvh);left:18px;top:clamp(112px,var(--glass-top),calc(100dvh - min(var(--glass-height),27dvh) - 76px))}.empty-glass-chrome>span,.empty-glass-chrome>button{width:44px;height:40px}.empty-glass-chrome{height:42px}}
+@media(forced-colors:active){.empty-glass-frame{border-color:CanvasText;box-shadow:none}.empty-glass-frame::before{border:0}.empty-glass-chrome>button{color:ButtonText}}

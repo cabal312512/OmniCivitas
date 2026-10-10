@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "credits": [
+    {
+      "id": "music",
+      "title": "Lost in the Snow Wave",
+      "author": "hatmix",
+      "sourceUrl": "https://opengameart.org/content/lost-in-the-snow-wave",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "noticeUrl": "/planetarium/licenses/Lost-in-the-Snow-Wave-NOTICE.txt",
+      "note": "Original Ogg audio distributed without changes; looping background music. Voluntary author credit retained.",
+      "assetIds": [
+        "lost-in-the-snow-wave"
+      ]
+    },
+    {
+      "id": "sky",
+      "title": "Deep Star Maps 2020",
+      "author": "Ernie Wright · NASA/GSFC Scientific Visualization Studio · ESA/Gaia/DPAC",
+      "sourceUrl": "https://svs.gsfc.nasa.gov/4851/",
+      "license": "NASA media usage guidelines",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "noticeUrl": "/planetarium/licenses/SOURCE-NOTICES.txt",
+      "note": "4k star and Milky Way maps tone-mapped from NASA HDR sources. Rendering is not endorsed by NASA. Optional 8k Milky Way retains the same base exposure and tone map as the 4k image; photographic grading is applied at runtime.",
+      "assetIds": [
+        "milkyway",
+        "starmap",
+        "milkyway-high"
+      ]
+    },
+    {
+      "id": "moon",
+      "title": "CGI Moon Kit",
+      "author": "NASA/GSFC/SVS · NASA/GSFC/ASU · NASA/GSFC/MIT · Ernie Wright",
+      "sourceUrl": "https://svs.gsfc.nasa.gov/4720/",
+      "license": "NASA media usage guidelines",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "noticeUrl": "/planetarium/licenses/SOURCE-NOTICES.txt",
+      "note": "LROC 2025 colour map and LOLA visual elevation map; compact browser textures.",
+      "assetIds": [
+        "moon",
+        "moon-height"
+      ]
+    },
+    {
+      "id": "sss",
+      "title": "Solar System Scope textures",
+      "author": "INOVE",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "noticeUrl": "/planetarium/licenses/CC-BY-4.0.txt",
+      "note": "Downsampled and compressed from source maps. Source colours are enhanced; some unmapped planetary regions are artistic completions.",
+      "assetIds": [
+        "mercury",
+        "venus",
+        "earth-day",
+        "earth-night",
+        "earth-clouds",
+        "earth-normal",
+        "earth-specular",
+        "mars",
+        "jupiter",
+        "saturn",
+        "saturn-ring",
+        "uranus",
+        "neptune",
+        "sun"
+      ]
+    },
+    {
+      "id": "catalogue",
+      "title": "d3-celestial star and constellation catalogues",
+      "author": "Olaf Frohn · Hipparcos · Yale Bright Star Catalog · IAU",
+      "sourceUrl": "https://github.com/ofrohn/d3-celestial/tree/7e720a3de062059d4c5400a379146a601d9010e0/data",
+      "license": "BSD-3-Clause",
+      "licenseUrl": "https://github.com/ofrohn/d3-celestial/blob/7e720a3de062059d4c5400a379146a601d9010e0/LICENSE",
+      "noticeUrl": "/planetarium/licenses/d3-celestial-BSD-3-Clause.txt",
+      "note": "5044 real magnitude-six stars at J2000 and 36367 additional real stars with 6 < mag <= 8; 88 constellation IDs. GeoJSON fields compacted, right ascension wrapped to 0–360 degrees, Serpens groups merged. Existing bright-star metadata and picking remain separate.",
+      "assetIds": [
+        "stars",
+        "constellations",
+        "stars-faint"
+      ]
+    },
+    {
+      "id": "three",
+      "title": "Three.js",
+      "author": "Three.js authors",
+      "sourceUrl": "https://threejs.org/",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/mrdoob/three.js/blob/dev/LICENSE",
+      "noticeUrl": "/planetarium/licenses/Three.js-MIT.txt",
+      "note": "Browser rendering and EXR source preparation. Device-to-camera orientation basis adapted from Three.js r133 DeviceOrientationControls, under MIT; original authorship retained.",
+      "adaptationSourceUrl": "https://github.com/mrdoob/three.js/blob/r133/examples/jsm/controls/DeviceOrientationControls.js",
+      "assetIds": []
+    },
+    {
+      "id": "astronomy",
+      "title": "Astronomy Engine",
+      "author": "Don Cross",
+      "sourceUrl": "https://github.com/cosinekitty/astronomy",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/cosinekitty/astronomy/blob/master/LICENSE",
+      "noticeUrl": "/planetarium/licenses/Astronomy-Engine-MIT.txt",
+      "note": "Ephemerides, coordinates and eclipse calculations.",
+      "assetIds": []
+    },
+    {
+      "id": "atmosphere",
+      "title": "Precomputed Atmospheric Scattering",
+      "author": "Shota Matsuda / Takram · Eric Bruneton · INRIA",
+      "sourceUrl": "https://github.com/takram-design-engineering/three-geospatial/tree/main/packages/atmosphere",
+      "license": "MIT; BSD-3-Clause atmospheric model",
+      "licenseUrl": "https://github.com/takram-design-engineering/three-geospatial/blob/b012ad06d858fc035d88aacfd73f092f93c994e4/packages/atmosphere/LICENSE",
+      "noticeUrl": "/planetarium/licenses/Takram-atmosphere-LICENSE.txt",
+      "note": "Takram three-atmosphere 0.19.1. Unmodified Earth atmosphere lookup textures. Full upstream component notices retained. Assets originate from the pinned npm release; upstream license text is separately pinned in the manifest documentation.",
+      "assetIds": [
+        "atmosphere-transmittance",
+        "atmosphere-scattering",
+        "atmosphere-irradiance"
+      ]
+    },
+    {
+      "id": "postprocessing",
+      "title": "Postprocessing",
+      "author": "Raoul van Rüschen",
+      "sourceUrl": "https://github.com/pmndrs/postprocessing",
+      "license": "Zlib",
+      "licenseUrl": "https://github.com/pmndrs/postprocessing/blob/main/LICENSE.md",
+      "noticeUrl": "/planetarium/licenses/Postprocessing-Zlib.txt",
+      "note": "Version 6.39.5; bloom, antialiasing and tone mapping.",
+      "assetIds": []
+    },
+    {
+      "id": "geospatial",
+      "title": "Three Geospatial",
+      "author": "Shota Matsuda / Takram",
+      "sourceUrl": "https://github.com/takram-design-engineering/three-geospatial/tree/b012ad06d858fc035d88aacfd73f092f93c994e4/packages/core",
+      "license": "MIT; component notices retained",
+      "licenseUrl": "https://github.com/takram-design-engineering/three-geospatial/blob/b012ad06d858fc035d88aacfd73f092f93c994e4/packages/core/LICENSE",
+      "noticeUrl": "/planetarium/licenses/Takram-geospatial-LICENSE.txt",
+      "note": "Version 0.9.1; atmospheric rendering coordinate utilities. Full package notice retained, including the separate Apache-2.0 notice for its additional WebGPU source path.",
+      "assetIds": []
+    }
+  ]
+}

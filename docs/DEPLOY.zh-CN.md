@@ -27,6 +27,17 @@ pnpm test:jest
 
 ### Docker 核心模式
 
+完成第一次 Docker 安装与构建后，Windows 可双击根目录的 **`启动网站.bat`**。
+它会按需启动 Docker Desktop，验证已选择的本地存储策略，分批启动已有的六个核心镜像，
+打开实际配置的本地端口，并请求已有的共享任务调度器；调度器通过租约防止重复执行。
+工具位置取自可选本地配置或 PATH，没有固定盘符或用户目录要求。
+此入口不会自动安装工具、下载镜像或重新构建；缺少初始镜像会明确提示先完成安装。
+只检查启动、不打开浏览器和请求调度器时，可运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Start-OcvWebsite.ps1 -NoOpen -NoRunner
+```
+
 Linux 使用 Docker Engine + Compose v2；Windows/macOS 使用 Docker Desktop 的 Linux 容器模式。在根目录运行：
 
 ```sh

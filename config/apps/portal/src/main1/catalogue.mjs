@@ -33,6 +33,7 @@ export const catalogue=[
  {id:'favorites',title:'收藏夹',url:'/favorites/',keywords:'收藏 分组 排序 favorites bookmarks',available:true,group:'门户'},
  {id:'research',title:'研究',url:'/research/',keywords:'research 研究 科研 论文 RSA adsorption operational memory exact certificates 互动 演示',available:true,group:'推荐'},
  {id:'signals',title:'通信实验',url:'/signals/',keywords:'电路 通信 实验室 仿真 卫星 基站 路由器 网络 数据包 schematic circuit signals network simulation BPSK CRC',available:true,group:'推荐'},
+ {id:'planetarium',title:'Planetarium',url:'/planetarium/',keywords:'天象仪 星空 星座 太阳系 日食 月食 银河 行星 天文 planetarium astronomy stars constellations solar system eclipse',available:true,group:'推荐'},
  {id:'media',title:'影音',url:'/media/',keywords:'视频 播放 音效 春日影 老吴',available:true,group:'影音'},
  {id:'background-music',title:'背景音乐',url:'/#systems',keywords:'背景音乐 随机 播放 犯错 囊囊囊 我从南极来 天空 灵感菇',available:true,group:'影音'},
  ...laboratories.map(item=>({id:'lab-'+item.panel,title:item.title,url:labLink(item),keywords:'实验室 lab '+item.path,available:true,group:'实验室'})),
@@ -46,7 +47,7 @@ export const catalogue=[
  {id:'games',title:'小游戏',url:'/functions/games/',keywords:'井字棋 扫雷 2048 贪吃蛇 打砖块 猜数字 反应 打字 翻牌 游戏 game',phase:7,group:'游戏',available:true},
  ...tools.map(t=>({id:t.id,title:t.title,url:toolLink(t),keywords:`${t.title} ${t.id} ${t.group} ${aliases[t.id]||''} ${(t.fields||[]).map(f=>f.label||'').join(' ')}`,group:t.group,phase:t.phase,available:true,...(t.universalOnly?{universalOnly:true}:{})})),
 ];
-export const recommend=(items=catalogue)=>{const preferred=['research','signals'].map(id=>items.find(item=>item.id===id)).filter(Boolean);const sorted=items.filter(item=>!item.universalOnly&&!preferred.includes(item)).sort((a,b)=>Array.from(a.title).length-Array.from(b.title).length||a.id.localeCompare(b.id));return [...preferred,...sorted.slice(0,7-preferred.length)];};
+export const recommend=(items=catalogue)=>{const preferred=['research','signals','planetarium'].map(id=>items.find(item=>item.id===id)).filter(Boolean);const sorted=items.filter(item=>!item.universalOnly&&!preferred.includes(item)).sort((a,b)=>Array.from(a.title).length-Array.from(b.title).length||a.id.localeCompare(b.id));return [...preferred,...sorted.slice(0,7-preferred.length)];};
 export function searchFeatures(value,{universal=true}={}){
  const normal=value=>String(value).normalize('NFKC').toLocaleLowerCase();
  const compact=value=>normal(value).replace(/[\s\p{P}]+/gu,'');

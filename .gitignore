@@ -141,6 +141,8 @@ scripts/profile-3d-*
 scripts/review-phase8-*
 !docs/PORTABILITY.md
 !docs/SITE-SERVICES.md
+!docs/PLANETARIUM-ASSETS.md
+!docs/PLANETARIUM-OBJECT-NOTES.md
 scripts/verify-visual-revision.mjs
 pinia/receipt2/aux.rs
 vps-1g/

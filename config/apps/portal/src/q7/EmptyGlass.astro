@@ -1,0 +1,33 @@
+---
+import './empty-glass.css';
+
+const cabal312512GlassLocations = {
+  '/': [[7, 23, 348, 230], [71, 58, 244, 158], [39, 74, 182, 116]],
+  '/functions/': [[76, 30, 270, 194]],
+  '/favorites/': [[66, 43, 292, 210], [8, 72, 174, 112]],
+  '/profile/': [[70, 48, 264, 190]],
+  '/workspace/': [[6, 57, 256, 176]],
+  '/maze/window/': [[10, 24, 382, 262], [73, 63, 202, 142]],
+  '/maze/window/under/': [[63, 41, 318, 224]],
+  '/maze/cache/': [[9, 56, 302, 192], [77, 23, 168, 122]],
+  '/maze/table/': [[68, 51, 332, 206]],
+};
+const pathname = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const frames = cabal312512GlassLocations[pathname] || [];
+---
+{frames.length > 0 && <div class="empty-glass-layer" data-empty-glass-layer>
+  {frames.map(([left, top, width, height], i) => <aside
+    class="empty-glass-frame"
+    data-empty-glass-frame
+    data-glass-secondary={i > 0 ? '' : undefined}
+    aria-label="透明空框"
+    style={`--glass-left:${left}vw;--glass-top:${top}vh;--glass-width:${width}px;--glass-height:${height}px`}
+  >
+    <div class="empty-glass-chrome" data-empty-glass-drag tabindex="0" role="group" aria-label="拖动透明空框，方向键移动，Home 复位">
+      <span aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10"/></svg></span>
+      <span aria-hidden="true"><svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" rx=".5"/></svg></span>
+      <button type="button" data-empty-glass-close aria-label="关闭透明空框"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 3 10 10M13 3 3 13"/></svg></button>
+    </div>
+  </aside>)}
+</div>}
+<script>import './empty-glass.mjs';</script>

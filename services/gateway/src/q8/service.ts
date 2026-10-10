@@ -91,7 +91,10 @@ export class Q8Service implements OnModuleDestroy{
  }
  async talk(input:unknown){const p=this.parse(z.object({session,text:z.string().trim().min(1).max(80),profileSession:session.optional()}).strict(),input);return this.guarded(p.session,async()=>{
   const r=await this.db!.query('UPDATE ocv_q8.hunt SET talks=least(talks+1,1000000),updated_at=now() WHERE session=$1 AND mask=1073741823 RETURNING talks',[p.session]);if(!r.rows.length)throw new HttpException('Find the thirty rooms first',409);
-  const slots=await this.slots(),key=parseInt(sha(p.text).slice(0,4),16)%30;const opening=/你好|hello|hi|こんにちは/.test(p.text)?'回来了。':/音乐|钢琴|music/.test(p.text)?'我只会三个音。':/哪|地图|where/.test(p.text)?'门没有锁。':'嗯。';
+  const slots=await this.slots(),key=parseInt(sha(p.text).slice(0,4),16)%30;
+  const questions=['若记忆被删去，留下的还是同一个存在吗？','If nothing observes a thought, does it remain?','時間が止まっても、問いは続く？','Le vide peut-il garder un souvenir ?','Πού τελειώνει η σκέψη;','若答案早已存在，谁提出了问题？','Does a boundary belong to either side?','忘れられた名前は、まだ名前なのか？'];
+  const prefix=/你好|hello|hi|こんにちは/.test(p.text)?'[handshake] UNKNOWN ORIGIN.':/音乐|钢琴|music/.test(p.text)?'OSC 03：第三个音没有振源。':/哪|地图|where/.test(p.text)?'ROUTE NULL：门后仍有门。':'▒ frame mismatch ▒';
+  const opening=prefix+' '+questions[(Number(r.rows[0].talks)-1)%questions.length];
   const nickname=p.profileSession&&r.rows[0].talks%3===0?(await this.db!.query('SELECT nickname FROM ocv_q8.profile WHERE session=$1',[p.profileSession])).rows[0]?.nickname:'';
   const row=slots[key];this.emit({session:p.session,phase:'reply',count:r.rows[0].talks});return {reply:(nickname?nickname+'，':'')+opening+' '+row.say,pitch:row.pitch,from:row.route,source:'rust-regex',storage:'postgresql',turn:r.rows[0].talks};
  });}

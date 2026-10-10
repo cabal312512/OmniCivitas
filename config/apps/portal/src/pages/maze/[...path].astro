@@ -18,6 +18,7 @@ import Panel from '../../z/Panel.astro';
 import MediaFrame from '../../p2/Frame.astro';
 import SiteNav from '../../q9/Nav.astro';
 import Resident from '../../q9/Resident.astro';
+import ResidentPreview from '../../q8/ResidentPreview.astro';
 export function getStaticPaths(){return rooms.map((room,index)=>({params:{path:room.path||undefined},props:{room,index}}));}
 const {room,index}=Astro.props;
 const links=linksFor(index);
@@ -26,7 +27,8 @@ const repeated=Array.from({length:room.layout==='long'?22:room.layout==='horizon
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#f8fbfd"/><title>{room.title} · OmniCivitas</title><link rel="icon" href="/favicon.svg"/></head>
 <body class={`maze-page layout-${room.layout}`} data-room={index}><Fragments/>
  <OpticalBench />
- {room.path==='aside'&&<Resident/>}
+ {['aside','window/under'].includes(room.path)&&<Resident/>}
+ {room.path==='window/under'&&<ResidentPreview/>}
  {room.path==='empty'&&<Laowu/>}
  {room.path===''&&<MediaShortcuts/>}
  {room.path==='display'&&<MediaFrame kind="voice"/>}
@@ -55,6 +57,7 @@ const repeated=Array.from({length:room.layout==='long'?22:room.layout==='horizon
   <aside class="maze-sidebar"><span>更多</span>{repeated.map((item,i)=><a href={address(item)} style={`--row:${i}`}><b>{String(i+1).padStart(2,'0')}</b><span>{item.title}</span><i>↗</i></a>)}</aside>
   {['cache','display/fold','offices/settings/backup'].includes(room.path)&&<section class="maze-panel" style="position:absolute;left:56%;top:690px;width:168px;z-index:28"><div class="maze-title">实验</div><a href="/signals/" style="display:block;padding:12px;color:#164dff;text-decoration:underline">通信实验 ↗</a></section>}
   {['table','offices/settings','route/a/b/c/d/e'].includes(room.path)&&<section class="maze-panel" style="position:absolute;left:63%;top:830px;width:188px;z-index:29"><div class="maze-title">机械工坊</div><a href="/workshop/" style="display:block;padding:12px;color:#164dff;text-decoration:underline">机械工坊 ↗</a></section>}
+  {['display','cache/l1/l2','route/a/b/c/d/e'].includes(room.path)&&<section class="maze-panel" style="position:absolute;left:72%;top:1050px;width:174px;z-index:30"><div class="maze-title">天象仪</div><a href="/planetarium/" style="display:block;padding:14px;color:#164dff;text-decoration:underline">天象仪 ↗</a></section>}
   {room.path==='window/under'&&<CialloAttachment/>}
   <footer class="maze-footer"><a href={address(rooms[(index+rooms.length-1)%rooms.length])}>上一层</a><span>—</span><a href={address(rooms[(index+1)%rooms.length])}>下一层</a></footer>
   <Maintenance room={index}/>
@@ -63,5 +66,11 @@ const repeated=Array.from({length:room.layout==='long'?22:room.layout==='horizon
  </main></div>
  <a class="maze-exit" href="/#systems" aria-label="退出迷宫返回主页" title="返回主页">↖</a>
  <a class="maze-index" href="/maze/" aria-label="打开完整迷宫目录">▦</a>
+ {room.path==='display/fold/back'&&<a class="planetarium-corner-link" data-planetarium-corner href="/planetarium/" aria-label="Open Planetarium"><img src="/forgotten-cache/planetarium-corner.png" alt="Planetarium" width="458" height="501" loading="lazy" decoding="async"/></a>}
  <script>import '../../aaa/迷宫.js';import '../../aaa/b.js';</script>
 </body></html>
+<style>
+ .planetarium-corner-link{position:fixed;left:18px;bottom:22px;z-index:1002;display:block;width:78px;padding:0;border:0;background:transparent;line-height:0;text-decoration:none}
+ .planetarium-corner-link img{display:block;width:78px;height:auto;max-width:none;transform:none!important;rotate:0deg!important}
+ @media(max-width:700px){.planetarium-corner-link{left:14px;bottom:18px}}
+</style>

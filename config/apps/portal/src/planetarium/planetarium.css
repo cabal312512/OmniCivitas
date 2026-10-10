@@ -1,0 +1,1580 @@
+:root {
+  color-scheme: dark;
+  --sky-ink: #e7edf9;
+  --sky-muted: #9ba6bd;
+  --sky-line: rgba(199, 213, 240, 0.09);
+  --sky-panel: rgba(9, 15, 25, 0.24);
+  --sky-accent: #b7cbff;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body.planetarium-page {
+  background: #03050b;
+  color: var(--sky-ink);
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+}
+button:disabled {
+  cursor: wait;
+  opacity: 0.45;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #a8c4ff;
+  outline-offset: 4px;
+}
+button,
+select {
+  border: 0;
+  background: none;
+}
+button:hover {
+  color: #fff;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+[hidden] {
+  display: none !important;
+}
+svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#planetarium {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  isolation: isolate;
+}
+#planetarium-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  outline: none;
+}
+#planetarium-canvas:focus-visible {
+  box-shadow: inset 0 0 0 1px rgba(168, 196, 255, 0.45);
+}
+.planetarium-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(1, 3, 8, 0.36),
+      transparent 19%,
+      transparent 76%,
+      rgba(1, 3, 8, 0.25)
+    ),
+    radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.15));
+  z-index: 1;
+}
+.planetarium-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 92px;
+  padding: 26px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 4;
+  pointer-events: none;
+  gap: 18px;
+}
+.planetarium-header > * {
+  pointer-events: auto;
+}
+.planetarium-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #c7d4ee;
+}
+.planetarium-brand svg {
+  width: 33px;
+  height: 33px;
+}
+.planetarium-brand span {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  font-weight: 550;
+}
+.view-switch {
+  display: flex;
+  padding: 4px;
+  border: 1px solid rgba(211, 223, 246, 0.08);
+  border-radius: 40px;
+  background: rgba(9, 14, 25, 0.08);
+  backdrop-filter: blur(1.5px);
+  box-shadow: inset 0 1px 0 rgba(226, 237, 255, 0.035);
+}
+.view-switch button {
+  position: relative;
+  padding: 10px 20px 12px;
+  border-radius: 30px;
+  font-size: 11px;
+  letter-spacing: 0.025em;
+  color: #9eabc3;
+  white-space: nowrap;
+  transition:
+    background 0.22s,
+    color 0.22s;
+}
+.view-switch button[aria-pressed="true"] {
+  background: rgba(207, 218, 243, 0.035);
+  color: #eaf0ff;
+}
+.view-switch button[aria-pressed="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: calc(50% - 7px);
+  width: 14px;
+  height: 1px;
+  background: rgba(223, 233, 255, 0.7);
+  box-shadow: 0 0 8px rgba(156, 191, 255, 0.3);
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 125px;
+  justify-content: flex-end;
+}
+.language-button {
+  font-size: 11px;
+  color: #a9b8d1;
+  padding: 9px;
+}
+.icon-button {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #aebbd1;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.icon-button svg {
+  width: 19px;
+  height: 19px;
+}
+.icon-button:hover,
+.icon-button[aria-pressed="true"] {
+  color: #e3ecff;
+  background: rgba(148, 183, 248, 0.12);
+}
+.sky-tools {
+  position: absolute;
+  top: 46%;
+  left: 31px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 4;
+}
+.sky-tools .icon-button {
+  width: 42px;
+  height: 42px;
+  background: rgba(12, 19, 30, 0.08);
+  border: 1px solid rgba(170, 197, 240, 0.045);
+  backdrop-filter: blur(1.5px);
+}
+.sky-tools .icon-button[aria-pressed="true"] {
+  background: rgba(177, 198, 234, 0.05);
+  border-color: rgba(193, 215, 252, 0.13);
+}
+.constellation-label {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: rgba(206, 223, 255, 0.78);
+  text-shadow: 0 0 15px #86adff;
+  transform: translate(-50%, -50%);
+}
+.planetarium-controls {
+  position: absolute;
+  z-index: 4;
+  bottom: 28px;
+  left: 32px;
+  right: 32px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  pointer-events: none;
+}
+.planetarium-controls > * {
+  pointer-events: auto;
+}
+.location-button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 0;
+  color: #b5c2d9;
+  font-size: 12px;
+  min-width: 145px;
+  justify-content: flex-start;
+}
+.location-button svg {
+  width: 16px;
+  height: 16px;
+}
+.time-controls {
+  grid-column: 2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px;
+  border: 1px solid rgba(199, 213, 240, 0.055);
+  border-radius: 13px;
+  background: linear-gradient(
+    115deg,
+    rgba(16, 25, 40, 0.12),
+    rgba(11, 17, 29, 0.06) 52%,
+    rgba(16, 25, 40, 0.1)
+  );
+  backdrop-filter: blur(1.5px);
+  box-shadow:
+    inset 0 1px 0 rgba(226, 237, 255, 0.035),
+    0 4px 20px rgba(0, 0, 0, 0.06);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.help-symbol {
+  font-size: 15px;
+  font-weight: 400;
+}
+.music-button[aria-pressed="false"] {
+  opacity: 0.45;
+}
+.setting-row input[type="range"] {
+  width: 115px;
+  height: 2px;
+}
+.controls-guide {
+  display: grid;
+  gap: 19px;
+}
+.controls-guide > div {
+  display: grid;
+  gap: 7px;
+}
+.controls-guide span {
+  font-size: 12px;
+  color: #cedbf0;
+}
+.controls-guide kbd {
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1.7;
+  color: #8ca0c0;
+}
+.experience-list {
+  display: grid;
+  gap: 20px;
+}
+.experience-list section {
+  display: grid;
+  gap: 5px;
+}
+.experience-list h3 {
+  font-size: 9px;
+  font-weight: 450;
+  letter-spacing: 0.17em;
+  color: #859ab9;
+  margin: 0 0 5px;
+}
+.experience-list button {
+  display: flex;
+  gap: 13px;
+  width: 100%;
+  align-items: center;
+  text-align: left;
+  padding: 12px 8px;
+  font-size: 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.experience-list button:hover,
+.experience-list button[aria-pressed="true"] {
+  background: rgba(142, 176, 235, 0.075);
+}
+.experience-icon {
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.experience-icon::before,
+.experience-icon::after {
+  content: "";
+  position: absolute;
+}
+.experience-icon.meteor::before {
+  width: 26px;
+  height: 1px;
+  top: 13px;
+  background: linear-gradient(90deg, transparent, #b6d2ff);
+  transform: rotate(-35deg);
+}
+.experience-icon.meteor::after {
+  width: 3px;
+  height: 3px;
+  top: 5px;
+  right: 0;
+  border-radius: 50%;
+  background: #d9e8ff;
+  box-shadow: 0 0 9px #7eacff;
+}
+.experience-icon.trails::before {
+  inset: 2px;
+  border: 1px solid rgba(169, 201, 251, 0.5);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  transform: rotate(-30deg);
+}
+.experience-icon.trails::after {
+  inset: 7px;
+  border: 1px solid rgba(169, 201, 251, 0.3);
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+.experience-icon.moon::before {
+  inset: 3px;
+  border-radius: 50%;
+  background: #bbc9e1;
+}
+.experience-icon.moon::after {
+  inset: 1px 0 7px 8px;
+  border-radius: 50%;
+  background: #101a2b;
+}
+.experience-icon.orbits::before {
+  inset: 5px 0;
+  border: 1px solid #91add7;
+  border-radius: 50%;
+  transform: rotate(-35deg);
+}
+.experience-icon.orbits::after {
+  inset: 9px;
+  border-radius: 50%;
+  background: #b6d1fa;
+  box-shadow: 0 0 8px rgba(161, 193, 255, 0.3);
+}
+.experience-icon.sun::before {
+  inset: 4px;
+  border-radius: 50%;
+  border: 1px solid #dec594;
+  box-shadow: 0 0 9px rgba(255, 211, 139, 0.14);
+}
+.experience-icon.sun::after {
+  inset: 6px;
+  border-radius: 50%;
+  background: rgba(4, 7, 12, 0.9);
+}
+.experience-icon.shadow::before {
+  inset: 3px 11px 3px 0;
+  border-radius: 50%;
+  background: #b8d9ef;
+  box-shadow: 0 0 8px rgba(152, 209, 255, 0.16);
+}
+.experience-icon.shadow::after {
+  inset: 6px 0 6px 11px;
+  background: linear-gradient(90deg, rgba(130, 191, 242, 0.5), transparent);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.experience-dock {
+  position: absolute;
+  z-index: 4;
+  bottom: 115px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(480px, calc(100% - 48px));
+  padding: 12px 18px 15px;
+  border: 1px solid rgba(192, 215, 253, 0.15);
+  border-radius: 16px;
+  background: linear-gradient(
+    120deg,
+    rgba(24, 36, 57, 0.17),
+    rgba(8, 14, 25, 0.08)
+  );
+  backdrop-filter: blur(4px);
+  box-shadow:
+    inset 0 1px 0 rgba(225, 236, 255, 0.08),
+    0 15px 45px rgba(0, 0, 0, 0.1);
+}
+.experience-dock::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: -1px;
+  left: 22px;
+  width: 88px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(210, 231, 255, 0.55),
+    transparent
+  );
+}
+.experience-dock[aria-busy="true"] .experience-options {
+  pointer-events: none;
+  opacity: 0.45;
+}
+.experience-dock[aria-busy="true"]::before {
+  animation: experience-prepare 1.2s ease-in-out infinite alternate;
+}
+@keyframes experience-prepare {
+  to {
+    left: calc(100% - 110px);
+    opacity: 0.35;
+  }
+}
+.experience-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+  color: #c5d4eb;
+}
+.experience-heading .close-button {
+  font-size: 17px;
+}
+.experience-dock .eclipse-progress {
+  position: static;
+  transform: none;
+  width: 100%;
+  margin-top: 10px;
+}
+.experience-dock .eclipse-timeline {
+  width: 100%;
+}
+.experience-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  font-size: 11px;
+  color: #a6bad9;
+}
+.experience-actions button {
+  padding: 7px 12px;
+}
+.experience-dock:has(.experience-actions > button:not([hidden]))
+  .experience-actions {
+  margin-top: 9px;
+}
+.moon-phases {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+  margin-top: 11px;
+}
+.moon-phases button {
+  padding: 8px 0;
+  border-radius: 6px;
+}
+.moon-phases button[aria-pressed="true"] {
+  background: rgba(170, 201, 247, 0.14);
+}
+.phase-disc {
+  display: block;
+  position: relative;
+  margin: auto;
+  width: 27px;
+  height: 27px;
+  filter: drop-shadow(0 0 5px rgba(199, 220, 252, 0.1));
+  stroke: none;
+}
+.experience-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 11px;
+}
+.experience-field {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #8eabc9;
+  font-size: 10px;
+  min-width: 0;
+}
+.experience-field select {
+  border: 1px solid rgba(171, 205, 239, 0.14);
+  border-radius: 7px;
+  padding: 7px 6px;
+  font-size: 11px;
+  color: #d7e6fc;
+  background: rgba(14, 25, 43, 0.14);
+  max-width: 145px;
+  cursor: pointer;
+}
+.experience-field option {
+  background: #101a2b;
+}
+.experience-range {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 100%;
+  gap: 10px;
+}
+.experience-range output {
+  color: #c4d9f3;
+  font-variant-numeric: tabular-nums;
+  font-size: 10px;
+}
+.experience-range input {
+  appearance: none;
+  grid-column: 1 / -1;
+  margin: 4px 0 5px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(142, 198, 242, 0.18),
+    rgba(208, 224, 250, 0.34)
+  );
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0;
+  accent-color: #c4ddf8;
+}
+.experience-range input::-webkit-slider-thumb {
+  appearance: none;
+  width: 9px;
+  height: 9px;
+  border: 1px solid #d3e8fc;
+  border-radius: 50%;
+  background: #adcbea;
+  box-shadow: 0 0 12px rgba(164, 213, 255, 0.5);
+}
+.experience-range input::-moz-range-thumb {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #d3e8fc;
+  background: #adcbea;
+}
+.experience-action,
+.experience-toggle,
+.experience-segments button {
+  min-height: 30px;
+  padding: 6px 10px;
+  border: 1px solid rgba(172, 200, 236, 0.12);
+  border-radius: 8px;
+  color: #aabfdb;
+  font-size: 11px;
+  background: rgba(164, 200, 246, 0.015);
+}
+.experience-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.experience-action[data-experience-action="play"] {
+  margin-left: auto;
+  color: #d0e5ff;
+  min-width: 34px;
+  justify-content: center;
+}
+.experience-action:hover,
+.experience-toggle:hover,
+.experience-segments button:hover,
+.experience-toggle[aria-pressed="true"],
+.experience-segments button[aria-pressed="true"] {
+  background: rgba(154, 193, 245, 0.09);
+  color: #e0efff;
+  border-color: rgba(172, 213, 253, 0.26);
+}
+.experience-segments {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid rgba(172, 200, 236, 0.12);
+  border-radius: 10px;
+}
+.experience-segments button {
+  border-color: transparent;
+  min-height: 26px;
+  padding: 4px 12px;
+}
+.experience-model-note {
+  width: 100%;
+  color: #69809b;
+  text-align: right;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  margin-top: -4px;
+}
+#planetarium[data-view="eclipse"] .planetarium-controls,
+#planetarium[data-view="studio"] .planetarium-controls,
+#planetarium[data-experience="meteors"] .planetarium-controls,
+#planetarium[data-experience="trails"] .planetarium-controls {
+  display: none;
+}
+#planetarium[data-view="eclipse"] .experience-dock,
+#planetarium[data-view="studio"] .experience-dock,
+#planetarium[data-experience="meteors"] .experience-dock,
+#planetarium[data-experience="trails"] .experience-dock {
+  bottom: 36px;
+}
+#planetarium[data-view="eclipse"] .sky-tools,
+#planetarium[data-view="studio"] .sky-tools {
+  opacity: 0.6;
+}
+#planetarium[data-view="studio"]
+  .sky-tools
+  > button:not([data-panel-toggle="experiences"]) {
+  display: none;
+}
+.orientation-hud {
+  position: absolute;
+  z-index: 3;
+  right: 27px;
+  bottom: 57px;
+  width: 226px;
+  pointer-events: none;
+  color: #a8bddd;
+}
+.gyroscope-viewport {
+  position: relative;
+  width: 226px;
+  height: 226px;
+  pointer-events: auto;
+  touch-action: none;
+  cursor: grab;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(2, 8, 20, 0.13), transparent 68%);
+  user-select: none;
+}
+.gyroscope-viewport:active {
+  cursor: grabbing;
+}
+.gyroscope-viewport:focus-visible {
+  outline: 1px solid rgba(163, 202, 255, 0.5);
+  outline-offset: 4px;
+}
+.gyroscope-viewport > span {
+  position: absolute;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #c6e1ff;
+  text-shadow:
+    0 0 10px #163767,
+    0 1px 4px #000;
+  pointer-events: none;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+}
+.compass-north {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.compass-east {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.compass-south {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.compass-west {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.orientation-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.view-direction {
+  min-width: 22px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+.reset-view {
+  pointer-events: auto;
+  width: 27px;
+  height: 27px;
+}
+.reset-view svg {
+  width: 15px;
+  height: 15px;
+}
+.orientation-readout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 4px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.orientation-readout button {
+  pointer-events: auto;
+  display: grid;
+  gap: 5px;
+  color: inherit;
+  padding: 4px 0;
+  border-top: 1px solid rgba(180, 201, 238, 0.09);
+  cursor: pointer;
+}
+.orientation-readout button[aria-pressed="true"] {
+  border-color: currentColor;
+  text-shadow: 0 0 12px currentColor;
+}
+.orientation-readout
+  button[data-direction-axis="azimuth"][aria-pressed="true"] {
+  color: #95e9f2;
+}
+.orientation-readout
+  button[data-direction-axis="elevation"][aria-pressed="true"] {
+  color: #c3a6ff;
+}
+.orientation-readout button[data-direction-axis="roll"][aria-pressed="true"] {
+  color: #ffd6a0;
+}
+.orientation-readout button:focus-visible {
+  outline: 1px solid currentColor;
+}
+.orientation-readout small {
+  font-size: 9px;
+  color: #a4b8d5;
+  letter-spacing: 0.09em;
+}
+.orientation-readout output {
+  font-size: 12px;
+  color: #d1e5ff;
+}
+.time-controls::before,
+.time-controls::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.time-controls::before {
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    125deg,
+    rgba(223, 237, 255, 0.34),
+    rgba(181, 205, 244, 0.07) 24%,
+    rgba(181, 205, 244, 0.025) 56%,
+    rgba(211, 228, 255, 0.24) 84%,
+    rgba(181, 205, 244, 0.06)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+.time-controls::after {
+  top: 1px;
+  left: 21px;
+  width: 72px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(233, 243, 255, 0.32),
+    transparent
+  );
+}
+.time-controls:hover,
+.time-controls:focus-within {
+  background-color: rgba(11, 17, 29, 0.055);
+  border-color: rgba(199, 213, 240, 0.1);
+}
+.play-button {
+  background: rgba(157, 189, 255, 0.06);
+  color: #d6e4ff;
+}
+.time-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+  gap: 5px;
+  padding: 5px 12px;
+}
+.time-display time {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: #aab8d1;
+}
+.clock-display {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.12em;
+}
+.clock-display small {
+  font-size: 8px;
+  color: #8797b3;
+  letter-spacing: 0.08em;
+  margin-left: 5px;
+}
+.time-speed {
+  font-size: 11px;
+  color: #b5c6e4;
+  padding: 8px 4px;
+  max-width: 97px;
+  cursor: pointer;
+}
+.time-speed option,
+[data-quality] option {
+  background: #111a29;
+  color: #dae4f9;
+}
+.now-button {
+  font-size: 11px;
+  color: #9aa9c2;
+  border-left: 1px solid var(--sky-line);
+  padding: 9px 0 9px 15px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tour-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 145px;
+  gap: 10px;
+  font-size: 11px;
+  color: #aabbd6;
+  letter-spacing: 0.06em;
+}
+.tour-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #94baff;
+  box-shadow: 0 0 12px rgba(112, 162, 255, 0.75);
+}
+.tour-button[aria-pressed="true"] .tour-dot {
+  animation: tour-pulse 2s infinite;
+}
+.solar-scale-note {
+  position: absolute;
+  right: 33px;
+  bottom: 98px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: #8292ad;
+  pointer-events: none;
+}
+.planetarium-panel {
+  position: absolute;
+  right: 32px;
+  top: 107px;
+  width: 312px;
+  max-height: calc(100% - 240px);
+  overflow: auto;
+  z-index: 5;
+  background: var(--sky-panel);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--sky-line);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.16);
+  scrollbar-width: thin;
+  scrollbar-color: #34465f transparent;
+  animation: panel-enter 0.2s ease-out;
+}
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+.panel-heading h2 {
+  font-weight: 450;
+  letter-spacing: 0.02em;
+  font-size: 16px;
+  margin: 0;
+}
+.close-button {
+  font-size: 21px;
+  width: 25px;
+  height: 25px;
+  line-height: 22px;
+  color: #8d9cb7;
+}
+.planetarium-panel input[type="search"] {
+  width: 100%;
+  background: rgba(129, 160, 211, 0.07);
+  border: 1px solid var(--sky-line);
+  border-radius: 8px;
+  padding: 11px;
+  color: #dce8ff;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+.planetarium-panel input::placeholder {
+  color: #71829f;
+}
+.object-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.object-list button,
+.location-list button,
+.eclipse-list button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 11px 8px;
+  border-radius: 7px;
+  font-size: 12px;
+  gap: 10px;
+  color: #c8d5ed;
+}
+.object-list button:hover,
+.location-list button:hover,
+.eclipse-list button:hover {
+  background: rgba(144, 176, 233, 0.09);
+}
+.object-list button small,
+.location-list button small,
+.eclipse-list button small {
+  font-size: 9px;
+  color: #8192af;
+}
+.location-list button[aria-pressed="true"] {
+  background: rgba(149, 187, 255, 0.09);
+  color: #ddeaff;
+}
+.coordinates {
+  margin-top: 20px;
+  border-top: 1px solid var(--sky-line);
+  padding-top: 17px;
+}
+.coordinates summary {
+  font-size: 11px;
+  color: #9baac5;
+  cursor: pointer;
+}
+.coordinates form {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.coordinates label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 10px;
+  color: #91a3c0;
+}
+.coordinates input {
+  width: 100%;
+  background: #111b2d;
+  border: 1px solid var(--sky-line);
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 12px;
+  color: #d5e2fc;
+}
+.coordinates button {
+  grid-column: 1/-1;
+  background: rgba(147, 180, 240, 0.12);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 21px 0;
+  font-size: 12px;
+  color: #bdcbe3;
+}
+.setting-row input {
+  accent-color: #9db9f5;
+  cursor: pointer;
+}
+.setting-row select {
+  font-size: 11px;
+  padding: 5px;
+  color: #a8bbdf;
+}
+.credits-button {
+  border-top: 1px solid var(--sky-line);
+  text-align: left;
+  padding: 19px 0 0;
+  width: 100%;
+  font-size: 11px;
+  color: #879dbf;
+}
+.credits-list article {
+  margin-bottom: 21px;
+}
+.credits-list h3 {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0 0 6px;
+  color: #d0dcf3;
+}
+.credits-list p,
+.credits-list a {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #91a4c5;
+  margin: 4px 0;
+  overflow-wrap: anywhere;
+}
+.credits-list a,
+.credits-link {
+  color: #b2c9ee;
+  font-size: 11px;
+}
+.eclipse-list button {
+  align-items: flex-start;
+  padding: 16px 10px;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid rgba(158, 191, 243, 0.08);
+  border-radius: 0;
+}
+.eclipse-list button > span {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.eclipse-list button small {
+  display: block;
+}
+.eclipse-list button[aria-pressed="true"] {
+  color: #e7efff;
+  background: rgba(124, 163, 240, 0.1);
+}
+.object-card {
+  position: absolute;
+  left: 34px;
+  bottom: 126px;
+  width: 255px;
+  padding: 18px 20px;
+  z-index: 4;
+  border-left: 1px solid rgba(188, 208, 245, 0.22);
+  background: linear-gradient(90deg, rgba(9, 15, 26, 0.22), rgba(9, 15, 26, 0));
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  animation: panel-enter 0.25s ease-out;
+}
+.object-card .close-button {
+  position: absolute;
+  top: 12px;
+  right: 9px;
+}
+.object-kind {
+  margin: 0 0 10px;
+  color: #8198bc;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+.object-name {
+  font-size: 26px;
+  font-weight: 350;
+  letter-spacing: -0.02em;
+  margin: 0 0 15px;
+}
+.object-description {
+  font-size: 12px;
+  line-height: 1.65;
+  color: #b0bed4;
+  margin: -5px 0 14px;
+  text-wrap: pretty;
+}
+.star-target {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(164, 218, 255, 0.7);
+  border-radius: 50%;
+  box-shadow:
+    0 0 16px rgba(91, 173, 255, 0.24),
+    inset 0 0 9px rgba(91, 173, 255, 0.12);
+  z-index: 2;
+  pointer-events: none;
+}
+.star-target::before,
+.star-target::after {
+  content: "";
+  position: absolute;
+  background: rgba(171, 220, 255, 0.65);
+}
+.star-target::before {
+  left: -5px;
+  top: 50%;
+  width: 37px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    currentColor 0 5px,
+    transparent 5px 32px,
+    currentColor 32px
+  );
+}
+.star-target::after {
+  left: 50%;
+  top: -5px;
+  height: 37px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    currentColor 0 5px,
+    transparent 5px 32px,
+    currentColor 32px
+  );
+}
+.object-facts {
+  display: flex;
+  gap: 18px;
+  color: #a9bbd8;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.object-facts span {
+  display: flex;
+  flex-direction: column;
+}
+.object-facts small {
+  font-size: 8px;
+  color: #7186a8;
+  letter-spacing: 0.08em;
+}
+.focus-object {
+  margin-top: 18px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #b8d0fd;
+  padding: 0;
+}
+.focus-object::after {
+  content: " ↗";
+  padding-left: 8px;
+}
+.eclipse-progress {
+  position: absolute;
+  bottom: 117px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(560px, calc(100% - 70px));
+  z-index: 4;
+  text-align: center;
+}
+.eclipse-name {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #d5e1f8;
+}
+.eclipse-timeline {
+  position: relative;
+  margin: 14px 0 9px;
+}
+.eclipse-timeline input {
+  width: 100%;
+  height: 2px;
+  appearance: none;
+  background: rgba(175, 198, 246, 0.22);
+  cursor: pointer;
+  display: block;
+}
+.eclipse-timeline input::-webkit-slider-thumb {
+  appearance: none;
+  width: 7px;
+  height: 7px;
+  background: #cfddff;
+  border-radius: 50%;
+  box-shadow: 0 0 13px rgba(135, 179, 255, 0.6);
+}
+.eclipse-timeline input::-moz-range-thumb {
+  width: 7px;
+  height: 7px;
+  background: #cfddff;
+  border: 0;
+  border-radius: 50%;
+}
+.eclipse-contacts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.eclipse-contacts i {
+  position: absolute;
+  top: 0;
+  height: 6px;
+  width: 1px;
+  background: rgba(197, 216, 251, 0.65);
+}
+.eclipse-phase {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #829abc;
+}
+.time-popover {
+  position: absolute;
+  bottom: 115px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  background: var(--sky-panel);
+  border: 1px solid var(--sky-line);
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  border-radius: 12px;
+}
+.time-popover form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.time-popover label {
+  font-size: 11px;
+  color: #9eb0d0;
+}
+.time-popover input {
+  background: #111b2e;
+  border: 1px solid var(--sky-line);
+  border-radius: 5px;
+  padding: 9px;
+  font-size: 12px;
+  color: #d9e7ff;
+}
+.time-popover button {
+  padding: 9px;
+  background: rgba(156, 188, 247, 0.12);
+  border-radius: 5px;
+  font-size: 11px;
+}
+.planetarium-message {
+  position: absolute;
+  top: 106px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 11px 18px;
+  background: rgba(15, 25, 43, 0.92);
+  border: 1px solid var(--sky-line);
+  border-radius: 9px;
+  font-size: 12px;
+  z-index: 8;
+  max-width: 85%;
+  text-align: center;
+}
+.planetarium-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 22px;
+  z-index: 3;
+  background: radial-gradient(ellipse at 50% 40%, #0a1327, #03050b 65%);
+  transition: opacity 0.7s;
+}
+.planetarium-loading > span:last-child {
+  font-size: 10px;
+  color: #8298bd;
+  letter-spacing: 0.18em;
+}
+.loading-orbit {
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgba(180, 201, 245, 0.17);
+  border-radius: 50%;
+  position: relative;
+  animation: loading-turn 3s linear infinite;
+}
+.loading-orbit::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  background: #9bbbff;
+  box-shadow: 0 0 14px #78a7ff;
+}
+.planetarium-loading.ready {
+  opacity: 0;
+  pointer-events: none;
+}
+.planetarium-noscript {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 8;
+  background: #03050b;
+  color: #9baac1;
+  font-size: 14px;
+}
+@keyframes loading-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes panel-enter {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes tour-pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+@media (min-width: 2000px) {
+  .planetarium-header {
+    padding: 32px 46px;
+    height: 106px;
+  }
+  .sky-tools {
+    left: 43px;
+  }
+  .planetarium-controls {
+    left: 45px;
+    right: 45px;
+    bottom: 39px;
+  }
+  .object-card {
+    left: 46px;
+    bottom: 147px;
+  }
+  .planetarium-panel {
+    right: 45px;
+    top: 123px;
+  }
+  .view-switch button {
+    padding: 12px 27px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 850px) {
+  .planetarium-header {
+    padding: 18px;
+    height: 80px;
+    gap: 10px;
+  }
+  .planetarium-brand span {
+    display: none;
+  }
+  .planetarium-brand {
+    gap: 0;
+  }
+  .header-actions {
+    min-width: 0;
+    gap: 1px;
+  }
+  .header-actions .icon-button {
+    width: 29px;
+    height: 32px;
+  }
+  .header-actions .language-button {
+    padding: 5px;
+    font-size: 10px;
+  }
+  .view-switch button {
+    padding: 10px 13px;
+    font-size: 10px;
+  }
+  .sky-tools {
+    left: 15px;
+    gap: 10px;
+  }
+  .planetarium-controls {
+    display: flex;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .time-controls {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding: 8px 10px;
+  }
+  .location-button,
+  .tour-button {
+    min-width: 0;
+    font-size: 11px;
+    padding: 0;
+  }
+  .planetarium-panel {
+    top: 91px;
+    right: 17px;
+    width: min(310px, calc(100% - 80px));
+    max-height: calc(100% - 235px);
+  }
+  .object-card {
+    left: 18px;
+    bottom: 151px;
+    width: 180px;
+    padding: 14px;
+  }
+  .eclipse-progress {
+    bottom: 158px;
+  }
+  .solar-scale-note {
+    bottom: 127px;
+    right: 19px;
+  }
+  .time-popover {
+    bottom: 151px;
+  }
+  .time-display {
+    min-width: 135px;
+    padding: 5px;
+  }
+  .time-controls {
+    gap: 5px;
+  }
+  .now-button {
+    padding-left: 10px;
+  }
+  .time-speed {
+    max-width: 79px;
+  }
+  .planetarium-message {
+    top: 90px;
+  }
+  .orientation-hud {
+    right: 14px;
+    bottom: 99px;
+    width: 170px;
+  }
+  .gyroscope-viewport {
+    width: 170px;
+    height: 170px;
+  }
+  .orientation-readout {
+    gap: 3px;
+  }
+  .orientation-readout output {
+    font-size: 10px;
+  }
+  .experience-dock {
+    bottom: 140px;
+  }
+  #planetarium[data-view="eclipse"] .experience-dock,
+  #planetarium[data-view="studio"] .experience-dock,
+  #planetarium[data-experience="meteors"] .experience-dock,
+  #planetarium[data-experience="trails"] .experience-dock {
+    bottom: 24px;
+  }
+  #planetarium[data-experience="meteors"] .orientation-hud,
+  #planetarium[data-experience="trails"] .orientation-hud {
+    top: 106px;
+    bottom: auto;
+    width: 124px;
+    right: 14px;
+  }
+  #planetarium[data-experience="meteors"] .gyroscope-viewport,
+  #planetarium[data-experience="trails"] .gyroscope-viewport {
+    width: 124px;
+    height: 124px;
+  }
+  .experience-options {
+    gap: 8px;
+  }
+  .experience-field {
+    gap: 5px;
+  }
+  .experience-field select {
+    max-width: 129px;
+    padding: 6px 4px;
+  }
+  .experience-action,
+  .experience-toggle {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

@@ -1,7 +1,24 @@
 ---
 import {slots} from './slots.mjs';
-import './hunt.css';
+import CreatureArt from './CreatureArt.astro';
 const slot=slots.find(s=>s.route===Astro.url.pathname);
+const cabal312512 = ['shard','ring','lattice','rift','orbit','prism'];
+const form = slot ? cabal312512[slot.id % cabal312512.length] : null;
 ---
-{slot&&<button class="q8-creature" data-q8-creature data-id={slot.id} data-pitch={slot.pitch} data-say={slot.say} style={`--q8-x:${slot.x}vw;--q8-y:${slot.y}vh;--q8-color:hsl(${195+slot.id*2} 90% 64%)`} aria-label="捉迷藏的小东西"><svg viewBox="0 0 80 90" aria-hidden="true"><defs><linearGradient id={`q8-skin-${slot.id}`} x2=".8" y2="1"><stop stop-color="#f4fdff"/><stop offset="1" stop-color="#6aacdf"/></linearGradient></defs><path d="M19 66 Q6 31 27 27 L23 9 L41 20 L57 5 L62 31 Q80 60 58 74 Q39 81 19 66" fill={`url(#q8-skin-${slot.id})`} stroke="currentColor"/><path d="M20 70L13 81M57 73L64 82" stroke="currentColor" stroke-width="4"/><ellipse cx="32" cy="45" rx="4" ry="6" fill="#123469"/><ellipse cx="53" cy="42" rx="4" ry="6" fill="#123469"/><path d="M37 56q5 6 10-1" fill="none" stroke="#224467"/></svg><span>{slot.say}</span></button>}
-<script>import './hunt.mjs';</script>
+{slot&&<button type="button" class="q8-creature" data-q8-creature data-q8-actor="hidden" data-q8-form={form} data-q8-action="idle" data-id={slot.id} data-pitch={slot.pitch} data-say={slot.say} style={`--q8-x:${slot.x}vw;--q8-y:${slot.y}vh;--q8-bubble-x:${slot.x>75?-65:slot.x<25?0:-30}px;--q8-color:hsl(${195+slot.id*2} 90% 64%)`} aria-label="捉迷藏的小东西，点击找到它"><CreatureArt id={`slot-${slot.id}`} form={form}/><canvas class="q8-hidden-canvas" data-q8-hidden-canvas aria-hidden="true"></canvas><span class="q8-bubble" aria-hidden="true">{slot.say}</span></button>}
+{slot&&<output class="q8-status" data-q8-status role="status" aria-live="polite"></output>}
+<script>
+import './hunt.mjs';
+import {createCreatureRoaming} from './creature-roam.mjs';
+for(const actor of document.querySelectorAll('[data-q8-creature]')){
+ createCreatureRoaming(actor);
+ const life=new AbortController();let alive=true,loaded=false;
+ const load=()=>{
+  if(loaded||!alive||actor.hidden||actor.dataset.q8Collecting==='true'||actor.dataset.q8Awake!=='true'||document.visibilityState==='hidden'||!actor.getClientRects().length)return;
+  loaded=true;observer.disconnect();void import('./hidden-scene.mjs').then(module=>{if(alive&&!actor.hidden)module.createHiddenCreatureScene(actor);}).catch(()=>{actor.dataset.q8HiddenScene='fallback';});
+ };
+ const observer=new MutationObserver(load);observer.observe(actor,{attributes:true,attributeFilter:['hidden','data-q8-awake']});
+ document.addEventListener('visibilitychange',load,{signal:life.signal});window.addEventListener('pageshow',load,{signal:life.signal});
+ window.addEventListener('pagehide',event=>{if(!event.persisted){alive=false;observer.disconnect();life.abort();}},{signal:life.signal});load();
+}
+</script>

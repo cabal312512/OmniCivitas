@@ -121,3 +121,44 @@ stylelint 17.16.0: /licenses/phase8-stylelint-17.16.0.txt; original MIT license 
 Expansion 1 local workbench libraries:
 sql.js 1.14.2 — MIT — /licenses/sql.js-1.14.2.txt
 fast-json-patch 3.1.1 — MIT — /licenses/fast-json-patch-3.1.1.txt
+
+
+Planetarium runtime and visual resources
+
+Lost in the Snow Wave
+hatmix; CC0 1.0 Universal.
+https://opengameart.org/content/lost-in-the-snow-wave
+Original unmodified Ogg audio, used as looping planetarium background music.
+Source notice: /planetarium/licenses/Lost-in-the-Snow-Wave-NOTICE.txt
+License deed: https://creativecommons.org/publicdomain/zero/1.0/
+Audio provenance and SHA-256: /planetarium/audio/manifest.json
+
+Astronomy Engine 2.1.19
+Don Cross; MIT.
+https://github.com/cosinekitty/astronomy
+Full sourced notice: /planetarium/licenses/Astronomy-Engine-MIT.txt
+
+Takram three-atmosphere 0.19.1
+Shota Matsuda / Takram, Eric Bruneton and INRIA.
+MIT project layer and BSD-3-Clause atmospheric model; complete upstream
+component notices retained: /planetarium/licenses/Takram-atmosphere-LICENSE.txt
+https://github.com/takram-design-engineering/three-geospatial/tree/b012ad06d858fc035d88aacfd73f092f93c994e4/packages/atmosphere
+
+Takram three-geospatial 0.9.1
+Shota Matsuda / Takram; MIT with separately identified component notices.
+Full upstream notice: /planetarium/licenses/Takram-geospatial-LICENSE.txt
+https://github.com/takram-design-engineering/three-geospatial/tree/b012ad06d858fc035d88aacfd73f092f93c994e4/packages/core
+
+Postprocessing 6.39.5
+Raoul van Rueschen; Zlib.
+https://github.com/pmndrs/postprocessing
+Full installed-version notice: /planetarium/licenses/Postprocessing-Zlib.txt
+
+The planetarium's astronomical imagery and catalogue conditions are distinct
+from these code licenses. Individual authors, original sources, adaptations
+and license links: /planetarium/credits.json
+Asset provenance and SHA-256 inventory: /planetarium/assets/manifest.json
+NASA SVS source notices: /planetarium/licenses/SOURCE-NOTICES.txt
+Solar System Scope textures: INOVE, CC BY 4.0.
+d3-celestial catalogue preparation: Olaf Frohn, BSD-3-Clause; original
+scientific catalogue and IAU provenance retained.

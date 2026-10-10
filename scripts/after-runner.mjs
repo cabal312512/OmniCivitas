@@ -6,7 +6,7 @@ import {readFile,writeFile,mkdir,access,unlink} from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
 import {fileURLToPath} from 'node:url';
-import {docker} from './docker-child.mjs';
+import {docker,composeArguments} from './docker-child.mjs';
 import capacity from '../services/gateway/src/a1/tier.cjs';
 import {resolveRuntimePaths,resolveRunnerConcurrency} from './runtime-paths.mjs';
 
@@ -33,8 +33,7 @@ if(normalized!==dotenv)await writeFile(path.join(root,'.env'),normalized,{mode:0
 const base=process.env.OCV_BASE_URL||`http://127.0.0.1:${process.env.OCV_WEB_PORT||8080}`;
 if(!/^http:\/\/(127\.0\.0\.1|localhost|\[::1\])(?::\d+)?$/.test(base))throw Error('The privileged host runner uses a loopback HTTP entrance only');
 const worker=randomUUID(),project=process.env.COMPOSE_PROJECT_NAME||'omnicivitas';
-const files=['-f','compose.yaml'];
-const compose=['compose','-p',project,...files,'--profile','*'];
+const compose=composeArguments([]);
 let config,stopping=false,children=new Set(),owned=new Set(),heartbeatBusy=false,leased=false,leaseHealthy=false,concurrency=4;
 const context=new AsyncLocalStorage(),active=new Map(),serviceUsers=new Map(),readyServices=new Map(),gates=new Map();
 let serviceQueue=Promise.resolve(),logQueue=Promise.resolve(),reportQueue=Promise.resolve(),executing=0;

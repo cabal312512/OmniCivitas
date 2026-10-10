@@ -1,0 +1,82 @@
+---
+import './hunt.css';
+const { id = 'resident', form = 'assembly' } = Astro.props;
+const cabal312512 = Object.freeze(['shard', 'ring', 'lattice', 'rift', 'orbit', 'prism', 'assembly']);
+const shape = cabal312512.includes(form) ? form : 'assembly';
+const prefix = `q8-${String(id).replace(/[^a-zA-Z0-9_-]/g, '-')}`;
+const mineral = `${prefix}-mineral`, glass = `${prefix}-glass`, dark = `${prefix}-dark`, light = `${prefix}-light`;
+const fragments = [
+ { points: '20,70 31,63 28,79 18,81', side: 'a' },
+ { points: '132,24 145,30 136,41 128,34', side: 'b' },
+ { points: '152,102 162,94 168,106 157,112', side: 'c' },
+ { points: '52,143 65,139 61,151 48,154', side: 'd' },
+];
+---
+<svg class="q8-art" data-q8-art-form={shape} viewBox="0 0 180 180" aria-hidden="true" focusable="false">
+ <defs>
+  <linearGradient id={mineral} x1="0" y1="0" x2="1" y2="1"><stop stop-color="#efffff"/><stop offset=".24" stop-color="#a5e9f6"/><stop offset=".55" stop-color="#57b7dc"/><stop offset=".8" stop-color="#456eae"/><stop offset="1" stop-color="#202b64"/></linearGradient>
+  <linearGradient id={glass} x1=".12" y1="0" x2=".8" y2="1"><stop stop-color="#d5ffff" stop-opacity=".9"/><stop offset=".45" stop-color="#72d8f2" stop-opacity=".4"/><stop offset="1" stop-color="#7b85d6" stop-opacity=".65"/></linearGradient>
+  <linearGradient id={dark} x1="0" y1="1" x2="1" y2="0"><stop stop-color="#142943"/><stop offset=".58" stop-color="#28527b"/><stop offset="1" stop-color="#51738b"/></linearGradient>
+  <linearGradient id={light} x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3ffff"/><stop offset=".5" stop-color="#97fff0"/><stop offset="1" stop-color="#a4a2ff"/></linearGradient>
+  {shape === 'assembly' && <radialGradient id={`${prefix}-iris`}><stop stop-color="#122e4e"/><stop offset=".36" stop-color="#376887"/><stop offset=".67" stop-color="#66d3db"/><stop offset=".84" stop-color="#28728f"/><stop offset="1" stop-color="#173653"/></radialGradient>}
+ </defs>
+ <g class="q8-field">
+  <g class="q8-phase-traces" fill="none" stroke="#579fc5" stroke-width=".7"><path d="M21 74 68 25 140 53 159 115 103 160 36 132Z"/><path d="M33 57 102 18 160 93 126 152 51 150 18 99Z"/></g>
+  <g class="q8-figure">
+   <g class="q8-drift">
+    {shape === 'shard' && <>
+     <g class="q8-fragment q8-fragment-a"><path d="M86 18 112 62 93 101 59 88 45 54Z" fill={`url(#${mineral})`} stroke="#36789b" stroke-width="1.2"/><path d="M86 18 81 65 45 54Z" fill="#caffff"/><path d="M86 18 112 62 81 65Z" fill="#87cee1"/><path d="M81 65 112 62 93 101Z" fill="#32659a"/><path d="M45 54 81 65 59 88Z" fill="#83d9e3"/><path d="M59 88 81 65 93 101Z" fill="#4e9cbc"/></g>
+     <g class="q8-fragment q8-fragment-b"><path d="M105 84 137 49 148 94 116 130 102 110Z" fill={`url(#${glass})`} stroke="#4b8dad" stroke-width="1.1"/><path d="M137 49 128 91 105 84M128 91 116 130 148 94" fill="none" stroke="#cefffa" stroke-width="1.2"/><path d="M128 91 148 94 116 130Z" fill="#536ba6" fill-opacity=".58"/></g>
+     <g class="q8-fragment q8-fragment-c"><path d="M47 100 82 109 98 136 61 155 31 130Z" fill={`url(#${mineral})`} stroke="#387e9f"/><path d="M47 100 62 126 31 130Z" fill="#e0ffff"/><path d="M62 126 98 136 61 155Z" fill="#37658d"/><path d="M47 100 82 109 62 126 98 136" fill="none" stroke="#a8f9f1"/></g>
+     <g class="q8-energy q8-scan" fill="none" stroke={`url(#${light})`} stroke-width="1.5"><path d="M84 31 80 66 91 91M116 98 128 90 136 64M41 123 63 128 82 138"/><path d="m97 61 9 9-6 11" stroke-dasharray="3 4"/></g>
+     <g class="q8-orbit" fill="none" stroke="#60abc7" stroke-width=".9"><ellipse cx="91" cy="93" rx="68" ry="20" transform="rotate(-27 91 93)" stroke-dasharray="85 36 8 18"/></g>
+    </>}
+    {shape === 'ring' && <>
+     <g class="q8-fragment q8-fragment-a"><path d="M48 31 100 18 146 54 158 109 116 155 57 149 24 102 26 60Z M61 62 48 92 67 120 105 124 127 99 118 68 91 48Z" fill={`url(#${mineral})`} fill-rule="evenodd" stroke="#367497" stroke-width="1.2"/><path d="M48 31 61 62 91 48 100 18Z" fill="#c1fcff"/><path d="M100 18 146 54 118 68 91 48Z" fill="#69bad2"/><path d="M146 54 158 109 127 99 118 68Z" fill="#325385"/><path d="M158 109 116 155 105 124 127 99Z" fill="#254879"/><path d="M116 155 57 149 67 120 105 124Z" fill="#627eb3"/><path d="M57 149 24 102 48 92 67 120Z" fill="#51b0c9"/><path d="M24 102 26 60 48 31 61 62 48 92Z" fill="#a9ecf0"/></g>
+     <g class="q8-fragment q8-fragment-b"><path d="M29 54 39 41 49 46 39 66Z" fill={`url(#${glass})`} stroke="#73becb"/><path d="M113 142 135 122 150 126 127 152Z" fill={`url(#${glass})`} stroke="#73becb"/></g>
+     <g class="q8-energy q8-scan" fill="none" stroke={`url(#${light})`} stroke-width="1.6"><path d="M52 34 96 25 140 57 151 106 115 146M56 144 30 103 31 63"/><path d="M61 62 91 48 118 68 127 99 105 124 67 120 48 92Z" stroke-dasharray="31 7"/></g>
+     <g class="q8-orbit" fill="none" stroke="#74a8d3" stroke-width=".8"><ellipse cx="90" cy="90" rx="74" ry="16" transform="rotate(-38 90 90)" stroke-dasharray="76 50 22 26"/></g>
+    </>}
+    {shape === 'lattice' && <>
+     <g class="q8-fragment q8-fragment-a" fill={`url(#${glass})`} stroke="#488ba9" stroke-width="1.1"><path d="M38 58 94 26 145 58 88 96Z"/><path d="M38 58 88 96 82 155 27 116Z"/><path d="M145 58 88 96 82 155 139 112Z"/></g>
+     <path d="M58 66 94 46 124 65 88 88Z" fill={`url(#${dark})`} fill-opacity=".72"/>
+     <g class="q8-fragment q8-fragment-b" fill="none" stroke="#ddffff" stroke-width="2.5"><path d="M38 58 94 26 145 58 139 112 82 155 27 116Z"/><path d="M38 58 88 96 145 58M88 96 82 155"/></g>
+     <g class="q8-fragment q8-fragment-c" fill="none" stroke="#5f92b8" stroke-width="1"><path d="M56 47 105 83 99 142M75 36 123 71 117 128M34 77 84 115 141 77M30 96 83 135 140 95"/><path d="M45 121 52 67 108 35M63 140 70 83 125 46" stroke-opacity=".55"/></g>
+     <g class="q8-energy q8-scan" fill="none" stroke={`url(#${light})`} stroke-width="1.3"><path d="M41 59 90 94 143 59M90 94 84 150"/><path d="M55 100 101 121 117 101 72 77Z" stroke-dasharray="8 9"/></g>
+     <g class="q8-fragment q8-fragment-d"><path d="M115 18 134 25 126 40 107 33Z" fill={`url(#${mineral})`} stroke="#539bb6"/><path d="M14 99 22 93 26 105 18 113Z" fill="#9fefea"/></g>
+    </>}
+    {shape === 'rift' && <>
+     <g class="q8-fragment q8-fragment-a"><path d="M37 36 103 22 138 44 97 51 121 67 82 75 91 92 46 84 21 59Z" fill={`url(#${mineral})`} stroke="#447595" stroke-width="1.1"/><path d="M37 36 80 49 103 22 138 44 97 51 121 67 82 75" fill="none" stroke="#c9ffff" stroke-width="1.3"/><path d="M21 59 80 49 46 84Z" fill="#1c5e84" fill-opacity=".75"/></g>
+     <g class="q8-fragment q8-fragment-b"><path d="M89 101 136 82 157 109 130 140 65 157 39 129 78 122 57 106Z" fill={`url(#${mineral})`} stroke="#447595" stroke-width="1.1"/><path d="M136 82 114 120 157 109M114 120 65 157 130 140" fill="none" stroke="#ccfafa" stroke-width="1.4"/><path d="M57 106 78 122 114 120 89 101Z" fill="#22426d"/><path d="M39 129 78 122 65 157Z" fill="#9fe4eb"/></g>
+     <g class="q8-fragment q8-fragment-c"><path d="M53 91 72 85 77 94 61 106 46 102Z" fill={`url(#${glass})`} stroke="#5bbed1"/><path d="M110 73 128 68 136 74 115 88Z" fill={`url(#${glass})`} stroke="#5bbed1"/></g>
+     <g class="q8-energy q8-scan" fill="none" stroke={`url(#${light})`} stroke-width="1.7"><path d="M30 65 46 80 88 90M92 104 135 87 150 108M62 151 113 123 134 137"/><path d="M63 88 89 81 79 101 108 95" stroke-dasharray="4 5"/></g>
+     <g class="q8-orbit" fill="none" stroke="#76a1cb" stroke-width=".8"><ellipse cx="87" cy="90" rx="73" ry="24" transform="rotate(38 87 90)" stroke-dasharray="62 46 18 34"/></g>
+    </>}
+    {shape === 'orbit' && <>
+     <g class="q8-orbit" fill="none" stroke-width="2.1"><ellipse cx="90" cy="89" rx="69" ry="29" transform="rotate(-31 90 89)" stroke={`url(#${mineral})`}/><ellipse cx="90" cy="89" rx="65" ry="26" transform="rotate(54 90 89)" stroke={`url(#${glass})`}/><ellipse cx="90" cy="89" rx="62" ry="20" transform="rotate(8 90 89)" stroke="#5c9bae" stroke-dasharray="70 24 9 15"/></g>
+     <g class="q8-fragment q8-fragment-a"><path d="M65 71 96 50 116 80 105 112 76 124 56 96Z M75 80 68 94 81 109 97 103 102 84 94 68Z" fill={`url(#${mineral})`} fill-rule="evenodd" stroke="#457c9d"/><path d="M65 71 75 80 94 68 96 50Z" fill="#cafff7"/><path d="M96 50 116 80 102 84 94 68Z" fill="#8ed6e7"/><path d="M105 112 76 124 81 109 97 103Z" fill="#335a85"/></g>
+     <g class="q8-fragment q8-fragment-b"><path d="M31 62 42 49 54 60 43 77Z" fill={`url(#${mineral})`} stroke="#579caf"/><path d="M43 77 42 49 54 60" fill="none" stroke="#e0ffff"/><path d="M128 124 143 116 150 136 135 144Z" fill={`url(#${mineral})`} stroke="#579caf"/></g>
+     <g class="q8-fragment q8-fragment-c"><path d="M115 20 128 24 124 38 110 32Z" fill={`url(#${glass})`} stroke="#579caf"/><path d="M27 115 36 109 40 121 31 127Z" fill="#8bddde"/></g>
+     <g class="q8-energy q8-scan" fill="none" stroke={`url(#${light})`} stroke-width="1.6"><path d="M75 80 94 68 102 84 97 103 81 109 68 94Z"/><ellipse cx="90" cy="89" rx="71" ry="31" transform="rotate(-31 90 89)" stroke-dasharray="6 32 45 78"/></g>
+    </>}
+    {shape === 'prism' && <>
+     <g class="q8-fragment q8-fragment-a"><path d="M96 15 126 72 103 147 66 92Z" fill={`url(#${mineral})`} stroke="#44789f"/><path d="M96 15 88 81 66 92Z" fill="#c6fff9"/><path d="M96 15 126 72 88 81Z" fill="#83c9df"/><path d="M88 81 126 72 103 147Z" fill="#345787"/><path d="M88 81 103 147 66 92Z" fill="#50a7c4"/></g>
+     <g class="q8-fragment q8-fragment-b"><path d="M40 62 59 34 69 109 51 139 30 101Z" fill={`url(#${glass})`} stroke="#4b8baf"/><path d="M59 34 48 91 30 101M48 91 51 139 69 109" fill="none" stroke="#bbfffa"/></g>
+     <g class="q8-fragment q8-fragment-c"><path d="M131 68 148 54 155 108 134 134 117 118Z" fill={`url(#${glass})`} stroke="#5286aa"/><path d="M148 54 138 105 117 118M138 105 134 134 155 108" fill="none" stroke="#b8ecf8"/></g>
+     <g class="q8-orbit" fill="none" stroke={`url(#${mineral})`} stroke-width="1.8"><ellipse cx="90" cy="76" rx="63" ry="15" transform="rotate(-15 90 76)" stroke-dasharray="94 30"/><ellipse cx="90" cy="106" rx="66" ry="16" transform="rotate(-15 90 106)" stroke-dasharray="105 42"/><ellipse cx="90" cy="131" rx="50" ry="12" transform="rotate(-15 90 131)" stroke-dasharray="68 20"/></g>
+     <g class="q8-energy q8-scan" fill="none" stroke={`url(#${light})`} stroke-width="1.7"><path d="M96 25 88 81 101 138M58 53 48 92 50 124M145 68 138 105 134 124"/><path d="m86 82 11 4 15-8" stroke-dasharray="3 5"/></g>
+    </>}
+    {shape === 'assembly' && <>
+     <g class="q8-orbit q8-wheel-band" fill="none"><g transform="rotate(-28 90 90)"><ellipse cx="90" cy="90" rx="82" ry="52" stroke={`url(#${mineral})`} stroke-width="7"/><ellipse cx="90" cy="90" rx="82" ry="52" stroke="#f1ffff" stroke-width="1.8" stroke-dasharray="2 13"/><ellipse cx="90" cy="90" rx="78" ry="48" stroke={`url(#${light})`} stroke-width=".8"/></g></g>
+     <g class="q8-orbit q8-wheel-rail" fill="none" stroke={`url(#${mineral})`} stroke-width="1.8"><g transform="rotate(61 90 90)"><ellipse cx="90" cy="90" rx="74" ry="28"/><ellipse cx="90" cy="90" rx="68" ry="24"/>{Array.from({length:24},(_,i)=><path d={`M${90+Math.cos(i*Math.PI/12)*74} ${90+Math.sin(i*Math.PI/12)*28}L${90+Math.cos(i*Math.PI/12)*68} ${90+Math.sin(i*Math.PI/12)*24}`} stroke-width=".9"/>)}</g></g>
+     <g class="q8-orbit q8-wheel-cage" fill="none" stroke="#9bddeb"><g transform="rotate(22 90 90)"><polygon points={Array.from({length:12},(_,i)=>`${90+Math.cos(i*Math.PI/6)*78},${90+Math.sin(i*Math.PI/6)*42}`).join(' ')} stroke-width="3"/><polygon points={Array.from({length:12},(_,i)=>`${90+Math.cos(i*Math.PI/6)*73},${90+Math.sin(i*Math.PI/6)*37}`).join(' ')} stroke-width="1.1"/>{Array.from({length:12},(_,i)=><path d={`M${90+Math.cos(i*Math.PI/6)*78} ${90+Math.sin(i*Math.PI/6)*42}L${90+Math.cos(i*Math.PI/6)*73} ${90+Math.sin(i*Math.PI/6)*37}`} stroke="#5387a8" stroke-width="2"/>)}</g></g>
+     <g class="q8-orbit q8-wheel-gear" fill={`url(#${mineral})`} stroke="#70adbf" stroke-width=".7"><circle cx="90" cy="90" r="55" fill="none" stroke-width="2.8"/>{Array.from({length:36},(_,i)=><path d="M87 31h6v8h-6Z" transform={`rotate(${i*10} 90 90)`}/>)}</g>
+     <g class="q8-resident-eye"><g transform="translate(90 90) scale(.75) translate(-90 -90)"><circle cx="90" cy="90" r="38" fill={`url(#${mineral})`} stroke="#80acbf" stroke-width=".6"/><circle cx="90" cy="90" r="23" fill={`url(#${prefix}-iris)`} stroke="#294a6d" stroke-width="1.4"/><g fill="none" stroke="#b4f5e9" stroke-width=".45">{Array.from({length:48},(_,i)=><path d="m90 68 1 12" transform={`rotate(${i*7.5} 90 90)`}/>)}</g><circle cx="90" cy="90" r="8.5" fill="#081a2a"/><circle cx="90" cy="90" r="9.5" fill="none" stroke="#9ae9e4" stroke-width=".8"/><ellipse cx="81" cy="79" rx="3" ry="5" transform="rotate(34 81 79)" fill="#eaffff" opacity=".78"/></g></g>
+     <g class="q8-orbit q8-wheel-instrument" fill="none" stroke={`url(#${light})`} stroke-width=".6"><g transform="rotate(-34 90 90)"><ellipse cx="90" cy="90" rx="43" ry="32"/><ellipse cx="90" cy="90" rx="39" ry="28"/>{Array.from({length:64},(_,i)=><path d={`M${90+Math.cos(i*Math.PI/32)*43} ${90+Math.sin(i*Math.PI/32)*32}L${90+Math.cos(i*Math.PI/32)*(i%8===0?37:41)} ${90+Math.sin(i*Math.PI/32)*(i%8===0?26:30)}`}/>)}</g></g>
+    </>}
+    <g class="q8-satellites">{fragments.map(fragment => <g class={`q8-fragment q8-fragment-${fragment.side}`}><polygon points={fragment.points} fill={`url(#${glass})`} stroke="#6ca4bc" stroke-width=".7"/></g>)}</g>
+    <g class="q8-energy q8-speech-field" fill="none" stroke={`url(#${light})`} stroke-width="1"><ellipse class="q8-speech-ring" cx="91" cy="90" rx="65" ry="38" transform="rotate(-24 91 90)"/><ellipse class="q8-speech-ring q8-speech-ring-late" cx="91" cy="90" rx="75" ry="47" transform="rotate(-24 91 90)"/></g>
+   </g>
+  </g>
+ </g>
+</svg>

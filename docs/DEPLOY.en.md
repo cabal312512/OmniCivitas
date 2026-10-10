@@ -40,6 +40,17 @@ docker compose ps
 
 Only **edge, portal, next, gateway, PostgreSQL and Redis** start by default. The entrance is **http://127.0.0.1:8080**. Initial builds download dependencies and generate research resources. Source files occupy approximately 1 GB; dependencies, images and caches need additional space.
 
+After the initial Docker setup, Windows users can double-click **`启动网站.bat`**
+in the repository root. It starts Docker Desktop if needed, verifies any opted-in
+local storage policy, starts cached core images in sequential groups and opens
+the configured local website port. It also requests the existing shared task
+dispatcher; its lease prevents duplicate workers. The launcher uses the project's
+optional tool configuration or PATH, and has no fixed drive or user-directory
+requirement. It does not install tools, download images or rebuild the project.
+Missing images produce an explicit message to complete the initial setup first.
+For a diagnostic run without opening a browser or requesting a dispatcher, use
+`powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Start-OcvWebsite.ps1 -NoOpen -NoRunner`.
+
 Standard Node commands provide a bounded sequential builder:
 
 ```sh

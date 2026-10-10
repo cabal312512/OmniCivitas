@@ -97,12 +97,12 @@ defmodule OcvSiteProjection.Old.Data do
       true -> "greeted"
     end
     text = case {found == 30, message} do
-      {false, "where"} -> "小东西散在网站的角落里。已找到 #{found} / 30。"
-      {false, _} -> "还有 #{30 - found} 个小东西等着你。"
-      {true, "hello"} -> "#{nickname}，回来了。三十个小东西都在。"
-      {true, "where"} -> "它们已经到齐了。可以去看看收藏，或者继续逛逛。"
-      {true, "again"} -> "又见面了，#{nickname}。这次也记得慢慢逛。"
-      {true, "bye"} -> "下次见，#{nickname}。"
+      {false, "where"} -> "[scan] 已记录 #{found} / 30。未被看见的缺损，是否也存在？"
+      {false, _} -> "WAIT #{30 - found}：计数之外，还遗漏了什么？"
+      {true, "hello"} -> "#{nickname}，[boot:30/30] 谁在观察这个观察者？"
+      {true, "where"} -> "ROUTE NULL / 收藏中有记录。边界属于哪一侧？"
+      {true, "again"} -> "#{nickname}，░▒ reprise ▒░ La mémoire suffit-elle à faire revenir le même être ?"
+      {true, "bye"} -> "#{nickname}，Vek-narum; tor-em. 沉默是终点，还是另一种回答？"
     end
     %{"phase" => phase, "message" => message, "reply" => text, "unlocked" => found == 30}
   end

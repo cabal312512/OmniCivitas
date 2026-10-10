@@ -1,0 +1,15 @@
+Lost in the Snow Wave
+Author: hatmix
+Original source: https://opengameart.org/content/lost-in-the-snow-wave
+License: CC0 1.0 Universal
+License deed: https://creativecommons.org/publicdomain/zero/1.0/
+Full legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The author published this music on OpenGameArt.org under CC0 on 2025-02-16.
+The supplied original lost_in_the_snow_wave.ogg is distributed without edits.
+Playback uses a single looping audio element; no remix or generated audio is
+included. The author and source are credited voluntarily in the site's asset
+statement and in /planetarium/credits.json.
+
+This notice records the source and license designation. It does not replace
+or modify the Creative Commons legal code linked above.

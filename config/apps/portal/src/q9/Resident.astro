@@ -1,10 +1,35 @@
 ---
-import '../q8/panel.less';
+import CreatureArt from '../q8/CreatureArt.astro';
 ---
-<aside class="echo-root q9-resident" data-q8-resident x-data="{fold:false}" hidden>
- <header><button @click="fold=!fold" aria-label="折叠">−</button><button id="echo-language">中 / EN</button><button id="echo-refresh">↻</button></header>
- <div x-show="!fold"><svg class="echo-resident" viewBox="0 0 200 200" aria-label="常驻的小东西"><path d="M48 145Q10 66 64 53L47 7 101 40 150 4 164 73Q197 143 143 173Q83 191 48 145" fill="#dceeff" stroke="#6f9cc7"/><ellipse cx="84" cy="93" rx="9" ry="14" fill="#142e56"/><ellipse cx="136" cy="89" rx="9" ry="14" fill="#142e56"/><path d="M93 127q14 14 29-5" fill="none" stroke="#477098" stroke-width="3"/></svg>
- <p data-echo-talk>回来了。</p><form id="echo-form"><input id="echo-input" maxlength="80" autocomplete="off" placeholder="…" aria-label="对话"/><button type="submit">↵</button></form><div class="echo-quick"><button data-echo-word="你好">你好</button><label>#<input id="echo-color" value="8bb9ef" maxlength="6" aria-label="颜色"/></label><button hx-get="/api/q8/fragment" hx-target="#echo-fragment" hx-swap="innerHTML">▤</button></div><output id="echo-fragment"></output><output data-echo-error role="status"></output><small data-echo-store>本地</small><small data-echo-clock></small></div>
+<aside class="echo-root q9-resident" data-q8-resident hidden>
+ <button type="button" class="echo-resident q8-resident-play" data-q8-actor="resident" data-q8-form="assembly" data-q8-action="idle" data-echo-greet aria-label="与悬浮轮眼互动" aria-keyshortcuts="Shift+ArrowLeft Shift+ArrowRight Shift+ArrowUp Shift+ArrowDown Shift+Home"><CreatureArt id="resident" form="assembly"/><canvas class="q8-resident-canvas" data-q8-resident-canvas aria-hidden="true"></canvas></button>
+ <output class="q8-resident-bubble" data-echo-talk data-visible="false" role="status" aria-live="polite" aria-atomic="true" hidden></output>
 </aside>
-<style>.q9-resident{--echo-accent:#8bb9ef;position:fixed;right:9%;bottom:10%;z-index:24030;width:214px;border:1px solid var(--echo-accent);background:#f6fbfff5;box-shadow:0 12px 35px #21447825;color:#244371;font:11px Arial;padding:8px}.q9-resident[hidden]{display:none}.q9-resident header{display:flex;justify-content:flex-end;gap:7px;border-bottom:1px solid #adc5e2}.q9-resident button{color:#164dff;background:#eef6ff;border:1px solid #b4c9e5;padding:3px 5px;font:10px Arial}.q9-resident .echo-resident{width:92px;height:92px;margin:7px auto;transition:filter .3s}.echo-answer{filter:drop-shadow(0 0 9px #64afff);animation:answer .2s 4}.q9-resident input{width:152px;background:white;border:1px solid #9fbde4;padding:4px}.q9-resident .echo-quick{display:flex;gap:4px;margin:7px 0}.q9-resident #echo-color{width:54px;font:9px monospace}.q9-resident output{display:block;overflow-wrap:anywhere}.q9-resident small{margin-right:7px;color:#6a89ad}@keyframes answer{50%{translate:2px -3px}}</style>
-<script>if(document.querySelector('[data-q8-resident]'))await import('../q8/echo.mjs');</script>
+<style>
+.q9-resident{position:fixed;right:max(10px,9vw);bottom:max(10px,10vh);z-index:24030;width:min(310px,calc(100vw - 20px));height:min(300px,calc(100dvh - 24px));margin:0;padding:0;border:0;background:none;box-shadow:none;backdrop-filter:none;overflow:visible;pointer-events:none;color:#315b77;animation:none;translate:none;rotate:none;filter:none}
+.q9-resident[hidden]{display:none!important}
+.q9-resident .q8-resident-play{position:relative;left:auto;top:auto;display:block;width:100%;height:100%;margin:0;padding:0;border:0;border-radius:50%;background:none;box-shadow:none;appearance:none;cursor:grab;pointer-events:auto;touch-action:none;user-select:none;-webkit-tap-highlight-color:transparent;isolation:isolate;animation:none;translate:none;rotate:none;transform:none;filter:none}
+.q9-resident .q8-resident-play::before{content:"";position:absolute;inset:9%;border:1px solid #64bce348;border-radius:50%;pointer-events:none;opacity:0;transform:scale(.88);transition:opacity .18s,transform .18s;z-index:-1}
+.q9-resident .q8-resident-play:hover::before,.q9-resident .q8-resident-play:focus-visible::before{opacity:.72;transform:scale(1.03)}
+.q9-resident .q8-resident-play:focus-visible{outline:1px solid #78bed9a6;outline-offset:0;background:none}
+.q9-resident[data-resident-dragging="true"] .q8-resident-play{cursor:grabbing}.q9-resident[data-resident-dragging="true"] .q8-resident-play::before{opacity:.24;transform:scale(1.08)}
+.q9-resident .q8-resident-canvas{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none;opacity:0}.q9-resident [data-q8-scene="ready"] .q8-resident-canvas{opacity:1}
+.q9-resident .q8-resident-bubble{box-sizing:border-box;position:fixed;width:max-content;max-width:224px;margin:0;padding:9px 12px;border:0;border-radius:12px;background:#eefaffed;box-shadow:0 4px 18px #397ba31f;color:#315b77;font:12px/1.55 system-ui;white-space:normal;overflow-wrap:anywhere;overflow:hidden;pointer-events:none;opacity:0;transform:translateY(6px) scale(.96);transition:opacity .18s,transform .18s;transform-origin:center}
+.q9-resident .q8-resident-bubble[hidden]{display:none!important}.q9-resident .q8-resident-bubble[data-visible="true"]{opacity:1;transform:translateY(0) scale(1)}
+@media(max-width:480px){.q9-resident{right:12px;bottom:36px;width:min(260px,calc(100vw - 20px));height:min(250px,44dvh)}}
+@media(max-height:430px) and (min-width:481px){.q9-resident{right:12px;bottom:12px;width:min(260px,calc(100vw - 20px));height:min(250px,calc(100dvh - 24px))}}
+@media(prefers-reduced-motion:reduce){.q9-resident .q8-resident-play::before,.q9-resident .q8-resident-bubble{transition:none;transform:none}}
+</style>
+<script>
+import {createResidentDragging} from '../q8/resident-drag.mjs';
+const host=document.querySelector('[data-q8-resident]');
+if(host){
+ document.body.append(host);
+ const actor=host.querySelector('[data-q8-actor="resident"]');createResidentDragging(host,actor);
+ await import('../q8/echo.mjs');
+ const life=new AbortController();let loaded=false,alive=true;
+ const load=()=>{if(loaded||!alive||host.hasAttribute('hidden')||actor?.getAttribute('data-q8-awake')!=='true'||!actor.getClientRects().length||document.visibilityState==='hidden')return;loaded=true;observer.disconnect();void import('../q8/resident-scene.mjs').then(module=>{if(alive)module.createResidentScene(actor);}).catch(()=>{actor.setAttribute('data-q8-scene','fallback');});};
+ const observer=new MutationObserver(load);observer.observe(host,{attributes:true,attributeFilter:['hidden']});if(actor)observer.observe(actor,{attributes:true,attributeFilter:['hidden','data-q8-awake']});
+ document.addEventListener('visibilitychange',load,{signal:life.signal});window.addEventListener('pageshow',load,{signal:life.signal});window.addEventListener('pagehide',event=>{if(!event.persisted){alive=false;observer.disconnect();life.abort();}},{signal:life.signal});load();
+}
+</script>

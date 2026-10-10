@@ -1,0 +1,39 @@
+NASA astronomical asset usage and source notices
+
+Usage guidance: https://www.nasa.gov/nasa-brand-center/images-and-media/
+NASA-produced material is used here for an educational astronomical visualization.
+This is not a blanket CC0 grant. NASA acknowledges that identified third-party
+material can carry separate rights. NASA logos and implied endorsement are not used.
+The rendering, tone mapping and simulation are this project's own presentation;
+NASA has not reviewed or endorsed its scientific or visual accuracy.
+
+Deep Star Maps 2020: https://svs.gsfc.nasa.gov/4851/
+Credit: NASA/Goddard Space Flight Center Scientific Visualization Studio.
+Visualization: Ernie Wright (USRA).
+Gaia DR2: ESA/Gaia/DPAC.
+Catalogue sources include Hipparcos-2, Tycho-2, Gaia DR2, Yale Bright Star
+Catalog, UCAC3 and XHIP. Constellation figures on that source page are based
+on work for the IAU by Alan MacRobert, Roger Sinnott and Rick Fienberg;
+those raster figure images are not shipped in this package.
+Modified here: 4k linear HDR maps tone-mapped and encoded as compact sRGB JPEGs.
+
+CGI Moon Kit: https://svs.gsfc.nasa.gov/4720/
+Credit: NASA/Goddard Space Flight Center Scientific Visualization Studio.
+Color map: NASA/GSFC/Arizona State University.
+Elevation map: NASA/GSFC/MIT.
+Visualization: Ernie Wright (USRA).
+Color uses the Lunar Reconnaissance Orbiter Camera (LROC) composite;
+elevation uses Lunar Orbiter Laser Altimeter (LOLA) data.
+Modified here: compact JPEG encoding; the distributed height map retains its
+1024x512 source dimensions and is used as visual surface relief, not geodetic output.
+
+d3-celestial catalogue provenance
+https://github.com/ofrohn/d3-celestial
+BSD-3-Clause, Copyright (c) 2015, Olaf Frohn.
+The project credits Hipparcos, Yale Bright Star Catalog and Gliese for its
+catalogues, Stellarium skyculture data for star-name translations, and the
+IAU for constellation information. This package keeps the magnitude-six
+position/brightness subset, catalogue IDs, colour indices, English names,
+and constellation line coordinates plus English/Chinese constellation names.
+The published d3-celestial BSD license is retained verbatim in this directory.
+Original scientific catalogues remain credited; no claim of original measurements.

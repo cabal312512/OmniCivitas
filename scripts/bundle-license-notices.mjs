@@ -29,6 +29,15 @@ export function bundleLicenseNotices(priorNotices,scope='bundled'){
       if(owners.has(key))return owners.get(key);
       const names=fs.readdirSync(root).filter(name=>/^(licen[sc]e|copying|notice)(\.|$)/i.test(name)&&fs.statSync(path.join(root,name)).isFile());
       const texts=names.map(name=>({name,text:fs.readFileSync(path.join(root,name),'utf8')}));
+      const planetariumLicenses={
+        'astronomy-engine@2.1.19':'Astronomy-Engine-MIT.txt',
+        '@takram/three-atmosphere@0.19.1':'Takram-atmosphere-LICENSE.txt',
+        '@takram/three-geospatial@0.9.1':'Takram-geospatial-LICENSE.txt'
+      };
+      if(!texts.length&&planetariumLicenses[key])texts.push({
+        name:'Official upstream license; this exact npm version omits the file (source: docs/PLANETARIUM-ASSETS.md)',
+        text:fs.readFileSync(new URL('../docs/licenses/planetarium/'+planetariumLicenses[key],import.meta.url),'utf8')
+      });
       const recovered={'tiny-case@1.0.3':'tiny-case-1.0.3','is-mobile@5.0.0':'is-mobile-5.0.0','formik@2.4.9':'formik-2.4.9','https-proxy-agent@5.0.1':'https-proxy-agent-5.0.1','agent-base@6.0.2':'agent-base-6.0.2'};
       if(!texts.length&&recovered[key])texts.push({name:key==='tiny-case@1.0.3'?'Original author/MIT declaration plus standard MIT permission terms (package omits a separate license file)':'Official upstream license; npm package omits the file (sources: docs/licenses/q8-sources.json)',text:fs.readFileSync(new URL('../docs/licenses/'+recovered[key]+'.txt',import.meta.url),'utf8')});
       if(!texts.length&&metadata.name==='alpinejs'&&metadata.version==='3.17.4')texts.push({name:'LICENSE.md (official v3.17.4 tag)',text:fs.readFileSync(new URL('../docs/licenses/alpinejs-3.17.4-LICENSE.md',import.meta.url),'utf8')});

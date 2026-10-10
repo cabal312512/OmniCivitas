@@ -3,6 +3,7 @@ import './0.css';
 import './desktop.css';
 import Hunt from '../q8/Hunt.astro';
 import Wide from './wide.astro';
+import EmptyGlass from './EmptyGlass.astro';
 const {home=false}=Astro.props;
 // Stable distribution: each address gets a different slice, not a new random DOM on every render.
 const path=Astro.url.pathname;
@@ -12,7 +13,7 @@ const motion={3:'jump',4:'orbit',7:'blink',11:'crawl',13:'rail',14:'spasm',16:'s
 const positions=[[6,16],[73,32],[3,48],[54,18],[61,57],[22,63],[37,40],[80,71],[11,34],[8,83],[64,42],[34,69],[28,23],[91,29],[46,55],[75,12],[7,70],[42,76],[69,45],[17,18]];
 const quiet=[2,9,12,14,16];
 ---
-<Hunt/><Wide home={home}/><div class="n3-layer" data-n3-layer data-n3-seed={seed}>
+<Hunt/><Wide home={home}/><EmptyGlass/><div class="n3-layer" data-n3-layer data-n3-seed={seed}>
  {ids.map(id=><section class={`n3-item n3-${id}`} data-n3-kind={id} data-n3-motion={motion[id]} aria-hidden={quiet.includes(id)?'true':undefined} style={`--n3-left:${positions[id][0]+(home?0:(seed%5)-2)}vw;--n3-top:${positions[id][1]+(home?0:(seed%7)-3)}vh;--n3-depth:${quiet.includes(id)?2:38+id%5}`}>
   {id===0&&<><header data-n3-handle tabindex="0" aria-label="移动空白窗口"><span></span><i>−</i><i>□</i><button data-n3-close aria-label="关闭空白窗口">×</button></header><div class="n3-form"><i></i><i></i><div><span></span><span></span><span></span></div><i></i></div></>}
   {id===1&&<><a class="n3-strip" href="/functions/json/" aria-label="打开 JSON 工具">→</a><div class="n3-input"></div><select aria-label="选项"><option>▾</option><option>1</option><option>2</option></select></>}

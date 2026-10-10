@@ -1,0 +1,64 @@
+---
+import '../planetarium/planetarium.css';
+---
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#03050b" />
+  <meta http-equiv="Content-Security-Policy" content="object-src 'none'; base-uri 'self'" />
+  <title>Planetarium · OmniCivitas</title>
+  <link rel="icon" href="/favicon.svg" />
+ </head>
+ <body class="planetarium-page">
+  <main id="planetarium" aria-label="Interactive planetarium">
+   <canvas id="planetarium-canvas" tabindex="0" aria-label="Drag to explore the sky. Scroll to zoom." />
+   <div class="planetarium-vignette" aria-hidden="true"></div>
+   <div class="planetarium-loading" role="status"><span class="loading-orbit" aria-hidden="true"></span><span data-i18n="loading">Opening the sky</span></div>
+   <header class="planetarium-header">
+    <a class="planetarium-brand" href="/#systems" aria-label="Back to OmniCivitas" title="OmniCivitas"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="9"/><ellipse cx="16" cy="16" rx="15" ry="5" transform="rotate(-32 16 16)"/><circle cx="26" cy="9" r="1.5"/></svg><span data-i18n="title">PLANETARIUM</span></a>
+    <nav class="view-switch" aria-label="View"><button data-view="sky" aria-pressed="true" data-i18n="sky">Sky</button><button data-view="solar" aria-pressed="false" data-i18n="solar">Solar system</button></nav>
+    <div class="header-actions"><button class="icon-button" data-panel-toggle="help" data-tip="help" aria-label="Controls" title="Controls"><span class="help-symbol">?</span></button><button class="icon-button music-button" data-music data-tip="music" aria-label="Music" aria-pressed="true" title="Music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13M9 8l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="16" rx="3" ry="2"/></svg></button><button class="language-button" data-language aria-label="Switch to Chinese">中文</button><button class="icon-button" data-fullscreen aria-label="Fullscreen" title="Fullscreen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg></button></div>
+   </header>
+   <nav class="sky-tools" aria-label="Display">
+    <button class="icon-button" data-panel-toggle="objects" data-tip="objects" aria-label="Find a celestial object" title="Find a celestial object"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/></svg></button>
+    <button class="icon-button" data-constellations aria-pressed="true" data-tip="constellations" aria-label="Constellations" title="Constellations"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 15 5-9 7 3 4 10M9 6l3 13 4-10"/><circle cx="4" cy="15" r="1.3"/><circle cx="9" cy="6" r="1.3"/><circle cx="16" cy="9" r="1.3"/><circle cx="20" cy="19" r="1.3"/></svg></button>
+    <button class="icon-button" data-panel-toggle="settings" data-tip="settings" aria-label="Display settings" title="Display settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg></button>
+    <button class="icon-button" data-panel-toggle="experiences" data-tip="experiences" aria-label="Experiences" title="Experiences"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6Z"/><path d="m19 3 1 2 2 1-2 1-1 2-1-2-2-1 2-1Z"/></svg></button>
+   </nav>
+   <div class="constellation-label" hidden></div>
+   <div class="star-target" aria-hidden="true" hidden></div>
+   <aside class="object-card" hidden aria-live="polite"><button class="close-button" data-close-object aria-label="Close">×</button><p class="object-kind"></p><h1 class="object-name"></h1><p class="object-description" hidden></p><div class="object-facts"></div><button class="focus-object" data-focus-object data-i18n="focus">Approach</button></aside>
+   <aside class="planetarium-panel" id="planetarium-panel" hidden>
+    <div class="panel-heading"><h2></h2><button class="close-button" data-close-panel aria-label="Close">×</button></div>
+    <section data-panel="objects" hidden><input id="object-search" type="search" autocomplete="off" maxlength="60" aria-label="Search stars and planets" placeholder="Find a star or planet"/><div class="object-list"></div></section>
+    <section data-panel="location" hidden><div class="location-list"></div><details class="coordinates"><summary data-i18n="coordinates">Coordinates</summary><form id="location-form"><label><span data-i18n="latitude">Latitude</span><input name="latitude" type="number" step="0.01" min="-90" max="90" required value="28.76"/></label><label><span data-i18n="longitude">Longitude</span><input name="longitude" type="number" step="0.01" min="-180" max="180" required value="-17.89"/></label><button type="submit" data-i18n="apply">Apply</button></form></details></section>
+    <section data-panel="settings" hidden>
+     <label class="setting-row"><span data-i18n="photographic">Photographic sky</span><input type="checkbox" data-option="photographic" checked/></label>
+     <label class="setting-row"><span data-i18n="atmosphere">Horizon & atmosphere</span><input type="checkbox" data-option="atmosphere"/></label>
+     <label class="setting-row"><span data-i18n="constellations">Constellations</span><input type="checkbox" data-option="constellations" checked/></label>
+     <label class="setting-row"><span data-i18n="orbits">Orbit lines</span><input type="checkbox" data-option="orbits"/></label>
+     <label class="setting-row"><span data-i18n="quality">Quality</span><select data-quality><option value="balanced" data-i18n="balanced">Balanced</option><option value="high" data-i18n="high">High</option></select></label>
+     <label class="setting-row"><span data-i18n="volume">Volume</span><input type="range" min="0" max="1" step="0.01" value="0.32" data-music-volume aria-label="Music volume"/></label>
+     <label class="setting-row" data-device-option hidden><span data-i18n="deviceMotion">Phone motion</span><input type="checkbox" data-device-nav/></label>
+     <button class="credits-button" data-panel-toggle="credits" data-i18n="credits">Sources & credits</button>
+    </section>
+    <section data-panel="experiences" hidden><div class="experience-list"></div></section>
+    <section data-panel="help" hidden><div class="controls-guide"></div></section>
+    <section data-panel="credits" hidden><div class="credits-list"></div><a class="credits-link" href="/legal/" data-i18n="allCredits">All credits ↗</a></section>
+   </aside>
+   <div class="experience-dock" hidden><div class="experience-heading"><span class="experience-title"></span><button class="close-button" data-close-experience aria-label="Close">×</button></div><div class="eclipse-progress" hidden><span class="eclipse-name" hidden></span><div class="eclipse-timeline"><input type="range" min="0" max="1000" value="500" step="1" aria-label="Eclipse time"/><div class="eclipse-contacts"></div></div><span class="eclipse-phase"></span></div><div class="moon-phases" hidden></div><div class="experience-options" data-experience-controls hidden></div><div class="experience-actions"><button class="experience-play" data-experience-play hidden aria-label="Pause">Ⅱ</button><button class="experience-replay" data-replay-experience hidden data-i18n="replay">Replay</button></div></div>
+   <footer class="planetarium-controls">
+    <button class="location-button" data-panel-toggle="location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span class="location-name">La Palma</span></button>
+    <div class="time-controls"><button class="icon-button" data-reverse aria-label="Reverse time" title="Reverse time"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14m12-14L8 12l10 7Z"/></svg></button><button class="icon-button play-button" data-play aria-label="Play" title="Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7Z"/></svg></button><button class="time-display" data-panel-toggle="time" aria-label="Change date and time"><time>12 AUG 2025</time><span class="clock-display">22:00:00 <small>UTC</small></span></button><select class="time-speed" aria-label="Time speed"><option value="1">1×</option><option value="60" selected>60×</option><option value="600">600×</option><option value="3600">3600×</option><option value="86400">1 day/s</option><option value="2592000">30 days/s</option></select><button class="now-button" data-now data-i18n="now">Now</button></div>
+   </footer>
+   <aside class="orientation-hud"><div class="gyroscope-viewport" role="slider" tabindex="0" aria-label="View direction" aria-valuemin="0" aria-valuemax="359" aria-valuenow="0"><span class="compass-north" data-cardinal="N">N</span><span class="compass-east" data-cardinal="E">E</span><span class="compass-south" data-cardinal="S">S</span><span class="compass-west" data-cardinal="W">W</span></div><div class="orientation-heading"><span class="view-direction">N</span><button class="icon-button reset-view" data-reset-view data-tip="reset" aria-label="Reset view" title="Reset view"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8a8 8 0 1 1-1 8M5 3v5h5"/></svg></button></div><div class="orientation-readout"><button type="button" data-direction-axis="azimuth" aria-pressed="true"><small data-i18n="azimuthShort">AZ</small><output data-angle="azimuth">0.0°</output></button><button type="button" data-direction-axis="elevation" aria-pressed="false"><small data-i18n="altitudeShort">ALT</small><output data-angle="elevation">0.0°</output></button><button type="button" data-direction-axis="roll" aria-pressed="false"><small data-i18n="rollShort">ROLL</small><output data-angle="roll">0.0°</output></button></div></aside>
+   <div class="time-popover" id="planetarium-time" hidden><form id="time-form"><label for="sky-datetime" data-i18n="dateTime">Date & time · UTC</label><input id="sky-datetime" type="datetime-local" min="1600-01-01T00:00" max="2400-12-31T23:59" value="2025-08-12T22:00" required/><button type="submit" data-i18n="apply">Apply</button></form></div>
+   <div class="planetarium-message" role="status" hidden></div>
+   <div class="solar-scale-note" hidden data-i18n="displayScale">Display scale</div>
+   <noscript><div class="planetarium-noscript">Enable JavaScript to explore the planetarium.</div></noscript>
+  </main>
+  <script>import '../planetarium/main.mjs';</script>
+ </body>
+</html>

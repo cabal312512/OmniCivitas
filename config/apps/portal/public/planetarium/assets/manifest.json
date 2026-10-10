@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "preparedOn": "2026-10-10",
+  "totalAssetBytes": 28625242,
+  "assets": [
+    {
+      "id": "mercury",
+      "url": "/planetarium/assets/mercury.jpg",
+      "filename": "mercury.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_mercury.jpg",
+      "sourceSha256": "5a5c80607f643496bac9a631e71957def35ed788895f18b678ac849c2b38e48a",
+      "sha256": "ec2e14170f111f1949c6cd417274c4cb6fdbdfc373c941e16f4f1e50329b1586",
+      "bytes": 749677,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "venus",
+      "url": "/planetarium/assets/venus.jpg",
+      "filename": "venus.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_venus_atmosphere.jpg",
+      "sourceSha256": "225012ad4911730605c4e189ca2a3bf674fce50cc48aab4102b936b47d6991ac",
+      "sha256": "0494d985a34c39b139eaa8d8fe843fb1b65a4542741aca988a8bbeb1e80e6796",
+      "bytes": 191206,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "earth-day",
+      "url": "/planetarium/assets/earth-day.jpg",
+      "filename": "earth-day.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/8k_earth_daymap.jpg",
+      "sourceSha256": "88ab060b6e7d241cfc590c69f528fab2b3247b738d40124cb590999a6fe44abc",
+      "sha256": "8ab9982f508648ff2ab86ec0fcb5a965d36ac18ffc6c661e979b627ae686a919",
+      "bytes": 1058138,
+      "dimensions": [
+        4096,
+        2048
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "earth-night",
+      "url": "/planetarium/assets/earth-night.jpg",
+      "filename": "earth-night.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg",
+      "sourceSha256": "c16fd1bc096ab91a5c5265c6ff9847c43f489f2e2ee790ccdbcbd03251cf3a5a",
+      "sha256": "5129236b115cb4161e7393a244538bd3cddb3861490bafa392a6032542f9b70f",
+      "bytes": 179490,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "earth-clouds",
+      "url": "/planetarium/assets/earth-clouds.jpg",
+      "filename": "earth-clouds.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_earth_clouds.jpg",
+      "sourceSha256": "fffd7f68d41b37274822150e54a6ef605af1d3ec35624d9f628c3b896bfa42ed",
+      "sha256": "a2167139b27858a96ad5fadab5c5ffe430abf631c243acd94365135b6a9a4c5a",
+      "bytes": 842122,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "earth-normal",
+      "url": "/planetarium/assets/earth-normal.jpg",
+      "filename": "earth-normal.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_earth_normal_map.tif",
+      "sourceSha256": "f518ce2646ca935dbc17e316041de4fea7a5da0ec441e4eb22e711eabd843ba2",
+      "sha256": "b46b53b47b009760bce30a839a0cf5175d282085989af9e1f77bfae85e638a96",
+      "bytes": 104537,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "earth-specular",
+      "url": "/planetarium/assets/earth-specular.jpg",
+      "filename": "earth-specular.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_earth_specular_map.tif",
+      "sourceSha256": "6b90ecfce248591a1ecc9a3e49acca1a7059b6828877e718302ed9a6b4471bd7",
+      "sha256": "c08297c907c190e307882ede7eea23529a88e9ec3bbfb6d7ea9105240fdcdff1",
+      "bytes": 223234,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "mars",
+      "url": "/planetarium/assets/mars.jpg",
+      "filename": "mars.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_mars.jpg",
+      "sourceSha256": "2d187f3e77a98eaa8cea5f4cc722f633c122ef170b9e94ace6b5fb6cbc3f8e01",
+      "sha256": "e3a28f7af063dbb2261dea69559363665ac2e04d65dd72891d06b058b1ae203e",
+      "bytes": 512230,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "jupiter",
+      "url": "/planetarium/assets/jupiter.jpg",
+      "filename": "jupiter.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg",
+      "sourceSha256": "b0f04d005350252636b0e3396fc592548cbd9e9126b269d32d5c6abd4b0e4f2b",
+      "sha256": "896e06a7f9e6c4f87ae6e01261f4314ea69b95235df2a094e76d61131bd4067c",
+      "bytes": 367834,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "saturn",
+      "url": "/planetarium/assets/saturn.jpg",
+      "filename": "saturn.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_saturn.jpg",
+      "sourceSha256": "54a900ca9bf7ab62e70f862852759abdf342e6d6436a95a2fe9ebdb6bcd3bbac",
+      "sha256": "40ce028876191c38b411ef2cf2056893f2c506725bfe91d33754165f450c712e",
+      "bytes": 159197,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "saturn-ring",
+      "url": "/planetarium/assets/saturn-ring.png",
+      "filename": "saturn-ring.png",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_saturn_ring_alpha.png",
+      "sourceSha256": "4b0644b2f3ef259fd0bfaedd9dc52f9e7d9738f65f50363e8c4dd19f650d7334",
+      "sha256": "acfda2902f212c7d3f3fb8cee5ca19322fd86f18f0cd6ae069ad6ef422b02a23",
+      "bytes": 10436,
+      "dimensions": [
+        2048,
+        125
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "uranus",
+      "url": "/planetarium/assets/uranus.jpg",
+      "filename": "uranus.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_uranus.jpg",
+      "sourceSha256": "d15239d46f82d3ea13d2b260b5b29b2a382f42f2916dae0694d0387b1204a09d",
+      "sha256": "4a361e113856ca6daa65fa74875cdaba68f2427dbc0a09d1b9cab8bf75fa2844",
+      "bytes": 37127,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "neptune",
+      "url": "/planetarium/assets/neptune.jpg",
+      "filename": "neptune.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_neptune.jpg",
+      "sourceSha256": "cb42ea82709741d28b0af44d8b283cbc6dbd0c521a7f0e1e1e010ade00977df6",
+      "sha256": "caa239bb7cdb1ce276e8d1423032290d3fede81ed275460196812aa310af1a27",
+      "bytes": 100533,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "sun",
+      "url": "/planetarium/assets/sun.jpg",
+      "filename": "sun.jpg",
+      "sourceUrl": "https://www.solarsystemscope.com/textures/download/2k_sun.jpg",
+      "sourceSha256": "ff0f076ba65e03b5ab518451bc96699325be38e3ccbdd5869ee1c00f3a0c8816",
+      "sha256": "bcbd2933bb47e6b06aa9efcd8074df27d19666d66c21c9eb3f3ed25e655cda4c",
+      "bytes": 497815,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "sss",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "moon",
+      "url": "/planetarium/assets/moon.jpg",
+      "filename": "moon.jpg",
+      "sourceUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg",
+      "sourceSha256": "f7130a1822681fa7512d7dcfd40db8c10b9ba4f06777910348698260ed7a2170",
+      "sha256": "5edfd284531c6d77c710e3c7577bce0a46066bec176efcb1da5ceff7543f0e9c",
+      "bytes": 491013,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "creditGroup": "moon",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "moon-height",
+      "url": "/planetarium/assets/moon-height.jpg",
+      "filename": "moon-height.jpg",
+      "sourceUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_3_8bit.jpg",
+      "sourceSha256": "6d93f887e7d8bedfe35ab89ba785e5e3ca12381bd092a5e6abe2c707dda8bb98",
+      "sha256": "06bc686d0e8a0293d02a94bc653cdcdbb28cf8719d3ad6b4e405ec16893b660a",
+      "bytes": 120889,
+      "dimensions": [
+        1024,
+        512
+      ],
+      "creditGroup": "moon",
+      "derivation": "Converted to browser-supported format, optionally downsampled, JPEG quality 91 (normal map quality 93). Color content otherwise unchanged; Saturn-ring alpha retained."
+    },
+    {
+      "id": "stars",
+      "filename": "stars.json",
+      "url": "/planetarium/assets/stars.json",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/ofrohn/d3-celestial/7e720a3de062059d4c5400a379146a601d9010e0/data/stars.6.json",
+        "https://raw.githubusercontent.com/ofrohn/d3-celestial/7e720a3de062059d4c5400a379146a601d9010e0/data/starnames.json"
+      ],
+      "upstreamCommit": "7e720a3de062059d4c5400a379146a601d9010e0",
+      "creditGroup": "catalogue",
+      "sha256": "dcafcac54250453d3a18b206db9fb33d447e5a8ed46bfc51b63bda20cf3e7609",
+      "bytes": 442920,
+      "derivation": "Selected fields, flattened GeoJSON, longitude wrapped to 0..360 degrees. Coordinates remain equatorial J2000."
+    },
+    {
+      "id": "constellations",
+      "filename": "constellations.json",
+      "url": "/planetarium/assets/constellations.json",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/ofrohn/d3-celestial/7e720a3de062059d4c5400a379146a601d9010e0/data/constellations.lines.json",
+        "https://raw.githubusercontent.com/ofrohn/d3-celestial/7e720a3de062059d4c5400a379146a601d9010e0/data/constellations.json"
+      ],
+      "upstreamCommit": "7e720a3de062059d4c5400a379146a601d9010e0",
+      "creditGroup": "catalogue",
+      "sha256": "a906bb13f6e2cabe3c2ba9dfcd32877ea99910e3af24bbbed30da56373e9eb8d",
+      "bytes": 24378,
+      "derivation": "Selected fields, flattened GeoJSON, longitude wrapped to 0..360 degrees. Coordinates remain equatorial J2000. Duplicate Serpens line groups merged into one constellation: 88 unique IAU IDs."
+    },
+    {
+      "id": "milkyway",
+      "filename": "milkyway.jpg",
+      "url": "/planetarium/assets/milkyway.jpg",
+      "dimensions": [
+        4096,
+        2048
+      ],
+      "sourceUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004800/a004851/milkyway_2020_4k.exr",
+      "sourceSha256": "2eb802d6e68d170b410f766c7fec07f7518619f6b6708fdc81e9302d93e74fdb",
+      "sha256": "c9b892d67b5348f5d809726c853f8e1407c9c4925a23e146332ef8f85473bccd",
+      "bytes": 3047549,
+      "creditGroup": "sky",
+      "derivation": "NASA 4096x2048 linear EXR decoded with Three.js EXRLoader, restored to top-down image rows, Reinhard x/(1+x) tone map, linear-to-sRGB encoding, JPEG quality 93. No stars or nebulae invented.",
+      "projection": "Equirectangular ICRF/J2000, image center RA 0 degrees, RA increases left; u=(0.5-ra/360) mod 1; v=0.5-dec/180."
+    },
+    {
+      "id": "starmap",
+      "filename": "starmap.jpg",
+      "url": "/planetarium/assets/starmap.jpg",
+      "dimensions": [
+        4096,
+        2048
+      ],
+      "sourceUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004800/a004851/starmap_2020_4k.exr",
+      "sourceSha256": "69b841cd048c2ef35543eb1c5819b322530e78aa4b0cab97ec1de3ef56a4ddcd",
+      "sha256": "3451410f7f0cc2433d8ab933321a7216ebe1304ed687343a5553d9c400916612",
+      "bytes": 3057589,
+      "creditGroup": "sky",
+      "derivation": "NASA 4096x2048 linear EXR decoded with Three.js EXRLoader, restored to top-down image rows, Reinhard x/(1+x) tone map, linear-to-sRGB encoding, JPEG quality 93. No stars or nebulae invented.",
+      "projection": "Equirectangular ICRF/J2000, image center RA 0 degrees, RA increases left; u=(0.5-ra/360) mod 1; v=0.5-dec/180."
+    },
+    {
+      "id": "atmosphere-transmittance",
+      "filename": "atmosphere/transmittance.exr",
+      "url": "/planetarium/assets/atmosphere/transmittance.exr",
+      "sourceUrl": "https://registry.npmjs.org/@takram/three-atmosphere/-/three-atmosphere-0.19.1.tgz",
+      "sourcePackage": "@takram/three-atmosphere@0.19.1",
+      "sourceSha256": "aef6aba1a70ac159e92495feed1dfb62755f3acd918d954f28638c95f999af1b",
+      "sha256": "aef6aba1a70ac159e92495feed1dfb62755f3acd918d954f28638c95f999af1b",
+      "bytes": 27977,
+      "creditGroup": "atmosphere",
+      "derivation": "Unmodified precomputed Earth atmospheric scattering texture shipped by the pinned dependency; combined scattering true, higher-order separate texture false.",
+      "sourceArchivePath": "package/assets/transmittance.exr",
+      "sourcePackageIntegrity": "sha512-k/QAgED7bMkjVzHiBu2QD1Cqg5lcgHLc8vxVeiTTzUE+glZcZOXTjjvi74yjb+eKQHW5wh1WL/DjxVvluAQU0Q=="
+    },
+    {
+      "id": "atmosphere-scattering",
+      "filename": "atmosphere/scattering.exr",
+      "url": "/planetarium/assets/atmosphere/scattering.exr",
+      "sourceUrl": "https://registry.npmjs.org/@takram/three-atmosphere/-/three-atmosphere-0.19.1.tgz",
+      "sourcePackage": "@takram/three-atmosphere@0.19.1",
+      "sourceSha256": "6e6331c196f3d6c524543062bfe9d5fcf52201ac3d62cd443dfedfe58a53b2ce",
+      "sha256": "6e6331c196f3d6c524543062bfe9d5fcf52201ac3d62cd443dfedfe58a53b2ce",
+      "bytes": 4094331,
+      "creditGroup": "atmosphere",
+      "derivation": "Unmodified precomputed Earth atmospheric scattering texture shipped by the pinned dependency; combined scattering true, higher-order separate texture false.",
+      "sourceArchivePath": "package/assets/scattering.exr",
+      "sourcePackageIntegrity": "sha512-k/QAgED7bMkjVzHiBu2QD1Cqg5lcgHLc8vxVeiTTzUE+glZcZOXTjjvi74yjb+eKQHW5wh1WL/DjxVvluAQU0Q=="
+    },
+    {
+      "id": "atmosphere-irradiance",
+      "filename": "atmosphere/irradiance.exr",
+      "url": "/planetarium/assets/atmosphere/irradiance.exr",
+      "sourceUrl": "https://registry.npmjs.org/@takram/three-atmosphere/-/three-atmosphere-0.19.1.tgz",
+      "sourcePackage": "@takram/three-atmosphere@0.19.1",
+      "sourceSha256": "ca1cbc65648055b496389a08aa60fc7e529f59290dd36f4ee0a3aecda4085d87",
+      "sha256": "ca1cbc65648055b496389a08aa60fc7e529f59290dd36f4ee0a3aecda4085d87",
+      "bytes": 2253,
+      "creditGroup": "atmosphere",
+      "derivation": "Unmodified precomputed Earth atmospheric scattering texture shipped by the pinned dependency; combined scattering true, higher-order separate texture false.",
+      "sourceArchivePath": "package/assets/irradiance.exr",
+      "sourcePackageIntegrity": "sha512-k/QAgED7bMkjVzHiBu2QD1Cqg5lcgHLc8vxVeiTTzUE+glZcZOXTjjvi74yjb+eKQHW5wh1WL/DjxVvluAQU0Q=="
+    },
+    {
+      "id": "milkyway-high",
+      "filename": "milkyway-high.jpg",
+      "url": "/planetarium/assets/milkyway-high.jpg",
+      "dimensions": [
+        8192,
+        4096
+      ],
+      "sourceUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004800/a004851/milkyway_2020_8k.exr",
+      "sourceSha256": "361d1961647af073b3b3e4aea4fca85f15b3c9d915e0c8c4befb02520dadd10a",
+      "sha256": "0e5e94cc1e5e3a35d580ed2ace0706964adcb5e59ac7511519ec82395825f721",
+      "bytes": 10984446,
+      "creditGroup": "sky",
+      "optional": true,
+      "derivation": "NASA 8192x4096 linear EXR decoded with existing Three.js EXRLoader using half-float storage. Restored top-down rows; same unscaled exposure and Reinhard x/(1+x) tone map as the 4k map, linear-to-sRGB encoding, JPEG quality 93. Authentic source radiance only; no painted or generated scenery. Prepared in 64-row chunks.",
+      "projection": "Equirectangular ICRF/J2000, image center RA 0 degrees, RA increases left; u=(0.5-ra/360) mod 1; v=0.5-dec/180."
+    },
+    {
+      "id": "stars-faint",
+      "url": "/planetarium/assets/stars-faint.json",
+      "filename": "stars-faint.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ofrohn/d3-celestial/7e720a3de062059d4c5400a379146a601d9010e0/data/stars.8.json",
+      "sourceSha256": "e3ec6cde89bae0dde064d91c1edb9ec53c3c40d5c12fdf5d30f9a4de5dbc2143",
+      "sha256": "d6230633f1bd2e2910cdf8af0c0ade7e9146b1fab959c6b6c3151de30880c259",
+      "bytes": 1298321,
+      "creditGroup": "catalogue",
+      "count": 36367,
+      "derivation": "Real d3-celestial magnitude-eight catalogue, pinned source. Only new catalogue IDs with 6 < mag <= 8 retained; RA wrapped to 0–360 degrees, fields packed as [id,ra,dec,mag,bv]. No invented positions or extra motion model."
+    }
+  ],
+  "defaultAssetBytes": 16342475
+}

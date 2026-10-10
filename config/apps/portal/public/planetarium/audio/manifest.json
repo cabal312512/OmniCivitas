@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "preparedOn": "2026-10-09",
+  "totalAssetBytes": 3478125,
+  "assets": [
+    {
+      "id": "lost-in-the-snow-wave",
+      "url": "/planetarium/audio/lost_in_the_snow_wave.ogg",
+      "filename": "lost_in_the_snow_wave.ogg",
+      "sourceUrl": "https://opengameart.org/content/lost-in-the-snow-wave",
+      "author": "hatmix",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceSha256": "f15f646b30db4dfb6ca69bb73b1ea4e3825c3e2cd8ce73576e49a877dd7a3fab",
+      "sha256": "f15f646b30db4dfb6ca69bb73b1ea4e3825c3e2cd8ce73576e49a877dd7a3fab",
+      "bytes": 3478125,
+      "creditGroup": "music",
+      "derivation": "User-supplied original Ogg copied byte-for-byte without edits or transcoding."
+    }
+  ]
+}

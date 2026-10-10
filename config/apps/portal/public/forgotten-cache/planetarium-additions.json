@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "preparedOn": "2026-10-09",
+  "source": "User-supplied image and audio; unchanged byte copies",
+  "assets": [
+    {
+      "url": "/forgotten-cache/planetarium-corner.png",
+      "sourceName": "codex-clipboard-7e37b00e-efca-45fc-a5ff-4f1c949481bc.png",
+      "source": "User-supplied file",
+      "sha256": "5e7c0b0b36a426b523a504a83571612571423922df4533257f49ef3e464965c6",
+      "bytes": 243276,
+      "route": "/maze/display/fold/back/",
+      "use": "78 CSS-pixel corner image link to /planetarium/; original image unchanged",
+      "license": "Not determined; not represented as CC0 or project-owned material"
+    },
+    {
+      "url": "/forgotten-cache/audio/meguru-ciallo.mp3",
+      "sourceName": "meguru-ciallo.mp3",
+      "source": "User-supplied file",
+      "sha256": "a74370912d8b3c57c983ff0627b88bcb481294d50a69044b6ac3d46188f96ace",
+      "bytes": 7533,
+      "route": "/maze/window/under/",
+      "use": "Ciallo image click; one-shot, restarts on repeated click and stops on close or page exit",
+      "license": "Not determined; not represented as CC0 or project-owned material"
+    }
+  ]
+}

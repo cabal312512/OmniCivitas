@@ -1,0 +1,11 @@
+<button class="resident-preview-key" data-q8-resident-preview aria-label="空白按钮" type="button"></button>
+<script>
+  import { registerResidentPreviewButton } from './resident-preview.mjs';
+  registerResidentPreviewButton();
+</script>
+<style>
+  .resident-preview-key{position:fixed;left:20px;bottom:76px;z-index:1102;width:23px;height:19px;min-width:0;padding:0;border:1px solid #6e9ed4;border-radius:0;background:linear-gradient(150deg,#ffffffa6,#c4ddfa52);box-shadow:inset 1px 1px 0 #fff9,1px 2px 0 #4b81bb24;cursor:pointer;transform:none;animation:none}
+  .resident-preview-key:hover{background:#deedffbd;border-color:#2562bd}
+  .resident-preview-key:active{box-shadow:inset 1px 1px 0 #4070a948;translate:0 1px}
+  .resident-preview-key:focus-visible{outline:2px solid #347be6;outline-offset:3px}
+</style>
