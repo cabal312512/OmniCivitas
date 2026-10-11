@@ -7,6 +7,7 @@ import {
   orientationAngles,
   viewingDirection,
 } from "../config/apps/portal/src/planetarium/orientation-hud.mjs";
+import { skySnapshot } from "../config/apps/portal/src/planetarium/ephemeris.mjs";
 
 const portalRequire = createRequire(
   new URL("../config/apps/portal/package.json", import.meta.url),
@@ -86,6 +87,40 @@ function curveScreen(hud, axis, angle) {
   return hud._screen(point, rect);
 }
 
+const observationTime = "2025-08-12T22:00:00.000Z";
+const observingPlace = { latitude: 28.76, longitude: -17.89, elevation: 2300 };
+function skyPose(place, time = observationTime) {
+  return new THREE.Quaternion().setFromRotationMatrix(
+    new THREE.Matrix4().fromArray(skySnapshot(time, place).skyTransform),
+  );
+}
+function worldPose(object) {
+  return object.getWorldQuaternion(new THREE.Quaternion());
+}
+function worldPoint(object) {
+  return object.getWorldPosition(new THREE.Vector3());
+}
+function textureLocation(hud, object) {
+  const position = hud.earth.worldToLocal(worldPoint(object)).normalize();
+  const u =
+    (((Math.atan2(position.z, -position.x) / (Math.PI * 2)) % 1) + 1) % 1;
+  return {
+    latitude:
+      (Math.asin(THREE.MathUtils.clamp(position.y, -1, 1)) * 180) / Math.PI,
+    longitude: u * 360 - 180,
+  };
+}
+function angularDistance(a, b) {
+  return Math.abs(
+    (Math.atan2(
+      Math.sin(((a - b) * Math.PI) / 180),
+      Math.cos(((a - b) * Math.PI) / 180),
+    ) *
+      180) /
+      Math.PI,
+  );
+}
+
 describe("semantic view-direction instrument", () => {
   it("maps cardinal headings and signed elevation to true observer-local 3D rays", () => {
     for (const [heading, expected] of [
@@ -139,7 +174,11 @@ describe("semantic view-direction instrument", () => {
   it("populates every tick with a visible finite ribbon on its direction ring", () => {
     const hud = instrument();
     hud.setOrientation({ azimuth: 73, elevation: -28, roll: 42 });
-    for (const [axis, count] of [["azimuth", 72], ["elevation", 25], ["roll", 24]]) {
+    for (const [axis, count] of [
+      ["azimuth", 72],
+      ["elevation", 25],
+      ["roll", 24],
+    ]) {
       const control = hud.controls[axis];
       const positions = control.ticks.geometry.attributes.position;
       expect(positions.count).toBe(count * 4);
@@ -147,8 +186,11 @@ describe("semantic view-direction instrument", () => {
         const corners = [0, 1, 2, 3].map((corner) =>
           new THREE.Vector3().fromBufferAttribute(positions, index + corner),
         );
-        expect(corners.every((point) => point.toArray().every(Number.isFinite))).toBe(true);
-        expect(corners[0].length()).toBeGreaterThan(control.radius);
+        expect(
+          corners.every((point) => point.toArray().every(Number.isFinite)),
+        ).toBe(true);
+        const center = hud._curvePoint(axis, 0, 0, new THREE.Vector3());
+        expect(corners[0].distanceTo(center)).toBeGreaterThan(control.radius);
         expect(corners[0].distanceTo(corners[1])).toBeGreaterThan(0.01);
         expect(corners[0].distanceTo(corners[2])).toBeGreaterThan(0.02);
       }
@@ -216,6 +258,238 @@ describe("semantic view-direction instrument", () => {
     expect(next).toBeGreaterThan(60);
     expect(next).toBeLessThan(65);
     hud.dispose();
+  });
+
+  it("anchors the marker and arrow on the selected geographic texel, including both hemispheres and the date line", () => {
+    const hud = instrument();
+    try {
+      for (const place of [
+        observingPlace,
+        { latitude: 31.2304, longitude: 121.4737, elevation: 4 },
+        { latitude: -33.8688, longitude: 151.2093, elevation: 50 },
+        { latitude: 64.1466, longitude: -21.9426, elevation: 20 },
+        { latitude: -12, longitude: -179.9, elevation: 0 },
+        { latitude: 12, longitude: 179.9, elevation: 0 },
+      ]) {
+        hud.setObserver(place, skyPose(place));
+        hud.setOrientation({ azimuth: 237, elevation: 36, roll: -28 });
+        hud.scene.updateMatrixWorld(true);
+        near(
+          worldPoint(hud.observerMarker).distanceTo(
+            worldPoint(hud.directionArrow),
+          ),
+          0,
+        );
+        for (const object of [hud.observerMarker, hud.directionArrow]) {
+          const location = textureLocation(hud, object);
+          near(location.latitude, place.latitude);
+          near(angularDistance(location.longitude, place.longitude), 0);
+        }
+        const root = worldPoint(hud.directionArrow);
+        const radius = root.distanceTo(worldPoint(hud.earth));
+        expect(radius).toBeGreaterThan(hud.earth.geometry.parameters.radius);
+        expect(radius).toBeLessThan(
+          hud.earth.geometry.parameters.radius + 0.025,
+        );
+        hud.setOrientation({ azimuth: 18, elevation: -46, roll: 76 });
+        hud.scene.updateMatrixWorld(true);
+        near(worldPoint(hud.directionArrow).distanceTo(root), 0);
+      }
+    } finally {
+      hud.dispose();
+    }
+  });
+
+  it("makes zenith, horizon and nadir relative to the actual observer surface normal", () => {
+    const hud = instrument();
+    try {
+      for (const place of [
+        observingPlace,
+        { latitude: -34, longitude: 151, elevation: 0 },
+        { latitude: 90, longitude: 0, elevation: 0 },
+      ]) {
+        hud.setObserver(place, skyPose(place));
+        for (const [elevation, expected] of [
+          [90, 1],
+          [0, 0],
+          [-90, -1],
+        ]) {
+          hud.setOrientation({ azimuth: 123, elevation, roll: 42 });
+          hud.scene.updateMatrixWorld(true);
+          const normal = worldPoint(hud.directionArrow)
+            .sub(worldPoint(hud.earth))
+            .normalize();
+          const ray = new THREE.Vector3(0, 1, 0).applyQuaternion(
+            worldPose(hud.directionArrow),
+          );
+          near(ray.dot(normal), expected);
+          expect(ray.toArray().every(Number.isFinite)).toBe(true);
+        }
+      }
+    } finally {
+      hud.dispose();
+    }
+  });
+
+  it("follows the displayed sky's inverse frame continuously in forward, reverse and paused time", () => {
+    const hud = instrument();
+    try {
+      const first = skyPose(observingPlace);
+      const later = skyPose(observingPlace, "2025-08-13T04:00:00.000Z");
+      const originalInput = first.clone();
+      hud.setObserver(observingPlace, first);
+      hud.setOrientation({ azimuth: 74, elevation: 32, roll: 11 });
+      hud.scene.updateMatrixWorld(true);
+      const initialEarth = worldPose(hud.earthFrame);
+      const initialLocal = worldPose(hud.localFrame);
+      const fixedAlignment = initialLocal.clone().multiply(first);
+      const initialRoot = worldPoint(hud.directionArrow);
+      let previousPose = initialLocal;
+      for (let step = 1; step <= 24; step++) {
+        const displayedSky = first.clone().slerp(later, step / 24);
+        hud.setObserver(observingPlace, displayedSky);
+        hud.scene.updateMatrixWorld(true);
+        const local = worldPose(hud.localFrame);
+        near(
+          local.clone().multiply(displayedSky).angleTo(fixedAlignment),
+          0,
+          6,
+        );
+        expect(local.angleTo(previousPose)).toBeLessThan(0.08);
+        for (const control of Object.values(hud.controls))
+          near(worldPose(control.ribbon).angleTo(local), 0, 6);
+        previousPose = local;
+      }
+      expect(
+        worldPoint(hud.directionArrow).distanceTo(initialRoot),
+      ).toBeGreaterThan(0.3);
+      const pausedEarth = worldPose(hud.earthFrame);
+      const pausedRoot = worldPoint(hud.directionArrow);
+      for (let repeat = 0; repeat < 3; repeat++)
+        hud.setObserver(observingPlace, later);
+      hud.scene.updateMatrixWorld(true);
+      near(worldPose(hud.earthFrame).angleTo(pausedEarth), 0, 6);
+      near(worldPoint(hud.directionArrow).distanceTo(pausedRoot), 0);
+      for (let step = 23; step >= 0; step--) {
+        const displayedSky = first.clone().slerp(later, step / 24);
+        hud.setObserver(observingPlace, displayedSky);
+        hud.scene.updateMatrixWorld(true);
+        const local = worldPose(hud.localFrame);
+        near(
+          local.clone().multiply(displayedSky).angleTo(fixedAlignment),
+          0,
+          6,
+        );
+        expect(local.angleTo(previousPose)).toBeLessThan(0.08);
+        previousPose = local;
+      }
+      near(worldPose(hud.earthFrame).angleTo(initialEarth), 0, 6);
+      near(worldPoint(hud.directionArrow).distanceTo(initialRoot), 0);
+      expect(first.equals(originalInput)).toBe(true);
+      expect(hud.angles).toEqual({ azimuth: 74, elevation: 32, roll: 11 });
+      const equivalent = first.clone();
+      equivalent.set(-first.x, -first.y, -first.z, -first.w);
+      hud.setObserver(observingPlace, equivalent);
+      hud.scene.updateMatrixWorld(true);
+      near(worldPose(hud.earthFrame).angleTo(initialEarth), 0, 6);
+    } finally {
+      hud.dispose();
+    }
+  });
+
+  it("changes the observer marker without rotating the Earth at the same UTC instant", () => {
+    const hud = instrument();
+    try {
+      hud.setObserver(observingPlace, skyPose(observingPlace));
+      hud.scene.updateMatrixWorld(true);
+      const initialEarth = worldPose(hud.earthFrame);
+      const initialMarker = worldPoint(hud.observerMarker);
+      const nextPlace = {
+        latitude: -33.8688,
+        longitude: 151.2093,
+        elevation: 50,
+      };
+      hud.setObserver(nextPlace, skyPose(nextPlace));
+      hud.scene.updateMatrixWorld(true);
+      near(worldPose(hud.earthFrame).angleTo(initialEarth), 0, 6);
+      expect(
+        worldPoint(hud.observerMarker).distanceTo(initialMarker),
+      ).toBeGreaterThan(0.5);
+      near(
+        textureLocation(hud, hud.observerMarker).latitude,
+        nextPlace.latitude,
+      );
+      near(
+        angularDistance(
+          textureLocation(hud, hud.observerMarker).longitude,
+          nextPlace.longitude,
+        ),
+        0,
+      );
+    } finally {
+      hud.dispose();
+    }
+  });
+
+  it("projects and drags each independent ring in its rotated observer frame", () => {
+    const hud = instrument();
+    let checked = 0;
+    try {
+      const place = { latitude: -33.8688, longitude: 151.2093, elevation: 50 };
+      hud.setObserver(place, skyPose(place));
+      hud.setObserver(place, skyPose(place, "2025-08-13T01:00:00.000Z"));
+      hud.setOrientation({ azimuth: 117, elevation: 27, roll: -32 });
+      hud.scene.updateMatrixWorld(true);
+      const localRotation = worldPose(hud.localFrame);
+      const cameraDirection = hud.camera.getWorldDirection(new THREE.Vector3());
+      for (const [axis, angle] of [
+        ["azimuth", 96],
+        ["elevation", 38],
+        ["roll", -42],
+      ]) {
+        const point = hud._curvePoint(
+          axis,
+          (angle * Math.PI) / 180,
+          hud.controls[axis].radius,
+          new THREE.Vector3(),
+        );
+        const projected = point
+          .clone()
+          .applyMatrix4(hud.localFrame.matrixWorld)
+          .project(hud.camera);
+        const x = rect.left + ((projected.x + 1) * rect.width) / 2;
+        const y = rect.top + ((1 - projected.y) * rect.height) / 2;
+        const actual = curveScreen(hud, axis, angle);
+        near(actual.x, x);
+        near(actual.y, y);
+        const normal =
+          axis === "azimuth"
+            ? new THREE.Vector3(0, 1, 0)
+            : axis === "elevation"
+              ? hud.right.clone()
+              : hud.viewDirection.clone();
+        normal.applyQuaternion(localRotation);
+        if (Math.abs(normal.dot(cameraDirection)) > 0.18) {
+          near(hud.dragControl(axis, x, y, rect, angle - 2), angle, 3);
+          checked++;
+        }
+      }
+      expect(checked).toBeGreaterThanOrEqual(2);
+      const controls = hud.projectControls(rect);
+      for (const [axis, control] of Object.entries(hud.controls)) {
+        const point = worldPoint(control.handle).project(hud.camera);
+        near(
+          controls.handles[axis].x,
+          rect.left + ((point.x + 1) * rect.width) / 2,
+        );
+        near(
+          controls.handles[axis].y,
+          rect.top + ((1 - point.y) * rect.height) / 2,
+        );
+      }
+    } finally {
+      hud.dispose();
+    }
   });
 
   it("restores shared renderer target, viewport, scissor and autoClear after render failure", () => {

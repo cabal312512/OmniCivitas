@@ -270,7 +270,7 @@ function uiLanguage(language) {
   $("#object-search").placeholder = text("search");
   $("#object-search").setAttribute("aria-label", text("search"));
   $(".time-speed").setAttribute("aria-label", text("timeSpeed"));
-  $('.eclipse-timeline input').setAttribute("aria-label", text("eclipseTime"));
+  $(".eclipse-timeline input").setAttribute("aria-label", text("eclipseTime"));
   $('.time-speed option[value="86400"]').textContent = text("day");
   $('.time-speed option[value="2592000"]').textContent = text("month");
   renderLocations();
@@ -345,8 +345,18 @@ function updateDeviceMotion(value = deviceNavigation?.state) {
 function renderGuide() {
   const list = $(".controls-guide");
   list.replaceChildren();
-  canvas.setAttribute("aria-label", text(state.view === "solar" || state.view === "studio" ? "canvasSolar" : "canvasSky"));
-  const pauseLabel = state.view === "studio" || state.experience === "trails" ? "pauseExperienceGuide" : "pauseGuide";
+  canvas.setAttribute(
+    "aria-label",
+    text(
+      state.view === "solar" || state.view === "studio"
+        ? "canvasSolar"
+        : "canvasSky",
+    ),
+  );
+  const pauseLabel =
+    state.view === "studio" || state.experience === "trails"
+      ? "pauseExperienceGuide"
+      : "pauseGuide";
   const rows =
     state.view === "solar" || state.view === "studio"
       ? [
@@ -354,7 +364,9 @@ function renderGuide() {
           ["moveGuide", text("rightDrag")],
           ["forwardGuide", `${text("wheel")} · W S`],
           ["strafeGuide", "A D · Q E"],
-          ...(state.view === "solar" ? [["focusGuide", "Double-click · F"]] : []),
+          ...(state.view === "solar"
+            ? [["focusGuide", "Double-click · F"]]
+            : []),
           ["reset", "R · Middle-click"],
           [pauseLabel, "Space"],
         ]
@@ -464,10 +476,17 @@ function updateClock(force = false) {
 function updatePanelButtons() {
   $$("[data-panel-toggle]").forEach((button) => {
     const time = button.dataset.panelToggle === "time";
-    button.setAttribute("aria-controls", time ? "planetarium-time" : "planetarium-panel");
+    button.setAttribute(
+      "aria-controls",
+      time ? "planetarium-time" : "planetarium-panel",
+    );
     button.setAttribute(
       "aria-expanded",
-      String(time ? !$(".time-popover").hidden : state.panel === button.dataset.panelToggle),
+      String(
+        time
+          ? !$(".time-popover").hidden
+          : state.panel === button.dataset.panelToggle,
+      ),
     );
   });
 }
@@ -509,8 +528,10 @@ function showPanel(name) {
   updatePanelButtons();
   if (state.panel) {
     panelTrigger = $(`[data-panel-toggle="${state.panel}"]`);
-    (state.panel === "objects" ? $("#object-search") : $("[data-close-panel]"))
-      .focus({ preventScroll: true });
+    (state.panel === "objects"
+      ? $("#object-search")
+      : $("[data-close-panel]")
+    ).focus({ preventScroll: true });
   }
 }
 
@@ -966,7 +987,10 @@ async function selectMoonPhase(index) {
   studioFollow = true;
   $(".moon-phases").dataset.phase = index;
   $$("[data-moon-phase]").forEach((button) =>
-    button.setAttribute("aria-pressed", String(Number(button.dataset.moonPhase) === index)),
+    button.setAttribute(
+      "aria-pressed",
+      String(Number(button.dataset.moonPhase) === index),
+    ),
   );
   experienceControls.update(experienceSettings);
 }
@@ -1565,6 +1589,8 @@ function animate(now) {
   $(".orientation-hud").hidden = state.view !== "sky";
   if (state.view === "sky") {
     const box = $(".gyroscope-viewport").getBoundingClientRect();
+    if (sky.hasSnapshot)
+      orientationHud.setObserver(sky.observer, sky.skyQuaternion);
     orientationHud.render(camera, {
       x: box.left,
       y: box.top,
@@ -1587,6 +1613,12 @@ function animate(now) {
           `${point.x.toFixed(1)},${point.y.toFixed(1)}`;
       }
       canvas.dataset.directionArrow = `${orientationHud.viewDirection.x.toFixed(4)},${orientationHud.viewDirection.y.toFixed(4)},${orientationHud.viewDirection.z.toFixed(4)}`;
+      canvas.dataset.earthRotation = orientationHud.earthFrame.quaternion
+        .toArray()
+        .map((v) => v.toFixed(6))
+        .join(",");
+      canvas.dataset.observerLocation = orientationHud.observerKey || "";
+      canvas.dataset.observerMarker = `${projected.observer.x.toFixed(1)},${projected.observer.y.toFixed(1)}`;
       $(".view-direction").textContent = [
         "N",
         "NE",
@@ -1670,9 +1702,14 @@ function bind() {
   selectCompassAxis("azimuth");
   listen(cabal312512Compass, "pointerdown", (event) => {
     if (
-      compassDrag || event.button !== 0 || state.view !== "sky" ||
-      event.ctrlKey || event.metaKey || event.altKey
-    ) return;
+      compassDrag ||
+      event.button !== 0 ||
+      state.view !== "sky" ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.altKey
+    )
+      return;
     const box = cabal312512Compass.getBoundingClientRect();
     const control = orientationHud.pickControl(
       event.clientX,
@@ -1694,7 +1731,12 @@ function bind() {
     adjustCompass({ [control.axis]: control.angle });
   });
   listen(cabal312512Compass, "pointermove", (event) => {
-    if (!compassDrag || compassDrag.pointerId !== event.pointerId || state.view !== "sky") return;
+    if (
+      !compassDrag ||
+      compassDrag.pointerId !== event.pointerId ||
+      state.view !== "sky"
+    )
+      return;
     const box = cabal312512Compass.getBoundingClientRect();
     const angle = orientationHud.dragControl(
       compassDrag.axis,
@@ -1736,7 +1778,9 @@ function bind() {
   );
   updatePanelButtons();
   $('[data-option="orbits"]').checked = state.options.orbits;
-  listen($("[data-close-panel]"), "click", () => closePanel({ restoreFocus: true }));
+  listen($("[data-close-panel]"), "click", () =>
+    closePanel({ restoreFocus: true }),
+  );
   listen($("[data-close-object]"), "click", () => {
     state.selected = null;
     sky.selectConstellation(null);
@@ -1887,21 +1931,33 @@ function bind() {
     } catch {}
   });
   listen(canvas, "contextmenu", (event) => {
-    if (!event.ctrlKey && !event.metaKey && !event.altKey) event.preventDefault();
+    if (!event.ctrlKey && !event.metaKey && !event.altKey)
+      event.preventDefault();
   });
   // Cancel sensor control before navigation handles this same first gesture.
   for (const type of ["pointerdown", "wheel"])
-    listen(canvas, type, (event) => {
-      if (event.ctrlKey || event.metaKey || event.altKey || state.view !== "sky") return;
-      const device = deviceNavigation?.state;
-      if (device?.enabled || device?.waiting) deviceNavigation.disable();
-      if (transition) {
-        skyNavigation.syncFromCamera();
-        transition = null;
-        skyNavigation.setEnabled(true);
-        state.tour = false;
-      }
-    }, { capture: true, passive: true });
+    listen(
+      canvas,
+      type,
+      (event) => {
+        if (
+          event.ctrlKey ||
+          event.metaKey ||
+          event.altKey ||
+          state.view !== "sky"
+        )
+          return;
+        const device = deviceNavigation?.state;
+        if (device?.enabled || device?.waiting) deviceNavigation.disable();
+        if (transition) {
+          skyNavigation.syncFromCamera();
+          transition = null;
+          skyNavigation.setEnabled(true);
+          state.tour = false;
+        }
+      },
+      { capture: true, passive: true },
+    );
   listen(
     canvas,
     "wheel",
@@ -1913,16 +1969,26 @@ function bind() {
   );
   listen(canvas, "pointerdown", (event) => {
     if (
-      state.view === "eclipse" || state.view === "moon" ||
-      event.ctrlKey || event.metaKey || event.altKey
-    ) return;
+      state.view === "eclipse" ||
+      state.view === "moon" ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.altKey
+    )
+      return;
     if (event.button === 1) {
       event.preventDefault();
       resetView();
       return;
     }
     if (drag) drag.multi = true;
-    else drag = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, multi: false };
+    else
+      drag = {
+        pointerId: event.pointerId,
+        x: event.clientX,
+        y: event.clientY,
+        multi: false,
+      };
     transition = null;
     if (state.view === "solar" || state.view === "studio")
       solarNavigation.setEnabled(true);
@@ -1963,9 +2029,15 @@ function bind() {
       );
       drag = null;
       if (
-        multi || distance > 5 || event.target !== canvas || event.button !== 0 ||
-        event.ctrlKey || event.metaKey || event.altKey
-      ) return;
+        multi ||
+        distance > 5 ||
+        event.target !== canvas ||
+        event.button !== 0 ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.altKey
+      )
+        return;
       if (state.view === "studio") return;
       const rect = canvas.getBoundingClientRect();
       const ndc = new THREE.Vector2(
@@ -2030,7 +2102,12 @@ function bind() {
       state.tour = false;
       return;
     }
-    if (event.target?.closest?.('button, a, input, select, textarea, summary, [contenteditable="true"], [role="textbox"]')) return;
+    if (
+      event.target?.closest?.(
+        'button, a, input, select, textarea, summary, [contenteditable="true"], [role="textbox"]',
+      )
+    )
+      return;
     if (event.code === "Space") {
       event.preventDefault();
       if (event.repeat) return;

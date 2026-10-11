@@ -234,13 +234,22 @@ and a maximum pixel ratio of **1.4**. **High** permits **4.2 million pixels** an
 maximum ratio of **1.8**. Automatic 8k texture detail does not increase those
 canvas budgets. The Sky-view orientation HUD is a bounded inset using the same
 Three.js renderer and loop, displaying observer-local heading, elevation and
-camera roll. It contains an upright Earth globe with a **1024 × 512** derivative
+camera roll. It contains a geographic Earth globe with a **1024 × 512** derivative
 of the credited Earth-day map. The cyan ring lies in the local horizontal plane;
 the violet elevation meridian follows the heading; the warm roll ring is
 perpendicular to the view ray. Each has its own pickable handle. Layered luminous
 ribbons with broader cores, flat ticks and a three-dimensional arrow replace mechanical
 gimbal tubes. The arrow follows the complete local viewing vector, including
-height and depth; a faint drop line indicates its horizontal projection.
+height and depth; a faint drop line indicates its horizontal projection. Its root
+and a luminous observer marker share the selected latitude/longitude on the map.
+The Earth and local control rings use the inverse of the **displayed** sky
+rotation, including its existing smooth corrections and high-speed visual cap.
+There is no independent animation clock that can drift from the sky. The inset
+has a fixed celestial reference; geographic location and local angle readouts
+stay unchanged as time turns the Earth. Looking around changes the viewing ray,
+not the observer's city. Thirty bilingual presets and custom coordinates are
+available, including southern and polar locations. The globe is spherical and
+the geographic presets are approximate; it is a navigation display, not a survey.
 Projected ring planes provide pointer angles, with bounded pointer increments
 for edge-on views. Ring selection and focused arrow keys adjust one axis at a
 time. The reset action uses the same camera model.

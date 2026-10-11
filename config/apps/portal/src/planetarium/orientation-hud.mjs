@@ -5,6 +5,8 @@ const RAD = Math.PI / 180;
 const FULL_TURN = Math.PI * 2;
 const cabal312512 = 1024;
 const AZIMUTH_PLANE = -0.18;
+const SURFACE_RADIUS = 0.542;
+const ARROW_TIP = 0.905;
 const UP = new THREE.Vector3(0, 1, 0);
 const orientation = new THREE.Quaternion();
 const forward = new THREE.Vector3();
@@ -45,6 +47,37 @@ export function viewingDirection(
     Math.sin(heading) * Math.cos(altitude),
     Math.sin(altitude),
     -Math.cos(heading) * Math.cos(altitude),
+  );
+}
+
+/** Equirectangular Earth: Greenwich +Z, east +X, geographic north +Y. */
+export function geographicFrame(
+  { latitude, longitude },
+  target = new THREE.Matrix4(),
+) {
+  const lat = latitude * RAD,
+    lon = longitude * RAD;
+  const a = Math.sin(lat),
+    b = Math.cos(lat),
+    c = Math.sin(lon),
+    d = Math.cos(lon);
+  return target.set(
+    d,
+    c * b,
+    c * a,
+    0,
+    0,
+    a,
+    -b,
+    0,
+    -c,
+    d * b,
+    d * a,
+    0,
+    0,
+    0,
+    0,
+    1,
   );
 }
 
@@ -106,8 +139,7 @@ export class OrientationHud {
       0.1,
       20,
     );
-    // An elevated, fixed front view shows both depth and altitude; world +Y
-    // projects straight up, so the Earth reference never rolls with the view.
+    // A fixed celestial camera lets the observer and Earth turn together.
     this.camera.position.set(0, 3.2, 6.5);
     this.camera.lookAt(0, 0, 0);
     this.camera.updateMatrixWorld();
@@ -130,6 +162,20 @@ export class OrientationHud {
     this._normal = new THREE.Vector3();
     this._ndc = new THREE.Vector2();
     this._intersection = new THREE.Vector3();
+    this._geographicMatrix = new THREE.Matrix4();
+    this._inverseLocalMatrix = new THREE.Matrix4();
+    this._geographicRotation = new THREE.Quaternion();
+    this._inverseGeographicRotation = new THREE.Quaternion();
+    this._displayAlignment = new THREE.Quaternion();
+    this._celestialRotation = new THREE.Quaternion();
+    this.observerKey = null;
+    this.hasCelestialFrame = false;
+    this.earthFrame = new THREE.Group();
+    this.earthFrame.name = "geographic-earth-frame";
+    this.localFrame = new THREE.Group();
+    this.localFrame.name = "observer-east-up-south";
+    this.earthFrame.add(this.localFrame);
+    this.scene.add(this.earthFrame);
     this.activeControl = null;
 
     this.scene.add(new THREE.HemisphereLight(0xdaedff, 0x1c2b44, 1.9));
@@ -147,7 +193,7 @@ export class OrientationHud {
     );
     this.earth.name = "upright-earth";
     this.earth.rotation.y = -Math.PI / 2;
-    this.scene.add(this.earth);
+    this.earthFrame.add(this.earth);
 
     const grid = [];
     const geographicPoint = (latitude, longitude) => [
@@ -173,7 +219,7 @@ export class OrientationHud {
             (meridian * Math.PI) / 4,
           ),
         );
-    this.scene.add(
+    this.earthFrame.add(
       new THREE.LineSegments(
         new THREE.BufferGeometry().setAttribute(
           "position",
@@ -187,7 +233,7 @@ export class OrientationHud {
         }),
       ),
     );
-    this.scene.add(
+    this.earthFrame.add(
       new THREE.Mesh(
         new THREE.SphereGeometry(0.542, 24, 16),
         new THREE.ShaderMaterial({
@@ -220,7 +266,7 @@ export class OrientationHud {
         depthWrite: false,
       }),
     );
-    this.scene.add(axes);
+    this.localFrame.add(axes);
 
     this.controls = {};
     const definitions = [
@@ -316,7 +362,7 @@ export class OrientationHud {
       );
       halo.renderOrder = 19;
       handle.add(core, halo);
-      this.scene.add(ribbon, ticks, handle);
+      this.localFrame.add(ribbon, ticks, handle);
       this.controls[definition.axis] = {
         ...definition,
         tickCount: definition.ticks,
@@ -334,12 +380,12 @@ export class OrientationHud {
       new THREE.CylinderGeometry(0.017, 0.017, 0.75, 10),
       new THREE.MeshBasicMaterial({ color: 0xbaf5ff, toneMapped: false }),
     );
-    shaft.position.y = 0.945;
+    shaft.position.y = 0.375;
     const tip = new THREE.Mesh(
       new THREE.ConeGeometry(0.076, 0.19, 12),
       new THREE.MeshBasicMaterial({ color: 0xddfcff, toneMapped: false }),
     );
-    tip.position.y = 1.38;
+    tip.position.y = 0.81;
     const arrowGlow = new THREE.Mesh(
       new THREE.CylinderGeometry(0.064, 0.045, 0.76, 10),
       new THREE.MeshBasicMaterial({
@@ -351,7 +397,7 @@ export class OrientationHud {
         toneMapped: false,
       }),
     );
-    arrowGlow.position.y = 0.95;
+    arrowGlow.position.y = 0.38;
     const tipGlow = new THREE.Mesh(
       new THREE.ConeGeometry(0.11, 0.23, 12),
       new THREE.MeshBasicMaterial({
@@ -363,7 +409,7 @@ export class OrientationHud {
         toneMapped: false,
       }),
     );
-    tipGlow.position.y = 1.38;
+    tipGlow.position.y = 0.81;
     // A low-opacity X-ray layer preserves a readable far-side arrow; solid
     // surfaces still retain depth against the Earth and the nearby rings.
     arrowGlow.material.depthTest = false;
@@ -371,7 +417,31 @@ export class OrientationHud {
     arrowGlow.renderOrder = 25;
     tipGlow.renderOrder = 25;
     this.directionArrow.add(shaft, tip, arrowGlow, tipGlow);
-    this.scene.add(this.directionArrow);
+    this.directionArrow.position.set(0, SURFACE_RADIUS, 0);
+    this.localFrame.add(this.directionArrow);
+    this.observerMarker = new THREE.Group();
+    this.observerMarker.name = "geographic-observer";
+    this.observerMarker.position.copy(this.directionArrow.position);
+    const pin = new THREE.Mesh(
+      new THREE.SphereGeometry(0.026, 12, 8),
+      new THREE.MeshBasicMaterial({ color: 0xe2fbff, toneMapped: false }),
+    );
+    const halo = new THREE.Mesh(
+      new THREE.RingGeometry(0.044, 0.058, 32),
+      new THREE.MeshBasicMaterial({
+        color: 0x55dfff,
+        transparent: true,
+        opacity: 0.85,
+        depthWrite: false,
+        depthTest: false,
+        side: THREE.DoubleSide,
+        toneMapped: false,
+      }),
+    );
+    halo.rotation.x = -Math.PI / 2;
+    halo.renderOrder = 24;
+    this.observerMarker.add(pin, halo);
+    this.localFrame.add(this.observerMarker);
 
     this.projection = new THREE.LineSegments(
       segmentGeometry(9),
@@ -383,7 +453,7 @@ export class OrientationHud {
       }),
     );
     this.projection.frustumCulled = false;
-    this.scene.add(this.projection);
+    this.localFrame.add(this.projection);
     this.setOrientation(this.angles);
 
     this.geometries = new Set();
@@ -418,9 +488,47 @@ export class OrientationHud {
         .addScaledVector(UP, Math.sin(angle) * radius);
     return target
       .copy(this.viewDirection)
-      .multiplyScalar(0.93)
+      .multiplyScalar(0.63)
+      .add(this.directionArrow.position)
       .addScaledVector(this.right, Math.sin(angle) * radius)
       .addScaledVector(this.up, Math.cos(angle) * radius);
+  }
+
+  /** Use the displayed sky's inverse, including its smooth time/seek correction.
+   * No second clock: fast playback, reverse and pause share the same motion. */
+  setObserver(observer, skyQuaternion) {
+    if (
+      this.disposed ||
+      !skyQuaternion ||
+      !Number.isFinite(observer?.latitude) ||
+      !Number.isFinite(observer?.longitude)
+    )
+      return;
+    const key = `${observer.latitude}:${observer.longitude}`;
+    if (key !== this.observerKey) {
+      this.observerKey = key;
+      this._geographicRotation.setFromRotationMatrix(
+        geographicFrame(observer, this._geographicMatrix),
+      );
+      this._inverseGeographicRotation.copy(this._geographicRotation).invert();
+      this.localFrame.quaternion.copy(this._geographicRotation);
+    }
+    this._celestialRotation.copy(skyQuaternion).invert();
+    if (!this.hasCelestialFrame) {
+      // Face the initial observer once; later time/location changes retain this
+      // reference instead of silently recentering the globe on every frame.
+      this._point.copy(UP).applyQuaternion(this._celestialRotation);
+      this._displayAlignment.setFromAxisAngle(
+        UP,
+        -Math.atan2(this._point.x, this._point.z),
+      );
+      this.hasCelestialFrame = true;
+    }
+    this.earthFrame.quaternion
+      .copy(this._displayAlignment)
+      .multiply(this._celestialRotation)
+      .multiply(this._inverseGeographicRotation);
+    this.earthFrame.updateMatrixWorld(true);
   }
 
   /** Keep the inset pose independent of its DOM location and canvas DPR. */
@@ -499,12 +607,17 @@ export class OrientationHud {
     for (let i = 0; i < 9; i++) {
       const bottom = i / 9,
         top = (i + 0.54) / 9;
-      this._point.copy(this.viewDirection).multiplyScalar(1.23);
+      this._point
+        .copy(this.viewDirection)
+        .multiplyScalar(0.75)
+        .add(this.directionArrow.position);
       this._point.y =
-        AZIMUTH_PLANE + (this.viewDirection.y * 1.23 - AZIMUTH_PLANE) * bottom;
+        AZIMUTH_PLANE +
+        (SURFACE_RADIUS + this.viewDirection.y * 0.75 - AZIMUTH_PLANE) * bottom;
       drop.setXYZ(i * 2, this._point.x, this._point.y, this._point.z);
       this._point.y =
-        AZIMUTH_PLANE + (this.viewDirection.y * 1.23 - AZIMUTH_PLANE) * top;
+        AZIMUTH_PLANE +
+        (SURFACE_RADIUS + this.viewDirection.y * 0.75 - AZIMUTH_PLANE) * top;
       drop.setXYZ(i * 2 + 1, this._point.x, this._point.y, this._point.z);
     }
     drop.needsUpdate = true;
@@ -518,7 +631,7 @@ export class OrientationHud {
       control.ribbon.material.opacity = active
         ? 1
         : this.activeControl
-          ? 0.60
+          ? 0.6
           : 0.84;
       control.ribbon.material.uniforms.visibility.value =
         control.ribbon.material.opacity;
@@ -528,7 +641,11 @@ export class OrientationHud {
   }
 
   _screen(point, rect) {
-    this._projected.copy(point).project(this.camera);
+    this.localFrame.updateWorldMatrix(true, false);
+    this._projected
+      .copy(point)
+      .applyMatrix4(this.localFrame.matrixWorld)
+      .project(this.camera);
     return {
       x: rect.left + ((this._projected.x + 1) * rect.width) / 2,
       y: rect.top + ((1 - this._projected.y) * rect.height) / 2,
@@ -553,8 +670,12 @@ export class OrientationHud {
       this._curvePoint("azimuth", heading * RAD, 1.4, this._point);
       projected.cardinals[name] = this._screen(this._point, rect);
     }
-    this._point.copy(this.viewDirection).multiplyScalar(1.475);
+    this._point
+      .copy(this.viewDirection)
+      .multiplyScalar(ARROW_TIP)
+      .add(this.directionArrow.position);
     projected.arrowTip = this._screen(this._point, rect);
+    projected.observer = this._screen(this.observerMarker.position, rect);
     return projected;
   }
 
@@ -629,6 +750,9 @@ export class OrientationHud {
       1 - ((clientY - rect.top) / rect.height) * 2,
     );
     this._raycaster.setFromCamera(this._ndc, this.camera);
+    this.localFrame.updateWorldMatrix(true, false);
+    this._inverseLocalMatrix.copy(this.localFrame.matrixWorld).invert();
+    this._raycaster.ray.applyMatrix4(this._inverseLocalMatrix);
     let constant = 0;
     if (axis === "azimuth") {
       this._normal.copy(UP);
@@ -636,7 +760,7 @@ export class OrientationHud {
     } else if (axis === "elevation") this._normal.copy(this.right);
     else {
       this._normal.copy(this.viewDirection);
-      constant = -0.93;
+      constant = -0.63 - this.directionArrow.position.dot(this.viewDirection);
     }
     this._plane.set(this._normal, constant);
     // Edge-on rings remain draggable by their projected track rather than
@@ -673,7 +797,9 @@ export class OrientationHud {
           Math.atan2(intersection.y, intersection.dot(this.headingDirection)) *
           DEG;
       else {
-        this._intersection.addScaledVector(this.viewDirection, -0.93);
+        this._intersection
+          .sub(this.directionArrow.position)
+          .addScaledVector(this.viewDirection, -0.63);
         angle =
           Math.atan2(
             this._intersection.dot(this.right),
